@@ -1,0 +1,71 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Wing Clip" itemID="481a59a1-00000d49" lastModified="1210026236">
+  <timeline>
+    <DOMTimeline name="Wing Clip">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="6" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if ((_root.Course.Char.attackFrame == "Flying" && _root.Course.Char.attack == true) || (_root.Course.Char.yspeed>3 && _root.KeyUP())) {
+	onEnterFrame = function () {
+		if (_root.PauseGame == false) {
+			play();
+		} else {
+			stop();
+		}
+		// powertimer & blinking
+		if (_root.PowerTimer>32*5 || Math.round(_root.PowerTimer/Math.round(_root.PowerTimer/32))%2 == 0) {
+			_visible = true;
+		} else {
+			_visible = false;
+		}
+	};
+} else {
+	onEnterFrame = function () {
+		if ((_root.Course.Char.attackFrame == "Flying" && _root.Course.Char.attack == true) || (_root.Course.Char.yspeed>3 && _root.KeyUP())) {
+			play();
+		}
+		// powertimer & blinking  
+		if (_root.PowerTimer>32*5 || Math.round(_root.PowerTimer/Math.round(_root.PowerTimer/32))%2 == 0) {
+			_visible = true;
+		} else {
+			_visible = false;
+		}
+	};
+	stop();
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="Hat Wing - 2">
+                  <matrix>
+                    <Matrix a="0.846160888671875" d="0.6875" tx="-7" ty="-9.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="6.5" y="8"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" duration="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="Hat Wing - 1">
+                  <matrix>
+                    <Matrix tx="-4" ty="-4"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

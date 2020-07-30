@@ -1,0 +1,101 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="   Effects/ Other/Smoke Clip" itemID="4751d4a4-00001657" lastModified="1232244762" lastUniqueIdentifier="3">
+  <timeline>
+    <DOMTimeline name="Smoke Clip">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="5" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[alfa = _alpha;
+rot = random(5)-2;
+if (speed == undefined) {
+	speed = 2;
+}
+count = 0;
+stop();
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		count++;
+		_alpha -= alfa/10;
+		_rotation += rot;
+		this._xscale *= 0.98;
+		this._yscale *= 0.98;
+		if (count>=speed) {
+			nextFrame();
+			count = 0;
+		}
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="5" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[this._alpha = 0
+onEnterFrame = null
+this.removeMovieClip()
+stop()]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Effects/ Other/FX (Smoke 1)">
+                  <matrix>
+                    <Matrix tx="-14.5" ty="-14.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Effects/ Other/FX (Smoke 2)">
+                  <matrix>
+                    <Matrix tx="-19.5" ty="-17"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Effects/ Other/FX (Smoke 3)">
+                  <matrix>
+                    <Matrix tx="-16.5" ty="-17.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Effects/ Other/FX (Smoke 4)">
+                  <matrix>
+                    <Matrix tx="-19" ty="-19.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="4" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Effects/ Other/FX (Smoke 5)">
+                  <matrix>
+                    <Matrix tx="-15.5" ty="-16.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="5" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

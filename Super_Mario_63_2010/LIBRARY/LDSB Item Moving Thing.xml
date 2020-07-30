@@ -1,0 +1,47 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="LDSB Item Moving Thing" itemID="4931b89e-00001485" sourceFlashFilepath="F:\Super Mario 63\New computer\Level Designer (With Mario Engine new) 3.fla" sourceLibraryItemHRef="LDSB Item Moving Thing" sourceLastModified="1232590397" lastModified="1245440051" sourceItemID="4931b89e-00001485">
+  <timeline>
+    <DOMTimeline name="LDSB Item Moving Thing">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[ItemCountArray = [43, 34, 45];
+//no more than 49 in each tab!! no less than 8
+Tab = 0;
+_parent.movedoffset = 0;
+Reload = function () {
+	//trace(Tab);
+	i = 1;
+	w = -18.5;
+	h = 18.5;
+	Selected = undefined;
+	for (q=0; q<50; q++) {
+		//for (w=-1; w<2; w += 2) {
+		if (this["LDSBItem"+i]._x !== undefined) {
+			this["LDSBItem"+i].removeMovieClip();
+		}
+		if (i<=ItemCountArray[Tab]) {
+			this.attachMovie("LDSBItem", "LDSBItem"+i, this.getNextHighestDepth(), {_y:h, _x:w, num:i+(Tab*50)});
+			this["LDSBItem"+i].gotoAndStop(i+(Tab*50));
+			//trace(i+(Tab*50));
+			//trace(i+(Tab*50));
+			w *= -1;
+			if (w<0) {
+				h += 37.5;
+			}
+		}
+		i++;
+		//}              
+	}
+};
+Reload();]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

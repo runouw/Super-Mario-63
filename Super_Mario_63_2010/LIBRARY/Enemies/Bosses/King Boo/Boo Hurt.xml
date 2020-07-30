@@ -1,0 +1,545 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="   Enemies/Bosses/King Boo/Boo Hurt" itemID="46ec0139-00000889" lastModified="1195437225" lastUniqueIdentifier="4">
+  <timeline>
+    <DOMTimeline name="Boo Hurt">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="11" name="play" labelType="name" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	if (_root.PauseGame == true) {
+		stop();
+	} else {
+		play();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="11" duration="9" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_parent._parent._x /= 3;
+_parent._parent._x += Math.random()*300-Math.random()*300;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="20" duration="17" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.playpause = true;
+onEnterFrame = function () {
+	if (_root.PauseGame == true) {
+		stop();
+	} else {
+		_root.Camcenter = _parent._parent;
+		play();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="37" duration="7" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[// sound fx
+_root.Mariosound = new Sound(this);
+_root.Mariosound.attachSound("Boo");
+_root.Mariosound.start(0, 1);
+_root.Mariosound.setVolume(_root.MarioVolume);
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="44" duration="10" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.Course.BackGFX.w1.gotoAndPlay(12);
+_root.Course.BackGFX.w2.gotoAndPlay(12);
+onEnterFrame = function () {
+	if (_root.PauseGame == true) {
+		stop();
+	} else {
+		_root.Stats.screenfilter._alpha += 5;
+		_root.Camcenter = _parent._parent;
+		play();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="54" duration="5" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	if (_root.PauseGame == true) {
+		stop();
+	} else {
+		_root.Camcenter = _parent._parent;
+		play();
+	}
+};
+_root.Stats.screenfilter._alpha = 50;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="59" duration="17" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	if (_root.PauseGame == true) {
+		stop();
+	} else {
+		_parent._parent._alpha -= 5;
+		_root.Camcenter = _parent._parent;
+		play();
+	}
+};
+//
+if (_parent._parent.HP == 3 || _parent._parent.HP<=0) {
+	_root.Course.FrontGFX.gotoAndStop(1);
+}
+if (_parent._parent.HP == 2) {
+	_root.Course.FrontGFX.gotoAndStop(2);
+}
+if (_parent._parent.HP == 1) {
+	_root.Course.FrontGFX.gotoAndStop(3);
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="76" duration="3" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.playpause = false;
+_root.Camcenter = "none";
+_parent._parent._alpha = 10;
+onEnterFrame = function () {
+	if (_root.PauseGame == true) {
+		stop();
+	} else {
+		play();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="79" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[//
+_parent._parent.attack = false;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" duration="80" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" duration="3" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Boo/King Boo Blinking">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" duration="3" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Boo/King Boo Blinking" selected="true">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color brightness="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="6" duration="2" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Boo/King Boo Blinking" selected="true">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color brightness="-0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="8" duration="2" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Boo/King Boo Blinking" selected="true">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color brightness="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="10" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Boo/King Boo Blinking">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="11" duration="9" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="20" duration="11" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Boo/King Boo Trasparent Shine">
+                  <matrix>
+                    <Matrix tx="-1" ty="1.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="31" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Boo/King Boo Trasparent Shine">
+                  <matrix>
+                    <Matrix tx="-1" ty="1.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="33" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Boo/Boo (body) - 6">
+                  <matrix>
+                    <Matrix tx="-63" ty="-37.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Boo/Boo (crown) - 4">
+                  <matrix>
+                    <Matrix tx="-15" ty="-57.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Boo/Boo Eyes Front">
+                  <matrix>
+                    <Matrix tx="-0.65" ty="-15.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Boo/Boo (mouth) - 15">
+                  <matrix>
+                    <Matrix tx="-21" ty="2.35"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="35" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Boo/Boo (body) - 12">
+                  <matrix>
+                    <Matrix tx="-61.7" ty="-38.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Boo/Boo (crown) - 4">
+                  <matrix>
+                    <Matrix tx="-15" ty="-58.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Boo/Boo Eyes Front">
+                  <matrix>
+                    <Matrix tx="-0.65" ty="-18.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Boo/Boo Mouth Animated">
+                  <matrix>
+                    <Matrix tx="-1" ty="19.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="37" duration="26" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Boo/Boo Scare - 2">
+                  <matrix>
+                    <Matrix tx="-52.65" ty="-41.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Boo/Boo (crown) - 4">
+                  <matrix>
+                    <Matrix tx="-15" ty="-59.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="63" duration="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Boo/Boo (body) - 12">
+                  <matrix>
+                    <Matrix tx="-61.7" ty="-38.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Boo/Boo (crown) - 4">
+                  <matrix>
+                    <Matrix tx="-15" ty="-58.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Boo/Boo Eyes Front">
+                  <matrix>
+                    <Matrix tx="-0.65" ty="-18.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Boo/Boo Mouth Animated">
+                  <matrix>
+                    <Matrix tx="-1" ty="19.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="66" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Boo/Boo (body) - 12">
+                  <matrix>
+                    <Matrix tx="-61.7" ty="-38.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Boo/Boo (crown) - 4">
+                  <matrix>
+                    <Matrix tx="-15" ty="-58.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Boo/Boo Eyes Front">
+                  <matrix>
+                    <Matrix tx="-0.65" ty="-18.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Boo/Boo (mouth) - 13">
+                  <matrix>
+                    <Matrix tx="-20.55" ty="1.95"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="68" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Boo/Boo (body) - 6">
+                  <matrix>
+                    <Matrix tx="-63" ty="-37.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Boo/Boo (crown) - 4">
+                  <matrix>
+                    <Matrix tx="-15" ty="-57.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Boo/Boo Eyes Front">
+                  <matrix>
+                    <Matrix tx="-0.65" ty="-18.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Boo/Boo (mouth) - 17">
+                  <matrix>
+                    <Matrix tx="-20" ty="3.35"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="70" duration="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Boo/Boo (body) - 6">
+                  <matrix>
+                    <Matrix tx="-63" ty="-36.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Boo/Boo (crown) - 4">
+                  <matrix>
+                    <Matrix tx="-15" ty="-56.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Boo/Boo Eyes Front">
+                  <matrix>
+                    <Matrix tx="-0.65" ty="-17.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Boo/Boo (mouth) - 19">
+                  <matrix>
+                    <Matrix tx="-22" ty="5.45"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="73" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Boo/Boo (eyes) - 6">
+                  <matrix>
+                    <Matrix tx="-21" ty="-24.3"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Boo/Boo (mouth) - 5">
+                  <matrix>
+                    <Matrix tx="-20" ty="4.9"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="74" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Boo/Boo (eyes) - 5">
+                  <matrix>
+                    <Matrix tx="-26.15" ty="-22.75"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Boo/Boo (mouth) - 4">
+                  <matrix>
+                    <Matrix tx="-26" ty="3.85"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="76" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Boo/Boo (eyes) - 4">
+                  <matrix>
+                    <Matrix tx="-28.5" ty="-21.75"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Boo/Boo (mouth) - 2">
+                  <matrix>
+                    <Matrix tx="-30.65" ty="3.85"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="78" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Boo/Boo (mouth) - 1">
+                  <matrix>
+                    <Matrix tx="-35" ty="0.3"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Boo/Boo Eyes 1">
+                  <matrix>
+                    <Matrix tx="-20" ty="-11.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#FF4FFF">
+          <frames>
+            <DOMFrame index="0" duration="73" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="73" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Boo/Boo (body) - 6">
+                  <matrix>
+                    <Matrix tx="-63" ty="-36"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Boo/Boo (crown) - 4">
+                  <matrix>
+                    <Matrix tx="-15" ty="-55.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="74" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Boo/Boo (body) - 5">
+                  <matrix>
+                    <Matrix tx="-61" ty="-36"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Boo/Boo (crown) - 3">
+                  <matrix>
+                    <Matrix tx="-15.15" ty="-55.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="76" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Boo/Boo (body) - 4">
+                  <matrix>
+                    <Matrix tx="-59.5" ty="-36"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Boo/Boo (crown) - 2">
+                  <matrix>
+                    <Matrix tx="-14.15" ty="-55.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="78" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Boo/Boo (body) - 1">
+                  <matrix>
+                    <Matrix tx="-59" ty="-36"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Boo/Boo (crown) - 1">
+                  <matrix>
+                    <Matrix tx="-14.15" ty="-55.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

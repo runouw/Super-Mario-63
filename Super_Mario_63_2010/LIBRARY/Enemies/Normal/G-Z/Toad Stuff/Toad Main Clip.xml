@@ -1,0 +1,292 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="   Enemies/Normal/ G-Z/Toad Stuff/Toad Main Clip" itemID="47e57dc5-0000145b" sourceFlashFilepath="Rob &amp; Steve Hewitt\My Documents\Super Mario 63\Toad Animation Tests.fla" sourceLibraryItemHRef="Toad Main Clip" sourceLastModified="1206305022" lastModified="1238276720" lastUniqueIdentifier="8" sourceItemID="47e57dc5-0000145b">
+  <timeline>
+    <DOMTimeline name="Toad Main Clip">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" locked="true" current="true" isSelected="true" heightLiteral="19">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[//MoodArray = ["Smile", "Talk", "Sad", "Mad", "Shocked", "Happy"];
+//
+if (staramount == undefined) {
+	staramount = 0;
+}
+if (frame == undefined) {
+	frame = "idle";
+}
+if (Mood == undefined) {
+	Mood = "Smile";
+}
+//                                             
+if (M1Moo == undefined) {
+	M1Moo = "Talk";
+	M1Fra = "idle";
+	M1Txt = "Hello, I am a Toad.";
+	M1Sta = function () {
+		return (BP);
+	};
+	M1End = function () {
+		return (BP);
+	};
+	M1F = function () {
+		count2 = 0;
+		_xscale *= -1;
+		OEF = function () {
+			count2++;
+			if (count2>16) {
+				count2 = 0;
+				_xscale *= -1;
+				OEF = function () {
+					count2++;
+					if (count2>16) {
+						count2 = 0;
+						_xscale *= -1;
+						OEF = function () {
+							count2++;
+							if (count2>16) {
+								count2 = undefined;
+								_xscale *= -1;
+								OEF = null;
+							}
+						};
+					}
+				};
+			}
+		};
+	};
+}
+/*if (M2Moo == undefined) {
+M2Moo = "Happy";
+M2Txt = "I am a Toad...";
+M2Sta = function () {
+return (!HitTestF());
+};
+M2End = function () {
+if (count == undefined) {
+count = 0;
+}
+count++;
+if (count>=32) {
+count = undefined;
+return (true);
+}
+};
+}*/ 
+HitTestF = function () {
+	if (count>4) {
+		return ((this.box.hitTest(_root.Course.Char.charClip.body) || this.box.hitTest((_root.Course.Char._x*_root.coursescale/100)+_root.Course._x, ((_root.Course.Char._y-15)*_root.coursescale/100)+_root.Course._y, true)));
+	}
+};
+BP = function () {
+	if (z == 2) {
+		return (true);
+	} else {
+		return (false);
+	}
+};
+StartMood = Mood;
+Startframe = frame;
+Moo = Mood;
+Phase = 1;
+action = false;
+z = 0;
+if (OEF == undefined) {
+	OEF = null;
+}
+if (standnext == undefined) {
+	standnext = true;
+}
+talking = false;
+camerazoom = false;
+// 0: not down
+// 1: down, but was alredy held down
+// 2: down this frame
+count = 0;
+if (onEnterFrame == undefined) {
+	onEnterFrame = function () {
+		if (count<32) {
+			count++;
+		}
+		OEF();
+		if (this["M"+Phase+"Txt"] == undefined) {
+			//OEF = null;
+			Phase = 1;
+			_root.playpause = false;
+			_root.Course.Char.attack = false;
+			Mood = StartMood;
+			frame = Startframe;
+			talking = false;
+		}
+		// && mario.air == false                             
+		if (HitTestF() && _root.playpause == false && (_root.Course.Char.air == false || _root.Course.Char.Water == true) && _root.Course.Char.attack == false) {
+			bz.aa = 100;
+		} else {
+			bz.aa = 0;
+		}
+		if (_root.KeyZ()) {
+			if (z == 0) {
+				z = 2;
+			} else {
+				z = 1;
+			}
+		} else {
+			z = 0;
+		}
+		if (this["M"+Phase+"Sta"]() == true && action == false && _root.ToadMessage == "" && ((_root.playpause == false && (bz._alpha>=98 || standnext == false)) || (Phase !== 1))) {
+			_root.ToadMessage = this["M"+Phase+"Txt"];
+			talking = true;
+			Mood = this["M"+Phase+"Moo"];
+			if (this["M"+Phase+"Fra"] !== undefined) {
+				frame = this["M"+Phase+"Fra"];
+			}
+			if (this["M"+Phase+"F"] !== undefined) {
+				this["M"+Phase+"F"]();
+			}
+			action = true;
+			_root.Course.Char.attack = true;
+			_root.Course.Char.attackFrame = "Talk";
+			_root.Course.Char.yspeed = 0;
+			_root.Course.Char.xspeed = 0;
+			_root.playpause = true;
+			if (Phase == 1) {
+				if (_root.Course.Char._x>this._x+_root.Course.BackGFX._x) {
+					this._xscale = 100;
+					_root.Course.Char._xscale = 100;
+				} else {
+					this._xscale = -100;
+					_root.Course.Char._xscale = -100;
+				}
+			}
+		} else if (this["M"+Phase+"End"]() && (_root.Stats.tm.txt == _root.ToadMessage && _root.Stats.tm.bz._alpha>=98) && action == true) {
+			action = false;
+			_root.ToadMessage = "";
+			Phase += 1;
+		}
+		//                                      
+		if (talking == true) {
+			_root.Camcenter = this;
+			//(this.box.hitTest(_root.Course.Char.charClip.body) || this.box.hitTest((_root.Course.Char._x*_root.coursescale/100)+_root.Course._x, ((_root.Course.Char._y-15)*_root.coursescale/100)+_root.Course._y, true));
+			if ((this.body.hitTest(_root.Course.Char.charClip.body) || this.body.hitTest((_root.Course.Char._x*_root.coursescale/100)+_root.Course._x, ((_root.Course.Char._y-15)*_root.coursescale/100)+_root.Course._y, true))) {
+				if (_root.Course.Char._x>this._x+_root.Course.BackGFX._x) {
+					_root.Course.Char._x += 2;
+				} else {
+					_root.Course.Char._x -= 2;
+				}
+			}
+			//                                 
+			if (_root.CameraZoom<150) {
+				_root.CameraZoom += 3;
+				camerazoom = true;
+			} else {
+				_root.CameraZoom = Math.min(_root.CameraZoom+3, 150);
+			}
+		} else if (camerazoom == true) {
+			if (_root.CameraZoom>100) {
+				_root.CameraZoom -= 3;
+			} else {
+				_root.CameraZoom = 100;
+				camerazoom = false;
+			}
+		}
+		//                                                                                                         
+		gotoAndStop(frame);
+		if (Moo !== Mood) {
+			body.head.ChangeFrame();
+		}
+		Moo = Mood;
+		OEF2();
+	};
+}
+if (_root.TotalStars<staramount && _root.CheatCastleUnlock !== true) {
+	onEnterFrame = null;
+	this.swapDepths(0);
+	this.removeMovieClip();
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="2" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="HitTEst Boxxyxx" color="#FFFF4F" locked="true" outline="true" useOutlineView="true" autoNamed="false" heightLiteral="19">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/Toad Stuff/Toad hitTest Box" name="box">
+                  <matrix>
+                    <Matrix a="1.82949829101563" d="0.581130981445313"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="BZ" color="#FF4FFF" autoNamed="false" heightLiteral="19">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/Toad Stuff/Toad Button Z" name="bz">
+                  <matrix>
+                    <Matrix tx="21.8" ty="-31.8"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" heightLiteral="19">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/Toad Stuff/Toad - Idle Body" name="body">
+                  <matrix>
+                    <Matrix ty="13.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" name="idle" labelType="name" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/Toad Stuff/Toad - Idle Body" name="body">
+                  <matrix>
+                    <Matrix ty="13.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" name="walk" labelType="name" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/Toad Stuff/Toad - Walk Clip" name="body">
+                  <matrix>
+                    <Matrix d="0.998214721679688" tx="-0.5" ty="8.4"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="0.5" y="-8.5"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,145 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Items-PL/ Various Platforms/ Coded Wooden PL/Falling Block" itemID="47112858-00000a3d" lastModified="1223838291" lastUniqueIdentifier="3">
+  <timeline>
+    <DOMTimeline name="Falling Block">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (fallspeed == undefined) {
+	fallspeed = _root.gravity/5;
+	// speed it accelerates when falling
+}
+if (fallamount == undefined) {
+	fallamount = 32*6;
+	// how long it falls
+}
+if (fallwait == undefined) {
+	fallwait = 10;
+	// wait before falling
+}
+if (quakeamount == undefined) {
+	quakeamount = 2;
+	// shaking before falling
+}
+depth = _root.Course.Platforms.getNextHighestDepth();
+_root.Course.Platforms.attachMovie("FallingblockCode", "FallingblockCode"+depth, depth, {_x:_x, _y:_y, fallspeed:fallspeed, fallamount:fallamount, fallwait:fallwait, quakeamount:quakeamount, yspeed:0, fall:false});
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		tellTarget (_root.Course.Platforms["FallingblockCode"+depth]) {
+			if (fall == false) {
+				this._alpha += 10;
+				this._alpha = Math.min(this._alpha, 100);
+				if (this._alpha>=100 && hitTest((_root.Course.Char._x*_root.coursescale/100)+_root.Course._x, (_root.Course.Char._y*_root.coursescale/100)+_root.Course._y, true)) {
+					returnX = _x;
+					returnY = _y;
+					timefall = 0;
+					fallcount = 0;
+					fall = true;
+				}
+			}
+			if (fall == true) {
+				timefall++;
+				if (timefall>fallwait) {
+					fallcount++;
+					yspeed += fallspeed;
+					yspeed = _root.groundFriction(yspeed, 0.01, 1.25);
+				} else {
+					_y = returnY+(Math.random()*quakeamount-Math.random()*quakeamount);
+					//_x = returnX+(Math.random()*quakeamount-Math.random()*quakeamount);
+					if (timefall == fallwait) {
+						_y = returnY;
+						_x = returnX;
+					}
+				}
+				if (yspeed<0) {
+					_y -= yspeed;
+				}
+				if (hitTest((_root.Course.Char._x*_root.coursescale/100)+_root.Course._x, (_root.Course.Char._y*_root.coursescale/100)+_root.Course._y, true)) {
+					//_root.Course.Char._x += currentspeedX;
+					_root.Course.Char._y += yspeed;
+					//_root.Course.Char.xspeed = _root.groundFriction(_root.Course.Char.xspeed, 0.3, 1.1);
+					if (landedon == false) {
+						//_root.Course.Char.xspeed -= currentspeedX;
+						//
+						//this.frame = "ride";
+						//
+					}
+					landedon = true;
+				} else {
+					if (landedon == true) {
+						//_root.Course.Char.xspeed += currentspeedX;
+						_root.Course.Char.yspeed += yspeed;
+					}
+					landedon = false;
+				}
+				if (yspeed<0) {
+					_y += yspeed;
+				}
+				_y += yspeed;
+				if (fallcount>fallamount-10) {
+					this._alpha -= 10;
+					this._alpha = Math.max(this._alpha, 0);
+				}
+				if (fallcount>fallamount) {
+					fallcount = 0;
+					yspeed = 0;
+					_x = returnX;
+					_y = returnY;
+					fall = false;
+				}
+			}
+			this._y = _y;
+			this._x = _x;
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Bricks &amp; Woods/Wood Block" bitmapIsClipped="false">
+                        <matrix>
+                          <Matrix a="20" d="20" tx="-61.1" ty="-65.65"/>
+                        </matrix>
+                      </BitmapFill>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <SolidColor/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="!-240 100|-240 -240.5!-240 -240.5|240 -240.5!240 -240.5|240 99!240 99|99.5 239.5!99.5 239.5|-100.5 239.5!-100.5 239.5|-240 100"/>
+                  </edges>
+                </DOMShape>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Coded Wooden PL/Falling Block Alpha">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5" redMultiplier="0.671875" blueMultiplier="0.671875" greenMultiplier="0.671875" redOffset="75" blueOffset="45" greenOffset="69"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

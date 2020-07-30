@@ -1,0 +1,113 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="LDSB Drag Bar" itemID="48a1fcb8-00000065" sourceFlashFilepath="F:\Super Mario 63\New computer\Level Designer (With Mario Engine new) 3.fla" sourceLibraryItemHRef="LDSB Drag Bar" sourceLastModified="1232599581" lastModified="1237778044" lastUniqueIdentifier="5" sourceItemID="48a1fcb8-00000065">
+  <timeline>
+    <DOMTimeline name="LDSB Drag Bar">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="LDSB Drag" name="drag">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[Y = -110;
+drag._y = -40;
+onEnterFrame = function () {
+	/*if (Y>-110) {
+	Y = -110;
+	}
+	if (Y<25-_parent.moved._height) {
+	Y = 25-_parent.moved._height;
+	}*/
+	if (tabbing !== true) {
+		if (held == true) {
+			drag._y = Math.max(-40, Math.min(_ymouse, 40));
+			//((Y/(125-_parent.moved._height))*80)-81
+			Y = ((drag._y+40)/80)*(-_parent.moved._height+120)-(80+_parent.movedoffset);
+			//*((125-_parent.moved._height)/Y);
+		} else {
+			drag._y = Math.max(-40, Math.min(drag._y, 40));
+			Y = ((drag._y+40)/80)*(-_parent.moved._height+120)-(80+_parent.movedoffset);
+			//drag._y = (Y/(125-_parent.moved._height)*80)-81;
+		}
+		_parent.moved._y = Y;
+	}
+	//_parent.moved._y = Math.max(Y, 25-_parent.moved._height);                                 
+};
+onMouseDown = function () {
+	if (bar.hitTest(_root._xmouse, _root._ymouse, false) && _root.MWindow1 == true && tabbing !== true) {
+		held = true;
+	}
+};
+onMouseUp = function () {
+	held = false;
+};
+if (_parent.MouseWheel !== true) {
+	MouseWheel = new Object();
+	MouseWheel.onMouseWheel = function(delta) {
+		//Y = ((drag._y+40)/80)*(-_parent.moved._height+120)-80;
+		//Y += delta*6;
+		//trace(Y)
+		//Y = Math.max(-_parent.moved._height+120, Math.min(Y, -80));
+		delta2 = (delta>0 ? 1 : -1);
+		if (_xmouse>-10 && Math.abs(_ymouse)<60 && _root.MWindow1 == true) {
+			drag._y += 16*delta2*(200/(-_parent.moved._height+120));
+		}
+		//drag._y = (((Y+80)/-_parent.moved._height+120)*80)-40;         
+		//trace(drag._y);
+		//trace(Y);
+		//drag._y = Math.max(-40, Math.min(drag._y, 40));
+	};
+	Mouse.addListener(MouseWheel);
+	_parent.MouseWheel = true;
+}
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName="LDSB Drag Arrow">
+                  <matrix>
+                    <Matrix ty="-56"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="LDSB Drag Arrow">
+                  <matrix>
+                    <Matrix ty="56"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_yscale = -100;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="LDSB Drag Bar Barrr" name="bar">
+                  <matrix>
+                    <Matrix ty="-0.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

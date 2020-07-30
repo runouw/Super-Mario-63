@@ -1,0 +1,326 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="   Enemies/Normal/ A-F/ Blarg/Blarg Clip" itemID="472fe575-00000a25" lastModified="1198277660" lastUniqueIdentifier="14">
+  <timeline>
+    <DOMTimeline name="Blarg Clip">
+      <layers>
+        <DOMLayer name="Layer 3" color="#FFFF4F" outline="true" useOutlineView="true">
+          <frames>
+            <DOMFrame index="0" duration="4" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="4" duration="5" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Lineless Movieclip" name="body">
+                  <matrix>
+                    <Matrix a="0.441680908203125" d="0.212066650390625" tx="-1.5" ty="14.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-28.05"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="9" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="10" duration="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Lineless Movieclip" name="body">
+                  <matrix>
+                    <Matrix a="0.441680908203125" d="0.386993408203125" tx="-1.5" ty="15.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-28.05"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="13" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Lineless Movieclip" name="body">
+                  <matrix>
+                    <Matrix a="0.441680908203125" d="0.386993408203125" tx="-1.5" ty="15.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-28.05"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="14" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Lineless Movieclip" name="body">
+                  <matrix>
+                    <Matrix a="0.441680908203125" d="0.59820556640625" tx="-1.5" ty="14.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-28.1"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="15" duration="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Lineless Movieclip" name="body">
+                  <matrix>
+                    <Matrix a="0.441680908203125" d="0.386993408203125" tx="-1.5" ty="15.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-28.05"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="18" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="19" duration="5" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Lineless Movieclip" name="body">
+                  <matrix>
+                    <Matrix a="0.441680908203125" d="0.212066650390625" tx="-1.5" ty="14.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-28.05"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="24" duration="8" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="14" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (firstplay == undefined) {
+	gotoAndStop("end");
+	firstplay = true;
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="14" duration="17" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+onEnterFrame = function () {
+	distance = Math.abs((_x+_parent._x)-_root.Course.Char._x);
+	distance = Math.max(distance, 0);
+	distance = Math.min(distance, 100);
+	if (_root.Course.Char._x>_x+_parent._x) {
+		_xscale = -100;
+	} else {
+		_xscale = 100;
+	}
+	if (distance>=100) {
+		play();
+	}
+	///   
+	if (this.body.hitTest(_root.Course.Char.charClip.body)) {
+		//
+		if (_root.Course.Char.blink<=0) {
+			if (_root.Course.Char._x>_x+_parent._x) {
+				_root.MarioHit(2, 90, 0, 3, 20, "none");
+			} else {
+				_root.MarioHit(2, 90, 0, -3, 20, "none");
+			}
+			if (_root.CharHP>=0) {
+				_root.Course.Char.yspeed = Math.min(-16, _root.Course.Char.yspeed);
+				_root.Course.Char.attack = true;
+				_root.Course.Char.attackFrame = "Lava";
+			}
+		}
+		//     
+	}
+	///   
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="31" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+onEnterFrame = function () {
+	distance = Math.abs((_x+_parent._x)-_root.Course.Char._x);
+	distance = Math.max(distance, 0);
+	distance = Math.min(distance, 100);
+	if (_root.Course.Char._x>_x+_parent._x) {
+		_xscale = -100;
+	} else {
+		_xscale = 100;
+	}
+	if (distance<100) {
+		play();
+		if (this.body.hitTest(_root.Course.Char.charClip.body)) {
+			//
+			if (_root.Course.Char.blink<=0) {
+				if (_root.Course.Char._x>_x+_parent._x) {
+					_root.MarioHit(2, 90, 0, 3, 20, "none");
+				} else {
+					_root.MarioHit(2, 90, 0, -3, 20, "none");
+				}
+				if (_root.CharHP>=0) {
+					_root.Course.Char.yspeed = Math.min(-16, _root.Course.Char.yspeed);
+					_root.Course.Char.attack = true;
+					_root.Course.Char.attackFrame = "Lava";
+				}
+			}
+			//     
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" duration="6" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Normal/ A-F/ Blarg/Blarg - 1">
+                  <matrix>
+                    <Matrix d="0.1290283203125" tx="-16" ty="15.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="16" y="15.5"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="6" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Normal/ A-F/ Blarg/Blarg - 1">
+                  <matrix>
+                    <Matrix tx="-16" ty="-15.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="8" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Normal/ A-F/ Blarg/Blarg - 2">
+                  <matrix>
+                    <Matrix tx="-16" ty="-18.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="10" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Normal/ A-F/ Blarg/Blarg - 3">
+                  <matrix>
+                    <Matrix tx="-16" ty="-20.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="12" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Normal/ A-F/ Blarg/Blarg - 4">
+                  <matrix>
+                    <Matrix tx="-16.5" ty="-26.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="14" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ A-F/ Blarg/Blarg Idle">
+                  <matrix>
+                    <Matrix ty="-7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="15" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Normal/ A-F/ Blarg/Blarg - 5">
+                  <matrix>
+                    <Matrix tx="-15.5" ty="-29.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="17" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Normal/ A-F/ Blarg/Blarg - 4">
+                  <matrix>
+                    <Matrix tx="-16.5" ty="-26.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="19" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Normal/ A-F/ Blarg/Blarg - 3">
+                  <matrix>
+                    <Matrix tx="-16" ty="-20.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="21" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Normal/ A-F/ Blarg/Blarg - 2">
+                  <matrix>
+                    <Matrix tx="-16" ty="-18.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="23" duration="7" tweenType="motion" motionTweenRotate="none" keyMode="16897">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Normal/ A-F/ Blarg/Blarg - 1">
+                  <matrix>
+                    <Matrix tx="-16" ty="-15.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="30" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Normal/ A-F/ Blarg/Blarg - 1">
+                  <matrix>
+                    <Matrix d="0.1290283203125" tx="-16" ty="15.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="16" y="15.5"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="31" tweenType="motion" keyMode="17921">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,149 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Level Designer Windows/Window Drag Bar" itemID="4852ec3d-00000f1a" sourceFlashFilepath="F:\Super Mario 63\New computer\Level Designer (With Mario Engine new) 3.fla" sourceLibraryItemHRef="Level Designer Windows/Window Drag Bar" sourceLastModified="1218573168" lastModified="1218573168" sourceItemID="4852ec3d-00000f1a">
+  <timeline>
+    <DOMTimeline name="Window Drag Bar">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+tempparentwidt;
+onEnterFrame = function () {
+	if (tempparentwidt !== _parent.widt) {
+		this._width = _parent.widt-10;
+		tempparentwidt = _parent.widt;
+	}
+	if (_parent.greyness._alpha>95) {
+		drag = false;
+	}
+	if (drag == true) {
+		//_parent._x += _xmouse-lastx;
+		//_parent._y += _ymouse-lasty;
+		_parent._x = Math.min(Math.max(_root._xmouse-lastx, 1-(_parent._width)+20), 449-20);
+		_parent._y = Math.min(Math.max(_root._ymouse-lasty, 3), 300-20);
+		//lastx = _xmouse;
+		//lasty = _ymouse;
+	}
+	if (this.hitTest(_root._xmouse, _root._ymouse, false) && _parent.greyness._alpha<50) {
+		gotoAndStop(2);
+	} else {
+		gotoAndStop(1);
+	}
+};
+onMouseDown = function () {
+	if (this.hitTest(_root._xmouse, _root._ymouse, false)) {
+		drag = true;
+		lastx = _root._xmouse-_parent._x;
+		lasty = _root._ymouse-_parent._y;
+	}
+};
+onMouseUp = function () {
+	drag = false;
+};
+/*sc = 100;
+onEnterFrame = function () {
+if (this.hitTest(_root._xmouse, _root._ymouse, false)) {
+sc = 120;
+} else {
+sc = 100;
+}
+_xscale += (sc-_xscale)/3;
+_yscale = _xscale;
+};
+onMouseDown = function () {
+if (sc == 120) {
+_parent.removeMovieClip();
+}
+};
+*/
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMGroup selected="true">
+                  <members>
+                    <DOMShape selected="true">
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#666666" alpha="0.250980392156863"/>
+                        </FillStyle>
+                      </fills>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal">
+                            <fill>
+                              <SolidColor/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                        <StrokeStyle index="2">
+                          <SolidStroke scaleMode="normal">
+                            <fill>
+                              <SolidColor alpha="0.498039215686275"/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="!5000 200|0 200!0 200|0 0!0 0|5000 0!5000 0|5000 200"/>
+                        <Edge fillStyle0="1" fillStyle1="1" strokeStyle="2" edges="!4800 150|200 150!4900 100|100 100!4800 50|200 50"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix a="1.00799560546875" d="1.19999694824219" tx="125" ty="5"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix a="1.00799560546875" d="1.19999694824219" tx="125" ty="5"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#D7D0BB"/>
+                        </FillStyle>
+                      </fills>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal">
+                            <fill>
+                              <SolidColor/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                        <StrokeStyle index="2">
+                          <SolidStroke scaleMode="normal">
+                            <fill>
+                              <SolidColor alpha="0.498039215686275"/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge fillStyle0="1" fillStyle1="1" strokeStyle="2" edges="!2300 -50|-2300 -50"/>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="!2500 -100|2500 100!2500 100|-2500 100!-2500 100|-2500 -100!-2500 -100|2500 -100"/>
+                        <Edge fillStyle0="1" fillStyle1="1" strokeStyle="2" edges="!2400 0|-2400 0!2300 50|-2300 50"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

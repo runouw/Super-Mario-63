@@ -1,0 +1,170 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Level Designer Windows/LDW - Info/LDW - Info Mode" itemID="4854699c-000011b4" sourceFlashFilepath="F:\Super Mario 63\New computer\Level Designer (With Mario Engine new) 3.fla" sourceLibraryItemHRef="Level Designer Windows/LDW - Info/LDW - Info Mode" sourceLastModified="1213491612" lastModified="1213491612" lastUniqueIdentifier="3" sourceItemID="4854699c-000011b4">
+  <timeline>
+    <DOMTimeline name="LDW - Info Mode">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (_root.M.CourseMode == undefined) {
+	_root.M.CourseMode = 1;
+}
+gotoAndStop(_root.M.CourseMode+1);
+onEnterFrame = function () {
+	if (_parent.greyness.aa == 0) {
+		_root.M.CourseMode = _currentframe-1;
+		if (_currentframe == 2) {
+			tri1._alpha += (0-tri1._alpha)/3;
+		} else {
+			tri1._alpha += (100-tri1._alpha)/3;
+		}
+		if (_currentframe == 4) {
+			tri2._alpha += (0-tri2._alpha)/3;
+		} else {
+			tri2._alpha += (100-tri2._alpha)/3;
+		}
+		//
+		if (tri1.hitTest(_root._xmouse, _root._ymouse, false) && tri1._alpha>=99) {
+			tri1.sc = 130;
+		} else {
+			tri1.sc = 100;
+		}
+		tri1._xscale += (tri1.sc-tri1._xscale)/3;
+		tri1._yscale = tri1._xscale;
+		//
+		if (tri2.hitTest(_root._xmouse, _root._ymouse, false) && tri2._alpha>=99) {
+			tri2.sc = 130;
+		} else {
+			tri2.sc = 100;
+		}
+		tri2._xscale += (tri2.sc-tri2._xscale)/3;
+		tri2._yscale = tri2._xscale;
+		//
+		if (this.hitTest(_root._xmouse, _root._ymouse, false)) {
+			bg._alpha += (50-bg._alpha)/3;
+		} else {
+			bg._alpha += (0-bg._alpha)/3;
+		}
+	}
+};
+onMouseDown = function () {
+	if (tri2.sc == 130) {
+		nextFrame();
+	} else if (tri1.sc == 130) {
+		prevFrame();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="3" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" duration="4" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Level Designer Windows/LDW - Info/LDW - Info Arrow" name="tri2">
+                  <matrix>
+                    <Matrix tx="149.55" ty="10.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Level Designer Windows/LDW - Info/LDW - Info Arrow" name="tri1">
+                  <matrix>
+                    <Matrix d="-1" tx="149.55" ty="0.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMStaticText left="81.5" width="132.55" height="15.6" autoExpand="true" antiAliasThickness="68" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-78.05" ty="-1.4"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Collect Shine Sprite</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" size="14" face="Arial-BoldMT"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMStaticText left="81.5" width="131.75" height="15.6" autoExpand="true" antiAliasThickness="68" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-78.05" ty="-1.4"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Collect 8 Red Coins</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" size="14" face="Arial-BoldMT"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements>
+                <DOMStaticText left="81.5" width="139.65" height="15.6" autoExpand="true" antiAliasThickness="68" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-78.05" ty="-1.4"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Collect 5 Silver Stars</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" size="14" face="Arial-BoldMT"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#FF4FFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="4" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Level Designer Windows/LDW - Info/LDW - Info BG BG" name="bg">
+                  <matrix>
+                    <Matrix a="1.04396057128906" d="1.00308227539063" tx="0.8" ty="-2.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="67.25" y="8.1"/>
+                  </transformationPoint>
+                  <color>
+                    <Color/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

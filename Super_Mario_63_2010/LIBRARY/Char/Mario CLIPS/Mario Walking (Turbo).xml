@@ -1,0 +1,230 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="      Char/  Mario CLIPS/Mario Walking (Turbo)" itemID="44c4f5cf-00000424" sourceFlashFilepath="Rob &amp; Steve Hewitt\New Mario Sunshine Project.fla" sourceLibraryItemHRef="Mario Walking (Turbo)" sourceLastModified="1154108450" lastModified="1215181760" lastUniqueIdentifier="2" sourceItemID="44c4f5cf-00000424">
+  <timeline>
+    <DOMTimeline name="Mario Walking (Turbo)">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" duration="80" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[frame = 1;
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		oldframe = frame;
+		frame += _root.Course.Char.xspeed;
+		if (((frame>10 && frame<=20) && !(oldframe>10 && oldframe<=20)) || ((frame>50 && frame<=60) && !(oldframe>50 && oldframe<=60))) {
+			var walksound:Sound = new Sound(this);
+			walksound.attachSound(_root.StepSound);
+			walksound.start(0, 1);
+			walksound.setVolume(_root.MarioVolume);
+			panX = _root.Course.Char._x;
+			panX *= 1;
+			panX = Math.min(100, panX);
+			panX = Math.max(-100, panX);
+			walksound.setPan(panX);
+		}
+		if (_root.Course.Char.Ice == true) {
+			frame -= _root.Course.Char.xspeed/2;
+			if (Key.isDown(Key.RIGHT)) {
+				frame += 3;
+			}
+			if (Key.isDown(Key.LEFT)) {
+				frame -= 3;
+			}
+		}
+		gotoAndStop(Math.round(frame)*1/1);
+		if (frame>=80) {
+			frame = 1;
+		}
+		if (frame<=0) {
+			frame = 80;
+		}
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="10" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Wing Code">
+                  <matrix>
+                    <Matrix a="-1" tx="-3" ty="-25.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="10" duration="10" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Wing Code">
+                  <matrix>
+                    <Matrix a="-1" tx="-3" ty="-26.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="20" duration="10" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Wing Code">
+                  <matrix>
+                    <Matrix a="-1" tx="-3" ty="-26.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="30" duration="10" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Wing Code">
+                  <matrix>
+                    <Matrix a="-1" tx="-3.25" ty="-26.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="40" duration="10" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Wing Code">
+                  <matrix>
+                    <Matrix a="-1" tx="-3" ty="-26.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="50" duration="10" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Wing Code">
+                  <matrix>
+                    <Matrix a="-1" tx="-3" ty="-26.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="60" duration="10" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Wing Code">
+                  <matrix>
+                    <Matrix a="-1" tx="-3" ty="-26.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="70" duration="10" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Wing Code">
+                  <matrix>
+                    <Matrix a="-1" tx="-3.5" ty="-26.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" duration="10" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario Walking (Turbo) 2">
+                  <matrix>
+                    <Matrix tx="-14.5" ty="-41"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="10" duration="10" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario Walking (Turbo) 3">
+                  <matrix>
+                    <Matrix tx="-13.5" ty="-41.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="20" duration="10" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario Walking (Turbo) 4">
+                  <matrix>
+                    <Matrix tx="-13.5" ty="-42.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="30" duration="10" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario Walking (Turbo) 5">
+                  <matrix>
+                    <Matrix tx="-18" ty="-43"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="40" duration="10" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario Walking (Turbo) 6">
+                  <matrix>
+                    <Matrix tx="-13.5" ty="-42.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="50" duration="10" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario Walking (Turbo) 7">
+                  <matrix>
+                    <Matrix tx="-13.5" ty="-41.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="60" duration="10" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario Walking (Turbo) 8">
+                  <matrix>
+                    <Matrix tx="-13.5" ty="-42.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="70" duration="10" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario Walking (Turbo) 9">
+                  <matrix>
+                    <Matrix tx="-17" ty="-44.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,157 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name=" Menu/Menu Folder/  Universal Stuff/Menu-Back Button" itemID="47774d95-00000e2e" sourceFlashFilepath="Rob &amp; Steve Hewitt\My Documents\Super Mario 63\Menu Design.fla" sourceLibraryItemHRef="Menu Folder/  Universal Stuff/Menu-Back Button" sourceLastModified="1199083746" lastModified="1245884074" lastUniqueIdentifier="1" sourceItemID="47774d95-00000e2e">
+  <timeline>
+    <DOMTimeline name="Menu-Back Button">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[ywave = random(90);
+rwave = random(90);
+Y = this._y;
+R = _rotation;
+r = 0;
+StartCoding = function () {
+	onEnterFrame = function () {
+		if (bg.hitTest(_root._xmouse, _root._ymouse, true) && _root.m.clicked !== true) {
+			hl = true;
+		} else {
+			hl = false;
+		}
+		if (cl == true) {
+			rspeed += 1;
+			r -= rspeed;
+			rspeed *= 0.95;
+			this._xscale += scalespeed;
+			scalespeed -= 1;
+			if (this._xscale<60) {
+				scalespeed += 1;
+				scalespeed *= 0.7;
+			}
+		}
+		if (hl == true && cl !== true) {
+			this._xscale += (125-this._xscale)/4;
+			r -= (125-this._xscale)/10;
+			txt._xscale += (125-this._xscale)/5;
+			txt._yscale += (125-this._yscale)/4;
+			ywave -= 0.035;
+		} else if (cl !== true) {
+			this._xscale += (100-this._xscale)/4;
+			r -= (100-this._xscale)/10;
+			txt._xscale += (100-this._xscale)/5;
+			txt._yscale += (100-this._yscale)/4;
+		}
+		//                           
+		this._yscale = this._xscale;
+		//
+		ywave += 0.035;
+		rwave += 0.025;
+		this._y = Y+Math.sin(ywave)*4;
+		this._rotation = R+r+Math.sin(rwave)*_xscale/50;
+	};
+	onMouseDown = function () {
+		if (hl == true && cl !== true && _root.m.clicked !== true) {
+			cl = true;
+			rspeed = 0;
+			scalespeed = 8;
+			_root.m.clicked = true;
+			_root.m.TransitionF("Start");
+		}
+	};
+};
+//
+StartCoding();
+//
+//
+//
+StopCoding = function () {
+	onEnterFrame = function () {
+		_rotation += 1;
+		this._xscale += 5;
+		this._yscale = this._xscale;
+		_alpha -= 9;
+		if (_alpha<=0) {
+			_alpha = 0;
+			gotoAndStop(3);
+			onEnterFrame = null;
+		}
+	};
+	onMouseDown = null;
+};
+//
+RestartCoding = function () {
+	gotoAndStop(2);
+	onEnterFrame = function () {
+		_rotation -= 1;
+		this._xscale -= 5;
+		this._yscale = this._xscale;
+		_alpha += 9;
+		if (_alpha>=100) {
+			_alpha = 100;
+			StartCoding();
+		}
+	};
+	onMouseDown = null;
+};
+//
+//
+//
+gotoAndStop(2);
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Menu Folder/  Universal Stuff/Menu Back Text" name="txt">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter blurX="6" blurY="6" color="#00FFFF" inner="true" strength="10"/>
+                    <BevelFilter strength="1.5"/>
+                    <GlowFilter blurX="2" blurY="2" color="#FFFFFF" inner="true" strength="10"/>
+                    <BevelFilter shadowColor="#00FFFF" strength="0.88"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Menu Folder/  Universal Stuff/Menu Button BG" name="bg">
+                  <matrix>
+                    <Matrix a="0.78759765625" d="0.74957275390625"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	gotoAndPlay(random(39)+1);
+}
+]]></script>
+                  </Actionscript>
+                  <filters>
+                    <BevelFilter distance="2"/>
+                    <AdjustColorFilter brightness="80" saturation="18" hue="-58"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

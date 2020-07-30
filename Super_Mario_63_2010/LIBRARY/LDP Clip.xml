@@ -1,0 +1,250 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="LDP Clip" itemID="4a567987-000018ab" sourceFlashFilepath="F:\Super Mario 63\New computer\Level Designer (Website) 2.fla" sourceLibraryItemHRef="LDP Clip" sourceLastModified="1248324465" lastModified="1253596547" lastUniqueIdentifier="36" sourceItemID="4a567987-000018ab">
+  <timeline>
+    <DOMTimeline name="LDP Clip">
+      <layers>
+        <DOMLayer name="Layer 5" color="#4FFFFF">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[N = function (fr) {
+	//load link
+	fra = fr;
+	trans.gotoAndPlay(2);
+	count = 0;
+	onEnterFrame = function () {
+		count++;
+		if (count>=10) {
+			if (fra == "LD") {
+				//transition to LD
+				_root.LDMenuFrame = 1;
+				_root.EraseLevel();
+				_root.CreateLevelDesigner();
+			}
+			if (fra == "Lev") {
+				//transition to level description page
+				_root.LDMenuFrame = 2;
+				gotoAndStop("Lev");
+			}
+			if (fra == "TS") {
+				_root.LDMenuFrame = 1;
+				_root.gotoAndStop("Title");
+			}
+			if (fra == "Sha") {
+				gotoAndStop("Sha");
+			}
+			onEnterFrame = null;
+		}
+	};
+};
+stop();
+if (firstrun == undefined) {
+	if (_root.LDMenuFrame !== undefined) {
+		gotoAndStop(_root.LDMenuFrame);
+	}
+	//   
+	firstrun = true;
+}
+if (_root.Page == undefined) {
+	_root.Page = 0;
+	_root.Order = "newest";
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[Stats = LDResults[SelectedLevel].split(",");
+iD.text = Stats[0];
+Name.text = Stats[1];
+Author.text = Stats[2];
+Score.text = "Score: "+Stats[3];
+Diff.text = "Difficulty: "+Stats[4];
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.PlayLevelFromCode = function(code) {
+	_root.TileArray = [];
+	_root.GridXSize = 50;
+	_root.GridYSize = 30;
+	_root.LDItemArray = [];
+	//
+	avar = "";
+	//
+	code = code.split("~");
+	_root.GridXSize = Number(code[0].split('x')[0]);
+	_root.GridYSize = Number(code[0].split('x')[1]);
+	_root.LDMusic = Number(code[3]);
+	_root.LDCourseBG = Number(code[4]);
+	_root.LDCourseName = unescape(String(code[5]));
+	_root.TileArray = _root.ExpandNumbers(code[1]);
+	_root.LDItemArray = code[2].split("|");
+	for (i=0; i<_root.LDItemArray.length; i++) {
+		_root.LDItemArray[i] = _root.LDItemArray[i].split(",");
+	}
+	//
+	MaxX = _root.GridXSize;
+	MaxY = _root.GridYSize;
+	//
+	_root.TestLevel();
+};
+_root.EraseLevel();
+_root.LoadCourseFromCode(_root.LoadedCode);
+//_root.PlayLevelFromCode(_root.LoadedCode);
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Blackgr" color="#FF4FFF" locked="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="4" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="LDP Transitio" name="trans" selected="true">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" name="view" labelType="name" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="LDP Create Level Button">
+                  <matrix>
+                    <Matrix tx="-132.95" ty="-126.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-0.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="LDP Share Button">
+                  <matrix>
+                    <Matrix tx="-111.95" ty="128.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="LDP Load Cln" name="loa">
+                  <matrix>
+                    <Matrix tx="131.5" ty="126.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="LDP Title Screen">
+                  <matrix>
+                    <Matrix tx="149.5" ty="-127.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" name="Lev" labelType="name" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="LDP Page 2">
+                  <matrix>
+                    <Matrix tx="-1.6" ty="8.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-0.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMStaticText selected="true" width="53.65" height="16.8" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-26.8" ty="-8.4"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Loading</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" size="15" face="ArialMT"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" name="Sha" labelType="name" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="LD share level clipeth">
+                  <matrix>
+                    <Matrix tx="-0.25" ty="0.25"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="0.25" y="-0.25"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="LDP Table" name="box">
+                  <matrix>
+                    <Matrix ty="-63"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="LDP Title Screen" name="ts">
+                  <matrix>
+                    <Matrix tx="149.5" ty="-87.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[// blah this is a diffrent moveiclip adobe/macromedia!!]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" duration="2" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="BG" color="#4FFF4F" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="4" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Menu Folder/  Universal Stuff/ BG/Menu Background Clip">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

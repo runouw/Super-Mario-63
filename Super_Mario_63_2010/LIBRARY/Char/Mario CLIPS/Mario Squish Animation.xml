@@ -1,0 +1,114 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="      Char/  Mario CLIPS/Mario Squish Animation" itemID="45fc26e7-000004e3" lastModified="1229966453" lastUniqueIdentifier="3">
+  <timeline>
+    <DOMTimeline name="Mario Squish Animation">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.Mariosound = new Sound(this);
+_root.Mariosound.attachSound("Mario-Squish");
+_root.Mariosound.start(0, 1);
+_root.Mariosound.setVolume(_root.MarioVolume);
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		play();
+	} else {
+		stop();
+	}
+};
+count = 0;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="4" duration="9" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (_root.Course.Char.Squish == true && count++<48) {
+	gotoAndPlay(_currentframe-1);
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="13" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.Course.Char.attack = false;
+_root.Course.Char.attackFrame = "";
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" duration="3" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Mario CLIPS/Mario (none) Standing Clips">
+                  <matrix>
+                    <Matrix d="0.642852783203125" tx="-3" ty="14"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Mario CLIPS/Mario (none) Standing Clips">
+                  <matrix>
+                    <Matrix d="0.25" tx="-3" ty="15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="4" duration="4" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Mario CLIPS/Mario (none) Standing Clips">
+                  <matrix>
+                    <Matrix d="0.25" tx="-3" ty="15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="8" duration="5" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Mario CLIPS/Mario (none) Standing Clips">
+                  <matrix>
+                    <Matrix d="1.1875" tx="-3" ty="11.25"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="13" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Mario CLIPS/Mario (none) Standing Clips">
+                  <matrix>
+                    <Matrix tx="-3" ty="12"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

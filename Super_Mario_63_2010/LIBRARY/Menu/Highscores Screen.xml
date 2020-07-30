@@ -1,0 +1,466 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name=" Menu/Highscores Screen" itemID="47841f8f-00000c9e" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="HighscoresScreen" sourceFlashFilepath="Rob &amp; Steve Hewitt\My Documents\Super Mario 63\Highscore Design.fla" sourceLibraryItemHRef="Highscores Screen" sourceLastModified="1201150704" lastModified="1237154993" lastUniqueIdentifier="12" sourceItemID="47841f8f-00000c9e">
+  <timeline>
+    <DOMTimeline name="Highscores Screen">
+      <layers>
+        <DOMLayer name="Layer 8" color="#FF4F4F">
+          <frames>
+            <DOMFrame index="0" duration="16" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[key = false;
+num = 0;
+//
+level = "Secret Course";
+if (_root.lastPlayinglevel == 1) {
+	level = "Bob-omb Battle Field";
+}
+if (_root.lastPlayinglevel == 2) {
+	level = "Snowmans Land";
+}
+if (_root.lastPlayinglevel == 3) {
+	level = "Hazy Maze Cave";
+}
+if (_root.lastPlayinglevel == 4) {
+	level = "Boo's Mansion";
+}
+if (_root.lastPlayinglevel == 5) {
+	level = "Lethal Lava Land";
+}
+if (_root.lastPlayinglevel == 6) {
+	level = "Tall Tall Mountain";
+}
+if (_root.lastPlayinglevel == 7) {
+	level = "Rainbow Ride";
+}
+if (_root.lastPlayinglevel == 8) {
+	level = "Bowsers Castle";
+}
+if (_root.lastPlayinglevel == 9) {
+	level = "Sinking Sand Land";
+}
+if (_root.lastPlayinglevel == 10) {
+	level = "Wet Dry World";
+}
+if (_root.lastPlayinglevel == 11) {
+	level = "Tick Tock Clock";
+}
+//level = _root.playingcourse;    
+star = _root.StarNameArray[_root.lastStarnamenum];
+sta = star;
+cou = level;
+//
+SAVE = function () {
+	_root.SaveFile();
+	if (_root.TotalCoins>_root["RecordCoin"+_root.lastPlayinglevel]) {
+		//
+		_root["RecordCoin"+_root.lastPlayinglevel] = _root.TotalCoins;
+		_root.SaveHighScores();
+	}
+	count = 0;
+	onEnterFrame = function () {
+		count++;
+		_alpha -= 5;
+		_y -= 3;
+		if (count>=20) {
+			_root.DoneWithHighScores = true;
+			this.removeMovieClip();
+		}
+	};
+	//Robert's Save Coding
+};
+NOSAVE = function () {
+	//continue
+	count = 0;
+	onEnterFrame = function () {
+		count++;
+		_alpha -= 5;
+		_y -= 3;
+		if (count>=20) {
+			_root.DoneWithHighScores = true;
+			this.removeMovieClip();
+		}
+	};
+};
+SAVEXIT = function () {
+	_root.newstar = false;
+	_root.SaveFile();
+	_root.starwarpframe = false;
+	_root.Blackout();
+	onEnterFrame = function () {
+		if (_root.starwarpframe == true) {
+			_root.ReturnToTitle();
+			this.removeMovieClip();
+		}
+	};
+	//continue
+};
+ChangeHL = function (a, hl) {
+	hl = String(Number(hl)+a);
+	if (Number(hl)>3) {
+		hl = "1";
+	} else if (Number(hl)<1) {
+		hl = "3";
+	}
+	return hl;
+};
+CheckChange = function (a) {
+	if (lastkey == false) {
+		if (hl == undefined) {
+			hl = "1";
+		} else {
+			hl = ChangeHL(a, hl);
+		}
+	}
+};
+onEnterFrame = function () {
+	if (clicked == false) {
+		lastkey = key;
+		if (_root.KeyRIGHT() == true || _root.KeyDOWN() == true) {
+			key = true;
+			CheckChange(1);
+		} else if (_root.KeyLEFT() == true || _root.KeyUP() == true) {
+			key = true;
+			CheckChange(-1);
+		} else {
+			key = false;
+		}
+		//
+		//_root.KeyLEFT() == true || _root.KeyDOWN() == true
+		//   
+		if (_xmouse !== lastxmouse || _ymouse !== lastymouse) {
+			mousemove = true;
+		} else {
+			mousemove = false;
+		}
+		lastxmouse = _xmouse;
+		lastymouse = _ymouse;
+	}
+};
+//
+/*if (_root.KeyRIGHT() == true) {
+key = "RIGHT";
+} else if (_root.KeyLEFT() == true) {
+key = "LEFT";
+} else if (_root.KeyUP() == true) {
+key = "UP";
+} else if (_root.KeyDOWN() == true) {
+key = "DOWN";
+}*/
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="16" duration="23" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+stopnum = _currentframe;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="39" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+stopnum = _currentframe;
+clicked = false;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Curse" color="#808080" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="11" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMDynamicText width="360.4" height="69" antiAliasThickness="68" isSelectable="false" variableName="cou">
+                  <matrix>
+                    <Matrix tx="-180.2" ty="-115"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Course ##&#xD;Course-Course-Course-Course</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" size="21" bitmapSize="420" face="Arial-BoldMT" fillColor="#00FF00"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                  <filters>
+                    <BevelFilter blurX="0" blurY="0" distance="0" shadowColor="#006600" strength="0"/>
+                    <GlowFilter blurX="0" blurY="0" color="#000000" strength="0"/>
+                    <BlurFilter blurX="100" blurY="100"/>
+                  </filters>
+                </DOMDynamicText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="11" duration="29" keyMode="9728">
+              <elements>
+                <DOMDynamicText width="360.4" height="69" antiAliasThickness="68" isSelectable="false" variableName="cou">
+                  <matrix>
+                    <Matrix tx="-180.2" ty="-115"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Course ##&#xD;Course-Course-Course-Course</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" size="21" bitmapSize="420" face="Arial-BoldMT" fillColor="#00FF00"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                  <filters>
+                    <BevelFilter blurX="2" blurY="2" shadowColor="#006600"/>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                    <BlurFilter blurX="0" blurY="0"/>
+                  </filters>
+                </DOMDynamicText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="twinkle" color="#9933CC" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" duration="11" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMDynamicText width="360.95" height="20.1" antiAliasThickness="68" isSelectable="false" variableName="sta">
+                  <matrix>
+                    <Matrix tx="-180.45" ty="-7"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>StarName-StarName-StarName-Namey</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" size="18" bitmapSize="360" face="Arial-BoldMT" fillColor="#FFFF00"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                  <filters>
+                    <BevelFilter blurX="0" blurY="0" distance="0" shadowColor="#F2E700" strength="0"/>
+                    <GlowFilter blurX="0" blurY="0" color="#000000" strength="0"/>
+                    <BlurFilter blurX="100" blurY="100"/>
+                  </filters>
+                </DOMDynamicText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="13" duration="27" keyMode="9728">
+              <elements>
+                <DOMDynamicText width="361.4" height="55" antiAliasThickness="68" isSelectable="false" variableName="sta" lineType="multiline no wrap">
+                  <matrix>
+                    <Matrix tx="-180.45" ty="-37"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>StarName-StarName-StarName-Namey *secondline*</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" size="18" bitmapSize="360" face="Arial-BoldMT" fillColor="#FFFF00"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                  <filters>
+                    <BevelFilter blurX="2" blurY="2" shadowColor="#F2E700" strength="2"/>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                    <BlurFilter blurX="0" blurY="0"/>
+                  </filters>
+                </DOMDynamicText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="C" color="#4FFFFF" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="4" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="4" duration="11" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/HighScores Coin Count">
+                  <matrix>
+                    <Matrix ty="44.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter blurX="100" blurY="100"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="15" duration="25" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/HighScores Coin Count" selected="true">
+                  <matrix>
+                    <Matrix ty="44.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter blurX="0" blurY="0"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Save" color="#FFFF4F" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="18" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="18" duration="9" tweenType="motion" keyMode="17921" acceleration="100">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Highscores Save &amp; Continue">
+                  <matrix>
+                    <Matrix tx="-145.5" ty="181.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter color="#0000FF"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="27" duration="8" tweenType="motion" keyMode="17921" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Highscores Save &amp; Continue">
+                  <matrix>
+                    <Matrix tx="-145.5" ty="144.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter color="#0000FF"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="35" duration="5" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Highscores Save &amp; Continue">
+                  <matrix>
+                    <Matrix tx="-145.5" ty="111.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter color="#0000FF"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Don't" color="#FF4FFF" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="20" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="20" duration="9" tweenType="motion" keyMode="17921" acceleration="100">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Highscores No Save">
+                  <matrix>
+                    <Matrix tx="-2.75" ty="181.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-0.05" y="-0.05"/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="29" duration="8" tweenType="motion" keyMode="17921" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Highscores No Save">
+                  <matrix>
+                    <Matrix tx="-2.75" ty="144.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-0.05" y="-0.05"/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="37" duration="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Highscores No Save">
+                  <matrix>
+                    <Matrix tx="-2.75" ty="111.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-0.05" y="-0.05"/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Exit" color="#4F80FF" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="22" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="22" duration="9" tweenType="motion" keyMode="17921" acceleration="100">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Highscores Savexit">
+                  <matrix>
+                    <Matrix tx="143.2" ty="181.25"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-0.05" y="-0.05"/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter color="#00FF00"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="31" duration="8" tweenType="motion" keyMode="17921" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Highscores Savexit">
+                  <matrix>
+                    <Matrix tx="143.2" ty="144.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-0.05" y="-0.05"/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter color="#00FF00"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="39" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Highscores Savexit">
+                  <matrix>
+                    <Matrix tx="143.2" ty="111.25"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-0.05" y="-0.05"/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter color="#00FF00"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

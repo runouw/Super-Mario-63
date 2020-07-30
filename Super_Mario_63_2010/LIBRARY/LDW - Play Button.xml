@@ -1,0 +1,63 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="LDW - Play Button" itemID="4974f207-00001351" sourceFlashFilepath="F:\Super Mario 63\New computer\Level Designer (With Mario Engine new) 3.fla" sourceLibraryItemHRef="LDW - Play Button" sourceLastModified="1232402092" lastModified="1234810359" sourceItemID="4974f207-00001351">
+  <timeline>
+    <DOMTimeline name="LDW - Play Button">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	if (this.hitTest(_root._xmouse, _root._ymouse, true)) {
+		hl = true;
+		sc = 120;
+	} else {
+		hl = false;
+		sc = 100;
+	}
+	_xscale += (sc-_xscale)/3;
+	_yscale = _xscale;
+	//txt._xscale += (sc-txt._xscale)/3;
+	//txt._yscale = txt._xscale;
+};
+onMouseDown = function () {
+	if (hl == true) {
+		_parent.PlayF();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#00FF00"/>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <SolidColor/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="!-93 183|-93 -182!-93 -182|92 3!92 3|-93 183"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

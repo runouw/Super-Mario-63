@@ -1,0 +1,1271 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Clips/ C - Castle/ Outside Castle/Castle Back GFX" itemID="45994402-000001b5" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="CastleBackGFX" lastModified="1246140422" lastUniqueIdentifier="286">
+  <timeline>
+    <DOMTimeline name="Castle Back GFX">
+      <layers>
+        <DOMLayer name="Layer 4" color="#FF4FFF" outline="true" current="true" isSelected="true" useOutlineView="true">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.StopBGsong();
+_root.Fluddpow = "";
+_root.Restartcoins();
+//
+_root.SaveFluddH = false;
+_root.SaveFluddR = false;
+_root.SaveFluddT = false;
+_root.Fluddpow = ""
+_root.Playinglevel = 0;
+_root.Starnamenum = 0
+//
+_root.AreaTextClipF("Castle Grounds:"+newline+"<i>Outside the Castle</i>", 35);
+//
+color = Math.round(_root.TotalStars*1.5)+25;
+color2 = Math.abs(100-color);
+myColor = new Color(this);
+colorTrans = new Object();
+colorTrans = {ra:(color*0.5)+50-(color2/3), rb:0, ga:(color*0.5)+50-(color2/3), gb:0, ba:(color*0.5)+50-(color2/3), bb:0, aa:100, ab:0};
+myColor.setTransform(colorTrans);
+onEnterFrame = function () {
+	color += Math.round(((_root.TotalStars*1.5)+25)-color)/7;
+	if (_root.CheatCastleRestore == true) {
+		color = 100;
+	}
+	color = Math.max(color, 0);
+	color = Math.min(color, 100);
+	color2 = Math.abs(100-color);
+	// color = percent of stars obained
+	// color 2  = percent of stars not yet obtained
+	colorTrans = {ra:(color*0.75)+25-(color2/5), rb:0, ga:(color*0.9)+10-(color2/3), gb:0, ba:(color*0.9)+10-(color2/3), bb:0, aa:100, ab:0};
+	myColor.setTransform(colorTrans);
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" duration="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+_root.warpframe = false;
+bnum = random(30)+30;
+bcount = 0;
+btype = random(6)+1;
+//
+this.createEmptyMovieClip("birdsound", _root.getNextHighestDepth());
+onEnterFrame = function () {
+	//
+	//
+	//trace("Cam : "+_root["Cam"+t+"change"])
+	//
+	color += Math.round(((_root.TotalStars*1.5)+25)-color)/7;
+	if (_root.CheatCastleRestore == true) {
+		color = 100;
+	}
+	//color = Math.max(color, 0);             
+	//color = Math.min(color, 100);
+	if (color>100) {
+		oldcolor = color;
+		color += Math.abs(100-color)*2.5;
+	}
+	color2 = Math.abs(100-color);
+	// color = percent of stars obained
+	// color 2  = percent of stars not yet obtained
+	colorTrans = {ra:(color*0.5)+50-(color2/3), rb:0, ga:(color*0.5)+50-(color2/3), gb:0, ba:(color*0.5)+50-(color2/3), bb:0, aa:100, ab:0};
+	myColor.setTransform(colorTrans);
+	if (color>100) {
+		color = oldcolor;
+	}
+	//      
+	//Bird Chirp Code
+	if (_root.TotalStars>20) {
+		birdvolume = 1;
+		//        
+		bcount++;
+		if (bcount>bnum) {
+			birdsound = new Sound(this);
+			birdsound.attachSound("Birdy"+btype);
+			birdsound.start(0, 1);
+			birdsound.setVolume(Math.round(_root.MarioVolume/2)*birdvolume);
+			bcount = 0;
+			btype = random(6)+1;
+			bnum = random(50)+(73-_root.TotalStars);
+		}
+	}
+	//                
+	if (this.warp1.hitTest(_root.Course.Char.charClip.feet) && _root.Star[39] == true) {
+		_root.Course.Char.attack = true;
+		_root.Course.Char.xspeed = 0;
+		_root.Course.Char.yspeed = 0;
+		_root.Course.Char.attackFrame = "none";
+		warp = true;
+		warpnum = 1;
+	}
+	// && _root.Course.Char.yspeed<=0 && _root.TotalStars>=63
+	if (this.warp2.hitTest(_root.Course.Char.charClip.feet)) {
+		_root.Course.Char.attack = true;
+		_root.Course.Char.xspeed = 0;
+		_root.Course.Char.yspeed = 0;
+		_root.Course.Char.attackFrame = "none";
+		warp = true;
+		warpnum = 2;
+	}
+	if (warp == true && _root.warpframe == false) {
+		if (warpnum == 1) {
+			_root.attachMovie("lefttransition", "lefttransition"+_root.getNextHighestDepth(), _root.getNextHighestDepth(), {_x:_root.screensizeX/2, _y:_root.screensizeY/2});
+		}
+		if (warpnum == 2) {
+			_root.attachMovie("righttransition", "righttransition"+_root.getNextHighestDepth(), _root.getNextHighestDepth(), {_x:_root.screensizeX/2, _y:_root.screensizeY/2});
+		}
+		warp = false;
+	}
+	if (_root.warpframe == true) {
+		if (warpnum == 1) {
+			_root.changecourse("lefttransition2", "8-E1-2-2", 964, -783, 964, -783, true);
+		}
+		if (warpnum == 2) {
+			_root.Fluddpow = ""
+			//_root.StopBGsong();
+			_root.Restartcoins();
+			_root.changecourse("righttransition2", "K-1", 0, 0, 0, 0, true);
+		}
+		//_root.warpframe = false;                                            
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="warp1" selected="true">
+                  <matrix>
+                    <Matrix a="0" b="3.77369689941406" c="-3.12469482421875" d="0" tx="-1485.8" ty="31.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="warp2" selected="true">
+                  <matrix>
+                    <Matrix a="0" b="18.8684844970703" c="-18.7481689453125" d="0" tx="2392.1" ty="-693.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Other/Camera Control Box" selected="true">
+                  <matrix>
+                    <Matrix a="2.27969360351563" d="2.19999694824219" tx="-1041.65" ty="48.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	t = "X";
+	amount = 50
+	speed = 20
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 7" color="#4F80FF" outline="true" useOutlineView="true">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip">
+                  <matrix>
+                    <Matrix a="-2.30282592773438" d="-6.8424072265625" ty="23"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+	mess = "(Hint: Press <b>Up</b> to enter a door)";
+}
+onClipEvent (enterFrame) {
+	if (_root.TotalStars<=0 && _root.Star[39] == false) {
+		if (this.hitTest(_root.Course.Char.charClip.body)) {
+			if (_root.PauseGame == false && _root.playpause == false) {
+				_root.TextHint = mess;
+			}
+		} else {
+			if (mess == _root.TextHint) {
+				_root.TextHint = "";
+			}
+		}
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/ Goonie/Goonie Code">
+                  <matrix>
+                    <Matrix tx="262.9" ty="-302"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_xscale = 100;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/ Goonie/Goonie Code">
+                  <matrix>
+                    <Matrix tx="148.95" ty="-188.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_xscale = 100;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/ Goonie/Goonie Code">
+                  <matrix>
+                    <Matrix tx="-250.9" ty="-217.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_xscale = -100;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Squirt Nozzle Box Clip">
+                  <matrix>
+                    <Matrix tx="169.5" ty="-194.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Turbo Nozzle Box Clip">
+                  <matrix>
+                    <Matrix tx="-208.5" ty="-194.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Rocket Nozzle Box Clip">
+                  <matrix>
+                    <Matrix tx="-139.5" ty="-194.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ A-F/ Butterflies/Butterfly Code">
+                  <matrix>
+                    <Matrix tx="470.4" ty="61.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ A-F/ Butterflies/Butterfly Code">
+                  <matrix>
+                    <Matrix tx="654.3" ty="92.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ A-F/ Butterflies/Butterfly Code">
+                  <matrix>
+                    <Matrix tx="-1082.5" ty="59.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ A-F/ Bullet-Bills/Golden Bullet Bill Launcher">
+                  <matrix>
+                    <Matrix tx="66" ty="26.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ A-F/ Bullet-Bills/Golden Bullet Bill Launcher">
+                  <matrix>
+                    <Matrix tx="-58" ty="26.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/ Goomba/Goomba">
+                  <matrix>
+                    <Matrix tx="236.95" ty="45.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ A-F/ Bullet-Bills/Gold Bullet Bill">
+                  <matrix>
+                    <Matrix tx="411.3" ty="-51"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ A-F/ Bullet-Bills/Golden Bullet Bill Launcher">
+                  <matrix>
+                    <Matrix a="0" b="1" c="-1" d="0" tx="385.8" ty="-94.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ A-F/ Bullet-Bills/Golden Bullet Bill Launcher">
+                  <matrix>
+                    <Matrix a="0" b="-1" c="1" d="0" tx="-380.5" ty="-94.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Themed PL/ Rainbow Ride/Swinging Ship Platforms">
+                  <matrix>
+                    <Matrix tx="526.2" ty="-129.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Themed PL/ Rainbow Ride/Swinging Ship Platforms">
+                  <matrix>
+                    <Matrix tx="889.2" ty="-147.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	angle = -50;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Themed PL/ Rainbow Ride/Swinging Ship Platforms">
+                  <matrix>
+                    <Matrix tx="1277.15" ty="-159.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Themed PL/ Rainbow Ride/Swinging Ship Platforms">
+                  <matrix>
+                    <Matrix tx="1610.15" ty="-203.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	distance = 400;
+	basesize = 500;
+	speed = 2000;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/Sling Star/Sling Star BackGFX" name="ss1">
+                  <matrix>
+                    <Matrix tx="872.5" ty="105.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	otherstar = "ss1";
+	yblast = -25
+	xblast = 0
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/Sling Star/Sling Star BackGFX" name="ss2">
+                  <matrix>
+                    <Matrix a="0.965927124023438" b="0.258819580078125" c="-0.258819580078125" d="0.965927124023438" tx="872" ty="-265.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	otherstar = "ss2";
+	yblast = -23;
+	xblast = 6;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/Sling Star/Sling Star BackGFX" name="ss3">
+                  <matrix>
+                    <Matrix a="0.965927124023438" b="0.258819580078125" c="-0.258819580078125" d="0.965927124023438" tx="1872.5" ty="-83.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	otherstar = "ss3";
+	yblast = -20
+	xblast = 5
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/Sling Star/Sling Star BackGFX" name="ss4">
+                  <matrix>
+                    <Matrix tx="1109.45" ty="-508.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	otherstar = "ss4";
+	yblast = -25;
+	xblast = 0;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/Sling Star/Sling Star BackGFX" name="ss5">
+                  <matrix>
+                    <Matrix a="-0.707107543945313" b="0.707107543945313" c="-0.707107543945313" d="-0.707107543945313" tx="1102.5" ty="-920.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	otherstar = "ss5";
+	yblast = 10;
+	xblast = 20;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/Sling Star/Sling Star BackGFX">
+                  <matrix>
+                    <Matrix a="0.724746704101563" b="0.194122314453125" c="-0.19390869140625" d="0.723419189453125" tx="555"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	trackclip = "sst1";
+	//otherstar = "ss1";
+	yblast = 0;
+	xblast = 0;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ C - Castle/ Outside Castle/Castle Sling Star Path" name="sst1">
+                  <matrix>
+                    <Matrix tx="555"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 5" color="#4FFFFF" outline="true" useOutlineView="true">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip">
+                  <matrix>
+                    <Matrix a="5.66453552246094" d="37.4993591308594" tx="2221.8" ty="-493.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+onClipEvent (enterFrame) {
+	if (this.hitTest(_root.Course.Char.charClip.body) && _root.Course.Char.Water == true) {
+		_root.Course.Char.xspeed = _root.groundFriction(_root.Course.Char.xspeed, 0.03, 1.02);
+		_root.Course.Char.xspeed -= 0.5;
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Other/Camera Control Box">
+                  <matrix>
+                    <Matrix a="2.79998779296875" d="2.23948669433594" tx="180" ty="-18"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	t = "Y";
+	amount = 60
+	speed = 10;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Other/Camera Control Box">
+                  <matrix>
+                    <Matrix a="2.79998779296875" d="2.23948669433594" tx="-180" ty="-18"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	t = "Y";
+	amount = 60
+	speed = 10;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip">
+                  <matrix>
+                    <Matrix a="-5.66061401367188" d="-18.7521362304688" tx="-208" ty="-80"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+onClipEvent (enterFrame) {
+	if (this.hitTest(_root.Course.Char.charClip.body)) {
+		if (_root.PauseGame == false && _root.playpause == false) {
+			//_root.Course.Char.yspeed = _root.groundFriction(_root.Course.Char.yspeed, 0.015, 1.001);
+			if (savezoom == undefined) {
+				savezoom = _root.CameraZoom;
+			}
+			if (_root.CameraZoom>65) {
+				_root.CameraZoom -= 1;
+			}
+		}
+	} else {
+		if (savezoom !== undefined) {
+			if (_root.CameraZoom<savezoom) {
+				_root.CameraZoom += 1;
+			} else {
+				savezoom = undefined;
+			}
+		}
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip">
+                  <matrix>
+                    <Matrix a="-5.66061401367188" d="-18.7521362304688" tx="220" ty="-80"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+onClipEvent (enterFrame) {
+	if (this.hitTest(_root.Course.Char.charClip.body)) {
+		if (_root.PauseGame == false && _root.playpause == false) {
+			//_root.Course.Char.yspeed = _root.groundFriction(_root.Course.Char.yspeed, 0.015, 1.001);
+			if (savezoom == undefined) {
+				savezoom = _root.CameraZoom;
+			}
+			if (_root.CameraZoom>65) {
+				_root.CameraZoom -= 1;
+			}
+		}
+	} else {
+		if (savezoom !== undefined) {
+			if (_root.CameraZoom<savezoom) {
+				_root.CameraZoom += 1;
+			} else {
+				savezoom = undefined;
+			}
+		}
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip">
+                  <matrix>
+                    <Matrix a="0" b="8.41459655761719" c="-50.0935211181641" d="0" ty="-296.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+onClipEvent (enterFrame) {
+	if (_root.PauseGame == false && _root.playpause == false) {
+		if (this.hitTest(_root.Course.Char.charClip.body)) {
+			_root.changestep = 3;
+			_root.StepSound = "step-wetwood";
+		}
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 10" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="CapWingCode">
+                  <matrix>
+                    <Matrix tx="-160.5" ty="-242"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="CapMetalCode">
+                  <matrix>
+                    <Matrix tx="136.55" ty="-251.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="CapStarmanCode">
+                  <matrix>
+                    <Matrix tx="193.5" ty="-271.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="CapInvisCode">
+                  <matrix>
+                    <Matrix tx="246.55" ty="-251.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" duration="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Power-Ups/Rainbow Star">
+                  <matrix>
+                    <Matrix tx="5.4" ty="-1026"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	starfunction = function () {
+		_root.StartNewMusicAndIntroNoVar("WingCap - Intro", "WingCap - Repeat");
+		_root.PowerTimer = 32*30;
+		_root.WingCap = true;
+	};
+}
+]]></script>
+                  </Actionscript>
+                  <filters>
+                    <AdjustColorFilter brightness="45" saturation="-78"/>
+                    <BevelFilter blurX="2" blurY="2" distance="2" shadowColor="#666666"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" duration="4" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Regular/Mario Hedge 1">
+                  <matrix>
+                    <Matrix tx="-1054.5" ty="57.1"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Regular/Mario Hedge 2">
+                  <matrix>
+                    <Matrix tx="-1279.7" ty="8.85"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Regular/Mario Hedge 1">
+                  <matrix>
+                    <Matrix tx="-726.95" ty="36.2"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Regular/Mario Hedge 1">
+                  <matrix>
+                    <Matrix a="0.95648193359375" b="0.287979125976563" c="-0.287979125976563" d="0.95648193359375" tx="597.75" ty="73.95"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Regular/Mario Hedge 2">
+                  <matrix>
+                    <Matrix a="0.965927124023438" b="0.258819580078125" c="-0.258819580078125" d="0.965927124023438" tx="705.15" ty="49.25"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Cannon/Cannon Platform">
+                  <matrix>
+                    <Matrix tx="1027.55" ty="109.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Cannon/Cannon (main) Clip">
+                  <matrix>
+                    <Matrix tx="1028.6" ty="174.8"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	if (_root.TotalStars<63) {
+		cannonsetup = false;
+	}
+	side = "Both";
+	Xpower = 30;
+	Ypower = 40;
+	count = 0;
+}
+onClipEvent (enterFrame) {
+	count++;
+	if (_root.TotalStars>=63 && _root.Course.Char.attack == false && count>12) {
+		cannonsetup = true;
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMGroup>
+                  <members>
+                    <DOMBitmapInstance libraryItemName="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Coded PL Bits/Log Bit">
+                      <matrix>
+                        <Matrix tx="-786.1" ty="83.5"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                    <DOMBitmapInstance libraryItemName="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Coded PL Bits/Log Bit">
+                      <matrix>
+                        <Matrix tx="-966.1" ty="102"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                    <DOMBitmapInstance libraryItemName="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Coded PL Bits/Log Bit">
+                      <matrix>
+                        <Matrix tx="-951.1" ty="102"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                    <DOMBitmapInstance libraryItemName="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Coded PL Bits/Log Bit">
+                      <matrix>
+                        <Matrix tx="-936.1" ty="101.5"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                    <DOMBitmapInstance libraryItemName="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Coded PL Bits/Log Bit">
+                      <matrix>
+                        <Matrix tx="-921.1" ty="100.5"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                    <DOMBitmapInstance libraryItemName="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Coded PL Bits/Log Bit">
+                      <matrix>
+                        <Matrix tx="-906.1" ty="99"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                    <DOMBitmapInstance libraryItemName="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Coded PL Bits/Log Bit">
+                      <matrix>
+                        <Matrix tx="-801.1" ty="85.5"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                    <DOMBitmapInstance libraryItemName="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Coded PL Bits/Log Bit">
+                      <matrix>
+                        <Matrix tx="-816.1" ty="87.5"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                    <DOMBitmapInstance libraryItemName="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Coded PL Bits/Log Bit">
+                      <matrix>
+                        <Matrix tx="-831.1" ty="89.5"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                    <DOMBitmapInstance libraryItemName="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Coded PL Bits/Log Bit">
+                      <matrix>
+                        <Matrix tx="-846.1" ty="92"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                    <DOMBitmapInstance libraryItemName="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Coded PL Bits/Log Bit">
+                      <matrix>
+                        <Matrix tx="-891.1" ty="97.5"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                    <DOMBitmapInstance libraryItemName="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Coded PL Bits/Log Bit">
+                      <matrix>
+                        <Matrix tx="-876.1" ty="96"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                    <DOMBitmapInstance libraryItemName="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Coded PL Bits/Log Bit">
+                      <matrix>
+                        <Matrix tx="-861.1" ty="93.5"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                  </members>
+                </DOMGroup>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Decoration/ Signs &amp; Fences/ Coded Sign/Coded Sign">
+                  <matrix>
+                    <Matrix tx="-1307.4" ty="108.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	//example   = "You can jump in the cannon\nand blast off!";
+	signmessage = "Left Leads to Tutorial\nRight Leads to Castle";
+}]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Other/Sound FX Clip">
+                  <matrix>
+                    <Matrix tx="2088" ty="169.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Main Door Clip">
+                  <matrix>
+                    <Matrix a="-1.29998779296875" d="1.29998779296875" tx="1396.9" ty="374.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "C-8-3";
+		doortype = 4;
+	//d10
+	locked = true;
+	keytype = 4;
+	// Changed to locked till Kamek Battle
+	unlockitem = "GreenStar";
+	if ((_root.Star[50] == true && _root.BowserKey1 == true) || _root.CheatCastleUnlock == true) {
+		removelock = true;
+	}
+	dooropenarray = 9;
+	//                              
+	doorlockfunction = function () {
+		_root.Course.Char.attack = true;
+		_root.Course.Char.attackFrame = "Sign";
+		_root.Course.Char.xspeed = 0;
+		//
+		_root.PlayMessage("This door is locked!");
+		_root.Mariosound = new Sound(this);
+		_root.Mariosound.attachSound("Bowser - Laugh Muffled");
+		_root.Mariosound.start(0, 1);
+		_root.Mariosound.setVolume(_root.MarioVolume);
+		count = 0;
+		onEnterFrame = function () {
+			X = _x+_parent._x;
+			_root.Course.Char._x += (X-_root.Course.Char._x)/5;
+			//
+			_root.playpause = true;
+			//
+			count++;
+			if (_root.KeyZ() && count>5) {
+				_root.StopMessage();
+				//
+				count = 0;
+				onEnterFrame = function () {
+					count++;
+					if (count>5) {
+						_root.playpause = false;
+						_root.Course.Char.attack = false;
+						onEnterFrame = null;
+						gotoAndStop(1);
+					}
+				};
+			}
+		};
+	};
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Decoration/ Signs &amp; Fences/ Coded Sign/Coded Sign">
+                  <matrix>
+                    <Matrix tx="-982.5" ty="109.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	picture = true;
+	signmessage = "controls";
+	//
+
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Invisible Door">
+                  <matrix>
+                    <Matrix a="1.38870239257813" tx="-1130.65" ty="53.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-0.05"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "8-E3-1";
+	walk = "warppipe";
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Invisible Door">
+                  <matrix>
+                    <Matrix a="1.38870239257813" tx="508.45" ty="133.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-0.05"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "8-2-1";
+	walk = "warppipe";
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Invisible Door">
+                  <matrix>
+                    <Matrix a="1.38870239257813" tx="617.45" ty="164.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-0.05"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "8-10";
+	walk = "warppipe";
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Invisible Door">
+                  <matrix>
+                    <Matrix a="1.38870239257813" tx="663.45" ty="175.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-0.05"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "8-11u";
+	walk = "warppipe";
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Invisible Door">
+                  <matrix>
+                    <Matrix a="1.38870239257813" tx="720.45" ty="188.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-0.05"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "8-13";
+	walk = "warppipe";
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Invisible Door">
+                  <matrix>
+                    <Matrix a="1.38870239257813" tx="-584.55" ty="112.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-0.05"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "BC-1";
+	walk = "warppipe";
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Invisible Door">
+                  <matrix>
+                    <Matrix a="1.38870239257813" tx="-448" ty="97.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-0.05"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "BC-0";
+	walk = "warppipe";
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 6" color="#808080">
+          <frames>
+            <DOMFrame index="0" duration="4" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Castle Constructors/Castle Trihexagonal Tile" bitmapIsClipped="false">
+                        <matrix>
+                          <Matrix a="13.75" d="13.75" tx="1315.3" ty="366.3"/>
+                        </matrix>
+                      </BitmapFill>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Bricks &amp; Woods/Brick" bitmapIsClipped="false">
+                        <matrix>
+                          <Matrix a="20" d="20" tx="1534.25" ty="289.35"/>
+                        </matrix>
+                      </BitmapFill>
+                    </FillStyle>
+                    <FillStyle index="3">
+                      <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Bricks &amp; Woods/Stone HoneyComb" bitmapIsClipped="false">
+                        <matrix>
+                          <Matrix a="20" d="20" tx="1274.3" ty="353.3"/>
+                        </matrix>
+                      </BitmapFill>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <SolidColor alpha="0.850980392156863"/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                    <StrokeStyle index="2">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <SolidColor alpha="0.850980392156863"/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle0="1" fillStyle1="2" strokeStyle="1" edges="!28087 5930|28087 6240!28087 6240|27777 6240!27777 6240|27777 5930!27777 5930|28087 5930"/>
+                    <Edge fillStyle0="1" strokeStyle="2" edges="!28375 5902.5|28375 5640!28375 5640|27497 5640!27497 5640|27497 5940"/>
+                    <Edge fillStyle0="1" fillStyle1="3" strokeStyle="2" edges="!27497 5940|27497 6400"/>
+                    <Edge fillStyle0="1" fillStyle1="3" strokeStyle="1" edges="!27497 6400|27197 6400"/>
+                    <Edge fillStyle0="1" strokeStyle="1" edges="!27197 6400|23637 6400"/>
+                    <Edge fillStyle0="1" strokeStyle="2" edges="!23637 6400|24897 8339!24897 8339|28675 8339"/>
+                    <Edge fillStyle0="1" edges="!28675 8339|28375 8159"/>
+                    <Edge fillStyle0="1" strokeStyle="2" edges="!28375 8159|28912 8080.5"/>
+                    <Edge fillStyle0="1" fillStyle1="3" strokeStyle="2" edges="!28912 8080.5|28375 6851.5!28375 6851.5|28375 5902.5"/>
+                    <Edge fillStyle0="3" strokeStyle="2" edges="!27497 5940|27197 6400"/>
+                    <Edge strokeStyle="2" edges="!29655 7979|29401 8008.5!29401 8008.5|29455 8119"/>
+                    <Edge fillStyle0="3" strokeStyle="2" edges="!28912 8080.5|29401 8008.5!29401 8008.5|28375 5902.5"/>
+                  </edges>
+                </DOMShape>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ C - Castle/ Outside Castle/Princess Peaches Castle Code">
+                  <matrix>
+                    <Matrix tx="4" ty="-81.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-0.5" y="0.25"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ 1-Up Mushroom/1 Up Code">
+                  <matrix>
+                    <Matrix a="1.00077819824219" d="1.00077819824219" tx="5.55" ty="-963.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-0.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ 1-Up Mushroom/1 Up Code">
+                  <matrix>
+                    <Matrix a="1.00077819824219" d="1.00077819824219" tx="5.55" ty="-903.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-0.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ 1-Up Mushroom/1 Up Code">
+                  <matrix>
+                    <Matrix a="1.00077819824219" d="1.00077819824219" tx="5.55" ty="-843.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-0.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ A-F/ Cheep Cheeps/Cheep Cheep Code">
+                  <matrix>
+                    <Matrix tx="1701.4" ty="311"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	scale = 2;
+	chasespeed = 0.7;
+	idlespeed = 3;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ A-F/ Cheep Cheeps/Cheep Cheep Code">
+                  <matrix>
+                    <Matrix tx="1484.45" ty="318"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ A-F/ Cheep Cheeps/Cheep Cheep Code">
+                  <matrix>
+                    <Matrix tx="1356.4" ty="198"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Main Door Clip">
+                  <matrix>
+                    <Matrix a="1.00001525878906" d="1.00001525878906" tx="11.9" ty="41.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "inCastle";
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Main Door Clip">
+                  <matrix>
+                    <Matrix a="-1" d="1.00001525878906" tx="-3.9" ty="41.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "inCastle";
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 9" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/Sling Star/Sling Star BackGFX">
+                  <matrix>
+                    <Matrix a="0.75" d="0.748931884765625" tx="5" ty="-577"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	otherstar = "ss1";
+	yblast = -27
+	xblast = 0
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

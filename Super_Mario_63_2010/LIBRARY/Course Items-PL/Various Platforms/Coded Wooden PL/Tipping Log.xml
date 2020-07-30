@@ -1,0 +1,151 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Items-PL/ Various Platforms/ Coded Wooden PL/Tipping Log" itemID="459d80af-000008e4" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="TippingLog" lastModified="1241915127">
+  <timeline>
+    <DOMTimeline name="Tipping Log">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="4" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+if (scale == undefined) {
+	scale = 1;
+}
+gotoAndStop(Math.round(scale));
+depth = _root.Course.BPlatforms.getNextHighestDepth();
+_root.Course.BPlatforms.attachMovie("LogPL", "LogPL"+depth, depth, {_x:_x, _y:_y, speedY:speedY, speedX:speedX, landedon:false, _xscale:_xscale});
+rotspeed = 0;
+land = false;
+onEnterFrame = function () {
+	if (_root.PauseGame == false && _root.playpause == false && Math.abs((_root.currentCamX)-(_x+_parent._x))<600 && Math.abs((_root.currentCamY)-(_y+_parent._y))<600) {
+		rotspeed = _root.groundFriction(rotspeed, 0.15, 1.05);
+		distance = (_root.Course.Char._x-(_x+_parent._x))/this.scale;
+		tellTarget (_root.Course.BPlatforms["LogPL"+depth]) {
+			if (this.hitTest((_root.Course.Char._x*_root.coursescale/100)+_root.Course._x, (_root.Course.Char._y*_root.coursescale/100)+_root.Course._y, true)) {
+				//
+				_root.changestep = 3;
+				_root.StepSound = "step-wetwood";
+				//
+				land = true;
+				_root.Course.Char._x += _rotation/7;
+				//
+				this.rotspeed += (this.distance/5)/(((this.scale-1)/2)+1);
+				this.rotspeed -= _rotation-(_root.groundFriction(_rotation, 0.3/this.scale, (0.07/this.scale)+1));
+			} else {
+				if (land == true) {
+					_root.Course.Char.xspeed += ((_rotation/5)-_root.Course.Char.xspeed)/3;
+					if (_root.Course.Char.yspeed<-3) {
+						this.rotspeed += (this.distance*2)/(((this.scale-1)/2)+1);
+					}
+				}
+				land = false;
+				this.rotspeed -= _rotation-(_root.groundFriction(_rotation, 1/this.scale, (0.12/this.scale)+1));
+			}
+			_rotation += (this.rotspeed)/20;
+			if (_rotation>=80 || _rotation<=-80) {
+				this.rotspeed *= -0.7;
+			}
+			_rotation = Math.max(_rotation, -80);
+			_rotation = Math.min(_rotation, 80);
+			//
+			_xscale = this.scale*100;
+			//_yscale = this.scale*100;
+			//
+			this._rotation = _rotation;
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Coded PL Bits/YI Log Side">
+                  <matrix>
+                    <Matrix tx="-41" ty="-15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMBitmapInstance libraryItemName="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Coded PL Bits/YI Log Side">
+                      <matrix>
+                        <Matrix tx="-79" ty="-15"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                    <DOMBitmapInstance selected="true" libraryItemName="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Coded PL Bits/YI Log Side">
+                      <matrix>
+                        <Matrix tx="-3" ty="-15"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMBitmapInstance selected="true" libraryItemName="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Coded PL Bits/YI Log Side">
+                      <matrix>
+                        <Matrix tx="-117" ty="-15"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                    <DOMBitmapInstance selected="true" libraryItemName="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Coded PL Bits/YI Log Side">
+                      <matrix>
+                        <Matrix tx="-41" ty="-15"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                    <DOMBitmapInstance selected="true" libraryItemName="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Coded PL Bits/YI Log Side">
+                      <matrix>
+                        <Matrix tx="35" ty="-15"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="-38.5"/>
+                  </matrix>
+                  <members>
+                    <DOMBitmapInstance selected="true" libraryItemName="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Coded PL Bits/YI Log Side">
+                      <matrix>
+                        <Matrix tx="-155.5" ty="-15"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                    <DOMBitmapInstance selected="true" libraryItemName="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Coded PL Bits/YI Log Side">
+                      <matrix>
+                        <Matrix tx="-79.5" ty="-15"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                    <DOMBitmapInstance selected="true" libraryItemName="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Coded PL Bits/YI Log Side">
+                      <matrix>
+                        <Matrix tx="-3.5" ty="-15"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                    <DOMBitmapInstance selected="true" libraryItemName="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Coded PL Bits/YI Log Side">
+                      <matrix>
+                        <Matrix tx="73.5" ty="-15"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

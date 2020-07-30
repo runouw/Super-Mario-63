@@ -1,0 +1,1253 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="BC-2Platforms" itemID="49bdebf1-000016bf" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="BC-2Platforms" lastModified="1241409469" lastUniqueIdentifier="39">
+  <timeline>
+    <DOMTimeline name="BC-2Platforms">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#00FF00"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!13275 3879|12156 3879!12156 3879|12156 2760!12156 2760|13275 2760!13275 2760|13275 3879!-38679 8139|-39959 8139!-39959 8139|-39959 7479!-39959 7479|-38679 7479!-38679 7479|-38679 8139"/>
+                    <Edge fillStyle0="1" edges="!-44148 4415|-43081 466!-43081 466|-50272 -1339!-50272 -1339|-50272 4494!-50272 4494|-46430.5 5523.5!-46430.5 5523.5[#FF4B0F.CD #14EF.8B -46229 5143!-46229 5143[-46227 5140 -46217 5140!-46217 5140|-46197 4940!-46197 4940[-45482 5146 -44797
+ 5420!-44797 5420|-44677 5420!-44677 5420|-44597 5320!-44597 5320[-44583 4878 -44423 4485!-44423 4485[-44405 4443 -44397 4400!-44397 4400[#FF5317.D7 #112F.AD -44148 4415"/>
+                    <Edge fillStyle1="1" edges="
+!-46542 8796[-46547 8800 -46557 8800!-46557 8800[-46722 9100 -46977 9380!-46977 9380|-47037 9420!-47037 9420[-47433 9420 -47757 9480!-47757 9480|-47817 9580!-47817 9580|-47897 9640!-47897 9640[-47837 10475 -48231 11051!-48231 11051[-48283
+ 11126 -48317 11180!-48317 11180|-48377 11200!-48377 11200[-48591 12050 -48894 12900!-48894 12900[#FF40EC.93 #329F.FF -48929.5 13016!-48929.5 13016|-49947 13016!-49947 13016|-52268 8499!-52268 8499|-46361 8579!-46361 8579[#FF4A91.3 #21F5.D1
+ -46542 8796"/>
+                  </edges>
+                </DOMShape>
+                <DOMSymbolInstance libraryItemName="BC-2FallingPL2 Ground">
+                  <matrix>
+                    <Matrix tx="-1109.25" ty="241.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-0.05"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	count = 0;
+	landedon = false;
+	speed = -0.1;
+	fallspeed = 1;
+	started = false;
+}
+onClipEvent (enterFrame) {
+	if (_root.PauseGame == false && _root.playpause == false) {
+		if (started == true) {
+			_rotation += speed;
+			_y += fallspeed;
+		}
+		// 
+		ydistance = (_y+_parent._y)-_root.Course.Char._y;
+		xdistance = (_x+_parent._x)-_root.Course.Char._x;
+		distance = Math.sqrt(Math.pow(xdistance, 2)+Math.pow(ydistance, 2));
+		rot = Math.atan2(ydistance, xdistance);
+		xdiff = Math.cos(rot)*distance-Math.cos(rot+_root.angleToRadians(this.speed))*distance;
+		ydiff = Math.sin(rot)*distance-Math.sin(rot+_root.angleToRadians(this.speed))*distance;
+		//
+		if (hitTest((_root.Course.Char._x*_root.coursescale/100)+_root.Course._x, ((_root.Course.Char._y+3)*_root.coursescale/100)+_root.Course._y, true) && _root.Course.Char.air == false) {
+			_root.Course.Char._x += xdiff;
+			_root.Course.Char._y += ydiff+fallspeed;
+			//_root.Course.Char.xspeed = _root.groundFriction(_root.Course.Char.xspeed, 0.3, 1.1);
+			if (landedon == false) {
+				_root.Course.Char.xspeed -= xdiff;
+				//
+			}
+			landedon = true;
+			_root.Course.FrontGFX.fall1.started = true;
+			started = true;
+		} else {
+			if (landedon == true) {
+				_root.Course.Char.xspeed += xdiff;
+				_root.Course.Char.yspeed += ydiff;
+			}
+			landedon = false;
+		}
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="BC-2FallingPL3">
+                  <matrix>
+                    <Matrix tx="-2295.4" ty="539.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-0.05"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	count = 0;
+	landedon = false;
+	speed = 0.3;
+	fallspeed = 1;
+	started = false;
+	xspeed = 1.2;
+}
+onClipEvent (enterFrame) {
+	if (_root.PauseGame == false && _root.playpause == false) {
+		if (started == true) {
+			_rotation += speed;
+			_y += fallspeed;
+			_x += xspeed;
+		}
+		// 
+		ydistance = (_y+_parent._y)-_root.Course.Char._y;
+		xdistance = (_x+_parent._x)-_root.Course.Char._x;
+		distance = Math.sqrt(Math.pow(xdistance, 2)+Math.pow(ydistance, 2));
+		rot = Math.atan2(ydistance, xdistance);
+		xdiff = Math.cos(rot)*distance-Math.cos(rot+_root.angleToRadians(this.speed))*distance;
+		ydiff = Math.sin(rot)*distance-Math.sin(rot+_root.angleToRadians(this.speed))*distance;
+		//
+		if (hitTest((_root.Course.Char._x*_root.coursescale/100)+_root.Course._x, ((_root.Course.Char._y+3)*_root.coursescale/100)+_root.Course._y, true) && _root.Course.Char.air == false) {
+			_root.Course.Char._x += xdiff+xspeed;
+			_root.Course.Char._y += ydiff+fallspeed;
+			//_root.Course.Char.xspeed = _root.groundFriction(_root.Course.Char.xspeed, 0.3, 1.1);
+			if (landedon == false) {
+				_root.Course.Char.xspeed -= xdiff;
+				//
+			}
+			landedon = true;
+			started = true;
+			_root.Course.FrontGFX.fall2.started = true;
+		} else {
+			if (landedon == true) {
+				_root.Course.Char.xspeed += xdiff+xspeed;
+				_root.Course.Char.yspeed += ydiff;
+			}
+			landedon = false;
+		}
+	}
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color tintMultiplier="1" tintColor="#00FF00"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="BC-2 ConveyerRock 1">
+                  <matrix>
+                    <Matrix tx="-297.1" ty="72"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	count = 0;
+	landedon = false;
+	speed = -2.5;
+	fallspeed = 0.6;
+}
+onClipEvent (enterFrame) {
+	if (_root.PauseGame == false && _root.playpause == false) {
+		_rotation += speed;
+		_y += fallspeed;
+		if (_y>700) {
+			_y -= 1400;
+		}
+		// 
+		ydistance = (_y+_parent._y)-_root.Course.Char._y;
+		xdistance = (_x+_parent._x)-_root.Course.Char._x;
+		distance = Math.sqrt(Math.pow(xdistance, 2)+Math.pow(ydistance, 2));
+		rot = Math.atan2(ydistance, xdistance);
+		xdiff = Math.cos(rot)*distance-Math.cos(rot+_root.angleToRadians(this.speed))*distance;
+		ydiff = Math.sin(rot)*distance-Math.sin(rot+_root.angleToRadians(this.speed))*distance;
+		//
+		if (hitTest((_root.Course.Char._x*_root.coursescale/100)+_root.Course._x, ((_root.Course.Char._y+3)*_root.coursescale/100)+_root.Course._y, true) && _root.Course.Char.air == false) {
+			_root.Course.Char._x += xdiff;
+			_root.Course.Char._y += ydiff+fallspeed;
+			//_root.Course.Char.xspeed = _root.groundFriction(_root.Course.Char.xspeed, 0.3, 1.1);
+			if (landedon == false) {
+				_root.Course.Char.xspeed -= xdiff;
+				//
+			}
+			landedon = true;
+		} else {
+			if (landedon == true) {
+				_root.Course.Char.xspeed += xdiff;
+				_root.Course.Char.yspeed += ydiff;
+			}
+			landedon = false;
+		}
+	}
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color tintMultiplier="1" tintColor="#00FF00"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="BC-2 ConveyerRock 2">
+                  <matrix>
+                    <Matrix tx="-397.5" ty="85.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	count = 0;
+	landedon = false;
+	speed = -1.5;
+	fallspeed = 1;
+}
+onClipEvent (enterFrame) {
+	if (_root.PauseGame == false && _root.playpause == false) {
+		_rotation += speed;
+		_y += fallspeed;
+		if (_y>700) {
+			_y -= 1400;
+		}
+		// 
+		ydistance = (_y+_parent._y)-_root.Course.Char._y;
+		xdistance = (_x+_parent._x)-_root.Course.Char._x;
+		distance = Math.sqrt(Math.pow(xdistance, 2)+Math.pow(ydistance, 2));
+		rot = Math.atan2(ydistance, xdistance);
+		xdiff = Math.cos(rot)*distance-Math.cos(rot+_root.angleToRadians(this.speed))*distance;
+		ydiff = Math.sin(rot)*distance-Math.sin(rot+_root.angleToRadians(this.speed))*distance;
+		//
+		if (hitTest((_root.Course.Char._x*_root.coursescale/100)+_root.Course._x, ((_root.Course.Char._y+3)*_root.coursescale/100)+_root.Course._y, true) && _root.Course.Char.air == false) {
+			_root.Course.Char._x += xdiff;
+			_root.Course.Char._y += ydiff+fallspeed;
+			//_root.Course.Char.xspeed = _root.groundFriction(_root.Course.Char.xspeed, 0.3, 1.1);
+			if (landedon == false) {
+				_root.Course.Char.xspeed -= xdiff;
+				//
+			}
+			landedon = true;
+		} else {
+			if (landedon == true) {
+				_root.Course.Char.xspeed += xdiff;
+				_root.Course.Char.yspeed += ydiff;
+			}
+			landedon = false;
+		}
+	}
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color tintMultiplier="1" tintColor="#00FF00"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="BC-2 ConveyorRock 3">
+                  <matrix>
+                    <Matrix tx="-538.8" ty="159.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	count = 0;
+	landedon = false;
+	speed = 2.1;
+	fallspeed = -1
+}
+onClipEvent (enterFrame) {
+	if (_root.PauseGame == false && _root.playpause == false) {
+		_rotation += speed;
+		_y += fallspeed;
+		if (_y<-600) {
+			_y += 1400;
+		}
+		// 
+		ydistance = (_y+_parent._y)-_root.Course.Char._y;
+		xdistance = (_x+_parent._x)-_root.Course.Char._x;
+		distance = Math.sqrt(Math.pow(xdistance, 2)+Math.pow(ydistance, 2));
+		rot = Math.atan2(ydistance, xdistance);
+		xdiff = Math.cos(rot)*distance-Math.cos(rot+_root.angleToRadians(this.speed))*distance;
+		ydiff = Math.sin(rot)*distance-Math.sin(rot+_root.angleToRadians(this.speed))*distance;
+		//
+		if (hitTest((_root.Course.Char._x*_root.coursescale/100)+_root.Course._x, ((_root.Course.Char._y+3)*_root.coursescale/100)+_root.Course._y, true) && _root.Course.Char.air == false) {
+			_root.Course.Char._x += xdiff;
+			_root.Course.Char._y += ydiff+fallspeed;
+			//_root.Course.Char.xspeed = _root.groundFriction(_root.Course.Char.xspeed, 0.3, 1.1);
+			if (landedon == false) {
+				_root.Course.Char.xspeed -= xdiff;
+				//
+			}
+			landedon = true;
+		} else {
+			if (landedon == true) {
+				_root.Course.Char.xspeed += xdiff;
+				_root.Course.Char.yspeed += ydiff;
+			}
+			landedon = false;
+		}
+	}
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color tintMultiplier="1" tintColor="#00FF00"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="BC-2 ConveyorRock 3">
+                  <matrix>
+                    <Matrix tx="-294.85" ty="286.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	count = 0;
+	landedon = false;
+	speed = 2.1;
+	fallspeed = 0.6
+}
+onClipEvent (enterFrame) {
+	if (_root.PauseGame == false && _root.playpause == false) {
+		_rotation += speed;
+		_y += fallspeed;
+		if(_y > 700){
+			_y -= 1400;
+		}
+		//
+		ydistance = (_y+_parent._y)-_root.Course.Char._y;
+		xdistance = (_x+_parent._x)-_root.Course.Char._x;
+		distance = Math.sqrt(Math.pow(xdistance, 2)+Math.pow(ydistance, 2));
+		rot = Math.atan2(ydistance, xdistance);
+		xdiff = Math.cos(rot)*distance-Math.cos(rot+_root.angleToRadians(this.speed))*distance;
+		ydiff = Math.sin(rot)*distance-Math.sin(rot+_root.angleToRadians(this.speed))*distance;
+		//
+		if (hitTest((_root.Course.Char._x*_root.coursescale/100)+_root.Course._x, ((_root.Course.Char._y+3)*_root.coursescale/100)+_root.Course._y, true) && _root.Course.Char.air == false) {
+			_root.Course.Char._x += xdiff;
+			_root.Course.Char._y += ydiff+fallspeed;
+			//_root.Course.Char.xspeed = _root.groundFriction(_root.Course.Char.xspeed, 0.3, 1.1);
+			if (landedon == false) {
+				_root.Course.Char.xspeed -= xdiff;
+				//
+			}
+			landedon = true;
+		} else {
+			if (landedon == true) {
+				_root.Course.Char.xspeed += xdiff;
+				_root.Course.Char.yspeed += ydiff;
+			}
+			landedon = false;
+		}
+	}
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color tintMultiplier="1" tintColor="#00FF00"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="BC-2 ConveyorRock 4">
+                  <matrix>
+                    <Matrix tx="-560.55" ty="-204.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	count = 0;
+	landedon = false;
+	speed = -1.2
+	fallspeed = -1
+}
+onClipEvent (enterFrame) {
+	if (_root.PauseGame == false && _root.playpause == false) {
+		_rotation += speed;
+		_y += fallspeed;
+		if (_y<-600) {
+			_y += 1400;
+		}
+		// 
+		ydistance = (_y+_parent._y)-_root.Course.Char._y;
+		xdistance = (_x+_parent._x)-_root.Course.Char._x;
+		distance = Math.sqrt(Math.pow(xdistance, 2)+Math.pow(ydistance, 2));
+		rot = Math.atan2(ydistance, xdistance);
+		xdiff = Math.cos(rot)*distance-Math.cos(rot+_root.angleToRadians(this.speed))*distance;
+		ydiff = Math.sin(rot)*distance-Math.sin(rot+_root.angleToRadians(this.speed))*distance;
+		//
+		if (hitTest((_root.Course.Char._x*_root.coursescale/100)+_root.Course._x, ((_root.Course.Char._y+3)*_root.coursescale/100)+_root.Course._y, true) && _root.Course.Char.air == false) {
+			_root.Course.Char._x += xdiff;
+			_root.Course.Char._y += ydiff+fallspeed;
+			//_root.Course.Char.xspeed = _root.groundFriction(_root.Course.Char.xspeed, 0.3, 1.1);
+			if (landedon == false) {
+				_root.Course.Char.xspeed -= xdiff;
+				//
+			}
+			landedon = true;
+		} else {
+			if (landedon == true) {
+				_root.Course.Char.xspeed += xdiff;
+				_root.Course.Char.yspeed += ydiff;
+			}
+			landedon = false;
+		}
+	}
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color tintMultiplier="1" tintColor="#00FF00"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="BC-2 ConveyerRock 1">
+                  <matrix>
+                    <Matrix tx="-541.05" ty="394.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	count = 0;
+	landedon = false;
+	speed = 1
+	fallspeed = -1
+}
+onClipEvent (enterFrame) {
+	if (_root.PauseGame == false && _root.playpause == false) {
+		_rotation += speed;
+		_y += fallspeed;
+		if (_y<-600) {
+			_y += 1400;
+		}
+		// 
+		ydistance = (_y+_parent._y)-_root.Course.Char._y;
+		xdistance = (_x+_parent._x)-_root.Course.Char._x;
+		distance = Math.sqrt(Math.pow(xdistance, 2)+Math.pow(ydistance, 2));
+		rot = Math.atan2(ydistance, xdistance);
+		xdiff = Math.cos(rot)*distance-Math.cos(rot+_root.angleToRadians(this.speed))*distance;
+		ydiff = Math.sin(rot)*distance-Math.sin(rot+_root.angleToRadians(this.speed))*distance;
+		//
+		if (hitTest((_root.Course.Char._x*_root.coursescale/100)+_root.Course._x, ((_root.Course.Char._y+3)*_root.coursescale/100)+_root.Course._y, true) && _root.Course.Char.air == false) {
+			_root.Course.Char._x += xdiff;
+			_root.Course.Char._y += ydiff+fallspeed;
+			//_root.Course.Char.xspeed = _root.groundFriction(_root.Course.Char.xspeed, 0.3, 1.1);
+			if (landedon == false) {
+				_root.Course.Char.xspeed -= xdiff;
+				//
+			}
+			landedon = true;
+		} else {
+			if (landedon == true) {
+				_root.Course.Char.xspeed += xdiff;
+				_root.Course.Char.yspeed += ydiff;
+			}
+			landedon = false;
+		}
+	}
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color tintMultiplier="1" tintColor="#00FF00"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="BC-2 ConveyerRock 2">
+                  <matrix>
+                    <Matrix tx="-283.9" ty="-195"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	count = 0;
+	landedon = false;
+	speed = -1.9;
+	fallspeed = 0.6;
+}
+onClipEvent (enterFrame) {
+	if (_root.PauseGame == false && _root.playpause == false) {
+		_rotation += speed;
+		_y += fallspeed;
+		if (_y>700) {
+			_y -= 1400;
+		}
+		// 
+		ydistance = (_y+_parent._y)-_root.Course.Char._y;
+		xdistance = (_x+_parent._x)-_root.Course.Char._x;
+		distance = Math.sqrt(Math.pow(xdistance, 2)+Math.pow(ydistance, 2));
+		rot = Math.atan2(ydistance, xdistance);
+		xdiff = Math.cos(rot)*distance-Math.cos(rot+_root.angleToRadians(this.speed))*distance;
+		ydiff = Math.sin(rot)*distance-Math.sin(rot+_root.angleToRadians(this.speed))*distance;
+		//
+		if (hitTest((_root.Course.Char._x*_root.coursescale/100)+_root.Course._x, ((_root.Course.Char._y+3)*_root.coursescale/100)+_root.Course._y, true) && _root.Course.Char.air == false) {
+			_root.Course.Char._x += xdiff;
+			_root.Course.Char._y += ydiff+fallspeed;
+			//_root.Course.Char.xspeed = _root.groundFriction(_root.Course.Char.xspeed, 0.3, 1.1);
+			if (landedon == false) {
+				_root.Course.Char.xspeed -= xdiff;
+				//
+			}
+			landedon = true;
+		} else {
+			if (landedon == true) {
+				_root.Course.Char.xspeed += xdiff;
+				_root.Course.Char.yspeed += ydiff;
+			}
+			landedon = false;
+		}
+	}
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color tintMultiplier="1" tintColor="#00FF00"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="BC-2 ConveyorRock 3">
+                  <matrix>
+                    <Matrix tx="-411.85" ty="570.8"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	count = 0;
+	landedon = false;
+	speed = 1.4;
+	fallspeed = 1;
+}
+onClipEvent (enterFrame) {
+	if (_root.PauseGame == false && _root.playpause == false) {
+		_rotation += speed;
+		_y += fallspeed;
+		if (_y>700) {
+			_y -= 1400;
+		}
+		// 
+		ydistance = (_y+_parent._y)-_root.Course.Char._y;
+		xdistance = (_x+_parent._x)-_root.Course.Char._x;
+		distance = Math.sqrt(Math.pow(xdistance, 2)+Math.pow(ydistance, 2));
+		rot = Math.atan2(ydistance, xdistance);
+		xdiff = Math.cos(rot)*distance-Math.cos(rot+_root.angleToRadians(this.speed))*distance;
+		ydiff = Math.sin(rot)*distance-Math.sin(rot+_root.angleToRadians(this.speed))*distance;
+		//
+		if (hitTest((_root.Course.Char._x*_root.coursescale/100)+_root.Course._x, ((_root.Course.Char._y+3)*_root.coursescale/100)+_root.Course._y, true) && _root.Course.Char.air == false) {
+			_root.Course.Char._x += xdiff;
+			_root.Course.Char._y += ydiff+fallspeed;
+			//_root.Course.Char.xspeed = _root.groundFriction(_root.Course.Char.xspeed, 0.3, 1.1);
+			if (landedon == false) {
+				_root.Course.Char.xspeed -= xdiff;
+				//
+			}
+			landedon = true;
+		} else {
+			if (landedon == true) {
+				_root.Course.Char.xspeed += xdiff;
+				_root.Course.Char.yspeed += ydiff;
+			}
+			landedon = false;
+		}
+	}
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color tintMultiplier="1" tintColor="#00FF00"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="BC-2 ConveyerRock 1">
+                  <matrix>
+                    <Matrix tx="-414.1" ty="299.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	count = 0;
+	landedon = false;
+	speed = -1;
+	fallspeed = 1;
+}
+onClipEvent (enterFrame) {
+	if (_root.PauseGame == false && _root.playpause == false) {
+		_rotation += speed;
+		_y += fallspeed;
+		if (_y>700) {
+			_y -= 1400;
+		}
+		// 
+		ydistance = (_y+_parent._y)-_root.Course.Char._y;
+		xdistance = (_x+_parent._x)-_root.Course.Char._x;
+		distance = Math.sqrt(Math.pow(xdistance, 2)+Math.pow(ydistance, 2));
+		rot = Math.atan2(ydistance, xdistance);
+		xdiff = Math.cos(rot)*distance-Math.cos(rot+_root.angleToRadians(this.speed))*distance;
+		ydiff = Math.sin(rot)*distance-Math.sin(rot+_root.angleToRadians(this.speed))*distance;
+		//
+		if (hitTest((_root.Course.Char._x*_root.coursescale/100)+_root.Course._x, ((_root.Course.Char._y+3)*_root.coursescale/100)+_root.Course._y, true) && _root.Course.Char.air == false) {
+			_root.Course.Char._x += xdiff;
+			_root.Course.Char._y += ydiff+fallspeed;
+			//_root.Course.Char.xspeed = _root.groundFriction(_root.Course.Char.xspeed, 0.3, 1.1);
+			if (landedon == false) {
+				_root.Course.Char.xspeed -= xdiff;
+				//
+			}
+			landedon = true;
+		} else {
+			if (landedon == true) {
+				_root.Course.Char.xspeed += xdiff;
+				_root.Course.Char.yspeed += ydiff;
+			}
+			landedon = false;
+		}
+	}
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color tintMultiplier="1" tintColor="#00FF00"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="BC-2 Falling PL1">
+                  <matrix>
+                    <Matrix tx="-32.85" ty="107.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-0.05"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	count = 0;
+	landedon = false;
+	speed = -0.1
+	fallspeed = 0.6;
+}
+onClipEvent (enterFrame) {
+	if (_root.PauseGame == false && _root.playpause == false) {
+		_rotation += speed;
+		_y += fallspeed;
+		//
+		ydistance = (_y+_parent._y)-_root.Course.Char._y;
+		xdistance = (_x+_parent._x)-_root.Course.Char._x;
+		distance = Math.sqrt(Math.pow(xdistance, 2)+Math.pow(ydistance, 2));
+		rot = Math.atan2(ydistance, xdistance);
+		xdiff = Math.cos(rot)*distance-Math.cos(rot+_root.angleToRadians(this.speed))*distance;
+		ydiff = Math.sin(rot)*distance-Math.sin(rot+_root.angleToRadians(this.speed))*distance;
+		//
+		if (hitTest((_root.Course.Char._x*_root.coursescale/100)+_root.Course._x, ((_root.Course.Char._y+3)*_root.coursescale/100)+_root.Course._y, true) && _root.Course.Char.air == false) {
+			_root.Course.Char._x += xdiff;
+			_root.Course.Char._y += ydiff+fallspeed;
+			//_root.Course.Char.xspeed = _root.groundFriction(_root.Course.Char.xspeed, 0.3, 1.1);
+			if (landedon == false) {
+				_root.Course.Char.xspeed -= xdiff;
+				//
+			}
+			landedon = true;
+		} else {
+			if (landedon == true) {
+				_root.Course.Char.xspeed += xdiff;
+				_root.Course.Char.yspeed += ydiff;
+			}
+			landedon = false;
+		}
+	}
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color tintMultiplier="1" tintColor="#00FF00"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="BC-2 ConveyerRock 1">
+                  <matrix>
+                    <Matrix tx="-425.85" ty="-137.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	count = 0;
+	landedon = false;
+	speed = 0.5
+	fallspeed = 1;
+}
+onClipEvent (enterFrame) {
+	if (_root.PauseGame == false && _root.playpause == false) {
+		_rotation += speed;
+		_y += fallspeed;
+		if (_y>700) {
+			_y -= 1400;
+		}
+		// 
+		ydistance = (_y+_parent._y)-_root.Course.Char._y;
+		xdistance = (_x+_parent._x)-_root.Course.Char._x;
+		distance = Math.sqrt(Math.pow(xdistance, 2)+Math.pow(ydistance, 2));
+		rot = Math.atan2(ydistance, xdistance);
+		xdiff = Math.cos(rot)*distance-Math.cos(rot+_root.angleToRadians(this.speed))*distance;
+		ydiff = Math.sin(rot)*distance-Math.sin(rot+_root.angleToRadians(this.speed))*distance;
+		//
+		if (hitTest((_root.Course.Char._x*_root.coursescale/100)+_root.Course._x, ((_root.Course.Char._y+3)*_root.coursescale/100)+_root.Course._y, true) && _root.Course.Char.air == false) {
+			_root.Course.Char._x += xdiff;
+			_root.Course.Char._y += ydiff+fallspeed;
+			//_root.Course.Char.xspeed = _root.groundFriction(_root.Course.Char.xspeed, 0.3, 1.1);
+			if (landedon == false) {
+				_root.Course.Char.xspeed -= xdiff;
+				//
+			}
+			landedon = true;
+		} else {
+			if (landedon == true) {
+				_root.Course.Char.xspeed += xdiff;
+				_root.Course.Char.yspeed += ydiff;
+			}
+			landedon = false;
+		}
+	}
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color tintMultiplier="1" tintColor="#00FF00"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix a="1.04994201660156" tx="40.55" ty="-67.4"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-1131.3" y="784.2"/>
+                  </transformationPoint>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix a="1.04994201660156" tx="40.55" ty="-67.4"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="-1131.3" y="784.2"/>
+                      </transformationPoint>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#006600"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="
+!6221 17005S2|-51473 17005!-51473 17005|-51473 14364!-51473 14364|6221 14364!6221 14364|6221 17005"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix d="1.82606506347656" ty="-586.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="369" y="250.1"/>
+                  </transformationPoint>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix d="1.82606506347656" ty="-586.65"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="369" y="250.1"/>
+                      </transformationPoint>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#006600"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="
+!9261 -4200S2|9261 14204!9261 14204|5500 14204!5500 14204|5500 -4200!5500 -4200|9261 -4200"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix d="1.82606506347656" tx="-2976.65" ty="-612.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="369" y="250.1"/>
+                  </transformationPoint>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix d="1.82606506347656" tx="-2976.65" ty="-612.75"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="369" y="250.1"/>
+                      </transformationPoint>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#006600"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="
+!9261 -4200S2|9261 14204!9261 14204|5500 14204!5500 14204|5500 -4200!5500 -4200|9261 -4200"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix a="1.04994201660156" tx="88.8" ty="-1650.4"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-1131.3" y="784.2"/>
+                  </transformationPoint>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix a="1.04994201660156" tx="88.8" ty="-1650.4"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="-1131.3" y="784.2"/>
+                      </transformationPoint>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#006600"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="
+!6221 17005S2|-51473 17005!-51473 17005|-51473 14364!-51473 14364|6221 14364!6221 14364|6221 17005"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMSymbolInstance libraryItemName="BC-2 ConveyerRock 1">
+                  <matrix>
+                    <Matrix tx="-554.05" ty="-26.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	count = 0;
+	landedon = false;
+	speed = 0.2;
+	fallspeed = -1;
+}
+onClipEvent (enterFrame) {
+	if (_root.PauseGame == false && _root.playpause == false) {
+		_rotation += speed;
+		_y += fallspeed;
+		if (_y>700) {
+			_y -= 1400;
+		}
+		//  
+		ydistance = (_y+_parent._y)-_root.Course.Char._y;
+		xdistance = (_x+_parent._x)-_root.Course.Char._x;
+		distance = Math.sqrt(Math.pow(xdistance, 2)+Math.pow(ydistance, 2));
+		rot = Math.atan2(ydistance, xdistance);
+		xdiff = Math.cos(rot)*distance-Math.cos(rot+_root.angleToRadians(this.speed))*distance;
+		ydiff = Math.sin(rot)*distance-Math.sin(rot+_root.angleToRadians(this.speed))*distance;
+		//
+		if (hitTest((_root.Course.Char._x*_root.coursescale/100)+_root.Course._x, ((_root.Course.Char._y+3)*_root.coursescale/100)+_root.Course._y, true) && _root.Course.Char.air == false) {
+			_root.Course.Char._x += xdiff;
+			_root.Course.Char._y += ydiff+fallspeed;
+			//_root.Course.Char.xspeed = _root.groundFriction(_root.Course.Char.xspeed, 0.3, 1.1);
+			if (landedon == false) {
+				_root.Course.Char.xspeed -= xdiff;
+				//
+			}
+			landedon = true;
+		} else {
+			if (landedon == true) {
+				_root.Course.Char.xspeed += xdiff;
+				_root.Course.Char.yspeed += ydiff;
+			}
+			landedon = false;
+		}
+	}
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color tintMultiplier="1" tintColor="#00FF00"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="BC-2 ConveyerRock 2">
+                  <matrix>
+                    <Matrix tx="-569.95" ty="-362"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	count = 0;
+	landedon = false;
+	speed = 1
+	fallspeed = -1
+}
+onClipEvent (enterFrame) {
+	if (_root.PauseGame == false && _root.playpause == false) {
+		_rotation += speed;
+		_y += fallspeed;
+		if (_y>700) {
+			_y -= 1400;
+		}
+		// 
+		ydistance = (_y+_parent._y)-_root.Course.Char._y;
+		xdistance = (_x+_parent._x)-_root.Course.Char._x;
+		distance = Math.sqrt(Math.pow(xdistance, 2)+Math.pow(ydistance, 2));
+		rot = Math.atan2(ydistance, xdistance);
+		xdiff = Math.cos(rot)*distance-Math.cos(rot+_root.angleToRadians(this.speed))*distance;
+		ydiff = Math.sin(rot)*distance-Math.sin(rot+_root.angleToRadians(this.speed))*distance;
+		//
+		if (hitTest((_root.Course.Char._x*_root.coursescale/100)+_root.Course._x, ((_root.Course.Char._y+3)*_root.coursescale/100)+_root.Course._y, true) && _root.Course.Char.air == false) {
+			_root.Course.Char._x += xdiff;
+			_root.Course.Char._y += ydiff+fallspeed;
+			//_root.Course.Char.xspeed = _root.groundFriction(_root.Course.Char.xspeed, 0.3, 1.1);
+			if (landedon == false) {
+				_root.Course.Char.xspeed -= xdiff;
+				//
+			}
+			landedon = true;
+		} else {
+			if (landedon == true) {
+				_root.Course.Char.xspeed += xdiff;
+				_root.Course.Char.yspeed += ydiff;
+			}
+			landedon = false;
+		}
+	}
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color tintMultiplier="1" tintColor="#00FF00"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="BC-2 ConveyorRock 4">
+                  <matrix>
+                    <Matrix tx="-547.55" ty="604"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	count = 0;
+	landedon = false;
+	speed = -3.5;
+	fallspeed = -1
+}
+onClipEvent (enterFrame) {
+	if (_root.PauseGame == false && _root.playpause == false) {
+		_rotation += speed;
+		_y += fallspeed;
+		if(_y > 700){
+			_y -= 1400;
+		}
+		//
+		ydistance = (_y+_parent._y)-_root.Course.Char._y;
+		xdistance = (_x+_parent._x)-_root.Course.Char._x;
+		distance = Math.sqrt(Math.pow(xdistance, 2)+Math.pow(ydistance, 2));
+		rot = Math.atan2(ydistance, xdistance);
+		xdiff = Math.cos(rot)*distance-Math.cos(rot+_root.angleToRadians(this.speed))*distance;
+		ydiff = Math.sin(rot)*distance-Math.sin(rot+_root.angleToRadians(this.speed))*distance;
+		//
+		if (hitTest((_root.Course.Char._x*_root.coursescale/100)+_root.Course._x, ((_root.Course.Char._y+3)*_root.coursescale/100)+_root.Course._y, true) && _root.Course.Char.air == false) {
+			_root.Course.Char._x += xdiff;
+			_root.Course.Char._y += ydiff+fallspeed;
+			//_root.Course.Char.xspeed = _root.groundFriction(_root.Course.Char.xspeed, 0.3, 1.1);
+			if (landedon == false) {
+				_root.Course.Char.xspeed -= xdiff;
+				//
+			}
+			landedon = true;
+		} else {
+			if (landedon == true) {
+				_root.Course.Char.xspeed += xdiff;
+				_root.Course.Char.yspeed += ydiff;
+			}
+			landedon = false;
+		}
+	}
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color tintMultiplier="1" tintColor="#00FF00"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="BC-2 ConveyorRock 4">
+                  <matrix>
+                    <Matrix tx="-680.75" ty="-16.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	count = 0;
+	landedon = false;
+	speed = 2
+	fallspeed = -0.7
+}
+onClipEvent (enterFrame) {
+	if (_root.PauseGame == false && _root.playpause == false) {
+		_rotation += speed;
+		_y += fallspeed;
+		if (_y<-600) {
+			_y += 1400;
+		}
+		// 
+		ydistance = (_y+_parent._y)-_root.Course.Char._y;
+		xdistance = (_x+_parent._x)-_root.Course.Char._x;
+		distance = Math.sqrt(Math.pow(xdistance, 2)+Math.pow(ydistance, 2));
+		rot = Math.atan2(ydistance, xdistance);
+		xdiff = Math.cos(rot)*distance-Math.cos(rot+_root.angleToRadians(this.speed))*distance;
+		ydiff = Math.sin(rot)*distance-Math.sin(rot+_root.angleToRadians(this.speed))*distance;
+		//
+		if (hitTest((_root.Course.Char._x*_root.coursescale/100)+_root.Course._x, ((_root.Course.Char._y+3)*_root.coursescale/100)+_root.Course._y, true) && _root.Course.Char.air == false) {
+			_root.Course.Char._x += xdiff;
+			_root.Course.Char._y += ydiff+fallspeed;
+			//_root.Course.Char.xspeed = _root.groundFriction(_root.Course.Char.xspeed, 0.3, 1.1);
+			if (landedon == false) {
+				_root.Course.Char.xspeed -= xdiff;
+				//
+			}
+			landedon = true;
+		} else {
+			if (landedon == true) {
+				_root.Course.Char.xspeed += xdiff;
+				_root.Course.Char.yspeed += ydiff;
+			}
+			landedon = false;
+		}
+	}
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color tintMultiplier="1" tintColor="#00FF00"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="BC-2 ConveyorRock 4">
+                  <matrix>
+                    <Matrix tx="-746.45" ty="-470.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	count = 0;
+	landedon = false;
+	speed = -1.7
+	fallspeed = -0.7
+}
+onClipEvent (enterFrame) {
+	if (_root.PauseGame == false && _root.playpause == false) {
+		_rotation += speed;
+		_y += fallspeed;
+		if (_y<-600) {
+			_y += 1400;
+		}
+		// 
+		ydistance = (_y+_parent._y)-_root.Course.Char._y;
+		xdistance = (_x+_parent._x)-_root.Course.Char._x;
+		distance = Math.sqrt(Math.pow(xdistance, 2)+Math.pow(ydistance, 2));
+		rot = Math.atan2(ydistance, xdistance);
+		xdiff = Math.cos(rot)*distance-Math.cos(rot+_root.angleToRadians(this.speed))*distance;
+		ydiff = Math.sin(rot)*distance-Math.sin(rot+_root.angleToRadians(this.speed))*distance;
+		//
+		if (hitTest((_root.Course.Char._x*_root.coursescale/100)+_root.Course._x, ((_root.Course.Char._y+3)*_root.coursescale/100)+_root.Course._y, true) && _root.Course.Char.air == false) {
+			_root.Course.Char._x += xdiff;
+			_root.Course.Char._y += ydiff+fallspeed;
+			//_root.Course.Char.xspeed = _root.groundFriction(_root.Course.Char.xspeed, 0.3, 1.1);
+			if (landedon == false) {
+				_root.Course.Char.xspeed -= xdiff;
+				//
+			}
+			landedon = true;
+		} else {
+			if (landedon == true) {
+				_root.Course.Char.xspeed += xdiff;
+				_root.Course.Char.yspeed += ydiff;
+			}
+			landedon = false;
+		}
+	}
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color tintMultiplier="1" tintColor="#00FF00"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="BC-2 ConveyerRock 2">
+                  <matrix>
+                    <Matrix tx="-694.75" ty="-312.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	count = 0;
+	landedon = false;
+	speed = 1
+	fallspeed = -0.7
+}
+onClipEvent (enterFrame) {
+	if (_root.PauseGame == false && _root.playpause == false) {
+		_rotation += speed;
+		_y += fallspeed;
+		if (_y>700) {
+			_y -= 1400;
+		}
+		// 
+		ydistance = (_y+_parent._y)-_root.Course.Char._y;
+		xdistance = (_x+_parent._x)-_root.Course.Char._x;
+		distance = Math.sqrt(Math.pow(xdistance, 2)+Math.pow(ydistance, 2));
+		rot = Math.atan2(ydistance, xdistance);
+		xdiff = Math.cos(rot)*distance-Math.cos(rot+_root.angleToRadians(this.speed))*distance;
+		ydiff = Math.sin(rot)*distance-Math.sin(rot+_root.angleToRadians(this.speed))*distance;
+		//
+		if (hitTest((_root.Course.Char._x*_root.coursescale/100)+_root.Course._x, ((_root.Course.Char._y+3)*_root.coursescale/100)+_root.Course._y, true) && _root.Course.Char.air == false) {
+			_root.Course.Char._x += xdiff;
+			_root.Course.Char._y += ydiff+fallspeed;
+			//_root.Course.Char.xspeed = _root.groundFriction(_root.Course.Char.xspeed, 0.3, 1.1);
+			if (landedon == false) {
+				_root.Course.Char.xspeed -= xdiff;
+				//
+			}
+			landedon = true;
+		} else {
+			if (landedon == true) {
+				_root.Course.Char.xspeed += xdiff;
+				_root.Course.Char.yspeed += ydiff;
+			}
+			landedon = false;
+		}
+	}
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color tintMultiplier="1" tintColor="#00FF00"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="BC-2 ConveyerRock 1">
+                  <matrix>
+                    <Matrix tx="-706.7" ty="284.8"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	count = 0;
+	landedon = false;
+	speed = 0.5
+	fallspeed = -0.7
+}
+onClipEvent (enterFrame) {
+	if (_root.PauseGame == false && _root.playpause == false) {
+		_rotation += speed;
+		_y += fallspeed;
+		if (_y<-600) {
+			_y += 1400;
+		}
+		// 
+		ydistance = (_y+_parent._y)-_root.Course.Char._y;
+		xdistance = (_x+_parent._x)-_root.Course.Char._x;
+		distance = Math.sqrt(Math.pow(xdistance, 2)+Math.pow(ydistance, 2));
+		rot = Math.atan2(ydistance, xdistance);
+		xdiff = Math.cos(rot)*distance-Math.cos(rot+_root.angleToRadians(this.speed))*distance;
+		ydiff = Math.sin(rot)*distance-Math.sin(rot+_root.angleToRadians(this.speed))*distance;
+		//
+		if (hitTest((_root.Course.Char._x*_root.coursescale/100)+_root.Course._x, ((_root.Course.Char._y+3)*_root.coursescale/100)+_root.Course._y, true) && _root.Course.Char.air == false) {
+			_root.Course.Char._x += xdiff;
+			_root.Course.Char._y += ydiff+fallspeed;
+			//_root.Course.Char.xspeed = _root.groundFriction(_root.Course.Char.xspeed, 0.3, 1.1);
+			if (landedon == false) {
+				_root.Course.Char.xspeed -= xdiff;
+				//
+			}
+			landedon = true;
+		} else {
+			if (landedon == true) {
+				_root.Course.Char.xspeed += xdiff;
+				_root.Course.Char.yspeed += ydiff;
+			}
+			landedon = false;
+		}
+	}
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color tintMultiplier="1" tintColor="#00FF00"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="BC-2 ConveyorRock 3">
+                  <matrix>
+                    <Matrix tx="-704.95" ty="562.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	count = 0;
+	landedon = false;
+	speed = 0.7
+	fallspeed = -0.7
+}
+onClipEvent (enterFrame) {
+	if (_root.PauseGame == false && _root.playpause == false) {
+		_rotation += speed;
+		_y += fallspeed;
+		if (_y<-600) {
+			_y += 1400;
+		}
+		// 
+		ydistance = (_y+_parent._y)-_root.Course.Char._y;
+		xdistance = (_x+_parent._x)-_root.Course.Char._x;
+		distance = Math.sqrt(Math.pow(xdistance, 2)+Math.pow(ydistance, 2));
+		rot = Math.atan2(ydistance, xdistance);
+		xdiff = Math.cos(rot)*distance-Math.cos(rot+_root.angleToRadians(this.speed))*distance;
+		ydiff = Math.sin(rot)*distance-Math.sin(rot+_root.angleToRadians(this.speed))*distance;
+		//
+		if (hitTest((_root.Course.Char._x*_root.coursescale/100)+_root.Course._x, ((_root.Course.Char._y+3)*_root.coursescale/100)+_root.Course._y, true) && _root.Course.Char.air == false) {
+			_root.Course.Char._x += xdiff;
+			_root.Course.Char._y += ydiff+fallspeed;
+			//_root.Course.Char.xspeed = _root.groundFriction(_root.Course.Char.xspeed, 0.3, 1.1);
+			if (landedon == false) {
+				_root.Course.Char.xspeed -= xdiff;
+				//
+			}
+			landedon = true;
+		} else {
+			if (landedon == true) {
+				_root.Course.Char.xspeed += xdiff;
+				_root.Course.Char.yspeed += ydiff;
+			}
+			landedon = false;
+		}
+	}
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color tintMultiplier="1" tintColor="#00FF00"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,225 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Clips/ 8 - Storyline Stars/ 8 - Bowser's Trap/Bowser Key" itemID="46aa15cc-00000822" lastModified="1232260422" lastUniqueIdentifier="1">
+  <timeline>
+    <DOMTimeline name="Bowser Key">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" locked="true" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+count = 0;
+onEnterFrame = function () {
+	if (count>3 && _root.Course.Char.air == false) {
+		if (this.box.hitTest(_root.Course.Char.charClip.body) || this.box.hitTest((_root.Course.Char._x*_root.coursescale/100)+_root.Course._x, ((_root.Course.Char._y-15)*_root.coursescale/100)+_root.Course._y, true)) {
+			if (_root[key] !== true) {
+				//
+				_root.Course.Char.attack = true;
+				_root.Course.Char.attackFrame = "Key";
+				_root.heldItemObtained = key;
+				_root.lastPlayinglevel = _root.Playinglevel;
+				if (key == "BowserKeyA") {
+					_root.LastItemGot = "BowserKey1";
+					//_root.heldItemMessage = "CONGRATULATIONS!/nYou have obtained the Bowser Key that unlocks the Basement of the Castle!";
+				}
+				if (key == "BowserKeyB") {
+					_root.LastItemGot = "BowserKey2";
+					_root.heldItemMessage = "CONGRATULATIONS!"+newline+"You have obtained the 2nd Bowser Key.  Now the Upper Rooms of the Castle are unlocked!";
+				}
+			}
+			if (key == "BowserKeyA") {
+				_root.BowserKey1 = true;
+			}
+			if (key == "BowserKeyB") {
+				_root.BowserKey2 = true;
+			}
+			//     
+			gotoAndStop(4);
+		}
+	} else {
+		count++;
+	}
+};
+if (key == "BowserKeyA") {
+	gotoAndStop(2);
+}
+if (key == "BowserKeyB") {
+	gotoAndStop(3);
+}
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="box" selected="true">
+                  <matrix>
+                    <Matrix a="0.283218383789063" d="1.90426635742188"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Light Effects Folder/Shine Light Effect">
+                  <matrix>
+                    <Matrix a="0.999603271484375"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (enterFrame) {
+	_rotation += 2;
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color tintMultiplier="1" tintColor="#FF9900"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/ Light Effects Folder/Shine Light Effect">
+                  <matrix>
+                    <Matrix a="1.22853088378906" b="1.22853088378906" c="-1.23042297363281" d="1.23046875"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (enterFrame) {
+	_rotation -= 1.5
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color tintMultiplier="1" tintColor="#FFFF00"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!158 -153|-58 -153!-58 -153|-58 -64!-58 -64|143 -64!143 -64|143 3!143 3|-58 3!-58 3|-58 112!-58 112|166 112!166 112|166 180!166 180|-139 180!-139 180|-139 -221!-139 -221|158 -221!158 -221|158 -153!574 -221|427 12!427 12|427 180!427 180
+|346 180!346 180|346 11!346 11|199 -221!199 -221|294 -221!294 -221|388 -62!388 -62|481 -221!481 -221|574 -221!-336 -65|-177 180!-177 180|-281 180!-281 180|-392 -8!-392 -8|-457 59!-457 59|-457 180!-457 180|-538 180!-538 180|-538 -221!-538
+ -221|-457 -221!-457 -221|-457 -43!-457 -43|-294 -221!-294 -221|-185 -221!-185 -221|-336 -65"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#FFCC00"/>
+                        </FillStyle>
+                      </fills>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal">
+                            <fill>
+                              <SolidColor color="#FFFF00"/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                        <StrokeStyle index="2">
+                          <SolidStroke scaleMode="normal">
+                            <fill>
+                              <SolidColor color="#FFFF00"/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="
+!-44.5 131.5|-44.5 -9.5!-44.5 -9.5[-91.84375 #FFFFEB.1F -128.5 -57.5!-128.5 -57.5[#FFFF4B.34 #FFFF91.BA -180.5 -185!-180.5 -185[#FFFF4B.34 #FFFEFC.C7 -128.5 -311.5!-128.5 -311.5[#FFFFB4.66 -364.59375 -0.5 -365!-0.5 -365[#4A.1B -364.59375
+ 126.5 -311.5!126.5 -311.5[#B3.4C #FFFEFC.C7 179.5 -185!179.5 -185[#B3.4C #FFFF91.BA 126.5 -57.5!126.5 -57.5[#55.57 #FFFFF0.0A 30.5 -7!30.5 -7|31 326.5!31 326.5|-44.5 326.5"/>
+                        <Edge fillStyle1="1" strokeStyle="2" edges="
+!-44.5 326.5|-173 326.5!-173 326.5|-173 261.5!-173 261.5|-44.5 261.5"/>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="
+!-44.5 261.5|-44.5 194"/>
+                        <Edge fillStyle1="1" strokeStyle="2" edges="
+!-44.5 194|-182 194!-182 194|-182 131.5!-182 131.5|-44.5 131.5"/>
+                        <Edge fillStyle0="1" strokeStyle="1" edges="
+!84.5 -100[#31.67 -64.9375 -0.5 -65!-0.5 -65[#FFFFCD.5A -64.9375 -86 -100!-86 -100[-120.78125 #FFFF78.D2 -120.5 -185!-120.5 -185[-120.78125 #FFFF15.6F -86 -269.5!-86 -269.5[#FFFFCD.5A #FFFECF.31 -0.5 -305!-0.5 -305[#31.67 #FFFECF.31 84.5
+ -269.5!84.5 -269.5[#77.88 #FFFF15.6F 119.5 -185!119.5 -185[#77.88 #FFFF78.D2 84.5 -100"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#FFCC00"/>
+                        </FillStyle>
+                      </fills>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal">
+                            <fill>
+                              <SolidColor color="#FFFF00"/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge fillStyle0="1" strokeStyle="1" edges="
+!84.5 -120[#31.67 -84.9375 -0.5 -85!-0.5 -85[#FFFFCD.5A -84.9375 -86 -120!-86 -120[-120.78125 #FFFF64.D2 -120.5 -205!-120.5 -205[-120.78125 #FFFF01.6F -86 -289.5!-86 -289.5[#FFFFCD.5A #FFFEBB.31 -0.5 -325!-0.5 -325[#31.67 #FFFEBB.31 84.5
+ -289.5!84.5 -289.5[#77.88 #FFFF01.6F 119.5 -205!119.5 -205[#77.88 #FFFF64.D2 84.5 -120"/>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="
+!30.5 -27|31 10!31 10|30.5 10!30.5 10|31 326.5!31 326.5|-44 326.5!-44 326.5|-44 327!-44 327|-262 330!-262 330|-262 253!-262 253|-44.5 253!-44.5 253|-44.5 217!-44.5 217|-149 216.5!-149 216.5|-174.5 191.5!-174.5 191.5|-199.5 216.5!-199.5
+ 216.5|-256 216.5!-256 216.5|-256 130.5!-256 130.5|-193 130.5!-193 130.5|-173 150.5!-173 150.5|-155 130.5!-155 130.5|-44.5 131!-44.5 131|-44.5 85!-44.5 85|-262 85!-262 85|-262 18!-262 18|-44.5 18!-44.5 18|-44.5 10!-44.5 10|-44 10!-44
+ 10|-44.5 -29.5!-44.5 -29.5[-91.84375 #FFFFD7.1F -128.5 -77.5!-128.5 -77.5[#FFFF4B.34 #FFFF7D.BA -180.5 -205!-180.5 -205[#FFFF4B.34 #FFFEE8.C7 -128.5 -331.5!-128.5 -331.5[#FFFFB4.66 -384.59375 -0.5 -385!-0.5 -385[#4A.1B -384.59375 126.5
+ -331.5!126.5 -331.5[#B3.4C #FFFEE8.C7 179.5 -205!179.5 -205[#B3.4C #FFFF7D.BA 126.5 -77.5!126.5 -77.5[#55.57 #FFFFDC.0A 30.5 -27"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,675 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="      Char/Life Lost Animation" itemID="475c2a5c-00000bd6" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="LifeLost" lastModified="1203984452" lastUniqueIdentifier="24">
+  <timeline>
+    <DOMTimeline name="Life Lost Animation">
+      <layers>
+        <DOMLayer name="Layer 4" color="#FF4FFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[lives = _root.CharLives+1;
+saveX = _root.Course.BackGFX.StartClip._x;
+saveY = _root.Course.BackGFX.StartClip._y;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="12" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.RemoveCourse();
+_root.PauseGame = false;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="13" duration="14" name=" add sound fx" labelType="comment" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[soundclip = new Sound(this);
+soundclip.attachSound("Explosion");
+soundclip.start(0, 1);
+soundclip.setVolume(100);
+//soundclip.setPan(0);
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="27" duration="31" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[lives = _root.CharLives;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="58" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.ReviveMario(_root.playingcourse, saveX, saveY);
+this.removeMovieClip(this);
+stop();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 12" color="#FF4FFF">
+          <frames>
+            <DOMFrame index="0" duration="21" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="21" duration="26" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="-16.6" ty="6.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix a="1.38386535644531" d="1.484619140625" tx="3.4" ty="16.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix a="0.691940307617188" b="-1.19847106933594" c="0.9989013671875" d="0.576705932617188" tx="-16.6" ty="-22.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="47" duration="12" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 11" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" duration="20" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="20" duration="27" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Explosion 3 Clip (Small 2)">
+                  <matrix>
+                    <Matrix a="2.44961547851563" b="1.41429138183594" c="-1.16874694824219" d="2.02433776855469" tx="1.65" ty="1.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 3 Clip (Small 2)">
+                  <matrix>
+                    <Matrix a="2.20783996582031" b="-0.591583251953125" c="0.697296142578125" d="2.60232543945313" tx="-25.45" ty="-0.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="47" duration="12" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" duration="9" tweenType="shape" keyMode="17922">
+              <MorphShape>
+                <morphSegments>
+                  <MorphSegment startPointA="-21.484375, -15.625" startPointB="-21.484375, -15.625" strokeIndex1="0" strokeIndex2="0" fillIndex1="0" fillIndex2="1">
+                    <MorphCurves controlPointA="0, -15.625" anchorPointA="#15.7C, -15.625" controlPointB="0, -15.625" anchorPointB="#15.7C, -15.625" isLine="true"/>
+                    <MorphCurves controlPointA="#15.7C, 0" anchorPointA="#15.7C, #F.A" controlPointB="#15.7C, 0" anchorPointB="#15.7C, #F.A" isLine="true"/>
+                    <MorphCurves controlPointA="0, #F.A" anchorPointA="-21.484375, #F.A" controlPointB="0, #F.A" anchorPointB="-21.484375, #F.A" isLine="true"/>
+                    <MorphCurves controlPointA="-21.484375, 0" anchorPointA="-21.484375, -15.625" controlPointB="-21.484375, 0" anchorPointB="-21.484375, -15.625" isLine="true"/>
+                  </MorphSegment>
+                </morphSegments>
+                <morphHintsList/>
+              </MorphShape>
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!-5500 -4000S2|5500 -4000!5500 -4000|5500 4000!5500 4000|-5500 4000!-5500 4000|-5500 -4000"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="9" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#010101" alpha="0"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!5500 -4000|5500 4000!5500 4000|-5500 4000!-5500 4000|-5500 -4000!-5500 -4000|5500 -4000"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="10" duration="9" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="19" duration="28" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="-12.25" ty="26.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 3 Clip (Small 2)">
+                  <matrix>
+                    <Matrix a="2.28572082519531" d="2.0625" tx="-35.45" ty="19.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 3 Clip (Small 2)">
+                  <matrix>
+                    <Matrix a="2.73219299316406" b="0.732086181640625" c="-0.604995727539063" d="2.25784301757813" tx="1.65" ty="1.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="47" duration="2" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="49" duration="9" tweenType="shape" motionTweenScale="false" keyMode="16386">
+              <MorphShape>
+                <morphSegments>
+                  <MorphSegment startPointA="-21.484375, -15.625" startPointB="-21.484375, -15.625" strokeIndex1="0" strokeIndex2="0" fillIndex1="0" fillIndex2="1">
+                    <MorphCurves controlPointA="0, -15.625" anchorPointA="#15.7C, -15.625" controlPointB="0, -15.625" anchorPointB="#15.7C, -15.625" isLine="true"/>
+                    <MorphCurves controlPointA="#15.7C, 0" anchorPointA="#15.7C, #F.A" controlPointB="#15.7C, 0" anchorPointB="#15.7C, #F.A" isLine="true"/>
+                    <MorphCurves controlPointA="0, #F.A" anchorPointA="-21.484375, #F.A" controlPointB="0, #F.A" anchorPointB="-21.484375, #F.A" isLine="true"/>
+                    <MorphCurves controlPointA="-21.484375, 0" anchorPointA="-21.484375, -15.625" controlPointB="-21.484375, 0" anchorPointB="-21.484375, -15.625" isLine="true"/>
+                  </MorphSegment>
+                </morphSegments>
+                <morphHintsList/>
+              </MorphShape>
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#010101" alpha="0"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!5500 4000|-5500 4000!-5500 4000|-5500 -4000!-5500 -4000|5500 -4000!5500 -4000|5500 4000"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="58" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!5500 -4000|5500 4000!5500 4000|-5500 4000!-5500 4000|-5500 -4000!-5500 -4000|5500 -4000"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 8" color="#FF4F4F">
+          <frames>
+            <DOMFrame index="0" duration="18" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="18" duration="29" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="-5.65" ty="-11.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix a="1.23390197753906" b="0.33062744140625" c="-0.460891723632813" d="1.7200927734375" tx="4.35" ty="18.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix a="1.56161499023438" b="-0.901580810546875" c="0.890396118164063" d="1.54219055175781" tx="4.35" ty="-11.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 3 Clip (Small 2)">
+                  <matrix>
+                    <Matrix a="2.82856750488281" d="2.33749389648438" tx="1.65" ty="1.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="47" duration="12" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 7" color="#4F80FF" locked="true">
+          <frames>
+            <DOMFrame index="0" duration="17" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="17" duration="30" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="-15.25" ty="14.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 3 Clip (Small 2)">
+                  <matrix>
+                    <Matrix a="2.28572082519531" d="2.0625" tx="-11.45" ty="-1.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Explosion 6 Clip (Air Explosion)">
+                  <matrix>
+                    <Matrix a="2.26315307617188" d="2.26315307617188" tx="-8.65" ty="9.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 3 Clip (Small 2)">
+                  <matrix>
+                    <Matrix a="1.61625671386719" b="-1.61625671386719" c="1.45840454101563" d="1.45840454101563" tx="-41.45" ty="11.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="47" duration="12" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 6" color="#808080" locked="true">
+          <frames>
+            <DOMFrame index="0" duration="16" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="16" duration="31" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Explosion 3 Clip (Small 2)" selected="true">
+                  <matrix>
+                    <Matrix a="2.28572082519531" d="2.0625" tx="-1.45" ty="1.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 3 Clip (Small 2)" selected="true">
+                  <matrix>
+                    <Matrix a="1.61625671386719" b="-1.61625671386719" c="1.45840454101563" d="1.45840454101563" tx="-21.45" ty="18.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 3 Clip (Small 2)" selected="true">
+                  <matrix>
+                    <Matrix a="2.28585815429688" b="-2.28585815429688" c="2.06001281738281" d="2.06001281738281" tx="-21.45" ty="-11.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="47" duration="12" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F" locked="true">
+          <frames>
+            <DOMFrame index="0" duration="15" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="15" duration="32" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Explosion 6 Clip (Air Explosion)">
+                  <matrix>
+                    <Matrix a="1.66827392578125" b="0.447021484375" c="-0.406936645507813" d="1.51870727539063" tx="-26.65" ty="-0.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="-5.25" ty="-5.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 3 Clip (Small 2)" selected="true">
+                  <matrix>
+                    <Matrix a="2.28572082519531" d="2.0625" tx="-1.45" ty="11.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="47" duration="12" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" locked="true">
+          <frames>
+            <DOMFrame index="0" duration="14" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="14" duration="33" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Explosion 6 Clip (Air Explosion)">
+                  <matrix>
+                    <Matrix a="2.26315307617188" d="2.26315307617188" tx="3.35" ty="9.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 3 Clip (Small 2)">
+                  <matrix>
+                    <Matrix a="2.28572082519531" d="2.0625" tx="-31.45" ty="1.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Nuke Explosion">
+                  <matrix>
+                    <Matrix tx="-18.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.30078125"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Explosion 6 Clip (Air Explosion)">
+                  <matrix>
+                    <Matrix a="1.67979431152344" b="0.450103759765625" c="-0.508682250976563" d="1.89840698242188" tx="-3.65" ty="5.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.25"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="47" duration="12" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 9" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" duration="59" keyMode="9728">
+              <elements>
+                <DOMStaticText left="65.5" width="13" height="24.55" autoExpand="true" antiAliasThickness="68" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-98.55" ty="-11.6"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>=</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" bold="true" alpha="0.501960784313725" size="22" face="Matisse ITC"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                  <filters>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="4"/>
+                  </filters>
+                </DOMStaticText>
+                <DOMDynamicText width="37.1" height="39.6" antiAliasThickness="68" isSelectable="false" variableName="lives">
+                  <matrix>
+                    <Matrix tx="-19.2" ty="-21"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>0</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" bold="true" size="32" bitmapSize="640" face="Matisse ITC" fillColor="#FFFFFF"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                  <filters>
+                    <GlowFilter blurX="2" blurY="2" color="#666666" strength="4"/>
+                  </filters>
+                </DOMDynamicText>
+                <DOMStaticText left="65.5" width="13" height="24.55" autoExpand="true" antiAliasThickness="68" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-100.55" ty="-13.6"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>=</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" bold="true" size="22" face="Matisse ITC" fillColor="#FFFFFF"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                  <filters>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="4"/>
+                  </filters>
+                </DOMStaticText>
+                <DOMBitmapInstance libraryItemName="      Char/   HUD CLIPS (&amp; BITS)/Mario Lives">
+                  <matrix>
+                    <Matrix tx="-55.85" ty="-6.55"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 10" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" duration="15" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!5500 -4000|5500 4000!5500 4000|-5500 4000!-5500 4000|-5500 -4000!-5500 -4000|5500 -4000"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="15" duration="12" tweenType="shape" keyMode="17922" acceleration="-100">
+              <MorphShape>
+                <morphSegments>
+                  <MorphSegment startPointA="-21.484375, -15.625" startPointB="-21.484375, -15.625" strokeIndex1="0" strokeIndex2="0" fillIndex1="0" fillIndex2="1">
+                    <MorphCurves controlPointA="0, -15.625" anchorPointA="#15.7C, -15.625" controlPointB="0, -15.625" anchorPointB="#15.7C, -15.625" isLine="true"/>
+                    <MorphCurves controlPointA="#15.7C, 0" anchorPointA="#15.7C, #F.A" controlPointB="#15.7C, 0" anchorPointB="#15.7C, #F.A" isLine="true"/>
+                    <MorphCurves controlPointA="0, #F.A" anchorPointA="-21.484375, #F.A" controlPointB="0, #F.A" anchorPointB="-21.484375, #F.A" isLine="true"/>
+                    <MorphCurves controlPointA="-21.484375, 0" anchorPointA="-21.484375, -15.625" controlPointB="-21.484375, 0" anchorPointB="-21.484375, -15.625" isLine="true"/>
+                  </MorphSegment>
+                </morphSegments>
+                <morphHintsList/>
+              </MorphShape>
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!5500 4000|-5500 4000!-5500 4000|-5500 -4000!-5500 -4000|5500 -4000!5500 -4000|5500 4000"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="27" duration="10" tweenType="shape" keyMode="17922" acceleration="100">
+              <MorphShape>
+                <morphSegments>
+                  <MorphSegment startPointA="-21.484375, -15.625" startPointB="-21.484375, -15.625" strokeIndex1="0" strokeIndex2="0" fillIndex1="0" fillIndex2="1">
+                    <MorphCurves controlPointA="0, -15.625" anchorPointA="#15.7C, -15.625" controlPointB="0, -15.625" anchorPointB="#15.7C, -15.625" isLine="true"/>
+                    <MorphCurves controlPointA="#15.7C, 0" anchorPointA="#15.7C, #F.A" controlPointB="#15.7C, 0" anchorPointB="#15.7C, #F.A" isLine="true"/>
+                    <MorphCurves controlPointA="0, #F.A" anchorPointA="-21.484375, #F.A" controlPointB="0, #F.A" anchorPointB="-21.484375, #F.A" isLine="true"/>
+                    <MorphCurves controlPointA="-21.484375, 0" anchorPointA="-21.484375, -15.625" controlPointB="-21.484375, 0" anchorPointB="-21.484375, -15.625" isLine="true"/>
+                  </MorphSegment>
+                </morphSegments>
+                <morphHintsList/>
+              </MorphShape>
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#660000"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!5500 4000|-5500 4000!-5500 4000|-5500 -4000!-5500 -4000|5500 -4000!5500 -4000|5500 4000"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="37" duration="22" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!-5500 -4000|5500 -4000!5500 -4000|5500 4000!5500 4000|-5500 4000!-5500 4000|-5500 -4000"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

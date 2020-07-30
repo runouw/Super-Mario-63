@@ -1,0 +1,110 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="K-2Switch" itemID="4a065d3c-0000136f" lastModified="1241931748">
+  <timeline>
+    <DOMTimeline name="K-2Switch">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[Y = _y;
+X = _x;
+count = 0;
+t = false;
+duration = 200;
+onEnterFrame = function () {
+	if (_root.Course.BackGFX.SwitchPL == true) {
+		if (t == false) {
+			count = 0;
+			t = true;
+			wait = 32;
+			if (_parent._name == "BackGFX") {
+				_root.Mariosound = new Sound(this);
+				_root.Mariosound.attachSound("Tick");
+				_root.Mariosound.start(0, 1);
+				_root.Mariosound.setVolume(_root.MarioVolume);
+			}
+		} else {
+			if (count<30) {
+				_y += 3;
+				_x = X+random(3)-1;
+			} else {
+				_x = X;
+			}
+			count++;
+			if ((count/wait) == Math.round(count/wait)) {
+				if (count>(1/2)*duration) {
+					wait = 16;
+					if (count>(3/4)*duration) {
+						wait = 8;
+					}
+					if (count>(9/10)*duration) {
+						wait = 4;
+					}
+				}
+				if (_parent._name == "BackGFX") {
+					_root.Mariosound = new Sound(this);
+					_root.Mariosound.attachSound("Tick");
+					_root.Mariosound.start(0, 1);
+					_root.Mariosound.setVolume(_root.MarioVolume);
+				}
+			}
+			if (count>duration) {
+				_root.Course.BackGFX.SwitchPL == false;
+				count = 30;
+				t = false;
+			}
+		}
+	} else {
+		if (count>0) {
+			_y += 3;
+			_x = X+random(3)-1;
+		} else {
+			_y = Y;
+			_x = X;
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape isFloating="true">
+                  <matrix>
+                    <Matrix tx="-465.55" ty="943.95"/>
+                  </matrix>
+                  <fills>
+                    <FillStyle index="1">
+                      <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Bricks &amp; Woods/Switch Brick" bitmapIsClipped="false">
+                        <matrix>
+                          <Matrix a="20" d="20" tx="458.25" ty="-986.95"/>
+                        </matrix>
+                      </BitmapFill>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <SolidColor/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="!9458 -19739|9458 -18019!9458 -18019|9165 -18019!9165 -18019|9165 -19739!9165 -19739|9458 -19739"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

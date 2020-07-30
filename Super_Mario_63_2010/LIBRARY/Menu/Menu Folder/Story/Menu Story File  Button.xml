@@ -1,0 +1,433 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name=" Menu/Menu Folder/ Story/Menu Story File  Button" itemID="47774742-00000e1a" sourceFlashFilepath="Rob &amp; Steve Hewitt\My Documents\Super Mario 63\Menu Design.fla" sourceLibraryItemHRef="Menu Folder/ Story/Menu Story File  Button" sourceLastModified="1199146620" lastModified="1238121608" lastUniqueIdentifier="10" sourceItemID="47774742-00000e1a">
+  <timeline>
+    <DOMTimeline name="Menu Story File  Button" currentFrame="3">
+      <layers>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" duration="5" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[ywave = random(90);
+rwave = random(90);
+Y = this._y;
+R = _rotation;
+r = 0;
+onEnterFrame = function () {
+	if (_currentframe>5) {
+		gotoAndStop(_currentframe-4);
+	}
+	if (_parent.Mode == "copying") {
+		if (_parent.HL == file) {
+			normscale = 50;
+			largescale = 75;
+			if (_currentframe<6) {
+				gotoAndStop(_currentframe+4);
+			}
+		} else if (_parent.HL == undefined) {
+			normscale = 100;
+			largescale = 125;
+		} else {
+			normscale = 105;
+			largescale = 135;
+		}
+	} else {
+		if (_parent.HL == file) {
+			normscale = 135;
+			largescale = 145;
+		} else if (_parent.HL == undefined) {
+			normscale = 100;
+			largescale = 125;
+		} else {
+			normscale = 75;
+			largescale = 90;
+		}
+	}
+	// 
+	//if (bg.hitTest(_root._xmouse, _root._ymouse, true) && _root.m.MenuRedTrans._x == undefined) {
+	if (bg.hitTest(_root._xmouse, _root._ymouse, true) && _parent.Mode !== "deleting") {
+		hl = true;
+		//_level0.m.MenuRedTrans
+	} else {
+		hl = false;
+	}
+	//
+	if (hl == true && cl !== true) {
+		this._xscale += (largescale-this._xscale)/4;
+		r += (largescale-this._xscale)/15;
+		txt._xscale += (100-txt._xscale)/4;
+		ywave -= 0.03;
+	} else if (cl !== true) {
+		this._xscale += (normscale-this._xscale)/4;
+		r += (normscale-this._xscale)/15;
+		txt._xscale += (80-txt._xscale)/4;
+	}
+	//                                            
+	this._yscale = this._xscale;
+	txt._yscale = txt._xscale;
+	//
+	ywave += 0.03;
+	rwave += 0.025;
+	this._y = Y+Math.sin(ywave)*5.5;
+	this._rotation = R+r+Math.sin(rwave)*_xscale/20;
+};
+onMouseDown = function () {
+	if (hl == true && cl !== true && (_parent._currentframe<2 || _parent._currentframe>22) && _root.m.MenuRedTrans._x == undefined) {
+		//cl = true;
+		//trace("onMouseDown")
+		if (_parent.Mode !== "copying") {
+			_parent.HL = file;
+			//trace("HL = "+file);
+			//_parent._parent.clicked = true;
+			//_parent.TransitionF("File"+_parent._parent.file);
+			//_parent._parent.TransitionF("Start");
+		} else if (_parent.Mode == "copying") {
+			//_parent._parent.Message("Can't Copy an Empty File")
+			if (_root["File"+file+"TotalStars"] == 0 && file !== _parent.HL) {
+				_parent.Mode = "";
+				//_root.CopyFile(file, _parent.HL);
+				depth = _root.m.getNextHighestDepth();
+				_root.m.attachMovie("MenuGreenTrans", "MenuGreenTrans"+depth, depth, {trans:true, _x:0, _y:0, file1:file, file2:_parent.HL});
+				_parent.HL = undefined;
+			} else if (file !== _parent.HL) {
+				_parent._parent.Message("Can Only Copy into an Empty File..", "red");
+			}
+			//        
+		}
+	}
+};
+//
+Delete = function () {
+	//trace(_name)
+	//trace(this+" is deleted");
+	_parent.HL = undefined;
+	em.gotoAndPlay(2);
+};
+//
+gotoAndStop(frame+1);
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="5" duration="4" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Menu Folder/ Story/Menu File Select Box">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter blurX="6" blurY="6" color="#00FF00" inner="true" strength="10"/>
+                    <BevelFilter highlightColor="#FFFF00" strength="1.5"/>
+                    <GlowFilter blurX="2" blurY="2" color="#FFFFFF" inner="true" strength="5"/>
+                    <BevelFilter shadowColor="#00FF00" strength="0.88"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#FF4FFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="9" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Menu Folder/ Story/Menu File Emblems" name="em">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Menu Folder/ Story/Menu Story File A Text" name="txt">
+                  <matrix>
+                    <Matrix a="0.75" d="0.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-0.05"/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter blurX="6" blurY="6" color="#0000FF" inner="true" strength="10"/>
+                    <BevelFilter strength="1.5"/>
+                    <GlowFilter blurX="2" blurY="2" color="#FFFFFF" inner="true" strength="10"/>
+                    <BevelFilter shadowColor="#0000FF" strength="0.88"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Menu Folder/ Story/Menu Story File B Text" name="txt">
+                  <matrix>
+                    <Matrix a="0.75" d="0.75" ty="0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-0.05"/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter blurX="6" blurY="6" color="#00FF00" inner="true" quality="3" strength="10"/>
+                    <BevelFilter quality="3" strength="1.5"/>
+                    <GlowFilter blurX="2" blurY="2" color="#FFFFFF" inner="true" quality="3" strength="10"/>
+                    <BevelFilter quality="3" shadowColor="#00CC00" strength="0.88"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Menu Folder/ Story/Menu Story File C Text" name="txt">
+                  <matrix>
+                    <Matrix a="0.75" d="0.75" ty="0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-0.05"/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter blurX="6" blurY="6" inner="true" quality="3" strength="10"/>
+                    <BevelFilter quality="3" strength="1.5"/>
+                    <GlowFilter blurX="2" blurY="2" color="#FFFFFF" inner="true" quality="3" strength="10"/>
+                    <BevelFilter quality="3" shadowColor="#FF0000" strength="0.88"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="4" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Menu Folder/ Story/Menu Story File D Text" name="txt">
+                  <matrix>
+                    <Matrix a="0.75" d="0.75" ty="0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-0.05"/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter blurX="6" blurY="6" color="#FFFF00" inner="true" quality="3" strength="10"/>
+                    <BevelFilter quality="3" strength="1.5"/>
+                    <GlowFilter blurX="2" blurY="2" color="#FFFFFF" inner="true" quality="3" strength="10"/>
+                    <BevelFilter quality="3" shadowColor="#FFFF00" strength="0.88"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="5" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="6" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="7" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="8" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Menu Folder/  Universal Stuff/Menu Button BG" name="bg">
+                  <matrix>
+                    <Matrix a="0.75" d="0.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	gotoAndPlay(random(39)+1);
+}
+]]></script>
+                  </Actionscript>
+                  <filters>
+                    <BevelFilter distance="2"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Menu Folder/  Universal Stuff/Menu Button BG" name="bg">
+                  <matrix>
+                    <Matrix a="0.75" d="0.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	gotoAndPlay(random(39)+1);
+}
+]]></script>
+                  </Actionscript>
+                  <filters>
+                    <BevelFilter distance="2"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Menu Folder/  Universal Stuff/Menu Button BG" name="bg">
+                  <matrix>
+                    <Matrix a="0.75" d="0.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	gotoAndPlay(random(39)+1);
+}
+]]></script>
+                  </Actionscript>
+                  <filters>
+                    <BevelFilter distance="2"/>
+                    <AdjustColorFilter brightness="19" saturation="42" hue="-131"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Menu Folder/  Universal Stuff/Menu Button BG" name="bg">
+                  <matrix>
+                    <Matrix a="0.75" d="0.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	gotoAndPlay(random(39)+1);
+}
+]]></script>
+                  </Actionscript>
+                  <filters>
+                    <BevelFilter distance="2"/>
+                    <AdjustColorFilter brightness="-37" saturation="9" hue="112"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="4" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Menu Folder/  Universal Stuff/Menu Button BG" name="bg">
+                  <matrix>
+                    <Matrix a="0.75" d="0.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	gotoAndPlay(random(39)+1);
+}
+]]></script>
+                  </Actionscript>
+                  <filters>
+                    <BevelFilter distance="2"/>
+                    <AdjustColorFilter brightness="52" contrast="26" saturation="39" hue="-180"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="5" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Menu Folder/  Universal Stuff/Menu Button BG" name="bg">
+                  <matrix>
+                    <Matrix a="0.75" d="0.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	gotoAndPlay(random(39)+1);
+}
+]]></script>
+                  </Actionscript>
+                  <filters>
+                    <BevelFilter distance="2"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="6" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Menu Folder/  Universal Stuff/Menu Button BG" name="bg">
+                  <matrix>
+                    <Matrix a="0.75" d="0.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	gotoAndPlay(random(39)+1);
+}
+]]></script>
+                  </Actionscript>
+                  <filters>
+                    <BevelFilter distance="2"/>
+                    <AdjustColorFilter brightness="19" saturation="42" hue="-131"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="7" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Menu Folder/  Universal Stuff/Menu Button BG" name="bg">
+                  <matrix>
+                    <Matrix a="0.75" d="0.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	gotoAndPlay(random(39)+1);
+}
+]]></script>
+                  </Actionscript>
+                  <filters>
+                    <BevelFilter distance="2"/>
+                    <AdjustColorFilter brightness="-37" saturation="9" hue="112"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="8" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Menu Folder/  Universal Stuff/Menu Button BG" name="bg">
+                  <matrix>
+                    <Matrix a="0.75" d="0.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	gotoAndPlay(random(39)+1);
+}
+]]></script>
+                  </Actionscript>
+                  <filters>
+                    <BevelFilter distance="2"/>
+                    <AdjustColorFilter brightness="52" contrast="26" saturation="39" hue="-180"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

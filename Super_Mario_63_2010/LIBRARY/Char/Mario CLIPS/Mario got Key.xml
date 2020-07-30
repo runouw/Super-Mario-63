@@ -1,0 +1,186 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="      Char/  Mario CLIPS/Mario got Key" itemID="46aa17df-00000837" lastModified="1231026281" lastUniqueIdentifier="1">
+  <timeline>
+    <DOMTimeline name="Mario got Key">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+_root.CameraZoom = 100;
+_root.GetKeyMusic();
+count = 0;
+othertime = 0;
+onEnterFrame = function () {
+	_root.PauseGame = false;
+	timeinsong = _root.bgsong.position/1000;
+	othertime++;
+	/*
+	if (timeinsong<=0.4) {
+	_root.CameraZoom += 3;
+	}
+	if (timeinsong>0.4 && timeinsong<0.9) {
+	_root.nullCam = true;
+	if (count == 1) {
+	count++;
+	_root.MoveAllPlats(0, -70);
+	}
+	if (count == 0) {
+	count++;
+	_root.CameraZoom = 200;
+	_root.nullCam = false;
+	_root.Camspeed = 1;
+	}
+	
+	_root.MoveAllPlats(-1, 7);
+	//_root.CameraZoom -= 5;
+	}
+	if (timeinsong>=0.9 && timeinsong<=1.3) {
+	_root.nullCam = true;
+	if (count == 3) {
+	count++;
+	_root.MoveAllPlats(0, 70);
+	}
+	if (count == 2) {
+	count++;
+	_root.CameraZoom = 200;
+	_root.nullCam = false;
+	_root.Camspeed = 1;
+	}
+	
+	_root.MoveAllPlats(1, -7);
+	//_root.CameraZoom -= 5;
+	}
+	*/
+	if (timeinsong>1.3 || othertime>92) {
+		_root.nullCam = false;
+		_root.Camspeed = 1;
+		play();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="12" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+_root.CameraZoom = 100;
+othertime = 0;
+onEnterFrame = function () {
+	_root.PauseGame = false;
+	_root.ZoomoutCam();
+	timeinsong = _root.bgsong.position/1000;
+	lengthofsong = _root.bgsong.duration/1000;
+	othertime++
+	if (timeinsong>lengthofsong-0.1 || othertime>92*3) {
+		_root.Blackout();
+		play();
+		onEnterFrame = function () {
+			_root.PauseGame = false;
+			_root.ZoomoutCam();
+		};
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="13" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.newstar = true;
+//_root.LastItemGot = "BowserKey1";
+_root.ReturnToCastle();
+onEnterFrame = null;
+stop();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Mario CLIPS/Mario Item Clip">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="6" ty="-19.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[//]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" duration="13" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Mario CLIPS/Mario Item Clip">
+                  <matrix>
+                    <Matrix tx="6" ty="-29.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario Star (none) - 1">
+                  <matrix>
+                    <Matrix tx="-13" ty="-28.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" duration="13" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario Star (none) - 2">
+                  <matrix>
+                    <Matrix tx="-11.15" ty="-35.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#FF4FFF">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Front Code">
+                  <matrix>
+                    <Matrix tx="-1.5" ty="-15.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" duration="13" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Front Code">
+                  <matrix>
+                    <Matrix tx="-0.5" ty="-14.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

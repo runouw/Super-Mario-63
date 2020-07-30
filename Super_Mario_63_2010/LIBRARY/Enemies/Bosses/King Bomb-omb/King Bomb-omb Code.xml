@@ -1,0 +1,338 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="   Enemies/Bosses/King Bomb-omb/King Bomb-omb Code" itemID="46868db1-00000a51" lastModified="1238254607" lastUniqueIdentifier="5">
+  <timeline>
+    <DOMTimeline name="King Bomb-omb Code">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[HP = 3;
+startX = _x
+startY = _y]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[depth = _root.Course.Platforms.getNextHighestDepth();
+_root.Course.Platforms.attachMovie("KingBombombGround", "KingBombombGround"+depth, depth, {_x:_x, _y:_y});
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb Ground">
+                  <matrix>
+                    <Matrix d="0.997161865234375" ty="0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-0.05"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+_x = startX;
+_y = startY;
+//
+_root.Course.Platforms["KingBombombGround"+depth]._y = _y;
+_root.Course.Platforms["KingBombombGround"+depth]._x = _x;
+//
+onEnterFrame = function () {
+	// Talking
+	if (this.box.hitTest(_root.Course.Char.charClip.feet) && _root.Course.Char.attack == false && _root.Course.Char.air == false) {
+		_root.Course.Char.attack = true;
+		_root.Course.Char.attackFrame = "bosscinema";
+		_root.Course.Char._xscale = 100;
+		//
+		_root.playpause = true;
+		onEnterFrame = function () {
+			_root.Camcenter = this;
+			_root.PauseGame = false;
+			//
+			count = 0;
+			//
+			_root.StopBGsong();
+			_root.PlayMessage("Mario... I remember you... You can't grab me and throw me this time, so I'll destroy you with my bombs!!");
+			clip.gotoAndStop(5);
+			onEnterFrame = function () {
+				//
+				_root.playpause = true;
+				//
+				count++;
+				if (_root.KeyZ() && count>5) {
+					_root.StopMessage();
+					//
+					count = 0;
+					onEnterFrame = function () {
+						count++;
+						if (count>5) {
+							_root.Course.Char.attack = false;
+							//_root.Course.Char.frame = 1;
+							//
+							_root.playpause = false;
+							onEnterFrame = null;
+							//
+							_root.StopBGsong();
+							_root.StartBoss64Music();
+							//
+							_root.Course.Edge.gotoAndStop(2);
+							_root.Course.CamEdge.gotoAndStop(2);
+							//
+							nextFrame();
+						}
+					};
+				}
+			};
+		};
+	}
+	//                 
+};
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Lineless Movieclip" name="box">
+                  <matrix>
+                    <Matrix a="1.42994689941406" d="0.26507568359375" tx="48.9" ty="10.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-27.9"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+frame = 1;
+attack = false;
+attackFrame = "";
+air = false;
+//
+xspeed = 0;
+yspeed = 0;
+//
+idlecount = 0;
+idlecount = 0;
+tall = 50;
+wide = 35;
+//
+throwcount = 0;
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		//   
+		while ((_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+3)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.BPlatforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+3)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) && !(_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y-1)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.BPlatforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y-3)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true))) {
+			_y++;
+		}
+		while (_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y-1)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.BPlatforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y-3)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+			_y--;
+		}
+		//
+		if (attack == true) {
+			idlecount = 0;
+		}
+		idlecount++;
+		idlecounts = idlecount/_root.framerate;
+		if (idlecounts>0.5 && attack == false && air == false) {
+			if (_xscale>0 && (_x+_parent._x)-_root.Course.Char._x<-10) {
+				attack = true;
+				attackFrame = "turn";
+			} else if (_xscale<0 && (_x+_parent._x)-_root.Course.Char._x>10) {
+				attack = true;
+				attackFrame = "turn";
+			}
+		}
+		if (idlecounts>1) {
+			randomnum = random(3)+1;
+			if (randomnum == 1) {
+				if (random(2) == 1) {
+					randomnum = 3;
+				} else {
+					randomnum = 2;
+				}
+			}
+			if (throwcount>random(4)+2) {
+				randomnum = 1;
+			}
+			if (attack == false && air == false && randomnum == 1) {
+				if (_xscale>0 && (_x+_parent._x)-_root.Course.Char._x>15) {
+					attack = true;
+					attackFrame = "throw";
+				} else if (_xscale<0 && (_x+_parent._x)-_root.Course.Char._x<-15) {
+					attack = true;
+					attackFrame = "throw";
+				}
+				throwcount = 0;
+			} else if (attack == false && air == false && randomnum == 2) {
+				if (_xscale>0 && (_x+_parent._x)-_root.Course.Char._x>20) {
+					frame = "walk";
+				} else if (_xscale<0 && (_x+_parent._x)-_root.Course.Char._x<-20) {
+					frame = "walk";
+				}
+				idlecount = 0;
+				idlecounts = 0;
+				//
+				throwcount++;
+			} else if (attack == false && air == false && randomnum == 3 && frame !== "walk") {
+				attack = true;
+				attackFrame = "jump";
+				idlecount = 0;
+				idlecounts = 0;
+				throwcount++;
+			}
+		}
+		if (idlecounts>0.5 && _xscale>0 && (_x+_parent._x)-_root.Course.Char._x<30 && (_x+_parent._x)-_root.Course.Char._x>0) {
+			attack = true;
+			attackFrame = "grab";
+			frame = "idle";
+		} else if (idlecounts>1 && _xscale<0 && (_x+_parent._x)-_root.Course.Char._x>-30 && (_x+_parent._x)-_root.Course.Char._x<0) {
+			attack = true;
+			attackFrame = "grab";
+			frame = "idle";
+		}
+		if (frame == "walk" && attack == false) {
+			if (_xscale>0) {
+				xspeed -= 0.7;
+			} else if (_xscale<0) {
+				xspeed += 0.7;
+			}
+			if ((!(_x+_parent._x)-_root.Course.Char._x>20 && !(_x+_parent._x)-_root.Course.Char._x<-20) || (attack == true)) {
+				frame = "idle";
+			}
+			//                                                                           
+		}
+		//                           
+		if (crown.hitTest(_root.Course.Char.charClip.feet) && _root.Course.Char.air == false) {
+			if (_root.Course.Char._x>_x+_parent._x) {
+				_root.MarioHit(1, 30, 5, 7, 0, "");
+			} else {
+				_root.MarioHit(1, 30, 5, -7, 0, "");
+			}
+		}
+		//                           
+		if (_root.Course.Enemyhurt.hitTest(((_x-wide)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, (((_y-(tall/2)))*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.Enemyhurt.hitTest(((_x+wide)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, (((_y-(tall/2)))*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.Enemyhurt.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, (((_y))*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.Enemyhurt.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, (((_y-(tall/1.5)))*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.Enemyhurt.hitTest(((_x-wide/2)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, (((_y-(tall)))*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.Enemyhurt.hitTest(((_x+wide/2)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, (((_y-(tall)))*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.Enemyhurt.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, (((_y-tall))*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+			if ((attack == false || attackFrame !== "hurt")) {
+				attack = true;
+				attackFrame = "hurt";
+				if (_root.Course.Char.attack == true && _root.Course.Char.attackFrame == "grabbed") {
+					_root.Course.Char.attack = false;
+				}
+			}
+		}
+		//                                                                                            
+		xspeed *= 0.7;
+		//          
+		if (attack == false) {
+			clip.gotoAndStop(frame);
+		} else {
+			clip.gotoAndStop(attackFrame);
+		}
+		if (_root.Course.Platforms.hitTest(((_x+xspeed-(_xscale/15))*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+5)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.BPlatforms.hitTest(((_x+xspeed-(_xscale/15))*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+5)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+			_x += xspeed;
+		} else {
+			frame = 1;
+		}
+		if (_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.BPlatforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+			yspeed = Math.min(yspeed, 0);
+			//
+			while ((_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+3)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.BPlatforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+3)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) && !(_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y-1)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.BPlatforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y-3)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true))) {
+				_y++;
+			}
+			while (_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y-1)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.BPlatforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y-3)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+				_y--;
+			}
+		} else {
+			yspeed += 0.5;
+		}
+		_y += yspeed;
+		//
+		_root.Course.Platforms["KingBombombGround"+depth]._y = _y;
+		_root.Course.Platforms["KingBombombGround"+depth]._x = _x;
+		// Battle
+		// Escape
+		/*
+		if (_root.Course.BackGFX.excape.hitTest(_root.Course.Char.charClip.body) || (_root.Course.Char.attack == true && _root.Course.Char.attackFrame == "Faint")) {
+		_root.StopBGsong();
+		_root.PlayBGSong(_root["1-1Music"]);
+		if (_root.Course.Char.attack == true && _root.Course.Char.attackFrame == "Faint") {
+		_root.StopBGsong();
+		}
+		//                             
+		onEnterFrame = null;
+		clip.gotoAndStop(1);
+		_root.Course.Platforms["KingBombombGround"+depth].removeMovieClip();
+		_xscale = 100;
+		gotoAndPlay(2);
+		}
+		// ^ Escape ^ 
+		*/
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Lineless Movieclip" name="body">
+                  <matrix>
+                    <Matrix a="0.50543212890625" d="0.660858154296875" tx="-6.55" ty="-9.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-28"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Lineless Movieclip" name="crown">
+                  <matrix>
+                    <Matrix a="0.399169921875" d="0.2747802734375" tx="0.45" ty="-34.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-28"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="4" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[clip.gotoAndStop("defeated");
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="5" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb Clip" name="clip" selected="true">
+                  <matrix>
+                    <Matrix tx="-9" ty="-29.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

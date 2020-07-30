@@ -1,0 +1,517 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="   Enemies/Normal/ G-Z/ Koopa/Koopa Code" itemID="4606f41f-0000071d" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="KoopaCode" lastModified="1237754098" lastUniqueIdentifier="1">
+  <timeline>
+    <DOMTimeline name="Koopa Code">
+      <layers>
+        <DOMLayer name="Code" color="#9933CC" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (scale == undefined) {
+	scale = 1;
+}
+if (State == undefined) {
+	State = "Walk";
+}
+savestate = State;
+if (walkspeed == undefined) {
+	walkspeed = 3;
+}
+if (frame == undefined) {
+	frame = "Walk";
+}
+if (movedirection == undefined) {
+	randomnum = random(2);
+	if (randomnum == 0) {
+		movedirection = "right";
+	} else {
+		movedirection = "left";
+	}
+} else {
+	randomnum = 0;
+}
+if (WalkDistance == undefined) {
+	WalkDistance = 100;
+}
+if (shellspeed == undefined) {
+	shellspeed = 10;
+}
+if (underwater == undefined) {
+	underwater = false;
+}
+restartvars = function () {
+	State = savestate;
+	//
+	frame = "Idle";
+	xspeed = 0;
+	yspeed = 0;
+	wide = 7*scale;
+	tall = 25*scale;
+	air = false;
+	_xscale = scale*100;
+	_yscale = scale*100;
+};
+restartvars();
+//
+saveY = _y;
+saveX = _x;
+//
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+onEnterFrame = function () {
+	if (_root.PauseGame == false && _root.playpause == false && Math.abs((_root.currentCamX)-(_x+_parent._x))<600 && Math.abs((_root.currentCamY)-(_y+_parent._y))<600) {
+		_yscale = scale*100;
+		if (movedirection == "left") {
+			_xscale = scale*100;
+		} else {
+			_xscale = -scale*100;
+		}
+		if (State == "Flying") {
+			// move up and down code
+		}
+		if (State == "Walk") {
+			if (_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+3)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.BPlatforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+3)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+				if (movedirection == "right") {
+					Moveright();
+				} else {
+					Moveleft();
+				}
+				if (frame == "Turn") {
+					//xspeed = _root.groundFriction(xspeed, 0.5, 1.1);
+					if (movedirection == "right") {
+						xspeed = -12/14;
+					} else {
+						xspeed = 12/14;
+					}
+				} else {
+					randomnum++;
+				}
+				if (randomnum>WalkDistance) {
+					frame = "Turn";
+					randomnum = 0;
+				}
+				xspeed *= 0.95;
+			}
+		}
+		if (State == "Shell") {
+			xspeed *= 0.99;
+		}
+		//                                                                                        
+		mariowater = this.body.hitTest(_root.Course.Char.charClip.water) || this.body.hitTest(_root.Course.Char.charClip.frame.water) || this.head.hitTest(_root.Course.Char.charClip.water);
+		marioinvincible = ((_root.Course.Char.attackFrame == "Dive" && _root.Course.Char.attack == true && Math.abs(_root.Course.Char.xspeed)>0.3) || (Math.abs(_root.Course.Char.xspeed)>7 && _root.KeySPACE() && _root.Power>=100 && _root.WaterAmount>0 && _root.Fluddpow == "T"));
+		//                   
+		//                                                  
+		if (State == "Flying" && this.body.hitTest(_root.Course.Char.charClip.body) && marioinvincible) {
+			xspeed += _root.Course.Char.xspeed/1.5;
+			yspeed += _root.Course.Char.yspeed/1.5;
+			State = "Shell";
+		}
+		if (State == "Walk" && this.body.hitTest(_root.Course.Char.charClip.body) && marioinvincible) {
+			xspeed += _root.Course.Char.xspeed/1.5;
+			yspeed -= 5;
+			_y -= 5;
+			State = "Shell";
+		}
+		if (State == "Shell" && this.body.hitTest(_root.Course.Char.charClip.body) && marioinvincible) {
+			if (_root.Course.Char._x>_x+_parent._x) {
+				xspeed += _root.Course.Char.yspeed/2;
+			} else {
+				xspeed -= _root.Course.Char.yspeed/2;
+			}
+			xspeed += _root.Course.Char.xspeed/1.5;
+		}
+		//                                                                                    
+		if ((State == "Flying" || State == "Walk" || State == "Shell") && mariowater) {
+			State = "Shell";
+			//
+			yspeed -= 1.5/scale;
+			if (_root.Course.Char.attackFrame == "Spin" && _root.Course.Char.attack == true) {
+				if (_root.Course.Char._x>_x+_parent._x) {
+					xspeed *= 0.7;
+					xspeed -= 20/scale;
+				} else {
+					xspeed *= 0.7;
+					xspeed += 20/scale;
+				}
+			} else {
+				if (_root.Course.Char._xscale>0) {
+					if (_root.Fluddpow == "T" || (_root.Fluddpow == "H" && _root.Course.Char.attackFrame == "Dive" && _root.Course.Char.attack == true)) {
+						xspeed *= 0.9;
+						xspeed += 6/scale;
+					} else {
+						xspeed *= 0.9;
+						xspeed -= 3/scale;
+					}
+				} else {
+					if (_root.Fluddpow == "T" || (_root.Fluddpow == "H" && _root.Course.Char.attackFrame == "Dive" && _root.Course.Char.attack == true)) {
+						xspeed *= 0.9;
+						xspeed -= 6/scale;
+					} else {
+						xspeed *= 0.9;
+						xspeed += 3/scale;
+					}
+				}
+			}
+		}
+		//                                          
+		if (State == "Flying" && this.head.hitTest(_root.Course.Char.charClip.feet) && _root.Course.Char.air == true && _root.Course.Char.yspeed>0) {
+			_root.Course.Char.yspeed /= 2;
+			_root.Course.Char.yspeed -= 15;
+			State = "Walk";
+			//
+			_root.bgsoundFX = new Sound(this);
+			_root.bgsoundFX.attachSound("flippers");
+			_root.bgsoundFX.start(0, 1);
+			_root.bgsoundFX.setVolume(_root.BgVolume);
+		}
+		if (State == "Walk" && this.head.hitTest(_root.Course.Char.charClip.feet) && _root.Course.Char.air == true && _root.Course.Char.yspeed>0) {
+			_root.Course.Char.yspeed /= 2;
+			_root.Course.Char.yspeed -= 12;
+			xspeed = 0;
+			State = "Shell";
+			//
+			_root.bgsoundFX = new Sound(this);
+			_root.bgsoundFX.attachSound("flippers");
+			_root.bgsoundFX.start(0, 1);
+			_root.bgsoundFX.setVolume(_root.BgVolume);
+		}
+		if (State == "Shell" && this.body.hitTest(_root.Course.Char.charClip.feet) && _root.Course.Char.air == true && _root.Course.Char.yspeed>0) {
+			if (air == true) {
+				yspeed += (_root.Course.Char.yspeed-yspeed)*0.5;
+			}
+			_root.Course.Char.yspeed /= 4;
+			_root.Course.Char.yspeed -= 12;
+			if (_root.Course.Char._x>_x+_parent._x) {
+				xspeed += _root.Course.Char.yspeed/1.5;
+			} else {
+				xspeed -= _root.Course.Char.yspeed/1.5;
+			}
+			xspeed += _root.Course.Char.xspeed/2;
+			//
+			_root.bgsoundFX = new Sound(this);
+			_root.bgsoundFX.attachSound("flippers");
+			_root.bgsoundFX.start(0, 1);
+			_root.bgsoundFX.setVolume(_root.BgVolume);
+		}
+		//                                                                                            
+		if (State == "Flying" && this.body.hitTest(_root.Course.Char.charClip.body) && !marioinvincible) {
+			if (_root.Course.Char._x>_x+_parent._x) {
+				_root.MarioHit(1, 90, -5, 7, 7, "");
+			} else {
+				_root.MarioHit(1, 90, -5, -7, 7, "");
+			}
+		}
+		if (State == "Walk" && this.body.hitTest(_root.Course.Char.charClip.body) && _root.Course.Char.frame !== "" && !marioinvincible) {
+			if (_root.Course.Char._x>_x+_parent._x) {
+				_root.MarioHit(1, 90, -5, 7, 7, "");
+			} else {
+				_root.MarioHit(1, 90, -5, -7, 7, "");
+			}
+		}
+		if (State == "Shell" && ((this.body.hitTest(_root.Course.Char.charClip.body) && _root.Course.Char.air == false) || (this.body.hitTest(_root.Course.Char.charClip.head) && _root.Course.Char.air == true)) && !marioinvincible) {
+			xspeed += (_root.Course.Char.xspeed-xspeed)/2;
+			if (_root.Course.Char._x>_x+_parent._x) {
+				xspeed -= 3;
+				if (Math.abs(xspeed)>2) {
+					//_root.MarioHit(1, 90, -5, 7, 7, "");
+				}
+			} else {
+				xspeed += 3;
+				if (Math.abs(xspeed)>2) {
+					//_root.MarioHit(1, 90, -5, -7, 7, "");
+				}
+			}
+		}
+		//                                                                        
+		// enemy hurt  
+		if (State == "Flying" || State == "Walk") {
+			if (_root.Course.Enemyhurt.hitTest(((_x-wide)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, (((_y-(tall/2)))*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) && _root.Course.Enemyhurt.hitTest(((_x+wide)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, (((_y-(tall/2)))*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+				yspeed -= Math.abs((7)/5)/scale;
+				xspeed += (((Math.random()*4-2)-(xspeed/1.5)))/scale;
+				_y -= 3;
+				State = "Shell";
+			} else {
+				if (_root.Course.Enemyhurt.hitTest(((_x-wide)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, (((_y-(tall/2)))*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+					yspeed -= Math.abs((7)/5)/scale;
+					xspeed += Math.max((((5)-(xspeed/1.5)))/scale, 0);
+					_y -= 3;
+					State = "Shell";
+				}
+				if (_root.Course.Enemyhurt.hitTest(((_x+wide)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, (((_y-(tall/2)))*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+					yspeed -= Math.abs((7)/5)/scale;
+					xspeed += Math.min((((-5)-(xspeed/1.5)))/scale, 0);
+					_y -= 3;
+					State = "Shell";
+				}
+			}
+		}
+		//                                         
+		if (State == "Walk" && _root.Course.Water.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+			if (underwater == false) {
+				State = "Shell";
+			} else {
+				xspeed *= 0.9;
+			}
+		}
+		if (State == "Shell") {
+			count = 0;
+			while (_root.Course.Water.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, (((_y-count)+5)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+				count++;
+				if (count>7) {
+					break;
+				}
+			}
+			//  
+			if (_root.Course.Water.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, (((_y-count)+5)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+				if (!_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y-8)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+					yspeed *= 0.9;
+					yspeed -= count/7;
+				}
+				if (_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+3)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+					_y -= 5;
+				}
+				xspeed *= 0.85;
+			}
+		}
+		//                                                                                                                                             
+		if (State == "Walk" || State == "Shell") {
+			if (_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.BPlatforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+				yspeed = 0;
+			} else {
+				yspeed += _root.gravity;
+				if (yspeed>7) {
+					yspeed *= 0.9;
+				}
+			}
+		}
+		while (_root.Course.Platforms.hitTest(((_x+wide)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, (((_y-(tall/2)))*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+			_x--;
+			if (State == "Walk") {
+				if (movedirection == "right") {
+					frame = "Turn";
+				}
+			}
+			if (State == "Shell") {
+				xspeed = Math.min(-xspeed*0.7, xspeed);
+			}
+		}
+		while (_root.Course.Platforms.hitTest(((_x-wide)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, (((_y-(tall/2)))*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+			_x++;
+			if (State == "Walk") {
+				if (movedirection == "left") {
+					frame = "Turn";
+				}
+			}
+			if (State == "Shell") {
+				xspeed = Math.max(-xspeed*0.7, xspeed);
+			}
+		}
+		if (State !== "Flying") {
+			while ((_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+3)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.BPlatforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+3)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) && !(_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y-1)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.BPlatforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y-1)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true))) {
+				_y++;
+			}
+		}
+		while (_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y-1)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.BPlatforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y-1)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+			_y--;
+		}
+		if (State !== "Shell") {
+			while (_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y-30)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+				_y++;
+			}
+		} else {
+			while (_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y-20)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+				_y++;
+			}
+		}
+		if (_root.Course.Lava.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+			frame = "Shell";
+			State = "Shell";
+		}
+		if (_root.Course.Lava.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+3)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+			yspeed -= 0.1;
+			yspeed *= 0.8;
+			yspeed -= _root.gravity;
+			if (air == false) {
+				_y-3;
+			}
+		}
+		if (State == "Flying") {
+			frame = "Flying";
+		}
+		if (State == "Walk" && frame !== "Turn") {
+			frame = "Walk";
+		}
+		if (State == "Shell") {
+			frame = "Shell";
+			//
+			if (Math.abs(xspeed)>1) {
+				_root.Course.Enemyhurt.attachMovie("EnemyHurtBox", "Box"+_root.Course.Enemyhurt.getNextHighestDepth(), _root.Course.Enemyhurt.getNextHighestDepth(), {_x:_x, _y:_y-7, _yscale:15, _xscale:15, time:1});
+			}
+		}
+		//                                                                   
+		xspeed = Math.max(xspeed, -12);
+		xspeed = Math.min(xspeed, 12);
+		_y += yspeed;
+		_x += xspeed;
+		clip.gotoAndStop(frame);
+	}
+	if ((Math.abs((_root.currentCamX)-(_x+_parent._x))>600 || Math.abs((_root.currentCamY)-(_y+_parent._y))>600) && (Math.abs((_root.currentCamX)-(saveX+_parent._x))>600 || Math.abs((_root.currentCamY)-(saveY+_parent._y))>600)) {
+		_y = saveY;
+		_x = saveX;
+		//
+		restartvars();
+		//
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Code 2" color="#FF4FFF" outline="true" useOutlineView="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[Moveright = function () {
+	offground = true;
+	if (offground == false) {
+		break;
+	}
+	for (Xspot2=15; Xspot2<40; Xspot2 += 10) {
+		Xspot = Xspot2+(xspeed*7);
+		adding = 3;
+		for (Yspot=-5; Yspot<30; Yspot += adding += 0.5) {
+			adding = Math.min(adding, 5);
+			if (!_root.Course.Lava.hitTest(((_x+Xspot)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+Yspot)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+				if (_root.Course.Platforms.hitTest(((_x+Xspot)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+Yspot)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+					offground = false;
+					break;
+				}
+				if (_root.Course.BPlatforms.hitTest(((_x+Xspot)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+Yspot)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+					offground = false;
+					break;
+				}
+				if (underwater == false) {
+					if (_root.Course.Water.hitTest(((_x+Xspot)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+Yspot)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+						offground = true;
+						break;
+					}
+				}
+				if (_root.Course.Lava.hitTest(((_x+Xspot)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+Yspot)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+					offground = true;
+					break;
+				}
+			}
+		}
+	}
+	if (offground == false) {
+		if (frame !== "Turn") {
+			xspeed += (walkspeed-xspeed)/5;
+		}
+	} else {
+		randomnum = 0;
+		if (air == false && frame !== "Shell") {
+			frame = "Turn";
+		}
+	}
+};
+Moveleft = function () {
+	offground = true;
+	if (offground == false) {
+		break;
+	}
+	for (Xspot2=15; Xspot2<40; Xspot2 += 10) {
+		Xspot = -Xspot2+(xspeed*7);
+		adding = 3;
+		for (Yspot=-5; Yspot<30; Yspot += adding += 0.5) {
+			adding = Math.min(adding, 5);
+			if (!_root.Course.Lava.hitTest(((_x+Xspot)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+Yspot)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+				if (_root.Course.Platforms.hitTest(((_x+Xspot)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+Yspot)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+					offground = false;
+					break;
+				}
+				if (_root.Course.BPlatforms.hitTest(((_x+Xspot)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+Yspot)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+					offground = false;
+					break;
+				}
+				if (underwater == false) {
+					if (_root.Course.Water.hitTest(((_x+Xspot)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+Yspot)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+						offground = true;
+						break;
+					}
+				}
+				if (_root.Course.Lava.hitTest(((_x+Xspot)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+Yspot)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+					offground = true;
+					break;
+				}
+			}
+		}
+	}
+	if (offground == false) {
+		if (frame !== "Turn") {
+			xspeed += (-walkspeed-xspeed)/5;
+		}
+	} else {
+		randomnum = 0;
+		if (air == false && frame !== "Shell") {
+			frame = "Turn";
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Lineless Movieclip" name="body">
+                  <matrix>
+                    <Matrix a="0.265380859375" d="0.26507568359375" tx="1" ty="6.4"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-27.9"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Lineless Movieclip" name="head">
+                  <matrix>
+                    <Matrix a="0.265380859375" d="0.1416015625" tx="-1" ty="-17"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-28.25"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Graphics" color="#4FFF4F" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/ Koopa/Koopa Frames" name="clip">
+                  <matrix>
+                    <Matrix ty="-14"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

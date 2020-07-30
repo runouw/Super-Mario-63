@@ -1,0 +1,316 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Clips/ 8 - Storyline Stars/ 8 - Tutorials/8-E2-1 Thwomp Elevator Path" itemID="47806d2d-00000f8b" lastModified="1222703993" lastUniqueIdentifier="3">
+  <timeline>
+    <DOMTimeline name="8-E2-1 Thwomp Elevator Path">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" outline="true" current="true" isSelected="true" useOutlineView="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+count = 0;
+onEnterFrame = function () {
+	if (_root.PauseGame == false && _root.playpause == false && count++>3) {
+		if (this.box.hitTest(_root.Course.Char.charClip.feet2) && _root.Course.Char.air == false && _root.Course.Char.yspeed>-3 && _root.Course.Char.attack == false) {
+			//
+			_root.PlayMessage("Bwahahahahaha!! Mario, you may have made it this far in my trap, but you'll never get past my Evil Elevator!!");
+			play();
+			//
+			_root.Course.Char.yspeed = 0;
+			_root.Course.Char.xspeed = 0;
+			_root.Course.Char.attack = true;
+			_root.Course.Char.attackFrame = "bosscinema";
+			onEnterFrame = function () {
+				if (_root.PauseGame == false) {
+					_root.playpause = true;
+				}
+			};
+		}
+	}
+	count = Math.min(count, 5);
+};
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="box">
+                  <matrix>
+                    <Matrix a="3.49052429199219" d="0.937484741210938" ty="-30"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" duration="4" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="5" duration="6" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+onEnterFrame = function () {
+	_root.PauseGame = false;
+	_root.playpause = true;
+	// 
+	if (!_root.KeyZ()) {
+		SPACE = false;
+	}
+	if (_root.KeyZ() && SPACE == false) {
+		_root.StopMessage();
+		play();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="11" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.Course.Char.attack = false;
+_root.Course.Char.attackFrame = "";
+_root.playpause = false;
+onEnterFrame = null;
+_root.Course.FrontGFX.gotoAndStop(2);
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="12" duration="570" name="repeat" labelType="name" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[played = false;
+landedon = false;
+stop();
+onEnterFrame = function () {
+	if (_root.PauseGame == false && _root.playpause == false) {
+		if (played == true) {
+			play();
+		}
+		if (landedon == true && _root.Course.Char.yspeed>=-3) {
+			played = true;
+		}
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="582" duration="523" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[played = false;
+landedon = false;
+stop();
+onEnterFrame = function () {
+	if (_root.PauseGame == false && _root.playpause == false) {
+		if (played == true) {
+			play();
+		}
+		if ((landedon == true && _root.Course.Char.yspeed>=-3) || _root.Course.Char._y-_root.Course.BackGFX._y>-1000) {
+			played = true;
+		}
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1105" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = null;
+gotoAndStop("repeat");
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#FF4FFF">
+          <frames>
+            <DOMFrame index="0" duration="12" keyMode="9728" acceleration="100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ 8 - Storyline Stars/ 8 - Tutorials/8-E2-1 Thwomp Elevator">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="12" duration="2" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ 8 - Storyline Stars/ 8 - Tutorials/8-E2-1 Thwomp Elevator">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="14" duration="2" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ 8 - Storyline Stars/ 8 - Tutorials/8-E2-1 Thwomp Elevator">
+                  <matrix>
+                    <Matrix tx="-2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="16" duration="3" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ 8 - Storyline Stars/ 8 - Tutorials/8-E2-1 Thwomp Elevator">
+                  <matrix>
+                    <Matrix tx="0.8" ty="-0.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="19" duration="30" tweenType="motion" keyMode="17921" acceleration="100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ 8 - Storyline Stars/ 8 - Tutorials/8-E2-1 Thwomp Elevator">
+                  <matrix>
+                    <Matrix ty="-0.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="49" duration="455" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ 8 - Storyline Stars/ 8 - Tutorials/8-E2-1 Thwomp Elevator">
+                  <matrix>
+                    <Matrix ty="-20.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="504" duration="30" tweenType="motion" keyMode="17921" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ 8 - Storyline Stars/ 8 - Tutorials/8-E2-1 Thwomp Elevator">
+                  <matrix>
+                    <Matrix ty="-618.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="534" duration="48" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ 8 - Storyline Stars/ 8 - Tutorials/8-E2-1 Thwomp Elevator">
+                  <matrix>
+                    <Matrix ty="-637"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="582" duration="2" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ 8 - Storyline Stars/ 8 - Tutorials/8-E2-1 Thwomp Elevator">
+                  <matrix>
+                    <Matrix ty="-637"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="584" duration="2" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ 8 - Storyline Stars/ 8 - Tutorials/8-E2-1 Thwomp Elevator">
+                  <matrix>
+                    <Matrix tx="-2" ty="-637"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="586" duration="3" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ 8 - Storyline Stars/ 8 - Tutorials/8-E2-1 Thwomp Elevator">
+                  <matrix>
+                    <Matrix tx="2" ty="-637"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="589" duration="30" tweenType="motion" motionTweenRotate="none" motionTweenScale="false" keyMode="16385" acceleration="100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ 8 - Storyline Stars/ 8 - Tutorials/8-E2-1 Thwomp Elevator">
+                  <matrix>
+                    <Matrix ty="-637"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="619" duration="455" tweenType="motion" motionTweenRotate="none" motionTweenScale="false" keyMode="16385">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ 8 - Storyline Stars/ 8 - Tutorials/8-E2-1 Thwomp Elevator">
+                  <matrix>
+                    <Matrix ty="-618.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1074" duration="30" tweenType="motion" motionTweenRotate="none" motionTweenScale="false" keyMode="16385" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ 8 - Storyline Stars/ 8 - Tutorials/8-E2-1 Thwomp Elevator">
+                  <matrix>
+                    <Matrix ty="-20.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1104" duration="2" keyMode="9728" acceleration="100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ 8 - Storyline Stars/ 8 - Tutorials/8-E2-1 Thwomp Elevator">
+                  <matrix>
+                    <Matrix ty="-0.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

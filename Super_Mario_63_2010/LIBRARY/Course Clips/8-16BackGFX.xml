@@ -1,0 +1,291 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Clips/8-16BackGFX" itemID="4951ac98-000010bb" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="8-16BackGFX" lastModified="1245534226" lastUniqueIdentifier="16">
+  <timeline>
+    <DOMTimeline name="8-16BackGFX">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.Course.FrontGFX.defeated = false;
+_root.CanSwitchFludd = false;
+_root.SaveFluddH = false;
+_root.SaveFluddR = false;
+_root.SaveFluddT = false;
+_root.Fluddpow = ""
+_root.Playinglevel = 0;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.Course.FrontGFX.defeated = false;
+stop();
+rot = 0;
+endcount = 0;
+onEnterFrame = function () {
+	rot += 0.004;
+	bomb1._x = Math.cos(rot)*450;
+	bomb1._y = Math.sin(rot)*450;
+	bomb2._x = Math.cos(rot+2*Math.PI*(1/5))*450;
+	bomb2._y = Math.sin(rot+2*Math.PI*(1/5))*450;
+	bomb3._x = Math.cos(rot+2*Math.PI*(2/5))*450;
+	bomb3._y = Math.sin(rot+2*Math.PI*(2/5))*450;
+	bomb4._x = Math.cos(rot+2*Math.PI*(3/5))*450;
+	bomb4._y = Math.sin(rot+2*Math.PI*(3/5))*450;
+	bomb5._x = Math.cos(rot+2*Math.PI*(4/5))*450;
+	bomb5._y = Math.sin(rot+2*Math.PI*(4/5))*450;
+	bombgfx1._x = bomb1._x;
+	bombgfx1._y = bomb1._y+50;
+	bombgfx2._x = bomb2._x;
+	bombgfx2._y = bomb2._y+50;
+	bombgfx3._x = bomb3._x;
+	bombgfx3._y = bomb3._y+50;
+	bombgfx4._x = bomb4._x;
+	bombgfx4._y = bomb4._y+50;
+	bombgfx5._x = bomb5._x;
+	bombgfx5._y = bomb5._y+50;
+	///
+	camCenter._x = (_root.Course.FrontGFX.Bowser._x+((_root.Course.Char._x-_x)*2))/3;
+	camCenter._y = (_root.Course.FrontGFX.Bowser._y+((_root.Course.Char._y-_y)*2))/3;
+	distance = Math.sqrt(Math.pow((_root.Course.FrontGFX.Bowser._x-(_root.Course.Char._x-_x)), 2)+Math.pow((_root.Course.FrontGFX.Bowser._y-(_root.Course.Char._y-_y)), 2));
+	if (_root.Course.FrontGFX.Bowser.HP<=0) {
+		//play();
+		//onEnterFrame = null;
+		if (endcount == 0) {
+			// transtion
+		}
+		if (endcount>11) {
+			_root.gotoAndStop("Ending");
+			_root.RemoveCourse();
+		}
+		endcount++;
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F" outline="true" useOutlineView="true">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="rightedge">
+                  <matrix>
+                    <Matrix a="2.49267578125" d="34.2418212890625" tx="310" ty="-203.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="leftedge">
+                  <matrix>
+                    <Matrix a="2.49267578125" d="34.2418212890625" tx="-310" ty="-203.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="bomb2">
+                  <matrix>
+                    <Matrix a="1.13140869140625" d="8.74783325195313" tx="335" ty="-20"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="bomb1">
+                  <matrix>
+                    <Matrix a="1.13140869140625" d="8.74774169921875" tx="-335" ty="-20"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="falloff">
+                  <matrix>
+                    <Matrix a="78.5019683837891" d="4.28022766113281" ty="256.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="bomb3">
+                  <matrix>
+                    <Matrix a="1.13140869140625" d="8.74774169921875" tx="32.3" ty="-369.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="bomb4">
+                  <matrix>
+                    <Matrix a="1.13140869140625" d="8.74774169921875" tx="-253.9" ty="-254.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="bomb5">
+                  <matrix>
+                    <Matrix a="1.13140869140625" d="8.74774169921875" tx="270.4" ty="-254.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/Bowser/Bowsers Trap Bomb" name="bombgfx2">
+                  <matrix>
+                    <Matrix a="1.00106811523438" tx="335" ty="-27.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	scale = -1;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/Bowser/Bowsers Trap Bomb" name="bombgfx1">
+                  <matrix>
+                    <Matrix tx="-335" ty="-27.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	scale = 1
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/Bowser/Bowsers Trap Bomb" name="bombgfx3">
+                  <matrix>
+                    <Matrix tx="32.25" ty="-369.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	scale = 1
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="camCenter">
+                  <matrix>
+                    <Matrix a="0.188629150390625" d="0.6251220703125" tx="-14.5" ty="-180.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/Bowser/Bowsers Trap Bomb" name="bombgfx4">
+                  <matrix>
+                    <Matrix tx="-253.95" ty="-252.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	scale = 1
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/Bowser/Bowsers Trap Bomb" name="bombgfx5">
+                  <matrix>
+                    <Matrix tx="270.45" ty="-252.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	scale = 1
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

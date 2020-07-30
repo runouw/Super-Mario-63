@@ -1,0 +1,208 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Clips/ 8 - Storyline Stars/ 8 - Tutorials/ FiRsT Tutoria/8-E1-1 Background Hills" itemID="4678b9e7-000008da" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="8-E1-1CloseBG" lastModified="1198209946" lastUniqueIdentifier="1">
+  <timeline>
+    <DOMTimeline name="8-E1-1 Background Hills">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[color = Math.round(_root.TotalStars*1.5)+25;
+color2 = Math.abs(100-color);
+myColor = new Color(this);
+colorTrans = new Object();
+colorTrans = {ra:(color*0.5)+50-(color2/3), rb:0, ga:(color*0.5)+50-(color2/3), gb:0, ba:(color*0.5)+50-(color2/3), bb:0, aa:100, ab:0};
+myColor.setTransform(colorTrans);
+onEnterFrame = function () {
+	color += Math.round(((_root.TotalStars*1.5)+25)-color)/7;
+	if (_root.CheatCastleRestore == true) {
+		color = 100;
+	}
+	//color = Math.max(color, 0);          
+	//color = Math.min(color, 100);
+	if (color>100) {
+		oldcolor = color;
+		color += Math.abs(100-color)*2.5;
+	}
+	color2 = Math.abs(100-color);
+	// color = percent of stars obained
+	// color 2  = percent of stars not yet obtained
+	colorTrans = {ra:(color*0.5)+50-(color2/3), rb:0, ga:(color*0.5)+50-(color2/3), gb:0, ba:(color*0.5)+50-(color2/3), bb:0, aa:100, ab:0};
+	myColor.setTransform(colorTrans);
+	if (color>100) {
+		color = oldcolor;
+	}
+	// 
+	if (_root.BGquality == "HIGH" || _root.BGquality == "MEDIUM") {
+		gotoAndStop(1);
+	} else if (_root.BGquality == "MEDIUM") {
+		gotoAndStop(2);
+	} else {
+		gotoAndStop(3);
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Regular/Mario Hedge 1">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="987.45" ty="-132.05"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/YI Jungle/YI Jungle Ground (B-50)" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="15.1041107177734" d="15.1041107177734" tx="990.55" ty="48.65"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="!13716 -1078|13576 -1838!13576 -1838|11836 -2277!11836 -2277|9826 -1991!9826 -1991|9366 -1109!9366 -1109|7846 -852!7846 -852|7916 -248!7916 -248|7546 422!7546 422|5376 -773!5376 -773|5114 1269!5114 1269|2947 1752!2947 1752|-1453 5596
+!-1453 5596|-3743 6241!-3743 6241|-3743 6560!-3743 6560|24472 5933!24472 5933|24472 -1997!24472 -1997[#45F4.7F #FFF8D6.F8 17036 -1721!17036 -1721|16135 1191!16135 1191|13716 -1142!13716 -1142|13716 -1078"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Regular/Mario Hedge 2">
+                  <matrix>
+                    <Matrix a="0.746231079101563" b="-0.072601318359375" c="0.072601318359375" d="0.746231079101563" tx="500.6" ty="-181.45"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Regular/Tree 64">
+                  <matrix>
+                    <Matrix a="0.75" d="0.75" tx="399.6" ty="-91.55"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Regular/Mario Hedge 1">
+                  <matrix>
+                    <Matrix a="0.649520874023438" b="0.375" c="-0.375" d="0.649520874023438" tx="308.25" ty="-70.9"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ 8 - Storyline Stars/ 8 - Tutorials/ FiRsT Tutoria/8-E1-1 Darc Grownd">
+                  <matrix>
+                    <Matrix tx="1069.3" ty="-35.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="0.5"/>
+                  </transformationPoint>
+                  <color>
+                    <Color tintMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Jungle/YI Jungle Tree 1">
+                  <matrix>
+                    <Matrix a="-0.5" d="0.5" tx="977.45" ty="-176.4"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Jungle/YI Jungle Tree 1">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="867.95" ty="-168.55"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Regular/Tree 64">
+                  <matrix>
+                    <Matrix a="0.75" d="0.75" tx="209.75" ty="28.75"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Regular/Tree 64">
+                  <matrix>
+                    <Matrix a="0.75" d="0.75" tx="645.9" ty="-142.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Regular/Tree 64">
+                  <matrix>
+                    <Matrix a="0.75" d="0.75" tx="138.7" ty="41.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Jungle/YI Jungle Tree 2">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="1074.95" ty="-162.7"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/YI Jungle/YI Jungle Ground (B-50)" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="15.1041107177734" d="15.1041107177734" tx="990.55" ty="48.65"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!13716 -1078|13576 -1838!13576 -1838|11836 -2277!11836 -2277|9826 -1991!9826 -1991|9366 -1109!9366 -1109|7846 -852!7846 -852|7916 -248!7916 -248|7546 422!7546 422|5376 -773!5376 -773|5114 1269!5114 1269|2947 1752!2947 1752|-1453 5596
+!-1453 5596|-3743 6241!-3743 6241|-3743 6560!-3743 6560|24472 5933!24472 5933|24472 -1997!24472 -1997[#45F4.7F #FFF8D6.F8 17036 -1721!17036 -1721|16135 1191!16135 1191|13716 -1142!13716 -1142|13716 -1078"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Regular/Tree 64">
+                  <matrix>
+                    <Matrix a="0.75" d="0.75" tx="399.6" ty="-91.55"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Regular/Mario Hedge 1">
+                  <matrix>
+                    <Matrix a="0.649520874023438" b="0.375" c="-0.375" d="0.649520874023438" tx="308.25" ty="-70.9"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ 8 - Storyline Stars/ 8 - Tutorials/ FiRsT Tutoria/8-E1-1 Darc Grownd">
+                  <matrix>
+                    <Matrix tx="1069.3" ty="-35.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="0.5"/>
+                  </transformationPoint>
+                  <color>
+                    <Color tintMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Regular/Tree 64">
+                  <matrix>
+                    <Matrix a="0.75" d="0.75" tx="209.75" ty="28.75"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Regular/Tree 64">
+                  <matrix>
+                    <Matrix a="0.75" d="0.75" tx="645.9" ty="-142.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Jungle/YI Jungle Tree 1">
+                  <matrix>
+                    <Matrix a="-0.5" d="0.5" tx="977.45" ty="-176.4"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Regular/Mario Hedge 1">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="987.45" ty="-132.05"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

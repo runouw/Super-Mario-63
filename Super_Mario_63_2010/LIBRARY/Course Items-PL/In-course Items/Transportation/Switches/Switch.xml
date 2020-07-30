@@ -1,0 +1,423 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Items-PL/ In-course Items/ Transportation/ Switches/Switch" itemID="4604878c-00000c38" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="SwitchClip" lastModified="1245459736" lastUniqueIdentifier="3">
+  <timeline>
+    <DOMTimeline name="Switch">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (activated == true) {
+	gotoAndStop("end");
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" duration="9" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+onEnterFrame = function () {
+	if (_root.PauseGame == false && _root.playpause == false) {
+		if (this.box.hitTest(_root.Course.Char.charClip.feet) && _root.Course.Char.air == true && _root.Course.Char.yspeed>0) {
+			play();
+			onEnterFrame = function () {
+				_root.PauseGame = false;
+				_root.Course.Char.yspeed = 0;
+				_root.Course.Char.xspeed = 0;
+				Y = _y+_parent._y;
+				_root.Course.Char._y += (Y-_root.Course.Char._y)/5;
+				//
+				X = _x+_parent._x;
+				_root.Course.Char._x += (X-_root.Course.Char._x)/5;
+			};
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="11" duration="9" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	_root.PauseGame = false;
+};
+_root.Course.Char.yspeed = -12;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="20" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = null;
+Switchfunction();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="21" duration="5" name="end" labelType="name" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="26" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[gotoAndStop(3);
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F" locked="true" outline="true" useOutlineView="true">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="box" selected="true">
+                  <matrix>
+                    <Matrix a="0.377365112304688" d="0.625" ty="-5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" duration="18" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="21" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="22" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.Mariosound = new Sound(this);
+_root.Mariosound.attachSound("TimerEnd");
+_root.Mariosound.start(0, 1);
+_root.Mariosound.setVolume(_root.MarioVolume);
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="23" duration="4" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements>
+                <DOMGroup selected="true">
+                  <members>
+                    <DOMBitmapInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Switches/Question tile">
+                      <matrix>
+                        <Matrix tx="-10" ty="-9.5"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" duration="4" tweenType="motion" keyMode="17921" acceleration="-100">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMBitmapInstance selected="true" libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Switches/Question tile">
+                      <matrix>
+                        <Matrix tx="-10" ty="-9.5"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="6" duration="5" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix d="0.436843872070313" ty="5.6"/>
+                  </matrix>
+                  <members>
+                    <DOMBitmapInstance selected="true" libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Switches/Question tile">
+                      <matrix>
+                        <Matrix d="0.436843872070313" tx="-10" ty="1.45"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="11" duration="4" tweenType="motion" keyMode="17921" acceleration="-72">
+              <elements>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix d="0.436843872070313" ty="5.6"/>
+                  </matrix>
+                  <members>
+                    <DOMBitmapInstance selected="true" libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Switches/Question tile">
+                      <matrix>
+                        <Matrix d="0.436843872070313" tx="-10" ty="1.45"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="15" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix d="1.18946838378906" ty="-1"/>
+                  </matrix>
+                  <members>
+                    <DOMBitmapInstance selected="true" libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Switches/Question tile">
+                      <matrix>
+                        <Matrix d="1.18946838378906" tx="-10" ty="-12.3"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="16" duration="4" tweenType="motion" keyMode="17921" acceleration="48">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ In-course Items/ Transportation/ Switches/Question tile" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="23.7893676757813" tx="-10" ty="-12.3"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="!200 206S2|-200 206!-200 206|-200 86!-200 86|200 86!200 86|200 206"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="20" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix d="0.705902099609375" ty="3.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="7.3"/>
+                  </transformationPoint>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix d="0.705902099609375" ty="3.1"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point y="7.3"/>
+                      </transformationPoint>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ In-course Items/ Transportation/ Switches/Question tile" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="23.7893676757813" tx="-10" ty="-12.3"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="!200 206S2|-200 206!-200 206|-200 86!-200 86|200 86!200 86|200 206"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="21" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Switches/Question tile 2">
+                  <matrix>
+                    <Matrix tx="-10"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="22" duration="5" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix d="0.705902099609375" ty="3.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="7.3"/>
+                  </transformationPoint>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix d="0.705902099609375" ty="3.1"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point y="7.3"/>
+                      </transformationPoint>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ In-course Items/ Transportation/ Switches/Question tile" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="23.7893676757813" tx="-10" ty="-12.3"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="!200 206S2|-200 206!-200 206|-200 86!-200 86|200 86!200 86|200 206"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#FF4FFF">
+          <frames>
+            <DOMFrame index="0" duration="16" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="16" duration="4" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix d="0.8795166015625" ty="0.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-4"/>
+                  </transformationPoint>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix d="0.8795166015625" ty="0.5"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point y="-4"/>
+                      </transformationPoint>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ In-course Items/ Transportation/ Switches/Question tile" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="23.7893676757813" tx="-10" ty="-12.3"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="!-200 -246S2|200 -246!200 -246|200 86!200 86|-200 86!-200 86|-200 -246"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="20" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix d="0.549346923828125" ty="4.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-4"/>
+                  </transformationPoint>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix d="0.549346923828125" ty="4.85"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point y="-4"/>
+                      </transformationPoint>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ In-course Items/ Transportation/ Switches/Question tile" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="23.7893676757813" tx="-10" ty="-12.3"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="!-200 -246S2|200 -246!200 -246|200 86!200 86|-200 86!-200 86|-200 -246"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="21" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="22" duration="4" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix d="0.549346923828125" ty="4.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-4"/>
+                  </transformationPoint>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix d="0.549346923828125" ty="4.85"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point y="-4"/>
+                      </transformationPoint>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ In-course Items/ Transportation/ Switches/Question tile" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="23.7893676757813" tx="-10" ty="-12.3"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="!-200 -246S2|200 -246!200 -246|200 86!200 86|-200 86!-200 86|-200 -246"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="26" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMBitmapInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Switches/Question tile">
+                      <matrix>
+                        <Matrix tx="-10" ty="-9.5"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,62 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Cheat Menu" itemID="4a30310d-0000170f" sourceFlashFilepath="F:\Super Mario 63\New computer\Code Type Sequence.fla" sourceLibraryItemHRef="Cheat Menu" sourceLastModified="1245883735" lastModified="1245883966" sourceItemID="4a30310d-0000170f">
+  <timeline>
+    <DOMTimeline name="Cheat Menu">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[step = 0;
+code = 'cheat';
+Complete = function () {
+	// goes  to cheat menu
+	trace("Cheat menu activated!");
+	if(_parent.clicked !== true) {
+		_parent.TransitionF("Cheat");
+	}
+};
+var keyListener:Object = new Object();
+keyListener.onKeyDown = function() {
+	//trace("DOWN -> Code: "+Key.getCode()+"\tACSII: "+Key.getAscii()+"\tKey: "+chr(Key.getAscii()));
+	if (code.charAt(step).toLowerCase() == chr(Key.getAscii()).toLowerCase()) {
+		step++;
+		if (step>=code.length) {
+			Complete();
+			step = 0;
+		}
+	} else {
+		step = 0;
+	}
+};
+keyListener.onKeyUp = function() {
+	//trace("UP -> Code: "+Key.getCode()+"\tACSII: "+Key.getAscii()+"\tKey: "+chr(Key.getAscii()));
+};
+Key.addListener(keyListener);
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!-610 -460|610 -460!610 -460|610 460!610 460|-610 460!-610 460|-610 -460"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

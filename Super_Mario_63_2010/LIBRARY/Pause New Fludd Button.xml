@@ -1,0 +1,88 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Pause New Fludd Button" itemID="49c2db5c-000011ce" lastModified="1237509712" lastUniqueIdentifier="2">
+  <timeline>
+    <DOMTimeline name="Pause New Fludd Button">
+      <layers>
+        <DOMLayer name="Layer 3" color="#FFFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	if (this.hitTest(_root._xmouse, _root._ymouse, true) && _parent.clicked !== true) {
+		sc = 120;
+	} else {
+		sc = 100;
+	}
+	_xscale += (sc-_xscale)/2;
+	_yscale = _xscale;
+};
+onMouseDown = function () {
+	if (sc == 120 && _parent.clicked !== true) {
+		_xscale = 140;
+		_yscale = 140;
+		_parent.clicked = true;
+		_parent.Trans("fludd");
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName='Pause New "Fludd"'>
+                  <matrix>
+                    <Matrix ty="-0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-0.05"/>
+                  </transformationPoint>
+                  <filters>
+                    <BevelFilter/>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <RadialGradient>
+                        <matrix>
+                          <Matrix a="0.05908203125" d="0.05908203125" tx="-1.4" ty="1.3"/>
+                        </matrix>
+                        <GradientEntry color="#FFFFFF" ratio="0"/>
+                        <GradientEntry color="#88FFFF" ratio="1"/>
+                      </RadialGradient>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal" weight="0.05" solidStyle="hairline">
+                        <fill>
+                          <SolidColor color="#00FFFF"/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="!-1228 -323.5|1172 -323.5!1172 -323.5|1172 376.5!1172 376.5|-1228 376.5!-1228 376.5|-1228 -323.5"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

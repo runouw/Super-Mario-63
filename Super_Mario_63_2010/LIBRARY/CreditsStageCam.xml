@@ -1,0 +1,230 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="CreditsStageCam" itemID="49e2695d-00001f29" lastModified="1244580955">
+  <timeline>
+    <DOMTimeline name="CreditsStageCam">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[function camControl():Void {
+	parentColor1.setTransform(camColor.getTransform());
+	parentColor2.setTransform(camColor.getTransform());
+	parentColor3.setTransform(camColor.getTransform());
+	parentColor4.setTransform(camColor.getTransform());
+	parentColor5.setTransform(camColor.getTransform());
+	var scaleX:Number = sX/((Width/100)*_xscale);
+	var scaleY:Number = sY/((Height/100)*_yscale);
+	if (_root.CreditsCamFirstFrame < 2) {
+		_root.CreditsCourseX = -this._x;
+		_root.CreditsCourseY = -this._y;
+		_root.CreditsCourseScaleX = 100*scaleX;
+		_root.CreditsCourseScaleY = 100*scaleY;
+	} else {
+		_root.CreditsCourseX += (-this._x-_root.CreditsCourseX)/5;
+		_root.CreditsCourseY += (-this._y-_root.CreditsCourseY)/5;
+		_root.CreditsCourseScaleX += (100*scaleX-_root.CreditsCourseScaleX)/5;
+		_root.CreditsCourseScaleY += (100*scaleY-_root.CreditsCourseScaleY)/5;
+	}
+	_root.CreditsCamFirstFrame++;
+	//
+	_root.CreditsCourseRot = -this._rotation;
+	//
+}
+/*
+function resetStage():Void {
+var resetTrans:Object = {ra:100, rb:0, ga:100, gb:0, ba:100, bb:0, aa:100, ab:0};
+parentColor1.setTransform(resetTrans);
+parentColor2.setTransform(resetTrans);
+parentColor3.setTransform(resetTrans);
+_parent._parent.Course._xscale = 100;
+_parent._parent.Course._yscale = 100;
+_parent._parent.Course._x = 0;
+_parent._parent.Course._y = 0;
+_parent._parent.BG._x = 0;
+_parent._parent.BG._y = 0;
+_parent._parent.BG._xscale = 100;
+_parent._parent.BG._yscale = 100;
+_root.QuakeX = 0;
+_root.QuakeY = 0;
+_root.BGSpeed = undefined;
+}
+*/
+// make frame invisible
+this._visible = false;
+// Capture stage parameters
+var oldMode:String = Stage.scaleMode;
+//Stage.scaleMode = "exactFit";
+var cX:Number = Stage.width/2;
+var cY:Number = Stage.height/2;
+var sX:Number = Stage.width;
+var sY:Number = Stage.height;
+var Width:Number = 720;
+var Height:Number = 480;
+//Stage.scaleMode = oldMode;
+// create color instances for color 
+// transforms (if any).
+var camColor:Color = new Color(this);
+var parentColor1:Color = new Color(_root.FarBackground);
+var parentColor2:Color = new Color(_root.Course);
+var parentColor3:Color = new Color(_root.BGCourse);
+var parentColor4:Color = new Color(_root.MidBackground);
+var parentColor5:Color = new Color(_root.BGCloseCourse);
+// Make the stage move so that the 
+// v-cam is centered on the
+// viewport every frame
+_root.CreditsCamFirstFrame = 0;
+this.onEnterFrame = camControl;
+// Make an explicit call to the camControl
+// function to make sure it also runs on the
+// first frame.
+camControl();
+// If the v-cam is ever removed (unloaded)
+// the stage, return the stage to the default
+// settings.
+//this.onUnload = resetStage;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="color" color="#9933CC" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor/>
+                    </FillStyle>
+                    <FillStyle index="3">
+                      <SolidColor color="#FF0000"/>
+                    </FillStyle>
+                    <FillStyle index="4">
+                      <SolidColor color="#FFFF00"/>
+                    </FillStyle>
+                    <FillStyle index="5">
+                      <SolidColor color="#00FFFF"/>
+                    </FillStyle>
+                    <FillStyle index="6">
+                      <SolidColor color="#00FF00"/>
+                    </FillStyle>
+                    <FillStyle index="7">
+                      <SolidColor color="#FF00FF"/>
+                    </FillStyle>
+                    <FillStyle index="8">
+                      <SolidColor color="#0000FF"/>
+                    </FillStyle>
+                    <FillStyle index="9">
+                      <LinearGradient>
+                        <matrix>
+                          <Matrix a="0.06536865234375" d="0.003875732421875" tx="296.25" ty="229.4"/>
+                        </matrix>
+                        <GradientEntry color="#FFFFFF" ratio="0"/>
+                        <GradientEntry ratio="1"/>
+                      </LinearGradient>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="2" edges="!6731 3953.5|6999 3953.5!6999 3953.5|6999 4524.5!6999 4524.5|6996 4524.5"/>
+                    <Edge fillStyle0="9" fillStyle1="2" edges="!6996 4524.5|6731 4524.5"/>
+                    <Edge fillStyle0="8" fillStyle1="2" edges="!6731 4524.5|6731 3953.5"/>
+                    <Edge fillStyle0="8" edges="!6731 3953.5|6463 3953.5"/>
+                    <Edge fillStyle0="3" edges="!6463 3953.5|6195 3953.5"/>
+                    <Edge fillStyle0="7" edges="!6195 3953.5|5928 3953.5"/>
+                    <Edge fillStyle0="6" edges="!5928 3953.5|5660 3953.5"/>
+                    <Edge fillStyle0="5" edges="!5660 3953.5|5392 3953.5"/>
+                    <Edge fillStyle0="4" edges="!5392 3953.5|5124 3953.5"/>
+                    <Edge fillStyle0="1" edges="!5124 3953.5|4856 3953.5!4856 3953.5|4856 4524.5"/>
+                    <Edge fillStyle0="9" edges="!4856 4524.5|4855 4524.5!4855 4524.5|4855 4652!4855 4652|6996 4652!6996 4652|6996 4524.5"/>
+                    <Edge fillStyle0="9" fillStyle1="7" edges="!6195 4524.5|5928 4524.5"/>
+                    <Edge fillStyle0="6" fillStyle1="7" edges="!5928 4524.5|5928 3953.5"/>
+                    <Edge fillStyle0="9" fillStyle1="3" edges="!6463 4524.5|6195 4524.5"/>
+                    <Edge fillStyle0="7" fillStyle1="3" edges="!6195 4524.5|6195 3953.5"/>
+                    <Edge fillStyle0="9" fillStyle1="4" edges="!5392 4524.5|5124 4524.5"/>
+                    <Edge fillStyle0="1" fillStyle1="4" edges="!5124 4524.5|5124 3953.5"/>
+                    <Edge fillStyle0="9" fillStyle1="5" edges="!5660 4524.5|5392 4524.5"/>
+                    <Edge fillStyle0="4" fillStyle1="5" edges="!5392 4524.5|5392 3953.5"/>
+                    <Edge fillStyle0="9" fillStyle1="6" edges="!5928 4524.5|5660 4524.5"/>
+                    <Edge fillStyle0="5" fillStyle1="6" edges="!5660 4524.5|5660 3953.5"/>
+                    <Edge fillStyle0="9" fillStyle1="1" edges="!5124 4524.5|4856 4524.5"/>
+                    <Edge fillStyle0="3" fillStyle1="8" edges="!6463 4524.5|6463 3953.5"/>
+                    <Edge fillStyle0="9" fillStyle1="8" edges="!6731 4524.5|6463 4524.5"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="viewfinder" color="#FFFF4F" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF" alpha="0.0627450980392157"/>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <SolidColor/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                    <StrokeStyle index="2">
+                      <SolidStroke scaleMode="normal" weight="0.05" solidStyle="hairline">
+                        <fill>
+                          <SolidColor/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge strokeStyle="1" edges="!0 -514|0 -685"/>
+                    <Edge fillStyle1="1" strokeStyle="2" edges="!0 -514[1 -514 2 -514!2 -514[215 -514 366 -364!366 -364[517 -213 517 0!517 0[517 212 366 363!366 363[215 514 2 514!2 514[1 514 0 514"/>
+                    <Edge strokeStyle="2" edges="!0 514|0 686"/>
+                    <Edge fillStyle1="1" strokeStyle="2" edges="!0 514[#FFFF2D.4A #201.4A -361 363!-361 363[#FFFE00.5B #D4.5B -512 0!-512 0|-512 -1!-512 -1[-512 -213 -361 -364!-361 -364[#FFFF2D.4A #FFFDFE.B5 0 -514"/>
+                    <Edge strokeStyle="2" edges="!-512 0|-1028 0!517 0|1029 0"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="frame" color="#FF4FFF" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF" alpha="0.2"/>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal" weight="0.05" solidStyle="hairline">
+                        <fill>
+                          <SolidColor/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="!7200 4800|-7200 4800!-7200 4800|-7200 -4800!-7200 -4800|7200 -4800!7200 -4800|7200 4800"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,139 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Triangle Dipping PL" itemID="47ef266b-00000dc9" lastModified="1206911875" lastUniqueIdentifier="2">
+  <timeline>
+    <DOMTimeline name="Triangle Dipping PL">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Triangle Dipping PL Ground">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+if (cosine == undefined) {
+	cosine = -0.5;
+}
+if (tall == undefined) {
+	tall = 0.3;
+}
+if (speed == undefined) {
+	speed = 0.04
+}
+if (Yoffstart == undefined) {
+	Yoffstart = 0;
+}
+saveY = _y
+for (i=0; i<Yoffstart; i++) {
+	cosine += speed;
+	currentspeedY = Math.cos(cosine)*tall;
+	_y += currentspeedY;
+	_y -= (_y-saveY)/50
+}
+depth = _root.Course.Platforms.getNextHighestDepth();
+_root.Course.Platforms.attachMovie("TriangleDippingPLGround", "TriangleDippingPLGround"+depth, depth, {_x:this._x, _y:this._y});
+tellTarget (_root.Course.Platforms["TriangleDippingPLGround"+depth]) {
+	landedon = false;
+	//
+	lessthan = false;
+	morethan = false;
+}
+//
+currentspeedY = 0;
+distancecountY = speedY+Yoffstart;
+onEnterFrame = function () {
+	if (_root.PauseGame == false && _root.playpause == false) {
+		cosine += speed;
+		currentspeedY = Math.cos(cosine)*tall;
+		_y += currentspeedY;
+		_y -= (_y-saveY)/50
+		//
+		tellTarget (_root.Course.Platforms["TriangleDippingPLGround"+depth]) {
+			if (hitTest((_root.Course.Char._x*_root.coursescale/100)+_root.Course._x, ((_root.Course.Char._y+this.currentspeedY+3)*_root.coursescale/100)+_root.Course._y, false) && _root.Course.Char.yspeed>-3) {
+				//_root.Course.Char._x += this.currentspeedX;
+				_root.Course.Char._y += this.currentspeedY;
+				//_root.Course.Char.xspeed = _root.groundFriction(_root.Course.Char.xspeed, 0.3, 1.1);
+				if (landedon == false) {
+					//_root.Course.Char.xspeed -= this.currentspeedX/2;
+				}
+				landedon = true;
+			} else {
+				if (landedon == true) {
+					//_root.Course.Char.xspeed += this.currentspeedX;
+					_root.Course.Char.yspeed += this.currentspeedY;
+				}
+				landedon = false;
+			}
+			_y = this._y;
+			_x = this._x;
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/Other Tiles/Grey Stone Textrue" bitmapIsClipped="false">
+                        <matrix>
+                          <Matrix a="20" d="20" tx="49.35" ty="-43.65"/>
+                        </matrix>
+                      </BitmapFill>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/Other Tiles/Hide Fledge" bitmapIsClipped="false">
+                        <matrix>
+                          <Matrix a="20" d="20" tx="-32.65" ty="-13.15"/>
+                        </matrix>
+                      </BitmapFill>
+                    </FillStyle>
+                    <FillStyle index="3">
+                      <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/Other Tiles/Metal Tile" bitmapIsClipped="false">
+                        <matrix>
+                          <Matrix a="20" d="20" tx="34.85" ty="-39.9"/>
+                        </matrix>
+                      </BitmapFill>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal" weight="2">
+                        <fill>
+                          <SolidColor/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle0="1" fillStyle1="3" strokeStyle="1" edges="!-759.5 368[#FFFD09.8B #16E.6E -757 365!-757 365|-671 278!-671 278[#FFFD62.A1 #113.28 -667 273!-667 273|-17 -367!-17 -367[-11.171875 #FFFE8B.0F -3 -373!-3 -373[#5.35 #FFFE8B.15 11 -367!11 -367|736 365!736 365[#2E1.74 #16E.6E 738.5 368"/>
+                    <Edge fillStyle0="1" strokeStyle="1" edges="!738.5 368|1467.5 368!1467.5 368|0 -379!0 -379|-1467.5 368!-1467.5 368|-759.5 368"/>
+                    <Edge fillStyle0="3" strokeStyle="1" edges="!-759.5 368|-616 368"/>
+                    <Edge fillStyle0="3" fillStyle1="2" strokeStyle="1" edges="!-616 368|-3 -235!-3 -235|590.5 368"/>
+                    <Edge fillStyle0="3" strokeStyle="1" edges="!590.5 368|738.5 368"/>
+                    <Edge fillStyle1="2" strokeStyle="1" edges="!590.5 368|-616 368"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

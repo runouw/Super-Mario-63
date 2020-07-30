@@ -1,0 +1,466 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="      Char/  Fludd CLIPS/Squirt Nozzle Box Clip" itemID="4532f26b-00000429" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="HoverFluddBox" lastModified="1237942727" lastUniqueIdentifier="3">
+  <timeline>
+    <DOMTimeline name="Squirt Nozzle Box Clip">
+      <layers>
+        <DOMLayer name="Layer 5" color="#4FFFFF" locked="true" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip">
+                  <matrix>
+                    <Matrix a="0.603775024414063" ty="-14"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (enterFrame) {
+	if (this.hitTest((_root.Course.Char._x*_root.coursescale/100)+_root.Course._x, (_root.Course.Char._y*_root.coursescale/100)+_root.Course._y, true) && _root.Course.Char.yspeed>0) {
+		_parent.play();
+		_root.Course.Char.yspeed = -6;
+	}
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" duration="10" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.FluddArray[_root.Playinglevel][1] = true;
+_root.SaveFluddH = true;
+//_root.SaveFile();
+//
+_parent.attachMovie("Hnozzle", "Hnozzle"+_parent.getNextHighestDepth(), _parent.getNextHighestDepth(), {_x:_x, _y:_y+10});
+//
+_root.Mariosound = new Sound(this);
+_root.Mariosound.attachSound("Nozzle Box Break");
+_root.Mariosound.start(0, 1);
+_root.Mariosound.setVolume(_root.MarioVolume);
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		play();
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip">
+                  <matrix>
+                    <Matrix a="0.603775024414063" ty="-14"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (enterFrame) {
+	if (this.hitTest((_root.Course.Mario._x*_root.coursescale/100)+_root.Course._x, (_root.Course.Mario._y*_root.coursescale/100)+_root.Course._y, true) && _root.Course.Mario.yspeed>0) {
+		_parent.play();
+		_root.Course.Mario.yspeed = -6;
+	}
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="11" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+count = 0;
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		count++;
+		if (count>300) {
+			gotoAndStop(1);
+			onEnterFrame = null;
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 6" color="#808080">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="10" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="11" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#FF4FFF">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="      Char/  BITS Fludd/Squirt Nozzle Box" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="-16" ty="-20"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="!-320 -187S1|-320 400!-320 400|-247 400!-247 400|-247 -187!-247 -187|-320 -187"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" duration="9" tweenType="motion" keyMode="17921" acceleration="100">
+              <elements>
+                <DOMGroup>
+                  <transformationPoint>
+                    <Point x="-15.2" y="19.3"/>
+                  </transformationPoint>
+                  <members>
+                    <DOMShape>
+                      <transformationPoint>
+                        <Point x="-15.2" y="19.3"/>
+                      </transformationPoint>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="      Char/  BITS Fludd/Squirt Nozzle Box" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="-16" ty="-20"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="!-320 -187S1|-320 400!-320 400|-247 400!-247 400|-247 -187!-247 -187|-320 -187"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="10" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix a="0.014007568359375" b="-0.999847412109375" c="0.999847412109375" d="0.014007568359375" tx="-34.3" ty="3.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-15.2" y="19.3"/>
+                  </transformationPoint>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix a="0.014007568359375" b="-0.999847412109375" c="0.999847412109375" d="0.014007568359375" tx="-34.3" ty="3.85"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="-15.2" y="19.3"/>
+                      </transformationPoint>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="      Char/  BITS Fludd/Squirt Nozzle Box" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="-16" ty="-20"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="!-320 -187S1|-320 400!-320 400|-247 400!-247 400|-247 -187!-247 -187|-320 -187"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="11" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="      Char/  BITS Fludd/Squirt Nozzle Box" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="-16" ty="-20"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="!233 -187S1|233 400!233 400|320 400!320 400|320 -187!320 -187|233 -187"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" duration="9" tweenType="motion" keyMode="17921" acceleration="100">
+              <elements>
+                <DOMGroup>
+                  <transformationPoint>
+                    <Point x="14.8" y="19.3"/>
+                  </transformationPoint>
+                  <members>
+                    <DOMShape>
+                      <transformationPoint>
+                        <Point x="14.8" y="19.3"/>
+                      </transformationPoint>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="      Char/  BITS Fludd/Squirt Nozzle Box" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="-16" ty="-20"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="!233 -187S1|233 400!233 400|320 400!320 400|320 -187!320 -187|233 -187"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="10" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix a="-0.0010833740234375" b="0.999984741210938" c="-0.999984741210938" d="-0.0010833740234375" tx="34.1" ty="4.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="14.8" y="19.3"/>
+                  </transformationPoint>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix a="-0.0010833740234375" b="0.999984741210938" c="-0.999984741210938" d="-0.0010833740234375" tx="34.1" ty="4.5"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="14.8" y="19.3"/>
+                      </transformationPoint>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="      Char/  BITS Fludd/Squirt Nozzle Box" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="-16" ty="-20"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="!233 -187S1|233 400!233 400|320 400!320 400|320 -187!320 -187|233 -187"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="11" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="      Char/  BITS Fludd/Squirt Nozzle Box" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="-16" ty="-20"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="!233 -187S1|-247 -187!-247 -187|-247 400!-247 400|233 400!233 400|233 -187"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" duration="9" tweenType="motion" keyMode="17921" acceleration="100">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="      Char/  BITS Fludd/Squirt Nozzle Box" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="-16" ty="-20"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="!233 -187S1|-247 -187!-247 -187|-247 400!-247 400|233 400!233 400|233 -187"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="10" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix d="0.13629150390625" ty="17.25"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-0.35" y="5.15"/>
+                  </transformationPoint>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix d="0.13629150390625" ty="17.25"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="-0.35" y="5.15"/>
+                      </transformationPoint>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="      Char/  BITS Fludd/Squirt Nozzle Box" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="-16" ty="-20"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="!233 -187S1|-247 -187!-247 -187|-247 400!-247 400|233 400!233 400|233 -187"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="11" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="      Char/  BITS Fludd/Squirt Nozzle Box" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="-16" ty="-20"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="!320 -187S2|-320 -187!-320 -187|-320 -400!-320 -400|320 -400!320 -400|320 -187"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" duration="9" tweenType="motion" keyMode="17921" acceleration="50">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="      Char/  BITS Fludd/Squirt Nozzle Box" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="-16" ty="-20"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="!320 -187S2|-320 -187!-320 -187|-320 -400!-320 -400|320 -400!320 -400|320 -187"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="10" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix d="0.375579833984375" ty="17.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-14.65"/>
+                  </transformationPoint>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix d="0.375579833984375" ty="17.5"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point y="-14.65"/>
+                      </transformationPoint>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="      Char/  BITS Fludd/Squirt Nozzle Box" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="-16" ty="-20"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="!320 -187S2|-320 -187!-320 -187|-320 -400!-320 -400|320 -400!320 -400|320 -187"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="11" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

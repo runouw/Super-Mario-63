@@ -1,0 +1,280 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Items-PL/ In-course Items/ Collectables/ Water Bottle/Small Water Bottle Clip" itemID="467842a8-0000075b" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="SmallWaterBottle" lastModified="1238123123" lastUniqueIdentifier="3">
+  <timeline>
+    <DOMTimeline name="Small Water Bottle Clip">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[/*
+if (_root.Course.coincountnum == undefined) {
+_root.Course.coincountnum = 0;
+} else {
+_root.Course.coincountnum++;
+}
+if (_root["coindata"+_root.playingcourse][0] == undefined) {
+_root["coindata"+_root.playingcourse] = [""];
+}
+coinnum = _root.Course.coincountnum;
+if (_root["coindata"+_root.playingcourse][coinnum] == 1 && _root["coindata"+_root.playingcourse][coinnum] !== undefined) {
+gotoAndStop("end");
+}
+*/
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+_visible = true;
+onEnterFrame = function () {
+	if (Math.abs((_root.currentCamX)-(_x+_parent._x))<600 && Math.abs((_root.currentCamY)-(_y+_parent._y))<600) {
+		_visible = true;
+		if (this.hitTest(_root.Course.Char.charClip.body) || this.hitTest((_root.Course.Char._x*_root.coursescale/100)+_root.Course._x, ((_root.Course.Char._y-15)*_root.coursescale/100)+_root.Course._y, true)) {
+			play();
+			_root.WaterAmount += 1500;
+			onEnterFrame = null;
+		}
+	} else {
+		_visible = false;
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="3" duration="14" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.bgsoundFX = new Sound(this);
+_root.bgsoundFX.attachSound("Fludd Nozzle");
+_root.bgsoundFX.start(0, 1);
+_root.bgsoundFX.setVolume(_root.BgVolume);
+//
+//_root["coindata"+_root.playingcourse][coinnum] = 1;
+//
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		play();
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="17" name="end" labelType="name" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+count = 0;
+onEnterFrame = function () {
+	if (Math.abs((_root.currentCamX)-(_x+_parent._x))>600 || Math.abs((_root.currentCamY)-(_y+_parent._y))>600 || count++>32*30) {
+		gotoAndPlay(1);
+		onEnterFrame = null;
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Frame" color="#9933CC" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <SolidColor/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                    <StrokeStyle index="2">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <SolidColor/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                    <StrokeStyle index="3">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <SolidColor color="#FF0000"/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="!-28.5 35.5[#FFFFE4.C3 #1C.C1 -31 0.5!-31 0.5[-31 #FFFFFF.BD -31 -1!-31 -1[-31.1875 #FFFFF9.E1 -22.5 -10.5!-22.5 -10.5[#FFFFF3.27 #FFFFF1.E7 0.5 -14!0.5 -14[#D.F6 #FFFFF1.D9 21.5 -9.5!21.5 -9.5[#1C.B3 #FFFFFB.51 28.5 0.5!28.5 0.5[#1C.99
+ #4.6F 25 7.5!25 7.5[#19.5 #1E.05 26.5 36.5"/>
+                    <Edge strokeStyle="1" edges="
+!26.5 36.5[#1E.0B #3A.5F 38.5 67.5!38.5 67.5[#2D.61 #4A.6D 56 74.5!56 74.5[#56.99 #4B.75 85.5 134"/>
+                    <Edge strokeStyle="2" edges="
+!85.5 134|85.5 141.5"/>
+                    <Edge fillStyle1="1" strokeStyle="2" edges="
+!85.5 141.5|85.5 215"/>
+                    <Edge strokeStyle="2" edges="
+!85.5 215|85.5 289"/>
+                    <Edge strokeStyle="1" edges="
+!85.5 289[-1.25 #14B.06 -88 289"/>
+                    <Edge strokeStyle="2" edges="
+!-88 289|-88 215"/>
+                    <Edge fillStyle1="1" strokeStyle="2" edges="
+!-88 215|-88 141.5"/>
+                    <Edge strokeStyle="2" edges="
+!-88 141.5|-88 134"/>
+                    <Edge strokeStyle="1" edges="
+!-88 134[#FFFFA6.E7 #4B.75 -58.5 74.5!-58.5 74.5[#FFFFD0.1F #4A.6D -41 67.5!-41 67.5[#FFFFDF.6F #3A.52 -28.5 35.5"/>
+                    <Edge fillStyle0="1" strokeStyle="1" edges="
+!-28.5 35.5[#FFFFE7.2B #24.A8 -22.5 37.5!-22.5 37.5[#FFFFF3.27 #29.F8 0.5 42!0.5 42[#D.F6 #2A.2A 21.5 39!21.5 39[#17.43 #26.07 26.5 36.5"/>
+                    <Edge fillStyle0="1" fillStyle1="1" strokeStyle="1" edges="
+!25 7.5|24.5 7.5!24.5 7.5[#17.3 #8.58 21.5 9!21.5 9[#D.F6 #C.6A 0.5 12.5!0.5 12.5[#FFFFF3.27 #C.78 -22.5 8!-22.5 8[#FFFFE7.3E #7.39 -26.5 6.5!-26.5 6.5[#FFFFE1.C2 #3.B2 -31 0.5"/>
+                    <Edge fillStyle0="1" fillStyle1="1" strokeStyle="3" edges="
+!24 210[#10.F5 #D4.3B 15.5 218!15.5 218[#13.0B #D7.24 28.5 214.5!28.5 214.5[#1A.68 #D4.39 24 210!71 197[#45.78 #C4.D4 63.5 190!63.5 190[#3B.1C 185.5 52.5 181!52.5 181[#37.78 #B8.C8 54 193!54 193[#35.1F #C3.5F 51.5 197!51.5 197[#32.BB
+ #C6.76 47 194!47 194[#2F.DA #BD.83 45 186.5!45 186.5[#27.14 #B5.5 26.5 185!26.5 185[#13.D5 #BB.DF 25 190!25 190[#1B.3D 191.5 28 193!28 193[#20.7 #C7.A1 28 207!28 207[#1B.5C #D1.3D 24.5 210!24.5 210|24 210!24 210[#D.15 #C8.48 -1 193!-1
+ 193[-7.5 #BD.61 -14 186.5!-14 186.5[#FFFFF2.BB #C1.DA -15.5 197.5!-15.5 197.5[#FFFFEE.E2 #C7.9F -18 201!-18 201[#FFFFEB.E2 #D0.8C -21.5 205!-21.5 205[#FFFFEA.7D #CA.9C -23 198!-23 198[#FFFFE3.21 #C5.43 -34 198!-34 198[-39.96875 #C6.DA
+ -41.5 196!-41.5 196[#FFFFD8.03 #BE.E2 -37 186.5!-37 186.5[#FFFFDD.1A #B8.3B -36.5 179!-36.5 179[#FFFFDA.0F #BC.8C -49 187!-49 187[-52 #BA.38 -55 181!-55 181[-54.28125 #AE.88 -58 172.5!-58 172.5[#FFFFC0.FB #B0.1F -71 179"/>
+                    <Edge fillStyle0="1" strokeStyle="1" edges="
+!-88 215[-1.25 #101.06 85.5 215!85.5 141.5[-1.25 #B7.86 -88 141.5"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" duration="2" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="5" duration="13" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/Water/Runsplash 2">
+                  <matrix>
+                    <Matrix a="-1" ty="7.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Water" color="#FFFF4F" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#0099FF" alpha="0.301960784313725"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="
+!85.5 215[-1.25 #101.06 -88 215!-88 215|-88 289!-88 289[-1.25 #14B.06 85.5 289!85.5 289|85.5 215"/>
+                    <Edge fillStyle1="1" edges="
+!56 74.5[#56.99 #4B.75 85.5 134!85.5 134|85.5 141.5!85.5 141.5[-1.25 #B7.86 -88 141.5!-88 141.5|-88 134!-88 134[#FFFFA6.E7 #4B.75 -58.5 74.5!-58.5 74.5[#FFFFD0.1F #4A.6D -41 67.5!-41 67.5[#FFFFDC.CA #3D.5D -31.5 49!-31.5 49[#C.41 70 29
+ 49!29 49[#20.A3 #3D.4A 38.5 67.5!38.5 67.5[#2D.61 #4A.6D 56 74.5"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" duration="14" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/Water/Runsplash 2">
+                  <matrix>
+                    <Matrix ty="5.25"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="17" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Bubbles" color="#FF4FFF" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Water Bottle/Water Bottle Bubble">
+                  <matrix>
+                    <Matrix a="0.739730834960938" d="0.739730834960938" tx="-1.55" ty="13.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	gotoAndPlay(random(40)+41);
+	movement = 0;
+	moved = "right";
+}
+onClipEvent (enterFrame) {
+	_x += movement;
+	if (movement>1) {
+		moved = "left";
+	}
+	if (movement<-1) {
+		moved = "right";
+	}
+	if (moved == "right") {
+		movement += 0.3;
+	} else {
+		movement -= 0.3;
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Water Bottle/Water Bottle Bubble">
+                  <matrix>
+                    <Matrix a="0.739730834960938" d="0.739730834960938" tx="1.4" ty="13.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	gotoAndPlay(random(40)+1);
+	movement = 0;
+	moved = "right";
+}
+onClipEvent (enterFrame) {
+	_x += movement;
+	if (movement>1) {
+		moved = "left";
+	}
+	if (movement<-1) {
+		moved = "right";
+	}
+	if (moved == "right") {
+		movement += 0.3;
+	} else {
+		movement -= 0.3;
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" duration="15" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

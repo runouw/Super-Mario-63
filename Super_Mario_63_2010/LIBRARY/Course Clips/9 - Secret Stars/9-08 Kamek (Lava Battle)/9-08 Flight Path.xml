@@ -1,0 +1,177 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Clips/ 9 - Secret Stars/ 9-08 Kamek (Lava Battle)/9-08 Flight Path" itemID="47dde5c2-00000fd2" lastModified="1223760934">
+  <timeline>
+    <DOMTimeline name="9-08 Flight Path">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (_root.BossCheckpoint !== true) {
+	_visible = false;
+	_root.Course.Char._x = -400;
+	_root.Course.Char._y = -500;
+	_root.Course.Char._xscale = -100;
+	//
+	_root.CharHP = 8;
+	_root.Course.Char.attack = true;
+	_root.Course.Char.attackFrame = "SlingStar";
+	//
+} else {
+	gotoAndStop("end");
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.Course.Char.attack = true;
+_root.Course.Char.attackFrame = "SlingStar";
+//
+_root.Course.Char.charClip.frame.gotoAndPlay("fling");
+//
+_root.Course.Char._x = -1000;
+_root.Course.Char._y = -500;
+_root.Course.Char._xscale = -100;
+//
+_root.Course.BackGFX.StartClip._y = 0;
+_root.Course.BackGFX.StartClip._x = 0;
+//
+_root.Camcenter = this;
+_root.Camspeed = 1;
+//
+onEnterFrame = function () {
+	_root.Controll = false;
+	if (_root.PauseGame == false) {
+		play();
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" duration="64" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.Course.Char.charClip.frame.gotoAndPlay("fling");
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="66" duration="13" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+onEnterFrame = function () {
+	_root.Controll = false;
+	if (_root.Course.Char.air == false) {
+		play();
+		_root.Course.Char.yspeed = 0;
+		_root.Course.Char.xspeed = 0;
+		_root.Course.Char.attack = true;
+		_root.Course.Char.attackFrame = "bosscinema";
+		_root.playpause = true;
+		onEnterFrame = function () {
+			_root.Camcenter = this;
+			_root.PauseGame = false;
+		};
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="79" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = null;
+_root.Course.BackGFX.Kamek.play();
+stop();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="80" name="end" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Guide: Layer 3" color="#4FFFFF" autoNamed="false" layerType="guide">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="65" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <SolidColor/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge strokeStyle="1" edges="!-8381 -9877[#FFF7EA.6C #FFDD3F.53 -864 -3040"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="66" duration="15" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F" parentLayerIndex="1">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMStaticText fontRenderingMode="standard" width="80.15" height="13.35" autoExpand="true" antiAliasThickness="68" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-40.05" ty="-6.65"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Sling Star Path</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" face="ArialMT"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" duration="64" tweenType="motion" motionTweenOrientToPath="true" keyMode="18177" acceleration="40">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/Sling Star/Sling Star Path Code">
+                  <matrix>
+                    <Matrix a="-0.504974365234375" b="0.86212158203125" c="-0.86212158203125" d="-0.504974365234375" tx="-413.7" ty="-490.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="65" tweenType="motion" motionTweenOrientToPath="true" keyMode="18177">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/Sling Star/Sling Star Path Code">
+                  <matrix>
+                    <Matrix a="-0.966690063476563" b="0.252548217773438" c="-0.252548217773438" d="-0.966690063476563" tx="-43.2" ty="-152"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="66" duration="15" keyMode="9984">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,214 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="      Char/  -=-=MaRiO=-=-/    CHARACTER CLIP/Char Main" itemID="453bd307-000000ba" linkageExportForAS="true" linkageIdentifier="Char" lastModified="1245869040" lastUniqueIdentifier="8">
+  <timeline>
+    <DOMTimeline name="Char Main">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (started == undefined) {
+	started = false;
+}
+stop();
+onEnterFrame = function () {
+	if (_root.KeySPACE() && _root.PauseGame == false && _root.playpause == false && _root.Power>0 && _root.WaterAmount>0 && (_root.Fluddpow == "H" || _root.Fluddpow == "T") && (_root.Course.Char.attack == false || (_root.Course.Char.attack == true && (_root.Course.Char.attackFrame == "Dive" || _root.Course.Char.attackFrame == "frontflip")))) {
+		if (started == false) {
+			watersoundclip = new Sound(this);
+			watersoundclip.attachSound("fluddrepeat");
+			watersoundclip.start(0, 1);
+			watersoundclip.setVolume(_root.MarioVolume/1.5);
+			//
+			watersoundclip.onSoundComplete = function() {
+				//clip = new Sound(this);
+				watersoundclip.attachSound("fluddrepeat");
+				watersoundclip.start(0, 1);
+				watersoundclip.setVolume(_root.MarioVolume/1.5);
+				watersoundclip.setPan(panX);
+			};
+		}
+		started = true;
+	} else {
+		if (started == true) {
+			watersoundclip.stop();
+		}
+		started = false;
+		watersoundclip.onSoundComplete = null;
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Mario CLIPS/Mario Main" name="charClip">
+                  <matrix>
+                    <Matrix d="1.00115966796875" ty="-3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Mario CLIPS/Mario Main" name="charClip">
+                  <matrix>
+                    <Matrix d="1.00115966796875" ty="-3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter brightness="40" contrast="-51" saturation="-100"/>
+                    <BevelFilter blurX="1" blurY="1" distance="2"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Mario CLIPS/Mario Main" name="charClip" blendMode="difference">
+                  <matrix>
+                    <Matrix tx="-0.35" ty="-3.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="2.35" y="-17.65"/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter blurX="3" blurY="3" color="#0000FF" strength="3"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Mario CLIPS/Mario Main" name="charClip" blendMode="difference">
+                  <matrix>
+                    <Matrix d="1.00115966796875" ty="-3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter brightness="40" contrast="-51" saturation="-100"/>
+                    <BevelFilter blurX="1" blurY="1" distance="2"/>
+                    <GlowFilter color="#FFFFFF" strength="3"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="4" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (started == undefined) {
+	started = false;
+}
+stop();
+onEnterFrame = function () {
+	if (_root.KeySPACE() && _root.PauseGame == false && _root.playpause == false && _root.Power>0 && _root.WaterAmount>0 && (_root.Fluddpow == "H" || _root.Fluddpow == "T") && (_root.Course.Char.attack == false || (_root.Course.Char.attack == true && (_root.Course.Char.attackFrame == "Dive" || _root.Course.Char.attackFrame == "frontflip")))) {
+		if (started == false) {
+			watersoundclip = new Sound(this);
+			watersoundclip.attachSound("fluddrepeat");
+			watersoundclip.start(0, 1);
+			watersoundclip.setVolume(_root.MarioVolume/1.5);
+			//
+			watersoundclip.onSoundComplete = function() {
+				//clip = new Sound(this);
+				watersoundclip.attachSound("fluddrepeat");
+				watersoundclip.start(0, 1);
+				watersoundclip.setVolume(_root.MarioVolume/1.5);
+				watersoundclip.setPan(panX);
+			};
+		}
+		started = true;
+	} else {
+		if (started == true) {
+			watersoundclip.stop();
+		}
+		started = false;
+		watersoundclip.onSoundComplete = null;
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Luigi CLIPS/Luigi Main" name="charClip">
+                  <matrix>
+                    <Matrix d="1.00115966796875"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[// luigi]]></script>
+                  </Actionscript>
+                  <filters>
+                    <AdjustColorFilter/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="5" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Luigi CLIPS/Luigi Main" name="charClip">
+                  <matrix>
+                    <Matrix d="1.00115966796875"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[// luigi]]></script>
+                  </Actionscript>
+                  <filters>
+                    <AdjustColorFilter brightness="40" contrast="-51" saturation="-100"/>
+                    <BevelFilter blurX="1" blurY="1" distance="2"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="6" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Luigi CLIPS/Luigi Main" name="charClip" blendMode="difference">
+                  <matrix>
+                    <Matrix d="1.00115966796875"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[// luigi]]></script>
+                  </Actionscript>
+                  <filters>
+                    <GlowFilter blurX="3" blurY="3" color="#0000FF" strength="3"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="7" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Luigi CLIPS/Luigi Main" name="charClip" blendMode="difference">
+                  <matrix>
+                    <Matrix d="1.00115966796875"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[// luigi]]></script>
+                  </Actionscript>
+                  <filters>
+                    <AdjustColorFilter brightness="40" contrast="-51" saturation="-100"/>
+                    <BevelFilter blurX="1" blurY="1" distance="2"/>
+                    <GlowFilter color="#FFFFFF" strength="3"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

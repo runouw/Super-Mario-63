@@ -1,0 +1,193 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="      Char/  Luigi CLIPS/Luigi Sleep" itemID="4758bd70-00000d02" lastModified="1239680526" lastUniqueIdentifier="1">
+  <timeline>
+    <DOMTimeline name="Luigi Sleep">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="10" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		play();
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="10" duration="21" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+count;
+count = 0;
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		count++;
+		if (count == 32) {
+			_root.Mariosound = new Sound(this);
+			_root.Mariosound.attachSound("Mario - Snore1");
+			_root.Mariosound.start(0, 1);
+			_root.Mariosound.setVolume(_root.MarioVolume);
+		}
+		if (count>=32*1.7) {
+			_root.Mariosound = new Sound(this);
+			_root.Mariosound.attachSound("Mario - Snore2");
+			_root.Mariosound.start(0, 1);
+			_root.Mariosound.setVolume(_root.MarioVolume);
+			//
+			count = 0;
+		}
+	}
+	// Insert Sleeping Noises       
+	stop();
+	if (_root.PauseGame == false) {
+		if (_root.KeyUP() || _root.KeyRIGHT() || _root.KeyLEFT() || _root.KeyDOWN() || _root.KeySPACE()) {
+			play();
+			onEnterFrame = function () {
+				if (_root.PauseGame == false) {
+					play();
+				} else {
+					stop();
+				}
+			};
+		}
+	} else {
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="31" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.Course.Char.attack = false;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  Luigi CLIPS/ Luigi BITs/Luigi (None) - Faint - 5">
+                  <matrix>
+                    <Matrix a="-1" tx="3" ty="-17.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" duration="3" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  Luigi CLIPS/ Luigi BITs/Luigi (None) - Faint - 6">
+                  <matrix>
+                    <Matrix a="-0.86602783203125" b="-0.5" c="-0.5" d="0.86602783203125" tx="15.9" ty="-4.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="7.5" y="22.05"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="5" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  Luigi CLIPS/ Luigi BITs/Luigi (None) - Faint - 6">
+                  <matrix>
+                    <Matrix a="-1" tx="7.85" ty="-11.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="7.5" y="22"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="6" duration="4" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  Luigi CLIPS/ Luigi BITs/Luigi (None) - Hurt 3 - 2">
+                  <matrix>
+                    <Matrix tx="-27.15" ty="-3.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="10" duration="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  Luigi CLIPS/ Luigi BITs/Luigi (None) - Faint - 7">
+                  <matrix>
+                    <Matrix a="-1" tx="8.35" ty="-2.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="13" duration="4" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  Luigi CLIPS/ Luigi BITs/Luigi (None) - Hurt 3 - 2">
+                  <matrix>
+                    <Matrix tx="-25.5" ty="-3"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="17" duration="4" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  Luigi CLIPS/ Luigi BITs/Luigi (None) - Faint - 7">
+                  <matrix>
+                    <Matrix a="-1" tx="8.35" ty="-2.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="21" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  Luigi CLIPS/ Luigi BITs/Luigi (None) - Faint - 6">
+                  <matrix>
+                    <Matrix a="-1" tx="7.85" ty="-10.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="23" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  Luigi CLIPS/ Luigi BITs/Luigi (None) - Hurt 1 - 3">
+                  <matrix>
+                    <Matrix a="-0.5" b="0.86602783203125" c="0.86602783203125" d="0.5" tx="-17.75" ty="-13.05"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="25" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  Luigi CLIPS/ Luigi BITs/Luigi (None) - Hurt 1 - 2">
+                  <matrix>
+                    <Matrix a="-0.86602783203125" b="0.5" c="0.5" d="0.86602783203125" tx="-0.05" ty="-19.35"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="27" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  Luigi CLIPS/ Luigi BITs/Luigi (None) - Jump - 1">
+                  <matrix>
+                    <Matrix a="-1" tx="7.5" ty="-15.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="29" duration="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  Luigi CLIPS/ Luigi BITs/Overworld - Luigi 3 - 1">
+                  <matrix>
+                    <Matrix a="-1" tx="5.5" ty="-18"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

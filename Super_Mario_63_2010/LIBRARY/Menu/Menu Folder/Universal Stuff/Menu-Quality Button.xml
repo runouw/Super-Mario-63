@@ -1,0 +1,135 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name=" Menu/Menu Folder/  Universal Stuff/Menu-Quality Button" itemID="47797216-00000c89" sourceFlashFilepath="Rob &amp; Steve Hewitt\My Documents\Super Mario 63\Menu Design.fla" sourceLibraryItemHRef="Menu Folder/  Universal Stuff/Menu-Quality Button" sourceLastModified="1199145788" lastModified="1199145788" lastUniqueIdentifier="2" sourceItemID="47797216-00000c89">
+  <timeline>
+    <DOMTimeline name="Menu-Quality Button">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[ywave = random(90);
+Y = this._y;
+r = 0;
+if (_parent._currentframe>20) {
+	cl = true;
+	rewinding = true;
+	_alpha = 0;
+	this._xscale = 300;
+	this._yscale = 300;
+}
+onEnterFrame = function () {
+	if (bg.hitTest(_root._xmouse, _root._ymouse, true) && _root.m.clicked !== true) {
+		hl = true;
+	} else {
+		hl = false;
+	}
+	if (cl == true && rewinding !== true) {
+		this._xscale += (300-this._xscale)/10;
+		txt._xscale += (125-txt._xscale)/5;
+		txt._yscale += (125-txt._yscale)/4;
+		_alpha -= 5;
+		if (_alpha<=0) {
+			StopCoding();
+		}
+	}
+	if (cl == true && rewinding == true) {
+		this._xscale += (100-this._xscale)/10;
+		txt._xscale += (100-txt._xscale)/5;
+		txt._yscale += (100-txt._yscale)/4;
+		_alpha += 5;
+		if (_alpha>=100) {
+			rewinding = false;
+			cl = false;
+		}
+	}
+	if (hl == true && cl !== true) {
+		this._xscale += (125-this._xscale)/4;
+		txt._xscale += (125-txt._xscale)/5;
+		txt._yscale += (125-txt._yscale)/4;
+		ywave -= 0.035;
+	} else if (cl !== true) {
+		this._xscale += (100-this._xscale)/4;
+		txt._xscale += (100-txt._xscale)/5;
+		txt._yscale += (100-txt._yscale)/4;
+	}
+	//                                                 
+	this._yscale = this._xscale;
+	//
+	ywave += 0.035;
+	this._y = Y+Math.sin(ywave)*4;
+};
+onMouseDown = function () {
+	if (hl == true && cl !== true && _root.m.clicked !== true) {
+		//_root.m.clicked = true;
+		_root.m.Mode = "Quality";
+		cl = true;
+		_parent.HL = "defined";
+		onMouseDown = null;
+		//_root.m.TransitionF("Start");
+	}
+};
+//
+StopCoding = function () {
+	onEnterFrame = null;
+	onMouseDown = null;
+	gotoAndStop(2);
+};
+stop();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Menu Folder/ Options/Menu Quality Text" name="txt">
+                  <transformationPoint>
+                    <Point y="-0.05"/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter blurX="2" blurY="2"/>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Menu Folder/  Universal Stuff/Menu Button BG" name="bg">
+                  <matrix>
+                    <Matrix a="0.78759765625" d="0.74957275390625"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	gotoAndPlay(random(39)+1);
+}
+]]></script>
+                  </Actionscript>
+                  <filters>
+                    <BevelFilter distance="2"/>
+                    <AdjustColorFilter brightness="80" contrast="18" saturation="-100" hue="-58"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

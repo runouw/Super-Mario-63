@@ -1,0 +1,1920 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Clips/8-12 Bowser Clown Car Hurt 2" itemID="48fa6543-00001348" sourceFlashFilepath="Rob &amp; Steve Hewitt\My Documents\Super Mario 63\Bowser Mid-Battle Test.fla" sourceLibraryItemHRef="8-12 Bowser Clown Car Hurt 2" sourceLastModified="1224369947" lastModified="1237604460" lastUniqueIdentifier="106" sourceItemID="48fa6543-00001348">
+  <timeline>
+    <DOMTimeline name="8-12 Bowser Clown Car Hurt 2">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" locked="true" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="9" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	_root.Camcenter = _parent._parent;
+	//_root.playpause = true;
+	if (_root.PauseGame == false) {
+		_parent._parent.yspeed *= 0.8;
+		play();
+	} else {
+		stop();
+	}
+};
+_parent._parent.yspeed = 5;
+_parent._parent.xspeed = 0;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="9" duration="6" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	_root.Camcenter = _parent._parent;
+	//_root.playpause = true;
+	if (_root.PauseGame == false) {
+		_parent._parent.yspeed--;
+		_parent._parent.yspeed *= 0.8;
+		_parent._parent.targety = -200;
+		play();
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="15" duration="57" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.bgsoundFX = new Sound(this);
+_root.bgsoundFX.attachSound("VolcanoErupting");
+_root.bgsoundFX.start(0, 1);
+_root.bgsoundFX.setVolume(_root.BgVolume);
+onEnterFrame = function () {
+	_root.Camcenter = _parent._parent;
+	//_root.playpause = true;
+	if (_root.PauseGame == false) {
+		if (_root.Course.Char.air == false) {
+			_root.Course.Char.attack = false;
+			_root.playpause = true;
+		}
+		_parent._parent.yspeed *= 0.7;
+		play();
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="72" duration="53" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.bgsoundFX = new Sound(this);
+_root.bgsoundFX.attachSound("Explode9");
+_root.bgsoundFX.start(0, 1);
+_root.bgsoundFX.setVolume(_root.BgVolume);
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="125" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[//_root.playpause = false;
+OEF = function () {
+	_root.PauseGame = false;
+	_parent._parent.yspeed = 0;
+	_parent._parent.xspeed = 0;
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="126" duration="5" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+_root.CinemaMessageFrame = 3;
+_root.CinemaMessage = "<b><i>Bowser:</i></b> Ha that robot was just a diversion!!";
+onEnterFrame = function () {
+	OEF();
+	if (_root.KeyZ() == true && lastframeZ !== true && _root.CinemaMessageFinished == true) {
+		_root.CinemaMessage = "";
+		play();
+		onEnterFrame = function(){
+			OEF();
+		}
+	}
+	lastframeZ = _root.KeyZ();
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="131" duration="4" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+_root.CinemaMessageFrame = 3;
+_root.CinemaMessage = "<b><i>Bowser:</i></b> It's too late Mario;  the Meteor is fully charged and ready to launch!!!   Soon, it will crash into Peach's Castle and decimate the World!!!  You Can Not Do Anything To Stop Me Now!!!!!";
+onEnterFrame = function () {
+	OEF();
+	if (_root.KeyZ() == true && lastframeZ !== true && _root.CinemaMessageFinished == true) {
+		_root.CinemaMessage = "";
+		play();
+		onEnterFrame = function(){
+			OEF();
+		}
+	}
+	lastframeZ = _root.KeyZ();
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="135" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.SongIntro = "BowserTrapIntro";
+_root.SongRepeat = "BowserTrapRepeat";
+_root.PlayMusicAndIntro();]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="136" duration="5" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	OEF();
+};
+OEF = function () {
+	_root.PauseGame = false;
+	_root.Camcenter = _root.Course.BackGFX.box1;
+};
+_root.Course.BackGFX.nextFrame();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="141" duration="5" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+_root.CinemaMessageFrame = 1;
+_root.CinemaMessage = "A Sling-Star has appeared.";
+onEnterFrame = function () {
+	OEF();
+	if (_root.KeyZ() == true && lastframeZ !== true && _root.CinemaMessageFinished == true) {
+		_root.CinemaMessage = "";
+		play();
+		onEnterFrame = function(){
+			OEF();
+		}
+	}
+	lastframeZ = _root.KeyZ();
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="146" duration="5" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.Course.BackGFX.nextFrame();
+_root.Course.FrontGFX.nextFrame();
+_root.Course.Platforms.nextFrame();
+onEnterFrame = function () {
+	OEF();
+};
+OEF = function () {
+	_root.PauseGame = false;
+	_root.Camcenter = _root.Course.BackGFX.box2;
+};]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="151" duration="4" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+_root.CinemaMessageFrame = 1;
+_root.CinemaMessage = "You can use this Warp-Pipe to return to Castle.";
+onEnterFrame = function () {
+	OEF();
+	if (_root.KeyZ() == true && lastframeZ !== true && _root.CinemaMessageFinished == true) {
+		_root.CinemaMessage = "";
+		play();
+		onEnterFrame = function(){
+			OEF();
+		}
+	}
+	lastframeZ = _root.KeyZ();
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="155" duration="5" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+_root.DoneWithHighScores = false;
+//_root.attachMovie("HighscoresScreen", "HighscoresScreen"+_root.getNextHighestDepth(), _root.getNextHighestDepth(), {_x:_root.screensizeX/2, _y:_root.screensizeY/2});
+_root.attachMovie("SaveMessage", "SaveMessage"+_root.getNextHighestDepth(), _root.getNextHighestDepth(), {_x:_root.screensizeX/2, _y:_root.screensizeY/2});
+onEnterFrame = function () {
+	_root.PauseGame = false;
+	if (_root.DoneWithHighScores == true) {
+		play();
+		onEnterFrame = function () {
+			OEF();
+		};
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="160" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[//
+_root.BowserKey3 = true;
+_root.lvl8keyE = true;
+//
+_root.Camcenter = "none";
+_root.playpause = false;
+onEnterFrame = null;
+stop();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 16" color="#FF4F4F" locked="true">
+          <frames>
+            <DOMFrame index="0" duration="84" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="84" duration="22" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Explosion 6 Clip (Air Explosion)">
+                  <matrix>
+                    <Matrix tx="-24.25" ty="6.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Explosion 6 Clip (Air Explosion)">
+                  <matrix>
+                    <Matrix tx="54" ty="28.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="-70.75" ty="32.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="48.95" ty="-26.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="1.35" ty="4"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="106" duration="19" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="125" duration="36" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 15" color="#4F80FF" locked="true">
+          <frames>
+            <DOMFrame index="0" duration="82" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="82" duration="22" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Explosion 6 Clip (Air Explosion)">
+                  <matrix>
+                    <Matrix tx="-14.65" ty="-21.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Explosion 6 Clip (Air Explosion)">
+                  <matrix>
+                    <Matrix tx="-11" ty="43.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="5.95" ty="75.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="104" duration="21" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="125" duration="36" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 7" color="#4F80FF" locked="true">
+          <frames>
+            <DOMFrame index="0" duration="26" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="26" duration="18" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Explosion 6 Clip (Air Explosion)">
+                  <matrix>
+                    <Matrix tx="-11" ty="-34.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="44" duration="17" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Explosion 6 Clip (Air Explosion)">
+                  <matrix>
+                    <Matrix tx="27.5" ty="22.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Explosion 6 Clip (Air Explosion)">
+                  <matrix>
+                    <Matrix tx="3.35" ty="-27.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="61" duration="18" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="11" ty="-44.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="-14.9" ty="37.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="-5.3" ty="-14.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="79" duration="23" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Nuke Explosion">
+                  <matrix>
+                    <Matrix tx="12.95" ty="-37.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 5 Clip (Circle Explosion)">
+                  <matrix>
+                    <Matrix a="3.375" d="3.375" tx="0.5" ty="17.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter blurX="2" blurY="2"/>
+                  </filters>
+                  <color>
+                    <Color alphaMultiplier="0.75"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="-32.5" ty="-10.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="8.45" ty="17.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Explosion 6 Clip (Air Explosion)">
+                  <matrix>
+                    <Matrix tx="13.2" ty="52.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Explosion 6 Clip (Air Explosion)">
+                  <matrix>
+                    <Matrix tx="33.45" ty="-0.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="102" duration="23" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="125" duration="36" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 14" color="#808080" locked="true">
+          <frames>
+            <DOMFrame index="0" duration="24" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Explosion 4 Clip (Whack)" selected="true">
+                  <matrix>
+                    <Matrix tx="-14.65" ty="-45.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="24" duration="18" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Explosion 6 Clip (Air Explosion)">
+                  <matrix>
+                    <Matrix tx="25.5" ty="7.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 3 Clip (Small 2)">
+                  <matrix>
+                    <Matrix tx="-18" ty="-22.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="42" duration="17" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Explosion 6 Clip (Air Explosion)">
+                  <matrix>
+                    <Matrix tx="-18.25" ty="17.4"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Explosion 6 Clip (Air Explosion)">
+                  <matrix>
+                    <Matrix tx="-6.15" ty="-52.25"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="59" duration="17" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Nuke Explosion">
+                  <matrix>
+                    <Matrix tx="20.2" ty="-15.4"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="-28.05" ty="24.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="76" duration="24" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Nuke Explosion">
+                  <matrix>
+                    <Matrix tx="-14.65" ty="-21.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="-39.75" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="-12.5" ty="-49.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="38.5" ty="41.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Explosion 6 Clip (Air Explosion)">
+                  <matrix>
+                    <Matrix tx="-2.3" ty="52.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="100" duration="25" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="125" duration="36" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 13" color="#4FFFFF" locked="true">
+          <frames>
+            <DOMFrame index="0" duration="22" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="22" duration="18" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Explosion 6 Clip (Air Explosion)">
+                  <matrix>
+                    <Matrix tx="-32" ty="20.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="10" ty="7.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="40" duration="17" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Nuke Explosion">
+                  <matrix>
+                    <Matrix tx="-19" ty="-22.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="6" ty="-0.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.75"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Explosion 6 Clip (Air Explosion)">
+                  <matrix>
+                    <Matrix tx="15.5" ty="-11.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="57" duration="17" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="-20" ty="-31.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.75"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="25.7" ty="-9.8"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.75"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="74" duration="24" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Nuke Explosion">
+                  <matrix>
+                    <Matrix tx="31.5" ty="20.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="-11" ty="30.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="17.95" ty="-13.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Explosion 6 Clip (Air Explosion)">
+                  <matrix>
+                    <Matrix tx="-11" ty="43.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="98" duration="27" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="-5" ty="20.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="125" duration="36" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 12" color="#FF4FFF" locked="true">
+          <frames>
+            <DOMFrame index="0" duration="20" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="20" duration="18" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Explosion 5 Clip (Circle Explosion)">
+                  <matrix>
+                    <Matrix a="2.53125" d="2.53125" ty="15.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter blurX="2" blurY="2"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="-14.5" ty="20.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="38" duration="17" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Nuke Explosion">
+                  <matrix>
+                    <Matrix tx="-19" ty="-22.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="55" duration="17" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Explosion 5 Clip (Circle Explosion)">
+                  <matrix>
+                    <Matrix a="3.375" d="3.375" tx="6.7" ty="-25.25"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter blurX="2" blurY="2"/>
+                  </filters>
+                  <color>
+                    <Color alphaMultiplier="0.75"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="0.75" ty="22.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.75"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="72" duration="24" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Nuke Explosion">
+                  <matrix>
+                    <Matrix tx="-19.5" ty="21.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 5 Clip (Circle Explosion)">
+                  <matrix>
+                    <Matrix a="3.375" d="3.375" tx="1.35" ty="4"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter blurX="2" blurY="2"/>
+                  </filters>
+                  <color>
+                    <Color alphaMultiplier="0.75"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="13.2" ty="39.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="-24.25" ty="6.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Explosion 6 Clip (Air Explosion)">
+                  <matrix>
+                    <Matrix tx="8.45" ty="17.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="96" duration="29" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="49.5" ty="78.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="66.5" ty="22.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="-60.5" ty="59.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="125" duration="36" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 11" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" duration="18" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="18" duration="18" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Explosion 6 Clip (Air Explosion)">
+                  <matrix>
+                    <Matrix ty="-10.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="-11.5" ty="39.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="36" duration="17" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Explosion 5 Clip (Circle Explosion)">
+                  <matrix>
+                    <Matrix a="3.375" d="3.375" tx="-1.25" ty="12.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter blurX="2" blurY="2"/>
+                  </filters>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Explosion 6 Clip (Air Explosion)">
+                  <matrix>
+                    <Matrix tx="-10" ty="40.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Explosion 6 Clip (Air Explosion)">
+                  <matrix>
+                    <Matrix tx="12.85" ty="-27.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="53" duration="17" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Explosion 5 Clip (Circle Explosion)">
+                  <matrix>
+                    <Matrix a="1.6875" d="1.6875" tx="-20.35" ty="-6.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Explosion 6 Clip (Air Explosion)">
+                  <matrix>
+                    <Matrix tx="0.75" ty="47.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Explosion 6 Clip (Air Explosion)">
+                  <matrix>
+                    <Matrix tx="-20" ty="-40.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Explosion 6 Clip (Air Explosion)">
+                  <matrix>
+                    <Matrix tx="-19.3" ty="3.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="70" duration="3" tweenType="shape" keyMode="17922">
+              <MorphShape>
+                <morphSegments>
+                  <MorphSegment startPointA="-1.328125, #1.9" startPointB="#FFFFFD.C9, #1.91" strokeIndex1="0" strokeIndex2="0" fillIndex1="0" fillIndex2="1">
+                    <MorphCurves controlPointA="-1.328125, #1.03" anchorPointA="#FFFFFF.0F, #0.9F" controlPointB="#FFFFFD.C9, #0.A6" anchorPointB="-1.5703125, #FFFFFF.FF"/>
+                    <MorphCurves controlPointA="#FFFFFF.73, #0.3C" anchorPointA="0, #0.3C" controlPointB="#FFFFFF.15, -0.6484375" anchorPointB="0, -0.6484375"/>
+                    <MorphCurves controlPointA="#0.8D, #0.3C" anchorPointA="#0.F, #0.9F" controlPointB="#0.EB, -0.6484375" anchorPointB="#1.9, #FFFFFF.FF"/>
+                    <MorphCurves controlPointA="#1.54, #1.03" anchorPointA="#1.54, #1.9" controlPointB="#2.37, #0.A6" anchorPointB="#2.37, #1.91"/>
+                    <MorphCurves controlPointA="#1.54, #2.1D" anchorPointA="#0.F, 2.5" controlPointB="#2.37, #2.7C" anchorPointB="#1.9, #3.21"/>
+                    <MorphCurves controlPointA="#0.8D, #2.E3" anchorPointA="0, #2.E3" controlPointB="#0.EB, #3.C6" anchorPointB="0, #3.C6"/>
+                    <MorphCurves controlPointA="#FFFFFF.73, #2.E3" anchorPointA="#FFFFFF.0F, 2.5" controlPointB="#FFFFFF.15, #3.C6" anchorPointB="-1.5703125, #3.21"/>
+                    <MorphCurves controlPointA="-1.328125, #2.1D" anchorPointA="-1.328125, #1.9" controlPointB="#FFFFFD.C9, #2.7C" anchorPointB="#FFFFFD.C9, #1.91"/>
+                  </MorphSegment>
+                </morphSegments>
+                <morphHintsList/>
+              </MorphShape>
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <RadialGradient>
+                        <matrix>
+                          <Matrix a="0.02154541015625" d="0.02154541015625" ty="19.95"/>
+                        </matrix>
+                        <GradientEntry color="#F7BE99" alpha="0" ratio="0"/>
+                        <GradientEntry color="#FE9292" alpha="0" ratio="0.713725490196078"/>
+                        <GradientEntry color="#D12525" alpha="0" ratio="1"/>
+                      </RadialGradient>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!0 739[-141 739 -241 640!-241 640[-340 541 -340 400!-340 400[-340 259 -241 159!-241 159[-141 60 0 60!0 60[141 60 240 159!240 159[340 259 340 400!340 400[340 541 240 640!240 640[141 739 0 739"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="73" duration="16" tweenType="shape" keyMode="17922">
+              <MorphShape>
+                <morphSegments>
+                  <MorphSegment startPointA="#FFFFFD.C9, #1.91" startPointB="#FFFFF7.B3, #1.94" strokeIndex1="0" strokeIndex2="0" fillIndex1="0" fillIndex2="1">
+                    <MorphCurves controlPointA="#FFFFFD.C9, #0.A6" anchorPointA="-1.5703125, #FFFFFF.FF" controlPointB="#FFFFF7.B3, #FFFFFE.23" anchorPointB="-5.8828125, -4.3046875"/>
+                    <MorphCurves controlPointA="#FFFFFF.15, -0.6484375" anchorPointA="0, -0.6484375" controlPointB="#FFFFFC.8F, #FFFFF9.47" anchorPointB="0, #FFFFF9.47"/>
+                    <MorphCurves controlPointA="#0.EB, -0.6484375" anchorPointA="#1.9, #FFFFFF.FF" controlPointB="#3.71, #FFFFF9.47" anchorPointB="#5.DC, -4.3046875"/>
+                    <MorphCurves controlPointA="#2.37, #0.A6" anchorPointA="#2.37, #1.91" controlPointB="#8.4D, #FFFFFE.23" anchorPointB="#8.4D, #1.94"/>
+                    <MorphCurves controlPointA="#2.37, #2.7C" anchorPointA="#1.9, #3.21" controlPointB="#8.4D, #5.05" anchorPointB="#5.DC, #7.7"/>
+                    <MorphCurves controlPointA="#0.EB, #3.C6" anchorPointA="0, #3.C6" controlPointB="#3.71, #9.DB" anchorPointB="0, #9.DB"/>
+                    <MorphCurves controlPointA="#FFFFFF.15, #3.C6" anchorPointA="-1.5703125, #3.21" controlPointB="#FFFFFC.8F, #9.DB" anchorPointB="-5.8828125, #7.7"/>
+                    <MorphCurves controlPointA="#FFFFFD.C9, #2.7C" anchorPointA="#FFFFFD.C9, #1.91" controlPointB="#FFFFF7.B3, #5.05" anchorPointB="#FFFFF7.B3, #1.94"/>
+                  </MorphSegment>
+                </morphSegments>
+                <morphHintsList/>
+              </MorphShape>
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <RadialGradient>
+                        <matrix>
+                          <Matrix a="0.0359039306640625" d="0.0359039306640625" ty="19.95"/>
+                        </matrix>
+                        <GradientEntry color="#FFFFFF" ratio="0"/>
+                        <GradientEntry color="#FFB03C" ratio="0.713725490196078"/>
+                        <GradientEntry color="#D12525" alpha="0" ratio="1"/>
+                      </RadialGradient>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!400 -1[567 166 567 401!567 401[567 636 400 801!400 801[235 966 0 966!0 966[-235 966 -402 801!-402 801[-567 636 -567 401!-567 401[-567 166 -402 -1!-402 -1[-235 -166 0 -166!0 -166[235 -166 400 -1"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="89" duration="7" tweenType="shape" keyMode="17922">
+              <MorphShape>
+                <morphSegments>
+                  <MorphSegment startPointA="#FFFFF7.B3, #1.94" startPointB="-8.984375, #1.94" strokeIndex1="0" strokeIndex2="0" fillIndex1="0" fillIndex2="1">
+                    <MorphCurves controlPointA="#FFFFF7.B3, #FFFFFE.23" anchorPointA="-5.8828125, -4.3046875" controlPointB="-8.984375, -2.1484375" anchorPointB="-6.3671875, -4.7890625"/>
+                    <MorphCurves controlPointA="#FFFFFC.8F, #FFFFF9.47" anchorPointA="0, #FFFFF9.47" controlPointB="-3.7265625, -7.40625" anchorPointB="0, -7.40625"/>
+                    <MorphCurves controlPointA="#3.71, #FFFFF9.47" anchorPointA="#5.DC, -4.3046875" controlPointB="#3.BA, -7.40625" anchorPointB="#6.58, -4.7890625"/>
+                    <MorphCurves controlPointA="#8.4D, #FFFFFE.23" anchorPointA="#8.4D, #1.94" controlPointB="#8.FC, -2.1484375" anchorPointB="#8.FC, #1.94"/>
+                    <MorphCurves controlPointA="#8.4D, #5.05" anchorPointA="#5.DC, #7.7" controlPointB="#8.FC, #5.4E" anchorPointB="#6.58, #7.EC"/>
+                    <MorphCurves controlPointA="#3.71, #9.DB" anchorPointA="0, #9.DB" controlPointB="#3.BA, #A.8A" anchorPointB="0, #A.8A"/>
+                    <MorphCurves controlPointA="#FFFFFC.8F, #9.DB" anchorPointA="-5.8828125, #7.7" controlPointB="-3.7265625, #A.8A" anchorPointB="-6.3671875, #7.EC"/>
+                    <MorphCurves controlPointA="#FFFFF7.B3, #5.05" anchorPointA="#FFFFF7.B3, #1.94" controlPointB="-8.984375, #5.4E" anchorPointB="-8.984375, #1.94"/>
+                  </MorphSegment>
+                </morphSegments>
+                <morphHintsList/>
+              </MorphShape>
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <RadialGradient>
+                        <matrix>
+                          <Matrix a="0.134658813476563" d="0.134658813476563" ty="19.9"/>
+                        </matrix>
+                        <GradientEntry color="#FFFFFF" ratio="0"/>
+                        <GradientEntry color="#FFA244" ratio="0.713725490196078"/>
+                        <GradientEntry color="#D12525" alpha="0" ratio="1"/>
+                      </RadialGradient>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!1500 -1102.5[2125 -477.375 2125 404!2125 404[2125 #505.4 1500 1904!1500 1904[881.25 #9DA.A 0 2522.5!0 2522.5[-881.125 #9DA.A -1506 1904!-1506 1904[-2124.875 #505.4 -2125 404!-2125 404[-2124.875 -477.375 -1506 -1102.5!-1506 -1102.5[-881.125
+ -1721.125 0 -1721!0 -1721[881.25 -1721.125 1500 -1102.5"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="96" duration="23" tweenType="shape" keyMode="17922">
+              <MorphShape>
+                <morphSegments>
+                  <MorphSegment startPointA="-8.984375, #1.94" startPointB="-9.9609375, #1.95" strokeIndex1="0" strokeIndex2="0" fillIndex1="0" fillIndex2="1">
+                    <MorphCurves controlPointA="-8.984375, -2.1484375" anchorPointA="-6.3671875, -4.7890625" controlPointB="-9.9609375, -2.546875" anchorPointB="#FFFFF8.F1, -5.4765625"/>
+                    <MorphCurves controlPointA="-3.7265625, -7.40625" anchorPointA="0, -7.40625" controlPointB="#FFFFFB.DF, #FFFFF7.9F" anchorPointB="0, #FFFFF7.9F"/>
+                    <MorphCurves controlPointA="#3.BA, -7.40625" anchorPointA="#6.58, -4.7890625" controlPointB="#4.22, #FFFFF7.9F" anchorPointB="#7.08, -5.4765625"/>
+                    <MorphCurves controlPointA="#8.FC, -2.1484375" anchorPointA="#8.FC, #1.94" controlPointB="#9.F6, -2.546875" anchorPointB="#9.F6, #1.95"/>
+                    <MorphCurves controlPointA="#8.FC, #5.4E" anchorPointA="#6.58, #7.EC" controlPointB="#9.F6, #5.B7" anchorPointB="#7.08, #8.9D"/>
+                    <MorphCurves controlPointA="#3.BA, #A.8A" anchorPointA="0, #A.8A" controlPointB="#4.22, #B.84" anchorPointB="0, #B.84"/>
+                    <MorphCurves controlPointA="-3.7265625, #A.8A" anchorPointA="-6.3671875, #7.EC" controlPointB="#FFFFFB.DF, #B.84" anchorPointB="#FFFFF8.F1, #8.9D"/>
+                    <MorphCurves controlPointA="-8.984375, #5.4E" anchorPointA="-8.984375, #1.94" controlPointB="-9.9609375, #5.B7" anchorPointB="-9.9609375, #1.95"/>
+                  </MorphSegment>
+                </morphSegments>
+                <morphHintsList/>
+              </MorphShape>
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <RadialGradient>
+                        <matrix>
+                          <Matrix a="0.145736694335938" d="0.145736694335938" ty="19.9"/>
+                        </matrix>
+                        <GradientEntry color="#FFFFFF" alpha="0.250980392156863" ratio="0"/>
+                        <GradientEntry color="#F7B95E" alpha="0.450980392156863" ratio="0.713725490196078"/>
+                        <GradientEntry color="#D12525" alpha="0" ratio="1"/>
+                      </RadialGradient>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!1624 -1226[#8FC.2 -549.75 2300 404!2300 404[#8FC.2 #54D.A 1624 2027.5!1624 2027.5[#3B9.E 2697.5 0 2697.5!0 2697.5[-953.75 2697.5 -1630 2027.5!-1630 2027.5[-2300 #54D.A -2300 404!-2300 404[-2300 -549.75 -1630 -1226!-1630 -1226[-953.75
+ -1896 0 -1896!0 -1896[#3B9.E -1896 1624 -1226"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="119" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <RadialGradient>
+                        <matrix>
+                          <Matrix a="0.161590576171875" d="0.161590576171875" ty="19.9"/>
+                        </matrix>
+                        <GradientEntry color="#FFFFFF" alpha="0" ratio="0"/>
+                        <GradientEntry color="#F78009" alpha="0" ratio="0.713725490196078"/>
+                        <GradientEntry color="#D12525" alpha="0" ratio="1"/>
+                      </RadialGradient>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!1800 -1402.5[2550 -652.5 2550 405!2550 405[2550 1462.5 1800 2205!1800 2205[1057.5 2947.5 0 2947.5!0 2947.5[-1057.5 2947.5 -1807.5 2205!-1807.5 2205[-2550 1462.5 -2550 405!-2550 405[-2550 -652.5 -1807.5 -1402.5!-1807.5 -1402.5[-1057.5
+ -2145 0 -2145!0 -2145[1057.5 -2145 1800 -1402.5"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="120" duration="5" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="125" duration="36" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 10" color="#9933CC" locked="true">
+          <frames>
+            <DOMFrame index="0" duration="16" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="16" duration="18" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="12.5" ty="-22.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="34" duration="17" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Nuke Explosion">
+                  <matrix>
+                    <Matrix tx="-0.25" ty="13.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="-17.5" ty="-4.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.75"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Explosion 6 Clip (Air Explosion)">
+                  <matrix>
+                    <Matrix tx="18" ty="32.4"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="51" duration="17" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Explosion 5 Clip (Circle Explosion)">
+                  <matrix>
+                    <Matrix a="3.375" d="3.375" tx="-6.45" ty="31.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter blurX="2" blurY="2"/>
+                  </filters>
+                  <color>
+                    <Color alphaMultiplier="0.75"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="68" duration="17" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Explosion 6 Clip (Air Explosion)">
+                  <matrix>
+                    <Matrix tx="-14.8" ty="-14.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Explosion 6 Clip (Air Explosion)">
+                  <matrix>
+                    <Matrix tx="3.7" ty="39.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Nuke Explosion">
+                  <matrix>
+                    <Matrix tx="3.25" ty="0.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="85" duration="6" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="91" duration="34" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="4.45" ty="-36.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="23.5" ty="32.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="125" duration="36" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 9" color="#4FFF4F" locked="true">
+          <frames>
+            <DOMFrame index="0" duration="14" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="14" duration="18" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="11.5" ty="19.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="32" duration="17" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Explosion 5 Clip (Circle Explosion)">
+                  <matrix>
+                    <Matrix a="3.375" d="3.375" tx="-1.25" ty="12.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter blurX="2" blurY="2"/>
+                  </filters>
+                  <color>
+                    <Color alphaMultiplier="0.75"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="49" duration="17" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Explosion 6 Clip (Air Explosion)">
+                  <matrix>
+                    <Matrix tx="-11.3" ty="8.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="66" duration="17" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="-24.25" ty="6.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="13.2" ty="-11.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Explosion 6 Clip (Air Explosion)">
+                  <matrix>
+                    <Matrix tx="8.45" ty="17.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Explosion 6 Clip (Air Explosion)">
+                  <matrix>
+                    <Matrix tx="10.1" ty="-22.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="83" duration="6" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="89" duration="36" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="-48" ty="2.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="125" duration="36" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 8" color="#FF4F4F" locked="true">
+          <frames>
+            <DOMFrame index="0" duration="12" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="12" duration="18" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="-20.65" ty="-3.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.75"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="30" duration="17" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Explosion 6 Clip (Air Explosion)">
+                  <matrix>
+                    <Matrix tx="18" ty="32.4"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Explosion 6 Clip (Air Explosion)">
+                  <matrix>
+                    <Matrix tx="-10" ty="-1.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="47" duration="17" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Explosion 6 Clip (Air Explosion)">
+                  <matrix>
+                    <Matrix tx="21.2" ty="8.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Explosion 6 Clip (Air Explosion)">
+                  <matrix>
+                    <Matrix tx="0.75" ty="32.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="64" duration="17" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="13.2" ty="39.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="-3.8" ty="-35.8"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="20.2" ty="-23.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Explosion 6 Clip (Air Explosion)">
+                  <matrix>
+                    <Matrix tx="-11" ty="18.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Explosion 6 Clip (Air Explosion)">
+                  <matrix>
+                    <Matrix tx="-13.65" ty="-22.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="81" duration="6" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="87" duration="38" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="-20.5" ty="33.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="125" duration="36" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Bowser Arm - 3" color="#9933CC" locked="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 3">
+                  <matrix>
+                    <Matrix tx="-2" ty="-26.6"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 3">
+                  <matrix>
+                    <Matrix tx="-2" ty="-25.6"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 10">
+                  <matrix>
+                    <Matrix tx="1.5" ty="-22.1"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="5" duration="18" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 10">
+                  <matrix>
+                    <Matrix tx="1.5" ty="-21.1"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="23" duration="27" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/8-12 Clown Car Base (Plus Expressions)">
+                  <matrix>
+                    <Matrix ty="20.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 34">
+                  <matrix>
+                    <Matrix tx="12.35" ty="-45.1"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Head - 18">
+                  <matrix>
+                    <Matrix tx="-18.15" ty="-59.35"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="50" duration="17" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/8-12 Clown Car Base (Plus Expressions)" selected="true">
+                  <matrix>
+                    <Matrix tx="-0.5" ty="20.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMBitmapInstance selected="true" libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Head - 18">
+                  <matrix>
+                    <Matrix a="0.965927124023438" b="-0.258819580078125" c="0.258819580078125" d="0.965927124023438" tx="-26.65" ty="-54.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="67" duration="26" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/8-12 Clown Car Base (Plus Expressions)">
+                  <matrix>
+                    <Matrix tx="-0.5" ty="20.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Head - 18">
+                  <matrix>
+                    <Matrix a="0.965927124023438" b="-0.258819580078125" c="0.258819580078125" d="0.965927124023438" tx="-23.15" ty="-54.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="93" duration="68" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Bowser Head - 1" color="#FFFF4F" locked="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Head - 1">
+                  <matrix>
+                    <Matrix tx="-31" ty="-52.6"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Head - 2">
+                  <matrix>
+                    <Matrix tx="-30.5" ty="-47.35"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Head - 2">
+                  <matrix>
+                    <Matrix tx="-30.5" ty="-46.35"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="5" duration="18" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Head - 19">
+                  <matrix>
+                    <Matrix a="0.86602783203125" b="-0.5" c="0.5" d="0.86602783203125" tx="-37.55" ty="-32.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="23" duration="7" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance selected="true" libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 34">
+                  <matrix>
+                    <Matrix a="-0.9915771484375" b="-0.126312255859375" c="-0.126312255859375" d="0.9915771484375" tx="-11.9" ty="-43.3"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="30" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 34">
+                  <matrix>
+                    <Matrix a="-0.9915771484375" b="-0.126312255859375" c="-0.126312255859375" d="0.9915771484375" tx="-14.4" ty="-43.3"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="32" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 34">
+                  <matrix>
+                    <Matrix a="-0.9915771484375" b="-0.126312255859375" c="-0.126312255859375" d="0.9915771484375" tx="-11.9" ty="-43.3"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="34" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 34">
+                  <matrix>
+                    <Matrix a="-0.9915771484375" b="-0.126312255859375" c="-0.126312255859375" d="0.9915771484375" tx="-11.15" ty="-40.8"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="36" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 34">
+                  <matrix>
+                    <Matrix a="-0.9991455078125" b="0.00457763671875" c="0.00457763671875" d="0.9991455078125" tx="-13.95" ty="-45.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="38" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 34">
+                  <matrix>
+                    <Matrix a="-0.925094604492188" b="-0.378646850585938" c="-0.378646850585938" d="0.925094604492188" tx="-6.15" ty="-42.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="40" duration="40" tweenType="motion" motionTweenRotate="counter-clockwise" motionTweenRotateTimes="4" keyMode="17921">
+              <elements>
+                <DOMBitmapInstance selected="true" libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 34">
+                  <matrix>
+                    <Matrix a="-0.9915771484375" b="-0.126312255859375" c="-0.126312255859375" d="0.9915771484375" tx="-11.9" ty="-43.3"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="80" duration="25" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 34">
+                  <matrix>
+                    <Matrix a="-0.9915771484375" b="-0.126312255859375" c="-0.126312255859375" d="0.9915771484375" tx="-439.85" ty="-228"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="105" duration="56" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Bowser Arm - 4" color="#FF4FFF" locked="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="23" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 4">
+                  <matrix>
+                    <Matrix tx="-30" ty="-22.6"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="23" duration="27" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="50" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 34">
+                  <matrix>
+                    <Matrix a="0.965927124023438" b="0.258819580078125" c="-0.258819580078125" d="0.965927124023438" tx="19.2" ty="-47.9"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="52" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 34">
+                  <matrix>
+                    <Matrix a="0.965927124023438" b="0.258819580078125" c="-0.258819580078125" d="0.965927124023438" tx="16.8" ty="-49.4"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="54" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 34">
+                  <matrix>
+                    <Matrix a="0.707107543945313" b="0.707122802734375" c="-0.707107543945313" d="0.707107543945313" tx="32.15" ty="-45.25"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="56" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 34">
+                  <matrix>
+                    <Matrix a="0.965927124023438" b="0.258819580078125" c="-0.258819580078125" d="0.965927124023438" tx="21.8" ty="-49.4"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="58" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 34">
+                  <matrix>
+                    <Matrix a="0.965927124023438" b="0.258819580078125" c="-0.258819580078125" d="0.965927124023438" tx="16.8" ty="-46.4"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="60" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 34">
+                  <matrix>
+                    <Matrix tx="13.95" ty="-45.55"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="62" duration="41" tweenType="motion" motionTweenRotate="clockwise" motionTweenRotateTimes="4" keyMode="17921">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 34">
+                  <matrix>
+                    <Matrix a="0.965927124023438" b="0.258819580078125" c="-0.258819580078125" d="0.965927124023438" tx="16.8" ty="-49.4"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="103" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 34">
+                  <matrix>
+                    <Matrix a="0.965927124023438" b="0.258819580078125" c="-0.258819580078125" d="0.965927124023438" tx="335.75" ty="-82.25"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="105" duration="56" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="8-12 Clown Car Base (Plus Expressions)" color="#4FFFFF" locked="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="23" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/8-12 Clown Car Base (Plus Expressions)">
+                  <matrix>
+                    <Matrix ty="20.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="23" duration="42" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance selected="true" libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Body - 21">
+                  <matrix>
+                    <Matrix tx="-26.85" ty="-41.55"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="65" duration="21" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMBitmapInstance selected="true" libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Body - 21">
+                  <matrix>
+                    <Matrix tx="-26.85" ty="-41.55"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="86" duration="7" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Body - 21">
+                  <matrix>
+                    <Matrix tx="-26.85" ty="-24.55"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="93" duration="68" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Bowser Body - 6" color="#808080" locked="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Body - 6">
+                  <matrix>
+                    <Matrix tx="-20.45" ty="-42.75"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Body - 4">
+                  <matrix>
+                    <Matrix tx="-20.65" ty="-39.35"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" duration="20" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Body - 4">
+                  <matrix>
+                    <Matrix tx="-20.65" ty="-37.35"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="23" duration="138" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

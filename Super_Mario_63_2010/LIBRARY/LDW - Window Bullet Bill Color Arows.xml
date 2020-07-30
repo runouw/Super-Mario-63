@@ -1,0 +1,120 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="LDW - Window Bullet Bill Color Arows" itemID="49c7d912-000011ef" lastModified="1237839619" lastUniqueIdentifier="1">
+  <timeline>
+    <DOMTimeline name="LDW - Window Bullet Bill Color Arows">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[//BGarray = ["Hills and Clouds", "Secret Course", "Sky", "Haunted", "Underground", "Snow", "Mechanical", "Fire Sky", "Volcano", "Desert", "Ocean", "Bowser's Castle"];
+//if (_root.M.CourseBG == undefined) {
+//_parent.blocktype;
+min = 1;
+max = 9
+onEnterFrame = function () {
+	if (_parent.greyness.aa == 0) {
+		if (_parent.blocktype == min) {
+			tri1._alpha += (0-tri1._alpha)/3;
+		} else {
+			tri1._alpha += (100-tri1._alpha)/3;
+		}
+		if (_parent.blocktype == max) {
+			tri2._alpha += (0-tri2._alpha)/3;
+		} else {
+			tri2._alpha += (100-tri2._alpha)/3;
+		}
+		//
+		if (tri1.hitTest(_root._xmouse, _root._ymouse, false) && tri1._alpha>=99) {
+			tri1.sc = 130;
+		} else {
+			tri1.sc = 100;
+		}
+		tri1._xscale += (tri1.sc-tri1._xscale)/3;
+		tri1._yscale = tri1._xscale;
+		//
+		if (tri2.hitTest(_root._xmouse, _root._ymouse, false) && tri2._alpha>=99) {
+			tri2.sc = 130;
+		} else {
+			tri2.sc = 100;
+		}
+		tri2._xscale += (tri2.sc-tri2._xscale)/3;
+		tri2._yscale = tri2._xscale;
+	}
+	//_root.LDCourseBG = _root.M.CourseBG;   
+};
+onMouseDown = function () {
+	if (tri2.sc == 130 && _parent.fra<max) {
+		_parent.fra++;
+	} else if (tri1.sc == 130 && _parent.fra>min) {
+		_parent.fra--;
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Level Designer Windows/LDW - Info/LDW - Info Arrow" name="tri2">
+                  <matrix>
+                    <Matrix tx="0.85" ty="5.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter color="#FFFFFF"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Level Designer Windows/LDW - Info/LDW - Info Arrow" name="tri1">
+                  <matrix>
+                    <Matrix d="-1" tx="0.85" ty="-4.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter color="#FFFFFF"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="-208.55" ty="-103.55"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix tx="-208.55" ty="-103.55"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="!3507 1955S2|3507 2170!3507 2170|3466 2170!3466 2170|3466 1955!3466 1955|3507 1955!3876 2056|3876 2014!3876 2014|3918 2014!3918 2014|3918 2056!3918 2056|3876 2056!3876 2170|3876 2129!3876 2129|3918 2129!3918 2129|3918 2170!3918 2170|3876
+ 2170!3788 2070[3785 2082 3785 2122!3785 2122|3785 2170!3785 2170|3744 2170!3744 2170|3744 2014!3744 2014|3782 2014!3782 2014|3782 2037!3782 2037[3792 2021 3800 2016!3800 2016[3807 2011 3817 2011!3817 2011[3832 2011 3845 2019!3845 2019
+|3832 2055!3832 2055[3821 2048 3812 2048!3812 2048[3804 2048 3798 2053!3798 2053[3792 2057 3788 2070!3650 2057[3639 2044 3623 2044!3623 2044[3607 2044 3596 2057!3596 2057[3585 2069 3585 2092!3585 2092[3585 2115 3596 2128!3596 2128[3607
+ 2140 3623 2140!3623 2140[3639 2140 3650 2128!3650 2128[3661 2115 3661 2092!3661 2092[3661 2069 3650 2057!3704 2092[3704 2127 3681 2150!3681 2150[3658 2174 3623 2174!3623 2174[3602 2174 3583 2164!3583 2164[3563 2154 3553 2136!3553 2136
+[3543 2117 3543 2090!3543 2090[3543 2070 3553 2050!3553 2050[3563 2031 3582 2021!3582 2021[3600 2011 3623 2011!3623 2011[3658 2011 3681 2034!3681 2034[3704 2057 3704 2092!3414 2034[3437 2057 3437 2092!3437 2092[3437 2127 3414 2150!3414
+ 2150[3391 2174 3356 2174!3356 2174[3335 2174 3316 2164!3316 2164[3296 2154 3286 2136!3286 2136[3276 2117 3276 2090!3276 2090[3276 2070 3286 2050!3286 2050[3296 2031 3315 2021!3315 2021[3333 2011 3356 2011!3356 2011[3391 2011 3414 2034
+!3383 2057[3372 2044 3356 2044!3356 2044[3340 2044 3329 2057!3329 2057[3318 2069 3318 2092!3318 2092[3318 2115 3329 2128!3329 2128[3340 2140 3356 2140!3356 2140[3372 2140 3383 2128!3383 2128[3394 2115 3394 2092!3394 2092[3394 2069 3383
+ 2057!3233 2023[3250 2035 3257 2060!3257 2060|3217 2068!3217 2068[3215 2056 3207 2049!3207 2049[3200 2043 3188 2043!3188 2043[3173 2043 3164 2054!3164 2054[3155 2065 3155 2089!3155 2089[3155 2117 3164 2129!3164 2129[3173 2140 3189 2140
+!3189 2140[3201 2140 3208 2133!3208 2133[3216 2127 3219 2110!3219 2110|3259 2117!3259 2117[3253 2145 3235 2159!3235 2159[3217 2174 3187 2174!3187 2174[3153 2174 3133 2152!3133 2152[3112 2130 3112 2092!3112 2092[3112 2054 3133 2032!3133
+ 2032[3153 2011 3188 2011!3188 2011[3216 2011 3233 2023"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

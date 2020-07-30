@@ -1,0 +1,255 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="LDW - Save-Load/LDW - Load Load From - Clip" itemID="48554e77-00000dbe" sourceFlashFilepath="F:\Super Mario 63\New computer\Level Designer (With Mario Engine new) 3.fla" sourceLibraryItemHRef="LDW - Save-Load/LDW - Load Load From - Clip" sourceLastModified="1218571422" lastModified="1238167040" lastUniqueIdentifier="1" sourceItemID="48554e77-00000dbe">
+  <timeline>
+    <DOMTimeline name="LDW - Load Load From - Clip">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" locked="true" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="20" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[FN = function () {
+	onEnterFrame = function () {
+		if (loadfrom._alpha>0) {
+			loadfrom._alpha -= 4;
+		} else {
+			onEnterFrame = function () {
+				if (_currentframe<10) {
+					nextFrame();
+				}
+				yes._alpha += 4;
+				no._alpha += 4;
+				if (yes._alpha>=100 && yes._alpha !== undefined) {
+					yes._alpha = 100;
+					no._alpha = 100;
+					onEnterFrame = null;
+				}
+			};
+		}
+	};
+};
+No = function () {
+	onEnterFrame = function () {
+		if (yes._alpha>0) {
+			yes._alpha -= 4;
+			no._alpha -= 4;
+		} else {
+			onEnterFrame = function () {
+				prevFrame();
+				loadfrom._alpha += 4;
+				if (loadfrom._alpha>=100) {
+					loadfrom._alpha = 100;
+					onEnterFrame = null;
+				}
+			};
+		}
+	};
+};
+Yes = function () {
+	_parent.FLoad(filenum);
+	onEnterFrame = function () {
+		if (yes._alpha>0) {
+			yes._alpha -= 4;
+			no._alpha -= 4;
+		} else {
+			onEnterFrame = function () {
+				nextFrame();
+				if (_currentframe>=20) {
+					onEnterFrame = null;
+				}
+			};
+		}
+	};
+};
+stop();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 5" color="#4FFFFF" locked="true">
+          <frames>
+            <DOMFrame index="0" duration="9" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="9" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="10" duration="9" tweenType="motion" keyMode="17921" acceleration="-100">
+              <elements>
+                <DOMStaticText width="56.95" height="15.6" autoExpand="true" antiAliasThickness="68" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-28.45" ty="-4.05"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>LOADED!</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" letterSpacing="-1" size="14" face="Arial-BoldMT" fillColor="#00FF00"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                  <filters>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                    <BlurFilter blurX="100" blurY="100"/>
+                  </filters>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="19" keyMode="9728">
+              <elements>
+                <DOMStaticText width="56.95" height="15.6" autoExpand="true" antiAliasThickness="68" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-28.45" ty="-4.05"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>LOADED!</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" letterSpacing="-1" size="14" face="Arial-BoldMT" fillColor="#00FF00"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                  <filters>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                    <BlurFilter blurX="0" blurY="0"/>
+                  </filters>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F" locked="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="8" tweenType="motion" keyMode="17921" acceleration="-100">
+              <elements>
+                <DOMStaticText width="83.85" height="15.6" antiAliasThickness="68" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-41.95" ty="-14.75"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>LOAD FROM?</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" letterSpacing="-1" size="14" face="Arial-BoldMT" fillColor="#FF0000"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                  <filters>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                    <BlurFilter blurX="100" blurY="100"/>
+                  </filters>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="9" duration="9" tweenType="motion" keyMode="17921" acceleration="100">
+              <elements>
+                <DOMStaticText width="83.85" height="15.6" antiAliasThickness="68" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-41.95" ty="-14.75"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>LOAD FROM?</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" letterSpacing="-1" size="14" face="Arial-BoldMT" fillColor="#FF0000"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                  <filters>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                    <BlurFilter blurX="0" blurY="0"/>
+                  </filters>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="18" keyMode="9728">
+              <elements>
+                <DOMStaticText width="83.85" height="15.6" antiAliasThickness="68" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-41.95" ty="-14.75"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>LOAD FROM?</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" letterSpacing="-1" size="14" face="Arial-BoldMT" fillColor="#FF0000"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                  <filters>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                    <BlurFilter blurX="100" blurY="100"/>
+                  </filters>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="19" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#FF4FFF" locked="true" outline="true" useOutlineView="true">
+          <frames>
+            <DOMFrame index="0" duration="20" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="LDW - Save-Load/LDW - Save Save Yes" name="yes">
+                  <matrix>
+                    <Matrix tx="-15" ty="9.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-0.05"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_alpha = 0
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="LDW - Save-Load/LDW - Save Save No" name="no">
+                  <matrix>
+                    <Matrix tx="15" ty="9.4"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-0.05"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_alpha = 0
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" duration="20" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="LDW - Save-Load/LDW - Load Load From" name="loadfrom">
+                  <matrix>
+                    <Matrix tx="2" ty="-1.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-0.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

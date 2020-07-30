@@ -1,0 +1,130 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name=" Menu/Menu Folder/ Story/Menu-Story-Play-Create" itemID="47782d29-0000197d" sourceFlashFilepath="Rob &amp; Steve Hewitt\My Documents\Super Mario 63\Menu Design.fla" sourceLibraryItemHRef="Menu Folder/ Story/Menu-Story-Play-Create" sourceLastModified="1199146732" lastModified="1199146732" lastUniqueIdentifier="1" sourceItemID="47782d29-0000197d">
+  <timeline>
+    <DOMTimeline name="Menu-Story-Play-Create">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[ywave = 0;
+rwave = random(90);
+Y = this._y;
+R = _rotation;
+r = 0;
+onEnterFrame = function () {
+	if (_parent._currentframe>=20 && _parent.Mode !== "copying" && _parent.Mode !== "deleting") {
+		if (bg.hitTest(_root._xmouse, _root._ymouse, true) && _parent.clicked !== true) {
+			hl = true;
+		} else {
+			hl = false;
+		}
+		if (cl == true) {
+			rspeed += 1;
+			r -= rspeed;
+			rspeed *= 0.95;
+			this._xscale += scalespeed;
+			scalespeed -= 1;
+			if (this._xscale<60) {
+				scalespeed += 1;
+				scalespeed *= 0.7;
+			}
+		}
+		if (hl == true && cl !== true) {
+			this._xscale += (125-this._xscale)/4;
+			r -= (125-this._xscale)/10;
+			txt._xscale += (125-this._xscale)/5;
+			txt._yscale += (125-this._yscale)/4;
+			//ywave -= 0.03;
+		} else if (cl !== true) {
+			this._xscale += (100-this._xscale)/4;
+			r -= (100-this._xscale)/10;
+			txt._xscale += (100-this._xscale)/5;
+			txt._yscale += (100-this._yscale)/4;
+		}
+		//                       
+		this._yscale = this._xscale;
+		//
+		//ywave += 0.03;
+		rwave += 0.025;
+		//this._y = Y+Math.sin(ywave)*5;
+		//this._rotation = R+r+Math.sin(rwave)*_xscale/50;
+	} else if (_parent.Mode == "copying") {
+		_alpha += (50-_alpha)/5;
+		this._xscale += (50-this._xscale)/4;
+		_yscale = _xscale;
+	} else {
+		//trace(_parent.Mode);
+	}
+};
+onMouseDown = function () {
+	if (_parent._currentframe>=20 && _parent.Mode !== "copying" && _parent.Mode !== "deleting") {
+		if (hl == true && cl !== true && _parent.clicked !== true) {
+			cl = true;
+			rspeed = 0;
+			scalespeed = 8;
+			//_root.File = "A";
+			//_root.LoadFile();
+			_root.File = _parent.HL;
+			_root.LoadFile();
+			_parent._parent.clicked = true;
+			_parent._parent.TransitionF("Play");
+			//Special Transition Effect for "Play"
+			//_root["File thingy"] = _parent.HL
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Menu Folder/ Story/Menu Story Play-Create Text" name="txt">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter blurX="6" blurY="6" color="#FF00FF" inner="true" strength="10"/>
+                    <BevelFilter strength="1.5"/>
+                    <GlowFilter blurX="3" blurY="3" color="#FFFFFF" inner="true" strength="5"/>
+                    <BevelFilter shadowColor="#FF00FF" strength="0.88"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Menu Folder/  Universal Stuff/Menu Button BG" name="bg">
+                  <matrix>
+                    <Matrix a="0.78759765625" d="0.74957275390625"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	gotoAndPlay(random(39)+1);
+}
+]]></script>
+                  </Actionscript>
+                  <filters>
+                    <BevelFilter distance="2"/>
+                    <AdjustColorFilter brightness="26" saturation="17" hue="47"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,195 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Items-PL/ Various Platforms/ Coded Wooden PL/Water PL" itemID="46e9e036-000009a2" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="WaterPLclip" lastModified="1241372728" lastUniqueIdentifier="3">
+  <timeline>
+    <DOMTimeline name="Water PL" currentFrame="1">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[//Rises if _y-1 is touching Water AND _y-8 is NOT touching Ground.
+//Lowers if _y is NOT touching Water.
+//If .hitTest Mario's feet, then clip._y lowers
+//If NOT ^^^, then clip._y goes to normal
+if (Scale == undefined) {
+	Scale = 1;
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[//WaterPLGround 
+depth = _root.Course.BPlatforms.getNextHighestDepth();
+_root.Course.BPlatforms.attachMovie("WaterPLGround", "WaterPLGround"+depth, depth, {_x:_x, _y:_y});
+//
+olddiffy = _y;
+diffy = 0;
+//
+//Y = _root["M2-1WaterLevel"];
+//_y = Y+420;
+weightY = 0;
+//
+yspeed = 0;
+//
+onEnterFrame = function () {
+	//
+	clip.gotoAndStop(Scale);
+	//
+	olddiffy = _y;
+	//
+	count = 0;
+	while (_root.Course.Water.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, (((_y-count)+5)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+		count++;
+		if (count>7) {
+			break;
+		}
+	}
+	//  
+	if (!_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y-8)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+		yspeed -= count/15;
+	}
+	count = 0;
+	while (!_root.Course.Water.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, (((_y+count)+5)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+		count++;
+		if (count>7) {
+			break;
+		}
+	}
+	if (!_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+8)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+		yspeed += count/15;
+	}
+	//                   
+	_rotation *= 0.7;
+	count = 0;
+	while (_root.Course.Water.hitTest(((_x+25*Scale)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, (((_y-count)+5)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+		count++;
+		if (count>9) {
+			break;
+		}
+	}
+	_rotation += count/Scale;
+	count = 0;
+	while (_root.Course.Water.hitTest(((_x-25*Scale)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, (((_y-count)+5)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+		count++;
+		if (count>9) {
+			break;
+		}
+	}
+	_rotation -= count/Scale;
+	count = 0;
+	//
+	/* 
+	if (_root.Course.Water.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y-3)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) && !_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+8)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+	yspeed--;
+	}
+	if (_root.Course.Water.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) && !_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y-8)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+	yspeed++;
+	}
+	*/
+	//weightY *= 0.7; 
+	_y += yspeed;
+	yspeed *= 0.8;
+	yspeed = Math.max(yspeed, -3);
+	yspeed = Math.min(yspeed, 3);
+	//
+	while (_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y-7)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+		_y++;
+	}
+	while (_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+7)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+		_y--;
+	}
+	diffy = olddiffy-_y;
+	//
+	tellTarget (_root.Course.BPlatforms["WaterPLGround"+depth]) {
+		_xscale = this.Scale*100;
+		//
+		_rotation = this._rotation;
+		_y = this._y;
+		_x = this._x;
+		//
+		if (hitTest((_root.Course.Char._x*_root.coursescale/100)+_root.Course._x, ((_root.Course.Char._y+this.diffy+3)*_root.coursescale/100)+_root.Course._y, true) && _root.Course.Char.yspeed>-3) {
+			//_root.Course.Char._x += this.diffx;
+			_root.Course.Char._y -= this.yspeed;
+			//
+			distance = (_root.Course.Char._x-(_x+_parent._x))/this.Scale;
+			distance = Math.min(60, distance);
+			distance = Math.max(-60, distance);
+			this._rotation += distance/15;
+			//_root.Course.Char.xspeed = _root.groundFriction(_root.Course.Char.xspeed, 0.3, 1.1);
+			if (landedon == false) {
+				this.yspeed += (_root.Course.Char.yspeed/3)/this.Scale;
+				//_root.Course.Char.xspeed -= this.diffx;
+			}
+			landedon = true;
+		} else {
+			this.weightY *= 0.3;
+			if (landedon == true) {
+				this.yspeed -= (_root.Course.Char.yspeed/5)/this.Scale;
+				//
+				distance = (_root.Course.Char._x-(_x+_parent._x))/this.Scale;
+				distance = Math.min(60, distance);
+				distance = Math.max(-60, distance);
+				this._rotation += (distance*Math.abs(_root.Course.Char.yspeed/5))/25;
+				//_root.Course.Char.xspeed += this.diffx;
+				//_root.Course.Char.yspeed -= this.yspeed/2;
+			}
+			landedon = false;
+		}
+		_rotation = this._rotation;
+		_y = this._y;
+		_x = this._x;
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Coded Wooden PL/Water PL Ground">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Coded Wooden PL/Water PL clip" name="clip">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

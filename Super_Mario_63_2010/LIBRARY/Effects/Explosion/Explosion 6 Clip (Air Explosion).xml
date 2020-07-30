@@ -1,0 +1,139 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="   Effects/ Explosion/Explosion 6 Clip (Air Explosion)" itemID="475c79c1-00000c30" lastModified="1224458123">
+  <timeline>
+    <DOMTimeline name="Explosion 6 Clip (Air Explosion)">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="5" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[alf = _alpha;
+this._alpha = 0;
+this._xscale *= 0.5;
+this._yscale *= 0.5;
+rspeed = ((random(2)-0.5)*2)*(Math.random()*3+1);
+onEnterFrame = function () {
+	if (_root.PauseGame !== true) {
+		this._rotation += rspeed*1.25;
+		this._xscale *= 1.2
+		this._yscale *= 1.2
+		this._alpha += alf/5;
+		play();
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="5" duration="13" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	if (_root.PauseGame !== true) {
+		this._rotation += rspeed*(_alpha/80);
+		this._xscale *= 1.02
+		this._yscale *= 1.02
+		this._alpha -= alf/18;
+		play();
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="18" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+onEnterFrame = null;
+this.removeMovieClip(this);
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" duration="4" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Effects/ Explosion/ Explosions Bits/Air Explosion - 1">
+                  <matrix>
+                    <Matrix tx="-9.5" ty="-9.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="4" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Effects/ Explosion/ Explosions Bits/Air Explosion - 2">
+                  <matrix>
+                    <Matrix tx="-21" ty="-21"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="6" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Effects/ Explosion/ Explosions Bits/Air Explosion - 3">
+                  <matrix>
+                    <Matrix tx="-22" ty="-21.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="8" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Effects/ Explosion/ Explosions Bits/Air Explosion - 4">
+                  <matrix>
+                    <Matrix tx="-23.5" ty="-23"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="10" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Effects/ Explosion/ Explosions Bits/Air Explosion - 5">
+                  <matrix>
+                    <Matrix tx="-24" ty="-23.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="12" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Effects/ Explosion/ Explosions Bits/Air Explosion - 6">
+                  <matrix>
+                    <Matrix tx="-21.5" ty="-22.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="14" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Effects/ Explosion/ Explosions Bits/Air Explosion - 7">
+                  <matrix>
+                    <Matrix tx="-20" ty="-19.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="16" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Effects/ Explosion/ Explosions Bits/Air Explosion - 7">
+                  <matrix>
+                    <Matrix a="0.724441528320313" b="0.194122314453125" c="-0.194107055664063" d="0.724441528320313" tx="-10.7" ty="-18"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="18" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

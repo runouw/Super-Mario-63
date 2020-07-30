@@ -1,0 +1,429 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Level Designer Windows/LDW - Info/LDW - Info Music" itemID="4854699f-000011b5" sourceFlashFilepath="F:\Super Mario 63\New computer\Level Designer (With Mario Engine new) 3.fla" sourceLibraryItemHRef="Level Designer Windows/LDW - Info/LDW - Info Music" sourceLastModified="1213491615" lastModified="1241329300" sourceItemID="4854699f-000011b5">
+  <timeline>
+    <DOMTimeline name="LDW - Info Music">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[//BGarray = ["Hills and Clouds", "Secret Course", "Sky", "Haunted", "Underground", "Snow", "Mechanical", "Fire-Field", "Volcano", "Desert", "Ocean", "Bowser's Castle"];
+//if (_root.M.CourseMusic == undefined) {
+_root.M.CourseMusic = _root.LDMusic;
+//}
+gotoAndStop(_root.M.CourseMusic+1);
+min = 2;
+max = 19
+onEnterFrame = function () {
+	if (_parent.greyness.aa == 0) {
+		_root.M.CourseMusic = _currentframe-1;
+		if (_currentframe == min) {
+			tri1._alpha += (0-tri1._alpha)/3;
+		} else {
+			tri1._alpha += (100-tri1._alpha)/3;
+		}
+		if (_currentframe == max) {
+			tri2._alpha += (0-tri2._alpha)/3;
+		} else {
+			tri2._alpha += (100-tri2._alpha)/3;
+		}
+		//
+		if (tri1.hitTest(_root._xmouse, _root._ymouse, false) && tri1._alpha>=99) {
+			tri1.sc = 130;
+		} else {
+			tri1.sc = 100;
+		}
+		tri1._xscale += (tri1.sc-tri1._xscale)/3;
+		tri1._yscale = tri1._xscale;
+		//
+		if (tri2.hitTest(_root._xmouse, _root._ymouse, false) && tri2._alpha>=99) {
+			tri2.sc = 130;
+		} else {
+			tri2.sc = 100;
+		}
+		tri2._xscale += (tri2.sc-tri2._xscale)/3;
+		tri2._yscale = tri2._xscale;
+		//
+		if (this.hitTest(_root._xmouse, _root._ymouse, false)) {
+			bg._alpha += (50-bg._alpha)/3;
+		} else {
+			bg._alpha += (0-bg._alpha)/3;
+		}
+	}
+	_root.LDMusic = _root.M.CourseMusic;
+};
+onMouseDown = function () {
+	if (tri2.sc == 130 && _currentframe<max) {
+		nextFrame();
+	} else if (tri1.sc == 130 && _currentframe>min) {
+		prevFrame();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="18" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F" locked="true">
+          <frames>
+            <DOMFrame index="0" duration="19" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Level Designer Windows/LDW - Info/LDW - Info Arrow" name="tri2">
+                  <matrix>
+                    <Matrix tx="149.55" ty="10.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Level Designer Windows/LDW - Info/LDW - Info Arrow" name="tri1">
+                  <matrix>
+                    <Matrix d="-1" tx="149.55" ty="0.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMStaticText left="81.5" width="136.3" height="15.6" autoExpand="true" antiAliasThickness="68" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-78.05" ty="-1.4"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Mushroom Kingdom</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" size="14" face="Arial-BoldMT"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMStaticText left="81.5" width="135.55" height="15.6" autoExpand="true" antiAliasThickness="68" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-78.05" ty="-1.4"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Bob-Omb Battlefield</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" size="14" face="Arial-BoldMT"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements>
+                <DOMStaticText left="81.5" width="114.7" height="15.6" autoExpand="true" antiAliasThickness="68" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-78.05" ty="-1.4"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Secret Course #1</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" size="14" face="Arial-BoldMT"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="4" keyMode="9728">
+              <elements>
+                <DOMStaticText left="81.5" width="114.7" height="15.6" autoExpand="true" antiAliasThickness="68" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-78.05" ty="-1.4"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Secret Course #2</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" size="14" face="Arial-BoldMT"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="5" keyMode="9728">
+              <elements>
+                <DOMStaticText left="81.5" width="92.8" height="15.6" autoExpand="true" antiAliasThickness="68" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-78.05" ty="-1.4"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Rainbow Ride</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" size="14" face="Arial-BoldMT"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="6" keyMode="9728">
+              <elements>
+                <DOMStaticText left="81.5" width="99.25" height="15.6" autoExpand="true" antiAliasThickness="68" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-78.05" ty="-1.4"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Boo's Mansion</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" size="14" face="Arial-BoldMT"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="7" keyMode="9728">
+              <elements>
+                <DOMStaticText left="81.5" width="108.45" height="15.6" autoExpand="true" antiAliasThickness="68" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-78.05" ty="-1.4"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Hazy Maze Cave</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" size="14" face="Arial-BoldMT"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="8" keyMode="9728">
+              <elements>
+                <DOMStaticText left="81.5" width="114.85" height="15.6" autoExpand="true" antiAliasThickness="68" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-78.05" ty="-1.4"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Snowman's Land</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" size="14" face="Arial-BoldMT"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="9" keyMode="9728">
+              <elements>
+                <DOMStaticText left="81.5" width="114.65" height="15.6" autoExpand="true" antiAliasThickness="68" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-78.05" ty="-1.4"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Lethal Lava Land</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" size="14" face="Arial-BoldMT"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="10" keyMode="9728">
+              <elements>
+                <DOMStaticText left="81.5" width="127.8" height="15.6" autoExpand="true" antiAliasThickness="68" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-78.05" ty="-1.4"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Shifting Sand Land</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" size="14" face="Arial-BoldMT"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="11" keyMode="9728">
+              <elements>
+                <DOMStaticText selected="true" left="81.5" width="107.9" height="15.6" autoExpand="true" antiAliasThickness="68" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-78.05" ty="-1.4"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Bowser's Castle</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" size="14" face="Arial-BoldMT"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="12" keyMode="9728">
+              <elements>
+                <DOMStaticText width="84.25" height="15.6" autoExpand="true" antiAliasThickness="68" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="1.95" ty="-0.65"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Boss Fight 1</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" size="14" face="Arial-BoldMT"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="13" keyMode="9728">
+              <elements>
+                <DOMStaticText selected="true" width="84.25" height="15.6" autoExpand="true" antiAliasThickness="68" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="1.95" ty="-0.65"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Boss Fight 2</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" size="14" face="Arial-BoldMT"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="14" keyMode="9728">
+              <elements>
+                <DOMStaticText selected="true" width="84.25" height="15.6" autoExpand="true" antiAliasThickness="68" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="1.95" ty="-0.65"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Floater Land</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" size="14" face="Arial-BoldMT"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="15" keyMode="9728">
+              <elements>
+                <DOMStaticText width="90.5" height="15.6" autoExpand="true" antiAliasThickness="68" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="2.95" ty="-0.65"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Terror Theme</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" size="14" face="Arial-BoldMT"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="16" keyMode="9728">
+              <elements>
+                <DOMStaticText width="104.5" height="15.6" autoExpand="true" antiAliasThickness="68" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="1.95" ty="-0.65"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>The Final Battle</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" size="14" face="Arial-BoldMT"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="17" keyMode="9728">
+              <elements>
+                <DOMStaticText selected="true" width="74.9" height="15.6" autoExpand="true" antiAliasThickness="68" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="1.95" ty="-0.65"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>The Meteor</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" size="14" face="Arial-BoldMT"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="18" keyMode="9728">
+              <elements>
+                <DOMStaticText left="81.5" width="111.55" height="15.6" autoExpand="true" antiAliasThickness="68" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-78.05" ty="-1.4"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Inside the Castle</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" size="14" face="Arial-BoldMT"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#FF4FFF" locked="true">
+          <frames>
+            <DOMFrame index="0" duration="19" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Level Designer Windows/LDW - Info/LDW - Info BG BG" name="bg">
+                  <matrix>
+                    <Matrix a="1.04396057128906" tx="0.85" ty="-2.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="67.25" y="8.1"/>
+                  </transformationPoint>
+                  <color>
+                    <Color/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

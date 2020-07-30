@@ -1,0 +1,427 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="   Enemies/Normal/ A-F/ Bully/Clips/ Bully Code" itemID="4675604c-000006a8" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="BullyCode" lastModified="1237831167" lastUniqueIdentifier="4">
+  <timeline>
+    <DOMTimeline name=" Bully Code">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" outline="true" current="true" isSelected="true" useOutlineView="true">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (scale == undefined) {
+	scale = 1;
+}
+restartvars = function () {
+	deadcount = 0;
+	xspeed = 0;
+	yspeed = 0;
+	hurt = false;
+	frame = "idle";
+	_xscale = scale*100;
+	tall = 25*scale;
+	wide = 15*scale;
+	stun = 0;
+};
+restartvars();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		if (frame !== "dead") {
+			stun--;
+			stun = Math.max(stun, 0);
+			if (Math.abs((_root.currentCamX)-(_x+_parent._x))<600 && Math.abs((_root.currentCamY)-(_y+_parent._y))<600) {
+				_yscale = scale*100;
+				eye._yscale = (1/scale)*100;
+				eye._xscale = (1/scale)*50;
+				//   
+				if (_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.BPlatforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+					if (air == true && Math.abs(yspeed)>3) {
+						yspeed = Math.max(-yspeed*0.7, yspeed*0.7);
+					} else if (air == true) {
+						yspeed = 0;
+					}
+					yspeed = Math.min(yspeed, 0);
+					air = false;
+				} else {
+					air = true;
+				}
+				// Walls 
+				while (_root.Course.Platforms.hitTest(((_x+wide)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, (((_y-(tall/2)))*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+					_x--;
+					xspeed = Math.max(xspeed*0.7, -xspeed*0.7);
+				}
+				while (_root.Course.Platforms.hitTest(((_x-wide)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, (((_y-(tall/2)))*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+					_x++;
+					xspeed = Math.min(xspeed*0.7, -xspeed*0.7);
+				}
+				// ground
+				while ((_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+3)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.BPlatforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+3)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) && !(_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y-1)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.BPlatforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y-3)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true))) {
+					_y++;
+				}
+				while (_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y-1)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.BPlatforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y-3)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+					_y--;
+				}
+				//
+				while (_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y-tall)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+					_y--;
+				}
+				//
+				if (air == true) {
+					yspeed += _root.gravity;
+					yspeed = Math.min(yspeed, 7);
+				}
+				//                                                                                 
+				if (air == false && frame !== "hurt") {
+					if (this.eye.hitTest(_root.Course.Char.charClip.body) && stun == 0) {
+						seeing = true;
+						if (Math.abs(_root.Course.Char._x-(_x+_parent._x))<300) {
+							if (_root.Course.Char._x>_x+_parent._x) {
+								_xscale = scale*100;
+								if (Moveright()) {
+									xspeed -= Math.min((xspeed-7)/13, 0)*scale;
+								}
+							} else {
+								_xscale = -scale*100;
+								if (Moveleft()) {
+									xspeed -= Math.max((xspeed+7)/13, 0)*scale;
+								}
+							}
+						}
+					} else {
+						seeing = false;
+					}
+				}
+				if (air == false) {
+					xspeed = _root.groundFriction(xspeed, 0.1, 1.05);
+				}
+				//                        
+				if (_root.Course.Enemyhurt.hitTest(((_x-wide)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, (((_y-(tall/2)))*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) && _root.Course.Enemyhurt.hitTest(((_x+wide)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, (((_y-(tall/2)))*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+					yspeed -= Math.abs((3)/5)/scale;
+					xspeed += (((Math.random()*2-1)-(xspeed/1.5)))/scale;
+					_y -= 3;
+				} else {
+					if (_root.Course.Enemyhurt.hitTest(((_x-wide)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, (((_y-(tall/2)))*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+						yspeed -= Math.abs((3)/5)/scale;
+						xspeed += Math.max((((6)-(xspeed/1.5)))/scale, 0);
+						_y -= 3;
+					}
+					if (_root.Course.Enemyhurt.hitTest(((_x+wide)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, (((_y-(tall/2)))*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+						yspeed -= Math.abs((3)/5)/scale;
+						xspeed += Math.min((((-6)-(xspeed/1.5)))/scale, 0);
+						_y -= 3;
+					}
+				}
+				//                           
+				if (this.body.hitTest(_root.Course.Char.charClip.body) && _root.Course.Char.attackFrame == "Dive" && _root.Course.Char.attack == true && Math.abs(_root.Course.Char.xspeed)>5) {
+					frame = "hurt";
+					stun = 15;
+					//
+					if (_root.Course.Char._x>_x+_parent._x) {
+						mxspeed = xspeed;
+						mxspeed = Math.max(mxspeed, 0);
+						_root.Course.Char.xspeed *= 0.5;
+						_root.Course.Char.xspeed += mxspeed*0.3+3;
+					} else {
+						mxspeed = xspeed;
+						mxspeed = Math.min(mxspeed, 0);
+						_root.Course.Char.xspeed *= 0.5;
+						_root.Course.Char.xspeed += mxspeed*0.3-3;
+					}
+					//
+					yspeed -= Math.abs(((_root.Course.Char.xspeed/2)+1)/7)/scale;
+					xspeed += ((((_root.Course.Char.xspeed/1.5)-(xspeed/1.5)))*5)/scale;
+					_y -= 3;
+				}
+				//                                                              
+				if (this.body.hitTest(_root.Course.Char.charClip.water) || this.body.hitTest(_root.Course.Char.charClip.frame.water) || this.head.hitTest(_root.Course.Char.charClip.water) || this.head.hitTest(_root.Course.Char.charClip.frame.water)) {
+					frame = "hurt";
+					stun = 15;
+					yspeed -= 1.5/scale;
+					if (_root.Course.Char.attackFrame == "Spin" && _root.Course.Char.attack == true) {
+						if (_root.Course.Char._x>_x+_parent._x) {
+							mxspeed = xspeed;
+							_root.Course.Char.xspeed *= 0.7;
+							_root.Course.Char.xspeed += mxspeed*0.3+1.5;
+						} else {
+							mxspeed = xspeed;
+							_root.Course.Char.xspeed *= 0.7;
+							_root.Course.Char.xspeed += mxspeed*0.3-1.5;
+						}
+						if (_root.Course.Char._x>_x+_parent._x) {
+							xspeed *= 0.7;
+							xspeed -= 5/scale;
+							stun = 15;
+						} else {
+							xspeed *= 0.7;
+							xspeed += 5/scale;
+							stun = 15;
+						}
+					} else {
+						if (_root.Course.Char._xscale>0) {
+							if (_root.Fluddpow == "T" || (_root.Fluddpow == "H" && _root.Course.Char.attackFrame == "Dive" && _root.Course.Char.attack == true)) {
+								xspeed *= 0.9;
+								xspeed += 2/scale;
+								xspeed += _root.Course.Char.xspeed/2;
+								stun = 7;
+								//
+								if (_root.Course.Char._x>_x+_parent._x) {
+									mxspeed = xspeed;
+									mxspeed = Math.max(mxspeed, 0);
+									_root.Course.Char.xspeed *= 0.3;
+									_root.Course.Char.xspeed += mxspeed*0.3+3;
+								} else {
+									mxspeed = xspeed;
+									mxspeed = Math.min(mxspeed, 0);
+									_root.Course.Char.xspeed *= 0.3;
+									_root.Course.Char.xspeed += mxspeed*0.3-3;
+								}
+							} else {
+								xspeed *= 0.9;
+								xspeed -= 2/scale;
+								stun = 15;
+							}
+						} else {
+							if (_root.Fluddpow == "T" || (_root.Fluddpow == "H" && _root.Course.Char.attackFrame == "Dive" && _root.Course.Char.attack == true)) {
+								xspeed *= 0.9;
+								xspeed -= 2/scale;
+								xspeed += _root.Course.Char.xspeed/2;
+								stun = 7;
+								//
+								if (_root.Course.Char._x>_x+_parent._x) {
+									mxspeed = xspeed;
+									mxspeed = Math.max(mxspeed, 0);
+									_root.Course.Char.xspeed *= 0.3;
+									_root.Course.Char.xspeed += mxspeed*0.3+3;
+								} else {
+									mxspeed = xspeed;
+									mxspeed = Math.min(mxspeed, 0);
+									_root.Course.Char.xspeed *= 0.3;
+									_root.Course.Char.xspeed += mxspeed*0.3-3;
+								}
+							} else {
+								xspeed *= 0.9;
+								xspeed += 2/scale;
+								stun = 15;
+							}
+						}
+					}
+					_y -= 3;
+				}
+				//                                                           
+				if (this.head.hitTest(_root.Course.Char.charClip.feet) && _root.Course.Char.yspeed>1 && _root.Course.Char.attack == false) {
+					MakeSound();
+					stun = 15;
+					if (_root.Course.Char._x>_x+_parent._x) {
+						mxspeed = xspeed;
+						xspeed += (-_root.Course.Char.yspeed/1.5)-2+(_root.Course.Char.xspeed/2);
+						_root.Course.Char.yspeed /= 2;
+						_root.Course.Char.yspeed -= 9+Math.abs(mxspeed)/2;
+						_root.Course.Char.xspeed *= -0.5;
+						_root.Course.Char.xspeed += mxspeed*0.7;
+					} else {
+						mxspeed = xspeed;
+						xspeed += (_root.Course.Char.yspeed/1.5)+2+(_root.Course.Char.xspeed/2);
+						_root.Course.Char.yspeed /= 2;
+						_root.Course.Char.yspeed -= 9+Math.abs(mxspeed)/2;
+						_root.Course.Char.xspeed *= -0.5;
+						_root.Course.Char.xspeed += mxspeed*0.7;
+					}
+				}
+				//                                                              
+				if (stun<=0 && frame !== "hurt" && this.body.hitTest(_root.Course.Char.charClip.body) && (_root.Course.Char.attack == false || !(_root.Course.Char.attackFrame == "Dive" && _root.Course.Char.attack == true && Math.abs(_root.Course.Char.xspeed)>5)) && !(Math.abs(_root.Course.Char.xspeed)>7 && _root.KeySPACE() && _root.Power>=100 && _root.WaterAmount>0 && _root.Fluddpow == "T")) {
+					MakeSound();
+					stun = 3;
+					if (_root.Course.Char._x>_x+_parent._x) {
+						mxspeed = _root.Course.Char.xspeed;
+						_root.MarioHit(0, 0, 5, xspeed+3+(xspeed/2), 13, "none");
+						frame = "hurt";
+						yspeed -= 3;
+						xspeed *= -0.3;
+						xspeed += mxspeed*0.3;
+					} else {
+						mxspeed = _root.Course.Char.xspeed;
+						_root.MarioHit(0, 0, 5, xspeed-3+(xspeed/2), 13, "none");
+						frame = "hurt";
+						yspeed -= 3;
+						xspeed *= -0.3;
+						xspeed += mxspeed*0.3;
+					}
+				}
+				//                                                                      
+				if (frame == "hurt" && this.body.hitTest(_root.Course.Char.charClip.body) && (_root.Course.Char.attack == false || !(_root.Course.Char.attackFrame == "Dive" && _root.Course.Char.attack == true && Math.abs(_root.Course.Char.xspeed)>0.3)) && !(Math.abs(_root.Course.Char.xspeed)>7 && _root.KeySPACE() && _root.Power>=100 && _root.WaterAmount>0 && _root.Fluddpow == "T")) {
+					if (_root.Course.Char._x>_x+_parent._x) {
+						_root.MarioHit(0, 0, -0, 1, 0, "none");
+						xspeed -= (_root.Course.Char.xspeed+xspeed)*0.3;
+					} else {
+						_root.MarioHit(0, 0, -0, -1, 0, "none");
+						xspeed -= (_root.Course.Char.xspeed+xspeed)*0.3;
+					}
+				}
+				//                                                                           
+				if (frame == "hurt" && air == false && Math.abs(yspeed)<3) {
+					frame = "idle";
+				}
+				if (frame !== "hurt" && seeing == false) {
+					if (Math.abs(xspeed)>1) {
+						frame = "run";
+					} else {
+						frame = "idle";
+					}
+				}
+				if (seeing == true && frame !== "hurt") {
+					frame = "run";
+				}
+				if (_root.Course.Lava.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+					frame = "dead";
+				}
+				clip.gotoAndStop(frame);
+				xspeed = Math.max(xspeed, -15);
+				xspeed = Math.min(xspeed, 15);
+				_x += xspeed;
+				_y += yspeed;
+			}
+		}
+	}
+	if (frame == "dead") {
+		deadcount++;
+	}
+	if ((deadcount>=30 || Math.abs((_root.currentCamX)-(_x+_parent._x))>600 || Math.abs((_root.currentCamY)-(_y+_parent._y))>600) && (Math.abs((_root.currentCamX)-(saveX+_parent._x))>600 || Math.abs((_root.currentCamY)-(saveY+_parent._y))>600)) {
+		_y = saveY;
+		_x = saveX;
+		//
+		restartvars();
+		//
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Lineless Movieclip" name="body">
+                  <matrix>
+                    <Matrix a="0.265380859375" d="0.212066650390625" ty="-1.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-28.05"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Lineless Movieclip" name="head">
+                  <matrix>
+                    <Matrix a="0.265380859375" d="0.212066650390625" ty="-11.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-28.05"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/ Goomba/Goomba Eyesight" name="eye">
+                  <matrix>
+                    <Matrix a="0.9571533203125" d="1.0576171875" tx="0.1" ty="-13"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[Moveright = function () {
+	offground = true;
+	if (offground == false) {
+		break;
+	}
+	for (Xspot2=5; Xspot2<25; Xspot2 += 7) {
+		Xspot = Xspot2+(xspeed*7);
+		adding = 3;
+		for (Yspot=-5; Yspot<30; Yspot += adding += 0.5) {
+			adding = Math.min(adding, 5);
+			if (!_root.Course.Lava.hitTest(((_x+Xspot)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+Yspot)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+				if (_root.Course.Platforms.hitTest(((_x+Xspot)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+Yspot)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+					offground = false;
+					break;
+				}
+				if (_root.Course.BPlatforms.hitTest(((_x+Xspot)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+Yspot)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+					offground = false;
+					break;
+				}
+				if (_root.Course.Water.hitTest(((_x+Xspot)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+Yspot)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+					break;
+				}
+			}
+		}
+	}
+	if (offground == false || AiGround == false) {
+		return true;
+	} else {
+		randomnum = 0;
+		return false;
+	}
+};
+Moveleft = function () {
+	offground = true;
+	if (offground == false) {
+		break;
+	}
+	for (Xspot2=5; Xspot2<25; Xspot2 += 7) {
+		Xspot = -Xspot2+(xspeed*7);
+		adding = 3;
+		for (Yspot=-5; Yspot<30; Yspot += adding += 0.5) {
+			adding = Math.min(adding, 5);
+			if (!_root.Course.Lava.hitTest(((_x+Xspot)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+Yspot)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+				if (_root.Course.Platforms.hitTest(((_x+Xspot)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+Yspot)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+					offground = false;
+					break;
+				}
+				if (_root.Course.BPlatforms.hitTest(((_x+Xspot)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+Yspot)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+					offground = false;
+					break;
+				}
+				if (_root.Course.Water.hitTest(((_x+Xspot)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+Yspot)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+					break;
+				}
+			}
+		}
+	}
+	if (offground == false || AiGround == false) {
+		return true;
+	} else {
+		randomnum = 0;
+		return false;
+	}
+};
+MakeSound = function () {
+	randomnum = random(2)+1;
+	_root.bgsoundFX = new Sound(this);
+	_root.bgsoundFX.attachSound("thwomp-"+randomnum);
+	_root.bgsoundFX.start(0, 1);
+	_root.bgsoundFX.setVolume(_root.BgVolume);
+};
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ A-F/ Bully/Clips/Bully Clip" name="clip">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

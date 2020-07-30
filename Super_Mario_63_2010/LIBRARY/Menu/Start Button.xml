@@ -1,0 +1,94 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name=" Menu/Start Button" itemID="477996f0-00000d9f" sourceFlashFilepath="Rob &amp; Steve Hewitt\My Documents\Super Mario 63\Menu Design 2.fla" sourceLibraryItemHRef="Start Button" sourceLastModified="1199153881" lastModified="1244573777" lastUniqueIdentifier="1" sourceItemID="477996f0-00000d9f">
+  <timeline>
+    <DOMTimeline name="Start Button">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[awave = 90;
+a2 = 0;
+_alpha = 0;
+anum = 1;
+_xscale = 25;
+_yscale = 25;
+onEnterFrame = function () {
+	if (this.hitTest(_root._xmouse, _root._ymouse, false)) {
+		hl = true;
+	} else {
+		hl = false;
+	}
+	if (hl == true && cl !== true) {
+		a2 = Math.min(a2+3, 50);
+		_xscale += (130-_xscale)/5;
+		_yscale = _xscale;
+	} else if (cl !== true) {
+		_xscale += (100-_xscale)/5;
+		_yscale = _xscale;
+		a2 = Math.max(a2-3, 0);
+	} else {
+		_xscale += 5;
+		_yscale = _xscale;
+	}
+	if (anum>20) {
+		awave += 0.03;
+		_alpha = Math.min(75+(Math.sin(awave)*30)+a2, 100);
+	} else {
+		_xscale += (100-_xscale)/5;
+		_yscale = _xscale;
+		anum++;
+		_alpha += (100-_alpha)/5;
+	}
+};
+onMouseDown = function () {
+	if (hl == true) {
+		//_root.nextFrame();
+		cl = true;
+		_root.attachMovie("TitleScreenTransition", "Transition"+_root.getNextHighestDepth(), _root.getNextHighestDepth(), {_x:225, _y:150, trans:true});
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Start Text" name="txt">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BevelFilter blurX="20" blurY="20" angle="19.0000011383648" strength="0.8"/>
+                    <BevelFilter blurX="7" blurY="7" distance="2" strength="0.8"/>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                    <GlowFilter blurX="9" blurY="9" color="#FFFFFF"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F" locked="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Menu Folder/  Universal Stuff/Menu Button (really)" selected="true" symbolType="button">
+                  <matrix>
+                    <Matrix a="1.3828125" d="0.793106079101563" tx="-0.65" ty="-0.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

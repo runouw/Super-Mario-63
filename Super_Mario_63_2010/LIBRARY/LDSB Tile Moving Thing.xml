@@ -1,0 +1,50 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="LDSB Tile Moving Thing" itemID="48a1fb28-00000063" sourceFlashFilepath="F:\Super Mario 63\New computer\Level Designer (With Mario Engine new) 3.fla" sourceLibraryItemHRef="LDSB Tile Moving Thing" sourceLastModified="1232685662" lastModified="1245462559" lastUniqueIdentifier="34" sourceItemID="48a1fb28-00000063">
+  <timeline>
+    <DOMTimeline name="LDSB Tile Moving Thing">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[TileCountArray = [45, 32, 50, 48, 45, 47];
+//starts at         6    7   8
+ TileCountArray.push(44, 41, 49, 48, 50, 94);
+//no more than 49 in each tab!! no less than 8
+Tab = 0;
+_parent.movedoffset = 0;
+Reload = function () {
+	//trace(Tab);
+	i = 1;
+	w = -18.5;
+	h = 18.5;
+	Selected = undefined;
+	for (q=0; q<100; q++) {
+		//for (w=-1; w<2; w += 2) {
+		if (this["LDSBTile"+i]._x !== undefined) {
+			this["LDSBTile"+i].removeMovieClip();
+		}
+		if (i<=TileCountArray[Tab]) {
+			this.attachMovie("LDSBTile", "LDSBTile"+i, this.getNextHighestDepth(), {_y:h, _x:w, num:i});
+			this["LDSBTile"+i].gotoAndStop(i+(Tab*50));
+			//trace(i+(Tab*50));
+			//trace(i+(Tab*50));
+			w *= -1;
+			if (w<0) {
+				h += 37.5;
+			}
+		}
+		i++;
+		//}              
+	}
+};
+Reload();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

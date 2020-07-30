@@ -1,0 +1,161 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="      Char/  Mario CLIPS/Mario (hover) backflip" itemID="45c3efb2-000002ba" lastModified="1198425985" lastUniqueIdentifier="1">
+  <timeline>
+    <DOMTimeline name="Mario (hover) backflip">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		play();
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="3" duration="11" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		play();
+		if (_root.KeyRIGHT() && _root.Controll == true) {
+			_root.Course.Char.xspeed -= Math.min((_root.Course.Char.xspeed-_root.airwalkspeed)/(_root.airmaxWalkspeed/3), 0)/1.5;
+		}
+		if (_root.KeyLEFT() && _root.Controll == true) {
+			_root.Course.Char.xspeed -= Math.max((_root.Course.Char.xspeed+_root.airwalkspeed)/(_root.airmaxWalkspeed/3), 0)/1.5;
+		}
+		//          
+		if (_root.KeyTapRIGHT()) {
+			_root.Course.Char.xspeed -= Math.min((_root.Course.Char.xspeed-_root.airtapspeed)/(_root.airmaxtapWalkspeed/3), 0);
+		}
+		if (_root.KeyTapLEFT()) {
+			_root.Course.Char.xspeed -= Math.max((_root.Course.Char.xspeed+_root.airtapspeed)/(_root.airmaxtapWalkspeed/3), 0);
+		}
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="14" duration="7" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		play();
+		tellTarget (_root.Course.Char) {
+			if (_root.KeyDOWN() && Water == false) {
+				doublejump = 0;
+				attack = true;
+				attackFrame = "Dive";
+				yspeed += 3;
+				if (_xscale<0) {
+					xspeed -= (xspeed-_root.Divespeed)/5;
+				} else {
+					xspeed -= (xspeed+_root.Divespeed)/5;
+				}
+			}
+			if (_root.KeyZ() && (Water == false || _root.Metal == true)) {
+				attack = true;
+				attackFrame = "Ground";
+				xspeed = 0;
+				yspeed = 0;
+			}
+			if (air == false && _root.Course.Char.yspeed>-3) {
+				attack = false;
+			}
+		}
+		if (_root.KeyRIGHT() && _root.Controll == true) {
+			_root.Course.Char.xspeed -= Math.min((_root.Course.Char.xspeed-_root.airwalkspeed)/(_root.airmaxWalkspeed/3), 0)/1.5;
+		}
+		if (_root.KeyLEFT() && _root.Controll == true) {
+			_root.Course.Char.xspeed -= Math.max((_root.Course.Char.xspeed+_root.airwalkspeed)/(_root.airmaxWalkspeed/3), 0)/1.5;
+		}
+		//         
+		if (_root.KeyTapRIGHT()) {
+			_root.Course.Char.xspeed -= Math.min((_root.Course.Char.xspeed-_root.airtapspeed)/(_root.airmaxtapWalkspeed/3), 0);
+		}
+		if (_root.KeyTapLEFT()) {
+			_root.Course.Char.xspeed -= Math.max((_root.Course.Char.xspeed+_root.airtapspeed)/(_root.airmaxtapWalkspeed/3), 0);
+		}
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="21" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.Course.Char.attack = false;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario Slide (Hover)">
+                  <matrix>
+                    <Matrix a="-0.971847534179688" b="-0.228286743164063" c="-0.228286743164063" d="0.971847534179688" tx="17.6" ty="-12.8"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario Slide (Hover)">
+                  <matrix>
+                    <Matrix a="-0.852340698242188" b="-0.517791748046875" c="-0.517791748046875" d="0.852340698242188" tx="19.35" ty="-6.25"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario Walking (Hover) 2">
+                  <matrix>
+                    <Matrix a="0.798583984375" b="-0.59881591796875" c="0.59881591796875" d="0.798583984375" tx="-20.75" ty="-17.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" duration="18" tweenType="motion" motionTweenRotate="clockwise" motionTweenRotateTimes="1" keyMode="17921" acceleration="-40">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario Air (Hover) 2">
+                  <matrix>
+                    <Matrix a="0.948532104492188" b="-0.296417236328125" c="0.296417236328125" d="0.948532104492188" tx="-16.4" ty="-21.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="11.5" y="25.75"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="21" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario Air (Hover) 2">
+                  <matrix>
+                    <Matrix a="0.988449096679688" b="-0.0961151123046875" c="0.0961151123046875" d="0.988449096679688" tx="-12.15" ty="-24.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="12.2" y="24.4"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

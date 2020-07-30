@@ -1,0 +1,60 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Share Levels at" itemID="4a3046f7-00001713" lastModified="1244678330" lastUniqueIdentifier="12">
+  <timeline>
+    <DOMTimeline name="Share Levels at">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Share Levels at Test" name="txt">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter blurX="3" blurY="6" color="#0000FF" inner="true" strength="10"/>
+                    <BevelFilter strength="1.5"/>
+                    <GlowFilter blurX="2" blurY="2" color="#FFFFFF" inner="true" strength="5"/>
+                    <BevelFilter shadowColor="#0000FF" strength="0.88"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[ywave = random(90);
+rwave = random(90);
+Y = this._y;
+R = _rotation;
+r = 0;
+onEnterFrame = function () {
+	sc = 100;
+	_xscale += (sc-_xscale)/4;
+	_yscale = _xscale;
+	txt._xscale += (sc-txt._xscale)/4;
+	txt._yscale = txt._xscale;
+	//
+	ywave += 0.035;
+	rwave += 0.025;
+	this._y = Y+Math.sin(ywave)*6;
+	this._rotation = R+Math.sin(rwave)*_xscale/20;
+};
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName="Share Levels at BG" name="bg">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

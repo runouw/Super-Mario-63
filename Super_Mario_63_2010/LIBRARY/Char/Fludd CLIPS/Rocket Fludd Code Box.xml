@@ -1,0 +1,66 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="      Char/  Fludd CLIPS/Rocket Fludd Code Box" itemID="45f8b43c-0000166f" lastModified="1237942686" lastUniqueIdentifier="1">
+  <timeline>
+    <DOMTimeline name="Rocket Fludd Code Box">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	if (_root.Fluddpow == "R" || (this.hitTest(_root._xmouse, _root._ymouse, true) && _root.FluddArray[_root.Playinglevel][2] == true)) {
+		sc = 115;
+	} else {
+		sc = 100;
+	}
+	_xscale += (sc-_xscale)/2;
+	_yscale = _xscale;
+	if (Math.abs(sc-_xscale)<1) {
+		_xscale = sc;
+	}
+	//   
+	if (_root.FluddArray[_root.Playinglevel][2] == true) {
+		gotoAndStop(1);
+	} else {
+		gotoAndStop(2);
+	}
+};
+//if (this.hitTest(_root._xmouse, _root._ymouse, true) && _root.FluddArray[_root.Playinglevel][2] == true) {
+//_root.Fluddpow = "R";
+//}
+onMouseDown = function () {
+	if (this.hitTest(_root._xmouse, _root._ymouse, true) && (_root.FluddArray[_root.Playinglevel][2] == true || _root.SaveFluddR == true) && _root.CanSwitchFludd !== false) {
+		_root.Fluddpow = "R";
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance selected="true" libraryItemName="      Char/  BITS Fludd/Rocket Nozzle Box">
+                  <matrix>
+                    <Matrix tx="-16" ty="-20"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Locked Fludd Box">
+                  <transformationPoint>
+                    <Point x="-0.05" y="-0.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

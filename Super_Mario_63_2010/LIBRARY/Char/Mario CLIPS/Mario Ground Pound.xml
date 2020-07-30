@@ -1,0 +1,522 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="      Char/  Mario CLIPS/Mario Ground Pound" itemID="475dc873-00000b4d" lastModified="1209357374" lastUniqueIdentifier="11">
+  <timeline>
+    <DOMTimeline name="Mario Ground Pound">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" outline="true" current="true" isSelected="true" useOutlineView="true">
+          <frames>
+            <DOMFrame index="0" duration="12" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		_root.Course.Char.yspeed = -_root.gravity;
+		_root.Course.Char.xspeed = 0;
+		play();
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="12" duration="14" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.Course.Char.yspeed = 8;
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		_root.Course.Char.yspeed += _root.gravity/2;
+		if (_root.Course.Char.yspeed<3) {
+			_root.Course.Char.yspeed += _root.gravity/2;
+		}
+		_root.Course.Char.xspeed *= 0.95;
+		if (_root.KeyRIGHT() && _root.Controll == true) {
+			_root.Course.Char.xspeed -= Math.min((_root.Course.Char.xspeed-_root.airwalkspeed)/(_root.airmaxWalkspeed), 0);
+			//_root.Course.Char._xscale = -100;
+		}
+		if (_root.KeyLEFT() && _root.Controll == true) {
+			_root.Course.Char.xspeed -= Math.max((_root.Course.Char.xspeed+_root.airwalkspeed)/(_root.airmaxWalkspeed), 0);
+			//_root.Course.Char._xscale = 100;
+		}
+		//                                        
+		if (_root.KeyTapRIGHT() && !_root.KeyRIGHT() && _root.Controll == true) {
+			_root.Course.Char.xspeed -= Math.min((_root.Course.Char.xspeed-_root.airtapspeed)/(_root.airmaxtapWalkspeed), 0)/2;
+			_root.Course.Char._xscale = -100;
+		}
+		if (_root.KeyTapLEFT() && !_root.KeyLEFT() && _root.Controll == true) {
+			_root.Course.Char.xspeed -= Math.max((_root.Course.Char.xspeed+_root.airtapspeed)/(_root.airmaxtapWalkspeed), 0)/2;
+			_root.Course.Char._xscale = 100;
+		}
+		//        
+		if ((_root.Course.Char.Water == true && _root.Metal !== true) || _root.Course.Char.yspeed<1) {
+			gotoAndPlay("end");
+		}
+		if (_root.Course.Char.air == false) {
+			gotoAndPlay("hit");
+		}
+		play();
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Lineless Movieclip" name="water">
+                  <matrix>
+                    <Matrix a="0.493820190429688" d="0.848709106445313" tx="-2.75" ty="10.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-28.3"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="26" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		stop();
+		_root.Course.Char.yspeed += _root.gravity/2;
+		if (_root.Course.Char.yspeed<3) {
+			_root.Course.Char.yspeed += _root.gravity/2;
+		}
+		_root.Course.Char.xspeed *= 0.95;
+		if (_root.KeyRIGHT() && _root.Controll == true) {
+			_root.Course.Char.xspeed -= Math.min((_root.Course.Char.xspeed-_root.airwalkspeed)/(_root.airmaxWalkspeed), 0);
+			//_root.Course.Char._xscale = -100;
+		}
+		if (_root.KeyLEFT() && _root.Controll == true) {
+			_root.Course.Char.xspeed -= Math.max((_root.Course.Char.xspeed+_root.airwalkspeed)/(_root.airmaxWalkspeed), 0);
+			//_root.Course.Char._xscale = 100;
+		}
+		//                                         
+		if (_root.KeyTapRIGHT() && !_root.KeyRIGHT() && _root.Controll == true) {
+			_root.Course.Char.xspeed -= Math.min((_root.Course.Char.xspeed-_root.airtapspeed)/(_root.airmaxtapWalkspeed), 0)/2;
+			_root.Course.Char._xscale = -100;
+		}
+		if (_root.KeyTapLEFT() && !_root.KeyLEFT() && _root.Controll == true) {
+			_root.Course.Char.xspeed -= Math.max((_root.Course.Char.xspeed+_root.airtapspeed)/(_root.airmaxtapWalkspeed), 0)/2;
+			_root.Course.Char._xscale = 100;
+		}
+		//         
+		if ((_root.Course.Char.Water == true && _root.Metal !== true) || _root.Course.Char.yspeed<1) {
+			gotoAndPlay("end");
+		}
+		if (_root.Course.Char.air == false) {
+			gotoAndPlay("hit");
+		}
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="27" duration="3" name="hit" labelType="name" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		_root.Course.Char.xspeed *= 0.8;
+		play();
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Lineless Movieclip" name="water">
+                  <matrix>
+                    <Matrix a="1.09530639648438" d="0.375534057617188" tx="-2.5" ty="-0.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-28.25"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="30" duration="5" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="35" duration="7" name="end" labelType="name" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		play();
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="42" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.Course.Char.attack = false;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F" locked="true">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side Front">
+                  <matrix>
+                    <Matrix tx="-0.3" ty="-7.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" duration="7" tweenType="motion" motionTweenRotate="counter-clockwise" motionTweenRotateTimes="1" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side Front">
+                  <matrix>
+                    <Matrix a="0.965927124023438" b="0.258819580078125" c="-0.258819580078125" d="0.965927124023438" tx="-1" ty="-10"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="0.8" y="-3.9"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="9" duration="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side Front" selected="true">
+                  <matrix>
+                    <Matrix tx="-1.15" ty="-9.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="0.85" y="-3.9"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="12" duration="14" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side Front" selected="true">
+                  <matrix>
+                    <Matrix tx="-1.4" ty="-5.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="0.85" y="-3.9"/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter blurX="0" blurY="0"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="26" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side Front">
+                  <matrix>
+                    <Matrix tx="-1.4" ty="-5.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="0.85" y="-3.9"/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter blurX="0" blurY="7"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="27" duration="8" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side Front">
+                  <matrix>
+                    <Matrix tx="-1.4" ty="-5.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="0.85" y="-3.9"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="35" duration="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side Front">
+                  <matrix>
+                    <Matrix a="0.965927124023438" b="-0.258819580078125" c="0.258819580078125" d="0.965927124023438" tx="0.9" ty="-6.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="0.85" y="-3.9"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="38" duration="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side Front" selected="true">
+                  <matrix>
+                    <Matrix a="0.86602783203125" b="-0.5" c="0.5" d="0.86602783203125" tx="-1.1" ty="-9.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="0.95" y="-3.9"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="41" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side Front">
+                  <matrix>
+                    <Matrix tx="-7.9" ty="-8.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="0.9" y="-3.9"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" locked="true">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (none) Hurt Fall Back -1">
+                  <matrix>
+                    <Matrix a="-1" tx="12" ty="-32"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" duration="7" tweenType="motion" motionTweenRotate="counter-clockwise" motionTweenRotateTimes="1" keyMode="17921" acceleration="-60">
+              <elements>
+                <DOMBitmapInstance selected="true" libraryItemName="      Char/  BITS Mario/Mario (none) Hurt Fall Back -2">
+                  <matrix>
+                    <Matrix a="-1" tx="13.6" ty="-31.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="9" duration="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (none) Hurt Fall Back -2">
+                  <matrix>
+                    <Matrix a="-1" tx="13.6" ty="-31.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="12" duration="14" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Mario CLIPS/Mario Ground Pound Blur">
+                  <matrix>
+                    <Matrix tx="-3.65" ty="-13.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter blurX="0" blurY="0"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="26" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Mario CLIPS/Mario Ground Pound Blur">
+                  <matrix>
+                    <Matrix tx="-3.65" ty="-13.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter blurX="2" blurY="4"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="27" duration="3" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Mario CLIPS/Mario Ground Pound Blur">
+                  <matrix>
+                    <Matrix d="0.785720825195313" tx="-3.65" ty="-10.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="30" duration="5" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Mario CLIPS/Mario Ground Pound Blur">
+                  <matrix>
+                    <Matrix tx="-3.65" ty="-13.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="35" duration="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (none) Hurt Fall Back -3">
+                  <matrix>
+                    <Matrix a="-0.965927124023438" b="0.258819580078125" c="0.258819580078125" d="0.965927124023438" tx="1.5" ty="-30.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="38" duration="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (none) Hurt Fall Back -1">
+                  <matrix>
+                    <Matrix a="-0.965927124023438" b="0.258819580078125" c="0.258819580078125" d="0.965927124023438" tx="0.15" ty="-36.55"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="41" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (none) - Shaking Head - 2">
+                  <matrix>
+                    <Matrix a="-1" tx="2" ty="-32"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#FF4FFF">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side">
+                  <matrix>
+                    <Matrix tx="1.7" ty="-18.25"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-0.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" duration="7" tweenType="motion" motionTweenRotate="counter-clockwise" motionTweenRotateTimes="1" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side">
+                  <matrix>
+                    <Matrix a="0.965927124023438" b="0.258819580078125" c="-0.258819580078125" d="0.965927124023438" tx="1.65" ty="-21.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-1.6" y="6.65"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="9" duration="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side">
+                  <matrix>
+                    <Matrix ty="-22.4"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-1.6" y="6.65"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="12" duration="14" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side" selected="true">
+                  <matrix>
+                    <Matrix tx="-0.25" ty="-17.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-1.6" y="6.65"/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter blurX="0" blurY="0"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="26" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side">
+                  <matrix>
+                    <Matrix tx="-0.25" ty="-17.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-1.6" y="6.65"/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter blurX="0" blurY="7"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="27" duration="8" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side">
+                  <matrix>
+                    <Matrix tx="-0.25" ty="-17.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-1.6" y="6.65"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="35" duration="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side">
+                  <matrix>
+                    <Matrix a="0.965927124023438" b="-0.258819580078125" c="0.258819580078125" d="0.965927124023438" tx="-1.3" ty="-19.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-1.6" y="6.7"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="38" duration="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side" selected="true">
+                  <matrix>
+                    <Matrix a="0.86602783203125" b="-0.5" c="0.5" d="0.86602783203125" tx="-6.45" ty="-21.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-1.55" y="6.7"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="41" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side">
+                  <matrix>
+                    <Matrix tx="-6.75" ty="-21.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-1.55" y="6.7"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

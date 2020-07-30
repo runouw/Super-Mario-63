@@ -1,0 +1,59 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Cinema 2 Scene 3 50 Shine Sprites" itemID="492dc881-00000fe9" lastModified="1227737292" lastUniqueIdentifier="1">
+  <timeline>
+    <DOMTimeline name="Cinema 2 Scene 3 50 Shine Sprites">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[count = 0;
+starcount = 1;
+onEnterFrame = function () {
+	count++;
+	if (count%4) {
+		starcount++;
+		if (starcount<=50) {
+			this.attachMovie("Cinema2Scene3StarClip", "star"+this.getNextHighestDepth(), this.getNextHighestDepth(), {_x:0, _y:0});
+		}
+	}
+	if (count<2) {
+		starcount++;
+		if (starcount<=50) {
+			this.attachMovie("Cinema2Scene3StarClip", "star"+this.getNextHighestDepth(), this.getNextHighestDepth(), {_x:0, _y:0});
+		}
+		starcount++;
+		if (starcount<=50) {
+			this.attachMovie("Cinema2Scene3StarClip", "star"+this.getNextHighestDepth(), this.getNextHighestDepth(), {_x:0, _y:0});
+		}
+		starcount++;
+		if (starcount<=50) {
+			this.attachMovie("Cinema2Scene3StarClip", "star"+this.getNextHighestDepth(), this.getNextHighestDepth(), {_x:0, _y:0});
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Cinema 2 Scene 3 Star Clip">
+                  <matrix>
+                    <Matrix d="0.99957275390625"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

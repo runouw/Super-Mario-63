@@ -1,0 +1,399 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="   Enemies/Bosses/Kamek/Kamek Triangle Attack" itemID="477d480f-00000c92" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="KamekTriangleAttack" lastModified="1239411454" lastUniqueIdentifier="5">
+  <timeline>
+    <DOMTimeline name="Kamek Triangle Attack">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (rotation == undefined) {
+	rotation = 0;
+}
+if (rotspeed == undefined) {
+	if (random(2) == 1) {
+		rotspeed = Math.random()*8+12;
+	} else {
+		rotspeed = Math.random()*-8-12;
+	}
+}
+if (yspeed == undefined) {
+	yspeed = -4;
+}
+if (xspeed == undefined) {
+	xspeed = -6;
+}
+if (explodetype == undefined) {
+	explodetype = "small";
+}
+if (explodetimer == undefined) {
+	explodetimer = _root.framerate*3;
+}
+if (color == undefined) {
+	if (explodetype == "small") {
+		color = {ra:0, rb:0, ga:100, gb:0, ba:100, bb:0, aa:100, ab:0};
+	} else {
+		color = {ra:100, rb:0, ga:100, gb:0, ba:100, bb:0, aa:100, ab:0};
+	}
+}
+if (explodecolor == undefined) {
+	explodecolor = {ra:100, rb:0, ga:100, gb:0, ba:100, bb:0, aa:100, ab:0};
+}
+bouncecount = 0;
+count = 0;
+//                   
+myColor = new Color(this);
+colorTrans = new Object();
+colorTrans = color;
+myColor.setTransform(colorTrans);
+//
+_rotation = rotation;
+//
+if (xspeed == 0 && yspeed == 0) {
+	speed = 4+Math.random()*3;
+	xdiff = _root.Course.Char._x-(_x+_parent._x);
+	ydiff = _root.Course.Char._y-(_y+_parent._y);
+	rot = Math.atan2(ydiff, xdiff);
+	xspeed = Math.cos(rot)*speed;
+	yspeed = Math.sin(rot)*speed;
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		rotation += rotspeed;
+		_rotation = rotation;
+		_x += xspeed;
+		_y += yspeed;
+		if (this.body.hitTest(_root.Course.Char.charClip.body)) {
+			rotation = 0;
+			_rotation = 0;
+			myColor = new Color(this);
+			colorTrans = new Object();
+			colorTrans = explodecolor;
+			myColor.setTransform(colorTrans);
+			gotoAndStop(explodetype);
+		}
+		while ((_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+5)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.BPlatforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+5)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true))) {
+			_y--;
+			explode = true;
+			rotation = 0;
+			_rotation = 0;
+		}
+		while (_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y-5)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+			_y++;
+			explode = true;
+			rotation = 180;
+			_rotation = 180;
+		}
+		while (_root.Course.Platforms.hitTest(((_x+5)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+			_x--;
+			explode = true;
+			rotation = -90;
+			_rotation = -90;
+		}
+		while (_root.Course.Platforms.hitTest(((_x-5)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+			_x++;
+			explode = true;
+			rotation = 90;
+			_rotation = 90;
+		}
+		count++;
+		if (count>explodetimer || explode == true) {
+			myColor = new Color(this);
+			colorTrans = new Object();
+			colorTrans = explodecolor;
+			myColor.setTransform(colorTrans);
+			if (explodetype == "small" && explode == true) {
+				explodetype = "ground";
+			}
+			gotoAndStop(explodetype);
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Lineless Movieclip" name="body">
+                  <matrix>
+                    <Matrix a="0.106155395507813" d="0.106033325195313" ty="3.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-27.8"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" name="small" labelType="name" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[count = 0;
+_root.Course.Enemyhurt.attachMovie("EnemyHurtBox", "Box"+_root.Course.Enemyhurt.getNextHighestDepth(), _root.Course.Enemyhurt.getNextHighestDepth(), {_x:_x, _y:_y, _yscale:35, _xscale:35, time:10});
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		if (this.clip.body.hitTest(_root.Course.Char.charClip.body)) {
+			if (_root.Course.Char._x>_x+_parent._x) {
+				_root.MarioHit(1, 90, -3, 5, 7, "");
+			} else {
+				_root.MarioHit(1, 90, -3, -5, 7, "");
+			}
+		}
+		count++;
+		if (count>20) {
+			this.removeMovieClip(this);
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="3" name="large" labelType="name" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[count = 0;
+_root.Course.Enemyhurt.attachMovie("EnemyHurtBox", "Box"+_root.Course.Enemyhurt.getNextHighestDepth(), _root.Course.Enemyhurt.getNextHighestDepth(), {_x:_x, _y:_y, _yscale:100, _xscale:100, time:12});
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		if (this.clip.body.hitTest(_root.Course.Char.charClip.body)) {
+			if (_root.Course.Char._x>_x+_parent._x) {
+				_root.MarioHit(2, 90, -9, 9, 7, "");
+			} else {
+				_root.MarioHit(2, 90, -9, -9, 7, "");
+			}
+		}
+		count++;
+		if (count>20) {
+			this.removeMovieClip(this);
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="4" name="ground" labelType="name" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[count = 0;
+_root.Course.Enemyhurt.attachMovie("EnemyHurtBox", "Box"+_root.Course.Enemyhurt.getNextHighestDepth(), _root.Course.Enemyhurt.getNextHighestDepth(), {_x:_x, _y:_y-20, _yscale:50, _xscale:35, time:8, _rotation:_rotation});
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		if (this.clip.body.hitTest(_root.Course.Char.charClip.body)) {
+			if (_root.Course.Char._x>_x+_parent._x) {
+				_root.MarioHit(2, 90, -7, 5, 10, "Mario-Squish", true);
+			} else {
+				_root.MarioHit(2, 90, -7, -5, 10, "Mario-Squish", true);
+			}
+		}
+		count++;
+		if (count>20) {
+			this.removeMovieClip(this);
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="5" name="Goomba" labelType="name" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.Course.BackGFX.attachMovie("GoombaCode", "Goomba"+_root.Course.BackGFX.getNextHighestDepth(), _root.Course.BackGFX.getNextHighestDepth(), {_x:_x, _y:_y, battleArena:true, attached:true});
+count = 0
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		count++;
+		if (count>37) {
+			this.removeMovieClip(this);
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="6" name="Bobomb" labelType="name" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.Course.BackGFX.attachMovie("BombombCode", "Bombomb"+_root.Course.BackGFX.getNextHighestDepth(), _root.Course.BackGFX.getNextHighestDepth(), {_x:_x, _y:_y, battleArena:true, attached:true});
+count = 0
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		count++;
+		if (count>37) {
+			this.removeMovieClip(this);
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="7" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal" weight="2">
+                            <fill>
+                              <SolidColor color="#FF0000"/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge strokeStyle="1" edges="!118 -6|-105 -6.5!-105 -6.5|5 -188!5 -188|118 -6"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal" weight="2">
+                            <fill>
+                              <SolidColor color="#0000FF"/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge strokeStyle="1" edges="!187.5 6.5|187.5 186.5!187.5 186.5|7.5 186.5!7.5 186.5|7.5 6.5!7.5 6.5|187.5 6.5"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal" weight="2">
+                            <fill>
+                              <SolidColor color="#FFFF00"/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge strokeStyle="1" edges="!-34.5 32.5[-7.65625 #3B.39 -7.5 96.5!-7.5 96.5[-7.65625 #85.D6 -34.5 160!-34.5 160[#FFFFC3.96 #BA.98 -97.5 186.5!-97.5 186.5[#FFFF79.39 #BA.98 -161.5 160!-161.5 160[#FFFF44.77 #85.D6 -187.5 96.5!-187.5 96.5[#FFFF44.77 #3B.39 -161.5 32.5
+!-161.5 32.5[#FFFF79.39 #6.77 -97.5 6.5!-97.5 6.5[#FFFFC3.96 #6.77 -34.5 32.5"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Small Explosion" name="clip">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Nuke Explosion" name="clip">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="4" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Ground Explosion" name="clip">
+                  <matrix>
+                    <Matrix ty="-8"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="5" duration="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Other/Smoke Clip">
+                  <matrix>
+                    <Matrix tx="0.35" ty="0.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/ Other/Smoke Clip">
+                  <matrix>
+                    <Matrix a="0.707107543945313" b="-0.707107543945313" c="0.707107543945313" d="0.707107543945313" tx="4.35" ty="-1.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/ Other/Smoke Clip">
+                  <matrix>
+                    <Matrix a="0.965927124023438" b="0.258819580078125" c="-0.258819580078125" d="0.965927124023438" tx="2.35" ty="1.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	speed = 3
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/ Other/Smoke Clip">
+                  <matrix>
+                    <Matrix a="1.12162780761719" b="1.12164306640625" c="-1.12162780761719" d="1.12162780761719" tx="2.4" ty="1.4"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	speed = 6
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color alphaMultiplier="0.25"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

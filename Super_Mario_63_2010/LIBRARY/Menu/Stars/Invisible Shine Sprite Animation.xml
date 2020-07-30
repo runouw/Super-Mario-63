@@ -1,0 +1,381 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name=" Menu/ Stars/Invisible Shine Sprite Animation" itemID="458d637d-00000157" lastModified="1233625230" lastUniqueIdentifier="14">
+  <timeline>
+    <DOMTimeline name="Invisible Shine Sprite Animation">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="28" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.bgsong.stop();
+saveY = _root.Course.Char.yspeed;
+saveX = _root.Course.Char.xspeed;
+onEnterFrame = function () {
+	_root.Camcenter = _parent;
+	_root.playpause = true;
+	_root.PauseGame = false;
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="29" duration="19" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.bgSoundFX.stop();
+_root.bgSoundFX = new Sound();
+_root.bgSoundFX.attachSound("StarAppear");
+_root.bgSoundFX.start(0, 1);
+_root.bgSoundFX.setVolume(100);
+alphacount = 0;
+onEnterFrame = function () {
+	_root.playpause = true;
+	_root.Camcenter = _parent;
+	alphacount += 3;
+	alphacount = Math.min(alphacount, 100);
+	this.attachMovie("ChargeLight", "ChargeLight"+this.getNextHighestDepth(), this.getNextHighestDepth(), {_x:0, _y:0, _rotation:random(360), _alpha:alphacount});
+	_root.PauseGame = false;
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="48" duration="40" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="88" duration="18" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	_root.playpause = true;
+	_root.Camcenter = _parent;
+	alphacount -= 5;
+	alphacount = Math.min(alphacount, 100);
+	this.attachMovie("ChargeLight", "ChargeLight"+this.getNextHighestDepth(), this.getNextHighestDepth(), {_x:0, _y:0, _rotation:random(360), _alpha:alphacount});
+	_root.PauseGame = false;
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="106" duration="20" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	_root.playpause = true;
+	_root.Camcenter = _parent;
+	_root.PauseGame = false;
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="126" duration="13" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (_root.MuteBGMusic !== true) {
+	_root.PlayBGSong(_root.SongRepeat);
+	//_root.bgsong.start(0, 999);
+}
+// 
+onEnterFrame = function () {
+	_root.playpause = true;
+	_root.PauseGame = false;
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="139" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.playpause = false;
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		play();
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="140" duration="9" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.Course.Char.yspeed = saveY;
+_root.Course.Char.xspeed = saveX;
+if (_root.Course.Char.attack !== "Dive") {
+	_root.Course.Char.attack = false;
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="149" duration="10" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[//
+if (_root.Star[_parent.starnum] == true) {
+	if (_parent.alternateoldframe !== true) {
+		play();
+	} else {
+		_parent.gotoAndStop(1);
+		_parent._alpha = 50;
+	}
+} else {
+	_parent.gotoAndStop(1);
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="159" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_parent.gotoAndStop(1);]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#FF4FFF" locked="true">
+          <frames>
+            <DOMFrame index="0" duration="60" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="60" duration="46" tweenType="motion" motionTweenRotate="clockwise" motionTweenRotateTimes="1" keyMode="17921" acceleration="-80">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Light Effects Folder/Shine Light Effect">
+                  <matrix>
+                    <Matrix a="0.399993896484375" d="0.399993896484375" tx="-0.05" ty="-0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="106" duration="43" tweenType="motion" keyMode="17921" acceleration="-20">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Light Effects Folder/Shine Light Effect" selected="true">
+                  <matrix>
+                    <Matrix a="1.5999755859375" d="1.5999755859375" tx="-0.05" ty="-0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="149" duration="10" tweenType="motion" motionTweenRotate="clockwise" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Light Effects Folder/Shine Light Effect">
+                  <matrix>
+                    <Matrix a="0" b="1.5999755859375" c="-1.5999755859375" d="0" tx="-0.05" ty="-0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="159" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Light Effects Folder/Shine Light Effect">
+                  <matrix>
+                    <Matrix a="-1" d="-1" tx="-0.05" ty="-0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.30078125" redMultiplier="0" blueMultiplier="0" greenMultiplier="0" blueOffset="214" greenOffset="35"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" locked="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/ Stars/Invis Star Clip">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.1484375"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" duration="47" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/ Stars/Invis Star Clip">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.1484375"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="48" duration="40" tweenType="motion" keyMode="17921" acceleration="50">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/ Stars/Invis Star Clip">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.1484375"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="88" duration="18" tweenType="motion" keyMode="17921" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/ Stars/Invis Star Clip">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.03125"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="106" duration="43" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/ Stars/Invis Star Clip" selected="true">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="149" duration="10" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Starry Stuff/Shine Sprite Clip (no Code)">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="159" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Starry Stuff/Shine Sprite Clip (no Code)">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="47" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Starry Stuff/Shine Sprite Clip (no Code)">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="48" duration="40" tweenType="motion" keyMode="17921" acceleration="50">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Starry Stuff/Shine Sprite Clip (no Code)">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter blurX="0" blurY="0" strength="0"/>
+                  </filters>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="88" duration="18" tweenType="motion" keyMode="17921" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Starry Stuff/Shine Sprite Clip (no Code)">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter blurX="0" blurY="0" color="#FFCC00" strength="0"/>
+                  </filters>
+                  <color>
+                    <Color alphaMultiplier="0.58203125"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="106" duration="13" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Starry Stuff/Shine Sprite Clip (no Code)">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter blurX="12" blurY="12" color="#FFFF00" strength="2"/>
+                  </filters>
+                  <color>
+                    <Color/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="119" duration="30" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Starry Stuff/Shine Sprite Clip (no Code)">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter blurX="0" blurY="0" color="#FFCC00" strength="0"/>
+                  </filters>
+                  <color>
+                    <Color/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="149" duration="11" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Starry Stuff/Shine Sprite Blue 2">
+                  <matrix>
+                    <Matrix tx="-13.5" ty="-16"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

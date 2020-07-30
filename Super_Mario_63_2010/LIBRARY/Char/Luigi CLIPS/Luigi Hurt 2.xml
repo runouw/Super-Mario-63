@@ -1,0 +1,633 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="      Char/  Luigi CLIPS/Luigi Hurt 2" itemID="4755f9cc-00000c0d" lastModified="1209357376" lastUniqueIdentifier="1">
+  <timeline>
+    <DOMTimeline name="Luigi Hurt 2">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		if (_root.Course.Char.hitwall == true) {
+			xspeed = 0;
+			yspeed = -_root.gravity;
+		}
+		play();
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (_root.Course.Char.hitwall !== true) {
+	_root.Course.Char.hitwall = false;
+	gotoAndPlay("afterwall");
+} else {
+	_root.Course.Char.hitwall = false;
+	onEnterFrame = function () {
+		if (_root.PauseGame == false) {
+			xspeed = 0;
+			yspeed = -_root.gravity;
+			play();
+		} else {
+			stop();
+		}
+	};
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" duration="8" name="wall" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="10" duration="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[tellTarget (_root.Course.Char) {
+	yspeed = -4;
+	if (_xscale>0) {
+		xspeed = 5;
+	} else {
+		xspeed = -5;
+	}
+}
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		play();
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="12" duration="2" name="afterwall" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="14" duration="8" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		if (_root.Course.Char.air == false  || _root.Course.Char.Water == true) {
+			play();
+			onEnterFrame = function () {
+				if (_root.PauseGame == false) {
+					play();
+				} else {
+					stop();
+				}
+			};
+		}
+	}
+	stop();
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="22" duration="9" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+if (_root.CharHP>0) {
+	onEnterFrame = function () {
+		stop();
+		if (_root.PauseGame == false) {
+			if (_root.KeyUP() || _root.KeyRIGHT() || _root.KeyLEFT() || _root.KeyDOWN() || _root.KeySPACE()) {
+				play();
+				onEnterFrame = function () {
+					if (_root.PauseGame == false) {
+						play();
+					} else {
+						stop();
+					}
+				};
+			}
+		} else {
+		}
+	};
+} else {
+	gotoAndPlay("end");
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="31" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.Course.Char.attack = false;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="32" duration="8" name="end" labelType="name" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.bgsong.stop();
+onEnterFrame = function () {
+	play();
+	_root.PauseGame = false;
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="40" duration="28" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.Mariosound = new Sound(this);
+randomnum = random(2)+1;
+_root.Mariosound.attachSound("Luigi - Mamamia"+randomnum);
+_root.Mariosound.start(0, 1);
+_root.Mariosound.setVolume(_root.MarioVolume);
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="68" duration="12" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.Blackout();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="80" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.LifeLost();
+onEnterFrame = null;
+stop();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side Front">
+                  <matrix>
+                    <Matrix tx="0.35" ty="-8"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" duration="4" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side Front">
+                  <matrix>
+                    <Matrix a="0.841598510742188" tx="-5.35" ty="-7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="6" duration="3" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side Front">
+                  <matrix>
+                    <Matrix a="0.445556640625" tx="-6.5" ty="-7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="9" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side Front">
+                  <matrix>
+                    <Matrix a="0.920806884765625" tx="-5.5" ty="-7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="10" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side Front">
+                  <matrix>
+                    <Matrix tx="-1.65" ty="-7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="12" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side Front">
+                  <matrix>
+                    <Matrix tx="1.35" ty="-6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="14" duration="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side Front">
+                  <matrix>
+                    <Matrix tx="0.35" ty="-3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="17" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side Front">
+                  <matrix>
+                    <Matrix a="0.86602783203125" b="0.5" c="-0.5" d="0.86602783203125" tx="-1.8" ty="-1.4"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="19" duration="5" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side Front">
+                  <matrix>
+                    <Matrix a="0" b="1" c="-1" d="0" tx="-6.65" ty="-5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="24" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side Front">
+                  <matrix>
+                    <Matrix a="0.86602783203125" b="0.5" c="-0.5" d="0.86602783203125" tx="-3.8" ty="-1.4"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="26" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side Front">
+                  <matrix>
+                    <Matrix a="0.965927124023438" b="-0.258819580078125" c="0.258819580078125" d="0.965927124023438" tx="2.35" ty="-6.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="28" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side Front">
+                  <matrix>
+                    <Matrix a="0.965927124023438" b="-0.258819580078125" c="0.258819580078125" d="0.965927124023438" tx="0.2" ty="-9.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="30" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side Front">
+                  <matrix>
+                    <Matrix tx="-1.65" ty="-9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="32" duration="49" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side Front">
+                  <matrix>
+                    <Matrix a="0" b="1" c="-1" d="0" tx="-6.65" ty="-5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  Luigi CLIPS/ Luigi BITs/Luigi (None) - Hurt 1 - 2">
+                  <matrix>
+                    <Matrix a="-1" tx="11" ty="-32.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" duration="4" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  Luigi CLIPS/ Luigi BITs/Luigi (None) - Hit Wall - 1">
+                  <matrix>
+                    <Matrix a="-1.23188781738281" tx="0.65" ty="-35.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="6" duration="3" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  Luigi CLIPS/ Luigi BITs/Luigi (None) - Hit Wall - 1">
+                  <matrix>
+                    <Matrix a="-0.652175903320313" tx="-3.35" ty="-35.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="9" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  Luigi CLIPS/ Luigi BITs/Luigi (None) - Hit Wall - 1">
+                  <matrix>
+                    <Matrix a="-1.34782409667969" tx="1.05" ty="-35.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="10" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  Luigi CLIPS/ Luigi BITs/Luigi (None) - Hit Wall - 2">
+                  <matrix>
+                    <Matrix a="-1" tx="4.85" ty="-35.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="12" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  Luigi CLIPS/ Luigi BITs/Luigi (None) - Hurt 1 - 3">
+                  <matrix>
+                    <Matrix a="-1" tx="10.35" ty="-31.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="14" duration="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  Luigi CLIPS/ Luigi BITs/Luigi (None) - Hurt 1 - 4">
+                  <matrix>
+                    <Matrix a="-1" tx="12.35" ty="-29.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="17" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  Luigi CLIPS/ Luigi BITs/Luigi (None) - Hurt 1 - 4">
+                  <matrix>
+                    <Matrix a="-0.965927124023438" b="-0.258819580078125" c="-0.258819580078125" d="0.965927124023438" tx="15.25" ty="-23.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="19" duration="5" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  Luigi CLIPS/ Luigi BITs/Luigi (None) - Faint - 1">
+                  <matrix>
+                    <Matrix a="0" b="1" c="-1" d="0" tx="19.5" ty="-10"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="24" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  Luigi CLIPS/ Luigi BITs/Luigi (None) - Hurt 1 - 4">
+                  <matrix>
+                    <Matrix a="-0.965927124023438" b="-0.258819580078125" c="-0.258819580078125" d="0.965927124023438" tx="15.25" ty="-23.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="26" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  Luigi CLIPS/ Luigi BITs/Luigi (None) - Hurt 1 - 4">
+                  <matrix>
+                    <Matrix a="-0.965927124023438" b="0.258819580078125" c="0.258819580078125" d="0.965927124023438" tx="7.95" ty="-33.95"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="28" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  Luigi CLIPS/ Luigi BITs/Luigi (None) - Hurt 1 - 3">
+                  <matrix>
+                    <Matrix a="-0.965927124023438" b="0.258819580078125" c="0.258819580078125" d="0.965927124023438" tx="2" ty="-38.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="30" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  Luigi CLIPS/ Luigi BITs/Overworld - Luigi 3 - 1">
+                  <matrix>
+                    <Matrix a="-1" tx="7.5" ty="-35"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="32" duration="49" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  Luigi CLIPS/ Luigi BITs/Luigi (None) - Faint - 1">
+                  <matrix>
+                    <Matrix a="0" b="1" c="-1" d="0" tx="19.5" ty="-10"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#FF4FFF">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side">
+                  <matrix>
+                    <Matrix tx="2.35" ty="-18.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-0.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" duration="4" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side">
+                  <matrix>
+                    <Matrix a="0.841598510742188" tx="-3.7" ty="-17.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-0.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="6" duration="3" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side">
+                  <matrix>
+                    <Matrix a="0.445556640625" tx="-5.65" ty="-17.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-0.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="9" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side">
+                  <matrix>
+                    <Matrix a="0.920806884765625" tx="-3.65" ty="-17.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-0.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="10" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side">
+                  <matrix>
+                    <Matrix tx="0.35" ty="-17.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-0.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="12" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side">
+                  <matrix>
+                    <Matrix tx="3.35" ty="-16.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-0.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="14" duration="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side">
+                  <matrix>
+                    <Matrix tx="2.35" ty="-13.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-0.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="17" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side">
+                  <matrix>
+                    <Matrix a="0.86602783203125" b="0.5" c="-0.5" d="0.86602783203125" tx="5.25" ty="-9.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-0.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="19" duration="5" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side">
+                  <matrix>
+                    <Matrix a="0" b="1" c="-1" d="0" tx="8.3" ty="-0.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-0.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="24" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side">
+                  <matrix>
+                    <Matrix a="0.86602783203125" b="0.5" c="-0.5" d="0.86602783203125" tx="3.25" ty="-9.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-0.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="26" duration="4" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side">
+                  <matrix>
+                    <Matrix a="0.965927124023438" b="-0.258819580078125" c="0.258819580078125" d="0.965927124023438" tx="-0.6" ty="-20.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-0.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="30" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side">
+                  <matrix>
+                    <Matrix tx="0.35" ty="-19.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-0.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="32" duration="49" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side">
+                  <matrix>
+                    <Matrix a="0" b="1" c="-1" d="0" tx="8.3" ty="-0.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-0.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

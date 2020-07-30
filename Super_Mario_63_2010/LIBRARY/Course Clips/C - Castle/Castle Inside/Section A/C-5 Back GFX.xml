@@ -1,0 +1,315 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Clips/ C - Castle/Castle Inside/ Section A/C-5 Back GFX" itemID="45fbfe07-0000040e" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="C-5BackGFX" lastModified="1245867584" lastUniqueIdentifier="11">
+  <timeline>
+    <DOMTimeline name="C-5 Back GFX">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" outline="true" current="true" isSelected="true" useOutlineView="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.warpframe = false;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+onEnterFrame = function () {
+	if (this.box.hitTest(_root.Course.Char.charClip.feet) && _root.Course.Char.air == false) {
+		_root.Course.Platforms.trapdoor.play();
+		_root.Course.BackGFX.trapdoorgfx.play();
+	}
+	if (this.warp1.hitTest(_root.Course.Char.charClip.feet)) {
+		_root.Course.Char.attack = true;
+		_root.Course.Char.xspeed = 0;
+		_root.Course.Char.yspeed = 0;
+		_root.Course.Char.attackFrame = "none";
+		warp = true;
+		warpnum = 1;
+	}
+		if (this.warp2.hitTest(_root.Course.Char.charClip.feet)) {
+		_root.Course.Char.attack = true;
+		_root.Course.Char.xspeed = 0;
+		_root.Course.Char.yspeed = 0;
+		_root.Course.Char.attackFrame = "none";
+		warp = true;
+		warpnum = 2;
+	}
+	if (warp == true && _root.warpframe == false) {
+		if (warpnum == 1) {
+			_root.attachMovie("downtransition", "downtransition"+_root.getNextHighestDepth(), _root.getNextHighestDepth(), {_x:_root.screensizeX/2, _y:_root.screensizeY/2});
+		}
+		if (warpnum == 2) {
+			_root.attachMovie("lefttransition", "lefttransition"+_root.getNextHighestDepth(), _root.getNextHighestDepth(), {_x:_root.screensizeX/2, _y:_root.screensizeY/2});
+		}
+	}
+	if (_root.warpframe == true) {
+		if (warpnum == 1) {
+			_root.Fluddpow = ""
+			_root.StopBGsong();
+			_root.Restartcoins();
+			//_root.Playinglevel = ""
+			_root.changecourse("downtransition2", "8-E2-1", 0, 0, 0, 0, true);
+		}
+		if (warpnum == 2) {
+			_root.changecourse("lefttransition2", "C-4-SC1", 350, -170, 350, -170);
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="box" selected="true">
+                  <matrix>
+                    <Matrix a="1.94338989257813" tx="-453.6" ty="11.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="warp1" selected="true">
+                  <matrix>
+                    <Matrix a="5.03446960449219" d="7.25" tx="-455.6" ty="235.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="warp2" selected="true">
+                  <matrix>
+                    <Matrix a="1.56735229492188" d="15.2250518798828" tx="-666.4" ty="-256.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Castle Constructors/Castle Wall 2" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="19.9993896484375" d="-19.9960327148438" tx="231.8" ty="-83"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal">
+                            <fill>
+                              <SolidColor/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge fillStyle0="1" edges="!700 128|700 -4627"/>
+                        <Edge fillStyle0="1" strokeStyle="1" edges="!700 -4627|-11095 -4627"/>
+                        <Edge fillStyle0="1" edges="!-11095 -4627|-11095 128"/>
+                        <Edge fillStyle0="1" strokeStyle="1" edges="!-11095 128|700 128"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Castle Constructors/Castle Carpet" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="-613.25" ty="-176.9"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal">
+                            <fill>
+                              <SolidColor/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="!-7050 148|848 128!848 128|848 262!848 262|-7050 282"/>
+                        <Edge fillStyle1="1" edges="!-7050 282|-7050 148"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Castle Constructors/Castle Pillar" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="30" d="-30" tx="35" ty="12.4"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="2">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Castle Constructors/Castle Pillar" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="30" d="30" tx="35" ty="-147.2"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="3">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Castle Constructors/Castle Pillar" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="30" d="-30" tx="35" ty="-69"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="4">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Castle Constructors/Castle Pillar" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="30" d="30" tx="35" ty="-230.5"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="4" edges="!700 -2976|700 -4610!700 -4610|1660 -4610!1660 -4610|1660 -2976"/>
+                        <Edge fillStyle1="3" edges="!1660 -2976|1660 -2162"/>
+                        <Edge fillStyle1="2" edges="!1660 -2162|1660 -1348"/>
+                        <Edge fillStyle1="1" edges="!1660 -1348|1660 248!1660 248|700 248!700 248|700 -1348"/>
+                        <Edge fillStyle1="2" edges="!700 -1348|700 -2162"/>
+                        <Edge fillStyle1="3" edges="!700 -2162|700 -2976"/>
+                        <Edge fillStyle0="1" fillStyle1="2" edges="!1660 -1348|700 -1348"/>
+                        <Edge fillStyle0="3" fillStyle1="2" edges="!700 -2162|1660 -2162"/>
+                        <Edge fillStyle0="3" fillStyle1="4" edges="!1660 -2976|700 -2976"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Star Door">
+                  <matrix>
+                    <Matrix a="0.751068115234375" d="0.751068115234375" tx="-0.5" ty="-11.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "C-1-8";
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Castle Constructors/Castle Pillar" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="30" d="30" tx="-601" ty="-230.5"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="2">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Castle Constructors/Castle Pillar" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="30" d="-30" tx="-601" ty="-69"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="3">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Castle Constructors/Castle Pillar" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="30" d="30" tx="-601" ty="-147.2"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="4">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Castle Constructors/Castle Pillar" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="30" d="-30" tx="-601" ty="12.4"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="!-12020 -2976|-12020 -4610!-12020 -4610|-11060 -4610!-11060 -4610|-11060 -2976"/>
+                        <Edge fillStyle1="2" edges="!-11060 -2976|-11060 -2162"/>
+                        <Edge fillStyle1="3" edges="!-11060 -2162|-11060 -1348"/>
+                        <Edge fillStyle1="4" edges="!-11060 -1348|-11060 248!-11060 248|-12020 248!-12020 248|-12020 -1348"/>
+                        <Edge fillStyle1="3" edges="!-12020 -1348|-12020 -2162"/>
+                        <Edge fillStyle1="2" edges="!-12020 -2162|-12020 -2976"/>
+                        <Edge fillStyle0="2" fillStyle1="3" edges="!-12020 -2162|-11060 -2162"/>
+                        <Edge fillStyle0="4" fillStyle1="3" edges="!-11060 -1348|-12020 -1348"/>
+                        <Edge fillStyle0="2" fillStyle1="1" edges="!-11060 -2976|-12020 -2976"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ C - Castle/Castle Inside/ Section A/C-5 Trap Door" name="trapdoorgfx">
+                  <matrix>
+                    <Matrix tx="-453.5" ty="10.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ C - Castle/ Paintings/Peach to Bowser Picture">
+                  <matrix>
+                    <Matrix tx="-453.95" ty="-86.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ 8 - Storyline Stars/ 8 - Bowser's Trap/Bowser Key">
+                  <matrix>
+                    <Matrix tx="727.85" ty="166.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	key = "BowserKeyA";
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

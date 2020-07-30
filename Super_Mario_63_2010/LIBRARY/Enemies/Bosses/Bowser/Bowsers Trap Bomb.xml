@@ -1,0 +1,121 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="   Enemies/Bosses/Bowser/Bowsers Trap Bomb" itemID="470d1f12-00000a06" lastModified="1237177583" lastUniqueIdentifier="4">
+  <timeline>
+    <DOMTimeline name="Bowsers Trap Bomb">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+count = 0;
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		if (count>3) {
+			if (this.body.hitTest(_root.Course.Char.charClip.body)) {
+				nextFrame();
+			}
+		} else {
+			count++;
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" name="large" labelType="name" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+count = 0;
+bomb.Explode();
+//
+soundclip = new Sound(this);
+soundclip.attachSound("Explosion");
+soundclip.start(0, 1);
+soundclip.setVolume(_root.MarioVolume);
+//
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		if (this.clip.body.hitTest(_root.Course.Char.charClip.body)) {
+			if (scale>0) {
+				_root.MarioHit(2, 90, -9, 9, 7, "Mario-Squish", true);
+			} else {
+				_root.MarioHit(2, 90, -9, -9, 7, "Mario-Squish", true);
+			}
+		}
+		count++;
+		if (count>30) {
+			gotoAndStop(1);
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC" outline="true" useOutlineView="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="body">
+                  <matrix>
+                    <Matrix a="0.7542724609375" d="3.12420654296875" tx="-0.6" ty="-2.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Nuke Explosion" name="clip">
+                  <matrix>
+                    <Matrix ty="0.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#FF4FFF">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Bowser Bomb GFX" name="bomb">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

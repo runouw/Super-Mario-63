@@ -1,0 +1,336 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="   Enemies/Normal/ A-F/ Cheep Cheeps/Cheep Cheep Code" itemID="47e53577-00000eaf" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="CheepCheepCode" sourceFlashFilepath="Rob &amp; Steve Hewitt\My Documents\Super Mario 63\Aquatic Enemy Tests.fla" sourceLibraryItemHRef="Cheep Cheep Code" sourceLastModified="1206729188" lastModified="1237825272" lastUniqueIdentifier="2" sourceItemID="47e53577-00000eaf">
+  <timeline>
+    <DOMTimeline name="Cheep Cheep Code">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" locked="true" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (turncount == undefined) {
+	turncount = 96;
+}
+if (idlespeed == undefined) {
+	idlespeed = 2;
+}
+if (chasespeed == undefined) {
+	chasespeed = 0.5;
+}
+if (hungry == undefined) {
+	hungry = true;
+}
+if (scale == undefined) {
+	scale = 1;
+}
+wide = 9;
+tall = 8;
+_xscale = scale*100;
+_yscale = scale*100;
+restartvars = function () {
+	// 
+	stopchasing = 0;
+	chase = false;
+	xspeed = 0;
+	yspeed = 0;
+	Direction = 1;
+	count = random(96)+1;
+	frame = "swim";
+	clip.gotoAndStop(frame);
+	clip.frame.gotoAndPlay(random(19)+1);
+};
+restartvars();
+saveY = _y;
+saveX = _x;
+//
+if (attached !== true) {
+	if (_root.Course.coincountnum == undefined) {
+		_root.Course.coincountnum = 0;
+	} else {
+		_root.Course.coincountnum++;
+	}
+	if (_root["coindata"+_root.playingcourse][0] == undefined) {
+		_root["coindata"+_root.playingcourse] = [""];
+	}
+	coinnum = _root.Course.coincountnum;
+	if (_root["coindata"+_root.playingcourse][coinnum] == 1 && _root["coindata"+_root.playingcourse][coinnum] !== undefined) {
+		//gotoAndStop("end");
+	}
+}
+//    
+HitTest = function (ground, X, Y) {
+	if (_root.Course[ground].hitTest(((X)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((Y)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.BPlatforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+		return (true);
+	} else {
+		return (false);
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+onEnterFrame = function () {
+	if ((_root.PauseGame == false && Math.abs((_root.currentCamX)-(_x+_parent._x))<600 && Math.abs((_root.currentCamY)-(_y+_parent._y))<600) || battleArena == true) {
+		if (frame !== "spin" && frame !== "gone") {
+			distance = Math.sqrt(Math.pow(_root.Course.Char._y-(_y+_parent._y), 2)+Math.pow(_root.Course.Char._x-(_x+_parent._x), 2));
+			if (stopchasing>0) {
+				stopchasing--;
+			}
+			if (HitTest("Water", _x, _y)) {
+				if (lastframewater == false) {
+					frame = "swim";
+				}
+				lastframewater = true;
+				if (chase == false) {
+					_rotation *= 0.7;
+					count++;
+					if (count>turncount) {
+						count = 0;
+						frame = "turn";
+						_xscale *= -1;
+					}
+					if (_xscale<0) {
+						xspeed += (idlespeed-xspeed)/7;
+					} else {
+						xspeed += (-idlespeed-xspeed)/7;
+					}
+					if (distance<80*scale && hungry == true && stopchasing<=0 && _root.playpause == false) {
+						chase = true;
+					}
+				} else {
+					frame = "chase";
+					rot = _root.radiansToAngle(Math.atan2((_root.Course.Char._y-(_y+_parent._y)), (_root.Course.Char._x-(_x+_parent._x))))-180;
+					if (_root.Course.Char._x-(_x+_parent._x)>0) {
+						if (_xscale>0) {
+							_rotation += 180;
+							_xscale *= -1;
+						}
+						rot += 180;
+					} else {
+						if (_xscale<0) {
+							_rotation += 180;
+							_xscale *= -1;
+						}
+					}
+					while (rot>180) {
+						rot -= 360;
+					}
+					while (rot<-180) {
+						rot += 360;
+					}
+					rotspeed = -(_rotation-rot)/3;
+					//rotspeed = Math.max(rotspeed, -3);
+					//rotspeed = Math.min(rotspeed, 3);
+					_rotation += rotspeed;
+					if (_xscale>0) {
+						xspeed -= Math.cos(_root.angleToRadians(_rotation))*chasespeed;
+						yspeed -= Math.sin(_root.angleToRadians(_rotation))*chasespeed;
+					} else {
+						xspeed += Math.cos(_root.angleToRadians(_rotation))*chasespeed;
+						yspeed += Math.sin(_root.angleToRadians(_rotation))*chasespeed;
+					}
+					if (distance>100*scale || _root.playpause == true || stopchasing>0 || _root.playpause == true) {
+						chase = false;
+						frame = "swim";
+					}
+				}
+				xspeed *= 0.7;
+				yspeed *= 0.7;
+			} else {
+				// out of water
+				if (chase == true && lastframewater == true) {
+					xspeed *= 2;
+					_rotation = 0;
+					yspeed = -11;
+					frame = "jump";
+				}
+				lastframewater = false;
+				yspeed += _root.gravity;
+			}
+			//
+			mariowater = this.body.hitTest(_root.Course.Char.charClip.water) || this.body.hitTest(_root.Course.Char.charClip.frame.water);
+			marioinvincible = ((_root.Course.Char.attackFrame == "Dive" && _root.Course.Char.attack == true && Math.abs(_root.Course.Char.xspeed)>0.3) || (Math.abs(_root.Course.Char.xspeed)>7 && _root.KeySPACE() && _root.Power>=100 && _root.WaterAmount>0 && _root.Fluddpow == "T"));
+			if (this.body.hitTest(_root.Course.Char.charClip.body) && marioinvincible) {
+				xspeed += _root.Course.Char.xspeed;
+				yspeed += _root.Course.Char.yspeed-5;
+				frame = "spin";
+				spinspeed = Math.abs(_root.Course.Char.xspeed);
+				spincount = 0;
+			}
+			// enemy hurt                           
+			if (_root.Course.Enemyhurt.hitTest(((_x-wide)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, (((_y-(tall/2)))*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) && _root.Course.Enemyhurt.hitTest(((_x+wide)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, (((_y-(tall/2)))*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+				yspeed -= Math.abs((7)/5)/scale;
+				xspeed += (((Math.random()*4-2)-(xspeed/1.5)))/scale;
+				frame = "spin";
+				spinspeed = Math.abs(_root.Course.Char.xspeed);
+				spincount = 0;
+			} else {
+				if (_root.Course.Enemyhurt.hitTest(((_x-wide)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, (((_y-(tall/2)))*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+					yspeed -= Math.abs((7)/5)/scale;
+					xspeed += Math.max((((5)-(xspeed/1.5)))/scale, 0);
+					frame = "spin";
+					spinspeed = Math.abs(_root.Course.Char.xspeed);
+					spincount = 0;
+				}
+				if (_root.Course.Enemyhurt.hitTest(((_x+wide)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, (((_y-(tall/2)))*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+					yspeed -= Math.abs((7)/5)/scale;
+					xspeed += Math.min((((-5)-(xspeed/1.5)))/scale, 0);
+					frame = "spin";
+					spinspeed = Math.abs(_root.Course.Char.xspeed);
+					spincount = 0;
+				}
+				if (mariowater) {
+					frame = "spin";
+					spinspeed = Math.abs(_root.Course.Char.xspeed);
+					spincount = 0;
+					//
+					yspeed -= 1.5/scale;
+					if (_root.Course.Char.attackFrame == "Spin" && _root.Course.Char.attack == true) {
+						if (_root.Course.Char._x>_x+_parent._x) {
+							xspeed *= 0.7;
+							xspeed -= 20/scale;
+						} else {
+							xspeed *= 0.7;
+							xspeed += 20/scale;
+						}
+					} else {
+						if (_root.Course.Char._xscale>0) {
+							if (_root.Fluddpow == "T" || (_root.Fluddpow == "H" && _root.Course.Char.attackFrame == "Dive" && _root.Course.Char.attack == true)) {
+								xspeed *= 0.9;
+								xspeed += 6/scale;
+							} else {
+								xspeed *= 0.9;
+								xspeed -= 3/scale;
+							}
+						} else {
+							if (_root.Fluddpow == "T" || (_root.Fluddpow == "H" && _root.Course.Char.attackFrame == "Dive" && _root.Course.Char.attack == true)) {
+								xspeed *= 0.9;
+								xspeed -= 6/scale;
+							} else {
+								xspeed *= 0.9;
+								xspeed += 3/scale;
+							}
+						}
+					}
+				}
+				if (this.body.hitTest(_root.Course.Char.charClip.body) && !marioinvincible && frame !== "spin" && frame !== "gone") {
+					stopchasing = 32;
+					if (_root.Course.Char._x>_x+_parent._x) {
+						_root.MarioHit(1, 90, -5, 7, 7, "");
+					} else {
+						_root.MarioHit(1, 90, -5, -7, 7, "");
+					}
+				}
+			}
+		} else {
+			if (frame == "spin") {
+				//Spinning
+				xspeed *= 0.85;
+				yspeed *= 0.85;
+				spincount++;
+				clip.frame._rotation += spinspeed*6;
+				if (spincount>16) {
+					frame = "gone";
+				}
+			} else {
+				// gone
+				if ((Math.abs((_root.currentCamX)-(_x+_parent._x))>600 || Math.abs((_root.currentCamY)-(_y+_parent._y))>600) && (Math.abs((_root.currentCamX)-(saveX+_parent._x))>600 || Math.abs((_root.currentCamY)-(saveY+_parent._y))>600)) {
+					_y = saveY;
+					_x = saveX;
+					//
+					restartvars();
+					//
+				}
+			}
+		}
+		//  
+		if (HitTest("Platforms", _x, _y+tall*scale)) {
+			while (HitTest("Platforms", _x, _y+tall*scale-1)) {
+				_y--;
+			}
+			if (lastframewater == false) {
+				yspeed = -4;
+				xspeed *= -0.5;
+				xspeed += Math.random()*4-2;
+				if (frame !== "gone" && frame !== "spin") {
+					frame = "swim";
+				}
+				if (xspeed<0 && _xscale<0) {
+					_xscale *= -1;
+				}
+				if (xspeed>0 && _xscale>0) {
+					_xscale *= -1;
+				}
+			} else {
+				yspeed = -yspeed*0.7;
+			}
+		}
+		if (HitTest("Platforms", _x, _y-tall*scale)) {
+			while (HitTest("Platforms", _x, _y-tall*scale)) {
+				_y++;
+			}
+			yspeed = -yspeed*0.7;
+		}
+		if (HitTest("Platforms", _x+wide*scale, _y)) {
+			while (HitTest("Platforms", _x+wide*scale, _y)) {
+				_x--;
+			}
+			xspeed = -xspeed*0.7;
+		}
+		if (HitTest("Platforms", _x-wide*scale, _y)) {
+			while (HitTest("Platforms", _x-wide*scale, _y)) {
+				_x++;
+			}
+			xspeed = -xspeed*0.7;
+		}
+		_x += xspeed;
+		_y += yspeed;
+		clip.gotoAndStop(frame);
+	} else {
+		if (frame == "gone") {
+			if ((Math.abs((_root.currentCamX)-(_x+_parent._x))>600 || Math.abs((_root.currentCamY)-(_y+_parent._y))>600) && (Math.abs((_root.currentCamX)-(saveX+_parent._x))>600 || Math.abs((_root.currentCamY)-(saveY+_parent._y))>600)) {
+				_y = saveY;
+				_x = saveX;
+				//
+				restartvars();
+				//
+			}
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Lineless Movieclip" name="body" selected="true">
+                  <matrix>
+                    <Matrix a="0.265380859375" d="0.26507568359375" ty="7.4"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-27.9"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ A-F/ Cheep Cheeps/Cheep Cheep Clip" name="clip">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

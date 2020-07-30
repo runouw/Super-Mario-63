@@ -1,0 +1,117 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name=" Menu/Menu Folder/ Options/Menu-Options Button" itemID="47772f35-00000de3" sourceFlashFilepath="Rob &amp; Steve Hewitt\My Documents\Super Mario 63\Menu Design.fla" sourceLibraryItemHRef="Menu Folder/ Options/Menu-Options Button" sourceLastModified="1199079368" lastModified="1199079368" lastUniqueIdentifier="2" sourceItemID="47772f35-00000de3">
+  <timeline>
+    <DOMTimeline name="Menu-Options Button">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[ywave = random(90);
+rwave = random(90);
+Y = this._y;
+R = _rotation;
+r = 0;
+onEnterFrame = function () {
+	if (bg.hitTest(_root._xmouse, _root._ymouse, true) && _parent.clicked !== true) {
+		hl = true;
+	} else {
+		hl = false;
+	}
+	if (cl == true) {
+		rspeed += 1;
+		r += rspeed;
+		rspeed *= 0.95;
+		this._xscale += scalespeed;
+		scalespeed -= 1;
+		if (this._xscale<60) {
+			scalespeed += 1;
+			scalespeed *= 0.7;
+		}
+	}
+	if (hl == true && cl !== true) {
+		this._xscale += (125-this._xscale)/4;
+		r -= (125-this._xscale)/10;
+		txt._xscale += (120-txt._xscale)/5;
+		txt._yscale += (130-txt._yscale)/4;
+		ywave -= 0.025;
+	} else if (cl !== true) {
+		this._xscale += (100-this._xscale)/4;
+		r -= (100-this._xscale)/10;
+		txt._xscale += (100-txt._xscale)/5;
+		txt._yscale += (100-txt._yscale)/4;
+	}
+	//     
+	this._yscale = this._xscale;
+	//
+	ywave += 0.025;
+	rwave += 0.025;
+	this._y = Y+Math.sin(ywave)*5;
+	this._rotation = R+r+Math.sin(rwave)*_xscale/20;
+};
+onMouseDown = function () {
+	if (hl == true && cl !== true && _parent.clicked !== true) {
+		cl = true;
+		rspeed = 0;
+		scalespeed = 8;
+		_parent.clicked = true;
+		_parent.TransitionF("Options");
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Menu Folder/ Options/Menu- Options Button 2" name="txt">
+                  <matrix>
+                    <Matrix tx="0.05" ty="0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-0.05" y="-0.05"/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter blurX="6" blurY="6" color="#FFFF00" inner="true" strength="10"/>
+                    <BevelFilter strength="1.5"/>
+                    <GlowFilter blurX="3" blurY="3" color="#FFFFFF" inner="true" strength="5"/>
+                    <BevelFilter shadowColor="#FFFF00" strength="0.88"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Menu Folder/  Universal Stuff/Menu Button BG" name="bg">
+                  <matrix>
+                    <Matrix a="1.12217712402344" d="0.697830200195313"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	gotoAndPlay(random(39)+1);
+}
+]]></script>
+                  </Actionscript>
+                  <filters>
+                    <BevelFilter distance="2"/>
+                    <AdjustColorFilter brightness="80" saturation="18" hue="180"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

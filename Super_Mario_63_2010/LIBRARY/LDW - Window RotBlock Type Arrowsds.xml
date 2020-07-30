@@ -1,0 +1,108 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="LDW - Window RotBlock Type Arrowsds" itemID="49c05273-000010b0" lastModified="1237779140" lastUniqueIdentifier="2">
+  <timeline>
+    <DOMTimeline name="LDW - Window RotBlock Type Arrowsds">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[//BGarray = ["Hills and Clouds", "Secret Course", "Sky", "Haunted", "Underground", "Snow", "Mechanical", "Fire Sky", "Volcano", "Desert", "Ocean", "Bowser's Castle"];
+//if (_root.M.CourseBG == undefined) {
+//_parent.blocktype;
+min = 1;
+max = 31
+onEnterFrame = function () {
+	if (_parent.greyness.aa == 0) {
+		if (_parent.blocktype == min) {
+			tri1._alpha += (0-tri1._alpha)/3;
+		} else {
+			tri1._alpha += (100-tri1._alpha)/3;
+		}
+		if (_parent.blocktype == max) {
+			tri2._alpha += (0-tri2._alpha)/3;
+		} else {
+			tri2._alpha += (100-tri2._alpha)/3;
+		}
+		//
+		if (tri1.hitTest(_root._xmouse, _root._ymouse, false) && tri1._alpha>=99) {
+			tri1.sc = 130;
+		} else {
+			tri1.sc = 100;
+		}
+		tri1._xscale += (tri1.sc-tri1._xscale)/3;
+		tri1._yscale = tri1._xscale;
+		//
+		if (tri2.hitTest(_root._xmouse, _root._ymouse, false) && tri2._alpha>=99) {
+			tri2.sc = 130;
+		} else {
+			tri2.sc = 100;
+		}
+		tri2._xscale += (tri2.sc-tri2._xscale)/3;
+		tri2._yscale = tri2._xscale;
+	}
+	//_root.LDCourseBG = _root.M.CourseBG;  
+};
+onMouseDown = function () {
+	if (tri2.sc == 130 && _parent.blocktype<max) {
+		_parent.blocktype++;
+	} else if (tri1.sc == 130 && _parent.blocktype>min) {
+		_parent.blocktype--;
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMDynamicText width="21.2" height="15.6" includeOutlines="true" isSelectable="false" variableName="_parent.blocktype">
+                  <matrix>
+                    <Matrix tx="-18.85" ty="-7.8"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>23</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" size="14" bitmapSize="280" face="Arial-BoldMT" fillColor="#FFFFFF"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                  <filters>
+                    <BevelFilter/>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                  </filters>
+                </DOMDynamicText>
+                <DOMSymbolInstance libraryItemName="Level Designer Windows/LDW - Info/LDW - Info Arrow" name="tri2">
+                  <matrix>
+                    <Matrix tx="14.85" ty="3.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter color="#FFFFFF"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Level Designer Windows/LDW - Info/LDW - Info Arrow" name="tri1">
+                  <matrix>
+                    <Matrix d="-1" tx="14.85" ty="-6.8"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter color="#FFFFFF"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

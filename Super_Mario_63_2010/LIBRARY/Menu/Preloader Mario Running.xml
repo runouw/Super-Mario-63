@@ -1,0 +1,346 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name=" Menu/Preloader Mario Running" itemID="4706edc8-0000093c" sourceFlashFilepath="Rob &amp; Steve Hewitt\My Documents\Super Mario 63\Wii Shop Menu Preloader.fla" sourceLibraryItemHRef="Preloader Mario Running" sourceLastModified="1191653811" lastModified="1271737409" lastUniqueIdentifier="11" sourceItemID="4706edc8-0000093c">
+  <timeline>
+    <DOMTimeline name="Preloader Mario Running">
+      <layers>
+        <DOMLayer name="Layer 5" color="#4FFFFF">
+          <frames>
+            <DOMFrame index="0" duration="49" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Skip Button (preloader)">
+                  <matrix>
+                    <Matrix tx="450.2" ty="271.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#FF4FFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="18" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+lastcoin = 0;
+percent = 0;
+onEnterFrame = function () {
+	lastcoin++;
+	if (percent<_root.percentloaded && percent<87 && lastcoin>=2) {
+		lastcoin = 0;
+		percent++;
+		depth = _root.percentloaded;
+		attachMovie("PreloaderCoin", "Coin"+_root.percentloaded, this.getNextHighestDepth(), {_x:500, _y:210});
+	}
+	//     
+	if (_root.percentloaded>=100 && _root.TotalCoins>=100) {
+		onEnterFrame = null;
+		play();
+	}
+};
+Skip = function () {
+	if (_root.percentloaded>=100) {
+		onEnterFrame = null;
+		_root.play();
+		Skip = null;
+	}
+};]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="18" duration="30" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="48" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.play();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" duration="10" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="10" duration="8" tweenType="shape" keyMode="17922">
+              <MorphShape>
+                <morphSegments>
+                  <MorphSegment startPointA="0, -2.34375" startPointB="0, -2.34375" strokeIndex1="0" strokeIndex2="0" fillIndex1="0" fillIndex2="1">
+                    <MorphCurves controlPointA="#11.94, -2.34375" anchorPointA="#23.28, -2.34375" controlPointB="#11.94, -2.34375" anchorPointB="#23.28, -2.34375" isLine="true"/>
+                    <MorphCurves controlPointA="#23.28, #9.6" anchorPointA="#23.28, #15.18" controlPointB="#23.28, #9.6" anchorPointB="#23.28, #15.18" isLine="true"/>
+                    <MorphCurves controlPointA="#11.94, #15.18" anchorPointA="0, #15.18" controlPointB="#11.94, #15.18" anchorPointB="0, #15.18" isLine="true"/>
+                    <MorphCurves controlPointA="0, #9.6" anchorPointA="0, -2.34375" controlPointB="0, #9.6" anchorPointB="0, -2.34375" isLine="true"/>
+                  </MorphSegment>
+                </morphSegments>
+                <morphHintsList/>
+              </MorphShape>
+              <elements>
+                <DOMShape isFloating="true">
+                  <matrix>
+                    <Matrix ty="-30"/>
+                  </matrix>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF" alpha="0"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!9000 -0.5S2|9000 5999.5!9000 5999.5|0 5999.5!0 5999.5|0 -0.5!0 -0.5|9000 -0.5"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="18" duration="10" tweenType="shape" keyMode="17922">
+              <MorphShape>
+                <morphSegments>
+                  <MorphSegment startPointA="0, -2.34375" startPointB="0, -2.34375" strokeIndex1="0" strokeIndex2="0" fillIndex1="0" fillIndex2="1">
+                    <MorphCurves controlPointA="#11.94, -2.34375" anchorPointA="#23.28, -2.34375" controlPointB="#11.94, -2.34375" anchorPointB="#23.28, -2.34375" isLine="true"/>
+                    <MorphCurves controlPointA="#23.28, #9.6" anchorPointA="#23.28, #15.18" controlPointB="#23.28, #9.6" anchorPointB="#23.28, #15.18" isLine="true"/>
+                    <MorphCurves controlPointA="#11.94, #15.18" anchorPointA="0, #15.18" controlPointB="#11.94, #15.18" anchorPointB="0, #15.18" isLine="true"/>
+                    <MorphCurves controlPointA="0, #9.6" anchorPointA="0, -2.34375" controlPointB="0, #9.6" anchorPointB="0, -2.34375" isLine="true"/>
+                  </MorphSegment>
+                </morphSegments>
+                <morphHintsList/>
+              </MorphShape>
+              <elements>
+                <DOMShape isFloating="true">
+                  <matrix>
+                    <Matrix ty="-30"/>
+                  </matrix>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!9000 -0.5S2|9000 5999.5!9000 5999.5|0 5999.5!0 5999.5|0 -0.5!0 -0.5|9000 -0.5"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="28" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF" alpha="0"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!9000 -600.5|9000 5399.5!9000 5399.5|0 5399.5!0 5399.5|0 -600.5!0 -600.5|9000 -600.5"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="29" duration="20" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" duration="18" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Preloader Block" name="block1">
+                  <matrix>
+                    <Matrix tx="100" ty="161.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	block = false;
+}
+onClipEvent (enterFrame) {
+	if (_root.block1 == true) {
+		block = true;
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Menu/Preloader Block" name="block2">
+                  <matrix>
+                    <Matrix tx="225" ty="161.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	block = false;
+}
+onClipEvent (enterFrame) {
+	if (_root.block2 == true) {
+		block = true;
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Menu/Preloader Block" name="block3">
+                  <matrix>
+                    <Matrix tx="350" ty="161.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	block = false;
+}
+onClipEvent (enterFrame) {
+	if (_root.block3count>=10) {
+		block = true;
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="18" duration="31" keyMode="9728">
+              <elements>
+                <DOMStaticText fontRenderingMode="standard" left="-4.75" width="153.5" height="25.65" autoExpand="true" antiAliasThickness="68" isSelectable="false">
+                  <matrix>
+                    <Matrix d="0.998306274414063" tx="154.95" ty="120.65"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Done Loading</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" size="23" face="Arial-BoldMT"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" duration="18" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <DashedStroke scaleMode="normal">
+                        <fill>
+                          <SolidColor color="#FF0000"/>
+                        </fill>
+                      </DashedStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge strokeStyle="1" edges="!25 4645|8984 4645!-15 1505|5804 1505"/>
+                  </edges>
+                </DOMShape>
+                <DOMSymbolInstance libraryItemName=" Menu/Preloader Mario Running Animation" name="mario">
+                  <matrix>
+                    <Matrix a="-1" tx="-10" ty="210"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (enterFrame) {
+	if (_x>330 && _x<370 && _root.TotalCoins>=90) {
+		_x += (350-_x)/5;
+	} else {
+		_x += 4;
+		if (_x>500) {
+			_x = -50;
+		}
+	}
+	if (_root.TotalCoins>=25 && _currentframe<=15 && _root.block1 == false && _x>80 && _x<100) {
+		_root.block1 = true;
+		_parent.block1.gotoAndPlay(2);
+		gotoAndPlay("jump");
+	}
+	if (_root.TotalCoins>=50 && _currentframe<=15 && _root.block2 == false && _x>205 && _x<225) {
+		_root.block2 = true;
+		_parent.block2.play();
+		gotoAndPlay("jump");
+	}
+	if (_root.TotalCoins>=75 && _currentframe<=15 && _root.block3 == false && _x>330 && _x<350) {
+		_root.block3 = true;
+		_parent.block3.gotoAndPlay(2);
+		gotoAndPlay("jump");
+	}
+	if (_root.block3 == true && _root.TotalCoins>=90 && _x>330 && _x<370 && _currentframe<=17) {
+		gotoAndStop("end");
+	}
+	if (_root.TotalCoins>=90 && (_root.percentloaded-_root.TotalCoins)>=0 && _root.block3count<10 && _x>330 && _x<370 && (_currentframe<=17 || _currentframe>=32)) {
+		_root.block3count += 1;
+		_parent.block3.gotoAndPlay(2);
+		gotoAndPlay("jump");
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMStaticText fontRenderingMode="standard" left="-8" width="160" height="25.65" autoExpand="true" antiAliasThickness="68" isSelectable="false">
+                  <matrix>
+                    <Matrix d="0.998306274414063" tx="93" ty="5.2"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Loading Game</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" size="23" face="Arial-BoldMT"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+                <DOMDynamicText fontRenderingMode="standard" left="55.3" width="65.65" height="25.65" antiAliasThickness="68" isSelectable="false" variableName="_root.TotalCoins">
+                  <matrix>
+                    <Matrix d="0.998306274414063" tx="-12.05" ty="77.25"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>0</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" size="23" bitmapSize="460" face="Arial-BoldMT"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="!484 1777S2|484 1719!484 1719|714 1719!714 1719|714 1777!714 1777|484 1777!484 1877|484 1819!484 1819|714 1819!714 1819|714 1877!714 1877|484 1877"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Animation">
+                  <matrix>
+                    <Matrix tx="12" ty="89.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="18" duration="31" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

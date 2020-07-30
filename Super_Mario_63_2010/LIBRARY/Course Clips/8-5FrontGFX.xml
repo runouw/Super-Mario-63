@@ -1,0 +1,291 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Clips/8-5FrontGFX" itemID="48e29f11-00000f57" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="8-5FrontGFX" lastModified="1223168973" lastUniqueIdentifier="12">
+  <timeline>
+    <DOMTimeline name="8-5FrontGFX">
+      <layers>
+        <DOMLayer name="Grnound" color="#9933CC" locked="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Bricks &amp; Woods/Large Red Brick" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="-17.65" ty="130.05"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal" weight="2">
+                            <fill>
+                              <SolidColor/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="!5427 3241|-1942 3241!-1942 3241|-1942 380!-1942 380|5427 380!5427 380|5427 3241"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ 8 - Bowser's Castle/Main Clips/8-1 Bobbing Pole">
+                  <matrix>
+                    <Matrix a="0.793655395507813" b="-0.097869873046875" c="0.097869873046875" d="0.793655395507813" tx="-644.45" ty="140.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	count = 0;
+	rotspeed = 0.1;
+	landedon = false;
+}
+onClipEvent (enterFrame) {
+	_rotation += rotspeed;
+	count += 1;
+	if (count>80) {
+		rotspeed *= -1;
+		count = 0;
+	}
+	//   
+	dx = _x-_root.Course.Char._x+_parent._x;
+	dy = _y-_root.Course.Char._y+_parent._y;
+	distance = Math.sqrt(dx*dx+dy*dy);
+	//      
+	newx = Math.sin(_root.angleToRadians(_rotation))*distance;
+	newy = Math.cos(_root.angleToRadians(_rotation))*distance;
+	diffy = newy-oldy;
+	diffx = newx-oldx;
+	oldx = newx;
+	oldy = newy;
+	//
+	Y = Math.cos(_root.angleToRadians(_rotation))*distance;
+	X = Math.sin(_root.angleToRadians(_rotation))*distance;
+	//
+	if (hitTest((_root.Course.Char._x*_root.coursescale/100)+_root.Course._x, ((_root.Course.Char._y+3)*_root.coursescale/100)+_root.Course._y, true)) {
+		_root.Course.Char._x += this.diffx;
+		_root.Course.Char._y += this.diffY;
+		//_root.Course.Char.xspeed = _root.groundFriction(_root.Course.Char.xspeed, 0.3, 1.1);
+		if (landedon == false) {
+			_root.Course.Char.xspeed -= this.diffx;
+			//
+		}
+		landedon = true;
+	} else {
+		if (landedon == true) {
+			_root.Course.Char.xspeed += this.diffx;
+			//_root.Course.Char.yspeed += this.diffy/2;
+		}
+		landedon = false;
+	}
+	// 
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Bricks &amp; Woods/Large Brick" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="-1105.6" ty="66.3"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal" weight="2">
+                            <fill>
+                              <SolidColor/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="!-21472 3326|-24000 3326!-24000 3326|-24000 1000!-24000 1000|-21472 1000!-21472 1000|-21472 3326"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ 5 - Lethal Lava Land/ Front-Back (1,4)/5-1 Lava FG Ray">
+                  <matrix>
+                    <Matrix a="0.551620483398438" d="2.90020751953125" tx="-1038.5" ty="138.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="ilva" color="#4FFF4F" locked="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix a="2.02810668945313" tx="768.05" ty="-4.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-766.05" y="130.65"/>
+                  </transformationPoint>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix a="2.02810668945313" tx="768.05" ty="-4.85"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="-766.05" y="130.65"/>
+                      </transformationPoint>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#BD0000"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="!-5021 3338|-25620 3338!-25620 3338|-25620 1888!-25620 1888|-5021 1888!-5021 1888|-5021 3338"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMSymbolInstance libraryItemName="   Effects/ Lava-Fire/Lava Animation">
+                  <matrix>
+                    <Matrix tx="-5.1" ty="83.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/ Lava-Fire/Lava Animation">
+                  <matrix>
+                    <Matrix tx="-261.1" ty="83.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/ Lava-Fire/Lava Animation">
+                  <matrix>
+                    <Matrix tx="-516.5" ty="83.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/ Lava-Fire/Lava Animation">
+                  <matrix>
+                    <Matrix tx="-772.5" ty="83.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/ Lava-Fire/Lava Animation">
+                  <matrix>
+                    <Matrix tx="-1028.5" ty="83.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/ Lava-Fire/Lava Animation">
+                  <matrix>
+                    <Matrix tx="-1283.9" ty="83.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/ Lava-Fire/Lava Animation">
+                  <matrix>
+                    <Matrix tx="-1539.9" ty="83.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/ Lava-Fire/Lava Animation">
+                  <matrix>
+                    <Matrix tx="-1795.9" ty="83.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix a="0.714279174804688" d="0.714279174804688" tx="-1742.6" ty="561.95"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix a="0.714279174804688" d="0.714279174804688" tx="-1742.6" ty="561.95"/>
+                      </matrix>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <DashedStroke scaleMode="normal" weight="2">
+                            <fill>
+                              <SolidColor color="#333333"/>
+                            </fill>
+                          </DashedStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge strokeStyle="1" edges="!11255.5 -16642.5S4[#2D92.29 #FFC098.15 11666 -15651.5!11666 -15651.5[#2D92.29 #FFC520.A7 11255.5 -14662.5!11255.5 -14662.5[#2A5E.23 #FFC854.46 10266 -14251.5!10266 -14251.5[#25D6.2B #FFC854.46 9275.5 -14662.5!9275.5 -14662.5[#22A2.25
+ #FFC520.A7 8866 -15651.5!8866 -15651.5[#22A2.25 #FFC098.15 9275.5 -16642.5!9275.5 -16642.5[#25D6.2B #FFBD64.76 10266 -17051.5!10266 -17051.5[#2A5E.23 #FFBD64.76 11255.5 -16642.5"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix a="0.714279174804688" d="0.714279174804688" tx="-1965.55" ty="292.9"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix a="0.714279174804688" d="0.714279174804688" tx="-1965.55" ty="292.9"/>
+                      </matrix>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <DashedStroke scaleMode="normal" weight="2">
+                            <fill>
+                              <SolidColor color="#333333"/>
+                            </fill>
+                          </DashedStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge strokeStyle="1" edges="
+!11255.5 -16642.5S4[#2D92.29 #FFC098.15 11666 -15651.5!11666 -15651.5[#2D92.29 #FFC520.A7 11255.5 -14662.5!11255.5 -14662.5[#2A5E.23 #FFC854.46 10266 -14251.5!10266 -14251.5[#25D6.2B #FFC854.46 9275.5 -14662.5!9275.5 -14662.5[#22A2.25
+ #FFC520.A7 8866 -15651.5!8866 -15651.5[#22A2.25 #FFC098.15 9275.5 -16642.5!9275.5 -16642.5[#25D6.2B #FFBD64.76 10266 -17051.5!10266 -17051.5[#2A5E.23 #FFBD64.76 11255.5 -16642.5"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

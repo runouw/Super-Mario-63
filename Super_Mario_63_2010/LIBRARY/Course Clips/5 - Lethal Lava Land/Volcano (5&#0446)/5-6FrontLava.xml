@@ -1,0 +1,132 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Clips/ 5 - Lethal Lava Land/Volcano (5,6)/5-6FrontLava" itemID="48386edb-00000e08" lastModified="1213373395" lastUniqueIdentifier="1">
+  <timeline>
+    <DOMTimeline name="5-6FrontLava">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[count = 0;
+if (_root.CharHP<=0) {
+	_root.CharHP = 8;
+	_root.Course.Char.attack = false;
+}
+onEnterFrame = function () {
+	_root.Course.BackGFX.StartClip._y = -50;
+	if (count<32*4 || _root.PauseGame == false) {
+		count++;
+	}
+	// Put the cinema stuff here          
+	if (count>32*3) {
+		if (_root.PauseGame == false) {
+			if (count == 32*4) {
+				_root.StartBossMusic();
+			}
+			if (count>32*4) {
+				diff = (_root.currentCamY)-(_y+_parent._y);
+				diff = Math.min(0, diff);
+				diff = Math.max(-1000, diff);
+				_y -= 0.3-(diff/100);
+				_y = Math.max(_y, -1100);
+			} else {
+				if (count%2 == 0) {
+					_root.MoveAllPlats(3, 0);
+				} else {
+					_root.MoveAllPlats(-3, 0);
+				}
+			}
+		}
+	} else {
+		_root.Controll = false;
+		_root.PauseGame = false;
+		if (count>32) {
+			_root.Camspeed = 15;
+			_root.MaxCamspeed = 25;
+			_root.Camcenter = _root.Course.BackGFX.Target1;
+		}
+	}
+	if (count == 32) {
+		_root.StopBGsong();
+	}
+	if (count == 32*4) {
+		_root.Controll = true;
+		_root.Camcenter = "none";
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="-720.75" ty="-94.45"/>
+                  </matrix>
+                  <members>
+                    <DOMSymbolInstance libraryItemName="   Effects/ Lava-Fire/Lava Animation">
+                      <matrix>
+                        <Matrix tx="-121.1" ty="-7.2"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point/>
+                      </transformationPoint>
+                    </DOMSymbolInstance>
+                    <DOMSymbolInstance libraryItemName="   Effects/ Lava-Fire/Lava Animation">
+                      <matrix>
+                        <Matrix tx="134.9" ty="-7.2"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point/>
+                      </transformationPoint>
+                    </DOMSymbolInstance>
+                    <DOMSymbolInstance libraryItemName="   Effects/ Lava-Fire/Lava Animation">
+                      <matrix>
+                        <Matrix tx="-377.1" ty="-7.2"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point/>
+                      </transformationPoint>
+                    </DOMSymbolInstance>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix tx="-720.75" ty="-94.45"/>
+                      </matrix>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix tx="-720.75" ty="-94.45"/>
+                          </matrix>
+                          <fills>
+                            <FillStyle index="1">
+                              <SolidColor color="#BD0000"/>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle0="1" edges="!22193.5 1945|6597 1945!6597 1945|6597 2925!6597 2925|22194.5 2925!22194.5 2925|22193.5 1945"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                  </members>
+                </DOMGroup>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ 5 - Lethal Lava Land/ Front-Back (1,4)/5-1 Lava FG Ray">
+                  <matrix>
+                    <Matrix a="0.167037963867188" d="4.32083129882813" ty="61.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

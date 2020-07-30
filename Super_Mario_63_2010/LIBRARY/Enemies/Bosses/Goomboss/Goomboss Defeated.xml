@@ -1,0 +1,209 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="   Enemies/Bosses/Goomboss/Goomboss Defeated" itemID="4781d466-00000e3f" sourceFlashFilepath="Rob &amp; Steve Hewitt\My Documents\Super Mario 63\Goomboss Coding.fla" sourceLibraryItemHRef="Goomboss Defeated" sourceLastModified="1199691872" lastModified="1238123863" sourceItemID="4781d466-00000e3f">
+  <timeline>
+    <DOMTimeline name="Goomboss Defeated">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	_root.PauseGame = false;
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="7" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[count = 50;
+if (_root.PauseGame == false && _root.playpause == false) {
+	play();
+	//   
+	count -= 1.5;
+	count = Math.max(count, 2);
+	onEnterFrame = function () {
+		_root.Course.Char.yspeed = 0;
+		Y = _parent._y+_parent._parent._y;
+		Y -= count;
+		_root.Course.Char._y += (Y-_root.Course.Char._y)/(5);
+		//           
+		X = _parent._x+_parent._parent._x;
+		_root.Course.Char._x += (X-_root.Course.Char._x)/5;
+	};
+} else {
+	stop();
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="8" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (_parent._parent.bounce == true) {
+	_root.Course.Char._y -= 5;
+}
+
+_root.Mariosound = new Sound(this);
+_root.Mariosound.attachSound("LargeGoombaDie");
+_root.Mariosound.start(0, 1);
+_root.Mariosound.setVolume(_root.MarioVolume);
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="9" duration="17" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	if (_root.PauseGame == false && _root.playpause == false) {
+		play();
+	} else {
+		stop();
+	}
+};
+_root.Course.Char.yspeed -= 10;
+_root.Course.Char.xspeed += _parent._xscale/50;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="26" duration="36" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[count = 0;
+_root.bgsoundFX = new Sound(this);
+_root.bgsoundFX.attachSound("Explode9");
+_root.bgsoundFX.start(0, 1);
+_root.bgsoundFX.setVolume(_root.BgVolume);
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		count++;
+		tellTarget (_parent) {
+			myColor = new Color(_parent);
+			colorTrans = new Object();
+			colorTrans = {ra:100-(_parent.hp*10)-(this.count*5), rb:_parent.hp*25+this.count*5, ga:100-(_parent.hp*10)-this.count*5, gb:0, ba:100-(_parent.hp*10)-(this.count*5), bb:0, aa:100, ab:0};
+			myColor.setTransform(colorTrans);
+		}
+		_alpha -= 2.5;
+		if (_parent._xscale>0) {
+			_parent._xscale += 3;
+		} else {
+			_parent._xscale -= 3;
+		}
+		_parent._yscale += 3;
+		play();
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="62" duration="5" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="67" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+onEnterFrame = null;
+_root.Course.BackGFX.gotoAndStop(6);
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" duration="6" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Goomboss/Goomboss Hurt 1">
+                  <matrix>
+                    <Matrix tx="-32" ty="-37.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="32" y="70"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="6" duration="6" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Goomboss/Goomboss Hurt 1">
+                  <matrix>
+                    <Matrix c="-0.02008056640625" d="0.27862548828125" tx="-30.6" ty="13"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="32" y="70"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="12" duration="4" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Goomboss/Goomboss Hurt 1">
+                  <matrix>
+                    <Matrix c="-0.201553344726563" d="0.6639404296875" tx="-17.9" ty="-14"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="32.1" y="70.05"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="16" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Goomboss/Goomboss Hurt 1">
+                  <matrix>
+                    <Matrix d="0.72857666015625" tx="-32" ty="-18.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="32" y="70"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="17" duration="4" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Goomboss/Goomboss Hurt 2">
+                  <matrix>
+                    <Matrix d="0.740264892578125" tx="-32" ty="-18.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="32" y="77"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="21" duration="5" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Goomboss/Goomboss Walk 3">
+                  <matrix>
+                    <Matrix d="0.7662353515625" tx="-32" ty="-20.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="32" y="77"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="26" duration="41" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Goomboss/Goomboss Hurt 2">
+                  <matrix>
+                    <Matrix d="1.00010681152344" tx="-32" ty="-38.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="32" y="77"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="67" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

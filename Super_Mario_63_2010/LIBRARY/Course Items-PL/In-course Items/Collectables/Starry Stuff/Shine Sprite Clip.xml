@@ -1,0 +1,235 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Items-PL/ In-course Items/ Collectables/ Starry Stuff/Shine Sprite Clip" itemID="454d1f62-00000106" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="ShineSpriteClip" lastModified="1243664240" lastUniqueIdentifier="9">
+  <timeline>
+    <DOMTimeline name="Shine Sprite Clip">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" locked="true" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+if (invis == undefined) {
+	invis = false;
+}
+if (LevelDesigner == undefined) {
+	LevelDesigner = false;
+}
+if (firstrun == undefined) {
+	if (LevelDesigner == true) {
+		trace(_root.LDRedCoin);
+		if (_root.LDRedCoin>0 || _root.LDSilverStar>0) {
+			invis = true;
+		}
+	}
+	firstrun = true;
+}
+onEnterFrame = function () {
+	if (invis == false) {
+		if (_root.Star[starnum] == true) {
+			if (alternateoldframe !== true) {
+				gotoAndStop(2);
+			} else {
+				_alpha = 50;
+				gotoAndStop(1);
+			}
+		} else {
+			gotoAndStop(1);
+		}
+		if (this.box.hitTest((_root.Course.Char._x*_root.coursescale/100)+_root.Course._x, ((_root.Course.Char._y-20)*_root.coursescale/100)+_root.Course._y, true)) {
+			if (LevelDesigner !== true) {
+				if (_root.Star[starnum] == false) {
+					_root.Star[starnum] = true;
+					_root.LastItemGot = "gotStar";
+				} else {
+					_root.LastItemGot = "oldStar";
+				}
+				// 
+				_root.newstar = true;
+				//
+				_root.lastPlayinglevel = _root.Playinglevel;
+				_root.lastStarnamenum = starnum;
+			}
+			//      
+			_root.Invincible = false;
+			_root.Metal = false;
+			_root.Invisible = false;
+			_root.PowerTimer = 0;
+			//
+			_root.Course.Char.attack = true;
+			_root.Course.Char.attackFrame = "Star";
+			_root.Course.Char.xspeed = 0;
+			_root.Course.Char.yspeed /= 2;
+			_root.Course.Char._x = _x+_parent._x;
+			_root.Course.Char._y = _y+_parent._y+(20*_root.coursescale/100);
+			gotoAndStop("Gone");
+		}
+	} else {
+		gotoAndStop("Invis");
+	}
+};
+if (invis == false) {
+	if (_root.Star[starnum] == true) {
+		if (alternateoldframe !== true) {
+			gotoAndStop(2);
+		} else {
+			_alpha = 50;
+			gotoAndStop(1);
+		}
+	} else {
+		gotoAndStop(1);
+	}
+} else {
+	gotoAndStop(3);
+}
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="box">
+                  <matrix>
+                    <Matrix a="0.509246826171875" d="2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" name="Invis" labelType="name" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[counter = 0;
+onEnterFrame = function () {
+	if (invis == false && (_root.Course.Char.attack == false || _root.Course.Char.attackFrame == "Dive" || _root.Course.Char.attackFrame == "Run" || _root.Course.Char.attackFrame == "hurt1" || _root.Course.Char.attackFrame == "hurt2" || _root.Course.Char.attackFrame == "hurt3" || _root.Course.Char.attackFrame == "Spin" || _root.Course.Char.attackFrame == "Ground" || _root.Course.Char.attackFrame == "Land")) {
+		star.play();
+	}
+	if (LevelDesigner == true) {
+		counter++;
+		trace("invis = "+ invis);
+		trace(_root.SilverStars + " > " + _root.LDSilverStar);
+		if (_root.RedCoins>=_root.LDRedCoin && counter > 12 && _root.RedCoins !== 0) {
+			invis = false;
+		}
+		if (_root.SilverStars>=_root.LDSilverStar && counter > 12 && _root.SilverStars !== 0) {
+			invis = false;
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="3" name="Gone" labelType="name" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+onEnterFrame = null;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Shine Sprite Clip (Glow)">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter color="#FEDD00" strength="2"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Starry Stuff/Shine Sprite Blue 2">
+                  <matrix>
+                    <Matrix tx="-13.5" ty="-16"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/ Stars/Invisible Shine Sprite Animation" name="star">
+                  <matrix>
+                    <Matrix ty="1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Light Effects Folder/Shine Light Effect">
+                  <matrix>
+                    <Matrix a="1.5999755859375" d="1.5999755859375"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (enterFrame) {
+	_rotation += 1;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/ Light Effects Folder/Shine Light Effect">
+                  <matrix>
+                    <Matrix a="0.707107543945313" b="-0.707107543945313" c="0.707107543945313" d="0.707107543945313"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (enterFrame) {
+	_rotation += 1;
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color tintMultiplier="1" tintColor="#FFFF00"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Light Effects Folder/Shine Light Effect">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (enterFrame) {
+	_rotation += 1.5;
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color alphaMultiplier="0.30078125" redMultiplier="0" blueMultiplier="0" greenMultiplier="0" blueOffset="214" greenOffset="35"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" duration="2" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

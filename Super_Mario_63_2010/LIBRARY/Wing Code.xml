@@ -1,0 +1,54 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Wing Code" itemID="481a5a6a-00000d55" lastModified="1229812064" lastUniqueIdentifier="1">
+  <timeline>
+    <DOMTimeline name="Wing Code">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (_root.WingCap == false) {
+	nextFrame();
+	onEnterFrame = function () {
+		if (_root.WingCap == true) {
+			gotoAndStop(1);
+		}
+	};
+} else {
+	onEnterFrame = function () {
+		if (_root.WingCap == false) {
+			nextFrame();
+			onEnterFrame = function () {
+				if (_root.WingCap == true) {
+					gotoAndStop(1);
+				}
+			};
+		}
+	};
+	stop();
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Wing Clip">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

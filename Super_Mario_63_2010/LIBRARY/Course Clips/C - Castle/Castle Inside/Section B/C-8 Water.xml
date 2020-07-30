@@ -1,0 +1,73 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Clips/ C - Castle/Castle Inside/ Section B/C-8 Water" itemID="46c74682-00000842" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="C-8Water" lastModified="1195785949">
+  <timeline>
+    <DOMTimeline name="C-8 Water">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[//_visible = false;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Water" color="#FFFF4F" locked="true" autoNamed="false" layerType="mask">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/Water/Water Code" name="watergfx" selected="true">
+                  <matrix>
+                    <Matrix d="1.00138854980469" tx="-163.5" ty="19.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	WaterLength = 1800;
+	polygons = 180;
+	count = 0;
+	Y = 0;
+	_y = Y+20;
+}
+onClipEvent (enterFrame) {
+	if (_root.PauseGame == false && _root.playpause == false) {
+		if (_root.C8Switch == true) {
+			Y -= 0.5;
+		} else {
+			Y += 0.5;
+		}
+		Y = Math.max(Y, -150);
+		Y = Math.min(Y, 0);
+		_y = Y+20;
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#FF4FFF" parentLayerIndex="1" locked="true" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/Water/ Water Blocks/Giant Water Block">
+                  <matrix>
+                    <Matrix tx="514.75" ty="25"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

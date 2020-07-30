@@ -1,0 +1,274 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="   Enemies/Normal/ G-Z/ Goomba/Goomba Squished" itemID="45514b8b-00000177" lastModified="1239666924" lastUniqueIdentifier="13">
+  <timeline>
+    <DOMTimeline name="Goomba Squished">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[count = 7;
+if (_parent._parent.bounce == true) {
+	//
+	if (_root.Course.Char.attack == false) {
+		if (_root.KeyUP()) {
+			_root.Course.Char.landtime = 1;
+		} else {
+			_root.Course.Char.landtime = 0;
+		}
+		_root.Course.Char.attack = true;
+		_root.Course.Char.attackFrame = "EJump";
+	}
+	//     
+	if (_root.PauseGame == false) {
+		play();
+		if (_parent._parent.scale>1) {
+			_root.Course.Char._y += 3;
+		}
+		//  
+		count -= 1.5*_parent._parent.scale;
+		count = Math.max(count, 2);
+		onEnterFrame = function () {
+			_root.Course.Char.yspeed = 0;
+			xdivide = Math.abs(_root.Course.Char.xspeed/2)+5;
+			Y = _parent._parent._y+_parent._parent._parent._y;
+			Y -= count*_parent._parent.scale;
+			if (Math.abs(Y-_root.Course.Char._y)<15) {
+				_root.Course.Char._y += (Y-_root.Course.Char._y)/(5/_parent._parent.scale);
+			}
+			//         
+			X = _parent._parent._x+_parent._parent._parent._x;
+			if (Math.abs(X-_root.Course.Char._x)<15) {
+				_root.Course.Char._x += (X-_root.Course.Char._x)/xdivide;
+			}
+		};
+	} else {
+		stop();
+	}
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="3" duration="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (_root.Course.Char.landtime == 1 && _parent._parent.bounce == true) {
+} else {
+	//
+	if (_root.KeyUP()) {
+		_root.Course.Char.landtime = 2;
+	} else {
+		//
+		nextFrame();
+		play();
+	}
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="5" duration="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (_root.Course.Char.landtime == 1 && _parent._parent.bounce == true) {
+} else {
+	if (_root.KeyUP()) {
+		_root.Course.Char.landtime = 2;
+	} else {
+		nextFrame();
+		play();
+	}
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="7" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (_parent._parent.bounce == true) {
+	_root.Course.Char._y -= 5*_parent._parent.scale;
+}
+if (_root.Course.Char.landtime == 1 && _parent._parent.bounce == true) {
+} else {
+	if (_root.KeyUP()) {
+		_root.Course.Char.landtime = 2;
+	}
+}
+_root.Mariosound = new Sound(this);
+_root.Mariosound.attachSound("Goomba-Die");
+_root.Mariosound.start(0, 1);
+_root.Mariosound.setVolume(_root.MarioVolume);
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="8" duration="3" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (_parent._parent.bounce == true) {
+	onEnterFrame = function () {
+		if (_root.PauseGame == false) {
+			play();
+		} else {
+			stop();
+		}
+	};
+	if (_root.Course.Char.attackFrame == "EJump" && _root.Course.Char.attack == true) {
+		_root.Course.Char.attack = false;
+		if (_root.Course.Char.landtime == 1) {
+			_root.Course.Char.yspeed -= 10;
+		} else if (_root.Course.Char.landtime == 2) {
+			_root.Course.Char.yspeed -= 12;
+		} else {
+			_root.Course.Char.yspeed -= 8;
+		}
+	} else {
+		_root.Course.Char.yspeed -= 9;
+	}
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="11" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (_root["coindata"+_root.playingcourse][_parent._parent.coinnum] !== 1 || _parent._parent.battleArena == true) {
+	if (_parent._parent.battleArena !== true) {
+		_root["coindata"+_root.playingcourse][_parent._parent.coinnum] = 1;
+	}
+	_root.Course.BackGFX.attachMovie("GoldCoin", "GoldCoin"+_root.Course.BackGFX.getNextHighestDepth(), _root.Course.BackGFX.getNextHighestDepth(), {_x:_parent._parent._x, _y:_parent._parent._y-12, bounce:true});
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="12" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+onEnterFrame = null;
+if (_parent._parent.battleArena == true) {
+	_root.Course.BackGFX.defeatedcount++;
+	_parent._parent.removeMovieClip(_parent._parent);
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Normal/ G-Z/ Goomba/YI Style Goomba Scared">
+                  <matrix>
+                    <Matrix tx="-8.3" ty="-14"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Normal/ G-Z/ Goomba/YI Style Goomba Scared">
+                  <matrix>
+                    <Matrix d="0.666671752929688" tx="-8.3" ty="-8.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="8" y="9"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Normal/ G-Z/ Goomba/YI Style Goomba Squished - 6">
+                  <matrix>
+                    <Matrix tx="-9.65" ty="-14"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Normal/ G-Z/ Goomba/YI Style Goomba Squished - 4">
+                  <matrix>
+                    <Matrix tx="-13" ty="-4"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="5" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Normal/ G-Z/ Goomba/YI Style Goomba Squished - 5">
+                  <matrix>
+                    <Matrix tx="-14" ty="-2.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="7" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Normal/ G-Z/ Goomba/YI Style Goomba - 4">
+                  <matrix>
+                    <Matrix d="0.666671752929688" tx="-9" ty="-8"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="9" y="9"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="8" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Normal/ G-Z/ Goomba/YI Style Goomba - 4">
+                  <matrix>
+                    <Matrix a="0.77777099609375" d="1.00001525878906" tx="-7" ty="-15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="9" y="9"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="9" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Normal/ G-Z/ Goomba/YI Style Goomba - 4">
+                  <matrix>
+                    <Matrix a="0.666671752929688" d="1.22222900390625" tx="-6" ty="-19"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="9" y="9"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="10" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Normal/ G-Z/ Goomba/YI Style Goomba - 4">
+                  <matrix>
+                    <Matrix a="0.333343505859375" d="1.55494689941406" tx="-3" ty="-25"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="9" y="9.05"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="11" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Light Effects Folder/Sparkle Blue">
+                  <matrix>
+                    <Matrix tx="0.35" ty="-18.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="12" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,368 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="LDP Table" itemID="4a56816f-000018c9" sourceFlashFilepath="F:\Super Mario 63\New computer\Level Designer (Website) 2.fla" sourceLibraryItemHRef="LDP Table" sourceLastModified="1248322002" lastModified="1253397698" lastUniqueIdentifier="15" sourceItemID="4a56816f-000018c9">
+  <timeline>
+    <DOMTimeline name="LDP Table">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+antispam = 0;
+onEnterFrame = function () {
+	antispam++;
+	if (antispam == 16) {
+		goload();
+	}
+};
+goload = function () {
+	var result_lv:LoadVars = new LoadVars();
+	result_lv.onLoad = function(success:Boolean) {
+		if (success) {
+			_parent.Total = Number(result_lv.total.split(" ")[0]);
+			_parent.TotalPages = Math.ceil(_parent.Total/8);
+			//
+			if(result_lv.code !== undefined){
+				CreateList(result_lv.code);
+			}
+			//_root.TestLevel();
+		} else {
+			result_ta.text = "Error connecting to server.";
+		}
+	};
+	var send_lv:LoadVars = new LoadVars();
+	send_lv.start = _root.Page*8;
+	send_lv.length = 8;
+	send_lv.order = _root.Order;
+	//
+	send_lv.sendAndLoad("http://runouw.com/levels/leveldesigner/listlevels.php", result_lv, "POST");
+	CreateList = function (code) {
+		Results = code.split("|");
+		_parent.LDResults = Results;
+		for (i=0; i<Results.length-1; i++) {
+			//if(Results[i] !== ""){
+			RowStats = Results[i].split(",");
+			this.attachMovie("LDPRow", "Row"+i, this.getNextHighestDepth());
+			this["Row"+i]._x = 0;
+			this["Row"+i]._y = i*20;
+			this["Row"+i].iD.text = RowStats[0];
+			this["Row"+i].num = RowStats[0];
+			this["Row"+i].Name.text = RowStats[1];
+			this["Row"+i].Author.text = RowStats[2];
+			_score = Math.round(Number(RowStats[3])*100)/100;
+			if (_score == Math.round(_score)) {
+				_score += ".0";
+			}
+			if (Math.round(Number(RowStats[3])*10)/10 == Math.round(Number(RowStats[3])*100)/100) {
+				_score += "0";
+			}
+			this["Row"+i].Score.text = _score+"/5";
+			if (Number(RowStats[6])<3) {
+				this["Row"+i].Score.text = "---";
+			}
+			_frame = Math.floor(Number(RowStats[4]));
+			_frame = Math.max(_frame, 0);
+			_frame = Math.min(_frame, 5);
+			if (Number(RowStats[4])>4.5) {
+				_frame = 5;
+			}
+			this["Row"+i].diffclip.gotoAndStop(_frame+1);
+			_score = Math.round(Number(RowStats[4])*10)/10;
+			if (_score == Math.round(_score)) {
+				_score += ".0";
+			}
+			this["Row"+i].Diff.text = _score+"/5";
+			if (Number(RowStats[7])<3) {
+				this["Row"+i].diffclip.gotoAndStop(7);
+				this["Row"+i].Diff.text = "---";
+			}
+			//}   
+			//trace(Results[i]);
+		}
+		nextFrame();
+	};
+};
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName="LDP Row" selected="true">
+                  <matrix>
+                    <Matrix ty="-110"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMStaticText selected="true" width="146.1" height="16.8" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-73.05" ty="51.6"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Loading from server...</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" size="15" face="ArialMT"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+//
+oldpage = _root.Page;
+_root.Page = Math.min(_parent.TotalPages-1, _root.Page);
+if (oldpage != _root.Page) {
+	// if the page is already past the max.. refresh and load the last page
+	if(isNaN(_root.Page)){
+		_root.Page = 1;
+	}
+	prevFrame();
+}
+// 
+pagebox.text = (_root.Page+1)+"/"+_parent.TotalPages;
+highlighted = "";
+_parent.Selected = "";
+onEnterFrame = function () {
+	for (i=0; i<Results.length-1; i++) {
+		this["Row"+i].gotoAndStop(1);
+		//this["Row"+highlighted].filters = [];
+	}
+	highlighted = Math.round(_ymouse/20);
+	if (highlighted>=0 && highlighted<=Results.length-1) {
+		this["Row"+highlighted].gotoAndStop(2);
+	}
+	if (_parent.Selected>=0 && _parent.Selected<=Results.length-1) {
+		this["Row"+_parent.Selected].gotoAndStop(3);
+	}
+};
+onMouseDown = function () {
+	_parent.Selected = "";
+	select = Math.round(_ymouse/20);
+	if (select>=0 && select<=Results.length-2) {
+		_parent.Selected = Math.round(_ymouse/20);
+	}
+};
+Refresh = function () {
+	_root.Page = Math.max(_root.Page, 0);
+	for (i=0; i<Results.length-1; i++) {
+		this["Row"+i].removeMovieClip();
+	}
+	prevFrame();
+};
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName="LDP  Benseut">
+                  <matrix>
+                    <Matrix tx="113.75" ty="161.8"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter blurX="2" blurY="2" color="#FFFFFF" strength="10"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="LDP Be tejhruehtuehtuehruehrueyhru">
+                  <matrix>
+                    <Matrix tx="-99.9" ty="161.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-0.05"/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter blurX="2" blurY="2" color="#FFFFFF" strength="10"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMStaticText width="39.4" height="16.8" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-43.95" ty="152.4"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Page:</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" size="15" face="ArialMT"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                  <filters>
+                    <BevelFilter/>
+                    <GlowFilter blurX="2" blurY="2" color="#FFFFFF" strength="10"/>
+                  </filters>
+                </DOMStaticText>
+                <DOMDynamicText name="pagebox" width="57.9" height="16.8" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-2.95" ty="152.4"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>999/999</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" size="15" bitmapSize="300" face="ArialMT"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                  <filters>
+                    <BevelFilter/>
+                    <GlowFilter blurX="2" blurY="2" color="#FFFFFF" strength="10"/>
+                  </filters>
+                </DOMDynamicText>
+                <DOMSymbolInstance libraryItemName="LD Nxtpage fast">
+                  <matrix>
+                    <Matrix tx="165.45" ty="159"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BevelFilter/>
+                    <GlowFilter blurX="2" blurY="2" color="#FFFFFF" strength="10"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="LD prev page fast">
+                  <matrix>
+                    <Matrix tx="-166.7" ty="161.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BevelFilter/>
+                    <GlowFilter blurX="2" blurY="2" color="#FFFFFF" strength="10"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#FF4FFF">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <LinearGradient>
+                        <matrix>
+                          <Matrix a="0.26971435546875" d="0.01220703125" tx="-0.05" ty="-20"/>
+                        </matrix>
+                        <GradientEntry color="#4279F9" alpha="0.701960784313725" ratio="0"/>
+                        <GradientEntry color="#01436D" alpha="0.682352941176471" ratio="1"/>
+                      </LinearGradient>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <SolidColor/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle0="1" fillStyle1="1" strokeStyle="1" edges="!1620 -600|1620 -200"/>
+                    <Edge fillStyle0="1" strokeStyle="1" edges="!1620 -200|2479.5 -200"/>
+                    <Edge fillStyle0="1" fillStyle1="1" strokeStyle="1" edges="!2479.5 -200|2479.5 -600"/>
+                    <Edge fillStyle0="1" strokeStyle="1" edges="!2479.5 -600|1620 -600!1620 -600|-440 -600"/>
+                    <Edge fillStyle0="1" fillStyle1="1" strokeStyle="1" edges="!-440 -600|-440 -200"/>
+                    <Edge fillStyle0="1" strokeStyle="1" edges="!-440 -200|1620 -200"/>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="!2479.5 -600|4418.5 -600!4418.5 -600|4418.5 -200!4418.5 -200|2479.5 -200!-3660 -200|-4419.5 -200!-4419.5 -200|-4419.5 -600!-4419.5 -600|-3660 -600!-3660 -600|-440 -600"/>
+                    <Edge fillStyle0="1" fillStyle1="1" strokeStyle="1" edges="!-3660 -600|-3660 -200"/>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="!-440 -200|-3660 -200"/>
+                    <Edge cubics="!1620 -600(1620,-600;1620,-600 1620,-200 1620,-200q1620 -600 1620 -200)1620,-200;"/>
+                    <Edge cubics="!2480 -200(;2480,-200 2480,-600 2480,-600q2480 -200 2480 -600);"/>
+                    <Edge cubics="!1620 -200(;1620,-200 2480,-200 2480,-200q1620 -200 2480 -200);"/>
+                    <Edge cubics="!2480 -600(;2480,-600 1620,-600 1620,-600q2480 -600 1620 -600);"/>
+                    <Edge cubics="!4419 -600(;4419,-600 4419,-200 4419,-200q4419 -600 4419 -200);"/>
+                    <Edge cubics="!2480 -600(;2480,-600 4419,-600 4419,-600q2480 -600 4419 -600);"/>
+                    <Edge cubics="!4419 -200(;4419,-200 2480,-200 2480,-200q4419 -200 2480 -200);"/>
+                    <Edge cubics="!-4419 -200(;-4419,-200 -4419,-600 -4419,-600q-4419 -200 -4419 -600);"/>
+                    <Edge cubics="!-3660 -600(;-3660,-600 -3660,-200 -3660,-200q-3660 -600 -3660 -200);"/>
+                    <Edge cubics="!-3660 -200(;-3660,-200 -4419,-200 -4419,-200q-3660 -200 -4419 -200);"/>
+                    <Edge cubics="!-4419 -600(;-4419,-600 -3660,-600 -3660,-600q-4419 -600 -3660 -600);"/>
+                    <Edge cubics="!-440 -600(;-440,-600 -440,-200 -440,-200q-440 -600 -440 -200);"/>
+                    <Edge cubics="!-440 -200(;-440,-200 -3660,-200 -3660,-200q-440 -200 -3660 -200);"/>
+                    <Edge cubics="!-3660 -600(;-3660,-600 -440,-600 -440,-600q-3660 -600 -440 -600);"/>
+                    <Edge cubics="!1620 -200(;1620,-200 -440,-200 -440,-200q1620 -200 -440 -200);"/>
+                    <Edge cubics="!-440 -600(;-440,-600 1620,-600 1620,-600q-440 -600 1620 -600);"/>
+                  </edges>
+                </DOMShape>
+                <DOMSymbolInstance libraryItemName="LDP Nme">
+                  <matrix>
+                    <Matrix tx="-155.25" ty="-20.25"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-0.05"/>
+                  </transformationPoint>
+                  <filters>
+                    <BevelFilter/>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="LDP Authur">
+                  <matrix>
+                    <Matrix tx="8.15" ty="-19.8"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BevelFilter/>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="LDP RAitn">
+                  <matrix>
+                    <Matrix tx="100.9" ty="-18.8"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BevelFilter/>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="LDP Fififutlilyttyt">
+                  <matrix>
+                    <Matrix tx="167" ty="-19.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BevelFilter/>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName='LDP "IDD"'>
+                  <matrix>
+                    <Matrix tx="-209.3" ty="-19.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-0.05"/>
+                  </transformationPoint>
+                  <filters>
+                    <BevelFilter/>
+                    <GlowFilter blurX="2" blurY="2" color="#FFFFFF" strength="10"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

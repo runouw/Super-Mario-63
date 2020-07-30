@@ -1,0 +1,116 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="      Char/  Mario CLIPS/Mario (none) Faint" itemID="458acd2f-00000161" lastModified="1222905290" lastUniqueIdentifier="6">
+  <timeline>
+    <DOMTimeline name="Mario (none) Faint">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[gotoAndStop("nes");
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		play();
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="28" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.Mariosound = new Sound(this);
+_root.Mariosound.attachSound("Mario-Faint");
+_root.Mariosound.start(0, 1);
+_root.Mariosound.setVolume(_root.MarioVolume);
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="29" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.Course.Char.attackFrame = "Respawn";
+stop();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="30" duration="2" name="nes" labelType="name" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+onEnterFrame = null;
+_root.bgsong.stop();
+//
+_root.Mariosound = new Sound(this);
+_root.Mariosound.attachSound("Mario-Fall");
+_root.Mariosound.start(0, 1);
+_root.Mariosound.setVolume(_root.MarioVolume);
+//
+_root.Course.FrontGFX.attachMovie("MarioDeathGFX", "MarioDeathGFX"+_root.Course.FrontGFX.getNextHighestDepth(), _root.Course.FrontGFX.getNextHighestDepth(), {_x:_root.Course.Char._x-_root.Course.FrontGFX._x, _y:_root.Course.Char._y-_root.Course.FrontGFX._y});
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="28" tweenType="motion" motionTweenRotate="none" keyMode="16897">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Mario CLIPS/Mario (none) Standing Clips">
+                  <matrix>
+                    <Matrix tx="-6" ty="18"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="28" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Mario CLIPS/Mario (none) Standing Clips">
+                  <matrix>
+                    <Matrix tx="-6" ty="18"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="29" duration="2" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="31" keyMode="9728" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Mario CLIPS/Mario Fiant GFX Clip">
+                  <matrix>
+                    <Matrix tx="-3" ty="4.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" duration="31" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="31" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

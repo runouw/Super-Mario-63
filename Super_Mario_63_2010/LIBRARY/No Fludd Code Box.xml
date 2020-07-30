@@ -1,0 +1,78 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="No Fludd Code Box" itemID="48eb7e9f-00000e4e" lastModified="1223768590">
+  <timeline>
+    <DOMTimeline name="No Fludd Code Box">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	if (_root.Fluddpow == "" || this.hitTest(_root._xmouse, _root._ymouse, true)) {
+		sc = 115;
+	} else {
+		sc = 100;
+	}
+	_xscale += (sc-_xscale)/2;
+	_yscale = _xscale;
+	if (Math.abs(sc-_xscale)<1) {
+		_xscale = sc;
+	}
+	// 
+};
+onMouseDown = function () {
+	if (this.hitTest(_root._xmouse, _root._ymouse, true) && _root.CanSwitchFludd !== false) {
+		_root.Fluddpow = "";
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#FF0000" alpha="0.2"/>
+                        </FillStyle>
+                      </fills>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal" weight="2">
+                            <fill>
+                              <SolidColor/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                        <StrokeStyle index="2">
+                          <SolidStroke scaleMode="normal" weight="2">
+                            <fill>
+                              <SolidColor/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="!-311 -393|312 -393!312 -393|312 -183!312 -183|312 392!312 392|-311 394"/>
+                        <Edge fillStyle1="1" strokeStyle="2" edges="!-311 394|-311 -183"/>
+                        <Edge fillStyle0="1" fillStyle1="1" strokeStyle="2" edges="!-311 -183|312 392"/>
+                        <Edge fillStyle1="1" strokeStyle="2" edges="!-311 -183|-311 -393"/>
+                        <Edge fillStyle0="1" fillStyle1="1" strokeStyle="1" edges="!312 -183|-311 -183"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

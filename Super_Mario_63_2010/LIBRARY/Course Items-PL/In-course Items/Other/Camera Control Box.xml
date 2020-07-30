@@ -1,0 +1,158 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Items-PL/ In-course Items/ Other/Camera Control Box" itemID="475b775f-00000d56" lastModified="1215458750">
+  <timeline>
+    <DOMTimeline name="Camera Control Box">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_visible = false
+if (t == undefined) {
+	t = "Y";
+}
+if (amount == undefined) {
+	amount = 100;
+}
+if (t == "X") {
+	amount *= -1;
+}
+if (speed == undefined || speed<1) {
+	speed = 15;
+}
+if (FindTrigger == undefined) {
+	FindTrigger = function () {
+		Trigger = this.hitTest(_root.Course.Char.charClip.body);
+	};
+}
+_root.CamYchangeVar = 0;
+_root.CamXchangeVar = 0;
+count = 0;
+onEnterFrame = function () {
+	if (_root.PauseGame == false && _root.playpause == false) {
+		FindTrigger();
+		lastcount = count;
+		if (Trigger) {
+			count += (Math.abs(amount)-count)/speed;
+		} else {
+			count -= (count)/speed;
+		}
+		if (amount>0) {
+			//_root.CamYchange
+			_root["Cam"+t+"changeVar"] += count-lastcount;
+		} else if (amount<0) {
+			_root["Cam"+t+"changeVar"] -= count-lastcount;
+		}
+	}
+	//  
+	//Relocate VVV into Main Char Coding
+	_root.CamYchange = _root.CamYchangeVar+50;
+	_root.CamXchange = _root.CamXchangeVar;
+	//Relocate ^^^ into Main Char Coding
+};
+/*
+
+
+
+if (t == undefined) {
+t = "Y";
+}
+if (amount == undefined) {
+amount = 0;
+}
+if (speed == undefined) {
+speed = 1;
+}
+_visible = false;
+onEnterFrame = function () {
+if (this.hitTest(_root.Course.Char.charClip.body)) {
+if (_root.PauseGame == false && _root.playpause == false) {
+if (count == undefined) {
+count2 = undefined;
+count = 0;
+if (amount<0) {
+F = function () {
+if (count>amount) {
+count += speed;
+_root["Cam"+t+"change"] += speed;
+} else {
+F = null;
+}
+};
+} else {
+F = function () {
+if (count<amount) {
+count -= speed;
+_root["Cam"+t+"change"] -= speed;
+} else {
+F = null;
+}
+};
+}
+}
+F();
+//                      
+/*if (camount>(amount+speed)) {
+camount -= Math.abs(camount-amount)/10;
+} else if (camount<(amount-speed)) {
+camount += Math.abs(amount-camount)/10;
+}
+_root["Cam"+t+"change"] = camount
+}
+} else {
+if (count2 == undefined) {
+if (_root.PauseGame == false && _root.playpause == false) {
+//
+count = undefined;
+count2 = 0;
+if (amount<0) {
+F = function () {
+if (count2>amount) {
+count2 += speed;
+_root["Cam"+t+"change"] += -speed;
+} else {
+F = null;
+}
+};
+} else {
+F = function () {
+if (count2<amount) {
+count2 -= speed;
+_root["Cam"+t+"change"] -= -speed;
+} else {
+F = null;
+}
+};
+}
+F();
+}
+}
+}
+};*/
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" outline="true" useOutlineView="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF" alpha="0.250980392156863"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!-1000.5 -1000|999.5 -1000!999.5 -1000|999.5 1000!999.5 1000|-1000.5 1000!-1000.5 1000|-1000.5 -1000"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

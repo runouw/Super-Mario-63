@@ -1,0 +1,158 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Menu - Toggle Stars" itemID="4a455274-000014ab" lastModified="1246057278" lastUniqueIdentifier="7">
+  <timeline>
+    <DOMTimeline name="Menu - Toggle Stars">
+      <layers>
+        <DOMLayer name="Layer 3" color="#FFFF4F" locked="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[Mode = "Off";
+//_root.MuteBGMusic
+if (_root.CheatStarToggle == true) {
+	Mode = "On";
+} else {
+	Mode = "Off";
+}
+al = 50;
+sc = 75;
+onEnterFrame = function () {
+	if (this.hitTest(_root._xmouse, _root._ymouse, false)) {
+		al = 100;
+		sc = 100;
+	} else {
+		al = 50;
+		sc = 75;
+	}
+	_xscale += (sc-_xscale)/2;
+	_yscale = _xscale;
+	_alpha += (al-_alpha)/2;
+	//_root.var = Mode
+	//_root.StopBGsong();
+	//} else {
+	//_root.PlayMusicAndIntro();
+	/*if (Mode == "On") {
+	_root.MuteBGMusic = true;
+	_root.StopBGsong();
+	} else {
+	_root.MuteBGMusic = false;
+	_root.PlayMusicAndIntro();
+	}*/
+};
+onMouseDown = function () {
+	if (sc == 100) {
+		if (ON.sc == 100 && OFF.sc == 100) {
+			_xscale = 110;
+			_yscale = 110;
+			if (Mode == "On") {
+				Mode = "Off";
+				_root.CheatStarToggle = false;
+			} else {
+				Mode = "On";
+				_root.CheatStarToggle = true;
+			}
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Menu - Toggoel gdia">
+                  <matrix>
+                    <Matrix tx="-19.05" ty="-2.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BevelFilter/>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName='Menu -  "Off"' name="OFF">
+                  <matrix>
+                    <Matrix tx="85.7" ty="8.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-0.55" y="0.85"/>
+                  </transformationPoint>
+                  <filters>
+                    <BevelFilter/>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName='Menu -  "On"' name="ON">
+                  <matrix>
+                    <Matrix tx="84.75" ty="-10.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BevelFilter/>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Box" color="#4FFFFF" locked="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Onoff" color="#9933CC" locked="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="BG" color="#FF4FFF" locked="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <RadialGradient>
+                        <matrix>
+                          <Matrix a="0.1336669921875" d="0.035400390625" tx="-27" ty="1"/>
+                        </matrix>
+                        <GradientEntry color="#FFF280" ratio="0"/>
+                        <GradientEntry color="#FFB300" ratio="0.580392156862745"/>
+                        <GradientEntry color="#FFFF09" ratio="0.674509803921569"/>
+                        <GradientEntry color="#FFA622" ratio="1"/>
+                      </RadialGradient>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <SolidColor/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="!2131 482|-2131 482!-2131 482|-2131 -482!-2131 -482|2131 -482!2131 -482|2131 482"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

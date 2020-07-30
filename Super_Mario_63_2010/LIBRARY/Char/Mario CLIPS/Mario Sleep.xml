@@ -1,0 +1,175 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="      Char/  Mario CLIPS/Mario Sleep" itemID="470a7cba-00000a06" lastModified="1239680403">
+  <timeline>
+    <DOMTimeline name="Mario Sleep">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="10" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		play();
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="10" duration="20" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+count;
+count = 0;
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		count++;
+		if (count == 32) {
+			_root.Mariosound = new Sound(this);
+			_root.Mariosound.attachSound("Mario - Snore1");
+			_root.Mariosound.start(0, 1);
+			_root.Mariosound.setVolume(_root.MarioVolume);
+		}
+		if (count>=32*1.7) {
+			_root.Mariosound = new Sound(this);
+			_root.Mariosound.attachSound("Mario - Snore2");
+			_root.Mariosound.start(0, 1);
+			_root.Mariosound.setVolume(_root.MarioVolume);
+			//
+			count = 0;
+		}
+	}
+	// Insert Sleeping Noises       
+	stop();
+	if (_root.PauseGame == false) {
+		if (_root.KeyUP() || _root.KeyRIGHT() || _root.KeyLEFT() || _root.KeyDOWN() || _root.KeySPACE()) {
+			play();
+			onEnterFrame = function () {
+				if (_root.PauseGame == false) {
+					play();
+				} else {
+					stop();
+				}
+			};
+		}
+	} else {
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="30" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.Course.Char.attack = false;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (none) Hurt Fall Back -1">
+                  <matrix>
+                    <Matrix a="-0.86602783203125" b="0.5" c="0.5" d="0.86602783203125" tx="-0.1" ty="-21.3"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" duration="3" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (none) Dive - 2">
+                  <matrix>
+                    <Matrix a="0.807083129882813" b="0.587783813476563" c="-0.587783813476563" d="0.807083129882813" tx="-13.55" ty="-20.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="31.1" y="10.6"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="5" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (none) Dive - 2">
+                  <matrix>
+                    <Matrix tx="-25.85" ty="-7.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="31.15" y="10.6"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="6" duration="4" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (none) Hurt Fall Forward - 1">
+                  <matrix>
+                    <Matrix a="-1" tx="9.85" ty="-6.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="10" duration="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (none) Hurt Fall Forward - 2">
+                  <matrix>
+                    <Matrix a="-1" tx="8.5" ty="-6.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="13" duration="9" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (none) Dive - 2">
+                  <matrix>
+                    <Matrix tx="-26.5" ty="-7"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="22" duration="4" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (none) Hurt Fall Forward - 2">
+                  <matrix>
+                    <Matrix a="-1" tx="8.5" ty="-6.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="26" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (none) Hurt Fall Back -3">
+                  <matrix>
+                    <Matrix a="0" b="1" c="1" d="0" tx="-22.65" ty="-6.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="28" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (none) Hurt Fall Back -1">
+                  <matrix>
+                    <Matrix a="-0.86602783203125" b="0.5" c="0.5" d="0.86602783203125" tx="-0.1" ty="-21.3"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="30" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (none) - Shaking Head - 2">
+                  <matrix>
+                    <Matrix a="-1" tx="7" ty="-16"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

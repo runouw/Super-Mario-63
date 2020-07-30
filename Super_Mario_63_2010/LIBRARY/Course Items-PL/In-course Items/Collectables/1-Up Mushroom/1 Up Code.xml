@@ -1,0 +1,315 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Items-PL/ In-course Items/ Collectables/ 1-Up Mushroom/1 Up Code" itemID="46015edb-00000556" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="1UpCode" lastModified="1241369021" lastUniqueIdentifier="6">
+  <timeline>
+    <DOMTimeline name="1 Up Code">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (_root.Course.coincountnum == undefined) {
+	_root.Course.coincountnum = 0;
+} else {
+	_root.Course.coincountnum++;
+}
+if (_root["coindata"+_root.playingcourse][0] == undefined) {
+	_root["coindata"+_root.playingcourse] = [""];
+}
+coinnum = _root.Course.coincountnum;
+if (_root["coindata"+_root.playingcourse][coinnum] == 1 && _root["coindata"+_root.playingcourse][coinnum] !== undefined) {
+	gotoAndStop("end");
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+onEnterFrame = function () {
+	if (Math.abs((_root.currentCamX)-(_x+_parent._x))<1000 && Math.abs((_root.currentCamY)-(_y+_parent._y))<1000) {
+		_visible = true;
+		if (this.box.hitTest(_root.Course.Char.charClip.body) || this.box.hitTest((_root.Course.Char._x*_root.coursescale/100)+_root.Course._x, ((_root.Course.Char._y-15)*_root.coursescale/100)+_root.Course._y, true)) {
+			gotoAndPlay("collect");
+			_root.CharLives += 1;
+			onEnterFrame = null;
+		}
+	} else {
+		_visible = false;
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="3" duration="17" name="collect" labelType="name" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.bgsoundFX = new Sound(this);
+_root.bgsoundFX.attachSound("1up");
+_root.bgsoundFX.start(0, 1);
+_root.bgsoundFX.setVolume(_root.BgVolume);
+//
+_root["coindata"+_root.playingcourse][coinnum] = 1;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="20" name="end" labelType="name" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Text" color="#FFFF4F" locked="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="box">
+                  <matrix>
+                    <Matrix a="0.283218383789063" d="0.937484741210938"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" duration="16" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix ty="20"/>
+                  </matrix>
+                  <members>
+                    <DOMGroup selected="true">
+                      <matrix>
+                        <Matrix ty="20"/>
+                      </matrix>
+                      <members>
+                        <DOMShape selected="true">
+                          <matrix>
+                            <Matrix ty="20"/>
+                          </matrix>
+                          <fills>
+                            <FillStyle index="1">
+                              <SolidColor color="#00FF33"/>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle1="1" edges="!444 -787[443 -740 455 -612!455 -612[456 -602 456 -594!456 -594[456 -568 447 -564!447 -564[441 -559 434 -559!434 -559[426 -559 418 -566!418 -566[414 -609 407 -709!407 -709[406 -722 406 -740!406 -740[406 -769 409 -787!409 -787[419 -793
+ 428 -793!428 -793[437 -793 444 -787!462 -507[462 -494 460 -477!460 -477[461 -469 448 -467!448 -467[434 -465 422 -467!422 -467[415 -484 418 -506!418 -506[420 -515 427 -522!427 -522[436 -524 446 -524!446 -524[454 -524 460 -522!460 -522
+[462 -518 462 -507!162 -809[183 -809 203 -761!203 -761[228 -701 228 -604!228 -604[228 -450 162 -454!162 -454[98 -457 70 -468!70 -468[39 -521 28 -588!28 -588[20 -636 20 -710!20 -710[20 -725 22 -761!22 -761[24 -792 24 -806!24 -806|62 -806
+!62 -806[62 -790 59 -758!59 -758[57 -726 57 -710!57 -710[57 -635 65 -606!65 -606[82 -548 137 -544!137 -544[174 -541 186 -562!186 -562[195 -577 195 -623!195 -623[195 -718 137 -728!137 -728|146 -808!146 -808[147 -809 162 -809!330 -671[321
+ -679 313 -679!313 -679[302 -679 297 -665!297 -665[292 -653 292 -640!292 -640[292 -633 294 -615!294 -615[312 -617 325 -628!325 -628[338 -639 342 -656!342 -656[339 -664 330 -671!262 -724[279 -753 308 -753!308 -753[379 -753 379 -670!379
+ -670[379 -573 341 -549!341 -549[325 -541 309 -534!309 -534[309 -526 311 -507!311 -507[313 -478 313 -460!313 -460|309 -460!309 -460[305 -460 300 -460!300 -460|282 -460!282 -460[276 -463 264 -552!264 -552[254 -627 251 -669!251 -669[248
+ -699 262 -724!-154 -805|-148 -524!-148 -524[-139 -524 -125 -527!-125 -527|-94 -536!-94 -536|-94 -485!-94 -485[-171 -453 -236 -456!-236 -456|-232 -512!-232 -512[-229 -514 -207 -516!-207 -516[-185 -518 -181 -520!-181 -520[-180 -522 -180
+ -551!-180 -551[-180 -665 -188 -688!-188 -688[-196 -669 -199 -653!-199 -653[-201 -643 -205 -623!-205 -623[-208 -621 -211 -621!-211 -621[-220 -621 -220 -648!-220 -648[-217 -675 -200 -737!-200 -737[-185 -794 -185 -805!-185 -805[-180 -810
+ -170 -810!-170 -810[-158 -810 -154 -805"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup selected="true">
+                      <matrix>
+                        <Matrix ty="20"/>
+                      </matrix>
+                      <members>
+                        <DOMShape selected="true">
+                          <matrix>
+                            <Matrix ty="20"/>
+                          </matrix>
+                          <fills>
+                            <FillStyle index="1">
+                              <SolidColor color="#00CC00"/>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle1="1" edges="
+!420 -517[421 -509 408 -507!408 -507[394 -505 382 -507!382 -507[375 -524 378 -546!378 -546[380 -555 387 -562!387 -562[396 -564 406 -564!406 -564[414 -564 420 -562!420 -562[422 -558 422 -547!422 -547[422 -534 420 -517!416 -634[416 -608
+ 407 -604!407 -604[401 -599 394 -599!394 -599[386 -599 378 -606!378 -606[374 -649 367 -749!367 -749[366 -762 366 -780!366 -780[366 -809 369 -827!369 -827[379 -833 388 -833!388 -833[397 -833 404 -827!404 -827[403 -780 415 -652!415 -652
+[416 -642 416 -634!268 -793[339 -793 339 -710!339 -710[339 -613 301 -589!301 -589[285 -581 269 -574!269 -574[269 -566 271 -547!271 -547[273 -518 273 -500!273 -500|269 -500!269 -500[265 -500 260 -500!260 -500|242 -500!242 -500[236 -503
+ 224 -592!224 -592[214 -667 211 -709!211 -709[208 -739 222 -764!222 -764[239 -793 268 -793!122 -849[143 -849 163 -801!163 -801[188 -741 188 -644!188 -644[188 -490 122 -494!122 -494[58 -497 30 -508!30 -508[-1 -561 -12 -628!-12 -628[-20
+ -676 -20 -750!-20 -750[-20 -765 -18 -801!-18 -801[-16 -832 -16 -846!-16 -846|22 -846!22 -846[22 -830 19 -798!19 -798[17 -766 17 -750!17 -750[17 -675 25 -646!25 -646[42 -588 97 -584!97 -584[134 -581 146 -602!146 -602[155 -617 155 -663
+!155 -663[155 -758 97 -768!97 -768|106 -848!106 -848[107 -849 122 -849!273 -719[262 -719 257 -705!257 -705[252 -693 252 -680!252 -680[252 -673 254 -655!254 -655[272 -657 285 -668!285 -668[298 -679 302 -696!302 -696[299 -704 290 -711!290
+ -711[281 -719 273 -719!-210 -850[-198 -850 -194 -845!-194 -845|-188 -564!-188 -564[-179 -564 -165 -567!-165 -567|-134 -576!-134 -576|-134 -525!-134 -525[-211 -493 -276 -496!-276 -496|-272 -552!-272 -552[-269 -554 -247 -556!-247 -556
+[-225 -558 -221 -560!-221 -560[-220 -562 -220 -591!-220 -591[-220 -705 -228 -728!-228 -728[-236 -709 -239 -693!-239 -693[-241 -683 -245 -663!-245 -663[-248 -661 -251 -661!-251 -661[-260 -661 -260 -688!-260 -688[-257 -715 -240 -777!-240
+ -777[-225 -834 -225 -845!-225 -845[-220 -850 -210 -850"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="19" keyMode="9728">
+              <elements>
+                <DOMGroup selected="true">
+                  <members>
+                    <DOMGroup selected="true">
+                      <matrix>
+                        <Matrix ty="-40"/>
+                      </matrix>
+                      <members>
+                        <DOMShape selected="true">
+                          <matrix>
+                            <Matrix ty="-40"/>
+                          </matrix>
+                          <fills>
+                            <FillStyle index="1">
+                              <SolidColor color="#00FF33"/>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle1="1" edges="
+!444 -787[443 -740 455 -612!455 -612[456 -602 456 -594!456 -594[456 -568 447 -564!447 -564[441 -559 434 -559!434 -559[426 -559 418 -566!418 -566[414 -609 407 -709!407 -709[406 -722 406 -740!406 -740[406 -769 409 -787!409 -787[419 -793
+ 428 -793!428 -793[437 -793 444 -787!462 -507[462 -494 460 -477!460 -477[461 -469 448 -467!448 -467[434 -465 422 -467!422 -467[415 -484 418 -506!418 -506[420 -515 427 -522!427 -522[436 -524 446 -524!446 -524[454 -524 460 -522!460 -522
+[462 -518 462 -507!162 -809[183 -809 203 -761!203 -761[228 -701 228 -604!228 -604[228 -450 162 -454!162 -454[98 -457 70 -468!70 -468[39 -521 28 -588!28 -588[20 -636 20 -710!20 -710[20 -725 22 -761!22 -761[24 -792 24 -806!24 -806|62 -806
+!62 -806[62 -790 59 -758!59 -758[57 -726 57 -710!57 -710[57 -635 65 -606!65 -606[82 -548 137 -544!137 -544[174 -541 186 -562!186 -562[195 -577 195 -623!195 -623[195 -718 137 -728!137 -728|146 -808!146 -808[147 -809 162 -809!313 -679[302
+ -679 297 -665!297 -665[292 -653 292 -640!292 -640[292 -633 294 -615!294 -615[312 -617 325 -628!325 -628[338 -639 342 -656!342 -656[339 -664 330 -671!330 -671[321 -679 313 -679!262 -724[279 -753 308 -753!308 -753[379 -753 379 -670!379
+ -670[379 -573 341 -549!341 -549[325 -541 309 -534!309 -534[309 -526 311 -507!311 -507[313 -478 313 -460!313 -460|309 -460!309 -460[305 -460 300 -460!300 -460|282 -460!282 -460[276 -463 264 -552!264 -552[254 -627 251 -669!251 -669[248
+ -699 262 -724!-154 -805|-148 -524!-148 -524[-139 -524 -125 -527!-125 -527|-94 -536!-94 -536|-94 -485!-94 -485[-171 -453 -236 -456!-236 -456|-232 -512!-232 -512[-229 -514 -207 -516!-207 -516[-185 -518 -181 -520!-181 -520[-180 -522 -180
+ -551!-180 -551[-180 -665 -188 -688!-188 -688[-196 -669 -199 -653!-199 -653[-201 -643 -205 -623!-205 -623[-208 -621 -211 -621!-211 -621[-220 -621 -220 -648!-220 -648[-217 -675 -200 -737!-200 -737[-185 -794 -185 -805!-185 -805[-180 -810
+ -170 -810!-170 -810[-158 -810 -154 -805"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup selected="true">
+                      <matrix>
+                        <Matrix ty="-40"/>
+                      </matrix>
+                      <members>
+                        <DOMShape selected="true">
+                          <matrix>
+                            <Matrix ty="-40"/>
+                          </matrix>
+                          <fills>
+                            <FillStyle index="1">
+                              <SolidColor color="#00CC00"/>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle1="1" edges="
+!416 -634[416 -608 407 -604!407 -604[401 -599 394 -599!394 -599[386 -599 378 -606!378 -606[374 -649 367 -749!367 -749[366 -762 366 -780!366 -780[366 -809 369 -827!369 -827[379 -833 388 -833!388 -833[397 -833 404 -827!404 -827[403 -780
+ 415 -652!415 -652[416 -642 416 -634!408 -507[394 -505 382 -507!382 -507[375 -524 378 -546!378 -546[380 -555 387 -562!387 -562[396 -564 406 -564!406 -564[414 -564 420 -562!420 -562[422 -558 422 -547!422 -547[422 -534 420 -517!420 -517
+[421 -509 408 -507!268 -793[339 -793 339 -710!339 -710[339 -613 301 -589!301 -589[285 -581 269 -574!269 -574[269 -566 271 -547!271 -547[273 -518 273 -500!273 -500|269 -500!269 -500[265 -500 260 -500!260 -500|242 -500!242 -500[236 -503
+ 224 -592!224 -592[214 -667 211 -709!211 -709[208 -739 222 -764!222 -764[239 -793 268 -793!122 -849[143 -849 163 -801!163 -801[188 -741 188 -644!188 -644[188 -490 122 -494!122 -494[58 -497 30 -508!30 -508[-1 -561 -12 -628!-12 -628[-20
+ -676 -20 -750!-20 -750[-20 -765 -18 -801!-18 -801[-16 -832 -16 -846!-16 -846|22 -846!22 -846[22 -830 19 -798!19 -798[17 -766 17 -750!17 -750[17 -675 25 -646!25 -646[42 -588 97 -584!97 -584[134 -581 146 -602!146 -602[155 -617 155 -663
+!155 -663[155 -758 97 -768!97 -768|106 -848!106 -848[107 -849 122 -849!273 -719[262 -719 257 -705!257 -705[252 -693 252 -680!252 -680[252 -673 254 -655!254 -655[272 -657 285 -668!285 -668[298 -679 302 -696!302 -696[299 -704 290 -711!290
+ -711[281 -719 273 -719!-210 -850[-198 -850 -194 -845!-194 -845|-188 -564!-188 -564[-179 -564 -165 -567!-165 -567|-134 -576!-134 -576|-134 -525!-134 -525[-211 -493 -276 -496!-276 -496|-272 -552!-272 -552[-269 -554 -247 -556!-247 -556
+[-225 -558 -221 -560!-221 -560[-220 -562 -220 -591!-220 -591[-220 -705 -228 -728!-228 -728[-236 -709 -239 -693!-239 -693[-241 -683 -245 -663!-245 -663[-248 -661 -251 -661!-251 -661[-260 -661 -260 -688!-260 -688[-257 -715 -240 -777!-240
+ -777[-225 -834 -225 -845!-225 -845[-220 -850 -210 -850"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="20" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 5" color="#4FFFFF">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="3" duration="16" tweenType="motion" motionTweenRotate="clockwise" motionTweenRotateTimes="1" keyMode="17921" acceleration="100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ 1-Up Mushroom/1-Up Light Effect" name="light">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="19" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ 1-Up Mushroom/1-Up Light Effect" name="light" selected="true">
+                  <matrix>
+                    <Matrix ty="-10"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="20" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Graphics" color="#FF4FFF" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ 1-Up Mushroom/1-Up Animation">
+                  <matrix>
+                    <Matrix tx="-0.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" duration="16" name=" animate sparkles here" labelType="comment" tweenType="motion" keyMode="17921" acceleration="100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ 1-Up Mushroom/1 up Glow">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter blurX="0" blurY="0"/>
+                    <GlowFilter color="#00FF00"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="19" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ 1-Up Mushroom/1 up Glow" selected="true">
+                  <matrix>
+                    <Matrix ty="-10"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter blurX="13" blurY="13"/>
+                    <GlowFilter blurX="0" blurY="0" strength="0"/>
+                  </filters>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="20" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

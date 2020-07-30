@@ -1,0 +1,103 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Level Designer Windows/LDW - Exit Quit" itemID="485469be-000011b8" sourceFlashFilepath="F:\Super Mario 63\New computer\Level Designer (With Mario Engine new) 3.fla" sourceLibraryItemHRef="Level Designer Windows/LDW - Exit Quit" sourceLastModified="1227989226" lastModified="1227989226" lastUniqueIdentifier="1" sourceItemID="485469be-000011b8">
+  <timeline>
+    <DOMTimeline name="LDW - Exit Quit">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[sin = 0;
+sin2 = random(90);
+rotplus = 0;
+Y = _y;
+onEnterFrame = function () {
+	if (_parent.greyness._alpha<50) {
+		sin += 0.05;
+		sin2 += 0.03;
+		_y = (3*Math.sin(sin2))+Y;
+		this._rotation = rotplus+(3*Math.sin(sin));
+		if (this.hitTest(_root._xmouse, _root._ymouse, true) || cl == true) {
+			if (cl !== true) {
+				rotplus += (10-rotplus)/3;
+				_xscale += (130-_xscale)/3;
+				txt._xscale += (130-txt._xscale)/3;
+			} else {
+				rotplus += (100-rotplus)/8
+				_alpha -= 8;
+				_xscale += (200-_xscale)/4
+				txt._xscale += (200-txt._xscale)/4
+			}
+		} else {
+			rotplus += (0-rotplus)/3;
+			_xscale += (100-_xscale)/3;
+			txt._xscale += (100-txt._xscale)/3;
+		}
+		_yscale = _xscale;
+		txt._yscale = txt._xscale;
+	}
+};
+onMouseDown = function () {
+	if (this.hitTest(_root._xmouse, _root._ymouse, true) && rotplus>=8.5 && _parent.greyness._alpha<20) {
+		_parent.FunctionQuit();
+		cl = true;
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <RadialGradient>
+                        <matrix>
+                          <Matrix a="0.06854248046875" d="0.0413818359375" tx="-16.75" ty="-3.25"/>
+                        </matrix>
+                        <GradientEntry color="#FD7171" ratio="0"/>
+                        <GradientEntry color="#E10204" ratio="0.32156862745098"/>
+                        <GradientEntry color="#7E0101" ratio="1"/>
+                      </RadialGradient>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <SolidColor/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="!615 -285|615 285!615 285|-615 285!-615 285|-615 -285!-615 -285|615 -285"/>
+                  </edges>
+                </DOMShape>
+                <DOMSymbolInstance libraryItemName="LDW - Exit Quit Text" name="txt">
+                  <transformationPoint>
+                    <Point x="-0.05"/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,491 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Clips/8-12 Bowser Clown Car Code" itemID="48ef8b9f-0000115f" lastModified="1237604727" lastUniqueIdentifier="6">
+  <timeline>
+    <DOMTimeline name="8-12 Bowser Clown Car Code">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+sinwave = 0;
+yspeed = 0;
+xspeed = 0;
+frame = "Idle";
+aiwait = 0;
+aicount = 0;
+targety = _y;
+targetx = _x;
+attack = false;
+diffcounter = 0;
+diffcounter2 = true;
+hp = 3;
+OEF = function () {
+	_root.Camcenter = _root.Course.FrontGFX.Bowser;
+	_root.PauseGame = false;
+	_root.Camcenter = _root.Course.BackGFX.box3;
+};
+Message1 = function () {
+	clip.gotoAndStop("Talk");
+	_root.CinemaMessageFrame = 3;
+	_root.CinemaMessage = "<b><i>Bowser:</i></b> Hahaha!! Mario, You think that you can actually stop my Master Plan!!";
+};
+Message2 = function () {
+	_root.CinemaMessage = "<b><i>Bowser:</i></b> The Meteor is almost ready to launch.";
+};
+messcount = 0;
+loopcode = function () {
+	messcount++;
+	if (this["Message"+messcount] !== undefined) {
+		this["Message"+messcount]();
+		lastframeZ = _root.KeyZ();
+		onEnterFrame = function () {
+			OEF();
+			if (_root.KeyZ() == true && lastframeZ !== true && _root.CinemaMessageFinished == true) {
+				_root.CinemaMessage = "";
+				loopcode();
+			}
+			lastframeZ = _root.KeyZ();
+		};
+	} else {
+		loopcode = null;
+		end();
+	}
+};
+if (_root.lvl8keyE == false) {
+	onEnterFrame = function () {
+		if (_root.PauseGame == false) {
+			_root.Controll = false;
+			if (_root.Course.Char.air == false) {
+				//
+				onEnterFrame = function () {
+					// Talking
+					if (_root.Course.Char.air == false) {
+						_root.Course.Char.attack = true;
+						_root.Course.Char.attackFrame = "bosscinema";
+						_root.Course.Char._xscale = -100;
+						_root.playpause = true;
+						loopcode();
+					}
+				};
+			}
+		}
+	};
+} else {
+	count = 0;
+	onEnterFrame = function () {
+		count++;
+		if (count == 3) {
+			// reEntered from warp pipe
+			_y += 1500;
+			_root.Course.BackGFX.nextFrame();
+			_root.Course.BackGFX.nextFrame();
+			_root.Course.FrontGFX.nextFrame();
+			_root.Course.Platforms.nextFrame();
+		}
+	};
+}
+end = function () {
+	_root.Camcenter = "None";
+	count = 0;
+	onEnterFrame = function () {
+		count++;
+		if (count>10) {
+			//   
+			clip.gotoAndStop("Idle");
+			_root.Course.Char.attack = false;
+			//
+			_root.playpause = false;
+			onEnterFrame = null;
+			_root.Camcenter = "none";
+			//
+			_root.StopBGsong();
+			_root.StartBossMusic();
+			//
+			gotoAndStop(3);
+		}
+	};
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+attack = true;
+frame = "atk1";
+/*
+targety = -50;
+frame = "atk2";
+if (_x>0) {
+targetx = -200;
+} else {
+targetx = 200;
+}
+*/
+clip.gotoAndStop(frame);
+clip.frame.fireball = [3, 3, 3];
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		if (hp>0) {
+			_root.Course.BackGFX.camCenter._x = (_x+((_root.Course.Char._x-_root.Course.BackGFX._x)*2))/3;
+			_root.Course.BackGFX.camCenter._y = (_y+((_root.Course.Char._y-_root.Course.BackGFX._y)*1))/2;
+			distance = Math.sqrt(Math.pow((_x-(_root.Course.Char._x-_root.Course.BackGFX._x)), 2)+Math.pow((_y-(_root.Course.Char._y-_root.Course.BackGFX._y)), 2));
+			if (_root.CameraZoom<100-Math.max((distance/4)-100, 0)) {
+				_root.CameraZoom++;
+			}
+			if (_root.CameraZoom>95-Math.max((distance/4)-100, 0)) {
+				_root.CameraZoom--;
+			}
+			_root.Camcenter = _root.Course.BackGFX.camCenter;
+		} else {
+		}
+		//
+		if (frame == "Idle" || attack == false || (attack == true && (frame == "move" || frame == "summon"))) {
+			_y += Math.sin(sinwave);
+			sinwave += 0.1;
+			if (attack == false && frame !== "move") {
+				_y -= (_y-targety)/30;
+				_x -= (_x-targetx)/30;
+			}
+		} else {
+			sinwave = 0;
+		}
+		//
+		if (attack == false) {
+			aiwait++;
+			if (aiwait>=64-diffcounter*2) {
+				aicount++;
+				if (aicount>6) {
+					aicount = 0;
+				}
+				aiwait = 0;
+				//
+				attack = true;
+				if (Math.abs(_x-(_root.Course.Char._x-_parent._x))<80 && aicount !== 2 && aicount !== 4 && aicount !== 5) {
+					yspeed = 0;
+					frame = "stomp";
+				} else if (aicount !== 2 && aicount !== 4 && aicount !== 5) {
+					diffcounter = (3-hp)*3;
+					frame = "atk1";
+					clip.gotoAndStop(frame);
+					randomnum = random(7+diffcounter)+diffcounter;
+					randomnum = Math.min(randomnum, 18);
+					// higher the number the harder
+					//trce(randomnum);
+					// 0 red
+					// 1 purple
+					// 2 green
+					// 3 blue
+					// 4 grey
+					switch (randomnum) {
+					case 0 :
+						clip.frame.fireball = [0, 0, 0];
+						break;
+					case 1 :
+						clip.frame.fireball = [1, 1];
+						break;
+					case 2 :
+						clip.frame.fireball = [2, 0];
+						break;
+					case 3 :
+						clip.frame.fireball = [2, 2];
+						break;
+					case 4 :
+						clip.frame.fireball = [1, 4];
+						break;
+					case 5 :
+						clip.frame.fireball = [3, 3, 3];
+						break;
+					case 6 :
+						clip.frame.fireball = [3, 2, 0];
+						break;
+					case 7 :
+						clip.frame.fireball = [2, 2, 2];
+						break;
+					case 8 :
+						clip.frame.fireball = [4, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+						break;
+					case 9 :
+						clip.frame.fireball = [4, 4, 4];
+						break;
+					case 10 :
+						clip.frame.fireball = [3, 2, 2, 3];
+						break;
+					case 11 :
+						clip.frame.fireball = [3, 1, 1, 3];
+						break;
+					case 12 :
+						clip.frame.fireball = [0, 1, 2, 3, 3];
+						break;
+					case 13 :
+						clip.frame.fireball = [1, 1, 1, 1];
+						break;
+					case 14 :
+						clip.frame.fireball = [3, 4, 4, 3];
+						break;
+					case 15 :
+						clip.frame.fireball = [4, 4, 4, 4, 4];
+						break;
+					case 16 :
+						clip.frame.fireball = [3, 3, 3, 3, 3, 3, 3];
+						break;
+					case 17 :
+						clip.frame.fireball = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2];
+						break;
+					case 18 :
+						clip.frame.fireball = [1, 1, 1, 1, 1, 1];
+						break;
+					}
+				} else if (aicount == 2) {
+					if (diffcounter2 == true) {
+						frame = "atk2pre";
+					} else {
+						diffcounter2 = true;
+						frame = "move";
+						if (_x>0) {
+							targetx = -200;
+						} else {
+							targetx = 200;
+						}
+					}
+				} else if (aicount == 4) {
+					frame = "summon";
+					if (_x>0) {
+						targetx = -60;
+					} else {
+						targetx = 60;
+					}
+				} else if (aicount == 5) {
+					frame = "atk2pre";
+				}
+			}
+		}
+		if ((frame == "move" || frame == "summon") && attack == true) {
+			_y -= (_y-targety)/15;
+			if (targetx<0) {
+				if (_xscale>0) {
+					if (_x+xspeed*10>targetx) {
+						xspeed -= 1;
+						xspeed *= 0.9;
+					} else {
+						xspeed *= 0.9;
+						clip.frame.play();
+					}
+				} else {
+					xspeed *= 0.9;
+					clip.frame.play();
+				}
+			} else {
+				if (_xscale<0) {
+					if (_x+xspeed*10<targetx) {
+						xspeed += 1;
+						xspeed *= 0.9;
+					} else {
+						xspeed *= 0.9;
+						clip.frame.play();
+					}
+				} else {
+					xspeed *= 0.9;
+					clip.frame.play();
+				}
+			}
+		}
+		if (frame == "atk2" && attack == true) {
+			_y -= (_y-targety)/20;
+			if (targetx<0) {
+				if (_xscale>0) {
+					if (_x-120>targetx) {
+						xspeed -= 0.25;
+						xspeed *= 0.94;
+					} else {
+						xspeed *= 0.98;
+						clip.frame.play();
+					}
+				} else {
+					xspeed *= 0.9;
+					clip.frame.play();
+				}
+			} else {
+				if (_xscale<0) {
+					if (_x+120<targetx) {
+						xspeed += 0.25;
+						xspeed *= 0.94;
+					} else {
+						xspeed *= 0.98;
+						clip.frame.play();
+					}
+				} else {
+					xspeed *= 0.9;
+					clip.frame.play();
+				}
+			}
+		}
+		if (frame == "stomp" && attack == true) {
+			aiwait++;
+			if (aiwait>4) {
+				yspeed += 1;
+				if (_y>-40) {
+					yspeed *= -1;
+				}
+			}
+			if (yspeed>0) {
+				xspeed = -(_x-(_root.Course.Char._x-_root.Course.BackGFX._x))/15;
+			} else {
+				_x -= (_x-targetx)/20;
+				xspeed = 0;
+			}
+			if (aiwait>24 && yspeed>0) {
+				xspeed = 0;
+				yspeed = 0;
+				targety = -200;
+				aiwait = 0;
+				attack = false;
+			}
+		}
+		if (attack == false) {
+			xspeed *= 0.9;
+		}
+		//     
+		if (hp>0) {
+			if (this.blade.hitTest(_root.Course.Char.charClip.body)) {
+				if (_root.Course.Char._x>_x+_parent._x) {
+					_root.MarioHit(1, 90, -5, 7, 7, "");
+				} else {
+					_root.MarioHit(1, 90, -5, -7, 7, "");
+				}
+			}
+			if (this.shell.hitTest(_root.Course.Char.charClip.body)) {
+				if (_root.Course.Char._x>_x+_parent._x) {
+					_root.MarioHit(1, 90, -5, 7, 7, "");
+				} else {
+					_root.MarioHit(1, 90, -5, -7, 7, "");
+				}
+			}
+			if (this.head.hitTest(_root.Course.Char.charClip.feet) && _root.Course.Char.yspeed>0 && _root.Course.Char.air == true && frame == "atk2" && attack == true) {
+				hp--;
+				if (hp>0) {
+					attack = true;
+					frame = "hurt";
+				} else {
+					attack = true;
+					frame = "hurt2";
+				}
+				diffcounter2 = false;
+				if (_root.Course.Char.attackFrame == "Ground" && _root.Course.Char.attack == true) {
+					_root.Course.Char.yspeed /= 2;
+					_root.Course.Char.yspeed -= 12;
+					_root.Course.Char.xspeed /= 2;
+					if (_root.Course.Char._x>_x+_parent._x) {
+						_root.Course.Char.xspeed += 7;
+					} else {
+						_root.Course.Char.xspeed -= 7;
+					}
+					// hurt
+				} else {
+					_root.Course.Char.yspeed /= 2;
+					_root.Course.Char.yspeed -= 9;
+					_root.Course.Char.xspeed /= 1.5;
+					if (_root.Course.Char._x>_x+_parent._x) {
+						_root.Course.Char.xspeed += 8;
+					} else {
+						_root.Course.Char.xspeed -= 8;
+					}
+				}
+			}
+		}
+		//                                                                                                  
+		_x += xspeed;
+		_y += yspeed;
+		if (attack == false) {
+			frame = "Idle";
+		}
+		clip.gotoAndStop(frame);
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F" outline="true" useOutlineView="true">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="blade">
+                  <matrix>
+                    <Matrix a="0.565887451171875" d="0.93768310546875" ty="45.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="body">
+                  <matrix>
+                    <Matrix a="0.943145751953125" d="2.50048828125" ty="14.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="shell">
+                  <matrix>
+                    <Matrix a="0.471572875976563" d="1.8753662109375" tx="17" ty="-20.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="head">
+                  <matrix>
+                    <Matrix a="0.943145751953125" d="1.250244140625" tx="-12" ty="-42.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/8-12 Bowser Clown Car Animations" name="clip" selected="true">
+                  <transformationPoint>
+                    <Point y="-0.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

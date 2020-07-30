@@ -1,0 +1,2265 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Clips/ C - Castle/Castle Inside/ Section C &amp; D/C-12 Back GFX" itemID="4669b681-00000623" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="C-12BackGFX" lastModified="1247150606" lastUniqueIdentifier="19">
+  <timeline>
+    <DOMTimeline name="C-12 Back GFX">
+      <layers>
+        <DOMLayer name="Warps" color="#FF4FFF" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+_root.AreaTextClipF("Top of the Castle:"+newline+"<i>Star Room</i>", 1);
+playedsound = false;
+_root.Starnamenum = 0;
+onEnterFrame = function () {
+	if (this.warp1.hitTest(_root.Course.Char.charClip.feet)) {
+		_root.Course.Char.attack = true;
+		_root.Course.Char.xspeed = 0;
+		_root.Course.Char.yspeed = 0;
+		_root.Course.Char.attackFrame = "none";
+		warp = true;
+		warpnum = 1;
+	}
+	if (warp == true && _root.warpframe == false) {
+		if (warpnum == 1) {
+			if (playedsound == false) {
+				_root.PaintingSound();
+			}
+			playedsound = true;
+			_root.attachMovie("uptransition", "uptransition"+_root.getNextHighestDepth(), _root.getNextHighestDepth(), {_x:_root.screensizeX/2, _y:_root.screensizeY/2});
+		}
+	}
+	if (_root.warpframe == true) {
+		if (warpnum == 1) {
+			_root.Fluddpow = "";
+			_root.StopBGsong();
+			_root.Restartcoins();
+			//_root.Playinglevel = ""
+			_root.changecourse("uptransition2", "9-11", -560, -160, -560, -160, true);
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="warp1">
+                  <matrix>
+                    <Matrix a="4.39358520507813" d="6.59669494628906" tx="474.35" ty="-448.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 6" color="#808080">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/Toad Stuff/Toad Main Clip">
+                  <matrix>
+                    <Matrix tx="241.2" ty="-15.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	staramount = 21;
+	_x += random(30)
+	if (_parent.toaddisp10 == undefined) {
+		_parent.toaddisp10 = random(2);
+	}
+	if (_parent.toaddisp10 == 0) {
+		Mood = "Smile";
+		M1Moo = "Talk";
+		M1Txt = "That clock over there is unsually large....";
+		M1Sta = function () {
+			return (BP());
+		};
+		M1End = function () {
+			return (BP());
+		};
+		//
+		M2Moo = "Talk";
+		M2Txt = "I heard the Princess got it imported over from some strange magical place.";
+		M2Sta = function () {
+			return (true);
+		};
+		M2End = function () {
+			return (BP());
+		};
+		//
+		M3Moo = "Talk";
+		M3Txt = "And so the clock has lots of weird, strange properties to it, almost as if there is an entire world inside it!";
+		M3Sta = function () {
+			return (true);
+		};
+		M3End = function () {
+			return (BP());
+		};
+		/*
+		M4Moo = "Talk";
+		M4Txt = "...But when the results were released....";
+		M4Sta = function () {
+			return (true);
+		};
+		M4End = function () {
+			return (BP());
+		};
+		*/
+		M5Moo = "Mad";
+		M5Txt = "....Mine didn't get first, in fact, no <b>Pun in Ten did</b>....";
+		M5Sta = function () {
+			return (true);
+		};
+		M5End = function () {
+			return (BP());
+		};
+		
+		//
+		M6Moo = "Happy";
+		M6Txt = ".........................";
+		M6Sta = function () {
+			return (true);
+		};
+		M6End = function () {
+			return (BP());
+		};
+		M6F = function () {
+			_root.Course.Char.charClip.frame.gotoAndPlay("no");
+		};
+		//
+		M7Moo = "Crazy";
+		M7Txt = "<b>.....................Why Aren't you Laughing?!?!?</b>";
+		M7Sta = function () {
+			return (true);
+		};
+		M7End = function () {
+			return (BP());
+		};
+		//M7F = function () {
+			//_root.Course.Char.charClip.frame.gotoAndPlay(1);
+		//};
+		//
+		//M8Moo = "Sad";
+		//M8Txt = "I once looked up to you, "+_root.CurrentPlayer;
+		//M8Sta = function () {
+			//return (true);
+		//};
+		//M8End = function () {
+			//return (BP());
+		//};
+		//M8F = function () {
+			//_root.Course.Char.charClip.frame.gotoAndPlay(1)
+		//};
+		//
+		M9Moo = "Mad";
+		M9Txt = "I thought you were a nice person!!";
+		M9Sta = function () {
+			return (true);
+		};
+		M9End = function () {
+			return (BP());
+		};
+		M9F = function () {
+			//_root.Course.Char.charClip.frame.gotoAndPlay("yes")
+		};
+		//
+		M10Moo = "Sad";
+		M10Txt = "And then you come here and Destroyed all my Dreams!";
+		M10Sta = function () {
+			return (true);
+		};
+		M10End = function () {
+			return (BP());
+		};
+		//
+		M11Moo = "Crazy";
+		M11Txt = "DESTROYED IT!!!!";
+		M11Sta = function () {
+			return (true);
+		};
+		M11End = function () {
+			return (BP());
+		};
+		M11F = function () {
+			_root.Course.Char.charClip.frame.gotoAndPlay("noo");
+		};
+		//
+		M12Moo = "Mad";
+		M12Txt = "......";
+		M12Sta = function () {
+			return (true);
+		};
+		M12End = function () {
+			return (BP());
+		};
+		M12F = function () {
+			_root.Course.Char.charClip.frame.gotoAndPlay("talk");
+		};
+		//
+		M13Moo = "Mad";
+		M13Txt = "...Gee, Thanks for ruining my life...";
+		M13Sta = function () {
+			return (true);
+		};
+		M13End = function () {
+			return (BP());
+		};
+		M13F = function () {
+			_root.Course.Char.charClip.frame.gotoAndPlay(1);
+			this._xscale *= -1;
+			Mood = "Mad";
+			StartMood = "Mad";
+			M1Moo = "Mad";
+			M1Txt = "......Go Away!!";
+			M1Sta = function () {
+				return (BP());
+			};
+			M1End = function () {
+				return (BP());
+			};
+			//
+			M2Moo = undefined;
+			M2Txt = undefined;
+			M2Sta = null;
+			M2End = null;
+		};
+	} else {
+		this._y = 500;
+	}
+	//
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/Toad Stuff/Toad Main Clip">
+                  <matrix>
+                    <Matrix d="1.00119018554688" tx="-337.25" ty="-15.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	staramount = 15;
+	if (_parent.toaddisp20 == undefined) {
+		_parent.toaddisp20 = random(2);
+	}
+	if (_parent.toaddisp20 == 0) {
+		count2 = 0;
+		speed = 2
+		OEF2 = function () {
+			_x += speed;
+			count2++;
+			if (count2>60) {
+				count2 = 0;
+				speed *= -1;
+			}
+			_xscale = speed*50;
+		};
+		frame = "walk";
+		Mood = "Mad";
+		M1Moo = "Talk";
+		M1Txt = "<b>....Right now...... I'm exercising.....</b>";
+		M1Sta = function () {
+			return (BP());
+		};
+		M1End = function () {
+			return (BP());
+		};
+		//
+		M2Moo = "Talk";
+		M2Txt = "<b>.......So that when Bowser's Meteor comes........ I can run all the way......... to Bowser's Castle ....</b>";
+		M2Sta = function () {
+			return (true);
+		};
+		M2End = function () {
+			return (BP());
+		};
+		//
+		M3Moo = "Talk";
+		M3Txt = "<b>......You know..... just in case you fail....</b>";
+		M3Sta = function () {
+		return (true);
+		};
+		M3End = function () {
+		return (BP());
+		};
+		//
+		//M4Moo = "Mad";
+		//M4Txt = "But it was an everlasting flame";
+		//M4Sta = function () {
+		//return (true);
+		//};
+		//M4End = function () {
+		//return (BP());
+		//};
+	} else {
+		this._y = 500;
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/Toad Stuff/Toad Main Clip">
+                  <matrix>
+                    <Matrix tx="-563" ty="-14.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	staramount = 27;
+	this._xscale = -100;
+	Mood = "Sad";
+	M1Moo = "Mad";
+	M1Txt = "Mwahahahaha!!!! What are you doing in my Lair!?";
+	M1Sta = function () {
+		return (BP());
+	};
+	M1End = function () {
+		return (BP());
+	};
+	//
+	M2Moo = "Crazy";
+	M2Txt = "...You dare Challange the All Powerful <b>MEWTWO</b> to a Poke-Match?!?!?!";
+	M2Sta = function () {
+		return (true);
+	};
+	M2End = function () {
+		return (BP());
+	};
+	//
+	M3Moo = "Mad";
+	M3Txt = ".......Tremble at the face of my all powerful <i>PSYCHIC ABILITIES!!</i>";
+	M3Sta = function () {
+		return (true);
+	};
+	M3End = function () {
+		return (BP());
+	};
+	////M1F = function () {
+	//_root.Course.Char.charClip.frame.gotoAndPlay("noo")
+	//_root.Course.Char.charClip.frame.gotoAndPlay(1);
+	//};
+	//
+	M4Moo = "Mad";
+	M4Txt = "........I Said <b>Tremble</b>!!!!!              .....For I am MEWTWO!!!!";
+	M4Sta = function () {
+		return (true);
+	};
+	M4End = function () {
+		return (BP());
+	};
+	M4F = function () {
+		_root.Course.Char.charClip.frame.gotoAndPlay("no");
+		//_root.Course.Char.charClip.frame.gotoAndPlay(1);
+	};
+	//
+	M5Moo = "Crazy";
+	M5Txt = "....I COMMAND YOU TO OBEY ME NOW!!!!!!!";
+	M5Sta = function () {
+		return (true);
+	};
+	M5End = function () {
+		return (BP());
+	};
+	M5F = function () {
+		//_root.Course.Char.charClip.frame.gotoAndPlay("no");
+		_root.Course.Char.charClip.frame.gotoAndPlay(1);
+	};
+	//
+	M6Moo = "Shocked";
+	M6Txt = "..........WHAT??     You think that I'm just <i>pretending</i> I'm Mewtwo!?!?!";
+	M6Sta = function () {
+		return (true);
+	};
+	M6End = function () {
+		return (BP());
+	};
+	M6F = function () {
+		_root.Course.Char.charClip.frame.gotoAndPlay(1);
+		sped = 8;
+		OEF = function () {
+			_x += speed;
+			speed -= 1;
+			if (speed<=0) {
+				speed = undefined;
+				OEF = null;
+			}
+		};
+	};
+	//
+	M7Moo = "Shocked";
+	M7Txt = "........That I'm <i>not really</i> the MASTER OF THE POKE-UNIVERSE?!?!?!";
+	M7Sta = function () {
+		return (true);
+	};
+	M7End = function () {
+		return (BP());
+	};
+	M7F = function () {
+		_root.Course.Char.charClip.frame.gotoAndPlay("yes");
+		//_root.Course.Char.charClip.frame.gotoAndPlay(1);
+	};
+	//
+	M8Moo = "Mad";
+	M8Txt = "...I'LL SHOW YOU!!!!";
+	M8Sta = function () {
+		return (true);
+	};
+	M8End = function () {
+		return (BP());
+	};
+	M8F = function () {
+		//_root.Course.Char.charClip.frame.gotoAndPlay("no");
+		_root.Course.Char.charClip.frame.gotoAndPlay(1);
+	};
+	//
+	M9Moo = "ShadowBall";
+	M9Txt = "<b>.............SHADOW BALL!!!!!!!!!!!!!!!!!!!!!!!!!!!!</b>";
+	M9Sta = function () {
+		return (true);
+	};
+	M9End = function () {
+		//return (iw);
+		return (BP());
+	};
+	M9F = function () {
+		_root.Course.Char.charClip.frame.gotoAndPlay("noo");
+		//iw = false;
+		//depth = _root.Course.FrontGFX.getNextHighestDepth();
+		_root.Course.FrontGFX.attachMovie("InvertWave", "InvertWave"+depth, depth, {_x:_x, _y:_y, speed:1});
+		count2 = 0;
+		OEF = function () {
+			count2++;
+			if (count2>15) {
+				_root.Course.FrontGFX.attachMovie("InvertWave", "InvertWave"+_root.Course.FrontGFX.getNextHighestDepth(), _root.Course.FrontGFX.getNextHighestDepth(), {_x:_x, _y:_y, speed:1});
+				count2 = 0;
+			}
+			/*if (_root.Course.FrontGFX["InvertWave"+depth]._x == undefined) {
+			iw = true;
+			OEF = null;
+			}*/ 
+		};
+	};
+	//
+	M10Moo = "Confused";
+	M10Txt = "-fatal-error-occured-.........-forced-shut-down-of-system-........-error-M3W2-occured-";
+	M10Sta = function () {
+		return (true);
+	};
+	M10End = function () {
+		return (BP());
+	};
+	M10F = function () {
+		_root.Course.Char.charClip.frame.gotoAndPlay(1);
+		OEF = null;
+	};
+	//
+	M11Moo = "Mad";
+	M11Txt = "...Aw Darn it.........Not again........ I ran out of <i>Pokemon Power!!</i>";
+	M11Sta = function () {
+		return (true);
+	};
+	M11End = function () {
+		return (BP());
+	};
+	//
+	M12Moo = "Crazy";
+	M12Txt = "....TELEPORT!!!!";
+	M12Sta = function () {
+		return (true);
+	};
+	M12End = function () {
+		return (BP());
+	};
+	//
+	M13Moo = "Crazy";
+	M13Txt = " ";
+	M13Sta = function () {
+		return (true);
+	};
+	M13End = function () {
+		return (true);
+	};
+	M13F = function () {
+		OEF = function () {
+			_alpha -= 6;
+			_root.CameraZoom -= 6+3;
+			if (_alpha<=0) {
+				_root.CameraZoom = 100;
+				_root.ToadMessage = "";
+				_parent.toaddisp1 = true;
+				this._y = 500;
+				M1Moo = undefined;
+				M1Txt = undefined;
+				_root.playpause = false;
+				_root.Course.Char.attack = false;
+				Phase = 9000;
+				onEnterFrame = null;
+				this.swapDepths(0);
+				this.removeMovieClip();
+				OEF = null;
+			}
+		};
+	};
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/Toad Stuff/Toad Main Clip">
+                  <matrix>
+                    <Matrix tx="325.9" ty="-152.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	staramount = 27
+	_x += random(30);
+	if (_parent.toaddisp10 == undefined) {
+		_parent.toaddisp10 = random(2);
+	}
+	if (_parent.toaddisp10 == 0) {
+		//
+		count2 = 0;
+		OEF = function () {
+			count2 += random(4)+2
+			if (count2>64) {
+				count2 = 0;
+				_xscale *= -1;
+			}
+		};
+		//
+		Mood = "Sad";
+		M1Moo = "Talk";
+		M1Txt = "Hungry";
+		M1Sta = function () {
+			return (BP());
+		};
+		M1End = function () {
+			return (BP());
+		};
+		//
+		M2Moo = "Talk";
+		M2Txt = "Hungry Hungry";
+		M2Sta = function () {
+			return (true);
+		};
+		M2End = function () {
+			return (BP());
+		};
+		//
+		M3Moo = "Talk";
+		M3Txt = "Hungry Hungry Hungry";
+		M3Sta = function () {
+			return (true);
+		};
+		M3End = function () {
+			return (BP());
+		};
+		//
+		M4Moo = "Talk";
+		M4Txt = "Hungry Hungry Hungry Hungry";
+		M4Sta = function () {
+			return (true);
+		};
+		M4End = function () {
+			return (BP());
+		};
+		//
+		M5Moo = "Talk";
+		M5Txt = "Hungry Hungry Hungry Hungry Hungry";
+		M5Sta = function () {
+			return (true);
+		};
+		M5End = function () {
+			return (BP());
+		};
+		//
+		M6Moo = "Talk";
+		M6Txt = "Hungry Hungry Hungry Hungry Hungry Hungry";
+		M6Sta = function () {
+			return (true);
+		};
+		M6End = function () {
+			return (BP());
+		};
+		//M6F = function () {
+		//_root.Course.Char.charClip.frame.gotoAndPlay("no");
+		//};
+		//
+		/*M7Moo = "Happy";
+		M7Txt = "<b>Ha! ............  Bet you didn't catch </b>";
+		M7Sta = function () {
+		return (true);
+		};
+		M7End = function () {
+		return (BP());
+		};*/
+		//M7F = function () {
+		//_root.Course.Char.charClip.frame.gotoAndPlay(1);
+		//};
+		//
+		//M8Moo = "Sad";
+		//M8Txt = "I once looked up to you, "+_root.CurrentPlayer;
+		//M8Sta = function () {
+		//return (true);
+		//};
+		//M8End = function () {
+		//return (BP());
+		//};
+		//M8F = function () {
+		//_root.Course.Char.charClip.frame.gotoAndPlay(1)
+		//};
+		//
+		M9Moo = "Mad";
+		M9Txt = "I thought you were a nice person!!";
+		M9Sta = function () {
+			return (true);
+		};
+		M9End = function () {
+			return (BP());
+		};
+		M9F = function () {
+			//_root.Course.Char.charClip.frame.gotoAndPlay("yes")
+		};
+		//
+		M10Moo = "Sad";
+		M10Txt = "And then you come here and Destroyed all my Dreams!";
+		M10Sta = function () {
+			return (true);
+		};
+		M10End = function () {
+			return (BP());
+		};
+		//
+		M11Moo = "Crazy";
+		M11Txt = "DESTROYED IT!!!!";
+		M11Sta = function () {
+			return (true);
+		};
+		M11End = function () {
+			return (BP());
+		};
+		M11F = function () {
+			_root.Course.Char.charClip.frame.gotoAndPlay("noo");
+		};
+		//
+		M12Moo = "Mad";
+		M12Txt = "......";
+		M12Sta = function () {
+			return (true);
+		};
+		M12End = function () {
+			return (BP());
+		};
+		M12F = function () {
+			_root.Course.Char.charClip.frame.gotoAndPlay("talk");
+		};
+		//
+		M13Moo = "Mad";
+		M13Txt = "...Gee, Thanks for ruining my life...";
+		M13Sta = function () {
+			return (true);
+		};
+		M13End = function () {
+			return (BP());
+		};
+		M13F = function () {
+			_root.Course.Char.charClip.frame.gotoAndPlay(1);
+			this._xscale *= -1;
+			Mood = "Mad";
+			StartMood = "Mad";
+			M1Moo = "Mad";
+			M1Txt = "......Go Away!!";
+			M1Sta = function () {
+				return (BP());
+			};
+			M1End = function () {
+				return (BP());
+			};
+			//
+			M2Moo = undefined;
+			M2Txt = undefined;
+			M2Sta = null;
+			M2End = null;
+		};
+	} else {
+		this._y = 500;
+	}
+	//
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/Toad Stuff/Toad Main Clip">
+                  <matrix>
+                    <Matrix d="1.00119018554688" tx="-459.55" ty="-99.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	staramount = 15;
+	if (_parent.toaddisp20 == undefined) {
+		_parent.toaddisp20 = random(2);
+	}
+	if (_parent.toaddisp20 == 1) {
+		//frame = "walk";
+		Mood = "Smile";
+		M1Moo = "Sad";
+		M1Txt = "...............................";
+		M1Sta = function () {
+			return (BP());
+		};
+		M1End = function () {
+			return (BP());
+		};
+		//
+		M2Moo = "Sad";
+		M2Txt = ".................................";
+		M2Sta = function () {
+			return (true);
+		};
+		M2End = function () {
+			return (BP());
+		};
+		//
+		M3Moo = "Sad";
+		M3Txt = "....................................";
+		M3Sta = function () {
+			return (true);
+		};
+		M3End = function () {
+			return (BP());
+		};
+		//
+		M4Fra = "walk"
+		M4Moo = "Happy";
+		M4Txt = "<b><i>Never gonna    Give    you   up!  </b></i>";
+		M4Sta = function () {
+			return (true);
+		};
+		M4End = function () {
+			return (BP());
+		};
+		M5Moo = "Happy";
+		M5Txt = "<b><i>Never gonna    Let   you   down!    </b></i>";
+		M5Sta = function () {
+			return (true);
+		};
+		M5End = function () {
+			return (BP());
+		};
+		M6Fra = "idle"
+		M6Moo = "Sad";
+		M6Txt = "...........................................................................Sorry.....";
+		M6Sta = function () {
+			return (true);
+		};
+		M6End = function () {
+			return (BP());
+		};
+	} else {
+		this._y = 500;
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/Toad Stuff/Toad Main Clip">
+                  <matrix>
+                    <Matrix tx="-131.5" ty="-215.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	staramount = 27
+	
+	if (random(2) == 0) {
+		//
+		
+		//
+		Mood = "Sad";
+		M1Moo = "Talk";
+		M1Txt = "<i>Oooooooooooohh!</i>";
+		M1Sta = function () {
+			return (BP());
+		};
+		M1End = function () {
+			return (BP());
+		};
+		//
+		M2Moo = "Talk";
+		M2Txt = "Giant spooky staircase.....<i> Very original Bowser!</i>";
+		M2Sta = function () {
+			return (true);
+		};
+		M2End = function () {
+			return (BP());
+		};
+		//
+		//M3Moo = "Talk";
+		//M3Txt = "Hungry Hungry Hungry";
+		//M3Sta = function () {
+			//return (true);
+		//};
+		//M3End = function () {
+			//return (BP());
+		//};
+		//
+		M4Moo = "Talk";
+		M4Txt = "Hungry Hungry Hungry Hungry";
+		M4Sta = function () {
+			return (true);
+		};
+		M4End = function () {
+			return (BP());
+		};
+		//
+		M5Moo = "Talk";
+		M5Txt = "Hungry Hungry Hungry Hungry Hungry";
+		M5Sta = function () {
+			return (true);
+		};
+		M5End = function () {
+			return (BP());
+		};
+		//
+		M6Moo = "Talk";
+		M6Txt = "Hungry Hungry Hungry Hungry Hungry Hungry";
+		M6Sta = function () {
+			return (true);
+		};
+		M6End = function () {
+			return (BP());
+		};
+		//M6F = function () {
+		//_root.Course.Char.charClip.frame.gotoAndPlay("no");
+		//};
+		//
+		/*M7Moo = "Happy";
+		M7Txt = "<b>Ha! ............  Bet you didn't catch </b>";
+		M7Sta = function () {
+		return (true);
+		};
+		M7End = function () {
+		return (BP());
+		};*/
+		//M7F = function () {
+		//_root.Course.Char.charClip.frame.gotoAndPlay(1);
+		//};
+		//
+		//M8Moo = "Sad";
+		//M8Txt = "I once looked up to you, "+_root.CurrentPlayer;
+		//M8Sta = function () {
+		//return (true);
+		//};
+		//M8End = function () {
+		//return (BP());
+		//};
+		//M8F = function () {
+		//_root.Course.Char.charClip.frame.gotoAndPlay(1)
+		//};
+		//
+		M9Moo = "Mad";
+		M9Txt = "I thought you were a nice person!!";
+		M9Sta = function () {
+			return (true);
+		};
+		M9End = function () {
+			return (BP());
+		};
+		M9F = function () {
+			//_root.Course.Char.charClip.frame.gotoAndPlay("yes")
+		};
+		//
+		M10Moo = "Sad";
+		M10Txt = "And then you come here and Destroyed all my Dreams!";
+		M10Sta = function () {
+			return (true);
+		};
+		M10End = function () {
+			return (BP());
+		};
+		//
+		M11Moo = "Crazy";
+		M11Txt = "DESTROYED IT!!!!";
+		M11Sta = function () {
+			return (true);
+		};
+		M11End = function () {
+			return (BP());
+		};
+		M11F = function () {
+			_root.Course.Char.charClip.frame.gotoAndPlay("noo");
+		};
+		//
+		M12Moo = "Mad";
+		M12Txt = "......";
+		M12Sta = function () {
+			return (true);
+		};
+		M12End = function () {
+			return (BP());
+		};
+		M12F = function () {
+			_root.Course.Char.charClip.frame.gotoAndPlay("talk");
+		};
+		//
+		M13Moo = "Mad";
+		M13Txt = "...Gee, Thanks for ruining my life...";
+		M13Sta = function () {
+			return (true);
+		};
+		M13End = function () {
+			return (BP());
+		};
+		M13F = function () {
+			_root.Course.Char.charClip.frame.gotoAndPlay(1);
+			this._xscale *= -1;
+			Mood = "Mad";
+			StartMood = "Mad";
+			M1Moo = "Mad";
+			M1Txt = "......Go Away!!";
+			M1Sta = function () {
+				return (BP());
+			};
+			M1End = function () {
+				return (BP());
+			};
+			//
+			M2Moo = undefined;
+			M2Txt = undefined;
+			M2Sta = null;
+			M2End = null;
+		};
+	} else {
+		this._y = 500;
+	}
+	//
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/Toad Stuff/Toad Main Clip">
+                  <matrix>
+                    <Matrix tx="-98.5" ty="-15.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	staramount = 1;
+	if (random(2) == 0) {
+		//
+		//
+		Mood = "Sad";
+		M1Moo = "Talk";
+		M1Txt = "....I've been waiting here for about 12 hours...";
+		M1Sta = function () {
+			return (BP());
+		};
+		M1End = function () {
+			return (BP());
+		};
+		//
+		M2Moo = "Mad";
+		M2Txt = "... But this room apparently only is Night-time....";
+		M2Sta = function () {
+			return (true);
+		};
+		M2End = function () {
+			return (BP());
+		};
+		//
+		//M3Moo = "Talk";
+		//M3Txt = "Hungry Hungry Hungry";
+		//M3Sta = function () {
+		//return (true);
+		//};
+		//M3End = function () {
+		//return (BP());
+		//};
+		//
+		M4Moo = "Talk";
+		M4Txt = "Hungry Hungry Hungry Hungry";
+		M4Sta = function () {
+			return (true);
+		};
+		M4End = function () {
+			return (BP());
+		};
+		//
+		
+	} else {
+		this._y = 500;
+	}
+	//
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/Toad Stuff/Toad Main Clip">
+                  <matrix>
+                    <Matrix tx="184.45" ty="-260.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	staramount = 2
+	
+	if (random(2) == 0) {
+		//
+		
+		//
+		Mood = "Sad";
+		M1Moo = "Happy";
+		M1Txt = "I just <i>Love</i> leaning over railings!";
+		M1Sta = function () {
+			return (BP());
+		};
+		M1End = function () {
+			return (BP());
+		};
+		//
+		M2Moo = "Happy";
+		M2Txt = "............... Don't you?!";
+		M2Sta = function () {
+			return (true);
+		};
+		M2End = function () {
+			return (BP());
+		};
+		//
+		//M3Moo = "Talk";
+		//M3Txt = "Hungry Hungry Hungry";
+		//M3Sta = function () {
+			//return (true);
+		//};
+		//M3End = function () {
+			//return (BP());
+		//};
+		//
+		M4Moo = "Talk";
+		M4Txt = "Hungry Hungry Hungry Hungry";
+		M4Sta = function () {
+			return (true);
+		};
+		M4End = function () {
+			return (BP());
+		};
+		//
+		M5Moo = "Talk";
+		M5Txt = "Hungry Hungry Hungry Hungry Hungry";
+		M5Sta = function () {
+			return (true);
+		};
+		M5End = function () {
+			return (BP());
+		};
+		//
+		M6Moo = "Talk";
+		M6Txt = "Hungry Hungry Hungry Hungry Hungry Hungry";
+		M6Sta = function () {
+			return (true);
+		};
+		M6End = function () {
+			return (BP());
+		};
+		//M6F = function () {
+		//_root.Course.Char.charClip.frame.gotoAndPlay("no");
+		//};
+		//
+		/*M7Moo = "Happy";
+		M7Txt = "<b>Ha! ............  Bet you didn't catch </b>";
+		M7Sta = function () {
+		return (true);
+		};
+		M7End = function () {
+		return (BP());
+		};*/
+		//M7F = function () {
+		//_root.Course.Char.charClip.frame.gotoAndPlay(1);
+		//};
+		//
+		//M8Moo = "Sad";
+		//M8Txt = "I once looked up to you, "+_root.CurrentPlayer;
+		//M8Sta = function () {
+		//return (true);
+		//};
+		//M8End = function () {
+		//return (BP());
+		//};
+		//M8F = function () {
+		//_root.Course.Char.charClip.frame.gotoAndPlay(1)
+		//};
+		//
+		M9Moo = "Mad";
+		M9Txt = "I thought you were a nice person!!";
+		M9Sta = function () {
+			return (true);
+		};
+		M9End = function () {
+			return (BP());
+		};
+		M9F = function () {
+			//_root.Course.Char.charClip.frame.gotoAndPlay("yes")
+		};
+		//
+		M10Moo = "Sad";
+		M10Txt = "And then you come here and Destroyed all my Dreams!";
+		M10Sta = function () {
+			return (true);
+		};
+		M10End = function () {
+			return (BP());
+		};
+		//
+		M11Moo = "Crazy";
+		M11Txt = "DESTROYED IT!!!!";
+		M11Sta = function () {
+			return (true);
+		};
+		M11End = function () {
+			return (BP());
+		};
+		M11F = function () {
+			_root.Course.Char.charClip.frame.gotoAndPlay("noo");
+		};
+		//
+		M12Moo = "Mad";
+		M12Txt = "......";
+		M12Sta = function () {
+			return (true);
+		};
+		M12End = function () {
+			return (BP());
+		};
+		M12F = function () {
+			_root.Course.Char.charClip.frame.gotoAndPlay("talk");
+		};
+		//
+		M13Moo = "Mad";
+		M13Txt = "...Gee, Thanks for ruining my life...";
+		M13Sta = function () {
+			return (true);
+		};
+		M13End = function () {
+			return (BP());
+		};
+		M13F = function () {
+			_root.Course.Char.charClip.frame.gotoAndPlay(1);
+			this._xscale *= -1;
+			Mood = "Mad";
+			StartMood = "Mad";
+			M1Moo = "Mad";
+			M1Txt = "......Go Away!!";
+			M1Sta = function () {
+				return (BP());
+			};
+			M1End = function () {
+				return (BP());
+			};
+			//
+			M2Moo = undefined;
+			M2Txt = undefined;
+			M2Sta = null;
+			M2End = null;
+		};
+	} else {
+		this._y = 500;
+	}
+	//
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/Toad Stuff/Toad Main Clip">
+                  <matrix>
+                    <Matrix tx="-395.55" ty="-152.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	staramount = 27
+	
+	if (random(2) == 0) {
+		//
+		
+		//
+		Mood = "Sad";
+		M1Moo = "Talk";
+		M1Txt = "Have you tried out the Endless Stairs yet?";
+		M1Sta = function () {
+			return (BP());
+		};
+		M1End = function () {
+			return (BP());
+		};
+		//
+		M2Moo = "Mad";
+		M2Txt = "It is very creepy... you walk up it, and there is <i>no end!!</i>";
+		M2Sta = function () {
+			return (true);
+		};
+		M2End = function () {
+			return (BP());
+		};
+		//
+		M3Moo = "Talk";
+		M3Txt = "....Although, with 32 Shine Sprites, you can get rid of that evil spell...";
+		M3Sta = function () {
+			return (true);
+		};
+		M3End = function () {
+			return (BP());
+		};
+		//
+		//M4Moo = "Talk";
+		//M4Txt = "Hungry Hungry Hungry Hungry";
+		//M4Sta = function () {
+			//return (true);
+		//};
+		//M4End = function () {
+			//return (BP());
+		//};
+		//
+		M5Moo = "Talk";
+		M5Txt = "Hungry Hungry Hungry Hungry Hungry";
+		M5Sta = function () {
+			return (true);
+		};
+		M5End = function () {
+			return (BP());
+		};
+		//
+		M6Moo = "Talk";
+		M6Txt = "Hungry Hungry Hungry Hungry Hungry Hungry";
+		M6Sta = function () {
+			return (true);
+		};
+		M6End = function () {
+			return (BP());
+		};
+		//M6F = function () {
+		//_root.Course.Char.charClip.frame.gotoAndPlay("no");
+		//};
+		//
+		/*M7Moo = "Happy";
+		M7Txt = "<b>Ha! ............  Bet you didn't catch </b>";
+		M7Sta = function () {
+		return (true);
+		};
+		M7End = function () {
+		return (BP());
+		};*/
+		//M7F = function () {
+		//_root.Course.Char.charClip.frame.gotoAndPlay(1);
+		//};
+		//
+		//M8Moo = "Sad";
+		//M8Txt = "I once looked up to you, "+_root.CurrentPlayer;
+		//M8Sta = function () {
+		//return (true);
+		//};
+		//M8End = function () {
+		//return (BP());
+		//};
+		//M8F = function () {
+		//_root.Course.Char.charClip.frame.gotoAndPlay(1)
+		//};
+		//
+		M9Moo = "Mad";
+		M9Txt = "I thought you were a nice person!!";
+		M9Sta = function () {
+			return (true);
+		};
+		M9End = function () {
+			return (BP());
+		};
+		M9F = function () {
+			//_root.Course.Char.charClip.frame.gotoAndPlay("yes")
+		};
+		//
+		M10Moo = "Sad";
+		M10Txt = "And then you come here and Destroyed all my Dreams!";
+		M10Sta = function () {
+			return (true);
+		};
+		M10End = function () {
+			return (BP());
+		};
+		//
+		M11Moo = "Crazy";
+		M11Txt = "DESTROYED IT!!!!";
+		M11Sta = function () {
+			return (true);
+		};
+		M11End = function () {
+			return (BP());
+		};
+		M11F = function () {
+			_root.Course.Char.charClip.frame.gotoAndPlay("noo");
+		};
+		//
+		M12Moo = "Mad";
+		M12Txt = "......";
+		M12Sta = function () {
+			return (true);
+		};
+		M12End = function () {
+			return (BP());
+		};
+		M12F = function () {
+			_root.Course.Char.charClip.frame.gotoAndPlay("talk");
+		};
+		//
+		M13Moo = "Mad";
+		M13Txt = "...Gee, Thanks for ruining my life...";
+		M13Sta = function () {
+			return (true);
+		};
+		M13End = function () {
+			return (BP());
+		};
+		M13F = function () {
+			_root.Course.Char.charClip.frame.gotoAndPlay(1);
+			this._xscale *= -1;
+			Mood = "Mad";
+			StartMood = "Mad";
+			M1Moo = "Mad";
+			M1Txt = "......Go Away!!";
+			M1Sta = function () {
+				return (BP());
+			};
+			M1End = function () {
+				return (BP());
+			};
+			//
+			M2Moo = undefined;
+			M2Txt = undefined;
+			M2Sta = null;
+			M2End = null;
+		};
+	} else {
+		this._y = 500;
+	}
+	//
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/Toad Stuff/Toad Main Clip">
+                  <matrix>
+                    <Matrix tx="369.45" ty="-14.4"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_xscale = -100
+	
+	if (random(2) == 0) {
+		//
+		
+		//
+		Mood = "Sad";
+		M1Moo = "Talk";
+		M1Txt = "I heard that underneath a painting of clouds is a secret....";
+		M1Sta = function () {
+			return (BP());
+		};
+		M1End = function () {
+			return (BP());
+		};
+		//
+		M2Moo = "Talk";
+		M2Txt = "If you stomp, it'll reveal a secret passageway to a secret course....";
+		M2Sta = function () {
+			return (true);
+		};
+		M2End = function () {
+			return (BP());
+		};
+		//
+		M3Moo = "Mad";
+		M3Txt = "....But there are several different cloud paintings!  Which one is it?!?!";
+		M3Sta = function () {
+			return (true);
+		};
+		M3End = function () {
+			return (BP());
+		};
+		//
+		//M4Moo = "Talk";
+		//M4Txt = "Hungry Hungry Hungry Hungry";
+		//M4Sta = function () {
+			//return (true);
+		//};
+		//M4End = function () {
+			//return (BP());
+		//};
+		//
+		M5Moo = "Talk";
+		M5Txt = "Hungry Hungry Hungry Hungry Hungry";
+		M5Sta = function () {
+			return (true);
+		};
+		M5End = function () {
+			return (BP());
+		};
+		//
+		M6Moo = "Talk";
+		M6Txt = "Hungry Hungry Hungry Hungry Hungry Hungry";
+		M6Sta = function () {
+			return (true);
+		};
+		M6End = function () {
+			return (BP());
+		};
+		//M6F = function () {
+		//_root.Course.Char.charClip.frame.gotoAndPlay("no");
+		//};
+		//
+		/*M7Moo = "Happy";
+		M7Txt = "<b>Ha! ............  Bet you didn't catch </b>";
+		M7Sta = function () {
+		return (true);
+		};
+		M7End = function () {
+		return (BP());
+		};*/
+		//M7F = function () {
+		//_root.Course.Char.charClip.frame.gotoAndPlay(1);
+		//};
+		//
+		//M8Moo = "Sad";
+		//M8Txt = "I once looked up to you, "+_root.CurrentPlayer;
+		//M8Sta = function () {
+		//return (true);
+		//};
+		//M8End = function () {
+		//return (BP());
+		//};
+		//M8F = function () {
+		//_root.Course.Char.charClip.frame.gotoAndPlay(1)
+		//};
+		//
+		M9Moo = "Mad";
+		M9Txt = "I thought you were a nice person!!";
+		M9Sta = function () {
+			return (true);
+		};
+		M9End = function () {
+			return (BP());
+		};
+		M9F = function () {
+			//_root.Course.Char.charClip.frame.gotoAndPlay("yes")
+		};
+		//
+		M10Moo = "Sad";
+		M10Txt = "And then you come here and Destroyed all my Dreams!";
+		M10Sta = function () {
+			return (true);
+		};
+		M10End = function () {
+			return (BP());
+		};
+		//
+		M11Moo = "Crazy";
+		M11Txt = "DESTROYED IT!!!!";
+		M11Sta = function () {
+			return (true);
+		};
+		M11End = function () {
+			return (BP());
+		};
+		M11F = function () {
+			_root.Course.Char.charClip.frame.gotoAndPlay("noo");
+		};
+		//
+		M12Moo = "Mad";
+		M12Txt = "......";
+		M12Sta = function () {
+			return (true);
+		};
+		M12End = function () {
+			return (BP());
+		};
+		M12F = function () {
+			_root.Course.Char.charClip.frame.gotoAndPlay("talk");
+		};
+		//
+		M13Moo = "Mad";
+		M13Txt = "...Gee, Thanks for ruining my life...";
+		M13Sta = function () {
+			return (true);
+		};
+		M13End = function () {
+			return (BP());
+		};
+		M13F = function () {
+			_root.Course.Char.charClip.frame.gotoAndPlay(1);
+			this._xscale *= -1;
+			Mood = "Mad";
+			StartMood = "Mad";
+			M1Moo = "Mad";
+			M1Txt = "......Go Away!!";
+			M1Sta = function () {
+				return (BP());
+			};
+			M1End = function () {
+				return (BP());
+			};
+			//
+			M2Moo = undefined;
+			M2Txt = undefined;
+			M2Sta = null;
+			M2End = null;
+		};
+	} else {
+		this._y = 500;
+	}
+	//
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="14"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix tx="14"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Castle Constructors/Castle Wall 2" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="-1172.5" ty="-25.8"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal">
+                            <fill>
+                              <SolidColor/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge fillStyle0="1" strokeStyle="1" edges="!-9818 -2780|-9818 468!-9818 468|-7320 8!-7320 8|-7320 -2780!-7320 -2780|-9818 -2780"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="14"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix tx="14"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor alpha="0.2"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="!-9818 -2780|-9818 8!-9818 8|-7320 8!-7320 8|-7320 -2780!-7320 -2780|-9818 -2780"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Castle Constructors/Castle Wall 2" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="-419.05" ty="-25.8"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal">
+                            <fill>
+                              <SolidColor/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge fillStyle0="1" strokeStyle="1" edges="!5731 -2780|5731 468!5731 468|7429 468!7429 468|7429 -2780!7429 -2780|5731 -2780"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Star Door">
+                  <matrix>
+                    <Matrix a="0.751068115234375" d="0.751312255859375" tx="80" ty="-263"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "C-13-1";
+	//
+	locked = true;
+	keytype = 1;
+	if ((_root.TotalStars>=32 && _root.CurrentPlayer == "Mario") || _root.CheatCastleUnlock == true) {
+		removelock = true;
+	}
+	//  
+	doorlockfunction = function () {
+		_root.Course.Char.attack = true;
+		_root.Course.Char.attackFrame = "Sign";
+		_root.Course.Char.xspeed = 0;
+		//
+		if (_root.CurrentPlayer !== "Mario" && _root.TotalStars>=32) {
+			_root.PlayMessage("Your are not my Rival!  Go Away and bring Mario!");
+		} else {
+			_root.PlayMessage("You need a total of 32 Shine Sprites to unlock this door");
+		}
+		_root.Mariosound = new Sound(this);
+		_root.Mariosound.attachSound("Bowser - Laugh Muffled");
+		_root.Mariosound.start(0, 1);
+		_root.Mariosound.setVolume(_root.MarioVolume);
+		count = 0;
+		onEnterFrame = function () {
+			X = _x+_parent._x;
+			_root.Course.Char._x += (X-_root.Course.Char._x)/5;
+			//
+			_root.playpause = true;
+			//
+			count++;
+			if (_root.KeyZ() && count>5) {
+				_root.StopMessage();
+				//
+				count = 0;
+				onEnterFrame = function () {
+					count++;
+					if (count>5) {
+						_root.playpause = false;
+						_root.Course.Char.attack = false;
+						onEnterFrame = null;
+						//
+						_root.Course.Char.attack = true;
+						_root.Course.Char.xspeed = 0;
+						_root.Course.Char.attackFrame = "Door";
+						_root.door = doorplace;
+						gotoAndPlay("play");
+						//
+					}
+				};
+			}
+		};
+	};
+}
+onClipEvent (enterFrame) {
+	if ((_root.TotalStars>=32 && _root.CurrentPlayer == "Mario") || _root.CheatCastleUnlock == true) {
+		removelock = true;
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMGroup>
+                  <members>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix tx="-19.35" ty="-2.05"/>
+                      </matrix>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix tx="-19.35" ty="-2.05"/>
+                          </matrix>
+                          <fills>
+                            <FillStyle index="1">
+                              <SolidColor color="#FFFFFF" alpha="0.101960784313725"/>
+                            </FillStyle>
+                          </fills>
+                          <strokes>
+                            <StrokeStyle index="1">
+                              <SolidStroke scaleMode="normal">
+                                <fill>
+                                  <SolidColor/>
+                                </fill>
+                              </SolidStroke>
+                            </StrokeStyle>
+                          </strokes>
+                          <edges>
+                            <Edge fillStyle1="1" strokeStyle="1" edges="!77 -4697.5|1757 -4697!1757 -4697|1757 -4698!1757 -4698|5417 -4698!5417 -4698|5417 248!5417 248|-4802 248!-4802 248|-4802 -2065!-4802 -2065|-3641.5 -2065!-3641.5 -2065|-3641.5 -2965!-3641.5 -2965|-2471.5 -2965!-2471.5 -2965|-2471.5 -3865
+!-2471.5 -3865|-1324 -3865!-1324 -3865|-1324 -4697.5!-1324 -4697.5|-1121.5 -4697.5!-1121.5 -4697.5|-1121.5 -4698!-1121.5 -4698|77 -4698!77 -4698|77 -4697.5"/>
+                            <Edge cubics="!757 -4680(;757,-4680 757,-4679 757,-4679q757 -4680 757 -4679);"/>
+                            <Edge cubics="!757 -4914(;757,-4914 757,-4909 757,-4909q757 -4914 757 -4909);"/>
+                            <Edge cubics="!2121 -4679(;2121,-4679 2121,-4680 2121,-4680q2121 -4679 2121 -4680);"/>
+                            <Edge cubics="!2121 -4909(;2121,-4909 2121,-4914 2121,-4914q2121 -4909 2121 -4914);"/>
+                            <Edge cubics="!2323 -4679(;2323,-4679 2121,-4679 2121,-4679q2323 -4679 2121 -4679);"/>
+                            <Edge cubics="!2500 -4037(;2500,-4037 2500,-4909 2500,-4909q2500 -4037 2500 -4909);"/>
+                            <Edge cubics="!2500 -4909(;2500,-4909 2121,-4909 2121,-4909q2500 -4909 2121 -4909);"/>
+                            <Edge cubics="!2121 -4680(;2121,-4680 757,-4680 757,-4680q2121 -4680 757 -4680);"/>
+                            <Edge cubics="!2121 -4914(;2121,-4914 757,-4914 757,-4914q2121 -4914 757 -4914);"/>
+                            <Edge cubics="!4892 -3113(;4892,-3113 4892,-3126 4892,-3126q4892 -3113 4892 -3126);"/>
+                            <Edge cubics="!4906 -3113(;4906,-3113 4892,-3113 4892,-3113q4906 -3113 4892 -3113);"/>
+                            <Edge cubics="!4906 -2240(;4906,-2240 4906,-3113 4906,-3113q4906 -2240 4906 -3113);"/>
+                            <Edge cubics="!6107 -2240(;6107,-2240 4906,-2240 4906,-2240q6107 -2240 4906 -2240);"/>
+                            <Edge cubics="!4641 -2047(;4641,-2047 4641,-2947 4641,-2947q4641 -2047 4641 -2947);"/>
+                            <Edge cubics="!3471 -2947(;3471,-2947 3471,-3847 3471,-3847q3471 -2947 3471 -3847);"/>
+                            <Edge cubics="!4641 -2947(;4641,-2947 3471,-2947 3471,-2947q4641 -2947 3471 -2947);"/>
+                            <Edge cubics="!4892 -3126(;4892,-3126 3702,-3126 3702,-3126q4892 -3126 3702 -3126);"/>
+                            <Edge cubics="!5901 -1124(;5901,-1124 5901,-2047 5901,-2047q5901 -1124 5901 -2047);"/>
+                            <Edge cubics="!6107 -1337(;6107,-1337 6107,-2240 6107,-2240q6107 -1337 6107 -2240);"/>
+                            <Edge cubics="!5901 -2047(;5901,-2047 4641,-2047 4641,-2047q5901 -2047 4641 -2047);"/>
+                            <Edge cubics="!3702 -4037(;3702,-4037 2500,-4037 2500,-4037q3702 -4037 2500 -4037);"/>
+                            <Edge cubics="!3471 -3847(;3471,-3847 2323,-3847 2323,-3847q3471 -3847 2323 -3847);"/>
+                            <Edge cubics="!2323 -3847(;2323,-3847 2323,-4679 2323,-4679q2323 -3847 2323 -4679);"/>
+                            <Edge cubics="!3702 -3126(;3702,-3126 3702,-4037 3702,-4037q3702 -3126 3702 -4037);"/>
+                            <Edge cubics="!6990 -1124(;6990,-1124 6990,-1337 6990,-1337q6990 -1124 6990 -1337);"/>
+                            <Edge cubics="!6989 -13(;6989,-13 6990,-1124 6990,-1124q6989 -13 6990 -1124);"/>
+                            <Edge cubics="!6990 -1124(;6990,-1124 5901,-1124 5901,-1124q6990 -1124 5901 -1124);"/>
+                            <Edge cubics="!6990 -1337(;6990,-1337 6107,-1337 6107,-1337q6990 -1337 6107 -1337);"/>
+                            <Edge cubics="!-6990 -1124(;-6990,-1124 -6990,-1337 -6990,-1337q-6990 -1124 -6990 -1337);"/>
+                            <Edge cubics="!-6990 -1124(;-6990,-1124 -6990,-13 -6990,-13q-6990 -1124 -6990 -13);"/>
+                            <Edge cubics="!-2501 -4909(;-2501,-4909 -2501,-4037 -2501,-4037q-2501 -4909 -2501 -4037);"/>
+                            <Edge cubics="!-2324 -4679(;-2324,-4679 -2121,-4679 -2121,-4679q-2324 -4679 -2121 -4679);"/>
+                            <Edge cubics="!-2121 -4679(;-2121,-4679 -2121,-4680 -2121,-4680q-2121 -4679 -2121 -4680);"/>
+                            <Edge cubics="!-2121 -4914(;-2121,-4914 -2121,-4909 -2121,-4909q-2121 -4914 -2121 -4909);"/>
+                            <Edge cubics="!-2121 -4909(;-2121,-4909 -2501,-4909 -2501,-4909q-2121 -4909 -2501 -4909);"/>
+                            <Edge cubics="!-923 -4680(;-923,-4680 -923,-4679 -923,-4679q-923 -4680 -923 -4679);"/>
+                            <Edge cubics="!-923 -4914(;-923,-4914 -923,-4909 -923,-4909q-923 -4914 -923 -4909);"/>
+                            <Edge cubics="!-2121 -4680(;-2121,-4680 -923,-4680 -923,-4680q-2121 -4680 -923 -4680);"/>
+                            <Edge cubics="!-923 -4914(;-923,-4914 -2121,-4914 -2121,-4914q-923 -4914 -2121 -4914);"/>
+                            <Edge cubics="!-4641 -2047(;-4641,-2047 -4641,-2947 -4641,-2947q-4641 -2047 -4641 -2947);"/>
+                            <Edge cubics="!-3471 -2947(;-3471,-2947 -3471,-3847 -3471,-3847q-3471 -2947 -3471 -3847);"/>
+                            <Edge cubics="!-4641 -2947(;-4641,-2947 -3471,-2947 -3471,-2947q-4641 -2947 -3471 -2947);"/>
+                            <Edge cubics="!-4893 -3113(;-4893,-3113 -4906,-3113 -4906,-3113q-4893 -3113 -4906 -3113);"/>
+                            <Edge cubics="!-4893 -3126(;-4893,-3126 -4893,-3113 -4893,-3113q-4893 -3126 -4893 -3113);"/>
+                            <Edge cubics="!-4906 -3113(;-4906,-3113 -4906,-2240 -4906,-2240q-4906 -3113 -4906 -2240);"/>
+                            <Edge cubics="!-4906 -2240(;-4906,-2240 -6108,-2240 -6108,-2240q-4906 -2240 -6108 -2240);"/>
+                            <Edge cubics="!-5901 -2047(;-5901,-2047 -4641,-2047 -4641,-2047q-5901 -2047 -4641 -2047);"/>
+                            <Edge cubics="!-5901 -1124(;-5901,-1124 -5901,-2047 -5901,-2047q-5901 -1124 -5901 -2047);"/>
+                            <Edge cubics="!-6108 -2240(;-6108,-2240 -6108,-1337 -6108,-1337q-6108 -2240 -6108 -1337);"/>
+                            <Edge cubics="!-3702 -3126(;-3702,-3126 -4893,-3126 -4893,-3126q-3702 -3126 -4893 -3126);"/>
+                            <Edge cubics="!-2501 -4037(;-2501,-4037 -3702,-4037 -3702,-4037q-2501 -4037 -3702 -4037);"/>
+                            <Edge cubics="!-3471 -3847(;-3471,-3847 -2324,-3847 -2324,-3847q-3471 -3847 -2324 -3847);"/>
+                            <Edge cubics="!-2324 -3847(;-2324,-3847 -2324,-4679 -2324,-4679q-2324 -3847 -2324 -4679);"/>
+                            <Edge cubics="!-3702 -4037(;-3702,-4037 -3702,-3126 -3702,-3126q-3702 -4037 -3702 -3126);"/>
+                            <Edge cubics="!-6108 -1337(;-6108,-1337 -6990,-1337 -6990,-1337q-6108 -1337 -6990 -1337);"/>
+                            <Edge cubics="!-6990 -1124(;-6990,-1124 -5901,-1124 -5901,-1124q-6990 -1124 -5901 -1124);"/>
+                            <Edge cubics="!-923 -4679(;-923,-4679 757,-4679 757,-4679q-923 -4679 757 -4679);"/>
+                            <Edge cubics="!757 -4909(;757,-4909 -923,-4909 -923,-4909q757 -4909 -923 -4909);"/>
+                            <Edge cubics="!-6990 -13(;-6990,-13 6989,-13 6989,-13q-6990 -13 6989 -13);"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="50"/>
+                  </matrix>
+                  <members>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix tx="50"/>
+                      </matrix>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix tx="50"/>
+                          </matrix>
+                          <fills>
+                            <FillStyle index="1">
+                              <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Bricks &amp; Woods/Wood Block" bitmapIsClipped="false">
+                                <matrix>
+                                  <Matrix a="20" d="20" tx="72.35" ty="-83.65"/>
+                                </matrix>
+                              </BitmapFill>
+                            </FillStyle>
+                          </fills>
+                          <strokes>
+                            <StrokeStyle index="1">
+                              <SolidStroke scaleMode="normal" weight="2">
+                                <fill>
+                                  <SolidColor/>
+                                </fill>
+                              </SolidStroke>
+                            </StrokeStyle>
+                          </strokes>
+                          <edges>
+                            <Edge fillStyle1="1" strokeStyle="1" edges="
+!2886.5 -2410|2887 0!2887 0|1158 0!1158 0|1158 -2410!1158 -2410[#49D.58 #FFF53D.4D 1409 -3006!1409 -3006[#67E.F5 #FFF32B.1 2022 -3285!2022 -3285[#94D.23 #FFF32B.1 2634.5 -3006!2634.5 -3006[#B2E.EB #FFF53D.4B 2886.5 -2410"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix tx="50"/>
+                      </matrix>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix tx="50"/>
+                          </matrix>
+                          <fills>
+                            <FillStyle index="1">
+                              <SolidColor color="#7A5B30" alpha="0.501960784313725"/>
+                            </FillStyle>
+                            <FillStyle index="2">
+                              <SolidColor color="#43321B" alpha="0.501960784313725"/>
+                            </FillStyle>
+                            <FillStyle index="3">
+                              <SolidColor color="#B08646" alpha="0.501960784313725"/>
+                            </FillStyle>
+                            <FillStyle index="4">
+                              <SolidColor color="#827264" alpha="0.701960784313725"/>
+                            </FillStyle>
+                            <FillStyle index="5">
+                              <SolidColor color="#534424" alpha="0.501960784313725"/>
+                            </FillStyle>
+                          </fills>
+                          <strokes>
+                            <StrokeStyle index="1">
+                              <SolidStroke scaleMode="normal" weight="2">
+                                <fill>
+                                  <SolidColor/>
+                                </fill>
+                              </SolidStroke>
+                            </StrokeStyle>
+                          </strokes>
+                          <edges>
+                            <Edge fillStyle1="5" strokeStyle="1" edges="
+!2886.5 -2410|2887 0!2887 0|1158 0!1158 0|1158 -2410!1158 -2410[#49D.58 #FFF53D.4D 1409 -3006!1409 -3006[#67E.F5 #FFF32B.1 2022 -3285!2022 -3285[#94D.23 #FFF32B.1 2634.5 -3006!2634.5 -3006[#B2E.EB #FFF53D.4B 2886.5 -2410"/>
+                            <Edge fillStyle0="5" fillStyle1="4" strokeStyle="1" edges="
+!1388 -1479.5|1388 -1679.5!1388 -1679.5|2648 -1679.5!2648 -1679.5|2648 -1479.5"/>
+                            <Edge fillStyle0="5" fillStyle1="1" strokeStyle="1" edges="
+!2648 -1479.5|2648 -1306"/>
+                            <Edge fillStyle0="5" fillStyle1="3" strokeStyle="1" edges="
+!2648 -1306|2648 -229.5!2648 -229.5|1588 -229.5"/>
+                            <Edge fillStyle0="5" fillStyle1="1" strokeStyle="1" edges="
+!1588 -229.5|1388 -229.5!1388 -229.5|1388 -403.5"/>
+                            <Edge fillStyle0="5" fillStyle1="2" strokeStyle="1" edges="
+!1388 -403.5|1388 -1479.5"/>
+                            <Edge fillStyle0="1" fillStyle1="2" edges="
+!1588 -403.5|1388 -403.5"/>
+                            <Edge fillStyle0="1" fillStyle1="3" edges="
+!1588 -229.5|1588 -403.5"/>
+                            <Edge fillStyle0="1" fillStyle1="2" edges="
+!2448 -1306|1588 -1306!1588 -1306|1588 -403.5"/>
+                            <Edge fillStyle0="1" fillStyle1="3" edges="
+!1588 -403.5|2448 -403.5!2448 -403.5|2448 -1306"/>
+                            <Edge fillStyle0="1" fillStyle1="2" edges="
+!2448 -1479.5|2448 -1306"/>
+                            <Edge fillStyle0="1" fillStyle1="3" edges="
+!2448 -1306|2648 -1306"/>
+                            <Edge fillStyle0="4" fillStyle1="1" strokeStyle="1" edges="
+!2448 -1479.5|2648 -1479.5"/>
+                            <Edge fillStyle0="4" fillStyle1="2" strokeStyle="1" edges="
+!1388 -1479.5|2448 -1479.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                  </members>
+                </DOMGroup>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Themed PL/ Clock Themed/Pendulum Code">
+                  <matrix>
+                    <Matrix a="0.220382690429688" d="0.220382690429688" tx="150.45" ty="-68.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="0.25" y="50.15"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	graphic = true;
+	//
+	distance = 32;
+	angle = 18;
+	thickness = 7;
+	bellsize = 15;
+	basesize = 9;
+	speed = 300;
+	offstart = 0;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ C - Castle/ Paintings/6-Painting">
+                  <matrix>
+                    <Matrix tx="151.9" ty="-129.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ C - Castle/ Paintings/Raibow Ride Picture">
+                  <matrix>
+                    <Matrix tx="-679.15" ty="-155.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Castle Constructors/Castle Wall 2" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="-813" ty="-25.8"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal">
+                            <fill>
+                              <SolidColor/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="
+!-11425 8|-15205 8!-15205 8|-15205 -1500!-15205 -1500|-11425 -1500!-11425 -1500|-11425 8"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Castle Constructors/Castle Wall 2" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="-244.65" ty="-27.6"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal">
+                            <fill>
+                              <SolidColor/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="
+!7980 -1537|11217 -1537!11217 -1537|11217 -28!11217 -28|7980 -28!7980 -28|7980 -1537"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/Sling Star/Sling Star BackGFX">
+                  <matrix>
+                    <Matrix a="0.79998779296875" d="0.589462280273438" tx="488.85" ty="-126.8"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	//otherstar = "ss2";
+	yblast = -35;
+	xblast = 0;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Star Door">
+                  <matrix>
+                    <Matrix a="0.751068115234375" d="0.751312255859375" ty="-18.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "C-10-3";
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor alpha="0.2"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!5731 -2780|5731 59!5731 59|7429 59!7429 59|7429 -2780!7429 -2780|5731 -2780"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMGroup selected="true">
+                      <members>
+                        <DOMShape selected="true">
+                          <fills>
+                            <FillStyle index="1">
+                              <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Castle Constructors/Night-time Sky Wall" bitmapIsClipped="false">
+                                <matrix>
+                                  <Matrix a="30" d="30" tx="369.25" ty="-384.45"/>
+                                </matrix>
+                              </BitmapFill>
+                            </FillStyle>
+                            <FillStyle index="2">
+                              <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Castle Constructors/Night-time Sky Wall" bitmapIsClipped="false">
+                                <matrix>
+                                  <Matrix a="-30" d="30" tx="372.25" ty="-384.45"/>
+                                </matrix>
+                              </BitmapFill>
+                            </FillStyle>
+                            <FillStyle index="3">
+                              <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Castle Constructors/Night-time Sky Wall" bitmapIsClipped="false">
+                                <matrix>
+                                  <Matrix a="30" d="30" tx="-7.25" ty="-384.45"/>
+                                </matrix>
+                              </BitmapFill>
+                            </FillStyle>
+                            <FillStyle index="4">
+                              <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Castle Constructors/Night-time Sky Wall" bitmapIsClipped="false">
+                                <matrix>
+                                  <Matrix a="-30" d="30" tx="-4.25" ty="-384.45"/>
+                                </matrix>
+                              </BitmapFill>
+                            </FillStyle>
+                            <FillStyle index="5">
+                              <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Castle Constructors/Night-time Sky Wall" bitmapIsClipped="false">
+                                <matrix>
+                                  <Matrix a="30" d="30" tx="-382.25" ty="-384.45"/>
+                                </matrix>
+                              </BitmapFill>
+                            </FillStyle>
+                            <FillStyle index="6">
+                              <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Castle Constructors/Night-time Sky Wall" bitmapIsClipped="false">
+                                <matrix>
+                                  <Matrix a="-30" d="30" tx="-379.25" ty="-384.45"/>
+                                </matrix>
+                              </BitmapFill>
+                            </FillStyle>
+                            <FillStyle index="7">
+                              <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Castle Constructors/Night-time Sky Wall" bitmapIsClipped="false">
+                                <matrix>
+                                  <Matrix a="30" d="30" tx="-763.25" ty="-383.6"/>
+                                </matrix>
+                              </BitmapFill>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle0="2" edges="
+!3695 -67|4777 -9!4777 -9|7445 -9"/>
+                            <Edge fillStyle0="2" fillStyle1="1" edges="
+!7445 -9|7445 -7638"/>
+                            <Edge fillStyle0="2" edges="
+!7445 -7638|3695 -7638"/>
+                            <Edge fillStyle0="2" fillStyle1="3" edges="
+!3695 -7638|3695 -67"/>
+                            <Edge fillStyle0="1" edges="
+!7445 -9|11225 -9!11225 -9|11225 -7638!11225 -7638|7445 -7638"/>
+                            <Edge fillStyle0="3" edges="
+!-145 -9|1945 8!1945 8|3695 -67"/>
+                            <Edge fillStyle0="7" fillStyle1="6" edges="
+!-11425 -9|-11425 -7638"/>
+                            <Edge fillStyle0="7" edges="
+!-11425 -7638|-15205 -7638!-15205 -7638|-15205 8!-15205 8|-11425 8!-11425 8|-11425 -9"/>
+                            <Edge fillStyle0="6" edges="
+!-7585 -7638|-11425 -7638"/>
+                            <Edge fillStyle0="6" fillStyle1="5" edges="
+!-7585 -9|-7585 -7638"/>
+                            <Edge fillStyle0="6" edges="
+!-11425 -9|-7585 -9"/>
+                            <Edge fillStyle0="4" edges="
+!-3805 -9|-145 -9"/>
+                            <Edge fillStyle0="4" fillStyle1="3" edges="
+!-145 -9|-85.5 -7638"/>
+                            <Edge fillStyle0="4" edges="
+!-85.5 -7638|-3805 -7638"/>
+                            <Edge fillStyle0="4" fillStyle1="5" edges="
+!-3805 -7638|-3805 -9"/>
+                            <Edge fillStyle0="5" edges="
+!-7585 -9|-3805 -9!-3805 -7638|-7585 -7638"/>
+                            <Edge fillStyle0="3" edges="
+!3695 -7638|-85.5 -7638"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC" locked="true" outline="true" useOutlineView="true">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Castle Constructors/Night-time Sky Wall" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="35.9999084472656" d="35.9999084472656" tx="237.6" ty="-441.4"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="2">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Castle Constructors/Night-time Sky Wall" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="-35.9999084472656" d="35.9999084472656" tx="235.8" ty="-441.4"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="3">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Castle Constructors/Night-time Sky Wall" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="-35.9999084472656" d="35.9999084472656" tx="241.2" ty="-441.4"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="4">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Castle Constructors/Night-time Sky Wall" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="35.9999084472656" d="35.9999084472656" tx="-219.6" ty="-441.4"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="5">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Castle Constructors/Night-time Sky Wall" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="-35.9999084472656" d="35.9999084472656" tx="-216" ty="-441.4"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!4824 388|5134 388!5134 388|5134 -5719!5134 -5719|4824 -5719"/>
+                        <Edge fillStyle0="1" fillStyle1="3" edges="
+!4824 -5719|4824 388"/>
+                        <Edge fillStyle1="2" edges="
+!216 -5719|360 -5719"/>
+                        <Edge fillStyle1="3" edges="
+!360 -5719|4824 -5719"/>
+                        <Edge fillStyle1="2" edges="
+!360 388|216 388"/>
+                        <Edge fillStyle1="4" edges="
+!216 388|-4320 388"/>
+                        <Edge fillStyle1="5" edges="
+!-4320 388|-6221 388!-6221 388|-6221 -5719!-6221 -5719|-4320 -5719"/>
+                        <Edge fillStyle1="4" edges="
+!-4320 -5719|216 -5719"/>
+                        <Edge fillStyle1="3" edges="
+!4824 388|360 388"/>
+                        <Edge fillStyle0="4" fillStyle1="2" edges="
+!216 388|216 -5719"/>
+                        <Edge fillStyle0="3" fillStyle1="2" edges="
+!360 -5719|360 388"/>
+                        <Edge fillStyle0="5" fillStyle1="4" edges="
+!-4320 388|-4320 -5719"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Black" color="#4FFFFF" locked="true" autoNamed="false" visible="false">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements>
+                <DOMGroup selected="true">
+                  <members>
+                    <DOMShape selected="true">
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="
+!13902 3081|-17745 3081!-17745 3081|-17745 -12123!-17745 -12123|13902 -12123!13902 -12123|13902 3081"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

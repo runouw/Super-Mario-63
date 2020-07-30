@@ -1,0 +1,197 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="      Char/  Luigi CLIPS/Luigi (none) Newstar" itemID="45996f02-00000c89" lastModified="1197933768" lastUniqueIdentifier="10">
+  <timeline>
+    <DOMTimeline name="Luigi (none) Newstar">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+onEnterFrame = function () {
+	_root.PauseGame = false;
+	if (_root.Course.Char.air == false) {
+		play();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="14" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = null]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="15" duration="25" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.GetStarMusic1();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="40" duration="12" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.newstar = false;
+_root.CalculateStars();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="52" duration="5" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (_root["StarMessage"+_root.TotalStars] !== undefined) {
+	_root.Mariosound = new Sound(this);
+	_root.Mariosound.attachSound("mario-goodnews");
+	_root.Mariosound.start(0, 1);
+	_root.Mariosound.setVolume(_root.MarioVolume);
+	//_root.PlayMessage("You have "+_root.TotalStars+" Shine Sprites"+newline+_root["StarMessage"+_root.TotalStars]);
+	_root.PlayMessage(_root["StarMessage"+_root.TotalStars]);
+	//   
+} else {
+	gotoAndPlay("end");
+}
+_root.SaveFile();
+onEnterFrame = function () {
+	_root.playpause = true;
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="57" duration="5" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+onEnterFrame = function () {
+	_root.playpause = true;
+	if (_root.KeySPACE()) {
+		play();
+		_root.StopMessage();
+		onEnterFrame = null;
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="62" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.playpause = false;
+onEnterFrame = null]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="63" duration="2" name="end" labelType="name" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = null]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="65" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.Course.Char.attack = false;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Starry Stuff/Shine Sprite">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-14.25" ty="-38.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" duration="14" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Starry Stuff/Shine Sprite">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-9.25" ty="-24"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="15" duration="25" tweenType="motion" motionTweenRotate="clockwise" motionTweenRotateTimes="2" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Starry Stuff/Shine Sprite Clip (Blank)">
+                  <matrix>
+                    <Matrix a="0.75" d="0.75" tx="-9.65" ty="-33.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="40" duration="10" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Starry Stuff/Shine Sprite Clip (Blank)">
+                  <matrix>
+                    <Matrix tx="2.35" ty="-172.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="50" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Starry Stuff/Shine Sprite Clip (Blank)">
+                  <matrix>
+                    <Matrix tx="2.35" ty="-172.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="51" duration="15" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  Luigi CLIPS/ Luigi BITs/Overworld - Luigi Jumping - 3">
+                  <matrix>
+                    <Matrix a="-1" tx="9.85" ty="-34.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" duration="14" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  Luigi CLIPS/ Luigi BITs/Luigi (None) - Item - 1">
+                  <matrix>
+                    <Matrix tx="-10.5" ty="-32.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="15" duration="51" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  Luigi CLIPS/ Luigi BITs/Luigi (None) - Item - 2">
+                  <matrix>
+                    <Matrix tx="-13.5" ty="-37.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

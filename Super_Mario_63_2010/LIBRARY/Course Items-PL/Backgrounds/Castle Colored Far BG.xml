@@ -1,0 +1,333 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Items-PL/ Backgrounds/Castle Colored Far BG" itemID="45995019-00000be6" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="CastleColoredFarBG" lastModified="1240193204" lastUniqueIdentifier="3">
+  <timeline>
+    <DOMTimeline name="Castle Colored Far BG">
+      <layers>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[color = Math.round(_root.TotalStars*1.5)+25;
+color2 = Math.abs(100-color);
+myColor = new Color(this);
+colorTrans = new Object();
+colorTrans = {ra:(color*0.5)+50-(color2/3), rb:0, ga:(color*0.5)+50-(color2/3), gb:0, ba:(color*0.5)+50-(color2/3), bb:0, aa:100, ab:0};
+myColor.setTransform(colorTrans);
+onEnterFrame = function () {
+	color += Math.round(((_root.TotalStars*1.5)+25)-color)/7;
+	if (_root.CheatCastleRestore == true) {
+		color = 100;
+	}
+	//color = Math.max(color, 0);           
+	//color = Math.min(color, 100);
+	if (color>100) {
+		oldcolor = color;
+		color += Math.abs(100-color)*2.5;
+	}
+	color2 = Math.abs(100-color);
+	// color = percent of stars obained
+	// color 2  = percent of stars not yet obtained
+	colorTrans = {ra:(color*0.5)+50-(color2/3), rb:0, ga:(color*0.5)+50-(color2/3), gb:0, ba:(color*0.5)+50-(color2/3), bb:0, aa:100, ab:0};
+	myColor.setTransform(colorTrans);
+	if (color>100) {
+		color = oldcolor;
+	}
+	// 
+	if (_root.BGquality == "LOW") {
+		gotoAndStop(3);
+	} else if (_root.BGquality == "MEDIUM") {
+		gotoAndStop(2);
+	} else {
+		gotoAndStop(1);
+	}
+};
+//
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMGroup>
+                      <members>
+                        <DOMShape>
+                          <fills>
+                            <FillStyle index="1">
+                              <LinearGradient>
+                                <matrix>
+                                  <Matrix a="0" b="-0.177200317382813" c="1.30833435058594" d="0" tx="-439.25" ty="-4.85"/>
+                                </matrix>
+                                <GradientEntry color="#C6CEF8" ratio="0"/>
+                                <GradientEntry color="#D8E0F8" ratio="0.0941176470588235"/>
+                                <GradientEntry color="#E8EDFD" ratio="0.219607843137255"/>
+                                <GradientEntry color="#B8C0F8" ratio="0.658823529411765"/>
+                                <GradientEntry color="#6078C8" ratio="1"/>
+                              </LinearGradient>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle1="1" edges="!4499.5 -3000|4499.5 3000!4499.5 3000|-4500.5 3000!-4500.5 3000|-4500.5 -3000!-4500.5 -3000|4499.5 -3000"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <members>
+                        <DOMShape>
+                          <fills>
+                            <FillStyle index="1">
+                              <BitmapFill bitmapPath="  Course Items-PL/ Backgrounds/Cloud BG Bottom Half" bitmapIsClipped="false">
+                                <matrix>
+                                  <Matrix a="20" d="20" tx="-225" ty="27"/>
+                                </matrix>
+                              </BitmapFill>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle1="1" edges="!4500 1940|-4500 1940!-4500 1940|-4500 540!-4500 540|4500 540!4500 540|4500 1940"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix tx="-275" ty="-220"/>
+                      </matrix>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix tx="-275" ty="-220"/>
+                          </matrix>
+                          <fills>
+                            <FillStyle index="1">
+                              <BitmapFill bitmapPath="  Course Items-PL/ Backgrounds/Cloud BG Top Half" bitmapIsClipped="false">
+                                <matrix>
+                                  <Matrix a="20" d="20" tx="50" ty="178"/>
+                                </matrix>
+                              </BitmapFill>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle0="1" edges="!10000 3560|1000 3560!1000 3560|1000 4940!1000 4940|10000 4940!10000 4940|10000 3560"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <members>
+                        <DOMShape>
+                          <fills>
+                            <FillStyle index="1">
+                              <BitmapFill bitmapPath="  Course Items-PL/ Backgrounds/Cloud BG Bottom Half 2" bitmapIsClipped="false">
+                                <matrix>
+                                  <Matrix a="20" d="20" tx="-6" ty="77"/>
+                                </matrix>
+                              </BitmapFill>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle0="1" edges="!4499.5 1540|-4500.5 1540!-4500.5 1540|-4500.5 2800!-4500.5 2800|4499.5 2800!4499.5 2800|4499.5 1540"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix tx="-275" ty="-200"/>
+                      </matrix>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix tx="-275" ty="-200"/>
+                          </matrix>
+                          <fills>
+                            <FillStyle index="1">
+                              <LinearGradient>
+                                <matrix>
+                                  <Matrix a="0" b="-0.177200317382813" c="1.30833435058594" d="0" tx="-164.25" ty="195.15"/>
+                                </matrix>
+                                <GradientEntry color="#C6CEF8" ratio="0"/>
+                                <GradientEntry color="#D8E0F8" ratio="0.0941176470588235"/>
+                                <GradientEntry color="#E8EDFD" ratio="0.219607843137255"/>
+                                <GradientEntry color="#B8C0F8" ratio="0.658823529411765"/>
+                                <GradientEntry color="#6078C8" ratio="1"/>
+                              </LinearGradient>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle1="1" edges="!9999.5 7000|999.5 7000!999.5 7000|999.5 1000!999.5 1000|9999.5 1000!9999.5 1000|9999.5 7000"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <members>
+                        <DOMShape>
+                          <fills>
+                            <FillStyle index="1">
+                              <BitmapFill bitmapPath="  Course Items-PL/ Backgrounds/Cloud BG Bottom Half" bitmapIsClipped="false">
+                                <matrix>
+                                  <Matrix a="20" d="20" tx="-225" ty="27"/>
+                                </matrix>
+                              </BitmapFill>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle1="1" edges="!4500 1940|-4500 1940!-4500 1940|-4500 540!-4500 540|4500 540!4500 540|4500 1940"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix tx="-275" ty="-220"/>
+                      </matrix>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix tx="-275" ty="-220"/>
+                          </matrix>
+                          <fills>
+                            <FillStyle index="1">
+                              <BitmapFill bitmapPath="  Course Items-PL/ Backgrounds/Cloud BG Top Half" bitmapIsClipped="false">
+                                <matrix>
+                                  <Matrix a="20" d="20" tx="50" ty="178"/>
+                                </matrix>
+                              </BitmapFill>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle0="1" edges="!10000 3560|1000 3560!1000 3560|1000 4940!1000 4940|10000 4940!10000 4940|10000 3560"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <members>
+                        <DOMShape>
+                          <fills>
+                            <FillStyle index="1">
+                              <BitmapFill bitmapPath="  Course Items-PL/ Backgrounds/Cloud BG Bottom Half 2" bitmapIsClipped="false">
+                                <matrix>
+                                  <Matrix a="20" d="20" tx="-6" ty="77"/>
+                                </matrix>
+                              </BitmapFill>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle0="1" edges="!4499.5 1540|-4500.5 1540!-4500.5 1540|-4500.5 2800!-4500.5 2800|4499.5 2800!4499.5 2800|4499.5 1540"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMGroup>
+                      <members>
+                        <DOMShape>
+                          <fills>
+                            <FillStyle index="1">
+                              <SolidColor color="#CCD1F7"/>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle1="1" edges="!4499.5 -3000|4499.5 3000!4499.5 3000|-4500.5 3000!-4500.5 3000|-4500.5 -3000!-4500.5 -3000|4499.5 -3000"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <members>
+                        <DOMShape>
+                          <fills>
+                            <FillStyle index="1">
+                              <BitmapFill bitmapPath="  Course Items-PL/ Backgrounds/Cloud BG Bottom Half" bitmapIsClipped="false">
+                                <matrix>
+                                  <Matrix a="20" d="20" tx="-225" ty="27"/>
+                                </matrix>
+                              </BitmapFill>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle1="1" edges="!4500 1940|-4500 1940!-4500 1940|-4500 540!-4500 540|4500 540!4500 540|4500 1940"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix tx="-275" ty="-220"/>
+                      </matrix>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix tx="-275" ty="-220"/>
+                          </matrix>
+                          <fills>
+                            <FillStyle index="1">
+                              <BitmapFill bitmapPath="  Course Items-PL/ Backgrounds/Cloud BG Top Half" bitmapIsClipped="false">
+                                <matrix>
+                                  <Matrix a="20" d="20" tx="50" ty="178"/>
+                                </matrix>
+                              </BitmapFill>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle0="1" edges="!10000 3560|1000 3560!1000 3560|1000 4940!1000 4940|10000 4940!10000 4940|10000 3560"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix ty="-6"/>
+                      </matrix>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix ty="-6"/>
+                          </matrix>
+                          <fills>
+                            <FillStyle index="1">
+                              <BitmapFill bitmapPath="  Course Items-PL/ Backgrounds/Cloud BG Bottom Half 2" bitmapIsClipped="false">
+                                <matrix>
+                                  <Matrix a="20" d="20" tx="-6" ty="77"/>
+                                </matrix>
+                              </BitmapFill>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle0="1" edges="!4499.5 1540|-4500.5 1540!-4500.5 1540|-4500.5 2800!-4500.5 2800|4499.5 2800!4499.5 2800|4499.5 1540"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

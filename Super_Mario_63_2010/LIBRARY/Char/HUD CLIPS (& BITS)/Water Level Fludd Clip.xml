@@ -1,0 +1,91 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="      Char/   HUD CLIPS (&amp; BITS)/Water Level Fludd Clip" itemID="474900c0-00000c01" lastModified="1196015395" lastUniqueIdentifier="4">
+  <timeline>
+    <DOMTimeline name="Water Level Fludd Clip">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" locked="true">
+          <frames>
+            <DOMFrame index="0" duration="4" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[//_root.Fluddpow = "H"
+this._alpha = 50;
+wgy = 0;
+ty = this._y;
+onEnterFrame = function () {
+	wgy += 0.05;
+	yh = Math.cos(wgy)*5;
+	if (_root.Fluddpow !== "") {
+		gotoAndStop(_root.Fluddpow);
+	} else {
+		gotoAndStop(1);
+	}
+	this._y = ty+yh;
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" name="H" labelType="name" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/   HUD CLIPS (&amp; BITS)/WLFC Hover" name="h">
+                  <matrix>
+                    <Matrix ty="-1.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" name="R" labelType="name" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/   HUD CLIPS (&amp; BITS)/WLFC Rocket" name="r">
+                  <matrix>
+                    <Matrix ty="-5.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" name="T" labelType="name" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/   HUD CLIPS (&amp; BITS)/WLFC Turbo" name="t">
+                  <matrix>
+                    <Matrix ty="-4.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Fludd/Fludd Back - Base">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-6.25" ty="-0.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

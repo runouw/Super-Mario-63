@@ -1,0 +1,80 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="      Char/   HUD CLIPS (&amp; BITS)/ Water Level Folder/Water Level Bubble" itemID="46e32c1f-000009b2" sourceFlashFilepath="Rob &amp; Steve Hewitt\My Documents\Super Mario 63\Mario Graphics.fla" sourceLibraryItemHRef="Water Level Folder/Water Level Bubble" sourceLastModified="1189295246" lastModified="1195965419" lastUniqueIdentifier="1" sourceItemID="46e32c1f-000009b2">
+  <timeline>
+    <DOMTimeline name="Water Level Bubble" currentFrame="1">
+      <layers>
+        <DOMLayer name="Layer 3" color="#FFFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+count = 0;
+num = random(100)+10;
+onEnterFrame = function () {
+	count++;
+	if (count>num) {
+		nextFrame();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[cl._alpha = 0;
+cl._yscale = random(20)+15;
+onEnterFrame = function () {
+	if (_root.WaterPercent>=10) {
+		cl._alpha += 15;
+		cl._y--;
+		cl._yscale += random(5);
+		cl._xscale = cl._yscale;
+		if (cl._alpha>=100) {
+			onEnterFrame = function () {
+				cl._y--;
+				if (cl._y<-(_root.WaterPercent*1.1)) {
+					cl._alpha -= 15;
+				}
+				if (cl._alpha<=0) {
+					prevFrame();
+				}
+			};
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/   HUD CLIPS (&amp; BITS)/ Water Level Folder/Water Level Bubble Clip" name="cl">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

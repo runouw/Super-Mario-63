@@ -1,0 +1,284 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Clips/8-12 BackGFX" itemID="48efcb49-00001181" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="8-12BackGFX" lastModified="1245534162" lastUniqueIdentifier="13">
+  <timeline>
+    <DOMTimeline name="8-12 BackGFX">
+      <layers>
+        <DOMLayer name="Layer 5" color="#4FFFFF" outline="true" useOutlineView="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="warp1">
+                  <matrix>
+                    <Matrix a="5.66065979003906" d="6.25013732910156" ty="-749"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 6" color="#808080" outline="true" useOutlineView="true">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Invisible Door">
+                  <matrix>
+                    <Matrix a="1.38870239257813" tx="-193.45" ty="-52.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-0.05"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "C-13-Warp";
+	walk = "warppipe";
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+_root.Starnamenum = 36;
+
+//
+_root.CanSwitchFludd = false;
+_root.SaveFluddH = true;
+_root.SaveFluddR = false;
+_root.SaveFluddT = false;
+_root.Fluddpow = "H"
+_root.Playinglevel = 0;
+//
+count = 0;
+onEnterFrame = function () {
+	if (_root.Course.FrntGFX.Bowser.hp>0 && _root.PauseGame == false) {
+		count++;
+		if (count>32*9) {
+			count = 0;
+			if (random(2) == 0) {
+				GoombaSummon(0, -600, Math.random()*8-4, 7);
+				//_root.Course.BackGFX.attachMovie("GoombaCode", "Goomba"+_root.Course.BackGFX.getNextHighestDepth(), _root.Course.BackGFX.getNextHighestDepth(), {_x:0, _y:-400, battleArena:true, attached:true, xspeed:Math.random()*6+5, yspeed:3});
+			} else {
+				BobombSummon(0, -600, Math.random()*8-4, 7);
+				//_root.Course.BackGFX.attachMovie("BombombCode", "Bombomb"+_root.Course.BackGFX.getNextHighestDepth(), _root.Course.BackGFX.getNextHighestDepth(), {_x:0, _y:-400, battleArena:true, attached:true, xspeed:Math.random()*6+5, yspeed:3});
+			}
+		}
+	}
+};
+GoombaSummon = function (X, Y, Xvel, Yvel) {
+	_root.Course.FrontGFX.attachMovie("KamekTriangleAttack", "Triangle"+_root.Course.FrontGFX.getNextHighestDepth(), _root.Course.FrontGFX.getNextHighestDepth(), {_x:X, _y:Y, yspeed:Yvel, xspeed:Xvel, explodetype:"Goomba"});
+	_parent.onscreencount++;
+};
+BobombSummon = function (X, Y, Xvel, Yvel) {
+	_root.Course.FrontGFX.attachMovie("KamekTriangleAttack", "Triangle"+_root.Course.FrontGFX.getNextHighestDepth(), _root.Course.FrontGFX.getNextHighestDepth(), {_x:X, _y:Y, yspeed:Yvel, xspeed:Xvel, explodetype:"Bobomb"});
+	_parent.onscreencount++;
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+_root.warpframe = false;
+onEnterFrame = function () {
+	if (this.warp1.hitTest(_root.Course.Char.charClip.feet)) {
+		_root.Course.Char.attack = true;
+		_root.Course.Char.xspeed = 0;
+		_root.Course.Char.yspeed = 0;
+		_root.Course.Char.attackFrame = "none";
+		warp = true;
+		warpnum = 1;
+	}
+	if (warp == true && _root.warpframe == false) {
+		if (warpnum == 1) {
+			_root.attachMovie("uptransition", "uptransition"+_root.getNextHighestDepth(), _root.getNextHighestDepth(), {_x:_root.screensizeX/2, _y:_root.screensizeY/2});
+		}
+		
+		warp = false;
+	}
+	if (_root.warpframe == true) {
+		if (warpnum == 1) {
+			_root.DoorTrasition("8-13");
+		}
+		//_root.warpframe = false;                                      
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/Sling Star/Sling Star BackGFX">
+                  <matrix>
+                    <Matrix a="1.12545776367188" b="-7.62939453125e-005" c="-9.1552734375e-005" d="1.12344360351563" tx="0.05" ty="-73.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	trackclip = "sst1";
+	//otherstar = "ss1";
+	yblast = -40;
+	xblast = 0;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC" outline="true" useOutlineView="true">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="camCenter">
+                  <matrix>
+                    <Matrix a="0.188629150390625" d="0.6251220703125" ty="-100"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="box1">
+                  <matrix>
+                    <Matrix a="0.188629150390625" d="0.6251220703125" ty="-76.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="box2">
+                  <matrix>
+                    <Matrix a="0.188629150390625" d="0.6251220703125" tx="-190" ty="-56.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="box3">
+                  <matrix>
+                    <Matrix a="0.188629150390625" d="0.6251220703125" tx="155.5" ty="-199"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements>
+                <DOMStaticText width="100" height="15.6" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-50" ty="332.2"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>BacKGFX</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" size="14" face="Arial-BoldMT" fillColor="#0099FF"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Squirt Nozzle Box Clip">
+                  <matrix>
+                    <Matrix tx="193.5" ty="-19.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#FF4FFF">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/8-12 Dark Tint">
+                  <matrix>
+                    <Matrix ty="-76.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color redMultiplier="0.75" blueMultiplier="0.25" greenMultiplier="0.3984375"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="-1"/>
+                  </matrix>
+                  <members>
+                    <DOMBitmapInstance selected="true" libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Bowser Door Super Large">
+                      <matrix>
+                        <Matrix tx="-60.5" ty="-122.55"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="2.5" y="61.5"/>
+                      </transformationPoint>
+                    </DOMBitmapInstance>
+                    <DOMBitmapInstance selected="true" libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Bowser Door Super Large">
+                      <matrix>
+                        <Matrix a="-1" tx="60.5" ty="-122.55"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="2.5" y="61.5"/>
+                      </transformationPoint>
+                    </DOMBitmapInstance>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,109 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name=" Menu/Menu Folder/ Options/Options High" itemID="47797929-00000c92" sourceFlashFilepath="Rob &amp; Steve Hewitt\My Documents\Super Mario 63\Menu Design.fla" sourceLibraryItemHRef="Menu Folder/ Options/Options High" sourceLastModified="1199146125" lastModified="1199153963" lastUniqueIdentifier="2" sourceItemID="47797929-00000c92">
+  <timeline>
+    <DOMTimeline name="Options High">
+      <layers>
+        <DOMLayer name="BG" color="#FFFF4F" locked="true" outline="true" useOutlineView="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Menu Folder/  Universal Stuff/Menu Button (really)" symbolType="button">
+                  <matrix>
+                    <Matrix a="0.542984008789063" d="0.4310302734375" tx="-0.5" ty="-2.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#FF4FFF">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Menu Folder/ Options/Options Quality Bevel Box">
+                  <matrix>
+                    <Matrix tx="-0.95" ty="-2.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-0.05"/>
+                  </transformationPoint>
+                  <filters>
+                    <BevelFilter/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC" locked="true" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[scaly = 100;
+qual = "HIGH";
+onEnterFrame = function () {
+	//
+	if (hl == true) {
+		_parent.qual = qual;
+	} else if (_parent.qual == qual) {
+		_parent.qual = undefined;
+	}
+	//                      
+	if (this.hitTest(_root._xmouse, _root._ymouse, false)) {
+		hl = true;
+	} else {
+		hl = false;
+	}
+	if (hl == true) {
+		_xscale += ((scaly+25)-_xscale)/5;
+	} else {
+		_xscale += (scaly-_xscale)/5;
+	}
+		if (_parent.realqual == qual) {
+		scaly += (125-scaly)/5;
+		gotoAndStop(2);
+	} else {
+		gotoAndStop(1);
+		scaly += (100-scaly)/5;
+	}
+	_yscale = _xscale;
+};
+onMouseDown = function () {
+	if (this.hitTest(_root._xmouse, _root._ymouse, false)) {
+		scaly = 175;
+	}
+};
+stop();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" locked="true">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Menu Folder/ Options/Options High Text">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BevelFilter distance="2"/>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                    <GlowFilter/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

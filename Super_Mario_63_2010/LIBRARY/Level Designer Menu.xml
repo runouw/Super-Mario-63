@@ -1,0 +1,331 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Level Designer Menu" itemID="485566a6-00001172" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="LDMenu" sourceFlashFilepath="F:\Super Mario 63\New computer\Level Designer (With Mario Engine new) 3.fla" sourceLibraryItemHRef="Level Designer Menu" sourceLastModified="1232685794" lastModified="1248325972" lastUniqueIdentifier="9" sourceItemID="485566a6-00001172">
+  <timeline>
+    <DOMTimeline name="Level Designer Menu">
+      <layers>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[//Functions()
+/*
+Window1 = Main windows, like Place Tiles, Course Info, etc.
+Window2 = Smaller ones, like Specific Tiles/Items, or Yes/No questions.
+*/
+// vvv refers to Depth
+backwindow = 100;
+midwindow = 200;
+frontwindow = 300;
+onEnterFrame = function () {
+	Window1NotTouching();
+};
+//
+Window1NotTouching = function () {
+	if (_root.M.Window1.hitTest(_root._xmouse, _root._ymouse, false)) {
+		_root.MWindow1 = false;
+	} else {
+		_root.MWindow1 = true;
+	}
+};
+Bar.swapDepths(backwindow);
+//Window1.swapDepths(midwindow);
+Window1.swapDepths(midwindow);
+WInfoF = function () {
+	//this["Window1"].swapDepths(0);
+	//this["Window1"].removeMovieClip();
+	//this.attachMovie("Window1", "Window1", this.getNextHighestDepth(), {frame:"Info", _x:50, _y:50});
+	Window1.swapDepths(frontwindow);
+	Window1.gotoAndStop("blank");
+	Window1.frame = "Info";
+	Window1._x = 50+random(10);
+	Window1._y = 50+random(10);
+	_root.LastItemClicked = "";
+};
+//
+WResetF = function () {
+	Window1.swapDepths(frontwindow);
+	Window1.gotoAndStop("blank");
+	Window1.frame = "Reset";
+	Window1._x = 60+random(10);
+	Window1._y = 60+random(10);
+	_root.LastItemClicked = "";
+};
+WSaveF = function () {
+	Window1.swapDepths(frontwindow);
+	Window1.gotoAndStop("blank");
+	Window1.frame = "Save";
+	Window1._x = 40+random(10);
+	Window1._y = 40+random(10);
+	_root.LastItemClicked = "";
+};
+WLoadF = function () {
+	Window1.swapDepths(frontwindow);
+	Window1.gotoAndStop("blank");
+	Window1.frame = "Load";
+	Window1._x = 40+random(10);
+	Window1._y = 40+random(10);
+	_root.LastItemClicked = "";
+};
+WExitF = function () {
+	Window1.swapDepths(frontwindow);
+	Window1.gotoAndStop("blank");
+	Window1.frame = "Exit";
+	Window1._x = 70+random(10);
+	Window1._y = 70+random(10);
+	_root.LastItemClicked = "";
+};
+//
+WCloseWindowsF = function () {
+	Window1.swapDepths(frontwindow);
+	Window1.gotoAndStop("blank");
+	Window1.frame = undefined;
+	Window1._y = 1000;
+	_root.sideframe = undefined;
+	_root.LastItemClicked = "";
+};
+WMovementSettingsF = function () {
+	Window1.swapDepths(frontwindow);
+	Window1.gotoAndStop("blank");
+	Window1.frame = "MovementSettings";
+	Window1._x = 50+random(10);
+	Window1._y = 50+random(10);
+	_root.LastItemClicked = "";
+};
+WToggleLayeringF = function () {
+	/*Window1.swapDepths(frontwindow);
+	Window1.gotoAndStop("blank");
+	Window1.frame = "Exit";
+	Window1._x = 70+random(10);
+	Window1._y = 70+random(10);*/
+};
+WPlaceTilesF = function () {
+	_root.LastItemClicked = "";
+	_root.sideframe = "PlaceTiles";
+	_root.PlaceMode == "TileSelect";
+	if (_root.Scene2.getDepth()>_root.Scene.getDepth()) {
+		_root.Scene2.swapDepths(_root.Scene.getDepth());
+	}
+};
+WGridSizeF = function () {
+	Window1.swapDepths(frontwindow);
+	Window1.gotoAndStop("blank");
+	Window1.frame = "GridSize";
+	Window1._x = 50+random(10);
+	Window1._y = 50+random(10);
+	_root.LastItemClicked = "";
+};
+WPlaceItemsF = function () {
+	_root.LastItemClicked = "";
+	_root.sideframe = "PlaceItems";
+	_root.PlaceMode = "ItemSelect";
+	if (_root.Scene2.getDepth()<_root.Scene.getDepth()) {
+		_root.Scene2.swapDepths(_root.Scene.getDepth());
+	}
+};
+WSelectItemsF = function () {
+	_root.sideframe = "PlaceItems";
+	_root.PlaceMode = "ItemSelect";
+	if (_root.Scene2.getDepth()<_root.Scene.getDepth()) {
+		_root.Scene2.swapDepths(_root.Scene.getDepth());
+	}
+};
+WEraseItemsF = function () {
+	_root.sideframe = "PlaceItems";
+	_root.PlaceMode = "ItemErase";
+	_root.LastItemClicked = "";
+	if (_root.Scene2.getDepth()<_root.Scene.getDepth()) {
+		_root.Scene2.swapDepths(_root.Scene.getDepth());
+	}
+	//_root.PlaceMode = "ItemErase";    
+};
+WEraseTilesF = function () {
+	_root.sideframe = "PlaceTiles";
+	_root.LastItemClicked = "";
+	if (_root.Scene2.getDepth()>_root.Scene.getDepth()) {
+		_root.Scene2.swapDepths(_root.Scene.getDepth());
+	}
+	_root.PlaceMode = "Tile";
+	_root.PlacingTile = _root.BlankTile;
+};
+WTestF = function () {
+	_root.TestLevel();
+};
+WToggleLayeringF = function () {
+	_root.Scene2.swapDepths(_root.Scene.getDepth());
+};
+WControlsF = function () {
+	_root.LastItemClicked = "";
+	Window1.swapDepths(frontwindow);
+	Window1.gotoAndStop("blank");
+	Window1.frame = "Controls";
+	Window1._x = 50+random(10);
+	Window1._y = 50+random(10);
+};
+WUnlockF = function () {
+	_root.LastItemClicked = "";
+	Window1.swapDepths(frontwindow);
+	Window1.gotoAndStop("blank");
+	Window1.frame = "Unlock";
+	Window1._x = 50+random(10);
+	Window1._y = 50+random(10);
+};
+WInstructionsF = function () {
+	_root.LastItemClicked = "";
+	Window1.swapDepths(frontwindow);
+	Window1.gotoAndStop("blank");
+	Window1.frame = "Inst";
+	Window1._x = 50+random(10);
+	Window1._y = 50+random(10);
+};
+ReCenterCameraF = function () {
+	_root.LDcentercam();
+};
+_root.TileNameArray0 = ["", "1 Jungle Tile Top", "2 Jungle Tile Top half", "3 Jungle Ground", "4 Jungle Bottom half", " 5 Jungle Ground", "6 Jungle Ground", "7 Jungle Corner Left", "8 Jungle Corner Right", "9 Jungle Corner Left"];
+_root.TileNameArray0.push("10 Jungle Corner Right", "11 Jungle Corner Left", "12 Jungle Corner Right", "13 Jungle Corner Left", "14 Jungle Corner Right", "15 Jungle Wall Left", "16 Jungle Wall Right", "17 Jungle Invert Corner Left", "18 Jungle Invert Corner Right", "19 Jungle Invert Corner Left");
+_root.TileNameArray0.push("20 Jungle Invert Corner Right", "21 Jungle Invert Corner Bottom Half", "22 Jungle Invert Corner Bottom Half", "23 Jungle Slope Alpha Right", "24 Jungle Slope Alpha Left", "25 Jungle Slope Beta Right", "26 Jungle Slope Beta Left", "27 Jungle Slope Alpha Right", "28 Jungle Slope Alpha Left", "29 Jungle Slope Alpha bottom");
+_root.TileNameArray0.push("30 Jungle Slope Alpha bottom", "31 Jungle Slope Beta Right", "32 Jungle Slope Beta Left", "33 Jungle Slope Beta bottom", "34 Jungle Slope Beta bottom", "35 Jungle Slope bottom corner", "36 Jungle Slope bottom corner", "37 Jungle Ceiling", "38 Jungle Ceiling Slope Right", "39 Jungle Ceiling Slope Left");
+_root.TileNameArray0.push("40 Jungle Ceiling Slope Right", "41 Jungle Ceiling Slope Left", "42 Jungle Ceiling Corner", "43 Jungle Ceiling Corner", "44 Jungle Ceiling Corner", "45 Jungle Ceiling Corner");
+_root.TileNameArray1 = ["", "1 Breakable Block 0 Coins", "2 Breakable Block 3 Coins", "3 Breakable Block 5 Coins", "4 Breakable Block 10 Coins", " 5 Breakable Block 30 Coins", "6 Ice 0 Coins", "7 Ice 3 Coins", "8 Ice 5 Coins", "9 Ice 10 Coins"];
+_root.TileNameArray1.push("10 Ice 30 Coins", "11 Force Field 0 Coins", "12 Force Field 3 Coins", "13 Force Field 5 Coins", "14 Force Field 10 Coins", "15 Force Field 30 Coins", "16 Stone Block 0 Coins", "17 Stone Block 3 Coins", "18 Stone Block 5 Coins", "19 Stone Block 10 Coins");
+_root.TileNameArray1.push("20 Stone Block 30 Coins", "21 Grey Brick 0 Coins", "22 Grey Brick 3 Coins", "23 Grey Brick 5 Coins", "24 Grey Brick 10 Coins", "25 Grey Brick 30 Coins", "26 Blue Brick 0 Coins", "27 Blue Brick 3 Coins", "28 Blue Brick 5 Coins", "29 Blue Brick 10 Coins");
+_root.TileNameArray1.push("30 Blue Brick 30 Coins", "31 Cannon", "32 Switch Controlled Block", "33 Jungle Slope Beta bottom", "34 Jungle Slope Beta bottom", "35 Jungle Slope bottom corner", "36 Jungle Slope bottom corner", "37 Jungle Ceiling", "38 Jungle Ceiling Slope Right", "39 Jungle Ceiling Slope Left");
+_root.TileNameArray1.push("40 Jungle Ceiling Slope Right", "41 Jungle Ceiling Slope Left", "42 Jungle Ceiling Corner", "43 Jungle Ceiling Corner", "44 Jungle Ceiling Corner", "45 Jungle Ceiling Corner");
+_root.TileNameArray2 = ["", "1 Blue Brick", "2 Blue Brick Bottom Half", "3 Blue Brick Top Half", "4 Blue Brick Stairs Left", "5 Blue Brick Stairs Right", "6 Blue Brick Stairs Right Small", "7 Blue Brick Stairs Left Small", "8 Blue Brick Stairs Right Small", "9 Blue Brick Stairs Left Small"];
+_root.TileNameArray2.push("10 Green Brick", "11 Green Brick Bottom Half", "12 Green Brick Top Half", "13 Green Brick Stairs Left", "14 Green Brick Stairs Right", "15 Green Brick Stairs Right Small", "16 Green Brick Stairs Left Small", "17 Green Brick Stairs Right Small", "18 Green Brick Stairs Left Small", "19 Wall Tile");
+_root.TileNameArray2.push("20 Wall Tile Bottom Half", "21 Wall Tile Top Half", "22 Wall Tile Stairs Left", "23 Wall Tile Stairs Right", "24 Wall Tile Stairs Right Small", "25 Wall Tile Stairs Left Small", "26 Wall Tile Stairs Right Small", "27 Wall Tile Stairs Left Small", "28 Grey Brick", "29 Grey Brick Bottom Half");
+_root.TileNameArray2.push("30 Grey Brick Top Half", "31 Grey Brick Stairs Left", "32 Grey Brick Stairs Right", "33 Grey Brick Stairs Right Small", "34 Grey Brick Stairs Left Small", "35 Grey Brick Stairs Right Small", "36 Grey Brick Stairs Left Small", "37 Dark Grey Brick", "38 Dark Grey Brick Bottom Half", "39 Dark Grey Brick Top Half");
+_root.TileNameArray2.push("40 Dark Grey Brick Stairs Left", "41 Dark Grey Brick Stairs Right", "42 Dark Grey Brick Stairs Right Small", "43 Dark Grey Brick Stairs Left Small", "44 Dark Grey Brick Stairs Right Small", "45 Dark Grey Brick Stairs Left Small", "46 Brown Brick", "47 Brown Brick Top Half", "48 Brown Brick Bottom Half", "49 Brown Brick Stairs Left", "50 Brown Brick Stairs Right");
+_root.TileNameArray3 = ["", "1 Red Brick", "2 Red Brick Bottom Half", "3 Red Brick Top Half", "4 Red Brick Stairs Left", "5 Red Brick Stairs Right", "6 Red Brick Stairs Right Small", "7 Red Brick Stairs Left Small", "8 Red Brick Stairs Right Small", "9 Red Brick Stairs Left Small"];
+_root.TileNameArray3.push("10 Large Brick", "11 Large Brick Bottom Half", "12 Large Brick Top Half", "13 Large Brick Stairs Left", "14 Large Brick Stairs Right", "15 Faded Brick", "16 Faded Brick Bottom Half", "17 Faded Brick Top Half", "18 Faded Brick Stairs Left", "19 Faded Brick Stairs Right");
+_root.TileNameArray3.push("20 Indented Brick", "21 Indented Brick Bottom Half", "22 Indented Brick Top Half", "23 Indented Brick Stairs Left", "24 Indented Brick Stairs Right", "25 Dark Stone", "26 Dark Stone Bottom Half", "27 Dark Stone Top Half", "28 Dark Stone Stairs Left", "29 Dark Stone Stairs Right");
+_root.TileNameArray3.push("30 Smooth Stone", "31 Smooth Stone Bottom Half", "32 Smooth Stone Top Half", "33 Smooth Stone Stairs Left", "34 Smooth Stone Stairs Right", "35 Goomba Statue", "36 Koopa Statue", "37 Hide Fledge #1", "38 Hide Fledge #2", "39 Blue Metal #1");
+_root.TileNameArray3.push("40 Blue Metal #2", "41 Metal Box", "42 Metal Mesh", "43 Metal Cage", "44 Mossy Rock", "45 Blue Rock", "46 Bowser Texture", "47 Bowser Texture Left Edge", "48 Bowser Texture Right Edge");
+_root.TileNameArray4 = ["", "1 Grass Tile Top", "2 Grass Tile Top half", "3 Grass Ground", "4 Grass Bottom half", " 5 Grass Ground", "6 Grass Ground", "7 Grass Corner Left", "8 Grass Corner Right", "9 Grass Corner Left"];
+_root.TileNameArray4.push("10 Grass Corner Right", "11 Grass Corner Left", "12 Grass Corner Right", "13 Grass Corner Left", "14 Grass Corner Right", "15 Grass Wall Left", "16 Grass Wall Right", "17 Grass Invert Corner Left", "18 Grass Invert Corner Right", "19 Grass Invert Corner Left");
+_root.TileNameArray4.push("20 Grass Invert Corner Right", "21 Grass Invert Corner Bottom Half", "22 Grass Invert Corner Bottom Half", "23 Grass Slope Alpha Right", "24 Grass Slope Alpha Left", "25 Grass Slope Beta Right", "26 Grass Slope Beta Left", "27 Grass Slope Alpha Right", "28 Grass Slope Alpha Left", "29 Grass Slope Alpha bottom");
+_root.TileNameArray4.push("30 Grass Slope Alpha bottom", "31 Grass Slope Beta Right", "32 Grass Slope Beta Left", "33 Grass Slope Beta bottom", "34 Grass Slope Beta bottom", "35 Grass Wall #2 Left", "36 Grass Wall #2 Right", "37 Grass Ceiling", "38 Grass Ceiling Slope Right", "39 Grass Ceiling Slope Left");
+_root.TileNameArray4.push("40 Grass Ceiling Slope Right", "41 Grass Ceiling Slope Left", "42 Grass Ceiling Corner", "43 Grass Ceiling Corner", "44 Grass Ceiling Corner", "45 Grass Ceiling Corner");
+_root.TileNameArray5 = ["", "1 Cave Top", "2 Cave Top Half", "3 Cave Ground #1", "4 Cave Ground #2", "5 Cave Slope Alpha Left", "6 Cave Slope Alpha Right", "7 Cave Slope Alpha Left", "8 Cave Slope Alpha Right", "9 Cave Jagged Slope Left"];
+_root.TileNameArray5.push("10 Cave Jagged Slope Right", "11 Cave Jagged Slope Left", "12 Cave Jagged Slope Right", "13 Cave Slope Beta Left", "14 Cave Slope Beta Right", "15 Cave Slope Beta Left", "16 Cave Slope Beta Right", "17 Cave Invert Corner", "18 Cave Invert Corner", "19 Cave Wall");
+_root.TileNameArray5.push("20 Cave Wall", "21 Cave Wall Corner", "22 Cave Wall Corner", "23 Cave Ceiling Corner", "24 Cave Ceiling Corner", "25 Cave Ceiling", "26 Cave Stalactite", "27 Cave Ceiling Corner", "28 Cave Ceiling Corner", "29 Cave Floor-Wall Corner");
+_root.TileNameArray5.push("30 Cave Floor-Wall Corner", "31 Cave Corner", "32 Cave Corner", "33 Cave Corner", "34 Cave Corner", "35 Cave Wall Slope", "36 Cave Wall Slope", "37 Cave Wall Slope", "38 Cave Wall Slope", "39 Cave Ceiling Slope");
+_root.TileNameArray5.push("40 Cave Ceiling Slope", "41 Cave Wall Slope", "42 Cave Wall Slope", "43 Cave Wall Slope", "44 Cave Wall Slope", "45 Cave Ceiling Slope", "46 Cave Ceiling Slope", "47 Cave Shiny Ground");
+_root.TileNameArray6 = ["", "1 Snow Top", "2 Snow Top Half", "3 Snow Ground #1", "4 Snow Top Second Half", "5 Snow Ground #2", "6 Snow Ground #3", "7 Snow Corner", "8 Snow Corner", "9 Snow Corner"];
+_root.TileNameArray6.push("10 Snow Corner", "11 Snow Corner", "12 Snow Corner", "13 Snow Corner-Wall Piece", "14 Snow Corner-Wall Piece", "15 Snow Wall", "16 Snow Wall", "17 Snow Invert Corner", "18 Snow Invert Corner", "19 Snow Invert Corner");
+_root.TileNameArray6.push("20 Snow Invert Corner", "21 Snow Invert Corner Bottom Piece", "22 Snow Invert Corner Bottom Piece", "23 Snow Slope Alpha", "24 Snow Slope Alpha", "25 Snow Slope Beta", "26 Snow Slope Beta", "27 Snow Slope Alpha Top", "28 Snow Slope Alpha Top", "29 Snow Slope Alpha Bottom");
+_root.TileNameArray6.push("30 Snow Slope Alpha Bottom", "31 Snow Slope Beta Top", "32 Snow Slope Beta Top", "33 Snow Slope Beta Bottom", "34 Snow Slope Beta Bottom", "35 Snow Steep Slope Top", "36 Snow Steep Slope Top", "37 Snow Steep Slope Bottom", "38 Snow Steep Slope Bottom", "39 Snow Steep Slope Top Third");
+_root.TileNameArray6.push("40 Snow Steep Slope Top Third", "41 Snow Steep Slope Middle Third", "42 Snow Steep Slope Middle Third", "43 Snow Steep Slope Bottom Third", "44 Snow Steep Slope Bottom Third");
+_root.TileNameArray7 = ["", "1 Snow Ledge Top Half", "2 Snow Ledge Top Half", "3 Snow Ledge Bottom Half", "4 Snow Ledge Bottom Half", "5 Snow Ledge Top Third", "6 Snow Ledge Top Third", "7 Snow Ledge Middle Third", "8 Snow Ledge Middle Third", "9 Snow Ledge Bottom Third"];
+_root.TileNameArray7.push("10 Snow Ledge Bottom Third", "11 Snow Ceiling", "12 Snow Ceiling Slope", "13 Snow Ceiling Slope", "14 Snow Ceiling Slope", "15 Snow Ceiling Slope", "16 Snow Ceiling Corner", "17 Snow Ceiling Corner", "18 Snow Ceiling Corner", "19 Snow Ceiling Corner");
+_root.TileNameArray7.push("20 Ice Platform", "21 Ice Platform", "22 Ice Platform", "23 Ice Wall", "24 Ice Wall", "25 Ice Wall", "26 Cracked Ice", "27 Cracked Ice", "28 Cracked Ice", "29 Alternate Snow 1");
+_root.TileNameArray7.push("30 Alternate Snow 1", "31 Alternate Snow 1", "32 Alternate Snow 2", "33 Alternate Snow 2", "34 Alternate Snow 2", "35 Ice Cube", "36 Cabin Block ", "37 Cabin Block", "38 Cabin Block", "39 Cabin Stairs");
+_root.TileNameArray7.push("40 Cabin Stairs", "41 Cabin Window", "42 ", "43 ", "44 ", "45 ");
+//
+_root.TileNameArray8 = ["", "1 Volcano Full", "2 Volcano Bottom Half", "3 Volcano Top Half", "4 Volcano Steep Slope", "5 Volcano Steep Slope", "6 Volcano Slope", "7 Volcano Slope", "8 Volcano Slope", "9 Volcano Slope"];
+_root.TileNameArray8.push("10 Volcano Steep Slope", "11 Volcano Steep Slope", "12 Volcano Steep Slope", "13 Volcano Steep Slope", "14 Plateau Full", "15 Plateau Botom Half", "16 Plateau Top Half", "17 Plateau Steep Slope", "18 Plateau Steep Slope", "19 Plateau Slope");
+_root.TileNameArray8.push("20 Plateau Slope", "21 Plateau Slope", "22 Plateau Slope", "23 Plateau Steep Slope", "24 Plateau Steep Slope", "25 Plateau Steep Slope", "26 Plateau Steep Slope", "27 Hot Rock Full", "28 Hot Rock Bottom", "29 Hot Rock Top");
+_root.TileNameArray8.push("30 Hot Rock Steep Slope", "31 Hot Rock Steep Slope", "32 Hot Rock Slope", "33 Hot Rock Slope", "34 Hot Rock Slope", "35 Hot Rock Slope", "36 Lava", "37 Lava", "38 Lava Cube", "39 Lava Mini Cube");
+_root.TileNameArray8.push("40 Lava Mini Cube", "41 Lava Mini Cube", "42 Lava Mini Cube", "43 Lava Mini Cube", "44 Lava Mini Cube", "45 Lava Mini Cube", "46 Lava Mini Cube", "47 Lava Mini Cube", "48 Lava Mini Cube", "49 Lava Mini Cube");
+//
+_root.TileNameArray9 = ["", "1 Sand", "2 Sand Bottom Half", "3 Sand Top Half", "4 Sand Steep Slope", "5 Sand Steep Slope", "6 Sand Slope", "7 Sand Slope", "8 Sand Slope", "9 Sand Slope"];
+_root.TileNameArray9.push("10 Sand Steep Slope", "11 Sand Steep Slope", "12 Sand Steep Slope", "13 Sand Steep Slope", "14 Ancient Brick", "15 Ancient Brick", "16 Ancient Brick", "17 Ancient Brick Stairs", "18 Ancient Brick Stairs", "19 Ancient Brick Slope");
+_root.TileNameArray9.push("20 Ancient Brick Slope", "21 Pyramid Brick", "22 Pyramid Brick Bottom", "23 Pyramid Brick Top", "24 Pyramid Brick Slope", "25 Pyramid Brick Slope", "26 Sanskrit", "27 Sanskrit Bottom", "28 Sanskrit Top", "29 Sanskrit Slope");
+_root.TileNameArray9.push("30 Sanskrit Slope", "31 Pyramid Texture", "32 Pyramid Texture Bottom", "33 Pyramid Texture Top", "34 Pyramid Texture Slope", "35 Pyramid Texture Slope", "36 Checkerboard", "37 Checkerboard Bottom", "38 Checkerboard Top", "39 Checkerboard Corner");
+_root.TileNameArray9.push("40 Checkerboard Corner", "41 Checkerboard Corner", "42 Checkerboard Corner", "43 Ancient Glyph", "44 Desert Brick", "45 Desert Brick Bottom", "46 Desert Brick Top", "47 Desert Brick Slope", "48 Desert Brick Slope");
+//
+_root.TileNameArray10 = ["", "1 Evil Brick", "2  Evil Brick Bottom", "3  Evil Brick Top", "4  Evil Brick Stairs", "5  Evil Brick Stairs", "6 Castle", "7 Castle Edge", "8 Castle Edge", "9 Castle Window"];
+_root.TileNameArray10.push("10 Castle Border", "11 Castle Border Edge", "12 Castle Border Edge", "13 Castle Tall Roof", "14 Castle Short Roof", "15 Castle Short Roof", "16 Castle Roof Side", "17 Castle Roof Side", "18 Castle Roof Side", "19 Castle Roof Side");
+_root.TileNameArray10.push("20 Castle Roof Side", "21 Castle Roof Side", "22 Hex Brick", "23 Hex Brick Bottom", "24 Hex Brick Top", "25 Hex Brick Slope", "26 Hex Brick Slope", "27 Basement Tile", "28 Basement Tile", "29 Castle Carpet");
+_root.TileNameArray10.push("30 Castle Carpet Bottom", "31 Castle Carpet Top", "32 Castle Carpet Stairs", "33 Castle Carpet Stairs", "34 Inside Wall", "35 Golden Tile", "36 Pillar", "37 Pillar Top", "38 Pillar Repeat", "39 Landscape Mosaic 1");
+_root.TileNameArray10.push("40 Landscape Mosaic 2", "41 Landscape Mosaic 3", "42 Landscape Mosaic 4", "43 Room Wall Top", "44 Room Wall Bottom", "45 Outside Brick", "46 Outside Brick Bottom", "47 Outside Brick Top", "48 Outside Brick Slope", "49 Outside Brick Slope", "50 Stone Honeycomb");
+//
+_root.TileNameArray11 = ["", "1 Grey Brick", "2 Grey Brick Bottom", "3 Grey Brick Top", "4 Grey Brick Stairs", "5 Grey Brick Stairs", "6 Happy Tile", "7 Happy Tile Bottom", "8 Happy Tile Top", "9 Happy Tile Slope"];
+_root.TileNameArray11.push("10 Happy Tile Slope", "11 Castle Night Mosaic 1", "12 Castle Night Mosaic 2", "13 Castle Night Mosaic 3", "14 Castle Night Mosaic 4", "15 Castle Night Mosaic 5", "16 Castle Night Mosaic 6", "17 Castle Night Mosaic 7", "18 Castle Night Mosaic 8", "19 Bookcase Top");
+_root.TileNameArray11.push("20 Diamond Texture", "21 Bookcase Bottom", "22 Mansion Brick", "23 Mansion Brick Bottom", "24 Mansion Brick Top", "25 Mansion Brick Slope", "26 Mansion Brick Slope", "27 Mansion Brick Inside", "28 Mansion Brick Inside Bottom", "29 Mansion Brick Inside Top");
+_root.TileNameArray11.push("30 Mansion Brick Inside Stairs", "31 Mansion Brick Inside Stairs", "32 Mansion Brick #2", "33 Mansion Brick #2 Bottom", "34 Mansion Brick #2 Top", "35 Mansion Brick #2 Stairs", "36 Mansion Brick #2 Stairs", "37 Mansion Inside Wall", "38 Mansion Inside Wall", "39 Mansion Window");
+_root.TileNameArray11.push("40 Lego Tile", "41 Lego Tile Bottom", "42 Lego Tile Top", "43 Lego Tile Slope", "44 Lego Tile Slope", "45 Battery Inside", "46 Battery Inside Bottom", "47 Battery Inside Top", "48 Battery Inside Slope", "49 Battery Inside Slope");
+_root.TileNameArray11.push("50 Battery Wall", "51 Battery Bottom", "52  Battery Top", "53  Battery Slope", "54  Battery Slope", "55  Clock Tile", "56 Yellow Brick", "57 Yellow Brick Bottom", "58 Yellow Brick Top", "59 Yellow Brick Stairs");
+_root.TileNameArray11.push("60 Yellow Brick Stairs", "61 Yellow Brick Stairs Short", "62  Yellow Brick Stairs Short", "63  Yellow Brick Stairs Short", "64  Yellow Brick Stairs Short", "65  Gravel", "66 Gravel Bottom", "67 Gravel Top", "68 Gravel Slope", "69 Gravel Slope");
+_root.TileNameArray11.push("70 Rock Texture", "71 Rock Texture Bottom", "72  Rock Texture Top", "73  Rock Texture Slope", "74 Rock Texture Slope", "75 Jagged Rock", "76 Jagged Rock Bottom", "77 Jagged Rock Top", "78 Jagged Rock Slope", "79 Jagged Rock Slope");
+_root.TileNameArray11.push("80 Underwater Wall", "81 Underwater Wall 2", "82  Underwater Tile", "83  Underwater Tile", "84 Metal Bloak", "85 Awkward Wall", "86 Cross Texture", "87 Colored Wall", "88 Twisted Wire", "89 Clock Cube");
+_root.TileNameArray11.push("90 Castle Checker Tile", "91 Castle Checker Tile Bottom", "92 Castle Checker Tile Top", "93 Castle Checker Tile Stairs", "94 Castle Checker Tile Stairs");
+//
+_root.ItemNameArray = ["", "1 Start Position", "2 Yellow Coin", "3 Red Coin", "4 Blue Coin", "5 Silver Star", "6 Shine Sprite", "7 Moving Green Platform", "8 Circle Platform", "9 Rotating Block"];
+_root.ItemNameArray.push("10 Log", "11 Falling Log", "12 Tipping Log Small", "13 Tipping Log Medium", "14 Tipping Log Large", "15 Tipping Log Extra Large", "16 Floating Platform", "17 Floating Platform Large", "18 Flipping Platform", "19 Flipping Platform Large");
+_root.ItemNameArray.push("20 clock", "21 clock", "22 clock", "23 clock", "24 triangle", "25 triangle", "26 triangle", "27 triangle", "28 Bone Platform", "29 Metal Platform");
+_root.ItemNameArray.push("30 Metal Platform Large", "31 Cloud Small", "32 Cloud Medium", "33 Cloud Large", "34 Cloud Extra Large", "35 Bridge", "6 Snowy Platform", "37 Sling Star", "38 Water", "39 Door");
+_root.ItemNameArray.push("40 Warp Pipe Top", "41 Warp Pipe Base", "42 Warp Pipe Top (no warp)", "43 Horizontal Level Transition", "44 Cloud Extra Large", "45 Bridge", "46 Floating Platform", "47 Snowy Platform", "48 Sling Star", "49");
+_root.ItemNameArray.push("0", "1 Gomba", "2 Huge Goomba", "3 Mini Goomba", "4 Shy-guy", "5 Flying Shy-guy", "6 Koopa", "7 Flying Koopa", "8 Koopa Shell", "9 Bob-omb");
+_root.ItemNameArray.push("10 Bully", "11 Big Bully", "12 Cheep Cheep", "13 Mega Cheep Cheep", "14 Boo", "15 Big Boo", "16 Penguin", "17 Flying Penguin", "18 Goonie", "19 Skelegoon");
+_root.ItemNameArray.push("20 Wingless Skelegoonie", "21 Bullet Bill Base", "22 Butterfly", "23 Sign", "24 Orange Block Switch", "25 Water Bottle", "26 Mega Water Bottle", "27 1-up Mushroom", "28 Wing Cap", "29 Invisibility Cap");
+_root.ItemNameArray.push("30 Metal Power-up", "31 Invincibility Power-up", "32 Hover Fludd", "33 Rocket Fludd", "34 Turbo Fludd ", "35 Invisibility Power-up", "36 Metal Power-up", "37 Metal Platform Large", "38 Cloud Small", "39 Cloud Medium");
+_root.ItemNameArray.push("40 Cloud Large", "41 Cloud Extra Large", "42 Bridge", "43 Floating Platform", "44 Snowy Platform", "45 Sling Star", "46 ", "47 ", "48 ", "49");
+_root.ItemNameArray.push("0", "1 Tree 64", "2 Mega Tree 64", "3 Cactus Tree", "4 Bushy Tree Tall", "5 Bushy Tree", "6 Bushes", "7 Mega Bushes", "8 Tree", "9 Small Tree");
+_root.ItemNameArray.push("10 Flowery Tree", "11 Tall Leafy Tree", "12 Moss Log", "13 Mushroom Top", "14 Mushroom Body", "15 Mushrooom Curve", "16 Twisted Tree Top", "17 Twisted Tree Body", "18 Twisted Tree Base", "19 Vine End");
+_root.ItemNameArray.push("20 Vine Body", "21 Cave Spore", "22 Cave Spore Mini", "23 Cave Plant", "24 Tall Cave Tree", "25 Cave Tree", "26 Unblossomed Cave Tree", "27 Snowy Tree", "28 Large Snowy Tree", "29 Large Grey Rock");
+_root.ItemNameArray.push("30 Grey Rock", "31 Flat Grey Rock", "32 Square Grey Rock", "33 Small Square Rock", "34 Flat Brown Rock", "35 Brown Rock", "36 Large Brown Rock", "37 Mossy Rock", "38 Tall Mountain Rock", "39 Wide Mountain Rock");
+_root.ItemNameArray.push("40 Arrow", "41 Moving Arrow", "42 Invisibility Arrow", "43 Metal Arrow", "44 Fence", "45 Long Fence", "46  ", "47 Snowy Platform", "48 Sling Star", "49");
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Level Designer Windows/Window (Large)" name="Window1">
+                  <matrix>
+                    <Matrix tx="106.9" ty="-220.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="125" y="100"/>
+                  </transformationPoint>
+                  <filters>
+                    <BevelFilter highlightAlpha="0.498039215686275" shadowAlpha="0.498039215686275"/>
+                    <DropShadowFilter alpha="0.498039215686275" color="#666666" distance="4"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Level Designer Menu Folder/LDM Bars" name="Bar">
+                  <matrix>
+                    <Matrix tx="100.25" ty="10.25"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <DropShadowFilter alpha="0.498039215686275" blurX="3" blurY="3" color="#666666" distance="4"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="LD - Main Item" name="item">
+                  <matrix>
+                    <Matrix tx="282.8" ty="-30.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="LD - Side-Bar">
+                  <matrix>
+                    <Matrix tx="456" ty="150"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

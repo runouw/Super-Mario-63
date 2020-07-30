@@ -1,0 +1,98 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="LDW - Save-Load/LDW - Save Copy" itemID="4854a821-000011c0" sourceFlashFilepath="F:\Super Mario 63\New computer\Level Designer (With Mario Engine new) 3.fla" sourceLibraryItemHRef="LDW - Save-Load/LDW - Save Copy" sourceLastModified="1213507617" lastModified="1213507617" lastUniqueIdentifier="1" sourceItemID="4854a821-000011c0">
+  <timeline>
+    <DOMTimeline name="LDW - Save Copy">
+      <layers>
+        <DOMLayer name="Layer 3" color="#FFFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[sin = 0;
+sin2 = random(90);
+rotplus = 0;
+Y = _y;
+onEnterFrame = function () {
+	if (_parent.greyness._alpha<50) {
+		sin += 0.05;
+		sin2 += 0.03;
+		_y = (2*Math.sin(sin2))+Y;
+		this._rotation = -rotplus+(2*Math.sin(sin));
+		if (this.hitTest(_root._xmouse, _root._ymouse, true)) {
+			rotplus += (5-rotplus)/3;
+			_xscale += (120-_xscale)/3;
+			txt._xscale += (120-txt._xscale)/3;
+		} else {
+			rotplus += (0-rotplus)/3;
+			_xscale += (100-_xscale)/3;
+			txt._xscale += (100-txt._xscale)/3;
+		}
+		_yscale = _xscale;
+		txt._yscale = txt._xscale;
+	}
+};
+onMouseDown = function () {
+	if (this.hitTest(_root._xmouse, _root._ymouse, false) && _parent.greyness._alpha<20) {
+		System.setClipboard(_parent.coursetext);
+		_xscale = 200;
+		_yscale = 200;
+	}
+};
+//System.setClipboard
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName='LDW - Save-Load/LDW - Save Copy "Copy All"' name="txt">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" locked="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <RadialGradient>
+                        <matrix>
+                          <Matrix a="0.0575408935546875" d="0.052825927734375" tx="-15.25" ty="-4.85"/>
+                        </matrix>
+                        <GradientEntry color="#A6A6A6" ratio="0"/>
+                        <GradientEntry color="#CCCCCC" ratio="1"/>
+                      </RadialGradient>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <SolidColor color="#999999"/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="!-750 -220|750 -220!750 -220|750 220!750 220|-750 220!-750 220|-750 -220"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

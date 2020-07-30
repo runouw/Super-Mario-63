@@ -1,0 +1,399 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="      Char/  Mario CLIPS/Rocket WaterBlast" itemID="44c624ab-00000099" sourceFlashFilepath="Rob &amp; Steve Hewitt\New Mario Sunshine Project.fla" sourceLibraryItemHRef="Rocket WaterBlast" sourceLastModified="1153843601" lastModified="1238254251" sourceItemID="44c624ab-00000099">
+  <timeline>
+    <DOMTimeline name="Rocket WaterBlast">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="9" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+gotoAndStop(_parent.chargeframe);
+onEnterFrame = function () {
+	if (_root.PauseGame == false && _root.playpause == false) {
+		if (_root.waterblast == true) {
+			nextFrame();
+			this.attachMovie("ChargeLine", "ChargeLine"+this.getNextHighestDepth(), this.getNextHighestDepth(), {_x:0, _y:0});
+		} else {
+			prevFrame();
+		}
+		_parent.chargeframe = _currentframe;
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="9" duration="5" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	if (_root.PauseGame == false && _root.playpause == false) {
+		nextFrame();
+		_root.Course.Char.yspeed *= 0.97;
+		_parent.chargeframe = _currentframe;
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="14" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.Power = 1;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="15" duration="8" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[play();
+_root.WaterAmount -= 500;
+_root.Power = 0;
+_root.Course.Char.yspeed = Math.min(-_root.RocketBlast+Math.max((_root.Course.Char.yspeed/3),0), _root.Course.Char.yspeed);
+onEnterFrame = function () {
+	_root.Power = 0;
+	_root.Course.Char.yspeed -= _root.RocketBlast/50;
+	if (_root.Course.Char.Water == true) {
+		_root.Course.Char.yspeed -= _root.RocketBlast/45;
+	}
+	_root.Course.Char.lockon = false;
+	if (Key.isDown(Key.RIGHT)) {
+		_root.Course.Char.xspeed += 0.7;
+		_root.Course.Char._rotation += 5;
+	}
+	if (Key.isDown(Key.LEFT)) {
+		_root.Course.Char.xspeed -= 0.7;
+		_root.Course.Char._rotation -= 5;
+	}
+	_parent.chargeframe = 0;
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="23" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_parent.chargeframe = 1;
+gotoAndStop(1);
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="8" tweenType="shape" keyMode="17922" acceleration="-100">
+              <MorphShape>
+                <morphSegments>
+                  <MorphSegment startPointA="-0.46875, #0.0A" startPointB="-0.46875, #0.0A" strokeIndex1="0" strokeIndex2="0" fillIndex1="0" fillIndex2="1">
+                    <MorphCurves controlPointA="-0.46875, -0.171875" anchorPointA="-0.3203125, -0.3203125" controlPointB="-0.46875, -0.171875" anchorPointB="-0.3203125, -0.3203125"/>
+                    <MorphCurves controlPointA="-0.171875, -0.46875" anchorPointA="#0.0A, -0.46875" controlPointB="-0.171875, -0.46875" anchorPointB="#0.0A, -0.46875"/>
+                    <MorphCurves controlPointA="0.25, -0.46875" anchorPointA="#0.66, -0.3203125" controlPointB="0.25, -0.46875" anchorPointB="#0.66, -0.3203125"/>
+                    <MorphCurves controlPointA="#0.8C, -0.171875" anchorPointA="#0.8C, #0.0A" controlPointB="#0.8C, -0.171875" anchorPointB="#0.8C, #0.0A"/>
+                    <MorphCurves controlPointA="#0.8C, 0.25" anchorPointA="#0.66, #0.66" controlPointB="#0.8C, 0.25" anchorPointB="#0.66, #0.66"/>
+                    <MorphCurves controlPointA="0.25, #0.8C" anchorPointA="#0.0A, #0.8C" controlPointB="0.25, #0.8C" anchorPointB="#0.0A, #0.8C"/>
+                    <MorphCurves controlPointA="-0.171875, #0.8C" anchorPointA="-0.3203125, #0.66" controlPointB="-0.171875, #0.8C" anchorPointB="-0.3203125, #0.66"/>
+                    <MorphCurves controlPointA="-0.46875, 0.25" anchorPointA="-0.46875, #0.0A" controlPointB="-0.46875, 0.25" anchorPointB="-0.46875, #0.0A"/>
+                  </MorphSegment>
+                </morphSegments>
+                <morphHintsList/>
+              </MorphShape>
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#009989" alpha="0"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!102 -82[140 -44 140 10!140 10[140 64 102 102!102 102[64 140 10 140!10 140[-44 140 -82 102!-82 102[-120 64 -120 10!-120 10[-120 -44 -82 -82!-82 -82[-44 -120 10 -120!10 -120[64 -120 102 -82"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="9" duration="5" tweenType="shape" keyMode="17922">
+              <MorphShape>
+                <morphSegments>
+                  <MorphSegment startPointA="-0.46875, #0.0A" startPointB="-0.46875, #0.0A" strokeIndex1="0" strokeIndex2="0" fillIndex1="0" fillIndex2="1">
+                    <MorphCurves controlPointA="-0.46875, -0.171875" anchorPointA="-0.3203125, -0.3203125" controlPointB="-0.46875, -0.171875" anchorPointB="-0.3203125, -0.3203125"/>
+                    <MorphCurves controlPointA="-0.171875, -0.46875" anchorPointA="#0.0A, -0.46875" controlPointB="-0.171875, -0.46875" anchorPointB="#0.0A, -0.46875"/>
+                    <MorphCurves controlPointA="0.25, -0.46875" anchorPointA="#0.66, -0.3203125" controlPointB="0.25, -0.46875" anchorPointB="#0.66, -0.3203125"/>
+                    <MorphCurves controlPointA="#0.8C, -0.171875" anchorPointA="#0.8C, #0.0A" controlPointB="#0.8C, -0.171875" anchorPointB="#0.8C, #0.0A"/>
+                    <MorphCurves controlPointA="#0.8C, 0.25" anchorPointA="#0.66, #0.66" controlPointB="#0.8C, 0.25" anchorPointB="#0.66, #0.66"/>
+                    <MorphCurves controlPointA="0.25, #0.8C" anchorPointA="#0.0A, #0.8C" controlPointB="0.25, #0.8C" anchorPointB="#0.0A, #0.8C"/>
+                    <MorphCurves controlPointA="-0.171875, #0.8C" anchorPointA="-0.3203125, #0.66" controlPointB="-0.171875, #0.8C" anchorPointB="-0.3203125, #0.66"/>
+                    <MorphCurves controlPointA="-0.46875, 0.25" anchorPointA="-0.46875, #0.0A" controlPointB="-0.46875, 0.25" anchorPointB="-0.46875, #0.0A"/>
+                  </MorphSegment>
+                </morphSegments>
+                <morphHintsList/>
+              </MorphShape>
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#028AE0" alpha="0.741176470588235"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!102 -82[140 -44 140 10!140 10[140 64 102 102!102 102[64 140 10 140!10 140[-44 140 -82 102!-82 102[-120 64 -120 10!-120 10[-120 -44 -82 -82!-82 -82[-44 -120 10 -120!10 -120[64 -120 102 -82"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="14" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#028AE3" alpha="0.152941176470588"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!102 -82[140 -44 140 10!140 10[140 64 102 102!102 102[64 140 10 140!10 140[-44 140 -82 102!-82 102[-120 64 -120 10!-120 10[-120 -44 -82 -82!-82 -82[-44 -120 10 -120!10 -120[64 -120 102 -82"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="15" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Water Spray 3">
+                  <matrix>
+                    <Matrix a="0" b="1" c="-1" d="0" tx="9.5" ty="-0.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="16" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Water Spray 5">
+                  <matrix>
+                    <Matrix a="0" b="1" c="-1" d="0" tx="8.85" ty="0.85"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="17" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Water Spray 5">
+                  <matrix>
+                    <Matrix a="0" b="1" c="-1" d="0" tx="8.85" ty="18.85"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Water Spray Particle">
+                  <matrix>
+                    <Matrix a="0" b="1" c="-1" d="0" tx="4.85" ty="11.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Water Spray Particle">
+                  <matrix>
+                    <Matrix a="0" b="-1" c="-1" d="0" tx="4.85" ty="14.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="18" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Water Spray 5">
+                  <matrix>
+                    <Matrix a="0" b="1" c="-1" d="0" tx="8.85" ty="58.85"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Water Spray Particle">
+                  <matrix>
+                    <Matrix a="0" b="1" c="-1" d="0" tx="4.85" ty="51.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Water Spray Particle">
+                  <matrix>
+                    <Matrix a="0" b="-1" c="-1" d="0" tx="4.85" ty="54.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Water Spray Particle">
+                  <matrix>
+                    <Matrix a="0" b="1" c="-1" d="0" tx="4.85" ty="31.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Water Spray Particle">
+                  <matrix>
+                    <Matrix a="0" b="-1" c="-1" d="0" tx="4.85" ty="34.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Water Spray Particle">
+                  <matrix>
+                    <Matrix a="0" b="1" c="-1" d="0" tx="4.85" ty="11.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Water Spray Particle">
+                  <matrix>
+                    <Matrix a="0" b="-1" c="-1" d="0" tx="4.85" ty="14.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="19" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Water Spray 5">
+                  <matrix>
+                    <Matrix a="0" b="1" c="-1" d="0" tx="8.85" ty="68.85"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Water Spray Particle">
+                  <matrix>
+                    <Matrix a="0" b="1" c="-1" d="0" tx="4.85" ty="61.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Water Spray Particle">
+                  <matrix>
+                    <Matrix a="0" b="-1" c="-1" d="0" tx="4.85" ty="64.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Water Spray Particle">
+                  <matrix>
+                    <Matrix a="0" b="1" c="-1" d="0" tx="4.85" ty="41.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Water Spray Particle">
+                  <matrix>
+                    <Matrix a="0" b="-1" c="-1" d="0" tx="4.85" ty="44.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Water Spray Particle">
+                  <matrix>
+                    <Matrix a="0" b="1" c="-1" d="0" tx="4.85" ty="21.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Water Spray Particle">
+                  <matrix>
+                    <Matrix a="0" b="-1" c="-1" d="0" tx="4.85" ty="24.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Water Spray Particle">
+                  <matrix>
+                    <Matrix a="0" b="-1" c="-1" d="0" tx="4.85" ty="14.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="20" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Water Spray 5">
+                  <matrix>
+                    <Matrix a="0" b="1" c="1" d="0" tx="-8.15" ty="68.85"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Water Spray Particle">
+                  <matrix>
+                    <Matrix a="0" b="1" c="1" d="0" tx="-4.15" ty="61.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Water Spray Particle">
+                  <matrix>
+                    <Matrix a="0" b="-1" c="1" d="0" tx="-4.15" ty="64.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Water Spray Particle">
+                  <matrix>
+                    <Matrix a="0" b="1" c="1" d="0" tx="-4.15" ty="41.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Water Spray Particle">
+                  <matrix>
+                    <Matrix a="0" b="-1" c="1" d="0" tx="-4.15" ty="44.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Water Spray Particle">
+                  <matrix>
+                    <Matrix a="0" b="1" c="1" d="0" tx="-4.15" ty="21.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Water Spray Particle">
+                  <matrix>
+                    <Matrix a="0" b="-1" c="1" d="0" tx="-4.15" ty="24.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Water Spray Particle">
+                  <matrix>
+                    <Matrix a="0" b="-1" c="1" d="0" tx="-4.15" ty="14.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="21" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Water Spray 5">
+                  <matrix>
+                    <Matrix a="0" b="1" c="-1" d="0" tx="8.85" ty="68.85"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Water Spray Particle">
+                  <matrix>
+                    <Matrix a="0" b="1" c="-1" d="0" tx="4.85" ty="61.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Water Spray Particle">
+                  <matrix>
+                    <Matrix a="0" b="-1" c="-1" d="0" tx="4.85" ty="64.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Water Spray Particle">
+                  <matrix>
+                    <Matrix a="0" b="1" c="-1" d="0" tx="4.85" ty="41.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Water Spray Particle">
+                  <matrix>
+                    <Matrix a="0" b="-1" c="-1" d="0" tx="4.85" ty="44.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Water Spray Particle">
+                  <matrix>
+                    <Matrix a="0" b="1" c="-1" d="0" tx="4.85" ty="21.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Water Spray Particle">
+                  <matrix>
+                    <Matrix a="0" b="-1" c="-1" d="0" tx="4.85" ty="24.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Water Spray Particle">
+                  <matrix>
+                    <Matrix a="0" b="-1" c="-1" d="0" tx="4.85" ty="14.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="22" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Water Spray 5">
+                  <matrix>
+                    <Matrix a="0" b="1" c="-1" d="0" tx="8.85" ty="18.85"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Water Spray Particle">
+                  <matrix>
+                    <Matrix a="0" b="1" c="-1" d="0" tx="4.85" ty="11.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Water Spray Particle">
+                  <matrix>
+                    <Matrix a="0" b="-1" c="-1" d="0" tx="4.85" ty="14.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="23" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,501 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name=" Menu/Menu Folder/  Universal Stuff/Menu (Main Clip)" itemID="47772abf-00000dd9" sourceFlashFilepath="Rob &amp; Steve Hewitt\My Documents\Super Mario 63\Menu Design.fla" sourceLibraryItemHRef="Menu Folder/  Universal Stuff/Menu (Main Clip)" sourceLastModified="1199146740" lastModified="1248626952" lastUniqueIdentifier="51" sourceItemID="47772abf-00000dd9">
+  <timeline>
+    <DOMTimeline name="Menu (Main Clip)">
+      <layers>
+        <DOMLayer name="Layer 3" color="#FFFF4F" locked="true">
+          <frames>
+            <DOMFrame index="0" duration="8" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[this._name = "m";
+TransitionF = function (framy) {
+	//_root.DeleteFile(_parent.HL)
+	if (framy == "Delete") {
+		depth = this.getNextHighestDepth();
+		this.attachMovie("MenuRedTrans", "MenuRedTrans", depth, {trans:true, _x:0, _y:0});
+		//this.attachMovie("MenuRedTrans", "MenuRedTrans"+depth, depth, {trans:true, _x:0, _y:0});
+	} else if (framy == "Play") {
+		depth = this.getNextHighestDepth();
+		this.attachMovie("MenuBlackTrans", "MenuBlackTrans"+depth, depth, {trans:true, _x:0, _y:0});
+	} else {
+		depth = this.getNextHighestDepth();
+		//this.attachMovie("MenuTransition", "MenuTransition"+depth, depth, {trans:true, _x:-500, _y:75});
+		this.attachMovie("MenuTransition", "MenuTransition"+depth, depth, {trans:true, _x:0, _y:200});
+		//depth2 = this.getNextHighestDepth();
+		//this.attachMovie("MenuTransition", "MenuTransition"+depth2, depth2, {trans:true, _x:500, _y:-75});
+		GSF = function () {
+			gotoAndStop(framy);
+			clicked = false;
+		};
+	}
+};
+//
+SpecialDeleteFile = function (file) {
+	//_root.DeleteFile(file);
+	//trace(file)
+	//trace("target is "+_root.m.filem[file]);
+	///_root.m.filem[file].Delete();
+	//trace("target's frame:"+_root.m.filem[file].em._currentframe);
+	_root.m.filem.HL = undefined;
+	_root.m.filem[file].em.gotoAndPlay(2);
+	//trace("target's frame:"+_root.m.filem[file].em._currentframe);
+	//trace("HL:"+_root.m.filem.HL);
+};
+//
+Message = function (a, color, important) {
+	if (messageonscreen == undefined) {
+		messageonscreen = 0;
+	}
+	if (messageonscreen<3 || important !== false) {
+		if (color == undefined) {
+			color = red;
+		}
+		depth = _root.m.getNextHighestDepth();
+		_root.m.attachMovie("MenuMessage", "MenuMessage"+depth, depth, {_x:0, _y:200, txt:a, color:color});
+		messageonscreen++;
+	}
+};
+stop();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 5" color="#4FFFFF">
+          <frames>
+            <DOMFrame index="0" duration="7" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Cheat Menu">
+                  <matrix>
+                    <Matrix tx="-30.45" ty="259"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="7" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC" locked="true">
+          <frames>
+            <DOMFrame index="0" name="Start" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" name="Story" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" name="Extras" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="3" name="Options" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="4" name="Credits" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="5" duration="2" name="Refresh" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="7" name="Cheat" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal" weight="2">
+                        <fill>
+                          <SolidColor/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge strokeStyle="1" edges="!4499.5 2999.5|-4500.5 2999.5!-4500.5 2999.5|-4500.5 -3000.5!-4500.5 -3000.5|4499.5 -3000.5!4499.5 -3000.5|4499.5 2999.5"/>
+                  </edges>
+                </DOMShape>
+                <DOMSymbolInstance libraryItemName=" Menu/Menu Folder/ Story/Menu Story Button 2">
+                  <matrix>
+                    <Matrix a="0.99462890625" b="-0.100189208984375" c="0.100189208984375" d="0.99462890625" tx="-135.75" ty="47"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-0.1"/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter color="#0000FF"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Menu/Menu Folder/ Options/Menu-Options Button">
+                  <matrix>
+                    <Matrix a="0.965927124023438" b="0.258819580078125" c="-0.258819580078125" d="0.965927124023438" tx="135" ty="33.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter color="#FFFF00"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Menu/Menu Folder/ Extras/Menu-Extra Button">
+                  <matrix>
+                    <Matrix tx="20.85" ty="96.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter color="#00FF00"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=' Xtra/Title: "Super Mario Sunshine 128"'>
+                  <matrix>
+                    <Matrix a="0.599990844726563" d="0.599990844726563" ty="-65.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Menu Folder/ Story/Menu-Story Button" name="txt">
+                  <matrix>
+                    <Matrix a="1.03334045410156" d="1.03334045410156" tx="-125.45" ty="-120.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-0.05"/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter blurX="6" blurY="6" color="#0000FF" inner="true" quality="3" strength="10"/>
+                    <BevelFilter quality="3" highlightColor="#0000FF" strength="1.5"/>
+                    <GlowFilter blurX="2" blurY="2" color="#FFFFFF" inner="true" quality="3" strength="10"/>
+                    <BevelFilter quality="3" shadowColor="#0000FF" strength="0.88"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Menu/Menu Folder/ Story/Menu Story Frame" name="filem">
+                  <matrix>
+                    <Matrix tx="-84.3" ty="21.25"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Xtra Button" symbolType="button">
+                  <matrix>
+                    <Matrix a="0.118331909179688" d="0.227249145507813" tx="-4.75" ty="-228.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[on (release) {
+	_root.CurrentPlayer = "Luigi";
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color tintMultiplier="1" tintColor="#00FF00"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Xtra Button" symbolType="button">
+                  <matrix>
+                    <Matrix a="0.118331909179688" d="0.227249145507813" tx="-27.25" ty="-228.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[on (release) {
+	_root.CurrentPlayer = "Mario";
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color tintMultiplier="1" tintColor="#FF0000"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="67.05" ty="-124"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix tx="67.05" ty="-124"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="!-1729 -2255S2|-1729 -1940!-1729 -1940|-1788 -1940!-1788 -1940|-1788 -2188!-1788 -2188|-1850 -1940!-1850 -1940|-1911 -1940!-1911 -1940|-1974 -2188!-1974 -2188|-1974 -1940!-1974 -1940|-2033 -1940!-2033 -1940|-2033 -2255!-2033 -2255|-1938
+ -2255!-1938 -2255|-1881 -2040!-1881 -2040|-1824 -2255!-1824 -2255|-1729 -2255"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="136.05" ty="-151"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix tx="136.05" ty="-151"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="
+!-2941 -1380S2|-2941 -1692!-2941 -1692|-2878 -1692!-2878 -1692|-2878 -1433!-2878 -1433|-2720 -1433!-2720 -1433|-2720 -1380!-2720 -1380|-2941 -1380"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Menu Folder/ Extras/Menu Extra Button 2">
+                  <matrix>
+                    <Matrix a="2.35757446289063" d="2.35757446289063" tx="-108.95" ty="-100.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter blurX="6" blurY="6" color="#00FF00" inner="true" quality="3" strength="10"/>
+                    <BevelFilter quality="3" strength="1.5"/>
+                    <GlowFilter blurX="2" blurY="2" color="#FFFFFF" inner="true" quality="3" strength="10"/>
+                    <BevelFilter quality="3" shadowColor="#00FF00" strength="0.88"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Menu/Menu Folder/  Universal Stuff/Menu-Back Button">
+                  <matrix>
+                    <Matrix tx="167.45" ty="-109.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Menu - SoundTest Box">
+                  <matrix>
+                    <Matrix ty="107.4"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BevelFilter distance="15" highlightAlpha="0.250980392156863" shadowAlpha="0.4"/>
+                    <BevelFilter/>
+                    <GlowFilter color="#FFFFFF"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Menu - LD Clip">
+                  <matrix>
+                    <Matrix tx="-87.9" ty="-16.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Menu - Credit Clsidoa">
+                  <matrix>
+                    <Matrix tx="96.75" ty="-13.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Share Levels at">
+                  <matrix>
+                    <Matrix tx="-115.85" ty="51.8"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BevelFilter highlightAlpha="0.498039215686275" shadowAlpha="0.498039215686275"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Share Levels at s">
+                  <matrix>
+                    <Matrix tx="102.35" ty="52.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Menu Folder/  Universal Stuff/Menu-Back Button">
+                  <matrix>
+                    <Matrix tx="167.45" ty="-109.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Menu/Menu Folder/ Options/Menu- Options Button 2">
+                  <matrix>
+                    <Matrix a="2.20172119140625" d="2.20172119140625" tx="-95.9" ty="-113.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-0.05" y="-0.05"/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter blurX="6" blurY="6" color="#FFFF00" inner="true" strength="10"/>
+                    <BevelFilter strength="1.5"/>
+                    <GlowFilter blurX="3" blurY="3" color="#FFFFFF" inner="true" strength="5"/>
+                    <BevelFilter shadowColor="#FFFF00" strength="0.88"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Menu/Menu Folder/ Options/Menu Options Quality Main Clip">
+                  <matrix>
+                    <Matrix a="1.00053405761719" tx="-58" ty="1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Menu - Auto Quality">
+                  <matrix>
+                    <Matrix tx="-105.7" ty="-1.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Menu - Mute Music">
+                  <matrix>
+                    <Matrix ty="-49.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Menu - BG Quality">
+                  <matrix>
+                    <Matrix tx="107.4" ty="-1.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="4" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Menu Folder/  Universal Stuff/Menu-Back Button">
+                  <matrix>
+                    <Matrix tx="167.45" ty="-109.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Credits Clip">
+                  <matrix>
+                    <Matrix tx="-6.75" ty="27.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="339.35"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMStaticText left="23.7" width="96.6" height="31.3" autoExpand="true" antiAliasThickness="68" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-85.9" ty="-105.55"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Credits</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" size="28" face="Arial-BoldMT" fillColor="#FFFFFF"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                  <filters>
+                    <BevelFilter/>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                  </filters>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="5" duration="2" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="7" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Menu Folder/  Universal Stuff/Menu-Back Button">
+                  <matrix>
+                    <Matrix tx="167.45" ty="-109.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Menu - Unlock Everything">
+                  <matrix>
+                    <Matrix tx="-5.5" ty="-32"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Menu - Toggle Stars" selected="true">
+                  <matrix>
+                    <Matrix tx="-5.5" ty="56"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#FF4FFF">
+          <frames>
+            <DOMFrame index="0" duration="7" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Menu Folder/  Universal Stuff/ BG/Menu Background Clip">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="7" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Menu Folder/  Universal Stuff/ BG/Menu Background Clip">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter hue="-50"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

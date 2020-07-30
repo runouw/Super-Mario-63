@@ -1,0 +1,139 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Explosion 5 Clip (Circle Explosion)" itemID="475c7624-00000bee" lastModified="1224458482">
+  <timeline>
+    <DOMTimeline name="Explosion 5 Clip (Circle Explosion)">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[alf = _alpha;
+this._alpha = 0;
+this._xscale *= 0.5;
+this._yscale *= 0.5;
+rspeed = ((random(2)-0.5)*2)*(Math.random()*7+2);
+onEnterFrame = function () {
+	if (_root.PauseGame !== true) {
+		this._rotation += rspeed*1.25;
+		this._xscale *= 1.4
+		this._yscale *= 1.4
+		this._alpha += alf/2;
+		play();
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" duration="14" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	if (_root.PauseGame !== true) {
+		this._rotation += rspeed*(_alpha/80);
+		this._xscale *=1.01
+		this._yscale *=1.01
+		this._alpha -= alf/14
+		play();
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="16" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+onEnterFrame = null;
+this.removeMovieClip(this);
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Effects/ Explosion/ Explosions Bits/Circle Explosion - 1">
+                  <matrix>
+                    <Matrix tx="-11" ty="-11"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Effects/ Explosion/ Explosions Bits/Circle Explosion - 2">
+                  <matrix>
+                    <Matrix tx="-7.5" ty="-7"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="4" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Effects/ Explosion/ Explosions Bits/Circle Explosion - 3">
+                  <matrix>
+                    <Matrix tx="-12.5" ty="-12"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="6" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Effects/ Explosion/ Explosions Bits/Circle Explosion - 4">
+                  <matrix>
+                    <Matrix tx="-15.5" ty="-15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="8" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Effects/ Explosion/ Explosions Bits/Circle Explosion - 5">
+                  <matrix>
+                    <Matrix tx="-16.5" ty="-16"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="10" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Effects/ Explosion/ Explosions Bits/Circle Explosion - 6">
+                  <matrix>
+                    <Matrix tx="-15.5" ty="-15.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="12" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Effects/ Explosion/ Explosions Bits/Circle Explosion - 7">
+                  <matrix>
+                    <Matrix tx="-16.5" ty="-15.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="14" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Effects/ Explosion/ Explosions Bits/Circle Explosion - 8">
+                  <matrix>
+                    <Matrix tx="-15.5" ty="-14.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="16" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

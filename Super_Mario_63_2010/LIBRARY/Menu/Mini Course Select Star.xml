@@ -1,0 +1,101 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name=" Menu/Mini Course Select Star" itemID="467749cc-0000069c" lastModified="1231113853" lastUniqueIdentifier="1">
+  <timeline>
+    <DOMTimeline name="Mini Course Select Star">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[Mousedown = false;
+onEnterFrame = function () {
+	if (_root.Star[((_root.Playinglevelnum*3)+51)+starnum] == true) {
+		gotstar = true;
+	} else {
+		gotstar = false;
+	}
+	if (starnum == 1 || _root.Star[((_root.Playinglevelnum*3)+51)+starnum] == true || _root.Star[((_root.Playinglevelnum*3)+51)+(starnum-1)] == true) {
+		if (this.hitTest(_root._xmouse, _root._ymouse, true)) {
+			_root.Selected = starnum;
+		}
+		if (_root.Selected == starnum) {
+			//_root.Starnames.gotoAndStop(((_root.Playinglevelnum*3))+starnum);
+			_root.starname = _root.StarNameArray[((_root.Playinglevelnum*3)+51)+starnum];
+			_root.stardescription = _root.StarDescArray[((_root.Playinglevelnum*3)+51)+starnum];
+			nextFrame();
+		} else {
+			prevFrame();
+		}
+	} else {
+		gotoAndStop(1);
+	}
+	//
+	if (Mousedown == true || Key.isDown(Key.SPACE) || _root.KeyZ() || _root.KeyX()) {
+		if (starnum == 1 || _root.Star[((_root.Playinglevelnum*3)+51)+starnum] == true || _root.Star[((_root.Playinglevelnum*3)+51)+(starnum-1)] == true) {
+			if (_root.Selected == starnum && _root.StartCourse == false) {
+				_root.Starnum = starnum;
+				_root.StartCourse = true;
+			}
+		}
+	}
+	Mousedown = false;
+	// 
+};
+onMouseDown = function () {
+	if (_root.StartCourse !== true && this.hitTest(_root._xmouse, _root._ymouse, true)) {
+		Mousedown = true;
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" duration="4" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[// Select Sound FX
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/ File Select/Coded Color Star">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" duration="4" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/ File Select/Coded Color Star">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="5" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/ File Select/Coded Color Star">
+                  <matrix>
+                    <Matrix a="1.5" d="1.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.69921875"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,71 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="   Enemies/Normal/ G-Z/ Koopa/Shell Spin" itemID="4606f869-00000722" lastModified="1182128379">
+  <timeline>
+    <DOMTimeline name="Shell Spin">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="20" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[frame = 1;
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		frame += Math.abs(_parent._parent.xspeed);
+		while (frame>20) {
+			frame -= 20;
+		}
+		frame = Math.max(frame, 1);
+		gotoAndStop(Math.round(frame));
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" duration="5" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Normal/ G-Z/ Koopa/Koopa - Green - Shell - 1">
+                  <matrix>
+                    <Matrix tx="-8" ty="-7.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="5" duration="5" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Normal/ G-Z/ Koopa/Koopa - Green - Shell - 2">
+                  <matrix>
+                    <Matrix tx="-8" ty="-7.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="10" duration="5" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Normal/ G-Z/ Koopa/Koopa - Green - Shell - 2">
+                  <matrix>
+                    <Matrix a="-1" tx="8" ty="-7.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="15" duration="5" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Normal/ G-Z/ Koopa/Koopa - Green - Shell - 1">
+                  <matrix>
+                    <Matrix a="-1" tx="8" ty="-7.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

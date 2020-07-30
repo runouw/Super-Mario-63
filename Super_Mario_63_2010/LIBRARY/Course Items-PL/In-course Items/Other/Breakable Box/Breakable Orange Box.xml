@@ -1,0 +1,312 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Items-PL/ In-course Items/ Other/ Breakable Box/Breakable Orange Box" itemID="474f8698-00000a6b" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="BreakableBox" lastModified="1242510010" lastUniqueIdentifier="30">
+  <timeline>
+    <DOMTimeline name="Breakable Orange Box">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" outline="true" useOutlineView="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (blocknum == undefined) {
+	blocknum = 1;
+}
+if (stuffinside == undefined) {
+	stuffinside = "3coins";
+}
+if (reappear == undefined) {
+	reappear = true;
+}
+stuff.gotoAndStop(stuffinside);
+if (blocknum == 1 || blocknum == 4) {
+	stuff.gotoAndStop("none");
+}
+//             
+if (_root.Course.coincountnum == undefined) {
+	_root.Course.coincountnum = 0;
+} else {
+	_root.Course.coincountnum++;
+}
+if (_root["coindata"+_root.playingcourse][0] == undefined) {
+	_root["coindata"+_root.playingcourse] = [""];
+}
+coinnum = _root.Course.coincountnum;
+if (_root["coindata"+_root.playingcourse][coinnum] == 1 && _root["coindata"+_root.playingcourse][coinnum] !== undefined) {
+	//gotoAndStop("end");
+	stuff.gotoAndStop("none");
+}
+coincreatecount = 0;
+createCoins = function (a, b) {
+	// a = amount of coins
+	// b = how many per frame
+	onEnterFrame = function () {
+		if (_root.PauseGame == false) {
+			for (i=0; i<b; i++) {
+				createCoin();
+				coincreatecount++;
+				if (coincreatecount>=a) {
+					break;
+				}
+			}
+			if (coincreatecount>=a) {
+				onEnterFrame = function () {
+					if (_root.PauseGame == false) {
+						play();
+					} else {
+						stop();
+					}
+				};
+			}
+			play();
+		} else {
+			stop();
+		}
+	};
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Other/ Breakable Box/OrangeBlockPL">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+depth = _root.Course.Platforms.getNextHighestDepth();
+_root.Course.Platforms.attachMovie("OrangeBlockPL", "OrangeBlockPL"+depth, depth, {_x:_x, _y:_y});
+_root.Course.Platforms["OrangeBlockPL"+depth]._x = this._x;
+_root.Course.Platforms["OrangeBlockPL"+depth]._y = this._y;
+//
+if (_root["coindata"+_root.playingcourse][coinnum] == 1 && _root["coindata"+_root.playingcourse][coinnum] !== undefined) {
+	//gotoAndStop("end");
+	stuff.gotoAndStop("none");
+}
+onEnterFrame = function () {
+	if (_root.PauseGame == false && _root.playpause == false) {
+		if (Math.abs((_root.currentCamX)-(_x+_parent._x))<600 && Math.abs((_root.currentCamY)-(_y+_parent._y))<600) {
+			//
+			if (this.box3.hitTest(_root.Course.Char.charClip.feet) && _root.Course.Char.yspeed>3 && _root.Course.Char.attack == true && _root.Course.Char.attackFrame == "Ground" && (_root.Course.Char.Water == false || _root.Metal == true)) {
+				//
+				_root.Course.Char.yspeed *= 0.75;
+				_root.Course.Char.yspeed -= 3;
+				play();
+				_root.Course.Platforms["OrangeBlockPL"+depth].removeMovieClip(_root.Course.Platforms["OrangeBlockPL"+depth]);
+			}
+			if (this.box2.hitTest(_root.Course.Char.charClip.body) && Math.abs(_root.Course.Char.xspeed)<2 && _root.Course.Char.attack == true && _root.Course.Char.attackFrame == "hurt2") {
+				play();
+				_root.Course.Platforms["OrangeBlockPL"+depth].removeMovieClip(_root.Course.Platforms["OrangeBlockPL"+depth]);
+			}
+			//     
+			if (this.box4.hitTest(_root.Course.Char.charClip.body) && (Math.abs(_root.Course.Char.xspeed)>9 || (Math.abs(_root.Course.Char.xspeed)>9 && _root.Course.Char.attack == true && _root.Course.Char.attackFrame == "Dive"))) {
+				_root.HitWall();
+				//
+				if (_root.Course.Char._x<_x+_parent._x) {
+					_root.Course.Char._xscale = -100;
+				} else {
+					_root.Course.Char._xscale = 100;
+				}
+				//
+				play();
+				_root.Course.Platforms["OrangeBlockPL"+depth].removeMovieClip(_root.Course.Platforms["OrangeBlockPL"+depth]);
+			}
+			//               
+			if ((this.box.hitTest(_root.Course.Char.charClip.frame.water) && _root.Course.Char.attackFrame == "Spin" && _root.Course.Char.attack == true) || _root.Course.Enemyhurt.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, (((_y-5))*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.Enemyhurt.hitTest(((_x+10)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, (((_y-5))*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.Enemyhurt.hitTest(((_x-10)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, (((_y-5))*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.Enemyhurt.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, (((_y-30))*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+				play();
+				_root.Course.Platforms["OrangeBlockPL"+depth].removeMovieClip(_root.Course.Platforms["OrangeBlockPL"+depth]);
+			}
+		}
+		//                              
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="box">
+                  <matrix>
+                    <Matrix a="0.905502319335938" d="1.064453125" ty="-9.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="box2">
+                  <matrix>
+                    <Matrix a="0.905471801757813" d="1.25228881835938" ty="-12.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="box3">
+                  <matrix>
+                    <Matrix a="0.79229736328125" d="1.25228881835938" ty="-29.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="box4">
+                  <matrix>
+                    <Matrix a="1.3582763671875" d="1.25228881835938" ty="-12.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (blocknum == 1) {
+	_root.Mariosound = new Sound(this);
+	_root.Mariosound.attachSound("boxbreak");
+	_root.Mariosound.start(0, 1);
+	_root.Mariosound.setVolume(_root.MarioVolume);
+} else if (blocknum == 2) {
+	_root.Mariosound = new Sound(this);
+	_root.Mariosound.attachSound("GlassShatter");
+	_root.Mariosound.start(0, 1);
+	_root.Mariosound.setVolume(_root.MarioVolume);
+} else if (blocknum == 3) {
+	_root.Mariosound = new Sound(this);
+	_root.Mariosound.attachSound("GlassShatter");
+	_root.Mariosound.start(0, 1);
+	_root.Mariosound.setVolume(_root.MarioVolume);
+	//
+	_root.Course.FrontGFX.attachMovie("InvertWave", "InvertWave"+_root.Course.FrontGFX.getNextHighestDepth(), _root.Course.FrontGFX.getNextHighestDepth(), {_x:_x, _y:_y-30});
+	//
+} else {
+	_root.Mariosound = new Sound(this);
+	_root.Mariosound.attachSound("boxbreak");
+	_root.Mariosound.start(0, 1);
+	_root.Mariosound.setVolume(_root.MarioVolume);
+}
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		play();
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="4" duration="20" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (_root["coindata"+_root.playingcourse][coinnum] !== 1) {
+	_root["coindata"+_root.playingcourse][coinnum] = 1;
+	if (stuffinside == "1coin") {
+		_root.Course.BackGFX.attachMovie("GoldCoin", "GoldCoin"+_root.Course.BackGFX.getNextHighestDepth(), _root.Course.BackGFX.getNextHighestDepth(), {_x:_x-5, _y:_y-12, bounce:true});
+	} else if (stuffinside == "3coins") {
+		createCoin = function () {
+			_root.Course.BackGFX.attachMovie("GoldCoin", "GoldCoin"+_root.Course.BackGFX.getNextHighestDepth(), _root.Course.BackGFX.getNextHighestDepth(), {_x:_x-5, _y:_y-12, bounce:true});
+		};
+		createCoins(3, 1);
+	} else if (stuffinside == "5coins") {
+		createCoin = function () {
+			_root.Course.BackGFX.attachMovie("GoldCoin", "GoldCoin"+_root.Course.BackGFX.getNextHighestDepth(), _root.Course.BackGFX.getNextHighestDepth(), {_x:_x-5, _y:_y-12, bounce:true, yspeed:Math.random()*5-7, xspeed:Math.random()*10-5});
+		};
+		createCoins(5, 2);
+	} else if (stuffinside == "10coins") {
+		createCoin = function () {
+			_root.Course.BackGFX.attachMovie("GoldCoin", "GoldCoin"+_root.Course.BackGFX.getNextHighestDepth(), _root.Course.BackGFX.getNextHighestDepth(), {_x:_x-5, _y:_y-12, bounce:true, yspeed:Math.random()*6-10, xspeed:Math.random()*12-6});
+		};
+		createCoins(10, 3);
+	} else if (stuffinside == "20coins") {
+		createCoin = function () {
+			_root.Course.BackGFX.attachMovie("GoldCoin", "GoldCoin"+_root.Course.BackGFX.getNextHighestDepth(), _root.Course.BackGFX.getNextHighestDepth(), {_x:_x-5, _y:_y-12, bounce:true, yspeed:Math.random()*7-15, xspeed:Math.random()*14-7});
+		};
+		createCoins(20, 5);
+	} else if (stuffinside == "30coins") {
+		createCoin = function () {
+			_root.Course.BackGFX.attachMovie("GoldCoin", "GoldCoin"+_root.Course.BackGFX.getNextHighestDepth(), _root.Course.BackGFX.getNextHighestDepth(), {_x:_x-5, _y:_y-12, bounce:true, yspeed:Math.random()*10-15, xspeed:Math.random()*16-8});
+		};
+		createCoins(30, 6);
+	} else if (stuffinside == "100coins") {
+		createCoin = function () {
+			_root.Course.BackGFX.attachMovie("GoldCoin", "GoldCoin"+_root.Course.BackGFX.getNextHighestDepth(), _root.Course.BackGFX.getNextHighestDepth(), {_x:_x-5, _y:_y-12, bounce:true, yspeed:Math.random()*15-18, xspeed:Math.random()*18-9});
+		};
+		createCoins(100, 10);
+	} else if (stuffinside == "bluecoin") {
+	} else if (stuffinside == "mushroom") {
+	}
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="24" name="end" labelType="name" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+onEnterFrame = function () {
+	if ((Math.abs((_root.currentCamX)-(_x+_parent._x))>600 || Math.abs((_root.currentCamY)-(_y+_parent._y))>600) && (Math.abs(_root.Course.Char._x-(_x+_parent._x))>600 || Math.abs(_root.Course.Char._y-(_y+_parent._y))>600)) {
+		//
+		if (reappear == true) {
+			gotoAndStop(3);
+		}
+		// 
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 17" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="25" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Other/ Breakable Box/Breakable Box Explosions">
+                  <transformationPoint>
+                    <Point y="-16"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 18" color="#FFFF4F" locked="true">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Other/ Breakable Box/Breakable Box - Stuff Inside" name="stuff" selected="true">
+                  <matrix>
+                    <Matrix tx="0.5" ty="-17.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" duration="22" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

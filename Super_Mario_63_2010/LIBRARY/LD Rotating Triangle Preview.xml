@@ -1,0 +1,192 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="LD Rotating Triangle Preview" itemID="4a21b73d-00001aff" lastModified="1243723939">
+  <timeline>
+    <DOMTimeline name="LD Rotating Triangle Preview">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+//
+if (DirectionX == undefined) {
+	DirectionX = "Right";
+}
+if (DirectionY == undefined) {
+	DirectionY = "Up";
+}
+if (distanceX == undefined) {
+	distanceX = 0;
+}
+if (distanceY == undefined) {
+	distanceY = 0;
+}
+if (accelX == undefined) {
+	accelX = 0;
+}
+if (accelY == undefined) {
+	accelY = 0;
+}
+if (speedX == undefined) {
+	speedX = 0;
+}
+if (speedY == undefined) {
+	speedY = 0;
+}
+if (Xoffstart == undefined) {
+	Xoffstart = 0;
+}
+if (Yoffstart == undefined) {
+	Yoffstart = 0;
+}
+if (DirectionY == "Up") {
+	_y -= speedY;
+} else {
+	_y += speedY;
+}
+if (DirectionY == "Right") {
+	_x -= speedX;
+} else {
+	_x += speedX;
+}
+if (scale == undefined) {
+	scale = 100;
+}
+if (blocktype == undefined) {
+	blocktype = 1;
+}
+if (angleoffset == undefined) {
+	angleoffset = 0;
+}
+if (rotamount == undefined) {
+	rotamount = 120;
+}
+//                           
+if (rotdirection == undefined) {
+	rotdirection = "Left";
+}
+if (rotspeed == undefined) {
+	rotspeed = 3;
+}
+if (rotwait == undefined) {
+	rotwait = 92;
+}
+if (quake == undefined && rotwait>20) {
+	quake = true;
+} else {
+	quake = true;
+}
+_yscale = scale;
+_xscale = scale;
+gotoAndStop(blocktype);
+_rotation = angleoffset;
+count = 0;
+spincount = 0;
+onEnterFrame = function () {
+	count++;
+	if (count>rotwait) {
+		spincount++;
+		if ((spincount*rotspeed)<=rotamount) {
+			if (this.rotdirection == "Right") {
+				_rotation += this.rotspeed;
+			}
+			if (this.rotdirection == "Left") {
+				_rotation -= this.rotspeed;
+			}
+		} else {
+			count = 0;
+			spincount = 0;
+			_rotation -= this.angleoffset;
+			_rotation = (Math.round(_rotation/rotamount)*rotamount)+angleoffset;
+		}
+	}
+	//                                              
+	//if (this.quake == true) {
+	if (count+20>this.rotwait && count<this.rotwait) {
+		_rotation -= this.angleoffset;
+		_rotation = (Math.round(_rotation/this.rotamount)*this.rotamount)+this.angleoffset;
+		_rotation += Math.random()*5-2.5;
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="0.05" ty="-0.3"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix tx="0.05" ty="-0.3"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Ancient &amp; Clock &amp; Haunted/Tick Battery 2" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="-7.5" b="12.9904174804688" c="-12.9904174804688" d="-7.5" tx="-86.75" ty="-8.5"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="2">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Ancient &amp; Clock &amp; Haunted/Tick Battery 2" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="15" d="15" tx="-107.75" ty="-16.75"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="3">
+                          <SolidColor color="#999999"/>
+                        </FillStyle>
+                        <FillStyle index="4">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Ancient &amp; Clock &amp; Haunted/Tick Battery 2" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="-7.50006103515625" b="-12.9904174804688" c="12.9904174804688" d="-7.50006103515625" tx="-74.45" ty="1.1"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal">
+                            <fill>
+                              <SolidColor/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge fillStyle0="1" fillStyle1="2" edges="!595.5 -354|59 -25.5"/>
+                        <Edge fillStyle0="1" fillStyle1="3" strokeStyle="1" edges="!59 -25.5[64 #FFFFF2.52 64 0!64 0[64 27 45 45!45 45[27 64 0 64!0 64[#FFFFFE.7D 64 -3 64"/>
+                        <Edge fillStyle0="1" fillStyle1="4" edges="!-3 64|-4 681.5"/>
+                        <Edge fillStyle0="1" strokeStyle="1" edges="!-4 681.5|-0.5 683.5"/>
+                        <Edge strokeStyle="1" edges="!-0.5 683.5|-1.5 685.5!-1.5 685.5|-4 681.5"/>
+                        <Edge fillStyle1="4" strokeStyle="1" edges="!-4 681.5|-591 -337"/>
+                        <Edge strokeStyle="1" edges="!-591 -337|-599.5 -351.5"/>
+                        <Edge fillStyle1="2" strokeStyle="1" edges="!-599.5 -351.5|-601 -354!-601 -354|595.5 -354"/>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="!595.5 -354|598 -352.5"/>
+                        <Edge strokeStyle="1" edges="!598 -352.5|599 -354!599 -354|595.5 -354"/>
+                        <Edge fillStyle0="2" fillStyle1="3" strokeStyle="1" edges="!-58 -29[#FFFFCA.8E -38.140625 -46 -46!-46 -46[-27 -64 0 -64!0 -64[27 -64 45 -46!45 -46[#36.6 -36.625 59 -25.5"/>
+                        <Edge fillStyle0="2" edges="!-599.5 -351.5|-595.5 -345"/>
+                        <Edge fillStyle0="4" edges="!-595.5 -345|-591 -337"/>
+                        <Edge fillStyle0="4" fillStyle1="2" edges="!-58 -29|-595.5 -345"/>
+                        <Edge fillStyle0="4" fillStyle1="3" strokeStyle="1" edges="!-3 64[#FFFFE3.EF #3E.EF -46 45!-46 45[-64 27 -64 0!-64 0[-64 #FFFFF0.2B -58 -29"/>
+                        <Edge fillStyle0="1" strokeStyle="1" edges="!-0.5 683.5|598 -352.5"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

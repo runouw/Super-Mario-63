@@ -1,0 +1,100 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name=" Menu/Menu Folder/ Story/Menu Delete No" itemID="47787c01-00001aa3" sourceFlashFilepath="Rob &amp; Steve Hewitt\My Documents\Super Mario 63\Menu Design.fla" sourceLibraryItemHRef="Menu Folder/ Story/Menu Delete No" sourceLastModified="1199091763" lastModified="1199146813" lastUniqueIdentifier="2" sourceItemID="47787c01-00001aa3">
+  <timeline>
+    <DOMTimeline name="Menu Delete No">
+      <layers>
+        <DOMLayer name="Layer 3" color="#FFFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[yspeed = 0;
+xspeed = 0;
+onEnterFrame = function () {
+	if (bg.hitTest(_root._xmouse, _root._ymouse, true) && _parent.clicked !== true) {
+		hl = true;
+	} else {
+		hl = false;
+	}
+	if (hl == true && cl !== true) {
+		this._xscale += (125-this._xscale)/4;
+	} else if (cl !== true) {
+		this._xscale += (100-this._xscale)/4;
+	}
+	this._yscale = this._xscale;
+	//
+	/*	xspeed = 100/(this._x-_parent._xmouse);
+	yspeed = 100/(this._y-_parent._ymouse);*/
+	dist = Math.sqrt(Math.pow((this._x-_parent._xmouse), 2)+Math.pow((this._y-_parent._ymouse), 2));
+	//
+	dist = Math.max(dist, 2);
+	rot = Math.atan2((this._y-_parent._ymouse), (this._x-_parent._xmouse));
+	xspeed = Math.cos(rot)*(dist/350);
+	yspeed = Math.sin(rot)*(dist/350)
+	//xspeed = Math.min(Math.max(xspeed, -7), 7);
+	//yspeed = Math.min(Math.max(yspeed, -7), 7);
+	if (hl !== true) {
+		this._x -= xspeed;
+		this._y -= yspeed;
+	} else {
+		this._x -= xspeed/2;
+		this._y -= yspeed/2;
+	}
+	//
+	this._x = Math.min((225-_width/2), _x);
+	this._x = Math.max(-(225-_width/2), _x);
+	this._y = Math.min((150-_height/2), _y);
+	this._y = Math.max(-(150-_height/2), _y);
+};
+onMouseDown = function () {
+	if (hl == true && cl !== true && _parent._currentframe == 10) {
+		_parent.NoF();
+		cl = true;
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Menu Folder/  Universal Stuff/Menu Button BG" name="bg">
+                  <matrix>
+                    <Matrix a="0.927597045898438" d="1.27586364746094"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BevelFilter distance="3" highlightAlpha="0.498039215686275" shadowAlpha="0.498039215686275"/>
+                    <AdjustColorFilter brightness="-7" saturation="16" hue="-44"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Menu/Menu Folder/ Story/Menu Delete No Text">
+                  <transformationPoint>
+                    <Point y="-0.05"/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter blurX="6" blurY="6" color="#0000FF" inner="true" strength="10"/>
+                    <BevelFilter highlightColor="#0000FF" strength="1.5"/>
+                    <GlowFilter blurX="2" blurY="2" color="#FFFFFF" inner="true" strength="5"/>
+                    <BevelFilter shadowColor="#0000FF" strength="0.88"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

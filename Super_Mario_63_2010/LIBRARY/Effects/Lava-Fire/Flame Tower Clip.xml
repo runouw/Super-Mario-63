@@ -1,0 +1,340 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="   Effects/ Lava-Fire/Flame Tower Clip" itemID="47392515-00000b6c" lastModified="1241914572" lastUniqueIdentifier="7">
+  <timeline>
+    <DOMTimeline name="Flame Tower Clip">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[// Make OnWait "endless" to go forever
+if (OnWait == undefined) {
+	OnWait = 64;
+}
+if (OffWait == undefined) {
+	OffWait = 92;
+}
+if(graphic == undefined){
+	graphic = false;
+}]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" duration="7" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+count = 0;
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		if (graphic == false) {
+			if (Math.abs((_root.currentCamX)-(_x+_parent._x))<600 && Math.abs((_root.currentCamY)-(_y+_parent._y))<600) {
+				_visible = true;
+				if (this.body.hitTest(_root.Course.Char.charClip.body) && ((_root.Metal !== true && _root.Invincible !== true) || _root.PowerTimer<=0)) {
+					//
+					if (_root.Course.Char.blink<=0) {
+						if (_root.Course.Char._x>_x+_parent._x) {
+							_root.MarioHit(2, 90, 0, 3, 20, "none");
+						} else {
+							_root.MarioHit(2, 90, 0, -3, 20, "none");
+						}
+						if (_root.CharHP>=0) {
+							_root.Course.Char.yspeed = Math.min(-16, _root.Course.Char.yspeed);
+							_root.Course.Char.attack = true;
+							_root.Course.Char.attackFrame = "Lava";
+						} else {
+							_root.Course.Char.attack = true;
+							_root.Course.Char.attackFrame = "Faint";
+						}
+					}
+					//             
+				}
+			} else {
+				_visible = false;
+			}
+		}
+		if (OnWait !== "endless") {
+			count++;
+			if (count>OnWait) {
+				play();
+				onEnterFrame = function () {
+					if (_root.PauseGame == false) {
+						play();
+					} else {
+						stop();
+					}
+				};
+			}
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="9" duration="12" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+count = 0;
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		if (offstart !== undefined) {
+			count += offstart;
+			offstart = undefined;
+		}
+		count++;
+		if (count>OffWait) {
+			play();
+			onEnterFrame = function () {
+				if (_root.PauseGame == false) {
+					//
+					if (graphic == false) {
+						if (Math.abs((_root.currentCamX)-(_x+_parent._x))<600 && Math.abs((_root.currentCamY)-(_y+_parent._y))<600) {
+							_visible = true;
+							if (this.body.hitTest(_root.Course.Char.charClip.body) && ((_root.Metal !== true && _root.Invincible !== true) || _root.PowerTimer<=0)) {
+								//
+								if (_root.Course.Char.blink<=0) {
+									if (_root.Course.Char._x>_x+_parent._x) {
+										_root.MarioHit(2, 90, 0, 3, 20, "none");
+									} else {
+										_root.MarioHit(2, 90, 0, -3, 20, "none");
+									}
+									if (_root.CharHP>=0) {
+										_root.Course.Char.yspeed = Math.min(-16, _root.Course.Char.yspeed);
+										_root.Course.Char.attack = true;
+										_root.Course.Char.attackFrame = "Lava";
+									} else {
+										_root.Course.Char.attack = true;
+										_root.Course.Char.attackFrame = "Faint";
+									}
+								}
+								//            
+							}
+						} else {
+							_visible = false;
+						}
+					}
+					//         
+					play();
+				} else {
+					stop();
+				}
+			};
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="21" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[gotoAndStop(3);
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#0000FF" outline="true" useOutlineView="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Lineless Movieclip" name="body">
+                  <matrix>
+                    <Matrix a="0.371917724609375" d="1.37461853027344" tx="-0.5" ty="46.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-28.15"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="4" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="5" duration="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Lineless Movieclip" name="body">
+                  <matrix>
+                    <Matrix a="0.230392456054688" d="0.633880615234375" tx="-0.5" ty="43.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-28.25"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="8" duration="2" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="10" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Lineless Movieclip" name="body">
+                  <matrix>
+                    <Matrix a="0.1947021484375" d="0.561248779296875" ty="51.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-28.15"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="12" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="13" duration="4" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Lineless Movieclip" name="body">
+                  <matrix>
+                    <Matrix a="0.229827880859375" d="0.87005615234375" ty="43.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-28.05"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="17" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="18" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Lineless Movieclip" name="body">
+                  <matrix>
+                    <Matrix a="0.229827880859375" d="1.11624145507813" ty="45.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-28.05"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="20" duration="2" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Flame Tower">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.69921875"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" duration="6" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Flame Tower">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.69921875"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="8" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Flame Tower">
+                  <matrix>
+                    <Matrix a="0.166671752929688" d="0.0416717529296875" ty="46"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="48"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="9" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="10" duration="3" tweenType="motion" motionTweenRotate="none" keyMode="16897">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Flame Tower">
+                  <matrix>
+                    <Matrix a="0.166671752929688" d="0.125518798828125" ty="42"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="47.8"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="13" duration="4" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Flame Tower">
+                  <matrix>
+                    <Matrix a="0.791671752929688" d="0.885421752929688" ty="5.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="48"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.69921875"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="17" duration="4" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Flame Tower">
+                  <matrix>
+                    <Matrix a="0.958251953125" d="0.875" ty="6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="48"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.6015625"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="21" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Flame Tower">
+                  <transformationPoint>
+                    <Point y="48"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.69921875"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

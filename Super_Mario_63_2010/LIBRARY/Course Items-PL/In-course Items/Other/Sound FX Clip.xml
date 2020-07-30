@@ -1,0 +1,99 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Items-PL/ In-course Items/ Other/Sound FX Clip" itemID="4740ee1c-00000a70" lastModified="1239667053">
+  <timeline>
+    <DOMTimeline name="Sound FX Clip">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_visible = false;
+this.createEmptyMovieClip("soundclip", _root.getNextHighestDepth());
+if (sound == undefined) {
+	sound = "waterfall";
+}
+if (range == undefined) {
+	range = 15/100;
+}
+if (maxvolume == undefined) {
+	maxvolume = 100;
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+if (_root.CreditsQuiet !== true) {
+	started = false;
+	onEnterFrame = function () {
+		distancevolume = Math.sqrt(Math.pow((_root.currentCamX)-(_x+_parent._x), 2)+Math.pow((_root.currentCamY)-(_y+_parent._y), 2));
+		distancevolume *= range;
+		distancevolume = Math.min(100, distancevolume);
+		distancevolume = Math.max(100-maxvolume, distancevolume);
+		distancevolume -= 100;
+		distancevolume *= -1;
+		//
+		if (distancevolume>=1) {
+			if (started == false) {
+				soundclip = new Sound(this);
+				soundclip.attachSound(sound);
+				soundclip.start(0, 1);
+				soundclip.setVolume((_root.MarioVolume/100)*distancevolume);
+				soundclip.setPan(panX);
+				soundclip.onSoundComplete = function() {
+					//soundclip = new Sound(this);
+					soundclip.attachSound(sound);
+					soundclip.start(0, 1);
+					soundclip.setVolume((_root.MarioVolume/100)*distancevolume);
+					soundclip.setPan(panX);
+				};
+			}
+			started = true;
+			soundclip.setVolume((_root.MarioVolume/100)*distancevolume);
+			panX = (_root.currentCamX)-(_x+_parent._x);
+			panX /= -2;
+			panX = Math.min(100, panX);
+			panX = Math.max(-100, panX);
+			soundclip.setPan(panX);
+		} else {
+			panX = 0;
+			if (started == true) {
+				soundclip.stop();
+				soundclip.onSoundComplete = null;
+			}
+			started = false;
+		}
+	};
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements>
+                <DOMStaticText left="36.35" width="71.3" height="17.9" autoExpand="true" antiAliasThickness="68" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-72" ty="-8.95"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Sound FX</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" bold="true" size="16" face="Arial Baltic" fillColor="#0066FF"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

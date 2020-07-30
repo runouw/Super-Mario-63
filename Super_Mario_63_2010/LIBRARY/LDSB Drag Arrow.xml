@@ -1,0 +1,82 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="LDSB Drag Arrow" itemID="48a1fd19-00000067" sourceFlashFilepath="F:\Super Mario 63\New computer\Level Designer (With Mario Engine new) 3.fla" sourceLibraryItemHRef="LDSB Drag Arrow" sourceLastModified="1218995846" lastModified="1218995846" lastUniqueIdentifier="1" sourceItemID="48a1fd19-00000067">
+  <timeline>
+    <DOMTimeline name="LDSB Drag Arrow">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	if (this.hitTest(_root._xmouse, _root._ymouse) && _root.MWindow1 == true && _parent.held !== true && _parent.tabbing !== true) {
+		sc = 110;
+		arr._alpha += (100-arr._alpha)/2;
+	} else {
+		sc = 100;
+		arr._alpha += (50-arr._alpha)/2;
+	}
+	//_xscale += (sc-_xscale)/2;
+	//_yscale = _xscale;
+	if (held == true) {
+		//_parent.Y += 3*this._yscale/100;
+		_parent.drag._y += -2*this._yscale/100;
+	}
+};
+onMouseDown = function () {
+	if (sc == 110) {
+		held = true;
+	}
+};
+onMouseUp = function () {
+	held = false;
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <RadialGradient>
+                        <matrix>
+                          <Matrix a="0.010345458984375" d="0.010345458984375"/>
+                        </matrix>
+                        <GradientEntry color="#DDD6BB" ratio="0"/>
+                        <GradientEntry color="#EEEADD" ratio="1"/>
+                      </RadialGradient>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <SolidColor color="#666666"/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="!119.5 120|-120.5 120!-120.5 120|-120.5 -120!-120.5 -120|119.5 -120!119.5 -120|119.5 120"/>
+                  </edges>
+                </DOMShape>
+                <DOMSymbolInstance libraryItemName="LDSB Drag Arrow Arrow" name="arr">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

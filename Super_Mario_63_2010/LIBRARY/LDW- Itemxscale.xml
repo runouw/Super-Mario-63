@@ -1,0 +1,111 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="LDW- Itemxscale" itemID="49c05ac1-000010b8" lastModified="1244507693" lastUniqueIdentifier="3">
+  <timeline>
+    <DOMTimeline name="LDW- Itemxscale">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[//_parent.xs
+onEnterFrame = function () {
+	if (this.hitTest(_root._xmouse, _root._ymouse, true)) {
+		sc = 120;
+	} else {
+		sc = 100;
+	}
+	if (count++<5) {
+		if (Boolean(Number(_parent.xs)) == true) {
+			fr = 2;
+			gotoAndStop(2);
+		} else {
+			fr = 11;
+			gotoAndStop(11);
+		}
+	}
+	_xscale += (sc-_xscale)/2;
+	_yscale = _xscale;
+	if (_currentframe<fr) {
+		nextFrame();
+	}
+	if (_currentframe>fr) {
+		prevFrame();
+	}
+};
+onMouseDown = function () {
+	if (sc == 120) {
+		if (fr == 2) {
+			fr = 11;
+			_parent.xs = 0;
+		} else {
+			fr = 2;
+			_parent.xs = 1;
+		}
+	}
+};
+count = 0;
+if (Boolean(Number(_parent.xs)) == true) {
+	fr = 2;
+	gotoAndStop(2);
+} else {
+	fr = 11;
+	gotoAndStop(11);
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="10" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName='LDW - Items "Reverse"'>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BevelFilter/>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" duration="9" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName='LDW - Items "Reverse"'>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BevelFilter/>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="10" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName='LDW - Items "Reverse"'>
+                  <matrix>
+                    <Matrix a="-1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BevelFilter/>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

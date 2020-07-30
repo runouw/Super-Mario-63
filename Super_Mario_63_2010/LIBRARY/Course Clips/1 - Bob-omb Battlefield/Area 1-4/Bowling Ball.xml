@@ -1,0 +1,68 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Clips/ 1 - Bob-omb Battlefield/ Area 1-4/Bowling Ball" itemID="45ce70ba-00000300" lastModified="1214286167" lastUniqueIdentifier="2">
+  <timeline>
+    <DOMTimeline name="Bowling Ball">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" outline="true" current="true" isSelected="true" useOutlineView="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+onEnterFrame = function () {
+	if (_root.PauseGame == false && _root.playpause == false) {
+		//
+		_root.Course.Enemyhurt.attachMovie("EnemyHurtBox", "Box"+_root.Course.Enemyhurt.getNextHighestDepth(), _root.Course.Enemyhurt.getNextHighestDepth(), {_x:_x+_parent._x, _y:(_y+_parent._y), _yscale:30, _xscale:30, time:1});
+		//
+		if (this.box.hitTest(_root.Course.Char.charClip.body) && _root.Course.Char.air == true && _root.Invincible !== true && _root.Invisible !== true) {
+			if (_root.Course.Char._x>_x+_parent._x+_parent._x) {
+				_root.MarioHit(2, 90, -5, 3, 7, "Mario-Squish", true);
+			} else {
+				_root.MarioHit(2, 90, -5, -3, 7, "Mario-Squish", true);
+			}
+		} else if (this.box.hitTest(_root.Course.Char.charClip.body) && _root.Course.Char.blink<=0 && _root.Invincible !== true && _root.Invisible !== true) {
+			_root.MarioHit(2, 90, 0, 0, 0, "Mario-Squish");
+			_root.Course.Char.attack = true;
+			_root.Course.Char.attackFrame = "Squish";
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Xtra Box 2" name="box">
+                  <matrix>
+                    <Matrix a="1.50326538085938" d="1.5" tx="-0.05" ty="19.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-0.05"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="  Course Clips/ 1 - Bob-omb Battlefield/ Area 1-4/GBBE 1">
+                  <matrix>
+                    <Matrix tx="-40.5" ty="-40"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

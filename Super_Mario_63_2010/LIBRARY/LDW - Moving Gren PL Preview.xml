@@ -1,0 +1,202 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="LDW - Moving Gren PL Preview" itemID="4974c353-00001339" sourceFlashFilepath="F:\Super Mario 63\New computer\Level Designer (With Mario Engine new) 3.fla" sourceLibraryItemHRef="LDW - Moving Gren PL Preview" sourceLastModified="1232685745" lastModified="1236907441" lastUniqueIdentifier="1" sourceItemID="4974c353-00001339">
+  <timeline>
+    <DOMTimeline name="LDW - Moving Gren PL Preview">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[this.stop();
+Start = function () {
+	_x = 0;
+	_y = 0;
+	Res();
+	for (i=0; i<5; i++) {
+		OEF();
+	}
+	trace(_x);
+	trace(_y);
+	if (_x>1) {
+		_x = -48;
+	} else if (_x<-1) {
+		_x = 48;
+	} else {
+		_x = 0;
+	}
+	if (_y>1) {
+		_y = -48;
+	} else if (_y<-1) {
+		_y = 48;
+	} else {
+		_y = 0;
+	}
+	Res();
+	onEnterFrame = function () {
+		OEF();
+		if (gonecount>20) {
+			Start();
+		}
+	};
+};
+Start2 = function () {
+	_x = 0;
+	_y = 0;
+	Res();
+	_alpha = 50;
+	onEnterFrame = function () {
+		OEF();
+		if (gonecount>20) {
+			Start2();
+		}
+	};
+};
+Res = function () {
+	if (DirectionX == undefined) {
+		DirectionX = "Right";
+	}
+	if (DirectionY == undefined) {
+		DirectionY = "Up";
+	}
+	if (saveDX !== undefined) {
+		DirectionX = saveDX;
+		DirectionY = saveDY;
+	}
+	saveDX = DirectionX;
+	saveDY = DirectionY;
+	if (distanceX == undefined) {
+		distanceX = 25;
+	}
+	if (distanceY == undefined) {
+		distanceY = 0;
+	}
+	if (accelX == undefined) {
+		accelX = 1;
+	}
+	if (accelY == undefined) {
+		accelY = 0;
+	}
+	if (speedX == undefined) {
+		speedX = 5;
+	}
+	if (speedY == undefined) {
+		speedY = 0;
+	}
+	if (Xoffstart == undefined) {
+		Xoffstart = 0;
+	}
+	if (Yoffstart == undefined) {
+		Yoffstart = 0;
+	}
+	if (scale == undefined) {
+		scale = 2;
+	}
+	this.gotoAndStop(scale);
+	if (DirectionY == "Up") {
+		_y -= speedY;
+	} else {
+		_y += speedY;
+	}
+	if (DirectionY == "Right") {
+		_x -= speedX;
+	} else {
+		_x += speedX;
+	}
+	currentspeedX = 0;
+	distancecountX = speedX+Xoffstart;
+	currentspeedY = 0;
+	distancecountY = speedY+Yoffstart;
+	//
+	gonecount = 0;
+	count = 0;
+	_alpha = 100;
+	_visible = true;
+};
+OEF = function () {
+	if (touchngo == true) {
+		count++;
+		if (count>disapearcount) {
+			gonecount++;
+			_alpha -= 20;
+			if (_alpha<0) {
+				_alpha = 0;
+				_visible = false;
+			}
+		}
+	}
+	distancecountX++;
+	if (distancecountX>=distanceX) {
+		distancecountX = 0;
+		if (DirectionX == "Right") {
+			DirectionX = "Left";
+		} else {
+			DirectionX = "Right";
+		}
+	}
+	if (DirectionX == "Right") {
+		currentspeedX += accelX;
+	} else {
+		currentspeedX -= accelX;
+	}
+	//
+	distancecountY++;
+	if (distancecountY>=distanceY) {
+		distancecountY = 0;
+		if (DirectionY == "Up") {
+			DirectionY = "Down";
+		} else {
+			DirectionY = "Up";
+		}
+	}
+	if (DirectionY == "Up") {
+		currentspeedY -= accelY;
+	} else {
+		currentspeedY += accelY;
+	}
+	currentspeedX = Math.max(-speedX, currentspeedX);
+	currentspeedX = Math.min(speedX, currentspeedX);
+	currentspeedY = Math.max(-speedY, currentspeedY);
+	currentspeedY = Math.min(speedY, currentspeedY);
+	_x += currentspeedX;
+	_y += currentspeedY;
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Coded PL Bits/YI Green Small PF">
+                  <matrix>
+                    <Matrix tx="-16" ty="-8"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Coded PL Bits/YI Green Med PL">
+                  <matrix>
+                    <Matrix tx="-24" ty="-8"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Coded PL Bits/YI Green Large PL">
+                  <matrix>
+                    <Matrix tx="-32" ty="-8"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

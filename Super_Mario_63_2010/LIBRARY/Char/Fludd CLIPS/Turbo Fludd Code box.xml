@@ -1,0 +1,69 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="      Char/  Fludd CLIPS/Turbo Fludd Code box" itemID="45f8b474-00001672" lastModified="1223771534" lastUniqueIdentifier="1">
+  <timeline>
+    <DOMTimeline name="Turbo Fludd Code box">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	if (_root.Fluddpow == "T" || (this.hitTest(_root._xmouse, _root._ymouse, true) && _root.FluddArray[_root.Playinglevel][3] == true)) {
+		sc = 115;
+	} else {
+		sc = 100;
+	}
+	_xscale += (sc-_xscale)/2;
+	_yscale = _xscale;
+	if (Math.abs(sc-_xscale)<1) {
+		_xscale = sc;
+	}
+	//    
+	if (_root.FluddArray[_root.Playinglevel][3] == true) {
+		gotoAndStop(1);
+	} else {
+		gotoAndStop(2);
+	}
+};
+//if (this.hitTest(_root._xmouse, _root._ymouse, true) && _root.FluddArray[_root.Playinglevel][3] == true) {
+//_root.Fluddpow = "R";
+//}
+onMouseDown = function () {
+	if (this.hitTest(_root._xmouse, _root._ymouse, true) && (_root.FluddArray[_root.Playinglevel][3] == true || _root.SaveFluddT == true) && _root.CanSwitchFludd !== false) {
+		_root.Fluddpow = "T";
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Fludd/Turbo Nozzle Box">
+                  <matrix>
+                    <Matrix tx="-16" ty="-20"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Locked Fludd Box">
+                  <matrix>
+                    <Matrix ty="0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-0.05" y="-0.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,130 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="   Enemies/Normal/ G-Z/ Goomba/Goomba Walking" itemID="45514fb8-0000017b" lastModified="1239666975">
+  <timeline>
+    <DOMTimeline name="Goomba Walking">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		play();
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="3" duration="5" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (number == undefined) {
+	number = 1;
+} else {
+	number++;
+	if (number>3) {
+		number = 0;
+	}
+}
+if (_root.CreditsQuiet !== true) {
+	if (_parent._parent.distancevolume>60) {
+		this["walksound"+number] = new Sound(this);
+		this["walksound"+number].attachSound("Goomba-Walk");
+		this["walksound"+number].start(0, 1);
+		this["walksound"+number].setVolume((_root.MarioVolume/100)*_parent._parent.distancevolume);
+		this["walksound"+number].setPan(_parent._parent.panX);
+	} else if (_parent._parent.distancevolume>30) {
+		this["walksound"+number] = new Sound(this);
+		this["walksound"+number].attachSound("Goomba-Walk2");
+		this["walksound"+number].start(0, 1);
+		this["walksound"+number].setVolume((_root.MarioVolume/100)*_parent._parent.distancevolume);
+		this["walksound"+number].setPan(_parent._parent.panX);
+	}
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Normal/ G-Z/ Goomba/YI Style Goomba Walking - 1">
+                  <matrix>
+                    <Matrix tx="-8" ty="-9.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Normal/ G-Z/ Goomba/YI Style Goomba Walking - 2">
+                  <matrix>
+                    <Matrix tx="-8.5" ty="-11"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Normal/ G-Z/ Goomba/YI Style Goomba Walking - 3">
+                  <matrix>
+                    <Matrix tx="-9" ty="-10.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Normal/ G-Z/ Goomba/YI Style Goomba Walking - 4">
+                  <matrix>
+                    <Matrix tx="-10" ty="-9"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="4" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Normal/ G-Z/ Goomba/YI Style Goomba Walking - 5">
+                  <matrix>
+                    <Matrix tx="-10" ty="-9.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="5" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Normal/ G-Z/ Goomba/YI Style Goomba Walking - 6">
+                  <matrix>
+                    <Matrix tx="-10" ty="-10"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="6" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Normal/ G-Z/ Goomba/YI Style Goomba Walking - 7">
+                  <matrix>
+                    <Matrix tx="-8" ty="-9.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="7" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Normal/ G-Z/ Goomba/YI Style Goomba Walking - 8">
+                  <matrix>
+                    <Matrix tx="-7" ty="-9"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

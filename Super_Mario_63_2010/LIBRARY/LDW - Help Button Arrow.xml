@@ -1,0 +1,78 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="LDW - Help Button Arrow" itemID="49cd3ed6-000011a8" sourceFlashFilepath="F:\Super Mario 63\New computer\LD Temporary Windows.fla" sourceLibraryItemHRef="LDW - Help Button Arrow" sourceLastModified="1244431355" lastModified="1244431355" sourceItemID="49cd3ed6-000011a8">
+  <timeline>
+    <DOMTimeline name="LDW - Help Button Arrow">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (_rotation == 0) {
+	num = 1;
+} else {
+	_alpha = 0;
+	al = 0;
+	num = -1;
+}
+onEnterFrame = function () {
+	if (this.hitTest(_root._xmouse, _root._ymouse, false)) {
+		sc = 120;
+	} else {
+		sc = 100;
+	}
+	if ((_parent.helpfra+num)>0 && (_parent.helpfra+num)<7) {
+		al = 100;
+	} else {
+		sc = 50;
+		al = 0;
+	}
+	_alpha += (al-_alpha)/2;
+	_xscale += (sc-_xscale)/2;
+	_yscale = _xscale;
+};
+onMouseDown = function () {
+	if (sc == 120) {
+		//_xscale = 130;
+		//_yscale = 130;
+		_parent.helpfra += num;
+	}
+};
+gotoAndStop(frame+1);
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix a="1.5" d="1.5" tx="-538.2" ty="-376.8"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix a="1.5" d="1.5" tx="-538.2" ty="-376.8"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#FFFFFF"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="!7187 4959|7305 5010!7305 5010|7305 5038!7305 5038|7187 5090!7187 5090|7187 5056!7187 5056|7269 5024!7269 5024|7187 4992!7187 4992|7187 4959!7165 5038|7047 5090!7047 5090|7047 5056!7047 5056|7129 5024!7129 5024|7047 4992!7047 4992|7047
+ 4959!7047 4959|7165 5010!7165 5010|7165 5038"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

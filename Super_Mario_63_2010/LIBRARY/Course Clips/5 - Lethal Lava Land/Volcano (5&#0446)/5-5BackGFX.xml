@@ -1,0 +1,1822 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Clips/ 5 - Lethal Lava Land/Volcano (5,6)/5-5BackGFX" itemID="481395a2-0000100b" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="5-5BackGFX" lastModified="1241930834" lastUniqueIdentifier="143">
+  <timeline>
+    <DOMTimeline name="5-5BackGFX">
+      <layers>
+        <DOMLayer name="HL" color="#9933CC" outline="true" useOutlineView="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+//
+if (_root.AutoQuality == true) {
+	if (_root._quality == "HIGH" || _root._quality == "BEST") {
+		_root._quality = "MEDIUM";
+	} else if (_root._quality == "MEDIUM") {
+		_root._quality = "LOW";
+	}
+}
+//     
+SwitchPL = false;
+_root.AreaTextClipF("Lethal Lava Land:"+newline+"<i>Inside the Volcano</i>", 45);
+_root.warpframe = false;
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		_root.WaterAmount = Math.max(_root.WaterAmount-50, 0);
+	}
+	if (this.warp1.hitTest(_root.Course.Char.charClip.feet)) {
+		_root.Course.Char.attack = true;
+		_root.Course.Char.xspeed = 0;
+		_root.Course.Char.yspeed = 0;
+		_root.Course.Char.attackFrame = "none";
+		warp = true;
+		warpnum = 1;
+	}
+	if (warp == true && _root.warpframe == false) {
+		if (warpnum == 1) {
+			_root.attachMovie("uptransition", "uptransition"+_root.getNextHighestDepth(), _root.getNextHighestDepth(), {_x:_root.screensizeX/2, _y:_root.screensizeY/2});
+		}
+		warp = false;
+	}
+	if (_root.warpframe == true) {
+		if (warpnum == 1) {
+			_root.changecourse("uptransition2", "5-6", 0, 0, 0, 0);
+			//_root.changecourse("righttransition2", "Castle", -1300, 100, -1300, 100);
+		}
+		//_root.warpframe = false;                                
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="warp1">
+                  <matrix>
+                    <Matrix a="0" b="0.9434814453125" c="-12.498779296875" d="0" tx="-440.8" ty="-866.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" selected="true">
+                  <matrix>
+                    <Matrix a="0.943496704101563" d="31.2581176757813" tx="189.1" ty="218.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+onClipEvent (enterFrame) {
+	if (this.hitTest(_root.Course.Char.charClip.body)) {
+		_root.Course.BackGFX.StartClip._y = _root.Course.BackGFX.restart2._y;
+		_root.Course.BackGFX.StartClip._x = _root.Course.BackGFX.restart2._x;
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="restart2" selected="true">
+                  <matrix>
+                    <Matrix a="0.188629150390625" d="0.6251220703125" tx="187.2" ty="244"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+onClipEvent (enterFrame) {
+	if (this.hitTest(_root.Course.Char.charClip.body)) {
+		
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Coins" color="#4FFF4F" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Decoration/ Signs &amp; Fences/ Coded Sign/Coded Sign">
+                  <matrix>
+                    <Matrix tx="509.45" ty="-338.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	//example   = "You can jump in the cannon\nand blast off!";
+	signmessage = 'Confucius says: "Good things happen to those who wait."';
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Touch-Move Green Platforms">
+                  <matrix>
+                    <Matrix tx="508.45" ty="-309.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	DirectionX = "Left";
+	DirectionY = "Down";
+	distanceX = 900;
+	distanceY = 400;
+	accelX = 1;
+	accelY = 0.1
+	speedX = 8;
+	speedY = 4;
+	scale = 2;
+	//
+	disapearcount = 50;
+}
+]]></script>
+                  </Actionscript>
+                  <filters>
+                    <AdjustColorFilter brightness="-43" saturation="-100"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-743.3" ty="105.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Crag/Metal Mesh 2">
+                  <matrix>
+                    <Matrix tx="-573.4" ty="354.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color redMultiplier="0.8984375" blueMultiplier="0" greenMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Crag/Stone PL x2" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="-476.45" ty="126.5"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="!-8869 2700|-15301 2700!-15301 2700|-15301 2530!-15301 2530|-8869 2530!-8869 2530|-8869 2700"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Crag/Stone PL x2" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="-581.65" ty="169.7"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="!-10482 3394|-17405 3394!-17405 3394|-17405 3564!-17405 3564|-10482 3564!-10482 3564|-10482 3394"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="14.75" ty="89.2"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix tx="14.75" ty="89.2"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Crag/Stone PL x2" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="-476.45" ty="126.5"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="!-8869 2700|-15301 2700!-15301 2700|-15301 2530!-15301 2530|-8869 2530!-8869 2530|-8869 2700"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-693.3" ty="105.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-643.3" ty="105.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-593.3" ty="105.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-543.3" ty="105.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-743.3" ty="153.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-693.3" ty="153.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-643.3" ty="153.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-593.3" ty="153.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-543.3" ty="153.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-743.3" ty="197.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-693.3" ty="197.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-643.3" ty="197.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-593.3" ty="197.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-543.3" ty="197.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-376.45" ty="299.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-322.45" ty="305.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-212.45" ty="304.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-102.45" ty="302.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="5.55" ty="302.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="63.55" ty="304.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Power-Ups/Rainbow Star">
+                  <matrix>
+                    <Matrix tx="219.5" ty="32.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	starfunction = function () {
+		_root.StartNewMusicAndIntroNoVar("MetalCap - Intro", "MetalCap - Repeat");
+		_root.PowerTimer = 32*20
+		_root.Metal = true;
+	};
+}
+]]></script>
+                  </Actionscript>
+                  <filters>
+                    <AdjustColorFilter brightness="40" contrast="-51" saturation="-100"/>
+                    <BevelFilter blurX="1" blurY="1" distance="2"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Power-Ups/Rainbow Star">
+                  <matrix>
+                    <Matrix tx="1385.4" ty="112.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	starfunction = function () {
+		_root.StartNewMusicAndIntroNoVar("MetalCap - Intro", "MetalCap - Repeat");
+		_root.PowerTimer = 32*10;
+		_root.Metal = true;
+	};
+}
+]]></script>
+                  </Actionscript>
+                  <filters>
+                    <AdjustColorFilter brightness="40" contrast="-51" saturation="-100"/>
+                    <BevelFilter blurX="1" blurY="1" distance="2"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ A-F/ Bully/Clips/ Bully Code">
+                  <matrix>
+                    <Matrix tx="-687.75" ty="260.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/ Goomba/Goomba">
+                  <matrix>
+                    <Matrix tx="-576.7" ty="113.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ A-F/ Bully/Clips/ Bully Code">
+                  <matrix>
+                    <Matrix tx="849.45" ty="115.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Touch-Move Green Platforms">
+                  <matrix>
+                    <Matrix tx="-125.45" ty="114.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	DirectionX = "Left";
+	DirectionY = "Up";
+	distanceX = 0
+	distanceY = 15
+	accelX = 0
+	accelY = 0.5
+	speedX = 0
+	speedY = 10
+	scale = 1
+	//
+	disapearcount = 15
+}
+]]></script>
+                  </Actionscript>
+                  <filters>
+                    <AdjustColorFilter brightness="-43" saturation="-100"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Touch-Move Green Platforms">
+                  <matrix>
+                    <Matrix tx="-205.45" ty="114.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	DirectionX = "Left";
+	DirectionY = "Up";
+	distanceX = 0
+	distanceY = 15
+	accelX = 0
+	accelY = 0.5
+	speedX = 0
+	speedY = 10
+	scale = 1
+	//
+	disapearcount = 15
+}
+]]></script>
+                  </Actionscript>
+                  <filters>
+                    <AdjustColorFilter brightness="-43" saturation="-100"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Touch-Move Green Platforms">
+                  <matrix>
+                    <Matrix tx="-285.45" ty="114.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	DirectionX = "Left";
+	DirectionY = "Up";
+	distanceX = 0
+	distanceY = 15
+	accelX = 0
+	accelY = 0.5
+	speedX = 0
+	speedY = 10
+	scale = 1
+	//
+	disapearcount = 15
+}
+]]></script>
+                  </Actionscript>
+                  <filters>
+                    <AdjustColorFilter brightness="-43" saturation="-100"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Touch-Move Green Platforms">
+                  <matrix>
+                    <Matrix tx="-365.45" ty="114.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	DirectionX = "Left";
+	DirectionY = "Up";
+	distanceX = 0
+	distanceY = 15
+	accelX = 0
+	accelY = 0.5
+	speedX = 0
+	speedY = 10
+	scale = 1
+	//
+	disapearcount = 15
+}
+]]></script>
+                  </Actionscript>
+                  <filters>
+                    <AdjustColorFilter brightness="-43" saturation="-100"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-123.5" ty="86.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-203.5" ty="86.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-283.5" ty="86.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-363.5" ty="86.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Moving Green Platform">
+                  <matrix>
+                    <Matrix tx="313.45" ty="300.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	scale = 2
+	DirectionX = "Left";
+	DirectionY = "Down";
+	distanceX = 0;
+	distanceY = 50;
+	accelX = 0;
+	accelY = 0.5;
+	speedX = 0;
+	speedY = 2;
+	Xoffstart = 0;
+	Yoffstart = 0;
+}
+]]></script>
+                  </Actionscript>
+                  <filters>
+                    <AdjustColorFilter brightness="-65" saturation="-100"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Moving Green Platform">
+                  <matrix>
+                    <Matrix tx="313.45" ty="300.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	scale = 2
+	DirectionX = "Left";
+	DirectionY = "Down";
+	distanceX = 0;
+	distanceY = 50;
+	accelX = 0;
+	accelY = 0.5;
+	speedX = 0;
+	speedY = 2;
+	Xoffstart = 0;
+	Yoffstart = 0;
+}
+]]></script>
+                  </Actionscript>
+                  <filters>
+                    <AdjustColorFilter/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Moving Green Platform">
+                  <matrix>
+                    <Matrix tx="373.45" ty="400.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	scale = 2
+	DirectionX = "Left";
+	DirectionY = "Up";
+	distanceX = 0;
+	distanceY = 50;
+	accelX = 0;
+	accelY = 0.5;
+	speedX = 0;
+	speedY = 2;
+	Xoffstart = 0;
+	Yoffstart = 0;
+}
+]]></script>
+                  </Actionscript>
+                  <filters>
+                    <AdjustColorFilter brightness="-15" saturation="-20"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Moving Green Platform">
+                  <matrix>
+                    <Matrix tx="433.45" ty="300.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	scale = 2
+	DirectionX = "Left";
+	DirectionY = "Down";
+	distanceX = 0;
+	distanceY = 50;
+	accelX = 0;
+	accelY = 0.5;
+	speedX = 0;
+	speedY = 2;
+	Xoffstart = 0;
+	Yoffstart = 0;
+}
+]]></script>
+                  </Actionscript>
+                  <filters>
+                    <AdjustColorFilter brightness="-65" saturation="-100"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Moving Green Platform">
+                  <matrix>
+                    <Matrix tx="433.45" ty="300.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	scale = 2
+	DirectionX = "Left";
+	DirectionY = "Down";
+	distanceX = 0;
+	distanceY = 50;
+	accelX = 0;
+	accelY = 0.5;
+	speedX = 0;
+	speedY = 2;
+	Xoffstart = 0;
+	Yoffstart = 0;
+}
+]]></script>
+                  </Actionscript>
+                  <filters>
+                    <AdjustColorFilter brightness="-30" saturation="-40"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Moving Green Platform">
+                  <matrix>
+                    <Matrix tx="493.45" ty="400.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	scale = 2
+	DirectionX = "Left";
+	DirectionY = "Up";
+	distanceX = 0;
+	distanceY = 50;
+	accelX = 0;
+	accelY = 0.5;
+	speedX = 0;
+	speedY = 2;
+	Xoffstart = 0;
+	Yoffstart = 0;
+}
+]]></script>
+                  </Actionscript>
+                  <filters>
+                    <AdjustColorFilter brightness="-40" saturation="-60"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Moving Green Platform">
+                  <matrix>
+                    <Matrix tx="553.45" ty="300.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	scale = 2
+	DirectionX = "Left";
+	DirectionY = "Down";
+	distanceX = 0;
+	distanceY = 50;
+	accelX = 0;
+	accelY = 0.5;
+	speedX = 0;
+	speedY = 2;
+	Xoffstart = 0;
+	Yoffstart = 0;
+}
+]]></script>
+                  </Actionscript>
+                  <filters>
+                    <AdjustColorFilter brightness="-65" saturation="-100"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Moving Green Platform">
+                  <matrix>
+                    <Matrix tx="553.45" ty="300.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	scale = 2
+	DirectionX = "Left";
+	DirectionY = "Down";
+	distanceX = 0;
+	distanceY = 50;
+	accelX = 0;
+	accelY = 0.5;
+	speedX = 0;
+	speedY = 2;
+	Xoffstart = 0;
+	Yoffstart = 0;
+}
+]]></script>
+                  </Actionscript>
+                  <filters>
+                    <AdjustColorFilter brightness="-55" saturation="-80"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Moving Green Platform">
+                  <matrix>
+                    <Matrix tx="613.45" ty="400.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	scale = 2
+	DirectionX = "Left";
+	DirectionY = "Up";
+	distanceX = 0;
+	distanceY = 50;
+	accelX = 0;
+	accelY = 0.5;
+	speedX = 0;
+	speedY = 2;
+	Xoffstart = 0;
+	Yoffstart = 0;
+}
+]]></script>
+                  </Actionscript>
+                  <filters>
+                    <AdjustColorFilter brightness="-80" saturation="-100"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="313.5" ty="271.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="373.5" ty="261.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="433.5" ty="271.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="493.5" ty="261.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="553.5" ty="271.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="613.5" ty="261.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Green Circle Platform">
+                  <matrix>
+                    <Matrix tx="811.45" ty="258.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="6"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	distance = 90
+	speed = 3;
+	scale = 1;
+	angle = 60*1;
+	dotdistance = 700;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Green Circle Platform">
+                  <matrix>
+                    <Matrix tx="811.45" ty="258.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="6"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	distance = 90
+	speed = 3;
+	scale = 1;
+	angle = 60*2
+	dotdistance = 700;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Green Circle Platform">
+                  <matrix>
+                    <Matrix tx="811.45" ty="258.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="6"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	distance = 90
+	speed = 3;
+	scale = 1;
+	angle = 60*3
+	dotdistance = 700;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Green Circle Platform">
+                  <matrix>
+                    <Matrix tx="811.45" ty="258.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="6"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	distance = 90
+	speed = 3;
+	scale = 1;
+	angle = 60*4
+	dotdistance = 700;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Green Circle Platform">
+                  <matrix>
+                    <Matrix tx="811.45" ty="258.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="6"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	distance =90
+	speed = 3;
+	scale = 1;
+	angle = 60*5
+	dotdistance = 700;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Green Circle Platform">
+                  <matrix>
+                    <Matrix tx="811.45" ty="258.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="6"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	distance = 90
+	speed = 3;
+	scale = 1;
+	angle = 60*6
+	dotdistance = 20
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Coded Wooden PL/Tipping Log">
+                  <matrix>
+                    <Matrix tx="385.5" ty="87.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-6"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	scale = 2;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Coded Wooden PL/Tipping Log">
+                  <matrix>
+                    <Matrix tx="644.5" ty="116.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-6"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	scale = 2;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="359.5" ty="55.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="409.5" ty="55.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="618.45" ty="84.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="668.45" ty="84.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Switches/Switch">
+                  <matrix>
+                    <Matrix tx="1425.4" ty="133.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	Switchfunction = function () {
+		/*_root.lvl4GreenSwitch = true;
+		_root.Mariosound = new Sound(this);
+		_root.Mariosound.attachSound("Boo");
+		_root.Mariosound.start(0, 1);
+		_root.Mariosound.setVolume(_root.MarioVolume);*/
+		_parent.SwitchPL = true;
+		//_parent["M2-1-SPL1I"].nextFrame();
+		onEnterFrame = function () {
+			if (_parent.SwitchPL !== true) {
+				play();
+			}
+		};
+	};
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="429.5" ty="-206.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="459.45" ty="-296.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="509.45" ty="-159.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="621.45" ty="-139.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="684.45" ty="-71.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="716.45" ty="-71.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="748.45" ty="-71.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="492.45" ty="-364.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="524.45" ty="-364.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/ Goomba/Goomba">
+                  <matrix>
+                    <Matrix tx="425.45" ty="-401.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="589.45" ty="-139.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Decoration/ Signs &amp; Fences/ Coded Sign/Coded Sign">
+                  <matrix>
+                    <Matrix tx="-157.45" ty="336.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	//example   = "You can jump in the cannon\nand blast off!";
+	signmessage = "As long as you are reading this sign, the flames cannot touch you.\n\nYep... It doesn't make sense, but it works.";
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Touch-Move Green Platforms">
+                  <matrix>
+                    <Matrix tx="201.45" ty="-243.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	DirectionX = "Left";
+	DirectionY = "Up";
+	distanceX = 0
+	distanceY = 700
+	accelX = 0
+	accelY = 1
+	speedX = 0
+	speedY = 5
+	scale = 1
+	//
+	disapearcount = 50
+}
+]]></script>
+                  </Actionscript>
+                  <filters>
+                    <AdjustColorFilter brightness="-43" saturation="-100"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Coded Wooden PL/Tipping Log">
+                  <matrix>
+                    <Matrix tx="-42.45" ty="-440.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-6"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	scale = 1;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/Sling Star/Sling Star BackGFX">
+                  <matrix>
+                    <Matrix a="0.682342529296875" b="-0.0010833740234375" c="0.0003509521484375" d="1.06437683105469" tx="-418.55" ty="-514.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	//trackclip = "sst1";
+	//otherstar = "ss1";
+	yblast = -26
+	xblast = 0
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Themed PL/Sinking Lava Platform Code">
+                  <matrix>
+                    <Matrix tx="-258.5" ty="-451.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-0.05"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	frame = 20
+	deepness = 200
+	fallspeed1 = 0.3
+	fallspeed2 = 0.8;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Coded Wooden PL/Tipping Log">
+                  <matrix>
+                    <Matrix tx="-172.45" ty="-440.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-6"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	scale = 1;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-153.45" ty="-478.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-42.5" ty="-476.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Blue Folder/Blue Coin Code">
+                  <matrix>
+                    <Matrix tx="59.5" ty="-491.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-1"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-267.45" ty="307.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-47.45" ty="300.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ A-F/ Bully/Clips/ Bully Code">
+                  <matrix>
+                    <Matrix tx="-296.5" ty="282.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ A-F/ Bully/Clips/ Bully Code">
+                  <matrix>
+                    <Matrix tx="101.45" ty="302.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/ Shy-Guy/Shy Guy Code">
+                  <matrix>
+                    <Matrix tx="-138.45" ty="-495.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	State = "Flying";
+	//Chase = true
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/ Koopa/Koopa Code">
+                  <matrix>
+                    <Matrix tx="640.45" ty="352.4"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	underwater = true;
+	//State = "Flying"
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/ Koopa/Koopa Code">
+                  <matrix>
+                    <Matrix tx="1063.4" ty="137.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	underwater = true;
+	
+}
+]]></script>
+                  </Actionscript>
+                  <filters>
+                    <AdjustColorFilter brightness="-60" saturation="-100"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/ Koopa/Koopa Code">
+                  <matrix>
+                    <Matrix tx="1228.4" ty="141.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	underwater = true;
+	//State = "Flying"
+}
+]]></script>
+                  </Actionscript>
+                  <filters>
+                    <AdjustColorFilter brightness="-55" saturation="-100"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/ Koopa/Koopa Code">
+                  <matrix>
+                    <Matrix tx="-108.45" ty="-439.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	underwater = true;
+	State = "Shell"
+}
+]]></script>
+                  </Actionscript>
+                  <filters>
+                    <AdjustColorFilter brightness="-60" saturation="-100"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ 5 - Lethal Lava Land/Volcano (5,6)/5-5SwitchGFX" selected="true">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/ Koopa/Koopa Code">
+                  <matrix>
+                    <Matrix tx="-492.45" ty="122.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	underwater = true;
+	State = "Shell"
+}
+]]></script>
+                  </Actionscript>
+                  <filters>
+                    <AdjustColorFilter brightness="-60" saturation="-100"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/ Goomba/Goomba">
+                  <matrix>
+                    <Matrix tx="-642.3" ty="98.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/ Goomba/Goomba">
+                  <matrix>
+                    <Matrix tx="-716.7" ty="113.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Decoration/ Signs &amp; Fences/ Coded Sign/Coded Sign">
+                  <matrix>
+                    <Matrix tx="-54.45" ty="94.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	//example   = "You can jump in the cannon\nand blast off!";
+	signmessage = "The <b>Intense Heat</b> inside the Volcano is too hot for Fludd;  the water is evaporating away.";
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ A-F/ Bob-Omb/Bomb omb Code">
+                  <matrix>
+                    <Matrix tx="167.35" ty="314.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ A-F/ Bob-Omb/Bomb omb Code">
+                  <matrix>
+                    <Matrix tx="-804.55" ty="153.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Ground" color="#FFFF4F" locked="true" outline="true" useOutlineView="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements>
+                <DOMGroup selected="true">
+                  <members>
+                    <DOMShape selected="true">
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Rocks &amp; Blocks (Tiled)/Volcano Rock 1" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="14.375" d="14.375" tx="282" ty="88.95"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="2">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Rocks &amp; Blocks (Tiled)/Volcano Rock 1" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="14.375" d="14.375" tx="277" ty="58.95"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="3">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Rocks &amp; Blocks (Tiled)/Volcano Rock 1" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="14.375" d="14.375" tx="275" ty="88.95"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal" weight="2">
+                            <fill>
+                              <SolidColor/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                        <StrokeStyle index="2">
+                          <SolidStroke scaleMode="normal" weight="2">
+                            <fill>
+                              <SolidColor/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge fillStyle0="1" strokeStyle="2" edges="!8920 -8808[9334 -8956 9355 -9140.5!9355 -9140.5[#249B.4D #FFDBBC.4D 9737 -9202.5!9737 -9202.5|9737 -9939!9737 -9939|6336.5 -9939!6336.5 -9939[#18A3.E4 #FFD9D7.28 6280.5 -9643.5!6280.5 -9643.5[#185A.0F #FFDB28.F1 5881.5 -9029!5881.5 -9029
+[#1598.FA #FFDE4D.05 5242 -8496!5242 -8496[5112 -8437 4974 -8423!4974 -8423[#1338.9C #FFDF1E.6E 4737 -8417!4737 -8417[#126C.DD #FFDF1E.1A 4697 -8419!4697 -8419[#110D.72 #FFDF0C.86 4138 -8477!4138 -8477[3922 -8517 3897 -8517!3897 -8517
+[3773 -8517 3649 -8422!3649 -8422[3459 -8279 3320 -8217!3320 -8217[3261 -8193 2851 -8146!2851 -8146[#A17.95 #FFE04D.3B 2490 -8112!2490 -8112[2440 #FFE051.A3 2440 -8117!2440 -8117|2446.5 -8117!2446.5 -8117[#8FB.DF #FFE048.4B 2069 -8137
+!2069 -8137[#7CD.91 #FFE031.AB 1938 -8146!1938 -8146|1938 -4299!1938 -4299|4377.5 -4299!4377.5 -4299[#110A.C6 #FFEEF4.4A 4353 -4437!4353 -4437[4329 -4611 4337 -4767!4337 -4767[4337 -4965 4420 -5052!4420 -5052[4479 -5114 4487 -5125!4487
+ -5125[4522 -5176 4537 -5257!4537 -5257[4561 -5392 4559 -5695!4559 -5695[4557 -5929 4597 -5977!4597 -5977[4698 -6098 4923 -6383!4923 -6383[5066 -6564 5138 -6634!5138 -6634[5232 -6726 5332 -6761!5332 -6761[5432 -6797 5597 -6797!5597 -6797
+[5645 -6797 6277 -6717!6277 -6717[6460 -6717 6637 -6856!6637 -6856[6783 -6972 6897 -7157!6897 -7157[7043 -7391 7817 -8097!7817 -8097[7991 -8254 8293 -8492!8293 -8492[8506 -8660 8920 -8808!2842 -11021[2946 -10665 2990 -10627!2990 -10627
+[3086 -10461 3116 -10298!3116 -10298[3140 -10163 3140 -10019!3140 -10019[3160 -10119 3181 -10159!3181 -10159[3236 -10264 3237 -10379!3237 -10379[3240 -10609 3358 -10778!3358 -10778[3318 -10971 3400 -11039!3400 -11039[3530 -11147 3603
+ -11318!3603 -11318[3627 -11372 3625 -11439!3625 -11439[#E24.D3 #FFD2BA.BB 3620 -11739.5!3620 -11739.5|2620 -11919!2620 -11919[2665 -11884 2669 -11799!2669 -11799[2691 -11668 2736 -11577!2736 -11577[2780 -11489 2813 -11396!2813 -11396
+[2848 -11297 2845 -11179!2845 -11179[#B1A.CE -11100 2842 -11021!4204 -3155[4118 -3202 4100 -3220!4100 -3220|3298 -3220!3298 -3220|3298 1420!3298 1420|4540.5 1420!4540.5 1420[#1155.0B #504.A3 4376 1070!4376 1070[4346 968 4330 859!4330
+ 859[4320 771 4320 770!4320 770[4320 703 4350 631!4350 631[4380 559 4380 520!4380 520[4380 478 4367 370!4367 370[4356 275 4360 220!4360 220[4373 53 4469 -62!4469 -62[4516 -119 4532 -153!4532 -153[4560 -212 4560 -300!4560 -300[4560 -479
+ 4490 -654!4490 -654[4420 -829 4420 -940!4420 -940[4420 -1021 4458 -1097!4458 -1097[4475 -1132 4540 -1227!4540 -1227[4660 -1402 4660 -1580!4660 -1580[4660 -1698 4559 -2036!4559 -2036[4508 -2211 4440 -2420!4440 -2420[4434 -2443 4393 -2721
+!4393 -2721[4358 -2959 4320 -3040!4320 -3040[4290 -3101 4204 -3155!12533 -3990[12605 -3926 12637 -3858!12637 -3858[12694 -3737 12732 -3617!12732 -3617[12781 -3456 12810 -3297!12810 -3297[12819 -3249 12826 -3200!12826 -3200[12862 -3114
+ 12859 -3059!12859 -3059[12879 -3109 12903 -3198!12903 -3198[#3271.01 -3234.625 12922 -3271!12922 -3271[#32A6.EB #FFF287.12 12991 -3620!12991 -3620[12999 -3679 12997 -3739!12997 -3739[12988 -3998 13011 -4240!13011 -4240[13019 -4319 13024
+ -4399!13024 -4399[13031 -4528 12997 -4638!12997 -4638[12944 -4805 13011 -4962!13011 -4962[13039 -5029 13058 -5099!13058 -5099[#3302.23 #FFEC14.7F 13058.5 -5100!13058.5 -5100|12387.5 -5100!12387.5 -5100[#3040.4B #FFECA3.82 12367 -4780
+!12367 -4780[12369 -4749 12385 -4723!12385 -4723[12477 -4627 12471 -4518!12471 -4518[12469 -4489 12472 -4458!12472 -4458[12482 -4354 12468 -4258!12468 -4258[12459 -4199 12456 -4139!12456 -4139[12451 -4044 12533 -3990"/>
+                        <Edge fillStyle1="1" strokeStyle="2" edges="
+!16171.5 -2370.5|16860 -1983.5!16860 -1983.5[#41CB.1B #FFF89C.B6 16819 -1800!16819 -1800[16809 -1760 16806 -1719!16806 -1719[16802 -1657 16772 -1604!16772 -1604[16713 -1495 16658 -1380!16658 -1380[16630 -1322 16615 -1261!16615 -1261[16592
+ -1167 16595 -1060!16595 -1060[16599 -930 16590 -801!16590 -801[16589 -790 16572 -743!16572 -743[16525 -626 16499 -460!16499 -460[16399 -680 16399 -800!16399 -800[16399 -840 16392 -879!16392 -879[16359 -1054 16307 -1222!16307 -1222[16274
+ -1328 16271 -1440!16271 -1440[16269 -1490 16270 -1540!16270 -1540[16272 -1713 16188 -1900!16188 -1900[16184 -1996 16153 -2078!16153 -2078[16125 -2150 16131 -2298!16131 -2298|16171.5 -2370.5!29755.5 3519|28470 3519!28470 3519[#6FA8.1B
+ #BEE.28 28623 2951!28623 2951[28639 2907 28640 2844!28640 2844[28637 2773 28637 2740!28637 2740[28637 2273 27927 2130!27927 2130[27694 2083 27371 2070!27371 2070[#6A83.49 #814.05 26956 1480!26956 1480|26956 1320!26956 1320|29756 1320
+!29756 1320|29755.5 3519"/>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="
+!26697 2880[26748 2921 26931 3119!26931 3119[#6983.F9 #C86.9A 27092 3610!27092 3610|24963 3610!24963 3610[#628F.87 #C75.D3 25274 3136!25274 3136[25438 2929 25451 2910!25451 2910[25538 2786 25562 2679!25562 2679[25590 2547 25537 2400!25537
+ 2400|25777 2400!25777 2400[25834 2456 25908 2503!25908 2503[25996 2560 26047 2560!26047 2560[26106 2560 26250 2510!26250 2510[26394 2460 26397 2460!26397 2460[26441 2460 26469 2501!26469 2501[26486 2525 26516 2604!26516 2604[26588 2790
+ 26697 2880"/>
+                        <Edge fillStyle0="1" strokeStyle="2" edges="
+!23637 1320|23637 2940!23637 2940[23637 3102 23528 3296!23528 3296[#5BAC.C5 #D48.85 23407 3487!23407 3487|24157 3487!24157 3487[#5DE5.5F #C81.72 23954 2824!23954 2824[#5D25.85 #91B.76 24021 1320!24021 1320|23637 1320"/>
+                        <Edge fillStyle1="1" strokeStyle="2" edges="
+!22906 2779[22928 2853 22957 3060!22957 3060[#59C9.56 #CCE.2F 22993.5 3478.5!22993.5 3478.5|18004 3479!18004 3479[#46C8.2E #BC9.4E 18284 2516!18284 2516[18367 2262 18414 2185!18414 2185[18463 2103 18575 2041!18575 2041[18651 2000 18917
+ 1860!18917 1860[19345 1617 19384 1588!19384 1588[#4BFF.3F #5FF.F5 19549.5 1320!19549.5 1320|22378 1320!22378 1320[#585D.A5 #949.4D 22816 2606!22816 2606[22880 2693 22906 2779!13417 4840[13726 5049 14020 5175!14020 5175[14121 5233 14197
+ 5319!14197 5319[14283 5418 14397 5620!14397 5620[14437 5690 14444 6029!14444 6029[14452 6384 14457 6400!14457 6400[14476 6458 14551 6539!14551 6539[14595 6588 14706 6696!14706 6696[14926 6920 14977 7117!14977 7117[15018 7279 15034 7563
+!15034 7563[15046 7794 15097 7897!15097 7897[15185 8076 15313 8207!15313 8207[15385 8281 15637 8500!15637 8500|7138 8500!7138 8500[7480 7659 7480 7477!7480 7477[7501 7443 7580 7303!7580 7303[7658 7165 7660 7157!7660 7157[7710 7030 7837
+ 6886!7837 6886[7970 6735 8140 6620!8140 6620[8400 6442 8561 6225!8561 6225[8691 6050 8780 5813!8780 5813[8805 5745 8914 5390!8914 5390[8994 5128 9080 4960!9080 4960[9241 4602 9346 4385!9346 4385[9541 3979 9640 3920!9640 3920[9660 3908
+ 9736 3899!9736 3899[9810 3891 9860 3860!9860 3860[10000 3775 10097 3720!10097 3720[10103 3716 10278 3573!10278 3573[10439 3440 10457 3440!10457 3440[10518 3440 10737 3637!10737 3637[10983 3858 11077 3900!11077 3900[11481 4082 11778 4138
+!11778 4138[12003 4180 12397 4180!12397 4180[12640 4180 12857 4140!12857 4140[12864 4198 12852 4362!12852 4362[12849 4514 12897 4580!12897 4580[12914 4604 13150 4713!13150 4713[13401 4828 13417 4840!4317 2490[4317 2213 4191 2001!4191
+ 2001[4095 1839 3897.5 1675.5!3897.5 1675.5|5225 1777.5!5225 1777.5[#1388.1F #CAF.5F 4890 3606!4890 3606[4858 3708 4857 3719!4857 3719[4857 3724 4857 4020!4857 4020[4857 4408 4951 4957!4951 4957[5063 5610 5077 5780!5077 5780[5091 5943
+ 5134 6282!5134 6282[5172 6586 5177 6677!5177 6677[5185 6820 5250 7019!5250 7019|5250 7079!5250 7079|3083 7079!3083 7079[#D55.13 #1AFE.8C 3527 6698!3527 6698[3548 6660 3623 6472!3623 6472[3681 6325 3757 6220!3757 6220[3846 6096 3984 5929
+!3984 5929[4118 5767 4161 5707!4161 5707[4317 5486 4317 5220!4317 5220[4317 5129 4283 5023!4283 5023[4235 4896 4207 4818!4207 4818[4097 4505 4097 4090!4097 4090[4097 3719 4207 3223!4207 3223[4266 2956 4283 2861!4283 2861[4317 2662 4317
+ 2490"/>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="
+!1377 3440|-4412 3440!-4412 3440[-4417 3360 -4417 3260!-4417 3260[-4417 3059 -4395 2976!-4395 2976[-4373 2894 -4313 2861!-4313 2861[-4282 2845 -4148 2812!-4148 2812[-4001 2775 -3877 2720!-3877 2720[-3484.875 #9EF.6 -3402 2505.5!-3402
+ 2505.5[#FFF2C5.33 #9C2.53 -3382 2496!-3382 2496[-3239 2422 -3017 2260!-3017 2260[-2929 2196 -2729 2021!-2729 2021[-2527 1845 -2357 1720!-2357 1720[-2301 1679 -2184 1630!-2184 1630[-2035 1568 -1994 1547!-1994 1547[-1777 1432 -1777 1220
+!-1777 1220[-1777 1052 -2041 958!-2041 958[-2111 933 -2249 888!-2249 888[-2359 847 -2397 800!-2397 800[-2485 691 -2486 489!-2486 489[-2471 268 -2477 180!-2477 180[-2495 -39 -3217 -200!-3217 -200[-3505 -263 -3676 -317!-3676 -317[-3778
+ -350 -3977 -420!-3977 -420[-4100 -460 -4241 -566!-4241 -566[-4322 -627 -4500 -787!-4500 -787[-4870 -1120 -5137 -1240!-5137 -1240[-5294 -1310 -5382 -1425!-5382 -1425[-5436 -1495 -5500 -1648!-5500 -1648[-5567 -1809 -5622 -1888!-5622 -1888
+[-5715 -2022 -5877 -2120!-5877 -2120|1377 -2120!1377 -2120|1377 3440"/>
+                        <Edge fillStyle1="1" strokeStyle="2" edges="
+!-1648 -13861[#FFF9E2.7 #FFCB1E.B4 -1500 -13017!-1500 -13017[-1491 -12946 -1466 -12187!-1466 -12187[-1445 -11521 -1400 -11397!-1400 -11397[-1378 -11335 -1160 -10537!-1160 -10537[-1071 -10292 -1010 -10069!-1010 -10069[#FFFC54.D2 #FFD9A9.F5
+ -920.5 -9619!-920.5 -9619[#FFFC74.4B #FFDAF4.72 -920 -9377!-920 -9377[-945 -9156 -889 -8857!-889 -8857[-822 -8503 -820 -8377!-820 -8377[-813 -7944 -620 -7857!-620 -7857|-620 -7822!-620 -7822|-4198.5 -7765!-4198.5 -7765[#FFF050.7A #FFE11A.E1
+ -3883 -8186!-3883 -8186[-3694 -8578 -3520 -9397!-3520 -9397[#FFF257.83 #FFDADD.45 -3490 -9619!-3490 -9619[#FFF260.4A #FFDA3F.B5 -3488 -9710!-3488 -9710[-3489 -9802 -3500 -9970!-3500 -9970[-3514 -10280 -3380 -10577!-3380 -10577[-3272
+ -10816 -3078 -11668!-3078 -11668[-2860 -12622 -2860 -13057!-2860 -13057[-2860 -13146 -2899 -13713!-2899 -13713[#FFF499.5F #FFC94C.97 -2929 -14185!-2929 -14185|-1648 -13861"/>
+                        <Edge fillStyle0="1" strokeStyle="2" edges="
+!-5474 -13299[-5479 -13179 -5462 -13061!-5462 -13061[-5208 -12875 -5120 -12619!-5120 -12619[-5086 -12523 -5088 -12419!-5088 -12419[-5089 -12389 -5087 -12358!-5087 -12358[-5079 -12229 -5079 -12099!-5079 -12099[-4930 -12291 -4832 -12475
+!-4832 -12475[-4799 -12549 -4800 -12579!-4800 -12579[-4805 -12676 -4787 -12761!-4787 -12761[-4779 -12799 -4779 -12839!-4779 -12839[-4779 -13189 -4774 -13539!-4774 -13539[-4772 -13700 -4763 -13859!-4763 -13859[#FFED65.92 -13869 -4762 -13879
+!-4762 -13879|-5567 -13879!-5567 -13879[#FFEA66.45 #FFCA0E.69 -5505 -13737!-5505 -13737[-5466 -13508 -5474 -13299!-7624 -14898[-7725 -14846 -7866 -14741!-7866 -14741[-8010 -14635 -8098 -14588!-8098 -14588[-8249 -14507 -8457 -14457!-8457
+ -14457[-8618 -14419 -8872 -14405!-8872 -14405[-9013 -14397 -9286 -14384!-9286 -14384[-9511 -14365 -9645 -14314!-9645 -14314[#FFD9E9.DB #FFC83D.D2 -9822 -14207.5!-9822 -14207.5|-9822 -12925!-9822 -12925[#FFDAF9.59 #FFCC60.62 -9054 -13384
+!-9054 -13384[-8723 -13514 -8077 -13657!-8077 -13657[-7713 -13739 -7587 -13800!-7587 -13800[-7407 -13889 -7377 -14057!-7377 -14057[-7345 -14245 -7177 -14295!-7177 -14295|-7093.5 -14345!-7093.5 -14345|-7467 -14967!-7467 -14967[#FFE280.4B
+ #FFC5A8.84 -7624 -14898"/>
+                        <Edge fillStyle1="2" strokeStyle="1" edges="
+!-9817 -11329[-9776 -11323 -9758 -11305!-9758 -11305[-9744 -11291 -9717 -11237!-9717 -11237[-9652 -11106 -9584 -10808!-9584 -10808[-9536 -10597 -9477 -10597!-9477 -10597[-9414 -10597 -9297 -10691!-9297 -10691[-9170 -10793 -9157 -10797
+!-9157 -10797[-9140 -10802 -9010 -10797!-9010 -10797[-8877 -10791 -8777 -10817!-8777 -10817[-8703 -10836 -8605 -10881!-8605 -10881[-8496 -10931 -8477 -10937!-8477 -10937[-8465 -10940 -8157 -11017!-8157 -11017[-8082 -10904 -8069 -10599
+!-8069 -10599[-8068 -10307 -8057 -10277!-8057 -10277[-8034 -10215 -7987 -10182!-7987 -10182[-7971 -10171 -7901 -10142!-7901 -10142[-7797 -10098 -7797 -9957!-7797 -9957[-7837 -9637 -7837 -9587!-7837 -9587[-7837 -9484 -7759 -9416!-7759
+ -9416[-7649 -9344 -7587 -9297!-7587 -9297[-7473 -9212 -7415 -9089!-7415 -9089[-7337 -8922 -7337 -8650!-7337 -8650[-7337 -8453 -7393 -8319!-7393 -8319[#FFE2FA.16 #FFDFC9.45 -7417 -8121!-7417 -8121|-10062 -8121.5!-10062 -8121.5|-10062
+ -11342!-10062 -11342|-9951 -11342!-9951 -11342[-9846 -11333 -9817 -11329"/>
+                        <Edge fillStyle1="1" strokeStyle="2" edges="
+!-11041 -888.5|-8807 -1431.5!-8807 -1431.5[#FFDD4C.2F #FFFAFD.91 -8907 -1121!-8907 -1121[-8937 -992 -8976 -937!-8976 -937[-8999 -904 -9006 -861!-9006 -861[-9020 -730 -9014 -640!-9014 -640[-9009 -582 -8967 -534!-8967 -534[#FFDCFE.E6 #FFFDF1.04
+ -8955 -520!-8955 -520[#FFDE20.8B #2C7.86 -8637 758!-8637 758[-8531 904 -8461 1040!-8461 1040[-8427 1107 -8431 1220!-8431 1220[-8440 1440 -8440 1660!-8440 1660[-8440 1820 -8431 1980!-8431 1980[-8427 2087 -8399 2119!-8399 2119[-8305 2220
+ -8184 2306!-8184 2306[-8024 2417 -7956 2598!-7956 2598[-7940 2640 -7920 2680!-7920 2680[-7875 2853 -7886 2999!-7886 2999[-7896 3130 -7849 3243!-7849 3243|-7853 3251.5!-7853 3251.5|-8830 3387!-8830 3387[#FFDB24.F9 #A25.66 -9445.5 2068
+!-9445.5 2068[#FFDB10.0D #602.B2 -9386 1140!-9386 1140[#FFDADA.52 #18E.DC -9581 281!-9581 281[-9625 208 -9676 138!-9676 138[-9763 18 -9862 -98!-9862 -98[-9889 -130 -9915 -163!-9915 -163[-10068 -356 -10224 -473!-10224 -473[-10259 -500
+ -10295 -526!-10295 -526[-10386 -592 -10498 -606!-10498 -606[-10529 -610 -10559 -620!-10559 -620[-10749 -685 -10899 -739!-10899 -739[-10967 -764 -11023 -815!-11023 -815|-11041 -888.5!-6380 6924|-11548 5801!-11548 5801[#FFD32B.9E #15DA.8F
+ -11283 5505!-11283 5505[-11197 5465 -11026 5421!-11026 5421[-10792 5361 -10717 5337!-10717 5337[-10397 5236 -10154 4913!-10154 4913[-10068 4799 -9975 4635!-9975 4635[-9879 4456 -9837 4380!-9837 4380[-9756 4233 -9533 4139!-9533 4139[-9402
+ 4085 -9089 4009!-9089 4009[-8786 3935 -8661 3879!-8661 3879[#FFDEF4.1 #ECC.C4 -8402 3645.5!-8402 3645.5|-8401.5 3645.5!-8401.5 3645.5|-6776.5 4055.5!-6776.5 4055.5[#FFE5BD.A2 #107D.5C -6665 4332!-6665 4332[-6620 4418 -6620 4470!-6620
+ 4470[-6620 4560 -6664 4648!-6664 4648[-6681 4682 -6760 4804!-6760 4804[-6900 5019 -6900 5247!-6900 5247[-6900 5436 -6816 5699!-6816 5699[-6760 5871 -6631 6175!-6631 6175[-6492 6502 -6452 6619!-6452 6619[#FFE70C.D #1A92.E7 -6380 6924
+!-1128 4068.5[#FFFBB5.52 #114E.55 -1083 4723!-1083 4723[-1073 4898 -1063 5092!-1063 5092[-1055 5213 -1036 5301!-1036 5301[-1019 5375 -957 5580!-957 5580[-923 5689 -877 5780!-877 5780[-838 5857 -814 5973!-814 5973[-793 6082 -797 6160!-797
+ 6160[-809 6356 -772 6591!-772 6591[-754.5625 #1A30.0B -731 6799!-731 6799|-1699 6799!-1699 6799[#FFF996.2F #1A41.89 -1591 6635!-1591 6635[-1337 6204 -1337 5780!-1337 5780[-1337 5746 -1417 5409!-1417 5409[-1497 5071 -1497 5000!-1497 5000
+|-1497 4570!-1497 4570[-1497 #1097.44 -1484.5 4054.5!-1484.5 4054.5|-1128 4068.5"/>
+                        <Edge fillStyle1="3" strokeStyle="1" edges="
+!-14757 1780[-14579 1780 -14417 2021!-14417 2021[-14355 2114 -14314 2215!-14314 2215[-14277 2308 -14277 2360!-14277 2360[-14277 2398 -14379 2668!-14379 2668[-14486 2954 -14537 3020!-14537 3020[-14632 3144 -14917 3180!-14917 3180[-15106
+ 3202 -15320 3334!-15320 3334[-15597 3503 -15597 3720!-15597 3720[-15597 3765 -15547 3800!-15547 3800[-15477 3839 -15437 3863!-15437 3863[-15277 3958 -15277 4140!-15277 4140[-15277 4348 -15437 4758!-15437 4758[-15521 4972 -15637 5240
+!-15637 5240[-15673 5346 -15744 5637!-15744 5637[#FFC277.E5 #1626.F -15760.5 5700!-15760.5 5700|-17421 5700!-17421 5700|-17421 2853.5!-17421 2853.5[#FFBC4F.6 #B53.66 -17129 2959!-17129 2959[-16855 3040 -16747 3040!-16747 3040[-16584 3040
+ -16303 2878!-16303 2878[-16040 2727 -15997 2640!-15997 2640[-15944 2535 -15537 2260!-15537 2260[-15354 2137 -15243 2081!-15243 2081[-15153 2036 -15077 1980!-15077 1980[-14961 1879 -14916 1841!-14916 1841[-14841 1780 -14757 1780"/>
+                        <Edge cubics="!-4197 3680(;-4250,3522 -4317,3345 -4317,3290q-4197 3680Q-4253 3517q-4277 3446Q-4317 3325q-4317 3290);"/>
+                        <Edge cubics="!-4317 3290(;-4317,3152 -4095,3050 -3997,2920q-4317 3290Q-4317 3209q-4194 3102Q-4020 2951q-3997 2920);"/>
+                        <Edge cubics="!-3997 2920(;-3975,2890 -3862,2687 -3797,2620q-3997 2920Q-3952 2847q-3913 2784Q-3836 2661q-3797 2620);"/>
+                        <Edge cubics="!-3797 2620(;-3025,1817 -2977,1810 -2977,1470q-3797 2620Q-3169 1967q-3097 1871Q-3021 1769q-2997 1680Q-2977 1608q-2977 1470);"/>
+                        <Edge cubics="!-2977 1470(;-2977,1172 -3065,1007 -3357,800q-2977 1470Q-2977 1245q-3057 1101Q-3140 954q-3357 800);"/>
+                        <Edge cubics="!-3357 800(;-3575,645 -3747,450 -3917,300q-3357 800Q-3487 707q-3655 548Q-3908 308q-3917 300);"/>
+                        <Edge cubics="!-3917 300(;-4602,-312 -5117,157 -5117,-720q-3917 300Q-4134 106q-4393 6Q-4538 -50q-4774 -111Q-4954 -168q-5026 -277Q-5117 -414q-5117 -720);"/>
+                        <Edge cubics="!-5117 -720(;-5117,-895 -4997,-865 -4997,-980q-5117 -720Q-5117 -815q-5057 -872Q-4997 -930q-4997 -980);"/>
+                        <Edge cubics="!-4997 -980(;-4997,-1130 -5340,-1485 -5357,-1520q-4997 -980Q-4997 -1072q-5171 -1293Q-5258 -1405q-5357 -1520);"/>
+                        <Edge cubics="!-5357 -1520(;-5485,-1765 -5510,-1900 -5677,-2000q-5357 -1520Q-5421 -1642q-5502 -1814Q-5571 -1936q-5677 -2000);"/>
+                        <Edge cubics="!-4397 3580(;-4417,3460 -4417,3310 -4417,3260q-4397 3580Q-4417 3460q-4417 3260);"/>
+                        <Edge cubics="!-4417 3260(;-4417,2720 -4320,2917 -3877,2720q-4417 3260Q-4417 3059q-4395 2976Q-4373 2894q-4313 2861Q-4282 2845q-4148 2812Q-4001 2775q-3877 2720);"/>
+                        <Edge cubics="!-3877 2720(;-3377,2495 -3345,2500 -3017,2260q-3877 2720Q-3413 2511q-3382 2496Q-3239 2422q-3017 2260);"/>
+                        <Edge cubics="!-3017 2260(;-2815,2112 -2670,1950 -2357,1720q-3017 2260Q-2929 2196q-2729 2021Q-2527 1845q-2357 1720);"/>
+                        <Edge cubics="!-2357 1720(;-2162,1577 -1777,1567 -1777,1220q-2357 1720Q-2301 1679q-2184 1630Q-2035 1568q-1994 1547Q-1777 1432q-1777 1220);"/>
+                        <Edge cubics="!-1777 1220(;-1777,930 -2275,950 -2397,800q-1777 1220Q-1777 1052q-2041 958Q-2111 933q-2249 888Q-2359 847q-2397 800);"/>
+                        <Edge cubics="!-2397 800(;-2540,622 -2465,355 -2477,180q-2397 800Q-2485 691q-2486 489Q-2471 268q-2477 180);"/>
+                        <Edge cubics="!-2477 180(;-2495,-35 -2970,-145 -3217,-200q-2477 180Q-2489 40q-2761 -70Q-2919 -134q-3217 -200);"/>
+                        <Edge cubics="!-3217 -200(;-3675,-300 -3730,-340 -3977,-420q-3217 -200Q-3505 -263q-3676 -317Q-3778 -350q-3977 -420);"/>
+                        <Edge cubics="!-3977 -420(;-4347,-540 -4615,-1005 -5137,-1240q-3977 -420Q-4100 -460q-4241 -566Q-4322 -627q-4500 -787Q-4870 -1120q-5137 -1240);"/>
+                        <Edge cubics="!-5137 -1240(;-5605,-1450 -5390,-1825 -5877,-2120q-5137 -1240Q-5294 -1310q-5382 -1425Q-5436 -1495q-5500 -1648Q-5567 -1809q-5622 -1888Q-5715 -2022q-5877 -2120);"/>
+                        <Edge cubics="!-11577 5917(;-11500,5452 -11157,5477 -10717,5337q-11577 5917Q-11527 5618q-11283 5505Q-11197 5465q-11026 5421Q-10792 5361q-10717 5337);"/>
+                        <Edge cubics="!-10717 5337(;-10220,5180 -10005,4682 -9837,4380q-10717 5337Q-10397 5236q-10154 4913Q-10068 4799q-9975 4635Q-9879 4456q-9837 4380);"/>
+                        <Edge cubics="!-9837 4380(;-9592,3937 -8567,4080 -8400,3640q-9837 4380Q-9756 4233q-9533 4139Q-9402 4085q-9089 4009Q-8786 3935q-8661 3879Q-8456 3787q-8400 3640);"/>
+                        <Edge cubics="!-6800 3980(;-6680,4382 -6620,4352 -6620,4470q-6800 3980Q-6735 4197q-6665 4332Q-6620 4418q-6620 4470);"/>
+                        <Edge cubics="!-6620 4470(;-6620,4745 -6900,4827 -6900,5247q-6620 4470Q-6620 4560q-6664 4648Q-6681 4682q-6760 4804Q-6900 5019q-6900 5247);"/>
+                        <Edge cubics="!-6900 5247(;-6900,5810 -6357,6582 -6380,6977q-6900 5247Q-6900 5436q-6816 5699Q-6760 5871q-6631 6175Q-6492 6502q-6452 6619Q-6372 6846q-6380 6977);"/>
+                        <Edge cubics="!18037 3260(;18510,1892 18275,2227 18917,1860q18037 3260Q18101 3076q18284 2516Q18367 2262q18414 2185Q18463 2103q18575 2041Q18651 2000q18917 1860);"/>
+                        <Edge cubics="!18917 1860(;19362,1607 19490,1575 19597,1300q18917 1860Q19345 1617q19384 1588Q19525 1485q19597 1300);"/>
+                        <Edge cubics="!22237 1840(;22897,2785 22882,2530 22957,3060q22237 1840Q22567 2313q22816 2606Q22880 2693q22906 2779Q22928 2853q22957 3060);"/>
+                        <Edge cubics="!22957 3060(;22970,3160 22997,3460 22997,3640q22957 3060Q22969 3154q22982 3320Q22997 3519q22997 3640);"/>
+                        <Edge cubics="!23577 3660(;23540,3535 23497,3297 23497,3290q23577 3660Q23553 3580q23523 3431Q23497 3302q23497 3290);"/>
+                        <Edge cubics="!23497 3290(;23497,3092 24005,2700 24057,2700q23497 3290Q23497 3160q23758 2921Q23853 2833q23948 2764Q24036 2700q24057 2700);"/>
+                        <Edge cubics="!24057 2700(;24500,2700 24667,3427 24837,3740q24057 2700Q24334 2700q24549 3103Q24612 3220q24706 3445Q24798 3668q24837 3740);"/>
+                        <Edge cubics="!23337 3680(;23445,3357 23637,3225 23637,2940q23337 3680Q23375 3566q23528 3296Q23637 3102q23637 2940);"/>
+                        <Edge cubics="!23637 2940(;23637,2620 23637,2260 23637,1960q23637 2940 23637 1960);"/>
+                        <Edge cubics="!23897 1920(;23800,2410 24032,3260 24237,3660q23897 1920Q23830 2261q23954 2824Q24064 3322q24237 3660);"/>
+                        <Edge cubics="!24717 3560(;24717,3560 24697,3560 24697,3560q24717 3560 24697 3560);"/>
+                        <Edge cubics="!24697 3560(;24890,3060 25052,2920 25097,2600q24697 3560Q24772 3366q24953 3013Q25072 2779q25097 2600);"/>
+                        <Edge cubics="!25097 2600(;25097,2600 25097,2580 25097,2580q25097 2600 25097 2580);"/>
+                        <Edge cubics="!25097 2580(;25377,3025 25297,3232 25397,3560q25097 2580Q25265 2847q25315 3114Q25315 3115q25347 3331Q25367 3462q25397 3560);"/>
+                        <Edge cubics="!24437 3700(;24437,3700 24397,3700 24397,3700q24437 3700 24397 3700);"/>
+                        <Edge cubics="!24397 3700(;24397,3660 24377,3580 24377,3530q24397 3700Q24397 3681q24387 3619Q24377 3556q24377 3530);"/>
+                        <Edge cubics="!24377 3530(;24377,3015 24617,3302 24577,2740q24377 3530Q24377 3360q24414 3268Q24434 3219q24492 3153Q24545 3093q24563 3028Q24590 2929q24577 2740);"/>
+                        <Edge cubics="!24577 2740(;24577,2740 24697,2740 24697,2740q24577 2740 24697 2740);"/>
+                        <Edge cubics="!24697 2740(;24620,3082 25025,3180 25057,3560q24697 2740Q24671 2855q24716 2959Q24747 3028q24836 3136Q24942 3262q24976 3320Q25047 3435q25057 3560);"/>
+                        <Edge cubics="!25297 3600(;25502,3205 25890,3022 25737,2600q25297 3600Q25358 3483q25474 3336Q25638 3129q25651 3110Q25738 2986q25762 2879Q25790 2747q25737 2600);"/>
+                        <Edge cubics="!25737 2600(;25737,2600 25977,2600 25977,2600q25737 2600 25977 2600);"/>
+                        <Edge cubics="!25977 2600(;26040,2662 26172,2760 26247,2760q25977 2600Q26034 2656q26108 2703Q26196 2760q26247 2760);"/>
+                        <Edge cubics="!26247 2760(;26347,2760 26572,2660 26597,2660q26247 2760Q26306 2760q26450 2710Q26594 2660q26597 2660);"/>
+                        <Edge cubics="!26597 2660(;26727,2660 26685,2905 26897,3080q26597 2660Q26641 2660q26669 2701Q26686 2725q26716 2804Q26788 2990q26897 3080);"/>
+                        <Edge cubics="!26897 3080(;27010,3172 27255,3472 27357,3540q26897 3080Q26948 3121q27131 3319Q27302 3504q27357 3540);"/>
+                        <Edge cubics="!28377 3140(;28685,3037 28637,2872 28637,2740q28377 3140Q28577 3073q28623 2951Q28639 2907q28640 2844Q28637 2773q28637 2740);"/>
+                        <Edge cubics="!28637 2740(;28637,2002 27297,2077 26977,2060q28637 2740Q28637 2273q27927 2130Q27694 2083q27371 2070Q27057 2064q26977 2060);"/>
+                        <Edge cubics="!7260 8217(;7390,7887 7480,7592 7480,7477q7260 8217Q7359 7965q7419 7766Q7480 7562q7480 7477);"/>
+                        <Edge cubics="!7480 7477(;7510,7430 7657,7167 7660,7157q7480 7477Q7501 7443q7580 7303Q7658 7165q7660 7157);"/>
+                        <Edge cubics="!7660 7157(;7725,6992 7907,6777 8140,6620q7660 7157Q7710 7030q7837 6886Q7970 6735q8140 6620);"/>
+                        <Edge cubics="!8140 6620(;8887,6107 8785,5535 9080,4960q8140 6620Q8400 6442q8561 6225Q8691 6050q8780 5813Q8805 5745q8914 5390Q8994 5128q9080 4960);"/>
+                        <Edge cubics="!9080 4960(;9202,4717 9480,4015 9640,3920q9080 4960Q9241 4602q9346 4385Q9541 3979q9640 3920);"/>
+                        <Edge cubics="!9640 3920(;9692,3890 9770,3915 9860,3860q9640 3920Q9660 3908q9736 3899Q9810 3891q9860 3860);"/>
+                        <Edge cubics="!9860 3860(;9980,3787 9982,3785 10097,3720q9860 3860Q10000 3775q10097 3720);"/>
+                        <Edge cubics="!10097 3720(;10130,3700 10427,3440 10457,3440q10097 3720Q10103 3716q10278 3573Q10439 3440q10457 3440);"/>
+                        <Edge cubics="!10457 3440(;10575,3440 10880,3812 11077,3900q10457 3440Q10518 3440q10737 3637Q10983 3858q11077 3900);"/>
+                        <Edge cubics="!11077 3900(;11655,4160 11927,4180 12397,4180q11077 3900Q11481 4082q11778 4138Q12003 4180q12397 4180);"/>
+                        <Edge cubics="!12397 4180(;12640,4180 12800,4140 12857,4140q12397 4180Q12542 4180q12697 4160Q12852 4140q12857 4140);"/>
+                        <Edge cubics="!12857 4140(;12870,4255 12817,4470 12897,4580q12857 4140Q12864 4198q12852 4362Q12849 4514q12897 4580);"/>
+                        <Edge cubics="!12897 4580(;12927,4622 13367,4805 13417,4840q12897 4580Q12914 4604q13150 4713Q13401 4828q13417 4840);"/>
+                        <Edge cubics="!13417 4840(;14035,5257 14080,5057 14397,5620q13417 4840Q13726 5049q14020 5175Q14121 5233q14197 5319Q14283 5418q14397 5620);"/>
+                        <Edge cubics="!14397 5620(;14465,5740 14435,6330 14457,6400q14397 5620Q14437 5690q14444 6029Q14452 6384q14457 6400);"/>
+                        <Edge cubics="!14457 6400(;14517,6580 14887,6770 14977,7117q14457 6400Q14476 6458q14551 6539Q14595 6588q14706 6696Q14926 6920q14977 7117);"/>
+                        <Edge cubics="!14977 7117(;15065,7462 15000,7700 15097,7897q14977 7117Q15018 7279q15034 7563Q15046 7794q15097 7897);"/>
+                        <Edge cubics="!15097 7897(;15237,8182 15392,8272 15517,8397q15097 7897Q15185 8076q15313 8207Q15385 8281q15517 8397);"/>
+                        <Edge cubics="!4060 1300(;4060,1300 4040,1280 4040,1230q4060 1300Q4040 1280q4040 1230);"/>
+                        <Edge cubics="!4040 1230(;4040,1047 4220,597 4220,460q4040 1230Q4040 1133q4130 828Q4220 523q4220 460);"/>
+                        <Edge cubics="!4220 460(;4220,237 4100,357 4100,-30q4220 460Q4220 387q4201 344Q4197 333q4160 277Q4100 184q4100 -30);"/>
+                        <Edge cubics="!4100 -30(;4100,-430 4405,-515 4480,-740q4100 -30Q4100 -263q4262 -451Q4305 -500q4389 -590Q4456 -669q4480 -740);"/>
+                        <Edge cubics="!4480 -740(;4647,-780 4980,-692 4980,-940q4480 -740Q4526 -751q4629 -753Q4748 -756q4793 -762Q4980 -787q4980 -940);"/>
+                        <Edge cubics="!4980 -940(;4980,-1102 4500,-1087 4500,-1340q4980 -940Q4980 -993q4905 -1035Q4878 -1051q4740 -1106Q4627 -1151q4575 -1194Q4500 -1255q4500 -1340);"/>
+                        <Edge cubics="!4500 -1340(;4500,-1500 4680,-1587 4680,-1730q4500 -1340Q4500 -1422q4590 -1541Q4680 -1661q4680 -1730);"/>
+                        <Edge cubics="!4680 -1730(;4680,-1925 4585,-2085 4580,-2360q4680 -1730Q4680 -1820q4632 -2015Q4583 -2214q4580 -2360);"/>
+                        <Edge cubics="!4580 -2360(;4577,-2530 4620,-2820 4460,-2960q4580 -2360Q4579 -2445q4579 -2671Q4562 -2871q4460 -2960);"/>
+                        <Edge cubics="!4820 1520(;4490,1440 4635,1170 4600,980q4820 1520Q4616 1471q4599 1291Q4595 1247q4603 1133Q4610 1032q4600 980);"/>
+                        <Edge cubics="!4600 980(;4597,967 4622,590 4560,540q4600 980Q4604 876q4602 774Q4598 571q4560 540);"/>
+                        <Edge cubics="!4560 540(;4480,475 4315,450 4300,180q4560 540Q4459 485q4406 437Q4309 350q4300 180);"/>
+                        <Edge cubics="!4300 180(;4290,0 4220,-360 4220,-360q4300 180Q4290 0q4220 -360);"/>
+                        <Edge cubics="!4220 -360(;4220,-410 4240,-440 4240,-480q4220 -360Q4220 -386q4230 -424Q4240 -461q4240 -480);"/>
+                        <Edge cubics="!4240 -480(;4522,-410 4610,-345 4660,-320q4240 -480Q4418 -436q4537 -383Q4601 -355q4660 -320);"/>
+                        <Edge cubics="!4660 -320(;4660,-320 4880,-320 4880,-320q4660 -320 4880 -320);"/>
+                        <Edge cubics="!4880 -320(;4880,-320 4880,-480 4880,-480q4880 -320 4880 -480);"/>
+                        <Edge cubics="!4880 -480(;4802,-570 4745,-535 4740,-660q4880 -480Q4868 -494q4783 -557Q4743 -586q4740 -660);"/>
+                        <Edge cubics="!4660 1540(;4355,1312 4320,772 4320,770q4660 1540Q4469 1397q4376 1070Q4346 968q4330 859Q4320 771q4320 770);"/>
+                        <Edge cubics="!4320 770(;4320,645 4380,607 4380,520q4320 770Q4320 703q4350 631Q4380 559q4380 520);"/>
+                        <Edge cubics="!4380 520(;4380,420 4352,320 4360,220q4380 520Q4380 478q4367 370Q4356 275q4360 220);"/>
+                        <Edge cubics="!4360 220(;4385,-105 4560,-35 4560,-300q4360 220Q4373 53q4469 -62Q4516 -119q4532 -153Q4560 -212q4560 -300);"/>
+                        <Edge cubics="!4560 -300(;4560,-635 4420,-695 4420,-940q4560 -300Q4560 -479q4490 -654Q4420 -829q4420 -940);"/>
+                        <Edge cubics="!4420 -940(;4420,-1185 4660,-1247 4660,-1580q4420 -940Q4420 -1021q4458 -1097Q4475 -1132q4540 -1227Q4660 -1402q4660 -1580);"/>
+                        <Edge cubics="!4660 -1580(;4660,-1770 4465,-2327 4440,-2420q4660 -1580Q4660 -1698q4559 -2036Q4508 -2211q4440 -2420);"/>
+                        <Edge cubics="!4440 -2420(;4410,-2535 4385,-2902 4320,-3040q4440 -2420Q4434 -2443q4393 -2721Q4358 -2959q4320 -3040);"/>
+                        <Edge cubics="!4320 -3040(;4270,-3142 4135,-3185 4100,-3220q4320 -3040Q4290 -3101q4204 -3155Q4118 -3202q4100 -3220);"/>
+                        <Edge cubics="!4557 -3937(;4305,-4185 4337,-4747 4337,-4767q4557 -3937Q4399 -4092q4353 -4437Q4329 -4611q4337 -4767);"/>
+                        <Edge cubics="!4337 -4767(;4337,-5125 4492,-5007 4537,-5257q4337 -4767Q4337 -4965q4420 -5052Q4479 -5114q4487 -5125Q4522 -5176q4537 -5257);"/>
+                        <Edge cubics="!4537 -5257(;4590,-5555 4522,-5887 4597,-5977q4537 -5257Q4561 -5392q4559 -5695Q4557 -5929q4597 -5977);"/>
+                        <Edge cubics="!4597 -5977(;5145,-6635 5157,-6797 5597,-6797q4597 -5977Q4698 -6098q4923 -6383Q5066 -6564q5138 -6634Q5232 -6726q5332 -6761Q5432 -6797q5597 -6797);"/>
+                        <Edge cubics="!5597 -6797(;5645,-6797 6270,-6717 6277,-6717q5597 -6797Q5645 -6797q6277 -6717);"/>
+                        <Edge cubics="!6277 -6717(;6542,-6717 6765,-6942 6897,-7157q6277 -6717Q6460 -6717q6637 -6856Q6783 -6972q6897 -7157);"/>
+                        <Edge cubics="!6897 -7157(;7025,-7362 7395,-7712 7817,-8097q6897 -7157Q6985 -7297q7247 -7559Q7443 -7756q7817 -8097);"/>
+                        <Edge cubics="!7817 -8097(;8592,-8800 8780,-8630 8677,-9617q7817 -8097Q7991 -8254q8293 -8492Q8506 -8660q8576 -8750Q8674 -8876q8695 -9062Q8716 -9245q8677 -9617);"/>
+                        <Edge cubics="!6717 -10077(;6522,-9717 6490,-9495 6137,-9177q6717 -10077Q6563 -9751q6486 -9611Q6358 -9376q6137 -9177);"/>
+                        <Edge cubics="!6137 -9177(;5250,-8375 5117,-8417 4697,-8417q6137 -9177Q5529 -8627q5242 -8496Q5112 -8437q4974 -8423Q4915 -8417q4697 -8417);"/>
+                        <Edge cubics="!4697 -8417(;4697,-8417 4737,-8417 4737,-8417q4697 -8417 4737 -8417);"/>
+                        <Edge cubics="!4737 -8417(;4130,-8445 4027,-8517 3897,-8517q4737 -8417Q4379 -8433q4138 -8477Q3922 -8517q3897 -8517);"/>
+                        <Edge cubics="!3897 -8517(;3672,-8517 3652,-8365 3320,-8217q3897 -8517Q3773 -8517q3649 -8422Q3459 -8279q3320 -8217);"/>
+                        <Edge cubics="!3320 -8217(;3242,-8185 2440,-8092 2440,-8117q3320 -8217Q3261 -8193q2851 -8146Q2440 -8098q2440 -8117);"/>
+                        <Edge cubics="!2440 -8117(;2440,-8117 2490,-8117 2490,-8117q2440 -8117 2490 -8117);"/>
+                        <Edge cubics="!2490 -8117(;2200,-8117 1920,-8157 1700,-8157q2490 -8117Q2336 -8117q2069 -8137Q1801 -8157q1700 -8157);"/>
+                        <Edge cubics="!-120 -7617(;-175,-7672 -70,-7615 -620,-7857q-120 -7617Q-157 -7654q-184 -7667Q-234 -7690q-620 -7857);"/>
+                        <Edge cubics="!-620 -7857(;-787,-7932 -817,-8190 -820,-8377q-620 -7857Q-813 -7944q-820 -8377);"/>
+                        <Edge cubics="!-820 -8377(;-825,-8715 -965,-8985 -920,-9377q-820 -8377Q-822 -8503q-889 -8857Q-945 -9156q-920 -9377);"/>
+                        <Edge cubics="!-920 -9377(;-872,-9792 -1127,-10420 -1160,-10537q-920 -9377Q-890 -9637q-1010 -10069Q-1071 -10292q-1160 -10537);"/>
+                        <Edge cubics="!-1160 -10537(;-1227,-10782 -1387,-11360 -1400,-11397q-1160 -10537Q-1378 -11335q-1400 -11397);"/>
+                        <Edge cubics="!-1400 -11397(;-1477,-11610 -1467,-12750 -1500,-13017q-1400 -11397Q-1445 -11521q-1466 -12187Q-1491 -12946q-1500 -13017);"/>
+                        <Edge cubics="!-1500 -13017(;-1555,-13455 -1620,-13777 -1680,-13977q-1500 -13017Q-1578 -13636q-1680 -13977);"/>
+                        <Edge cubics="!-1680 -13977(;-1680,-13977 -1700,-13977 -1700,-13977q-1680 -13977 -1700 -13977);"/>
+                        <Edge cubics="!-2940 -14437(;-2937,-14157 -2860,-13247 -2860,-13057q-2940 -14437Q-2938 -14290q-2899 -13713Q-2860 -13146q-2860 -13057);"/>
+                        <Edge cubics="!-2860 -13057(;-2860,-12410 -3267,-10827 -3380,-10577q-2860 -13057Q-2860 -12622q-3078 -11668Q-3272 -10816q-3380 -10577);"/>
+                        <Edge cubics="!-3380 -10577(;-3617,-10052 -3417,-9877 -3520,-9397q-3380 -10577Q-3514 -10280q-3500 -9970Q-3489 -9802q-3488 -9710Q-3487 -9551q-3520 -9397);"/>
+                        <Edge cubics="!-3520 -9397(;-3762,-8260 -3985,-7872 -4300,-7697q-3520 -9397Q-3694 -8578q-3883 -8186Q-4051 -7835q-4300 -7697);"/>
+                        <Edge cubics="!-4300 -7697(;-4300,-7697 -4300,-7517 -4300,-7517q-4300 -7697 -4300 -7517);"/>
+                        <Edge cubics="!-7237 -15037(;-7912,-14872 -7832,-14607 -8457,-14457q-7237 -15037Q-7462 -14982q-7624 -14898Q-7725 -14846q-7866 -14741Q-8010 -14635q-8098 -14588Q-8249 -14507q-8457 -14457);"/>
+                        <Edge cubics="!-8457 -14457(;-8987,-14332 -9657,-14500 -9897,-14117q-8457 -14457Q-8618 -14419q-8872 -14405Q-9013 -14397q-9286 -14384Q-9511 -14365q-9645 -14314Q-9814 -14250q-9897 -14117);"/>
+                        <Edge cubics="!-9877 -12877(;-9347,-13350 -8812,-13495 -8077,-13657q-9877 -12877Q-9513 -13202q-9054 -13384Q-8723 -13514q-8077 -13657);"/>
+                        <Edge cubics="!-8077 -13657(;-7662,-13750 -7420,-13812 -7377,-14057q-8077 -13657Q-7713 -13739q-7587 -13800Q-7407 -13889q-7377 -14057);"/>
+                        <Edge cubics="!-7377 -14057(;-7325,-14362 -7057,-14287 -6897,-14357q-7377 -14057Q-7345 -14245q-7177 -14295Q-7138 -14307q-7032 -14323Q-6941 -14338q-6897 -14357);"/>
+                        <Edge cubics="!-10117 -10777(;-9650,-10700 -9685,-10772 -9617,-10637q-10117 -10777Q-9976 -10754q-9851 -10742Q-9746 -10733q-9717 -10729Q-9676 -10723q-9658 -10705Q-9644 -10691q-9617 -10637);"/>
+                        <Edge cubics="!-9617 -10637(;-9472,-10347 -9487,-9997 -9377,-9997q-9617 -10637Q-9552 -10506q-9484 -10208Q-9436 -9997q-9377 -9997);"/>
+                        <Edge cubics="!-9377 -9997(;-9270,-9997 -9112,-10180 -9057,-10197q-9377 -9997Q-9314 -9997q-9197 -10091Q-9070 -10193q-9057 -10197);"/>
+                        <Edge cubics="!-9057 -10197(;-9000,-10215 -8850,-10172 -8677,-10217q-9057 -10197Q-9040 -10202q-8910 -10197Q-8777 -10191q-8677 -10217);"/>
+                        <Edge cubics="!-8677 -10217(;-8550,-10250 -8445,-10315 -8377,-10337q-8677 -10217Q-8603 -10236q-8505 -10281Q-8396 -10331q-8377 -10337);"/>
+                        <Edge cubics="!-8377 -10337(;-8365,-10340 -8095,-10397 -8057,-10417q-8377 -10337Q-8300 -10353q-8227 -10371Q-8081 -10405q-8057 -10417);"/>
+                        <Edge cubics="!-8057 -10417(;-7932,-10230 -7980,-9737 -7957,-9677q-8057 -10417Q-7982 -10304q-7969 -9999Q-7968 -9707q-7957 -9677);"/>
+                        <Edge cubics="!-7957 -9677(;-7887,-9485 -7697,-9615 -7697,-9357q-7957 -9677Q-7934 -9615q-7887 -9582Q-7871 -9571q-7801 -9542Q-7697 -9498q-7697 -9357);"/>
+                        <Edge cubics="!-7697 -9357(;-7697,-9307 -7737,-9037 -7737,-8987q-7697 -9357Q-7697 -9332q-7717 -9172Q-7737 -9012q-7737 -8987);"/>
+                        <Edge cubics="!-7737 -8987(;-7737,-8662 -7237,-8852 -7237,-8050q-7737 -8987Q-7737 -8884q-7659 -8816Q-7549 -8744q-7487 -8697Q-7373 -8612q-7315 -8489Q-7237 -8322q-7237 -8050);"/>
+                        <Edge cubics="!-7237 -8050(;-7237,-7727 -7332,-7680 -7397,-7480q-7237 -8050Q-7237 -7853q-7293 -7719Q-7364 -7580q-7397 -7480);"/>
+                        <Edge cubics="!-17337 2820(;-17242,2897 -16747,3040 -16607,3040q-17337 2820Q-17267 2876q-16989 2959Q-16715 3040q-16607 3040);"/>
+                        <Edge cubics="!-16607 3040(;-16372,3040 -15907,2742 -15857,2640q-16607 3040Q-16444 3040q-16163 2878Q-15900 2727q-15857 2640);"/>
+                        <Edge cubics="!-15857 2640(;-15812,2550 -15612,2405 -15397,2260q-15857 2640Q-15826 2578q-15691 2471Q-15587 2388q-15397 2260);"/>
+                        <Edge cubics="!-15397 2260(;-15057,2032 -15107,2105 -14937,1980q-15397 2260Q-15214 2137q-15103 2081Q-15013 2036q-14937 1980);"/>
+                        <Edge cubics="!-14937 1980(;-14797,1877 -14755,1780 -14617,1780q-14937 1980Q-14821 1879q-14776 1841Q-14701 1780q-14617 1780);"/>
+                        <Edge cubics="!-14617 1780(;-14350,1780 -14137,2230 -14137,2360q-14617 1780Q-14439 1780q-14277 2021Q-14215 2114q-14174 2215Q-14137 2308q-14137 2360);"/>
+                        <Edge cubics="!-14137 2360(;-14137,2400 -14322,2922 -14397,3020q-14137 2360Q-14137 2398q-14239 2668Q-14346 2954q-14397 3020);"/>
+                        <Edge cubics="!-14397 3020(;-14485,3135 -14675,3167 -14777,3180q-14397 3020Q-14492 3144q-14777 3180);"/>
+                        <Edge cubics="!-14777 3180(;-14945,3200 -15457,3390 -15457,3720q-14777 3180Q-14966 3202q-15180 3334Q-15457 3503q-15457 3720);"/>
+                        <Edge cubics="!-15457 3720(;-15457,3860 -15137,3820 -15137,4140q-15457 3720Q-15457 3765q-15407 3800Q-15337 3839q-15297 3863Q-15137 3958q-15137 4140);"/>
+                        <Edge cubics="!-15137 4140(;-15137,4477 -15445,5085 -15497,5240q-15137 4140Q-15137 4348q-15297 4758Q-15381 4972q-15497 5240);"/>
+                        <Edge cubics="!-15497 5240(;-15602,5547 -15610,5785 -15697,5860q-15497 5240Q-15533 5346q-15604 5637Q-15647 5817q-15697 5860);"/>
+                        <Edge cubics="!2960 7137(;3670,6827 3497,6582 3757,6220q2960 7137Q3393 6948q3527 6698Q3548 6660q3623 6472Q3681 6325q3757 6220);"/>
+                        <Edge cubics="!3757 6220(;4087,5760 4317,5645 4317,5220q3757 6220Q3846 6096q3984 5929Q4118 5767q4161 5707Q4317 5486q4317 5220);"/>
+                        <Edge cubics="!4317 5220(;4317,4932 4097,4812 4097,4090q4317 5220Q4317 5129q4283 5023Q4235 4896q4207 4818Q4097 4505q4097 4090);"/>
+                        <Edge cubics="!4097 4090(;4097,3392 4317,3010 4317,2490q4097 4090Q4097 3719q4207 3223Q4266 2956q4283 2861Q4317 2662q4317 2490);"/>
+                        <Edge cubics="!4317 2490(;4317,2085 4120,1860 3897,1680q4317 2490Q4317 2213q4191 2001Q4095 1839q3897 1680);"/>
+                        <Edge cubics="!5237 1700(;4817,4465 4857,3245 4857,4020q5237 1700Q5003 3238q4890 3606Q4858 3708q4857 3719Q4857 3724q4857 4020);"/>
+                        <Edge cubics="!4857 4020(;4857,4697 5035,5255 5077,5780q4857 4020Q4857 4408q4951 4957Q5063 5610q5077 5780);"/>
+                        <Edge cubics="!5077 5780(;5105,6105 5167,6495 5177,6677q5077 5780Q5091 5943q5134 6282Q5172 6586q5177 6677);"/>
+                        <Edge cubics="!5177 6677(;5192,6937 5310,7130 5317,7277q5177 6677Q5185 6820q5250 7019Q5314 7216q5317 7277);"/>
+                        <Edge cubics="!-2457 7357(;-1640,7077 -1337,6237 -1337,5780q-2457 7357Q-1904 7168q-1591 6635Q-1337 6204q-1337 5780);"/>
+                        <Edge cubics="!-1337 5780(;-1337,5700 -1497,5130 -1497,5000q-1337 5780Q-1337 5746q-1417 5409Q-1497 5071q-1497 5000);"/>
+                        <Edge cubics="!-1497 5000(;-1497,4830 -1497,4607 -1497,4570q-1497 5000 -1497 4570);"/>
+                        <Edge cubics="!-1497 4570(;-1497,4520 -1497,4160 -1477,3960q-1497 4570Q-1497 4160q-1477 3960);"/>
+                        <Edge cubics="!-1137 3960(;-1022,5342 -1115,5057 -957,5580q-1137 3960Q-1101 4387q-1083 4723Q-1073 4898q-1063 5092Q-1055 5213q-1036 5301Q-1019 5375q-957 5580);"/>
+                        <Edge cubics="!-957 5580(;-937,5645 -900,5735 -877,5780q-957 5580Q-923 5689q-877 5780);"/>
+                        <Edge cubics="!-877 5780(;-822,5887 -792,6062 -797,6160q-877 5780Q-838 5857q-814 5973Q-793 6082q-797 6160);"/>
+                        <Edge cubics="!-797 6160(;-815,6450 -747,6767 -697,6917q-797 6160Q-809 6356q-772 6591Q-743 6779q-697 6917);"/>
+                        <Edge cubics="!12137 -5657(;12137,-5627 12077,-5172 12077,-5087q12137 -5657Q12137 -5649q12107 -5393Q12077 -5136q12077 -5087);"/>
+                        <Edge cubics="!12077 -5087(;12077,-5000 12345,-4360 12457,-4237q12077 -5087Q12077 -5016q12225 -4675Q12378 -4324q12457 -4237);"/>
+                        <Edge cubics="!12457 -4237(;12650,-4022 12737,-3637 12697,-3337q12457 -4237Q12598 -4080q12664 -3819Q12728 -3569q12697 -3337);"/>
+                        <Edge cubics="!12697 -3337(;12697,-3337 12697,-3317 12697,-3317q12697 -3337 12697 -3317);"/>
+                        <Edge cubics="!12697 -3317(;13145,-3617 12855,-4042 13137,-4217q12697 -3317Q12848 -3418q12915 -3560Q12962 -3657q12979 -3814Q13001 -4004q13012 -4045Q13045 -4160q13137 -4217);"/>
+                        <Edge cubics="!13137 -4217(;13390,-4375 13705,-4692 13617,-5117q13137 -4217Q13372 -4364q13505 -4567Q13677 -4830q13617 -5117);"/>
+                        <Edge cubics="!12337 -5337(;12152,-5270 12177,-5332 12177,-5127q12337 -5337Q12205 -5302q12188 -5284Q12177 -5272q12177 -5127);"/>
+                        <Edge cubics="!12177 -5127(;12177,-4867 12307,-4762 12397,-4577q12177 -5127Q12177 -4967q12253 -4824Q12352 -4669q12397 -4577);"/>
+                        <Edge cubics="!12397 -4577(;12480,-4410 12437,-4122 12437,-4007q12397 -4577Q12449 -4473q12448 -4272Q12437 -4064q12437 -4007);"/>
+                        <Edge cubics="!12437 -4007(;12437,-3762 12770,-3427 12617,-3137q12437 -4007Q12437 -3930q12487 -3808Q12552 -3664q12584 -3589Q12705 -3305q12617 -3137);"/>
+                        <Edge cubics="!12617 -3137(;12617,-3137 12617,-3117 12617,-3117q12617 -3137 12617 -3117);"/>
+                        <Edge cubics="!12617 -3117(;12982,-3392 12740,-3525 12817,-3857q12617 -3117Q12744 -3213q12791 -3302Q12829 -3374q12825 -3466Q12822 -3520q12805 -3640Q12793 -3755q12817 -3857);"/>
+                        <Edge cubics="!12817 -3857(;12905,-4227 12977,-4350 12977,-4597q12817 -3857Q12861 -4042q12930 -4273Q12977 -4448q12977 -4597);"/>
+                        <Edge cubics="!12977 -4597(;12977,-4767 12907,-4907 12877,-5017q12977 -4597Q12977 -4702q12938 -4829Q12917 -4899q12877 -5017);"/>
+                        <Edge cubics="!12877 -5017(;12877,-5017 12877,-5217 12877,-5217q12877 -5017 12877 -5217);"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

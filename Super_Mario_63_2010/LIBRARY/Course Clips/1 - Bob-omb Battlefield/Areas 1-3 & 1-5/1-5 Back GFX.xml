@@ -1,0 +1,1830 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Clips/ 1 - Bob-omb Battlefield/  Areas 1-3 &amp; 1-5/1-5 Back GFX" itemID="45d73913-0000036c" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="1-5BackGFX" lastModified="1231629141" lastUniqueIdentifier="140">
+  <timeline>
+    <DOMTimeline name="1-5 Back GFX">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" outline="true" current="true" isSelected="true" useOutlineView="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[count = 0;
+stop();
+_root.AreaTextClipF("Bob-Omb Battlefield:"+newline+"<i>Secret of the Mountain</i>", 60);
+onEnterFrame = function () {
+	_root.PauseGame = false;
+	if (count<48) {
+		_root.PauseGame = false;
+		_root.Camspeed = 2;
+		_root.Camcenter = star;
+		_root.playpause = true;
+		count++;
+	} else {
+		if (count<150) {
+			_root.PauseGame = false;
+			count++;
+			_root.playpause = true;
+			_root.MaxCamspeed = 35;
+			_root.Camspeed = 30;
+		} else {
+			_root.playpause = false;
+			nextFrame();
+			_root.warpframe = false;
+			onEnterFrame = function () {
+				if (this.warp1.hitTest(_root.Course.Char.charClip.feet)) {
+					_root.Course.Char.attack = true;
+					_root.Course.Char.xspeed = 0;
+					_root.Course.Char.yspeed = 0;
+					_root.Course.Char.attackFrame = "none";
+					warp = true;
+					warpnum = 1;
+				}
+				if (warp == true && _root.warpframe == false) {
+					if (warpnum == 1) {
+						_root.attachMovie("lefttransition", "lefttransition"+_root.getNextHighestDepth(), _root.getNextHighestDepth(), {_x:_root.screensizeX/2, _y:_root.screensizeY/2});
+					}
+					warp = false;
+				}
+				if (_root.warpframe == true) {
+					if (warpnum == 1) {
+						_root.changecourse("lefttransition2", "1-4", 1950, -650, 1950, -650, true);
+					}
+					//_root.warpframe = false;                            
+				}
+			};
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="warp1">
+                  <matrix>
+                    <Matrix a="66.0388641357422" d="3.12493896484375" tx="1447.3" ty="613.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip">
+                  <matrix>
+                    <Matrix a="-4.32752990722656" d="-25.4443054199219" tx="355.65" ty="26.4"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+onClipEvent (enterFrame) {
+	if (this.hitTest(_root.Course.Char.charClip.body)) {
+		if (_root.PauseGame == false && _root.playpause == false) {
+			//_root.Course.Char.yspeed = _root.groundFriction(_root.Course.Char.yspeed, 0.015, 1.001);
+			if (savezoom == undefined) {
+				savezoom = _root.CameraZoom;
+			}
+			if (_root.CameraZoom>85) {
+				_root.CameraZoom -= 1;
+			}
+		}
+	} else {
+		if (savezoom !== undefined) {
+			if (_root.CameraZoom<savezoom) {
+				_root.CameraZoom += 1;
+			} else {
+				savezoom = undefined;
+			}
+		}
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip">
+                  <matrix>
+                    <Matrix a="-8.18966674804688" d="-25.4443054199219" tx="1630.95" ty="-395.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+onClipEvent (enterFrame) {
+	if (this.hitTest(_root.Course.Char.charClip.body)) {
+		if (_root.PauseGame == false && _root.playpause == false) {
+			//_root.Course.Char.yspeed = _root.groundFriction(_root.Course.Char.yspeed, 0.015, 1.001);
+			if (savezoom == undefined) {
+				savezoom = _root.CameraZoom;
+			}
+			if (_root.CameraZoom>85) {
+				_root.CameraZoom -= 1;
+			}
+		}
+	} else {
+		if (savezoom !== undefined) {
+			if (_root.CameraZoom<savezoom) {
+				_root.CameraZoom += 1;
+			} else {
+				savezoom = undefined;
+			}
+		}
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip">
+                  <matrix>
+                    <Matrix a="-8.18966674804688" d="-25.4443054199219" tx="2219.45" ty="-472.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+onClipEvent (enterFrame) {
+	if (this.hitTest(_root.Course.Char.charClip.body)) {
+		if (_root.PauseGame == false && _root.playpause == false) {
+			//_root.Course.Char.yspeed = _root.groundFriction(_root.Course.Char.yspeed, 0.015, 1.001);
+			if (savezoom == undefined) {
+				savezoom = _root.CameraZoom;
+			}
+			if (_root.CameraZoom>85) {
+				_root.CameraZoom -= 1;
+			}
+		}
+	} else {
+		if (savezoom !== undefined) {
+			if (_root.CameraZoom<savezoom) {
+				_root.CameraZoom += 1;
+			} else {
+				savezoom = undefined;
+			}
+		}
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Bricks &amp; Woods/Blue Stone" bitmapIsClipped="false">
+                        <matrix>
+                          <Matrix a="20" d="20" tx="85.35" ty="166.3"/>
+                        </matrix>
+                      </BitmapFill>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Bricks &amp; Woods/Red Stone 2" bitmapIsClipped="false">
+                        <matrix>
+                          <Matrix a="20" d="20" tx="1324.25" ty="214.35"/>
+                        </matrix>
+                      </BitmapFill>
+                    </FillStyle>
+                    <FillStyle index="3">
+                      <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Bricks &amp; Woods/Yellow Stone" bitmapIsClipped="false">
+                        <matrix>
+                          <Matrix a="20" d="20" tx="416" ty="-115.55"/>
+                        </matrix>
+                      </BitmapFill>
+                    </FillStyle>
+                    <FillStyle index="4">
+                      <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Bricks &amp; Woods/Blue Stone" bitmapIsClipped="false">
+                        <matrix>
+                          <Matrix a="20" d="20" tx="448" ty="-83.55"/>
+                        </matrix>
+                      </BitmapFill>
+                    </FillStyle>
+                    <FillStyle index="5">
+                      <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Bricks &amp; Woods/Green Stone" bitmapIsClipped="false">
+                        <matrix>
+                          <Matrix a="20" d="20" tx="416" ty="-83.55"/>
+                        </matrix>
+                      </BitmapFill>
+                    </FillStyle>
+                    <FillStyle index="6">
+                      <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Bricks &amp; Woods/Blue Stone" bitmapIsClipped="false">
+                        <matrix>
+                          <Matrix a="20" d="20" tx="642" ty="-83.55"/>
+                        </matrix>
+                      </BitmapFill>
+                    </FillStyle>
+                    <FillStyle index="7">
+                      <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Bricks &amp; Woods/Green Stone" bitmapIsClipped="false">
+                        <matrix>
+                          <Matrix a="20.003662109375" d="20" tx="151.05" ty="215.9"/>
+                        </matrix>
+                      </BitmapFill>
+                    </FillStyle>
+                    <FillStyle index="8">
+                      <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Bricks &amp; Woods/Blue Stone" bitmapIsClipped="false">
+                        <matrix>
+                          <Matrix a="20.003662109375" d="20" tx="183.05" ty="215.9"/>
+                        </matrix>
+                      </BitmapFill>
+                    </FillStyle>
+                    <FillStyle index="9">
+                      <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Bricks &amp; Woods/Red Stone 2" bitmapIsClipped="false">
+                        <matrix>
+                          <Matrix a="20" d="20" tx="277.1" ty="228.95"/>
+                        </matrix>
+                      </BitmapFill>
+                    </FillStyle>
+                    <FillStyle index="10">
+                      <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Bricks &amp; Woods/Blue Stone" bitmapIsClipped="false">
+                        <matrix>
+                          <Matrix a="20" d="20" tx="263.1" ty="-98.5"/>
+                        </matrix>
+                      </BitmapFill>
+                    </FillStyle>
+                    <FillStyle index="11">
+                      <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Bricks &amp; Woods/Yellow Stone" bitmapIsClipped="false">
+                        <matrix>
+                          <Matrix a="20" d="20" tx="1487" ty="309.95"/>
+                        </matrix>
+                      </BitmapFill>
+                    </FillStyle>
+                    <FillStyle index="12">
+                      <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Bricks &amp; Woods/Blue Stone" bitmapIsClipped="false">
+                        <matrix>
+                          <Matrix a="20" d="20" tx="1578.4" ty="246.95"/>
+                        </matrix>
+                      </BitmapFill>
+                    </FillStyle>
+                    <FillStyle index="13">
+                      <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Bricks &amp; Woods/Green Stone" bitmapIsClipped="false">
+                        <matrix>
+                          <Matrix a="20" d="20" tx="420" ty="-82.55"/>
+                        </matrix>
+                      </BitmapFill>
+                    </FillStyle>
+                    <FillStyle index="14">
+                      <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Bricks &amp; Woods/Yellow Stone" bitmapIsClipped="false">
+                        <matrix>
+                          <Matrix a="20" d="20" tx="2442.2" ty="-364.6"/>
+                        </matrix>
+                      </BitmapFill>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal" weight="2">
+                        <fill>
+                          <SolidColor/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                    <StrokeStyle index="2">
+                      <SolidStroke scaleMode="normal" weight="2">
+                        <fill>
+                          <SolidColor/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle1="14" strokeStyle="1" edges="!51919 -8338[51659 -8638 51399 -8878!51399 -8878|51059 -8878!51059 -8878[50769.5 -8608 50470 -8308!50470 -8308[50180 -8608 49880 -8878!49880 -8878[49690 -8878 49500 -8878!49500 -8878[49240 -8628 48980 -8358!48980 -8358|48980 -9518!48980
+ -9518[50449.5 -9518 51919 -9518!51919 -9518|51919 -8338"/>
+                    <Edge fillStyle0="13" strokeStyle="1" edges="
+!27601 -3259|32720 -3259!32720 -3259|32720 -4218!32720 -4218|27601 -4218!27601 -4218|27601 -3259"/>
+                    <Edge fillStyle0="2" fillStyle1="12" edges="
+!35947 5354[#8B1D.6F #14F5.BB 35278 5364!35278 5364[34498 5360 33718 5370!33718 5370[#82C8.95 #14FD.47 33255 5367!33255 5367[#80E6.DF #14EF.AC 32758 5340!32758 5340[#8081.72 #13F6.BA 33255 5116.5!33255 5116.5[#8223.63 #13FD.57 33382 5125
+!33382 5125[33995 5194 34572 5055!34572 5055[#8786.DF #13A1.67 34793 4959"/>
+                    <Edge fillStyle0="2" strokeStyle="1" edges="
+!34793 4959|32208 4959!32208 4959|32208 5580!32208 5580|35947 5580!35947 5580|35947 5354"/>
+                    <Edge fillStyle0="2" fillStyle1="12" edges="
+!35191 4959|35238 5100!35238 5100|35298 5140!35298 5140|35338 5200!35338 5200[#8B40.9D #1461.D4 35947 5183"/>
+                    <Edge fillStyle0="2" strokeStyle="1" edges="
+!35947 5183|35947 4959!35947 4959|35191 4959"/>
+                    <Edge fillStyle1="12" strokeStyle="1" edges="
+!34793 4959|35191 4959"/>
+                    <Edge fillStyle0="2" strokeStyle="1" edges="
+!38118 4601|42300 4601!42300 4601|42300 4011!42300 4011|38118 4011!38118 4011|38118 4601"/>
+                    <Edge fillStyle0="12" strokeStyle="1" edges="
+!35947 5354|35947 5183"/>
+                    <Edge fillStyle0="2" fillStyle1="11" edges="
+!28637 5599|28579 5799!28579 5799[28559 5809 28544 5824!28544 5824[28519 5849 28493 5872!28493 5872[28459 5899 28430 5929!28430 5929[28385 5976 28319 5959!28319 5959[28309 5959 28299 5959!28299 5959[28279 5959 28262 5952!28262 5952[28209
+ 5929 28161 5896!28161 5896[28121 5869 28079 5859!28079 5859[#6DAB.6A #165D.61 28035 5599"/>
+                    <Edge fillStyle0="2" strokeStyle="1" edges="
+!28035 5599|27617.5 5599"/>
+                    <Edge fillStyle0="2" fillStyle1="11" edges="
+!27617.5 5599[#6B6D.EC #16E1.DB 27376 6107!27376 6107[#6AD7.72 #180B.D8 27325.5 6199"/>
+                    <Edge fillStyle0="2" strokeStyle="1" edges="
+!27325.5 6199[#714A.C 6199 30680 6199!30680 6199|30680 5602.5"/>
+                    <Edge fillStyle0="2" fillStyle1="11" edges="
+!30680 5602.5[#77C1.CA #1629.F8 30618 5739!30618 5739|30618 5819!30618 5819|30478 5999!30478 5999|30198 5999!30198 5999[30153 5967 30132 5945!30132 5945[30118 5929 30106 5914!30106 5914[30088 5889 30068 5881!30068 5881[30033 5864 30038
+ 5819!30038 5819|30038 5599"/>
+                    <Edge fillStyle0="2" strokeStyle="1" edges="
+!30038 5599|29516 5599"/>
+                    <Edge fillStyle0="2" fillStyle1="11" edges="
+!29516 5599[#7348.59 #15E5.A2 29508 5612!29508 5612[29476 5659 29435 5696!29435 5696[29408 5719 29376 5736!29376 5736[29336 5757 29318 5799!29318 5799|29038 5799!29038 5799[29038 5789 29034 5782!29034 5782[28983 5703 28956 5608!28956
+ 5608[#711A.BD #15E3.6E 28953.5 5599"/>
+                    <Edge fillStyle0="2" strokeStyle="1" edges="
+!28953.5 5599|28637 5599"/>
+                    <Edge fillStyle1="11" strokeStyle="1" edges="
+!28035 5599|28637 5599"/>
+                    <Edge fillStyle0="11" strokeStyle="1" edges="
+!26269 6199|27325.5 6199!30680 5602.5|30680 5599!30680 5599|30038 5599!29516 5599|28953.5 5599"/>
+                    <Edge fillStyle0="5" fillStyle1="6" edges="
+!12851 -2311[#325D.87 #FFF70A.0F 12935 -2271!12935 -2271[13013 -2228 13059 -2179!13059 -2179[13314 -1988 13603 -1963!13603 -1963[#355D.C9 #FFF85A.9F 13719 -1961"/>
+                    <Edge fillStyle0="5" strokeStyle="2" edges="
+!13719 -1961|13719 -2311!13719 -2311|12851 -2311"/>
+                    <Edge fillStyle1="6" strokeStyle="2" edges="
+!13719 -1961|13719 -1671"/>
+                    <Edge fillStyle1="4" edges="
+!13719 -1671|13642 -1659!13642 -1659|13408 -1659"/>
+                    <Edge fillStyle1="6" strokeStyle="2" edges="
+!13408 -1659|12704.5 -1659"/>
+                    <Edge fillStyle1="4" strokeStyle="2" edges="
+!12704.5 -1659|10380 -1659"/>
+                    <Edge fillStyle1="6" strokeStyle="2" edges="
+!10380 -1659|8320 -1659!8320 -1659|8320 -2311!8320 -2311|9380.5 -2311"/>
+                    <Edge fillStyle1="5" strokeStyle="2" edges="
+!9380.5 -2311|10451.5 -2311"/>
+                    <Edge fillStyle1="6" strokeStyle="2" edges="
+!10451.5 -2311|10809 -2311"/>
+                    <Edge fillStyle1="5" strokeStyle="2" edges="
+!10809 -2311|12591 -2311"/>
+                    <Edge fillStyle1="6" strokeStyle="2" edges="
+!12591 -2311|12851 -2311"/>
+                    <Edge fillStyle0="6" fillStyle1="4" edges="
+!13408 -1659|13408 -1671"/>
+                    <Edge fillStyle0="6" fillStyle1="4" strokeStyle="2" edges="
+!13408 -1671|13719 -1671"/>
+                    <Edge fillStyle0="10" strokeStyle="1" edges="
+!3342 -1330|5902 -1330!5902 -1330|5902 -1970!5902 -1970|3342 -1970!3342 -1970|3342 -1330"/>
+                    <Edge fillStyle0="5" fillStyle1="6" edges="
+!9380.5 -2311|9340 -2259!9340 -2259|9280 -2219!9280 -2219|9159.5 -2166.5!9159.5 -2166.5[#23D9.54 #FFF799.BE 9195 -2134!9195 -2134[9200 -2129 9200 -2119!9200 -2119[9469 -2094 9696 -1934!9696 -1934[9760 -1889 9820 -1839!9820 -1839|10220
+ -1839!10220 -1839[10263 -1868 10292 -1905!10292 -1905[10317 -1936 10325 -1948!10325 -1948[#2883.F3 #FFF819.96 10379 -1973.5!10379 -1973.5|10360 -2219!10360 -2219[10394 -2265 10426 -2290!10426 -2290[#28C6.99 #FFF703.B9 10451.5 -2311"/>
+                    <Edge fillStyle0="3" fillStyle1="6" edges="
+!8960 -2070|8960 -2079!8960 -2079|8957.5 -2071.5!8957.5 -2071.5[#22FE.C9 #FFF7E9.28 8960 -2070"/>
+                    <Edge fillStyle0="6" fillStyle1="5" edges="
+!12591 -2311[#30DE.64 #FFF73B.78 12428 -2171!12428 -2171[12333 -2085 12239 -2019!12239 -2019[11933 -1986 11622 -2023!11622 -2023[#2BB6.19 #FFF7E0.51 10809 -2311"/>
+                    <Edge fillStyle0="6" fillStyle1="4" edges="
+!10380 -1659|10368 -1671!10368 -1671|10760 -1671!10760 -1671|10760 -1819!10760 -1819[10802 -1895 10897 -1914!10897 -1914[11004 -1934 11115 -1905!11115 -1905[11199 -1879 11279 -1839!11279 -1839[#2C3F.AA #FFF92A.67 11383 -1671"/>
+                    <Edge fillStyle0="6" fillStyle1="4" strokeStyle="2" edges="
+!11383 -1671|12704.5 -1671"/>
+                    <Edge fillStyle0="6" fillStyle1="4" edges="
+!12704.5 -1671|12704.5 -1659"/>
+                    <Edge fillStyle0="1" strokeStyle="1" edges="
+!7584.5 4599|8402 4599!8402 4599|8402 3980!8402 3980|8039 3980"/>
+                    <Edge fillStyle0="1" fillStyle1="9" edges="
+!8039 3980[7954 4100 7879 4228!7879 4228[#1E49.B7 #1158.5B 7584.5 4599"/>
+                    <Edge fillStyle0="9" strokeStyle="1" edges="
+!6639 4599|7584.5 4599"/>
+                    <Edge fillStyle0="7" fillStyle1="8" edges="
+!2768.5 4958[#AA9.19 #12CD.C2 2673.5 4674!2673.5 4674[#A29.7D 4495 2640.5 4359!2640.5 4359[2998.5 4562 3322.5 4816!3322.5 4816[3408.5 #1314.11 3486.5 4958"/>
+                    <Edge fillStyle0="7" strokeStyle="1" edges="
+!3486.5 4958|3660.5 4958"/>
+                    <Edge fillStyle0="7" fillStyle1="8" strokeStyle="1" edges="
+!3660.5 4958|3660.5 4338"/>
+                    <Edge fillStyle0="7" fillStyle1="7" strokeStyle="1" edges="
+!3660.5 4338|3063.5 4338"/>
+                    <Edge fillStyle0="7" strokeStyle="1" edges="
+!3063.5 4338|3063.5 4340!3063.5 4340|1857 4340"/>
+                    <Edge fillStyle0="7" fillStyle1="8" edges="
+!1857 4340[#7E5.BA #11BC.8D 2026.5 4919!2026.5 4919[#7EA.BD #134A.8A 2022 4958"/>
+                    <Edge fillStyle0="7" strokeStyle="1" edges="
+!2022 4958|2768.5 4958"/>
+                    <Edge fillStyle1="7" edges="
+!3063.5 4338|3063.5 4318!3063.5 4318|3660.5 4318"/>
+                    <Edge fillStyle1="8" edges="
+!3660.5 4318|4301 4318!4301 4318|4301 4338"/>
+                    <Edge strokeStyle="2" edges="
+!4301 4338|4304 4338!4304 4338|4302 4493"/>
+                    <Edge fillStyle1="8" strokeStyle="2" edges="
+!4302 4493|4301 4958!4301 4958|3660.5 4958"/>
+                    <Edge fillStyle1="8" edges="
+!2769 4958|2768.5 4958"/>
+                    <Edge fillStyle0="7" fillStyle1="8" edges="
+!1114.5 4958[#49C.3C #1247.15 1140 4359!1140 4359[#472.CF #10FD.75 1138 4340"/>
+                    <Edge fillStyle0="7" edges="
+!1138 4340|147 4340"/>
+                    <Edge fillStyle0="7" fillStyle1="8" edges="
+!147 4340[#124.0A #1217.DA 349 4958"/>
+                    <Edge fillStyle0="7" edges="
+!349 4958|349.5 4958"/>
+                    <Edge fillStyle0="7" strokeStyle="2" edges="
+!349.5 4958|1114.5 4958"/>
+                    <Edge fillStyle1="8" edges="
+!1115 4958|1114.5 4958"/>
+                    <Edge fillStyle1="8" strokeStyle="2" edges="
+!2022 4958|1115 4958"/>
+                    <Edge fillStyle0="8" edges="
+!1857 4340|1138 4340"/>
+                    <Edge fillStyle0="1" strokeStyle="1" edges="
+!6223 3980|5222 3980!5222 3980|5222 4599!5222 4599|6639 4599"/>
+                    <Edge fillStyle0="1" fillStyle1="9" edges="
+!6639 4599[#191A.5B #10C8.2 6223 3980"/>
+                    <Edge fillStyle1="8" edges="
+!4301 4338|4302 4493"/>
+                    <Edge fillStyle0="8" fillStyle1="7" edges="
+!3660.5 4318|3660.5 4338"/>
+                    <Edge fillStyle0="8" fillStyle1="8" strokeStyle="2" edges="
+!3660.5 4338|4301 4338"/>
+                    <Edge fillStyle1="8" strokeStyle="2" edges="
+!3486.5 4958|2769 4958"/>
+                    <Edge fillStyle0="9" strokeStyle="1" edges="
+!8039 3980|6223 3980"/>
+                    <Edge fillStyle1="2" strokeStyle="1" edges="
+!26269 6199|25341 6199!25341 6199|25341 5599!25341 5599|25819.5 5599"/>
+                    <Edge fillStyle1="11" strokeStyle="1" edges="
+!25819.5 5599|27617.5 5599"/>
+                    <Edge fillStyle0="11" fillStyle1="2" edges="
+!25819.5 5599[#65AD.99 #1714.D6 26269 6199"/>
+                    <Edge strokeStyle="2" edges="
+!-1096 4340|-1096 4338!-1096 4338|3063.5 4338"/>
+                    <Edge fillStyle1="7" edges="
+!-1096 4958|-1099 4958!-1099 4958|-1099 4340!-1099 4340|-1096 4340"/>
+                    <Edge fillStyle0="7" strokeStyle="2" edges="
+!-1096 4958[#FFFCDB.99 #135E.8A -513 4959!-513 4959[-502.5625 #135E.F5 -492 4959!-492 4959|-453 4958.5"/>
+                    <Edge fillStyle0="7" edges="
+!-453 4958.5|-429.5 4958"/>
+                    <Edge fillStyle0="7" fillStyle1="8" edges="
+!-429.5 4958[#FFFE7B.36 #122B.D4 -314.5 4340"/>
+                    <Edge fillStyle0="7" edges="
+!-314.5 4340|-1096 4340"/>
+                    <Edge fillStyle0="7" fillStyle1="7" strokeStyle="2" edges="
+!-1096 4340|-1096 4958"/>
+                    <Edge fillStyle1="8" edges="
+!-423.5 4958|-429.5 4958"/>
+                    <Edge fillStyle1="8" strokeStyle="2" edges="
+!349 4958|-423.5 4958"/>
+                    <Edge fillStyle0="8" edges="
+!147 4340|-314.5 4340"/>
+                  </edges>
+                </DOMShape>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix ty="70"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Starry Stuff/Shine Sprite Clip" name="secretstar">
+                  <matrix>
+                    <Matrix a="1.0009765625" d="1.0009765625" tx="2524.75" ty="-853.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	starnum = 5;
+	_parent.star = this;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Coded Wooden PL/Tipping Log">
+                  <matrix>
+                    <Matrix tx="590.45" ty="236.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-6"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	scale = 3;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/Rotating Block Plat">
+                  <matrix>
+                    <Matrix a="0.899993896484375" d="0.899993896484375" tx="826.4" ty="-90.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	rotwait = 30;
+	rotdirection = "Left";
+	scale = 90
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix ty="120"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Moving Green Platform">
+                  <matrix>
+                    <Matrix tx="336.95" ty="176"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	DirectionX = "Right";
+	DirectionY = "Up";
+	distanceX = 0;
+	distanceY = 80;
+	accelX = 0;
+	accelY = 0.5;
+	speedX = 0;
+	speedY = 3;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Coded Wooden PL/Tipping Log">
+                  <matrix>
+                    <Matrix tx="886.4" ty="275.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-6"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	scale = 3;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Coded Wooden PL/Tipping Log">
+                  <matrix>
+                    <Matrix tx="1154.4" ty="291.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-6"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	scale = 2;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Coded Wooden PL/Tipping Log">
+                  <matrix>
+                    <Matrix tx="994.2" ty="-100.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-6"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	scale = 2;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/Rotating Block Plat">
+                  <matrix>
+                    <Matrix a="0.899993896484375" d="0.899993896484375" tx="1160.25" ty="-137.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	rotwait = 32;
+	rotdirection = "Right";
+	scale = 90
+	blocktype = 2
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/Rotating Block Plat">
+                  <matrix>
+                    <Matrix a="0.899993896484375" d="0.899993896484375" tx="1278.25" ty="-137.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	rotwait = 16;
+	rotdirection = "Left";
+	scale = 90
+	blocktype = 2
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Moving Green Platform">
+                  <matrix>
+                    <Matrix tx="1614.4" ty="-239"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	DirectionX = "Left";
+	DirectionY = "Up";
+	distanceX = 80;
+	distanceY = 0;
+	accelX = 0.5;
+	accelY = 0;
+	speedX = 3;
+	speedY = 0;
+	Xoffstart = 60;
+	Yoffstart = 0;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Moving Green Platform">
+                  <matrix>
+                    <Matrix tx="1674.4" ty="-299"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	DirectionX = "Left";
+	DirectionY = "Up";
+	distanceX = 80;
+	distanceY = 0;
+	accelX = 0.5;
+	accelY = 0;
+	speedX = 3;
+	speedY = 0;
+	Xoffstart = 40;
+	Yoffstart = 0;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Moving Green Platform">
+                  <matrix>
+                    <Matrix tx="1734.4" ty="-359"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	DirectionX = "Left";
+	DirectionY = "Up";
+	distanceX = 80;
+	distanceY = 0;
+	accelX = 0.5;
+	accelY = 0;
+	speedX = 3;
+	speedY = 0;
+	Xoffstart = 20;
+	Yoffstart = 0;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Moving Green Platform">
+                  <matrix>
+                    <Matrix tx="1794.4" ty="-419"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	DirectionX = "Left";
+	DirectionY = "Up";
+	distanceX = 80;
+	distanceY = 0;
+	accelX = 0.5;
+	accelY = 0;
+	speedX = 3;
+	speedY = 0;
+	Xoffstart = 0;
+	Yoffstart = 0;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Coded Wooden PL/Tipping Log">
+                  <matrix>
+                    <Matrix tx="1961.4" ty="-422"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-6"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	scale = 3;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Decoration/ Signs &amp; Fences/YI Arrow">
+                  <matrix>
+                    <Matrix tx="298.45" ty="134.95"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Squirt Nozzle Box Clip">
+                  <matrix>
+                    <Matrix tx="224.95" ty="-118.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="335.95" ty="143.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="335.95" ty="43.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="335.95" ty="-56.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="456" ty="-137.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="556" ty="-137.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="656" ty="-137.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="992.95" ty="-137.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="1959.85" ty="-463.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix ty="171"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Decoration/ Signs &amp; Fences/YI Arrow">
+                  <matrix>
+                    <Matrix a="0" b="-1" c="1" d="0" tx="1690.4" ty="203.45"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="826" ty="-160.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="1159" ty="-209.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="1278.95" ty="-210.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="1460.9" ty="-236.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="1555.9" ty="-236.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/Rotating Block Plat">
+                  <matrix>
+                    <Matrix a="0.32000732421875" d="0.32000732421875" tx="2395.3" ty="-448.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	rotwait = "none";
+	rotdirection = "Left";
+	rotspeed = 2;
+	//
+	DirectionX = "Left";
+	DirectionY = "Up";
+	distanceX = 270/2;
+	distanceY = 0;
+	accelX = 1;
+	accelY = 0;
+	speedX = 2;
+	speedY = 0;
+	Xoffstart = 0;
+	Yoffstart = 0;
+	scale = 32;
+	blocktype = 2;
+	/*Block Types:
+	1. Color Cube    2. Glass Cube    3. Blue Tile
+	4. Tock Block    5. Tock Cube     6. Cave Cube
+	7. Green Cube    8. Yellow Cube   9. Book Cube
+	10. Metal Box    11. Wood Block
+	*/
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Star Folder/Star Coin Code">
+                  <matrix>
+                    <Matrix tx="1072.85" ty="-515.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="0.5" y="-0.05"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	StarCoinNum = 6;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Water Bottle/Small Water Bottle Clip">
+                  <matrix>
+                    <Matrix tx="1507.7" ty="-225.4"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-0.05" y="7.4"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/Rotating Block Plat">
+                  <matrix>
+                    <Matrix a="0.32000732421875" d="0.32000732421875" tx="2492.3" ty="-524"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	rotwait = "none";
+	rotdirection = "Right";
+	rotspeed = 2;
+	//
+	DirectionX = "Left";
+	DirectionY = "Up";
+	distanceX = 0;
+	distanceY = 85
+	accelX = 0;
+	accelY = 1;
+	speedX = 0;
+	speedY = 2;
+	Xoffstart = 0;
+	Yoffstart = 0;
+	scale = 32;
+	blocktype = 8
+	/*Block Types:
+	1. Color Cube    2. Glass Cube    3. Blue Tile
+	4. Tock Block    5. Tock Cube     6. Cave Cube
+	7. Green Cube    8. Yellow Cube   9. Book Cube
+	10. Metal Box    11. Wood Block
+	*/
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/Rotating Block Plat">
+                  <matrix>
+                    <Matrix a="0.32000732421875" d="0.32000732421875" tx="2556.3" ty="-524"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	rotwait = "none";
+	rotdirection = "Right";
+	rotspeed = 2;
+	//
+	DirectionX = "Left";
+	DirectionY = "Up";
+	distanceX = 0;
+	distanceY = 70
+	accelX = 0;
+	accelY = 1;
+	speedX = 0;
+	speedY = 2;
+	Xoffstart = 0;
+	Yoffstart = 0;
+	scale = 32;
+	blocktype = 8
+	/*Block Types:
+	1. Color Cube    2. Glass Cube    3. Blue Tile
+	4. Tock Block    5. Tock Cube     6. Cave Cube
+	7. Green Cube    8. Yellow Cube   9. Book Cube
+	10. Metal Box    11. Wood Block
+	*/
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/Rotating Block Plat">
+                  <matrix>
+                    <Matrix a="0.32000732421875" d="0.32000732421875" tx="2460.3" ty="-524"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	rotwait = "none";
+	rotdirection = "Right";
+	rotspeed = 2;
+	//
+	DirectionX = "Left";
+	DirectionY = "Up";
+	distanceX = 0;
+	distanceY = 50
+	accelX = 0;
+	accelY = 1;
+	speedX = 0;
+	speedY = 2;
+	Xoffstart = 0;
+	Yoffstart = 0;
+	scale = 32;
+	blocktype = 8
+	/*Block Types:
+	1. Color Cube    2. Glass Cube    3. Blue Tile
+	4. Tock Block    5. Tock Cube     6. Cave Cube
+	7. Green Cube    8. Yellow Cube   9. Book Cube
+	10. Metal Box    11. Wood Block
+	*/
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/Rotating Block Plat">
+                  <matrix>
+                    <Matrix a="0.32000732421875" d="0.32000732421875" tx="2588.3" ty="-524"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	rotwait = "none";
+	rotdirection = "Right";
+	rotspeed = 2;
+	//
+	DirectionX = "Left";
+	DirectionY = "Up";
+	distanceX = 0;
+	distanceY = 45
+	accelX = 0;
+	accelY = 1;
+	speedX = 0;
+	speedY = 2;
+	Xoffstart = 0;
+	Yoffstart = 0;
+	scale = 32;
+	blocktype = 8
+	/*Block Types:
+	1. Color Cube    2. Glass Cube    3. Blue Tile
+	4. Tock Block    5. Tock Cube     6. Cave Cube
+	7. Green Cube    8. Yellow Cube   9. Book Cube
+	10. Metal Box    11. Wood Block
+	*/
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/Rotating Block Plat">
+                  <matrix>
+                    <Matrix a="0.32000732421875" d="0.32000732421875" tx="2492.3" ty="-724"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	rotwait = "none";
+	rotdirection = "Right";
+	rotspeed = 2;
+	//
+	DirectionX = "Left";
+	DirectionY = "Up";
+	distanceX = 0;
+	distanceY = 50
+	accelX = 0;
+	accelY = 1;
+	speedX = 0;
+	speedY = 2;
+	Xoffstart = 0;
+	Yoffstart = 0;
+	scale = 32;
+	blocktype = 8
+	/*Block Types:
+	1. Color Cube    2. Glass Cube    3. Blue Tile
+	4. Tock Block    5. Tock Cube     6. Cave Cube
+	7. Green Cube    8. Yellow Cube   9. Book Cube
+	10. Metal Box    11. Wood Block
+	*/
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/Rotating Block Plat">
+                  <matrix>
+                    <Matrix a="0.32000732421875" d="0.32000732421875" tx="2556.3" ty="-724"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	rotwait = "none";
+	rotdirection = "Right";
+	rotspeed = 2;
+	//
+	DirectionX = "Left";
+	DirectionY = "Up";
+	distanceX = 0;
+	distanceY = 50
+	accelX = 0;
+	accelY = 1;
+	speedX = 0;
+	speedY = 2;
+	Xoffstart = 0;
+	Yoffstart = 0;
+	scale = 32;
+	blocktype = 8
+	/*Block Types:
+	1. Color Cube    2. Glass Cube    3. Blue Tile
+	4. Tock Block    5. Tock Cube     6. Cave Cube
+	7. Green Cube    8. Yellow Cube   9. Book Cube
+	10. Metal Box    11. Wood Block
+	*/
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/Rotating Block Plat">
+                  <matrix>
+                    <Matrix a="0.32000732421875" d="0.32000732421875" tx="2460.3" ty="-692"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	rotwait = "none";
+	rotdirection = "Right";
+	rotspeed = 2;
+	//
+	DirectionX = "Left";
+	DirectionY = "Up";
+	distanceX = 0;
+	distanceY = 25
+	accelX = 0;
+	accelY = 1;
+	speedX = 0;
+	speedY = 2;
+	Xoffstart = 0;
+	Yoffstart = 0;
+	scale = 32;
+	blocktype = 8
+	/*Block Types:
+	1. Color Cube    2. Glass Cube    3. Blue Tile
+	4. Tock Block    5. Tock Cube     6. Cave Cube
+	7. Green Cube    8. Yellow Cube   9. Book Cube
+	10. Metal Box    11. Wood Block
+	*/
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/Rotating Block Plat">
+                  <matrix>
+                    <Matrix a="0.32000732421875" d="0.32000732421875" tx="2588.3" ty="-692"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	rotwait = "none";
+	rotdirection = "Right";
+	rotspeed = 2;
+	//
+	DirectionX = "Left";
+	DirectionY = "Up";
+	distanceX = 0;
+	distanceY = 25
+	accelX = 0;
+	accelY = 1;
+	speedX = 0;
+	speedY = 2;
+	Xoffstart = 0;
+	Yoffstart = 0;
+	scale = 32;
+	blocktype = 8
+	/*Block Types:
+	1. Color Cube    2. Glass Cube    3. Blue Tile
+	4. Tock Block    5. Tock Cube     6. Cave Cube
+	7. Green Cube    8. Yellow Cube   9. Book Cube
+	10. Metal Box    11. Wood Block
+	*/
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/Rotating Block Plat">
+                  <matrix>
+                    <Matrix a="0.32000732421875" d="0.32000732421875" tx="2492.3" ty="-918"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	rotwait = "none";
+	rotdirection = "Right";
+	rotspeed = 2;
+	//
+	DirectionX = "Left";
+	DirectionY = "Up";
+	distanceX = 0;
+	distanceY = 35
+	accelX = 0;
+	accelY = 1;
+	speedX = 0;
+	speedY = 2;
+	Xoffstart = 0;
+	Yoffstart = 0;
+	scale = 32;
+	blocktype = 8
+	/*Block Types:
+	1. Color Cube    2. Glass Cube    3. Blue Tile
+	4. Tock Block    5. Tock Cube     6. Cave Cube
+	7. Green Cube    8. Yellow Cube   9. Book Cube
+	10. Metal Box    11. Wood Block
+	*/
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/Rotating Block Plat">
+                  <matrix>
+                    <Matrix a="0.32000732421875" d="0.32000732421875" tx="2556.3" ty="-918"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	rotwait = "none";
+	rotdirection = "Right";
+	rotspeed = 2;
+	//
+	DirectionX = "Left";
+	DirectionY = "Up";
+	distanceX = 0;
+	distanceY = 35
+	accelX = 0;
+	accelY = 1;
+	speedX = 0;
+	speedY = 2;
+	Xoffstart = 0;
+	Yoffstart = 0;
+	scale = 32;
+	blocktype = 8
+	/*Block Types:
+	1. Color Cube    2. Glass Cube    3. Blue Tile
+	4. Tock Block    5. Tock Cube     6. Cave Cube
+	7. Green Cube    8. Yellow Cube   9. Book Cube
+	10. Metal Box    11. Wood Block
+	*/
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/Rotating Block Plat">
+                  <matrix>
+                    <Matrix a="0.32000732421875" d="0.32000732421875" tx="2460.3" ty="-886"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	rotwait = "none";
+	rotdirection = "Right";
+	rotspeed = 2;
+	//
+	DirectionX = "Left";
+	DirectionY = "Up";
+	distanceX = 0;
+	distanceY = 30
+	accelX = 0;
+	accelY = 1;
+	speedX = 0;
+	speedY = 2;
+	Xoffstart = 0;
+	Yoffstart = 0;
+	scale = 32;
+	blocktype = 8
+	/*Block Types:
+	1. Color Cube    2. Glass Cube    3. Blue Tile
+	4. Tock Block    5. Tock Cube     6. Cave Cube
+	7. Green Cube    8. Yellow Cube   9. Book Cube
+	10. Metal Box    11. Wood Block
+	*/
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/Rotating Block Plat">
+                  <matrix>
+                    <Matrix a="0.32000732421875" d="0.32000732421875" tx="2588.3" ty="-886"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	rotwait = "none";
+	rotdirection = "Right";
+	rotspeed = 2;
+	//
+	DirectionX = "Left";
+	DirectionY = "Up";
+	distanceX = 0;
+	distanceY = 30
+	accelX = 0;
+	accelY = 1;
+	speedX = 0;
+	speedY = 2;
+	Xoffstart = 0;
+	Yoffstart = 0;
+	scale = 32;
+	blocktype = 8
+	/*Block Types:
+	1. Color Cube    2. Glass Cube    3. Blue Tile
+	4. Tock Block    5. Tock Cube     6. Cave Cube
+	7. Green Cube    8. Yellow Cube   9. Book Cube
+	10. Metal Box    11. Wood Block
+	*/
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="2187.35" ty="-451"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="2237.35" ty="-483"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="2347.35" ty="-483"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Moving Green Platform">
+                  <matrix>
+                    <Matrix tx="1074.4" ty="-419"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	DirectionX = "Right";
+	DirectionY = "Up";
+	distanceX = 160;
+	distanceY = 0;
+	accelX = 0.5;
+	accelY = 0;
+	speedX = 3;
+	speedY = 0;
+	Xoffstart = 0;
+	Yoffstart = 0;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/Rotating Block Plat">
+                  <matrix>
+                    <Matrix a="0.600006103515625" d="0.600006103515625" tx="1314.1" ty="-419"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	rotwait = 0;
+	rotspeed = 1
+	rotdirection = "Left";
+	scale = 60;
+	blocktype = 21;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="2460.35" ty="-563"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="2492.35" ty="-563"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="2556.35" ty="-563"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="2588.35" ty="-563"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="2460.35" ty="-653"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="2492.35" ty="-653"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="2556.35" ty="-653"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="2588.35" ty="-653"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="2460.35" ty="-765"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="2492.35" ty="-765"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="2556.35" ty="-765"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="2588.35" ty="-765"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="2492.35" ty="-852"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="2556.35" ty="-852"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="2524.35" ty="-884"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="2524.35" ty="-820"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/Rotating Block Plat">
+                  <matrix>
+                    <Matrix a="0.600006103515625" d="0.600006103515625" tx="1074.1" ty="-419"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	rotwait = 0;
+	rotspeed = 2
+	rotdirection = "Right";
+	scale = 60;
+	blocktype = 21
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="1420.9" ty="-236.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="1595.9" ty="-236.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="1617.4" ty="-264"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="1675.35" ty="-323"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="1734.35" ty="-383"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="1795.35" ty="-443.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/Rotating Block Plat">
+                  <matrix>
+                    <Matrix a="0.32000732421875" d="0.32000732421875" tx="2295.3" ty="-416.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	rotwait = "none";
+	rotdirection = "Left";
+	rotspeed = 2;
+	//
+	DirectionX = "Left";
+	DirectionY = "Up";
+	distanceX = 270/2;
+	distanceY = 0;
+	accelX = 1;
+	accelY = 0;
+	speedX = 2;
+	speedY = 0;
+	Xoffstart = 100/2
+	Yoffstart = 0;
+	scale = 32;
+	blocktype = 2;
+	/*Block Types:
+	1. Color Cube    2. Glass Cube    3. Blue Tile
+	4. Tock Block    5. Tock Cube     6. Cave Cube
+	7. Green Cube    8. Yellow Cube   9. Book Cube
+	10. Metal Box    11. Wood Block
+	*/
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/Rotating Block Plat">
+                  <matrix>
+                    <Matrix a="0.32000732421875" d="0.32000732421875" tx="2195.3" ty="-384.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	rotwait = "none";
+	rotdirection = "Left";
+	rotspeed = 2;
+	//
+	DirectionX = "Left";
+	DirectionY = "Up";
+	distanceX = 270/2;
+	distanceY = 0;
+	accelX = 1;
+	accelY = 0;
+	speedX = 2;
+	speedY = 0;
+	Xoffstart = 200/2
+	Yoffstart = 0;
+	scale = 32;
+	blocktype = 2;
+	/*Block Types:
+	1. Color Cube    2. Glass Cube    3. Blue Tile
+	4. Tock Block    5. Tock Cube     6. Cave Cube
+	7. Green Cube    8. Yellow Cube   9. Book Cube
+	10. Metal Box    11. Wood Block
+	*/
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/Rotating Block Plat">
+                  <matrix>
+                    <Matrix a="0.32000732421875" d="0.32000732421875" tx="2345.3" ty="-352.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	rotwait = "none";
+	rotdirection = "Left";
+	rotspeed = 2;
+	//
+	DirectionX = "Left";
+	DirectionY = "Up";
+	distanceX = 270/2;
+	distanceY = 0;
+	accelX = 1;
+	accelY = 0;
+	speedX = 2;
+	speedY = 0;
+	Xoffstart = 50/2
+	Yoffstart = 0;
+	scale = 32;
+	blocktype = 2;
+	/*Block Types:
+	1. Color Cube    2. Glass Cube    3. Blue Tile
+	4. Tock Block    5. Tock Cube     6. Cave Cube
+	7. Green Cube    8. Yellow Cube   9. Book Cube
+	10. Metal Box    11. Wood Block
+	*/
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Coded Wooden PL/Tipping Log">
+                  <matrix>
+                    <Matrix tx="2235.35" ty="-300"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-6"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	scale = 3;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="2137.35" ty="-419"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="2297.35" ty="-451"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="2397.35" ty="-451"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="2347.35" ty="-419"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="2187.35" ty="-387"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="2297.35" ty="-387"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="2397.35" ty="-387"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="2137.35" ty="-355"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="2237.35" ty="-355"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="2347.35" ty="-355"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="2137.35" ty="-483"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="2237.35" ty="-419"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

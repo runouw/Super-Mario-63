@@ -1,0 +1,52 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Level Designer Windows/LDW - Reset RED BOX" itemID="4854741c-000011bb" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="LDWResetScreenFilter" sourceFlashFilepath="F:\Super Mario 63\New computer\Level Designer (With Mario Engine new) 3.fla" sourceLibraryItemHRef="Level Designer Windows/LDW - Reset RED BOX" sourceLastModified="1232419182" lastModified="1232941446" sourceItemID="4854741c-000011bb">
+  <timeline>
+    <DOMTimeline name="LDW - Reset RED BOX">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[num = 4;
+onEnterFrame = function () {
+	this._alpha += (aa-_alpha)/num;
+	if ((aa == 0 && this._alpha<=2)) {
+		this.removeMovieClip();
+	}
+	if (_root.M.Window1.frame !== "Reset") {
+		aa = -5
+	}
+	if (this._alpha>=98) {
+		_root.LDDeleteF();
+		aa = -10;
+		num = 30;
+	}
+	//(98.828125>=55) false   
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FF0000"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!9000 6000|0 6000!0 6000|0 0!0 0|9000 0!9000 0|9000 6000"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

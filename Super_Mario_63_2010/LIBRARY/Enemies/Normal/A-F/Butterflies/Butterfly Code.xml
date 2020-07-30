@@ -1,0 +1,153 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="   Enemies/Normal/ A-F/ Butterflies/Butterfly Code" itemID="468d7ae9-00000ab6" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="ButterflyCode" lastModified="1237841080" lastUniqueIdentifier="1">
+  <timeline>
+    <DOMTimeline name="Butterfly Code">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="6" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[frame = random(6)+1;
+diff = random(5);
+count = 0;
+count2 = 0;
+scale = random(40)+80;
+maxxspeed = (diff/5)+0.4;
+xspeed = maxxspeed;
+waittime = random(25)+50;
+num = random(2)+1;
+if (num == 1) {
+	movedir = "right";
+} else {
+	movedir = "left";
+}
+_yscale = scale;
+_xscale = scale;
+wave = 0;
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		// New Var
+		if (_root.BGquality == "LOW" || _root.Detailquality == "LOW") {
+			gotoAndStop(7);
+		} else {
+			gotoAndStop(frame);
+			wave += maxxspeed/5;
+			//
+			clip._y = Math.sin(wave)*5;
+			//
+			if (xspeed>0) {
+				_xscale = scale;
+			} else {
+				_xscale = -scale;
+			}
+			count++;
+			if (count>waittime) {
+				if (movedir == "right") {
+					movedir = "left";
+				} else {
+					movedir = "right";
+				}
+				count = 0;
+			}
+			if (movedir == "right") {
+				xspeed += 0.1;
+			} else {
+				xspeed -= 0.1;
+			}
+			xspeed = Math.max(-maxxspeed, xspeed);
+			xspeed = Math.min(maxxspeed, xspeed);
+			_x += xspeed;
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="6" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ A-F/ Butterflies/YI Butterfly Animation" name="clip">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color redMultiplier="0.5" greenMultiplier="0.8984375" redOffset="30" greenOffset="30"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ A-F/ Butterflies/YI Butterfly Animation" name="clip">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color redMultiplier="0.8984375" blueMultiplier="0.5" redOffset="30" greenOffset="30"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ A-F/ Butterflies/YI Butterfly Animation" name="clip">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color blueMultiplier="0.69921875" greenMultiplier="0.69921875" redOffset="50"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ A-F/ Butterflies/YI Butterfly Animation" name="clip">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color greenMultiplier="0.69921875" redOffset="50" blueOffset="50"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="4" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ A-F/ Butterflies/YI Butterfly Animation" name="clip">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color redMultiplier="0.5" blueMultiplier="0.5" greenOffset="20"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="5" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ A-F/ Butterflies/YI Butterfly Animation" name="clip" selected="true">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color redOffset="15" greenOffset="15"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="6" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

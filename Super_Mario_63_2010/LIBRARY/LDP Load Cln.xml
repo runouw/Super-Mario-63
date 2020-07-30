@@ -1,0 +1,90 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="LDP Load Cln" itemID="4a567e84-000018bf" sourceFlashFilepath="F:\Super Mario 63\New computer\Level Designer (Website) 2.fla" sourceLibraryItemHRef="LDP Load Cln" sourceLastModified="1248282961" lastModified="1248481033" lastUniqueIdentifier="1" sourceItemID="4a567e84-000018bf">
+  <timeline>
+    <DOMTimeline name="LDP Load Cln">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	if (this.hitTest(_root._xmouse, _root._ymouse, false) && _parent.Selected !== "" && _parent.Selected !== undefined) {
+		xs = 120;
+	} else {
+		xs = 100;
+	}
+	if (_parent.Selected == "" || _parent.Selected == undefined) {
+		_alpha += (0-_alpha)/2;
+	} else {
+		_alpha += (100-_alpha)/2;
+	}
+	_xscale += (xs-_xscale)/2;
+	_yscale = _xscale;
+};
+onMouseDown = function () {
+	if (xs == 120) {
+		_root.LDSelectedLevel = _parent.box["Row"+_parent.Selected].num;
+		trace(_parent.box["Row"+_parent.Selected].num);
+		_parent.N("Lev");
+	}
+};
+_alpha = 0;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" locked="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName='LDP "Loda"'>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BevelFilter distance="2"/>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <LinearGradient>
+                        <matrix>
+                          <Matrix a="0.072021484375" d="0.0165863037109375"/>
+                        </matrix>
+                        <GradientEntry color="#B3FFF7" ratio="0"/>
+                        <GradientEntry color="#09FFE6" ratio="1"/>
+                      </LinearGradient>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <SolidColor/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="!1180 -272|1180 272!1180 272|-1180.5 272!-1180.5 272|-1180.5 -272!-1180.5 -272|1180 -272"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

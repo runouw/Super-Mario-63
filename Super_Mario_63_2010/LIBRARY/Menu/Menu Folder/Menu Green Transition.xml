@@ -1,0 +1,61 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name=" Menu/Menu Folder/Menu Green Transition" itemID="47786ac8-00001a9b" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="MenuGreenTrans" sourceFlashFilepath="Rob &amp; Steve Hewitt\My Documents\Super Mario 63\Menu Design.fla" sourceLibraryItemHRef="Menu Folder/  Transitions/Menu Green Transition" sourceLastModified="1199074454" lastModified="1213376738" sourceItemID="47786ac8-00001a9b">
+  <timeline>
+    <DOMTimeline name="Menu Green Transition">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (trans == true) {
+	_alpha = 0;
+	onEnterFrame = function () {
+		this._alpha += 10;
+		if (_alpha>=100) {
+			_alpha = 100;
+			//
+			//_root.CopyFile(_root.m.filem.HL);
+			_parent.gotoAndStop("Refresh");
+			_root.CopyFile(file1, file2);
+			_parent.gotoAndStop("Story");
+			//
+			onEnterFrame = function () {
+				this._alpha -= 10;
+				if (_alpha<=0) {
+					_alpha = 0;
+					this.removeMovieClip();
+				}
+			};
+		}
+	};
+} else {
+	this.swapDepths(0);
+	this.removeMovieClip();
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#00FF00"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!-5000 -3500.5|5000 -3500.5!5000 -3500.5|5000 3499.5!5000 3499.5|-5000 3499.5!-5000 3499.5|-5000 -3500.5"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

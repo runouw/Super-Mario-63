@@ -1,0 +1,244 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="   Enemies/Normal/ G-Z/ Thwomps/Thwomp Clip" itemID="460adb12-0000063c" lastModified="1223485129" lastUniqueIdentifier="4">
+  <timeline>
+    <DOMTimeline name="Thwomp Clip">
+      <layers>
+        <DOMLayer name="Layer 3" color="#FFFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[yspeed = 0;
+startY = _y;
+frame = "idle";
+if (mariowait == undefined) {
+	mariowait = false;
+}
+startcounting = false;
+if (waittime == undefined) {
+	waittime = _root.framerate*3;
+}
+if (count == undefined) {
+	count = 0;
+}
+if (groundwaittime == undefined) {
+	groundwaittime = _root.framerate*0.5;
+}
+if (fallspeed == undefined) {
+	fallspeed = 7;
+}
+if (fallaccel == undefined) {
+	fallaccel = 1;
+}
+if (riseaccel == undefined) {
+	riseaccel = 0.1;
+}
+if (risespeed == undefined) {
+	risespeed = 3;
+}
+if (Xrange == undefined) {
+	Xrange = 30;
+}
+riseaccel = 0.1;
+risespeed = 3;
+ycutoff = 0;
+yspeed = risespeed;
+while (yspeed>=riseaccel) {
+	yspeed -= riseaccel;
+	ycutoff += yspeed;
+}
+yspeed = 0;
+//
+depth = _root.Course.Platforms.getNextHighestDepth();
+_root.Course.Platforms.attachMovie("ThwompGround", "ThwompGround"+depth, depth, {_x:_x, _y:_y, scale:scale});
+depth2 = _root.Course.BPlatforms.getNextHighestDepth();
+_root.Course.BPlatforms.attachMovie("ThwompPlatform", "ThwompPlatform"+depth2, depth2, {_x:_x, _y:_y, scale:scale});
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/ Thwomps/Thwomp Ground">
+                  <matrix>
+                    <Matrix tx="-0.35" ty="-0.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-0.05"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/ Thwomps/Thwomp Bplatforms">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+onEnterFrame = function () {
+	if (_root.PauseGame == false && _root.playpause == false && Math.abs((_root.currentCamX)-(_x+_parent._x))<600 && Math.abs((_root.currentCamY)-(_y+_parent._y))<600) {
+		if (mariowait == true) {
+			Xdiff = _root.Course.Char._x-(_x+_parent._x);
+			Ydiff = _root.Course.Char._y-(_y+_parent._y);
+			if (Math.abs(Xdiff)<Xrange && Ydiff>0) {
+				startcounting = true;
+				//count++;
+			}
+			if ((startcounting == true && frame == "idle") || frame == "ground") {
+				count++;
+			}
+		} else {
+			if (frame == "idle" || frame == "ground") {
+				count++;
+			}
+		}
+		if (frame == "idle" && count>waittime) {
+			startcounting = false;
+			//
+			yspeed += fallaccel;
+			yspeed = Math.min(fallspeed, yspeed);
+			//
+			if (_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.BPlatforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+				count = 0;
+				frame = "ground";
+				yspeed = 0;
+				//
+				distancevolume = Math.sqrt(Math.pow((_root.currentCamX)-(_x+_parent._x), 2)+Math.pow((_root.currentCamY)-(_y+_parent._y), 2));
+				distancevolume /= 100;
+				distancevolume *= 15;
+				distancevolume = Math.min(100, distancevolume);
+				distancevolume = Math.max(0, distancevolume);
+				distancevolume -= 100;
+				distancevolume *= -1;
+				//
+				if (distancevolume>=1) {
+					randomnum = random(2)+1;
+					soundclip = new Sound(this);
+					soundclip.attachSound("thwomp-"+randomnum);
+					soundclip.start(0, 1);
+					soundclip.setVolume((_root.MarioVolume/100)*distancevolume);
+					panX = (_root.currentCamX)-(_x+_parent._x);
+					panX /= -2;
+					panX = Math.min(100, panX);
+					panX = Math.max(-100, panX);
+					soundclip.setPan(panX);
+				}
+				//                                           
+			}
+		}
+		if (frame == "ground" && count>groundwaittime) {
+			if ((_y-ycutoff)>=startY) {
+				yspeed -= riseaccel;
+				yspeed = Math.max(-risespeed, yspeed);
+			} else {
+				yspeed += riseaccel;
+				if (yspeed>=0) {
+					count = 0;
+					yspeed = 0;
+					frame = "idle";
+				}
+			}
+		}
+		if (Math.abs((_root.currentCamX)-(_x+_parent._x))<600 && Math.abs((_root.currentCamY)-(_y+_parent._y))<600) {
+			while (_root.Course.BPlatforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y-1)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+				_y--;
+				//
+				_root.Course.Platforms["ThwompGround"+depth]._y = this._y;
+				_root.Course.Platforms["ThwompGround"+depth]._x = this._x;
+				//
+				_root.Course.BPlatforms["ThwompPlatform"+depth2]._y = this._y;
+				_root.Course.BPlatforms["ThwompPlatform"+depth2]._x = this._x;
+			}
+			whilecount = 0;
+			while (_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y-1)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+				if (whilecount++>5) {
+					break;
+				}
+				_y--;
+				//
+				_root.Course.Platforms["ThwompGround"+depth]._y = this._y;
+				_root.Course.Platforms["ThwompGround"+depth]._x = this._x;
+				//
+				_root.Course.BPlatforms["ThwompPlatform"+depth2]._y = this._y;
+				_root.Course.BPlatforms["ThwompPlatform"+depth2]._x = this._x;
+			}
+		}
+		repeats = Math.round(Math.abs(yspeed)/5)+1;
+		for (i=0; i<repeats; i++) {
+			_y += yspeed/repeats;
+			_root.Course.Platforms["ThwompGround"+depth]._y = this._y;
+			_root.Course.Platforms["ThwompGround"+depth]._x = this._x;
+			_root.Course.BPlatforms["ThwompPlatform"+depth2]._y = this._y;
+			_root.Course.BPlatforms["ThwompPlatform"+depth2]._x = this._x;
+			if (yspeed>0 && (_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y-1)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.BPlatforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y-1)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true))) {
+				break;
+			}
+		}
+		_root.Course.Platforms["ThwompGround"+depth]._y = this._y;
+		_root.Course.Platforms["ThwompGround"+depth]._x = this._x;
+		_root.Course.BPlatforms["ThwompPlatform"+depth2]._y = this._y;
+		_root.Course.BPlatforms["ThwompPlatform"+depth2]._x = this._x;
+		tellTarget (_root.Course.BPlatforms["ThwompPlatform"+depth2]) {
+			if (yspeed<0) {
+				_y -= this.yspeed;
+			}
+			if (hitTest((_root.Course.Char._x*_root.coursescale/100)+_root.Course._x, (_root.Course.Char._y*_root.coursescale/100)+_root.Course._y, true)) {
+				//_root.Course.Char._x += currentspeedX;
+				if (this.yspeed<0) {
+					_root.Course.Char._y += this.yspeed;
+				}
+				//_root.Course.Char.xspeed = _root.groundFriction(_root.Course.Char.xspeed, 0.3, 1.1);   
+				if (landedon == false) {
+					//_root.Course.Char.xspeed -= currentspeedX;
+					//
+					//this.frame = "ride";
+					//
+				}
+				landedon = true;
+			} else {
+				if (landedon == true) {
+					//_root.Course.Char.xspeed += currentspeedX;
+					_root.Course.Char.yspeed += this.yspeed;
+				}
+				landedon = false;
+			}
+			//
+			//
+			if (yspeed<0) {
+				_y += this.yspeed;
+			}
+			_y += this.yspeed;
+			//
+		}
+	}
+	//                                                  
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Face" color="#9933CC" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Normal/ G-Z/ Thwomps/MPA Thwomp">
+                  <matrix>
+                    <Matrix tx="-24" ty="-48"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

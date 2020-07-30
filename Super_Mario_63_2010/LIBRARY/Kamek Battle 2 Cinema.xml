@@ -1,0 +1,1169 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Kamek Battle 2 Cinema" itemID="48ee7ecc-00001232" sourceFlashFilepath="Rob &amp; Steve Hewitt\My Documents\Super Mario 63\Kamek Battle 2 Cinema.fla" sourceLibraryItemHRef="Kamek Battle 2 Cinema" sourceLastModified="1223618004" lastModified="1232383593" lastUniqueIdentifier="14" sourceItemID="48ee7ecc-00001232">
+  <timeline>
+    <DOMTimeline name="Kamek Battle 2 Cinema">
+      <layers>
+        <DOMLayer name="Layer 4" color="#FF4FFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="18" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[count = 100;
+onEnterFrame = function () {
+	count -= 5;
+	count = Math.max(count, 0);
+	_root.bgsong.setVolume(count);
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="18" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = null;]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="19" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.bgsong.stop();
+_root.bgsong = new Sound(_root);
+_root.bgsong.attachSound("Yoshis Island Kameks Theme - Intro");
+_root.bgsong.start(0, 1);
+_root.bgsong.setVolume(100);
+_root.bgsong.onSoundComplete = function() {
+	_root.bgsong.attachSound("Yoshis Island Kameks Theme - Repeat");
+	_root.bgsong.start(0, 999);
+	_root.bgsong.setVolume(100);
+	_root.bgsong.onSoundComplete = null;
+};]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="20" duration="9" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.bgsong.setVolume(100);]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="29" duration="10" keyMode="9728" soundName="kamek" soundZoomLevel="65535">
+              <Actionscript>
+                <script><![CDATA[_root.bgsong.setVolume(100);
+_root.CinemaMessageFrame = 2;
+_root.CinemaMessage = "<b><i>Kamek:</i></b> YOU! Your n-n-not welcome HERE!!! Yoshi, please hand OVER THE BABY!";
+lastframeZ = _root.KeyZ();
+//
+stop();
+onEnterFrame = function () {
+	if (_root.KeyZ() == true && lastframeZ !== true && _root.CinemaMessageFinished == true) {
+		_root.CinemaMessage = "";
+		//_root.CinemaMessage = "Some mroe text";
+		//_root.CinemaMessageFrame = 3;
+		onEnterFrame = null;
+		play();
+	}
+	lastframeZ = _root.KeyZ();
+	//
+};
+]]></script>
+              </Actionscript>
+              <SoundEnvelope>
+                <SoundEnvelopePoint level0="32768" level1="32768"/>
+              </SoundEnvelope>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="39" duration="58" keyMode="9728" soundName="babyBowserRoar2" soundZoomLevel="65535">
+              <SoundEnvelope>
+                <SoundEnvelopePoint level0="32768" level1="32768"/>
+              </SoundEnvelope>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="97" keyMode="9728" soundName="kamek" soundZoomLevel="65535">
+              <SoundEnvelope>
+                <SoundEnvelopePoint level0="32768" level1="32768"/>
+              </SoundEnvelope>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="98" duration="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[// Kamek: Oh, dear... What to do... Young Master Bowser awakes...
+_root.CinemaMessageFrame = 2;
+_root.CinemaMessage = "<b><i>Kamek:</i></b> Oh, dear...\nWhat to do...\nYoung Master Bowser awakes...";
+lastframeZ = _root.KeyZ();
+//
+stop();
+onEnterFrame = function () {
+	if (_root.KeyZ() == true && lastframeZ !== true && _root.CinemaMessageFinished == true) {
+		_root.CinemaMessage = "";
+		//_root.CinemaMessage = "Some mroe text";
+		//_root.CinemaMessageFrame = 3;
+		onEnterFrame = null;
+		play();
+	}
+	lastframeZ = _root.KeyZ();
+	//
+};]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="100" keyMode="9728" soundName="babyBowserComplain" soundZoomLevel="65535">
+              <SoundEnvelope>
+                <SoundEnvelopePoint level0="32768" level1="32768"/>
+              </SoundEnvelope>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="101" duration="57" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[// Bowser: Kamek, it's too noisy in here!! I want to go sweepy-byyye!!!
+_root.CinemaMessageFrame = 3;
+_root.CinemaMessage = "<b><i>Bowser:</i></b> Kamek, it's too noisy in here!!\nI want to go sweepy-byyye!!!";
+lastframeZ = _root.KeyZ();
+//
+stop();
+onEnterFrame = function () {
+	if (_root.KeyZ() == true && lastframeZ !== true && _root.CinemaMessageFinished == true) {
+		_root.CinemaMessage = "";
+		//_root.CinemaMessage = "Some mroe text";
+		//_root.CinemaMessageFrame = 3;
+		onEnterFrame = null;
+		play();
+	}
+	lastframeZ = _root.KeyZ();
+	//
+};]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="158" duration="27" keyMode="9728" soundName="babyBowserYell2" soundZoomLevel="65535">
+              <SoundEnvelope>
+                <SoundEnvelopePoint level0="32768" level1="32768"/>
+              </SoundEnvelope>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="185" duration="8" keyMode="9728" soundName="doorClose2" soundZoomLevel="65535">
+              <SoundEnvelope>
+                <SoundEnvelopePoint level0="32768" level1="32768"/>
+              </SoundEnvelope>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="193" duration="18" keyMode="9728" soundName="babyBowserYell2" soundZoomLevel="65535">
+              <SoundEnvelope>
+                <SoundEnvelopePoint level0="32768" level1="32768"/>
+              </SoundEnvelope>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="211" duration="7" keyMode="9728" soundName="doorClose2" soundZoomLevel="65535">
+              <SoundEnvelope>
+                <SoundEnvelopePoint level0="32768" level1="32768"/>
+              </SoundEnvelope>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="218" duration="17" keyMode="9728" soundName="babyBowserYell2" soundZoomLevel="65535">
+              <SoundEnvelope>
+                <SoundEnvelopePoint level0="32768" level1="32768"/>
+              </SoundEnvelope>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="235" duration="8" keyMode="9728" soundName="doorClose2" soundZoomLevel="65535">
+              <SoundEnvelope>
+                <SoundEnvelopePoint level0="32768" level1="32768"/>
+              </SoundEnvelope>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="243" duration="45" keyMode="9728" soundName=" Audio/flippers" soundZoomLevel="65535">
+              <SoundEnvelope>
+                <SoundEnvelopePoint level0="32768" level1="32768"/>
+              </SoundEnvelope>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="288" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+_parent.play();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 7" color="#4F80FF">
+          <frames>
+            <DOMFrame index="0" duration="29" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Standing - Teleporting">
+                  <matrix>
+                    <Matrix tx="153.1" ty="57.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="29" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/9-08 kamek Talking 1">
+                  <matrix>
+                    <Matrix tx="170.4" ty="85.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="30" duration="19" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Standing 2">
+                  <matrix>
+                    <Matrix tx="152.85" ty="57.55"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="49" duration="41" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Standing 4 - Talking - 1">
+                  <matrix>
+                    <Matrix a="-1" tx="190" ty="58"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="90" duration="7" tweenType="motion" keyMode="17921" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/9-08 Kamek Talking 3">
+                  <matrix>
+                    <Matrix tx="172" ty="86.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="97" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/9-08 Kamek Talking 3">
+                  <matrix>
+                    <Matrix tx="163.3" ty="86.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="99" duration="48" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/9-08 Kamek Talking 4">
+                  <matrix>
+                    <Matrix tx="163.35" ty="86"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="147" duration="36" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/9-08 Kamek Talking 5">
+                  <matrix>
+                    <Matrix tx="164.35" ty="86.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="183" duration="2" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/9-08 Kamek Talking 5">
+                  <matrix>
+                    <Matrix tx="164.35" ty="86.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="185" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/9-08 Kamek Talking 5">
+                  <matrix>
+                    <Matrix d="0.243331909179688" tx="164.35" ty="86.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="186" duration="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance selected="true" libraryItemName="   Enemies/Bosses/Kamek/Kamek Standing 2">
+                  <matrix>
+                    <Matrix a="-1" d="0.142852783203125" tx="186.65" ty="81.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="18" y="28"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="189" duration="11" tweenType="motion" keyMode="17921" acceleration="-100">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Standing 2">
+                  <matrix>
+                    <Matrix a="-1" d="0.142852783203125" tx="186.65" ty="81.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="18" y="28"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="200" duration="10" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Standing 2">
+                  <matrix>
+                    <Matrix a="-1" d="0.3267822265625" tx="186.65" ty="76.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="18" y="28"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="210" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Standing 2">
+                  <matrix>
+                    <Matrix a="-1" d="0.3267822265625" tx="186.65" ty="76.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="18" y="28"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="211" duration="5" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Standing 2">
+                  <matrix>
+                    <Matrix a="-1" d="0.142852783203125" tx="186.65" ty="81.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="18" y="28"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="216" duration="17" tweenType="motion" keyMode="17921" acceleration="-100">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Standing 2">
+                  <matrix>
+                    <Matrix a="-1" d="0.142852783203125" tx="186.65" ty="81.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="18" y="28"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="233" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance selected="true" libraryItemName="   Enemies/Bosses/Kamek/Kamek Standing 2">
+                  <matrix>
+                    <Matrix a="-1" d="0.3267822265625" tx="186.65" ty="76.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="18" y="28"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="234" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance selected="true" libraryItemName="   Enemies/Bosses/Kamek/Kamek Standing 2">
+                  <matrix>
+                    <Matrix a="-1" d="0.225250244140625" tx="186.65" ty="79.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="18" y="27.95"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="235" duration="5" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Standing 2">
+                  <matrix>
+                    <Matrix a="-1" d="0.118072509765625" tx="186.65" ty="82.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="18" y="27.95"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="240" duration="4" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Standing 2">
+                  <matrix>
+                    <Matrix a="-0.5" d="0.118072509765625" tx="174.65" ty="82.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="18" y="27.95"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="244" duration="11" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Standing 2">
+                  <matrix>
+                    <Matrix a="-0.672119140625" b="-0.180099487304688" c="-0.0305633544921875" d="0.114044189453125" tx="172.6" ty="83.4"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="18" y="28"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="255" duration="12" tweenType="motion" keyMode="17921" acceleration="-100">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Standing 2">
+                  <matrix>
+                    <Matrix a="-0.672119140625" b="-0.180099487304688" c="-0.0305633544921875" d="0.114044189453125" tx="146.6" ty="78.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="18" y="28"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="267" duration="13" tweenType="motion" keyMode="17921" acceleration="-100">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Standing 2">
+                  <matrix>
+                    <Matrix a="-0.672119140625" b="0.180084228515625" c="0.0305328369140625" d="0.114028930664063" tx="131.75" ty="75.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="17.9" y="28.35"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="280" duration="8" tweenType="motion" keyMode="17921" acceleration="-100">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Standing 2">
+                  <matrix>
+                    <Matrix a="-0.672119140625" b="-0.18011474609375" c="-0.0305633544921875" d="0.114028930664063" tx="144.9" ty="94.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="17.9" y="28.3"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="288" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Standing 2">
+                  <matrix>
+                    <Matrix a="-0.672134399414063" b="0.180068969726563" c="0.030548095703125" d="0.114044189453125" tx="131.45" ty="97.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="17.95" y="28.2"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 6" color="#808080">
+          <frames>
+            <DOMFrame index="0" duration="289" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="kamek Battle Cinema Yoshis Idle">
+                  <matrix>
+                    <Matrix tx="83.85" ty="86.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" duration="35" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor alpha="0.8"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!5488 1732|-312 1732!-312 1732|-312 -1708!-312 -1708|5488 -1708!5488 -1708|5488 1732"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="35" duration="20" tweenType="shape" keyMode="17922">
+              <MorphShape>
+                <morphSegments>
+                  <MorphSegment startPointA="-1.21875, -6.671875" startPointB="-1.21875, -6.671875" strokeIndex1="0" strokeIndex2="0" fillIndex1="0" fillIndex2="1">
+                    <MorphCurves controlPointA="#A.1C, -6.671875" anchorPointA="#15.7, -6.671875" controlPointB="#A.1C, -6.671875" anchorPointB="#15.7, -6.671875" isLine="true"/>
+                    <MorphCurves controlPointA="#15.7, #0.0C" anchorPointA="#15.7, #6.C4" controlPointB="#15.7, #0.0C" anchorPointB="#15.7, #6.C4" isLine="true"/>
+                    <MorphCurves controlPointA="#A.1C, #6.C4" anchorPointA="-1.21875, #6.C4" controlPointB="#A.1C, #6.C4" anchorPointB="-1.21875, #6.C4" isLine="true"/>
+                    <MorphCurves controlPointA="-1.21875, #0.0C" anchorPointA="-1.21875, -6.671875" controlPointB="-1.21875, #0.0C" anchorPointB="-1.21875, -6.671875" isLine="true"/>
+                  </MorphSegment>
+                </morphSegments>
+                <morphHintsList/>
+              </MorphShape>
+              <elements>
+                <DOMShape isFloating="true">
+                  <matrix>
+                    <Matrix ty="-1"/>
+                  </matrix>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor alpha="0.8"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!5488 1752S2|-312 1752!-312 1752|-312 -1688!-312 -1688|5488 -1688!5488 -1688|5488 1752"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="55" keyMode="9728">
+              <elements>
+                <DOMShape isFloating="true">
+                  <matrix>
+                    <Matrix ty="-1"/>
+                  </matrix>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#010101" alpha="0"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!-312 -1688S2|5488 -1688!5488 -1688|5488 1752!5488 1752|-312 1752!-312 1752|-312 -1688"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="56" duration="233" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" duration="35" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Eyes Closed - 2">
+                  <matrix>
+                    <Matrix tx="238" ty="8.45"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="35" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Yawn - 4">
+                  <matrix>
+                    <Matrix tx="237.85" ty="9.35"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="37" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Yawn - 5">
+                  <matrix>
+                    <Matrix tx="238.85" ty="8.25"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="39" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Yawn - 6">
+                  <matrix>
+                    <Matrix tx="240" ty="4.35"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="41" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Yawn - 7">
+                  <matrix>
+                    <Matrix tx="241" ty="2.25"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="43" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Yawn - 8">
+                  <matrix>
+                    <Matrix tx="242.85" ty="-0.75"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="45" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Yawn - 9">
+                  <matrix>
+                    <Matrix tx="242.85" ty="-1.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="47" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Yawn - 8">
+                  <matrix>
+                    <Matrix tx="242.85" ty="-0.75"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="49" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Yawn - 9">
+                  <matrix>
+                    <Matrix tx="242.85" ty="-1.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="51" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Yawn - 8">
+                  <matrix>
+                    <Matrix tx="242.85" ty="-0.75"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="53" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Yawn - 9">
+                  <matrix>
+                    <Matrix tx="242.85" ty="-1.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="55" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Yawn - 8">
+                  <matrix>
+                    <Matrix tx="242.85" ty="-0.75"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="57" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Yawn - 9">
+                  <matrix>
+                    <Matrix tx="242.85" ty="-1.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="59" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance selected="true" libraryItemName="YI Baby Bowser Yawn - 7">
+                  <matrix>
+                    <Matrix tx="241" ty="2.25"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="61" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Yawn - 6">
+                  <matrix>
+                    <Matrix tx="240" ty="4.35"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="63" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Yawn - 5">
+                  <matrix>
+                    <Matrix tx="238.85" ty="8.25"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="65" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Yawn - 4">
+                  <matrix>
+                    <Matrix tx="237.85" ty="9.35"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="67" duration="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Yawn - 3">
+                  <matrix>
+                    <Matrix tx="237.85" ty="8.25"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="70" duration="8" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Eyes Closed - 2">
+                  <matrix>
+                    <Matrix tx="237.85" ty="8.25"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="78" duration="5" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Yawn - 3">
+                  <matrix>
+                    <Matrix tx="237.85" ty="8.25"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="83" duration="4" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Eyes Closed - 2">
+                  <matrix>
+                    <Matrix tx="237.85" ty="8.25"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="87" duration="4" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Yawn - 3">
+                  <matrix>
+                    <Matrix tx="237.85" ty="8.25"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="91" duration="4" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Eyes Closed - 2">
+                  <matrix>
+                    <Matrix tx="237.85" ty="8.25"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="95" duration="6" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Yawn - 3">
+                  <matrix>
+                    <Matrix tx="237.85" ty="8.25"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="101" duration="28" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="YI Baby Bowser Sitting Talking">
+                  <matrix>
+                    <Matrix tx="255.45" ty="38.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="129" duration="5" tweenType="motion" keyMode="17921" acceleration="-100">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Stand - 5">
+                  <matrix>
+                    <Matrix tx="238.35" ty="-3.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="134" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Stand - 5">
+                  <matrix>
+                    <Matrix tx="238.35" ty="-8.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="135" duration="5" tweenType="motion" keyMode="17921" acceleration="100">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Stand - 1">
+                  <matrix>
+                    <Matrix tx="238.35" ty="-5.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="140" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Stand - 1">
+                  <matrix>
+                    <Matrix tx="238.35" ty="4.85"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="141" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance selected="true" libraryItemName="YI Baby Bowser Stand - 2">
+                  <matrix>
+                    <Matrix tx="236.35" ty="7.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="143" duration="14" tweenType="motion" keyMode="17921" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="YI Baby Bowser Ground Pound" symbolType="graphic" loop="loop">
+                  <matrix>
+                    <Matrix tx="255.35" ty="16.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="157" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="YI Baby Bowser Ground Pound" symbolType="graphic" firstFrame="14" loop="loop">
+                  <matrix>
+                    <Matrix tx="255.35" ty="-43.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="158" duration="14" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="YI Baby Bowser Frontflip" symbolType="graphic" loop="play once">
+                  <matrix>
+                    <Matrix tx="168.7" ty="-38.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="172" duration="13" tweenType="motion" keyMode="17921" acceleration="40">
+              <elements>
+                <DOMSymbolInstance libraryItemName="YI Baby Bowser Frontflip" symbolType="graphic" firstFrame="14" loop="play once">
+                  <matrix>
+                    <Matrix tx="168.7" ty="-38.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="185" duration="4" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="YI Baby Bowser Frontflip" symbolType="graphic" firstFrame="15" loop="play once">
+                  <matrix>
+                    <Matrix tx="168.7" ty="70.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="189" duration="3" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Ground Pound - 1">
+                  <matrix>
+                    <Matrix tx="151.2" ty="55.85"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="192" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Ground Pound - 1">
+                  <matrix>
+                    <Matrix tx="151.2" ty="35.35"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="193" duration="15" keyMode="9728" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="YI Baby Bowser Frontflip" symbolType="graphic" firstFrame="2" loop="play once">
+                  <matrix>
+                    <Matrix tx="168.7" ty="50.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="208" duration="3" tweenType="motion" keyMode="17921" acceleration="16">
+              <elements>
+                <DOMSymbolInstance libraryItemName="YI Baby Bowser Frontflip" symbolType="graphic" firstFrame="15" loop="play once">
+                  <matrix>
+                    <Matrix tx="168.7" ty="50.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="211" duration="4" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="YI Baby Bowser Frontflip" symbolType="graphic" firstFrame="15" loop="play once">
+                  <matrix>
+                    <Matrix tx="168.7" ty="70.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="215" duration="2" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Ground Pound - 1">
+                  <matrix>
+                    <Matrix tx="151.2" ty="55.85"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="217" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Ground Pound - 1">
+                  <matrix>
+                    <Matrix tx="151.2" ty="45.35"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="218" duration="15" keyMode="9728" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="YI Baby Bowser Frontflip" symbolType="graphic" firstFrame="2" loop="play once">
+                  <matrix>
+                    <Matrix tx="168.7" ty="60.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="233" duration="2" tweenType="motion" keyMode="17921" acceleration="16">
+              <elements>
+                <DOMSymbolInstance libraryItemName="YI Baby Bowser Frontflip" symbolType="graphic" firstFrame="15" loop="play once">
+                  <matrix>
+                    <Matrix tx="168.7" ty="60.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="235" duration="5" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="YI Baby Bowser Frontflip" symbolType="graphic" firstFrame="15" loop="play once">
+                  <matrix>
+                    <Matrix tx="168.7" ty="70.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="240" duration="4" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Squish Kamek - 1">
+                  <matrix>
+                    <Matrix tx="149.7" ty="58.75"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="244" duration="4" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Squish Kamek - 2">
+                  <matrix>
+                    <Matrix tx="151.85" ty="51.6"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="248" duration="9" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Squish Kamek - 3">
+                  <matrix>
+                    <Matrix tx="157.85" ty="51.6"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="257" duration="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Squish Kamek - 2">
+                  <matrix>
+                    <Matrix tx="151.85" ty="51.6"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="260" duration="29" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Stand - 2">
+                  <matrix>
+                    <Matrix tx="146.7" ty="55.75"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" duration="186" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Arena">
+                  <matrix>
+                    <Matrix tx="-46" ty="-85.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="186" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Arena">
+                  <matrix>
+                    <Matrix tx="-48" ty="-85.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="187" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance selected="true" libraryItemName="YI Baby Bowser Arena">
+                  <matrix>
+                    <Matrix tx="-42" ty="-85.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="188" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Arena">
+                  <matrix>
+                    <Matrix tx="-50" ty="-85.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="189" duration="23" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Arena">
+                  <matrix>
+                    <Matrix tx="-46" ty="-85.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="212" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Arena">
+                  <matrix>
+                    <Matrix tx="-42" ty="-85.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="213" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Arena">
+                  <matrix>
+                    <Matrix tx="-50" ty="-85.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="214" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Arena">
+                  <matrix>
+                    <Matrix tx="-44" ty="-85.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="215" duration="20" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Arena">
+                  <matrix>
+                    <Matrix tx="-46" ty="-85.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="235" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Arena">
+                  <matrix>
+                    <Matrix tx="-44" ty="-85.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="236" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Arena">
+                  <matrix>
+                    <Matrix tx="-48" ty="-85.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="237" duration="52" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="YI Baby Bowser Arena">
+                  <matrix>
+                    <Matrix tx="-46" ty="-85.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

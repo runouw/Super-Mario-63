@@ -1,0 +1,228 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="   Effects/Water/Water Code" itemID="4602d9ce-00000590" sourceFlashFilepath="Rob &amp; Steve Hewitt\My Documents\Super Mario 63\New Title Screen Design.fla" sourceLibraryItemHRef="   Effects/Water/Water Code" sourceLastModified="1187466251" lastModified="1243223941" sourceItemID="4602d9ce-00000590">
+  <timeline>
+    <DOMTimeline name="Water Code">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (WaterDeepness == undefined) {
+	WaterDeepness = 400;
+}
+if (WaterLength == undefined) {
+	WaterLength = 500;
+}
+if (polygons == undefined) {
+	polygons = 50;
+}
+
+if (_root.BGquality == "LOW") {
+	polygons = Math.round(polygons*0.5);
+}
+if (_root.BGquality == "MEDIUM") {
+	polygons = Math.round(polygons*0.75);
+}
+if (randomwave == undefined) {
+	randomwave = 1;
+}
+if (waterstength == undefined) {
+	waterstength = 0.3;
+}
+if (redcolor == undefined) {
+	redcolor = 40;
+}
+if (greencolor == undefined) {
+	greencolor = 128;
+}
+if (bluecolor == undefined) {
+	bluecolor = 215;
+}
+if (alpha == undefined) {
+	alpha = 50;
+}
+if (graphics == undefined) {
+	graphics = false
+}
+//_rotation = 0;   
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+// Ocean - Jim Bumgardner
+kNbrPts = polygons;
+SW = WaterLength;
+SH = 0;
+MovieClip.prototype.makeWave = function(deep, clr, jit, turbProb) {
+	//if (_root.PauseGame == false && _root.playpause == false && Math.abs(_root.Course.Char._y-(_y+_root.Course.FrontGFX._y))<1000) {
+	this.pts = [];
+	this.springs = [];
+	this.clr = clr;
+	this.jit = jit;
+	this.turbProb = turbProb;
+	this.deep = deep;
+	this.stiffK = waterstength;
+	this.kDamp = .85;
+	var segLen = (SW+100)/kNbrPts;
+	for (var i = 0; i<kNbrPts; ++i) {
+		this.pts[i] = {x:-50+i*segLen, y:0, fx:0, fy:0, vx:0, vy:0, restLen:.5*segLen, jy:0};
+	}
+	//}
+};
+MovieClip.prototype.simWave = function() {
+	if (_root.PauseGame == false && Math.abs(_root.Course.Char._y-(_y+_root.Course.FrontGFX._y))<1000) {
+		var i;
+		// Initialize forces with some noise
+		for (i=0; i<this.pts.length; ++i) {
+			this.pts[i].fy += Math.random()*(randomwave*2)-randomwave;
+			this.pts[i].fx = 0;
+			if (Math.random()<this.turbProb) {
+			} else {
+				this.pts[i].fy = 0;
+			}
+		}
+		//
+		if (graphics == false) {
+			if (Math.abs(_root.Course.Char.yspeed)>5 && Math.abs(_root.Course.Char._y-(_y+_root.Course.FrontGFX._y))<20) {
+				if (rot == undefined || rot == 0 || rot == 180) {
+					X = _root.Course.Char._x-(_x+_root.Course.FrontGFX._x)+_root.Course.Char.xspeed;
+				} else {
+					X = _root.Course.Char._y-(_y+_root.Course.FrontGFX._y)+_root.Course.Char.yspeed;
+				}
+				marioI = Math.round(((X)/SW*(kNbrPts)));
+				if (_root.Course.Char.yspeed>0) {
+					this.pts[marioI].fy = _root.Course.Char.yspeed/2;
+				} else {
+					this.pts[marioI].fy = _root.Course.Char.yspeed/3;
+				}
+				this.pts[marioI].fx += _root.Course.Char.xspeed/5;
+				for (i=1; i<3; ++i) {
+					if (rot == undefined || rot == 0) {
+						this.pts[mouseI+i].fy -= (_root.Course.Char.yspeed/15)/i;
+						this.pts[mouseI-i].fy -= (_root.Course.Char.yspeed/15)/i;
+						this.pts[marioI].fx += (_root.Course.Char.xspeed/10)/i;
+					} else if (rot == 90) {
+						this.pts[mouseI+i].fy -= (_root.Course.Char.xspeed/15)/i;
+						this.pts[mouseI-i].fy -= (_root.Course.Char.xspeed/15)/i;
+						this.pts[marioI].fx += (_root.Course.Char.yspeed/10)/i;
+					} else if (rot == -90) {
+						this.pts[mouseI+i].fy += (_root.Course.Char.xspeed/15)/i;
+						this.pts[mouseI-i].fy += (_root.Course.Char.xspeed/15)/i;
+						this.pts[marioI].fx -= (_root.Course.Char.yspeed/10)/i;
+					} else {
+						this.pts[mouseI+i].fy += (_root.Course.Char.yspeed/15)/i;
+						this.pts[mouseI-i].fy += (_root.Course.Char.yspeed/15)/i;
+						this.pts[marioI].fx -= (_root.Course.Char.xspeed/10)/i;
+						// rot = 180
+					}
+				}
+			}
+		}
+		// compute spring forces                                          
+		for (i=0; i<this.pts.length-1; ++i) {
+			var pt1 = this.pts[i];
+			var pt2 = this.pts[i+1];
+			var dx = pt2.x-pt1.x;
+			var dy = pt2.y-pt1.y;
+			var dist = Math.sqrt(dx*dx+dy*dy);
+			var f1 = this.stiffK*(dist-pt1.restLen);
+			var spr_fx = f1*dx/dist;
+			var spr_fy = f1*dy/dist;
+			if (i != 0) {
+				pt1.fx += spr_fx;
+				pt1.fy += spr_fy;
+			}
+			if (i != this.pts.length-2) {
+				pt2.fx -= spr_fx;
+				pt2.fy -= spr_fy;
+			}
+		}
+		this.clear();
+		r = Math.floor(redcolor);
+		g = Math.floor(greencolor);
+		b = Math.floor(bluecolor);
+		this.clr = (r << 16 | g << 8 | b);
+		this.beginFill(this.clr, alpha);
+		this.moveTo(this.pts[0].x, this.pts[0].y);
+		for (i=1; i<this.pts.length-1; ++i) {
+			pt = this.pts[i];
+			pt.vx *= this.kDamp;
+			pt.vy *= this.kDamp;
+			pt.vx += pt.fx;
+			pt.vy += pt.fy;
+			pt.x += pt.vx;
+			pt.y += pt.vy;
+			this.lineTo(pt.x, pt.y);
+		}
+		i = this.pts.length-1;
+		this.lineTo(this.pts[i].x, this.pts[i].y);
+		//this.lineTo(this.pts[i].x, this.deep);
+		//this.lineTo(this.pts[0].x, this.deep);
+		this.lineTo(this.pts[i].x, WaterDeepness);
+		this.lineTo(this.pts[0].x, WaterDeepness);
+		this.lineTo(this.pts[0].x, this.pts[0].y);
+		this.endFill();
+	}
+};
+var d = 0;
+var vd = 4;
+kNbrLines = 1;
+for (var i = 1; i<kNbrLines+1; ++i) {
+	var r = i/(kNbrLines-1);
+	var ir = 1-r;
+	var mc = this.createEmptyMovieClip("mc"+i, kNbrLines*2+1-i*2);
+	mc._x = 0;
+	mc._y = SH/2-d;
+	var deep;
+	if (i == 0) {
+		deep = SH/2;
+	} else {
+		deep = d*2;
+	}
+	mc.makeWave(deep, mergeColor(0x333747, 0xD6D5D9, r*.9), .1+1*ir*ir, .1);
+	mc.onEnterFrame = mc.simWave;
+	d += vd;
+	vd /= 2;
+}
+SS = 10;
+var mc = "";
+mc.cy = SH/2.8;
+mc._x = -SW;
+mc._y = SH/4;
+//
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMStaticText selected="true" left="42.55" width="58.9" height="24.55" autoExpand="true" antiAliasThickness="68" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-72" ty="-15.95"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Water</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" bold="true" size="22" face="JazzText" fillColor="#0066FF"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,88 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Mini Meteor Falling" itemID="48ed92f2-0000111e" sourceFlashFilepath="Rob &amp; Steve Hewitt\My Documents\Super Mario 63\Meteor Tests.fla" sourceLibraryItemHRef="Mini Meteor Falling" sourceLastModified="1223529891" lastModified="1238122822" sourceItemID="48ed92f2-0000111e">
+  <timeline>
+    <DOMTimeline name="Mini Meteor Falling">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[Re = function () {
+	_alpha = 100;
+	_xscale = random(40)+80;
+	_yscale = random(40)+80;
+	_x = _parent.rex;
+	_y = _parent.rey;
+	//
+	//rot = random(360);
+	rot = -45+random(90);
+	//rot = random(4)*90;
+	//
+	rotspeed = random(15)/2;
+	speed = (random(5)+5)/2;
+	//
+	xspeed = Math.sin(rot*(Math.PI/180))*speed;
+	yspeed = Math.cos(rot*(Math.PI/180))*speed;
+	count = 0;
+	Break = random(3);
+	//Break = false;
+	if (Break == true) {
+		breakcount = 160+random(40);
+	} else {
+		breakcount = 0;
+	}
+	//
+	onEnterFrame = function () {
+		_rotation += rotspeed;
+		_x += xspeed;
+		_y += yspeed;
+		count++;
+		if (Break == true) {
+			if (count>breakcount) {
+				_parent.attachMovie("MiniMiniMeteor", "MiniMiniMeteor"+_parent.getNextHighestDepth(), _parent.getNextHighestDepth(), {_x:_x, _y:_y, count:300});
+				_parent.attachMovie("MiniMiniMeteor", "MiniMiniMeteor"+_parent.getNextHighestDepth(), _parent.getNextHighestDepth(), {_x:_x, _y:_y, count:300});
+				_parent.attachMovie("MiniMiniMeteor", "MiniMiniMeteor"+_parent.getNextHighestDepth(), _parent.getNextHighestDepth(), {_x:_x, _y:_y, count:300});
+				xspeed = 0;
+				yspeed = 0;
+				onEnterFrame = function () {
+					_alpha -= 15;
+					if (_alpha<=0) {
+						Re();
+					}
+				};
+			}
+		}
+		if (count>470) {
+			onEnterFrame = function () {
+				_alpha -= 15;
+				if (_alpha<=0) {
+					Re();
+				}
+			};
+		}
+	};
+};
+Re();
+count = random(470);
+for (i=0; i<count; i++) {
+	_x += xspeed;
+	_y += yspeed;
+}
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName="Mini Meteor Clip Clip" name="b">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter blurX="2" blurY="2"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

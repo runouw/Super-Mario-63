@@ -1,0 +1,3640 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Clips/ C - Castle/Castle Inside/ Section A/C-1BackGFX" itemID="45fea295-00000431" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="C-1BackGFX" lastModified="1246140447" lastUniqueIdentifier="99">
+  <timeline>
+    <DOMTimeline name="C-1BackGFX">
+      <layers>
+        <DOMLayer name="Layer 4" color="#FF4FFF" outline="true" current="true" isSelected="true" useOutlineView="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[heightlevel = 0;
+_root.AreaTextClipF("Inside the Castle:"+newline+"<i>Main Hall</i>", 1);
+count = 0;
+_root.warpframe = false;
+_root.Starnamenum = 0
+//  _root.TotalStars<=0 && _root.Star[39] == false
+onEnterFrame = function () {
+	if (_root.Course.Char._y-_y>-34) {
+		heightlevel = 0;
+	}
+	if ((_root.Course.Char._y-_y<-57 || (_root.Course.Char._y-_y<-30 && _root.Course.Char.air == false)) && heightlevel<1) {
+		heightlevel = 1;
+	}
+	if ((_root.Course.Char._y-_y<-82 || (_root.Course.Char._y-_y<-55 && _root.Course.Char.air == false)) && heightlevel<2) {
+		heightlevel = 2;
+	}
+	//     
+	if (heightlevel == 2 && _root.Course.Char._y-_y>-50) {
+		heightlevel = 1;
+	}
+	//     
+	gotoAndStop(heightlevel+2);
+	//
+	_root.Stats.screenfilter._alpha = Math.round((64-_root.TotalStars)*0.25);
+	//
+	//
+	//
+	//
+	//
+	//
+	if (count++>4) {
+		if (this.warp1.hitTest(_root.Course.Char.charClip.feet)) {
+			_root.Course.Char.attack = true;
+			_root.Course.Char.xspeed = 0;
+			_root.Course.Char.yspeed = 0;
+			_root.Course.Char.attackFrame = "none";
+			warp = true;
+			warpnum = 1;
+		}
+		if (this.warp2.hitTest(_root.Course.Char.charClip.feet)) {
+			_root.Course.Char.attack = true;
+			_root.Course.Char.xspeed = 0;
+			_root.Course.Char.yspeed = 0;
+			_root.Course.Char.attackFrame = "none";
+			warp = true;
+			warpnum = 2;
+		}
+		if (warp == true && _root.warpframe == false) {
+			if (warpnum == 1) {
+				_root.attachMovie("righttransition", "righttransition"+_root.getNextHighestDepth(), _root.getNextHighestDepth(), {_x:_root.screensizeX/2, _y:_root.screensizeY/2});
+			}
+			if (warpnum == 2) {
+				_root.attachMovie("uptransition", "uptransition"+_root.getNextHighestDepth(), _root.getNextHighestDepth(), {_x:_root.screensizeX/2, _y:_root.screensizeY/2});
+			}
+		}
+		if (_root.warpframe == true) {
+			if (warpnum == 1) {
+				//_root.StopBGsong();
+				//_root.Playinglevel = ""
+				_root.changecourse("righttransition2", "C-4H", 160, -170, 160, -170);
+			}
+			if (warpnum == 2) {
+				//_root.StopBGsong();
+				//_root.Playinglevel = ""
+				_root.changecourse("uptransition2", "C-13", 950, -50, 950, - 50);
+			}
+		}
+	}
+};
+//
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip">
+                  <matrix>
+                    <Matrix a="-4.74046325683594" d="-12.3546295166016" ty="-74.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+onClipEvent (enterFrame) {
+	if (this.hitTest(_root.Course.Char.charClip.body)) {
+		if (_root.PauseGame == false && _root.playpause == false) {
+			//_root.Course.Char.yspeed = _root.groundFriction(_root.Course.Char.yspeed, 0.015, 1.001);
+			if (savezoom == undefined) {
+				savezoom = _root.CameraZoom;
+			}
+			if (_root.CameraZoom>80) {
+				_root.CameraZoom -= 1;
+			}
+		}
+	} else {
+		if (savezoom !== undefined) {
+			if (_root.CameraZoom<savezoom) {
+				_root.CameraZoom += 1;
+			} else {
+				savezoom = undefined;
+			}
+		}
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="warp1">
+                  <matrix>
+                    <Matrix a="1.56735229492188" d="15.2250518798828" tx="782.95" ty="-272.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="warp2">
+                  <matrix>
+                    <Matrix a="3.77220153808594" d="6.25" ty="-527.4"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 6" color="#808080">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix ty="-640"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix ty="-640"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Decoration/ Signs &amp; Fences/Fancy Fence" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="-103.5" ty="-81"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="!-5990 -1620|-1410 -1620!-1410 -1620|-1410 -1280!-1410 -1280|-5990 -1280!-5990 -1280|-5990 -1620"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="370" ty="-640"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix tx="370" ty="-640"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Decoration/ Signs &amp; Fences/Fancy Fence" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="-103.5" ty="-81"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="!-5990 -1620|-1410 -1620!-1410 -1620|-1410 -1280!-1410 -1280|-5990 -1280!-5990 -1280|-5990 -1620"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 8" color="#FF4F4F">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix ty="-640"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix ty="-640"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Decoration/ Signs &amp; Fences/Fancy Fence" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="-279.55" ty="-57"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="!-9511 -1140|-7577 -1140!-7577 -1140|-7577 -800!-7577 -800|-9511 -800!-9511 -800|-9511 -1140"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix ty="-640"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix ty="-640"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Decoration/ Signs &amp; Fences/Fancy Fence" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="-279.55" ty="-57"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="!-6557 -800S1|-5569 -800!-5569 -800|-5569 -1140!-5569 -1140|-6557 -1140!-6557 -1140|-6557 -800"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="606.25" ty="-640"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix tx="606.25" ty="-640"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Decoration/ Signs &amp; Fences/Fancy Fence" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="-279.55" ty="-57"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="!-6557 -800S1|-5569 -800!-5569 -800|-5569 -1140!-5569 -1140|-6557 -1140!-6557 -1140|-6557 -800"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="854.4" ty="-640"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix tx="854.4" ty="-640"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Decoration/ Signs &amp; Fences/Fancy Fence" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="-279.55" ty="-57"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="!-9511 -1140|-7577 -1140!-7577 -1140|-7577 -800!-7577 -800|-9511 -800!-9511 -800|-9511 -1140"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Decoration/ Signs &amp; Fences/Fancy Fence" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="-306.3" ty="-208.55"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="!-10046 -4171|-8112 -4171!-8112 -4171|-8112 -3831!-8112 -3831|-10046 -3831!-10046 -3831|-10046 -4171"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix ty="-2"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix ty="-2"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Decoration/ Signs &amp; Fences/Fancy Fence" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="601.55" ty="-206.6"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="!8111 -4132|10045 -4132!10045 -4132|10045 -3792!10045 -3792|8111 -3792!8111 -3792|8111 -4132"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" duration="2" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Paintings" color="#FFFF4F" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="4" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Star Door">
+                  <matrix>
+                    <Matrix a="0.751068115234375" d="0.751068115234375" tx="-432.35" ty="-696.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "C-5-1";
+	//
+	locked = true;
+	keytype = 1;
+	if (_root.TotalStars>=8 || _root.CheatCastleUnlock == true) {
+		removelock = true;
+	}
+	//                                
+	doorlockfunction = function () {
+		_root.Course.Char.attack = true;
+		_root.Course.Char.attackFrame = "Sign";
+		_root.Course.Char.xspeed = 0;
+		//
+		_root.PlayMessage("You need a total of 8 Shine Sprites to unlock this door!");
+		_root.Mariosound = new Sound(this);
+		_root.Mariosound.attachSound("Bowser - Laugh Muffled");
+		_root.Mariosound.start(0, 1);
+		_root.Mariosound.setVolume(_root.MarioVolume);
+		count = 0;
+		onEnterFrame = function () {
+			X = _x+_parent._x;
+			_root.Course.Char._x += (X-_root.Course.Char._x)/5;
+			//
+			_root.playpause = true;
+			//
+			count++;
+			if (_root.KeySPACE() && count>5) {
+				_root.StopMessage();
+				//
+				count = 0;
+				onEnterFrame = function () {
+					count++;
+					if (count>5) {
+						_root.playpause = false;
+						_root.Course.Char.attack = false;
+						onEnterFrame = null;
+						gotoAndStop(1);
+					}
+				};
+			}
+		};
+	};
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ C - Castle/Castle Inside/ Section A/9-01 Painting">
+                  <matrix>
+                    <Matrix tx="0.5" ty="-806.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Star Door">
+                  <matrix>
+                    <Matrix a="0.751068115234375" d="0.751068115234375" tx="430.45" ty="-697.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "C-4-1";
+	//
+	//SPECIAL Lock....
+	//Reuires 5 Star COINS to open
+	locked = true;
+	keytype = 1;
+	if (_root.TotalStarCoins>=5 || _root.CheatCastleUnlock == true) {
+		removelock = true;
+	}
+	//                                 
+	doorlockfunction = function () {
+		_root.Course.Char.attack = true;
+		_root.Course.Char.attackFrame = "Sign";
+		_root.Course.Char.xspeed = 0;
+		//
+		_root.PlayMessage("You need a total of 5 Star Coins (Star COINS, not Shine Sprites) to unlock this door!");
+		_root.Mariosound = new Sound(this);
+		_root.Mariosound.attachSound("Bowser - Laugh Muffled");
+		_root.Mariosound.start(0, 1);
+		_root.Mariosound.setVolume(_root.MarioVolume);
+		count = 0;
+		onEnterFrame = function () {
+			X = _x+_parent._x;
+			_root.Course.Char._x += (X-_root.Course.Char._x)/5;
+			//
+			_root.playpause = true;
+			//
+			count++;
+			if (_root.KeySPACE() && count>5) {
+				_root.StopMessage();
+				//
+				count = 0;
+				onEnterFrame = function () {
+					count++;
+					if (count>5) {
+						_root.playpause = false;
+						_root.Course.Char.attack = false;
+						onEnterFrame = null;
+						gotoAndStop(1);
+					}
+				};
+			}
+		};
+	};
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Main Door Clip">
+                  <matrix>
+                    <Matrix a="1.25" d="1.25161743164063" tx="-544.95" ty="-85.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "C-2-1";
+	doortype = 2;
+	//d01
+	dooropenarray = 0;
+	locked = true;
+	keytype = 3;
+	if (_root.TotalStars>=1 || _root.CheatCastleUnlock == true) {
+		removelock = true;
+	}
+	//Bomb-Omb  
+	doorlockfunction = function () {
+		_root.Course.Char.attack = true;
+		_root.Course.Char.attackFrame = "Sign";
+		_root.Course.Char.xspeed = 0;
+		//
+		_root.PlayMessage("This door is locked.  You need 1 Shine Sprite to open it.");
+		_root.Mariosound = new Sound(this);
+		_root.Mariosound.attachSound("Bowser - Laugh Muffled");
+		_root.Mariosound.start(0, 1);
+		_root.Mariosound.setVolume(_root.MarioVolume);
+		count = 0;
+		onEnterFrame = function () {
+			X = _x+_parent._x;
+			_root.Course.Char._x += (X-_root.Course.Char._x)/5;
+			//
+			_root.playpause = true;
+			//
+			count++;
+			if (_root.KeyZ() && count>5) {
+				_root.StopMessage();
+				//
+				count = 0;
+				onEnterFrame = function () {
+					count++;
+					if (count>5) {
+						_root.playpause = false;
+						_root.Course.Char.attack = false;
+						onEnterFrame = null;
+						gotoAndStop(1);
+					}
+				};
+			}
+		};
+	};
+}
+onClipEvent (enterFrame) {
+	if (_root.TotalStars>=1 || _root.CheatCastleUnlock == true) {
+		removelock = true;
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Main Door Clip">
+                  <matrix>
+                    <Matrix a="-1.25" d="1.25161743164063" tx="551.95" ty="-85.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "C-3-1";
+	doortype = 2;
+	//d02
+	dooropenarray = 1;
+	//
+	locked = true;
+	keytype = 3;
+	if (_root.TotalStars>=2 || _root.CheatCastleUnlock == true) {
+		removelock = true;
+	}
+	//                                  
+	doorlockfunction = function () {
+		_root.Course.Char.attack = true;
+		_root.Course.Char.attackFrame = "Sign";
+		_root.Course.Char.xspeed = 0;
+		//
+		_root.PlayMessage("You need a total of 2 Shines Sprites to unlock this door!");
+		_root.Mariosound = new Sound(this);
+		_root.Mariosound.attachSound("Bowser - Laugh Muffled");
+		_root.Mariosound.start(0, 1);
+		_root.Mariosound.setVolume(_root.MarioVolume);
+		count = 0;
+		onEnterFrame = function () {
+			X = _x+_parent._x;
+			_root.Course.Char._x += (X-_root.Course.Char._x)/5;
+			//
+			_root.playpause = true;
+			//
+			count++;
+			if (_root.KeyZ() && count>5) {
+				_root.StopMessage();
+				//
+				count = 0;
+				onEnterFrame = function () {
+					count++;
+					if (count>5) {
+						_root.playpause = false;
+						_root.Course.Char.attack = false;
+						onEnterFrame = null;
+						gotoAndStop(1);
+					}
+				};
+			}
+		};
+	};
+}
+onClipEvent (enterFrame) {
+	if (_root.TotalStars>=2 || _root.CheatCastleUnlock == true) {
+		removelock = true;
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Main Door Clip">
+                  <matrix>
+                    <Matrix a="1.25" d="1.25161743164063" tx="160" ty="-37"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "C-6-1";
+	doortype = 3
+	//Back Hallway
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Main Door Clip">
+                  <matrix>
+                    <Matrix a="-1.25" d="1.25161743164063" tx="-160" ty="-37"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "C-6-2";
+	doortype = 3
+	//
+	//Back Hallway
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Star Door">
+                  <matrix>
+                    <Matrix a="0.751068115234375" d="0.751068115234375" tx="-457.5" ty="-209.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "C-5-1";
+	//d04
+	dooropenarray = 3;
+	locked = true;
+	if (_root.TotalStars>=8 || _root.CheatCastleUnlock == true) {
+		removelock = true;
+	}
+	keytype = 3;
+	//                                
+	doorlockfunction = function () {
+		_root.Course.Char.attack = true;
+		_root.Course.Char.attackFrame = "Sign";
+		_root.Course.Char.xspeed = 0;
+		//
+		_root.PlayMessage("You need a total of 8 Shine Sprites to unlock this door!");
+		_root.Mariosound = new Sound(this);
+		_root.Mariosound.attachSound("Bowser - Laugh Muffled");
+		_root.Mariosound.start(0, 1);
+		_root.Mariosound.setVolume(_root.MarioVolume);
+		count = 0;
+		onEnterFrame = function () {
+			X = _x+_parent._x;
+			_root.Course.Char._x += (X-_root.Course.Char._x)/5;
+			//
+			_root.playpause = true;
+			//
+			count++;
+			if (_root.KeyZ() && count>5) {
+				_root.StopMessage();
+				//
+				count = 0;
+				onEnterFrame = function () {
+					count++;
+					if (count>5) {
+						_root.playpause = false;
+						_root.Course.Char.attack = false;
+						onEnterFrame = null;
+						gotoAndStop(1);
+					}
+				};
+			}
+		};
+	};
+}
+onClipEvent (enterFrame) {
+	if (_root.TotalStars>=8 || _root.CheatCastleUnlock == true) {
+		removelock = true;
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Star Door">
+                  <matrix>
+                    <Matrix a="0.751068115234375" d="0.751068115234375" tx="457.5" ty="-209.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "C-4-1";
+	//d07
+	dooropenarray = 6;
+	//SPECIAL Lock....
+	//Reuires 5 Star COINS to open
+	locked = true;
+	keytype = 1;
+	if (_root.TotalStarCoins>=5 || _root.CheatCastleUnlock == true) {
+		removelock = true;
+	}
+	keytype = 6;
+	//                                 
+	doorlockfunction = function () {
+		_root.Course.Char.attack = true;
+		_root.Course.Char.attackFrame = "Sign";
+		_root.Course.Char.xspeed = 0;
+		//
+		_root.PlayMessage("You need a total of 5 Star Coins (Star COINS, not Shine Sprites) to unlock this door!");
+		_root.Mariosound = new Sound(this);
+		_root.Mariosound.attachSound("Bowser - Laugh Muffled");
+		_root.Mariosound.start(0, 1);
+		_root.Mariosound.setVolume(_root.MarioVolume);
+		count = 0;
+		onEnterFrame = function () {
+			X = _x+_parent._x;
+			_root.Course.Char._x += (X-_root.Course.Char._x)/5;
+			//
+			_root.playpause = true;
+			//
+			count++;
+			if (_root.KeyZ() && count>5) {
+				_root.StopMessage();
+				//
+				count = 0;
+				onEnterFrame = function () {
+					count++;
+					if (count>5) {
+						_root.playpause = false;
+						_root.Course.Char.attack = false;
+						onEnterFrame = null;
+						gotoAndStop(1);
+					}
+				};
+			}
+		};
+	};
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-123.2" ty="-106.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-93.2" ty="-106.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="93.2" ty="-106.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="123.2" ty="-106.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/Toad Stuff/Toad Main Clip">
+                  <matrix>
+                    <Matrix tx="-425.95" ty="-30.8"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	if (random(2) == 0 && (_parent.toaddisp2 == "bottom" || _parent.toaddisp2 == undefined)) {
+		_parent.toaddisp2 = "bottom"
+		staramount = 4;
+		Mood = "Smile";
+		M1Moo = "Talk";
+		M1Txt = "Hello, "+_root.CurrentPlayer;
+		M1Sta = function () {
+			return (BP());
+		};
+		M1End = function () {
+			return (BP());
+		};
+		//
+		M2Moo = "Talk";
+		M2Txt = "Did you know that there is a secret passage near the Snowman's Land painting?";
+		M2Sta = function () {
+			return (true);
+		};
+		M2End = function () {
+			return (BP());
+		};
+	} else {
+		_parent.toaddisp2 = "top"
+		//this.swapDepths(0);
+		//this.removeMovieClip();
+		this._y = 400;
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/Toad Stuff/Toad Main Clip">
+                  <matrix>
+                    <Matrix tx="345.95" ty="-30.8"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	staramount = 5
+	Mood = "Smile";
+	M1Moo = "Talk";
+	M1Txt = "Did you know that by pressing X, you can preform a Spin Attack?";
+	M1Sta = function () {
+		return (BP());
+	};
+	M1End = function () {
+		return (BP());
+	};
+	//
+	M2Moo = "Talk";
+	M2Txt = "It can be used to launch enemies near you far away, or break blocks in your path.";
+	M2Sta = function () {
+		return (true);
+	};
+	M2End = function () {
+		return (BP());
+	};
+	//
+	M3Moo = "Talk";
+	M3Txt = "...But I also heard you could hold the button down while in the air so that you can glide down slower and farther...";
+	M3Sta = function () {
+		return (true);
+	};
+	M3End = function () {
+		return (BP());
+	};
+	//
+	M4Moo = "Happy";
+	M4Txt = "...making jumping over difficult obstacles much easier, or even possible in the first place!";
+	M4Sta = function () {
+		return (true);
+	};
+	M4End = function () {
+		return (BP());
+	};
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/Toad Stuff/Toad Main Clip">
+                  <matrix>
+                    <Matrix tx="-343.85" ty="-30.8"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	staramount = 3;
+	Mood = "Smile";
+	M1Moo = "Talk";
+	M1Txt = "Hello, "+_root.CurrentPlayer;
+	M1Sta = function () {
+		return (BP());
+	};
+	M1End = function () {
+		return (BP());
+	};
+	//
+	M2Moo = "Talk";
+	M2Txt = "Since the Shine Sprites are starting to return to the Castle, most of the Toads are returning too.";
+	M2Sta = function () {
+		return (true);
+	};
+	M2End = function () {
+		return (BP());
+	};
+	if (_root.TotalStars<20) {
+		//
+		M3Moo = "Talk";
+		M3Txt = "Before Bowser came, this place was full of Toads running all over the place.";
+		M3Sta = function () {
+			return (true);
+		};
+		M3End = function () {
+			return (BP());
+		};
+		//
+		M4Moo = "Mad";
+		M4Txt = "Now it feels empty and secluded.";
+		M4Sta = function () {
+			return (true);
+		};
+		M4End = function () {
+			return (BP());
+		};
+	} else {
+		//
+		M3Moo = "Happy";
+		M3Txt = "With all the other Toads returning, this place is starting to feel lively again! ";
+		M3Sta = function () {
+			return (true);
+		};
+		M3End = function () {
+			return (BP());
+		};
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/Toad Stuff/Toad Main Clip">
+                  <matrix>
+                    <Matrix d="1.00119018554688" tx="245" ty="-30.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	if (random(2) == 0 && _parent.toadmove4 == undefined) {
+		this._y = -172;
+		_parent.toadmove4 = true;
+	}
+	staramount = 15;
+	count2 = 0;
+	speed = 2;
+	OEF2 = function () {
+		_x += speed;
+		count2++;
+		if (count2>60) {
+			count2 = 0;
+			speed *= -1;
+		}
+		_xscale = speed*50;
+	};
+	frame = "walk";
+	Mood = "Mad";
+	M1Moo = "Crazy";
+	M1Txt = "....Oh No!!!!....";
+	M1Sta = function () {
+		return (BP());
+	};
+	M1End = function () {
+		return (BP());
+	};
+	//
+	M2Moo = "Mad";
+	M2Txt = ".......I was told to deliver this letter to General Pepper, Commander-in-Cheif of the Cornerian Defense Forces.....";
+	M2Sta = function () {
+		return (true);
+	};
+	M2End = function () {
+		return (BP());
+	};
+	//
+	M3Moo = "Crazy";
+	M3Txt = "......But I have no idea what a Corneria is!!";
+	M3Sta = function () {
+		return (true);
+	};
+	M3End = function () {
+		return (BP());
+	};
+	//
+	M4Moo = "Mad";
+	M4Txt = '......................My only hint was to "Do a Barrel Roll!" .................... What does that Mean!?!?!';
+	M4Sta = function () {
+		return (true);
+	};
+	M4End = function () {
+		return (BP());
+	};
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/Toad Stuff/Toad Main Clip">
+                  <matrix>
+                    <Matrix tx="-281.4" ty="-67.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	if (random(2) == 0 && _parent.toaddisp3 == undefined) {
+		staramount = 18
+		count2 = 0;
+		speed = 2;
+		OEF2 = function () {
+			_x += speed;
+			_y -= speed;
+			count2++;
+			if (count2>32) {
+				count2 = 0;
+				speed *= -1;
+			}
+			_xscale = speed*50;
+		};
+		frame = "walk";
+		Mood = "Smile";
+		M1Moo = "Sad";
+		M1Txt = "........*pant....*pant*....";
+		M1Sta = function () {
+			return (BP());
+		};
+		M1End = function () {
+			return (BP());
+		};
+		//
+		M2Moo = "Talking";
+		M2Txt = ".......You know, Running up and down stairs is great exercise......";
+		M2Sta = function () {
+			return (true);
+		};
+		M2End = function () {
+			return (BP());
+		};
+	} else {
+		this._y = 500;
+		_parent.toaddisp3 = true;
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/Toad Stuff/Toad Main Clip">
+                  <matrix>
+                    <Matrix tx="150.5" ty="-172.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	if (random(2) == 0 && _parent.toaddisp1 == undefined) {
+		staramount = 8;
+		Mood = "Smile";
+		M1Moo = "Talk";
+		M1Txt = "Hello, "+_root.CurrentPlayer;
+		M1Sta = function () {
+			return (BP());
+		};
+		M1End = function () {
+			return (BP());
+		};
+		//
+		M2Moo = "Talk";
+		M2Txt = "Did you know that there is a secret passage near the Snowman's Land painting?";
+		M2Sta = function () {
+			return (true);
+		};
+		M2End = function () {
+			return (BP());
+		};
+	} else {
+		_parent.toaddisp1 = true;
+		this.swapDepths(0);
+		this.removeMovieClip();
+		this._y = 400;
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ C - Castle/Castle Inside/ Section A/9-01 Painting">
+                  <matrix>
+                    <Matrix tx="1" ty="-289.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/Toad Stuff/Toad Main Clip">
+                  <matrix>
+                    <Matrix tx="-350.4" ty="-172.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	if (random(2) == 0 && (_parent.toaddisp2 == "top" || _parent.toaddisp2 == undefined)) {
+		_parent.toaddisp2 = "top";
+		staramount = 4;
+		Mood = "Smile";
+		M1Moo = "Talk";
+		M1Txt = "Whenever you get hurt by an attack, your HP is displayed on the top of the screen in a Pie shape.";
+		M1Sta = function () {
+			return (BP());
+		};
+		M1End = function () {
+			return (BP());
+		};
+		//
+		M2Moo = "Talk";
+		M2Txt = "Above it, it says POWER....";
+		M2Sta = function () {
+			return (true);
+		};
+		M2End = function () {
+			return (BP());
+		};
+		//
+		M3Moo = "Talk";
+		M3Txt = "...Did you know that when you collect a Yellow Coin, one of the letters on POWER glows...";
+		M3Sta = function () {
+			return (true);
+		};
+		M3End = function () {
+			return (BP());
+		};
+		//
+		M4Moo = "Happy";
+		M4Txt = "...And when all 5 letters glow, you <b>heal 1 HP!!!</b>";
+		M4Sta = function () {
+			return (true);
+		};
+		M4End = function () {
+			return (BP());
+		};
+	} else {
+		_parent.toaddisp2 = "bottom";
+		//this.swapDepths(0);
+		//this.removeMovieClip();
+		this._y = 400;
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/Toad Stuff/Toad Main Clip">
+                  <matrix>
+                    <Matrix tx="-225.95" ty="-30.8"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	if (random(2) == 0 && (_parent.toaddisp8 == "bottom" || _parent.toaddisp8 == undefined)) {
+		_parent.toaddisp8 = "bottom"
+		staramount = 12
+		Mood = "Smile";
+		M1Moo = "Talk";
+		M1Txt = "......Yesterday, I was bored, so I decided to buy that new Final Fantasy game"
+		M1Sta = function () {
+			return (BP());
+		};
+		M1End = function () {
+			return (BP());
+		};
+		//
+		M2Moo = "Shocked";
+		M2Txt = "...FFMMDCCCLXXXVIII.... That is the two-thousand eight-hundred and ninety-eighth game in the series!?!?!";
+		M2Sta = function () {
+			return (true);
+		};
+		M2End = function () {
+			return (BP());
+		};
+		//
+		M3Moo = "Talk";
+		M3Txt = ".... I thought it was the <b>FINAL</b> Fantasy, meaning the LAST...... <i>EVER</i> .......";
+		M3Sta = function () {
+			return (true);
+		};
+		M3End = function () {
+			return (BP());
+		};
+		//
+		M4Moo = "Mad";
+		M4Txt = "....It should really be Final-but-not-really-final-because-we-will-undoubtably-release-more-and-more-sequels-despite-half-the-";
+		//-games-released-are-spin-offs-of-
+		M4Sta = function () {
+			return (true);
+		};
+		M4End = function () {
+			return (BP());
+		};
+		//
+		M5Moo = "Mad";
+		M5Txt = "-games-released-are-spin-offs-of-other-previous-f-f-titles-so-that-the-number-that-represents-this-new-game-is-so-large-that-it-";
+		M5Sta = function () {
+			return (true);
+		};
+		M5End = function () {
+			return (BP());
+		};
+		//
+		M6Moo = "Mad";
+		M6Txt = "-it-even-overtakes-the-normal-letter-name-of-final-fantasy-in-terms-of-length-and-number-of-characters Fantasy...";
+		M6Sta = function () {
+			return (true);
+		};
+		M6End = function () {
+			return (BP());
+		};
+		M7Moo = "Talk";
+		M7Txt = "But none the less, I am still enjoying that game thoroughly, so I have no other complaints...";
+		M7Sta = function () {
+			return (true);
+		};
+		M7End = function () {
+			return (BP());
+		};
+	} else {
+		_parent.toaddisp8 = "top"
+		//this.swapDepths(0);
+		//this.removeMovieClip();
+		this._y = 400;
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/Toad Stuff/Toad Main Clip">
+                  <matrix>
+                    <Matrix tx="-120.4" ty="-172.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	if (random(2) == 0 && (_parent.toaddisp8 == "top" || _parent.toaddisp8 == undefined)) {
+		_parent.toaddisp8 = "top";
+		staramount = 12;
+		Mood = "Smile";
+		M1Moo = "Talk";
+		M1Txt = "So you say you've collected "+_root.TotalStars+" Shine Sprites already....";
+		M1Sta = function () {
+			return (BP());
+		};
+		M1End = function () {
+			return (BP());
+		};
+		//
+		M2Moo = "Confused";
+		M2Txt = "O RLY?";
+		M2Sta = function () {
+			return (true);
+		};
+		M2End = function () {
+			return (BP());
+		};
+		//
+		M3Moo = "Shocked";
+		M3Txt = ".....................NO WAI!!!";
+		M3Sta = function () {
+			return (true);
+		};
+		M3End = function () {
+			return (BP());
+		};
+		M3F = function () {
+			_root.Course.Char.charClip.frame.gotoAndPlay("yes");
+		};
+		//
+		M4Moo = "Happy";
+		M4Txt = "....Wow!!!...............";
+		M4Sta = function () {
+			return (true);
+		};
+		M4End = function () {
+			return (BP());
+		};
+		M4F = function () {
+			_root.Course.Char.charClip.frame.gotoAndPlay(1);
+		};
+	} else {
+		_parent.toaddisp8 = "bottom";
+		//this.swapDepths(0);
+		//this.removeMovieClip();
+		this._y = 400;
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Cinema Toad Talk">
+                  <matrix>
+                    <Matrix tx="313.95" ty="167.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-14"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Cinema Toad Smile">
+                  <matrix>
+                    <Matrix tx="346.95" ty="167.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-14"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Cinema Toad Walk Happy">
+                  <matrix>
+                    <Matrix tx="372.2" ty="161.8"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-0.5" y="-14"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Cinema Toad Shocked">
+                  <matrix>
+                    <Matrix tx="289.5" ty="167.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-0.5" y="-14"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Cinema Toad Mad">
+                  <matrix>
+                    <Matrix tx="265.95" ty="165.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-14"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/Toad Stuff/Toad Main Clip">
+                  <matrix>
+                    <Matrix tx="-240.5" ty="-171.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	if (random(3) == 0 && (_root.BowserKey2 == true || _root.CheatCastleUnlock == true)) {
+		Mood = "Mad";
+		M1Moo = "Crazy";
+		M1Txt = "<b>AAAAAHHHHH!!!!!!!!!!</b>";
+		M1Sta = function () {
+			return (BP());
+		};
+		M1End = function () {
+			return (BP());
+		};
+		//
+		M2Fra = "walk";
+		M2Moo = "Crazy";
+		M2Txt = "<b>Apocalypse is coming!!    Run!!!        Run before it's too late!!!!!!!!</b>";
+		M2Sta = function () {
+			return (true);
+		};
+		M2End = function () {
+			return (BP());
+		};
+		//
+		//M3Moo = "Talk";
+		//M3Txt = "Before Bowser came, this place was full of Toads running all over the place.";
+		//M3Sta = function () {
+		//return (true);
+		//};
+		//M3End = function () {
+		//return (BP());
+		//};
+		//
+		M4Moo = "Mad";
+		M4Txt = "Now it feels empty and secluded.";
+		M4Sta = function () {
+			return (true);
+		};
+		M4End = function () {
+			return (BP());
+		};
+		//
+		M5Moo = "Happy";
+		M5Txt = "With all the other Toads returning, this place is starting to feel lively again! ";
+		M5Sta = function () {
+			return (true);
+		};
+		M5End = function () {
+			return (BP());
+		};
+	} else {
+		this._y = 500;
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Cinema Toad Walk Sad">
+                  <matrix>
+                    <Matrix tx="398.45" ty="164"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="0.5" y="-8"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/Toad Stuff/Toad Main Clip">
+                  <matrix>
+                    <Matrix tx="-43.5" ty="-204.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	if (_root.TotalStars<=0 && _root.Star[39] == false && _root.newstar !== true) {
+		staramount = 0;
+		Mood = "Smile";
+		M1Moo = "Mad";
+		M1Txt = "<b><i>Eddie: </i></b>.........It's so Dark in here ...... ";
+		M1Sta = function () {
+			if (count2++>5) {
+				return (true);
+			} else {
+				return (false);
+			}
+		};
+		standnext = false
+		M1End = function () {
+			return (BP());
+		};
+		count2 = 0;
+		
+		//
+		M2Moo = "Happy";
+		M2Txt = "<b><i>Eddie: </i></b> Oh well!  Just go right through this door!";
+		M2Sta = function () {
+			return (true);
+		};
+		M2End = function () {
+			return (BP());
+		};
+		M2F = function () {
+			M1Sta = function () {
+				return (false);
+				//return true;
+			};
+		};
+		//
+		/*M3Moo = "Shocked";
+		M3Txt = ".....................NO WAI!!!";
+		M3Sta = function () {
+		return (true);
+		};
+		M3End = function () {
+		return (BP());
+		};
+		M3F = function () {
+		_root.Course.Char.charClip.frame.gotoAndPlay("yes");
+		};*/
+		//
+		M4Moo = "Happy";
+		M4Txt = "....Wow!!!...............";
+		M4Sta = function () {
+			return (true);
+		};
+		M4End = function () {
+			return (BP());
+		};
+		M4F = function () {
+			_root.Course.Char.charClip.frame.gotoAndPlay(1);
+		};
+	} else {
+		//this.swapDepths(0);
+		//this.removeMovieClip();
+		this._y = 400;
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" duration="4" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <SolidColor color="#FF0000"/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge strokeStyle="1" edges="!-1072 -1421|-432 -1421"/>
+                  </edges>
+                </DOMShape>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Bricks &amp; Woods/Marble Brick" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="600.25" ty="-236.95"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="!14475 -4259|12005 -4259!12005 -4259|12005 -4739!12005 -4739|14475 -4739!14475 -4739|14475 -4259"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor alpha="0.949019607843137"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="!15397.5 -3710|11647.5 -3710!11647.5 -3710|11647.5 -5230!11647.5 -5230|15397.5 -5230!15397.5 -5230|15397.5 -3710"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ C - Castle/Castle Inside/ Section A/C-1 Color Swap">
+                  <matrix>
+                    <Matrix ty="-757"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Main Door Clip">
+                  <matrix>
+                    <Matrix a="-1.25" d="1.25161743164063" tx="455" ty="-649"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "C-3-1";
+	doortype = 2;
+	//Luigi's Room (Under Debate)
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Main Door Clip">
+                  <matrix>
+                    <Matrix a="1.25" d="1.25161743164063" tx="-445" ty="-649"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "C-2-1";
+	doortype = 2
+	//Bomb-Omb
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Main Door Clip">
+                  <matrix>
+                    <Matrix a="1.25" d="1.25161743164063" tx="150" ty="-649"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "C-6-1";
+	//Back Hallway
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Main Door Clip">
+                  <matrix>
+                    <Matrix a="-1.25" d="1.25161743164063" tx="-150" ty="-649"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "C-6-2";
+	//
+	//Back Hallway
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Main Door Clip">
+                  <matrix>
+                    <Matrix a="1.25" d="1.25161743164063" tx="9" ty="-723.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "C-9-1";
+	locked = true;
+	keytype = 2;
+	if (_root.BowserKey2 == true || _root.CheatCastleUnlock == true) {
+		removelock = true;
+	}
+	//                              
+	doorlockfunction = function () {
+		_root.Course.Char.attack = true;
+		_root.Course.Char.attackFrame = "Sign";
+		_root.Course.Char.xspeed = 0;
+		//
+		_root.PlayMessage("This door is locked; you need a key from Bowser to open it!");
+		_root.Mariosound = new Sound(this);
+		_root.Mariosound.attachSound("Bowser - Laugh Muffled");
+		_root.Mariosound.start(0, 1);
+		_root.Mariosound.setVolume(_root.MarioVolume);
+		count = 0;
+		onEnterFrame = function () {
+			X = _x+_parent._x;
+			_root.Course.Char._x += (X-_root.Course.Char._x)/5;
+			//
+			_root.playpause = true;
+			//
+			count++;
+			if (_root.KeySPACE() && count>5) {
+				_root.StopMessage();
+				//
+				count = 0;
+				onEnterFrame = function () {
+					count++;
+					if (count>5) {
+						_root.playpause = false;
+						_root.Course.Char.attack = false;
+						onEnterFrame = null;
+						gotoAndStop(1);
+					}
+				};
+			}
+		};
+	};
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Main Door Clip">
+                  <matrix>
+                    <Matrix a="-1.25" d="1.25161743164063" tx="-9" ty="-723.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "C-9-1";
+	locked = true;
+	keytype = 2;
+	if (_root.BowserKey2 == true || _root.CheatCastleUnlock == true) {
+		removelock = true;
+	}
+	//                             
+	doorlockfunction = function () {
+		_root.Course.Char.attack = true;
+		_root.Course.Char.attackFrame = "Sign";
+		_root.Course.Char.xspeed = 0;
+		//
+		_root.PlayMessage("This door is locked; you need a key from Bowser to open it!");
+		_root.Mariosound = new Sound(this);
+		_root.Mariosound.attachSound("Bowser - Laugh Muffled");
+		_root.Mariosound.start(0, 1);
+		_root.Mariosound.setVolume(_root.MarioVolume);
+		count = 0;
+		onEnterFrame = function () {
+			X = _x+_parent._x;
+			_root.Course.Char._x += (X-_root.Course.Char._x)/5;
+			//
+			_root.playpause = true;
+			//
+			count++;
+			if (_root.KeySPACE() && count>5) {
+				_root.StopMessage();
+				//
+				count = 0;
+				onEnterFrame = function () {
+					count++;
+					if (count>5) {
+						_root.playpause = false;
+						_root.Course.Char.attack = false;
+						onEnterFrame = null;
+						gotoAndStop(1);
+					}
+				};
+			}
+		};
+	};
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Main Door Clip">
+                  <matrix>
+                    <Matrix a="1.25" d="1.25161743164063" tx="-240" ty="-649"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "C-2-2";
+	doortype = 2;
+	//
+	//Cool-Cool Mountain
+	locked = true;
+	keytype = 3;
+	if (_root.TotalStars>=3 || _root.CheatCastleUnlock == true) {
+		removelock = true;
+	}
+	//                                 
+	doorlockfunction = function () {
+		_root.Course.Char.attack = true;
+		_root.Course.Char.attackFrame = "Sign";
+		_root.Course.Char.xspeed = 0;
+		//
+		_root.PlayMessage("You need a total of 3 Shines Sprites to unlock this door!");
+		_root.Mariosound = new Sound(this);
+		_root.Mariosound.attachSound("Bowser - Laugh Muffled");
+		_root.Mariosound.start(0, 1);
+		_root.Mariosound.setVolume(_root.MarioVolume);
+		count = 0;
+		onEnterFrame = function () {
+			X = _x+_parent._x;
+			_root.Course.Char._x += (X-_root.Course.Char._x)/5;
+			//
+			_root.playpause = true;
+			//
+			count++;
+			if (_root.KeySPACE() && count>5) {
+				_root.StopMessage();
+				//
+				count = 0;
+				onEnterFrame = function () {
+					count++;
+					if (count>5) {
+						_root.playpause = false;
+						_root.Course.Char.attack = false;
+						onEnterFrame = null;
+						gotoAndStop(1);
+					}
+				};
+			}
+		};
+	};
+	
+}
+//Locked till 3 Stars
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Main Door Clip">
+                  <matrix>
+                    <Matrix a="1.25" d="1.25161743164063" tx="240" ty="-649"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "C-3-2";
+	doortype = 2;
+	//Mini Course 1
+	//
+	locked = true;
+	keytype = 3;
+	if (_root.TotalStars>=2 || _root.CheatCastleUnlock == true) {
+		removelock = true;
+	}
+	//                               
+	doorlockfunction = function () {
+		_root.Course.Char.attack = true;
+		_root.Course.Char.attackFrame = "Sign";
+		_root.Course.Char.xspeed = 0;
+		//
+		_root.PlayMessage("You need a total of 2 Shines Sprites to unlock this door!");
+		_root.Mariosound = new Sound(this);
+		_root.Mariosound.attachSound("Bowser - Laugh Muffled");
+		_root.Mariosound.start(0, 1);
+		_root.Mariosound.setVolume(_root.MarioVolume);
+		count = 0;
+		onEnterFrame = function () {
+			X = _x+_parent._x;
+			_root.Course.Char._x += (X-_root.Course.Char._x)/5;
+			//
+			_root.playpause = true;
+			//
+			count++;
+			if (_root.KeySPACE() && count>5) {
+				_root.StopMessage();
+				//
+				count = 0;
+				onEnterFrame = function () {
+					count++;
+					if (count>5) {
+						_root.playpause = false;
+						_root.Course.Char.attack = false;
+						onEnterFrame = null;
+						gotoAndStop(1);
+					}
+				};
+			}
+		};
+	};
+}
+//Locked till 2 Stars
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMGroup>
+                  <members>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix ty="-520"/>
+                      </matrix>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix ty="-520"/>
+                          </matrix>
+                          <fills>
+                            <FillStyle index="1">
+                              <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Bricks &amp; Woods/Grey Brick Pattern 2" bitmapIsClipped="false">
+                                <matrix>
+                                  <Matrix a="45.9375" d="45.9375" tx="-584.7" ty="133.25"/>
+                                </matrix>
+                              </BitmapFill>
+                            </FillStyle>
+                          </fills>
+                          <strokes>
+                            <StrokeStyle index="1">
+                              <SolidStroke scaleMode="normal">
+                                <fill>
+                                  <SolidColor/>
+                                </fill>
+                              </SolidStroke>
+                            </StrokeStyle>
+                          </strokes>
+                          <edges>
+                            <Edge fillStyle1="1" strokeStyle="1" edges="!12005 4125S6|-12006 4125!-12006 4125|-12006 925!-12006 925|12005 925!12005 925|12005 4125"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <members>
+                        <DOMShape>
+                          <fills>
+                            <FillStyle index="1">
+                              <LinearGradient>
+                                <matrix>
+                                  <Matrix a="0" b="-0.100143432617188" c="0.098724365234375" d="0" tx="-0.05" ty="-391.9"/>
+                                </matrix>
+                                <GradientEntry color="#3C51E0" alpha="0.952941176470588" ratio="0"/>
+                                <GradientEntry color="#000099" alpha="0.952941176470588" ratio="0.596078431372549"/>
+                                <GradientEntry ratio="1"/>
+                              </LinearGradient>
+                            </FillStyle>
+                            <FillStyle index="2">
+                              <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Castle Constructors/Castle Wall Grass" bitmapIsClipped="false">
+                                <matrix>
+                                  <Matrix a="23.1643676757813" d="23.1643676757813" tx="-431.25" ty="-16.75"/>
+                                </matrix>
+                              </BitmapFill>
+                            </FillStyle>
+                            <FillStyle index="3">
+                              <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Castle Constructors/Castle Wall Grass" bitmapIsClipped="false">
+                                <matrix>
+                                  <Matrix a="17.1923065185547" d="17.1923065185547" tx="-465" ty="-10.95"/>
+                                </matrix>
+                              </BitmapFill>
+                            </FillStyle>
+                            <FillStyle index="4">
+                              <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Castle Constructors/Castle Wall Grass" bitmapIsClipped="false">
+                                <matrix>
+                                  <Matrix a="20" d="20" tx="-55.5" ty="-256"/>
+                                </matrix>
+                              </BitmapFill>
+                            </FillStyle>
+                          </fills>
+                          <strokes>
+                            <StrokeStyle index="1">
+                              <SolidStroke scaleMode="normal">
+                                <fill>
+                                  <SolidColor/>
+                                </fill>
+                              </SolidStroke>
+                            </StrokeStyle>
+                            <StrokeStyle index="2">
+                              <SolidStroke scaleMode="normal">
+                                <fill>
+                                  <SolidColor/>
+                                </fill>
+                              </SolidStroke>
+                            </StrokeStyle>
+                          </strokes>
+                          <edges>
+                            <Edge fillStyle1="2" strokeStyle="2" edges="!4632.5 -4943[#1217.A5 #FFEBEB.7A 4492.5 -5280.5!4492.5 -5280.5[#10FF.89 #FFEAD3.74 4152.5 -5420.5!4152.5 -5420.5[#1036.FF -5420.5 4149.5 -5420.5"/>
+                            <Edge strokeStyle="2" edges="!4149.5 -5420.5|4149.5 -4943!4149.5 -4943|4632.5 -4943"/>
+                            <Edge fillStyle0="2" strokeStyle="2" edges="!4632.5 -4943[4632.5 -4941.75 4632.5 -4940.5!4632.5 -4940.5|4632.5 -4940!4632.5 -4940|4633 -4940!4633 -4940|4633 -4455.5!4633 -4455.5|4633 -3980!4633 -3980|4149.5 -3980!4149.5 -3980|3673 -3980!3673 -3980|3673 -4455.5!3673 -4455.5|3673
+ -4919.5!3673 -4919.5[#E58.9 #FFECBE.51 3672.5 -4940!3672.5 -4940|3672.5 -4940.5!3672.5 -4940.5[3672.5 -4941.75 3672.5 -4943!3672.5 -4943[#E59.3B #FFEBEB.7A 3813 -5280.5!3813 -5280.5[#F70.46 #FFEAD4.83 4149.5 -5420.5"/>
+                            <Edge strokeStyle="2" edges="
+!4149.5 -4943|4149.5 -4455.5!4149.5 -4455.5|4633 -4455.5!4149.5 -4455.5|4149.5 -3980!3673 -4455.5|4149.5 -4455.5!3672.5 -4943|4149.5 -4943"/>
+                            <Edge fillStyle0="2" strokeStyle="2" edges="
+!6152.5 -5420.5[#18CF.89 #FFEAD3.74 6492.5 -5280.5!6492.5 -5280.5[#19E7.A5 #FFEBEB.7A 6632.5 -4943!6632.5 -4943[6632.5 -4941.75 6632.5 -4940.5!6632.5 -4940.5|6632.5 -4940!6632.5 -4940|6633 -4940!6633 -4940|6633 -4455.5!6633 -4455.5|6633
+ -3980!6633 -3980|6149.5 -3980!6149.5 -3980|5673 -3980!5673 -3980|5673 -4455.5!5673 -4455.5|5673 -4919.5!5673 -4919.5[#1628.9 #FFECBE.51 5672.5 -4940!5672.5 -4940|5672.5 -4940.5!5672.5 -4940.5[5672.5 -4941.75 5672.5 -4943!5672.5 -4943
+[#1629.3B #FFEBEB.7A 5813 -5280.5!5813 -5280.5[#1740.46 #FFEAD4.83 6149.5 -5420.5!6149.5 -5420.5[#1806.FF -5420.5 6152.5 -5420.5"/>
+                            <Edge strokeStyle="2" edges="
+!5673 -4455.5|6149.5 -4455.5!6149.5 -4455.5|6149.5 -4943!6149.5 -4943|5672.5 -4943!6149.5 -3980|6149.5 -4455.5!6149.5 -4943|6149.5 -5420.5"/>
+                            <Edge fillStyle1="2" strokeStyle="2" edges="
+!2128.5 -6220[#798.D4 #FFE7BB.F1 1813 -6080.5!1813 -6080.5[#689.3B #FFE8CB.7A 1672.5 -5743"/>
+                            <Edge strokeStyle="2" edges="
+!1672.5 -5743|2149.5 -5743!2149.5 -5743|2149.5 -6220.5"/>
+                            <Edge fillStyle1="1" strokeStyle="2" edges="
+!2149.5 -6220.5[#85A.F4 #FFE7B3.8E 2128.5 -6220"/>
+                            <Edge fillStyle0="1" strokeStyle="2" edges="
+!2149.5 -6220.5[#866.FF -6220.5 2152.5 -6220.5!2152.5 -6220.5[#874.7B #FFE7B3.7F 2176.5 -6220"/>
+                            <Edge fillStyle0="1" fillStyle1="2" edges="
+!2176.5 -6220|8128.5 -6220"/>
+                            <Edge fillStyle0="1" strokeStyle="2" edges="
+!8128.5 -6220[#1FCA.F4 #FFE7B3.8E 8149.5 -6220.5!8149.5 -6220.5[#1FD6.FF -6220.5 8152.5 -6220.5!8152.5 -6220.5[#1FE4.7B #FFE7B3.7F 8176 -6220"/>
+                            <Edge fillStyle0="1" fillStyle1="2" edges="
+!8176 -6220|10128.5 -6220"/>
+                            <Edge fillStyle0="1" strokeStyle="2" edges="
+!10128.5 -6220[#279A.F4 #FFE7B3.8E 10149.5 -6220.5!10149.5 -6220.5[#27A6.FF -6220.5 10152.5 -6220.5!10152.5 -6220.5[#27B4.7B #FFE7B3.7F 10176.5 -6220"/>
+                            <Edge fillStyle0="1" fillStyle1="2" edges="
+!10176.5 -6220|12005 -6220"/>
+                            <Edge fillStyle0="1" strokeStyle="1" edges="
+!12005 -6220|12005 -9455!12005 -9455|-12006 -9455!-12006 -9455|-12006 -6220"/>
+                            <Edge fillStyle0="1" fillStyle1="2" edges="
+!-12006 -6220|-10176 -6220"/>
+                            <Edge fillStyle0="1" strokeStyle="2" edges="
+!-10176 -6220[#FFD84B.89 #FFE7B3.7F -10152.5 -6220.5!-10152.5 -6220.5[#FFD859.01 -6220.5 -10149.5 -6220.5!-10149.5 -6220.5[#FFD865.0C #FFE7B3.8E -10128.5 -6220"/>
+                            <Edge fillStyle0="1" fillStyle1="2" edges="
+!-10128.5 -6220|-8176 -6220"/>
+                            <Edge fillStyle0="1" strokeStyle="2" edges="
+!-8176 -6220[#FFE01B.89 #FFE7B3.7F -8152.5 -6220.5!-8152.5 -6220.5[#FFE029.01 -6220.5 -8149.5 -6220.5!-8149.5 -6220.5[#FFE035.0C #FFE7B3.8E -8128.5 -6220"/>
+                            <Edge fillStyle0="1" fillStyle1="2" edges="
+!-8128.5 -6220|-2176.5 -6220"/>
+                            <Edge fillStyle0="1" strokeStyle="2" edges="
+!-2176.5 -6220[#FFF78B.89 #FFE7B3.7F -2152.5 -6220.5!-2152.5 -6220.5[#FFF799.01 -6220.5 -2149.5 -6220.5!-2149.5 -6220.5[#FFF7A5.0C #FFE7B3.8E -2128.5 -6220"/>
+                            <Edge fillStyle0="1" fillStyle1="2" edges="
+!-2128.5 -6220|2128.5 -6220"/>
+                            <Edge fillStyle0="2" strokeStyle="2" edges="
+!2176.5 -6220[#938.05 #FFE7BB.E2 2492.5 -6080.5!2492.5 -6080.5[#A47.A5 #FFE8CB.7A 2632.5 -5743!2632.5 -5743[2632.5 -5741.75 2632.5 -5740.5!2632.5 -5740.5|2632.5 -5740!2632.5 -5740|2633 -5740!2633 -5740|2633 -5255.5!2633 -5255.5|2633 -4780
+!2633 -4780|2149.5 -4780!2149.5 -4780|1673 -4780!1673 -4780|1673 -5255.5!1673 -5255.5|1673 -5719.5!1673 -5719.5[#688.9 #FFE99E.51 1672.5 -5740!1672.5 -5740|1672.5 -5740.5!1672.5 -5740.5[1672.5 -5741.75 1672.5 -5743"/>
+                            <Edge strokeStyle="2" edges="
+!2149.5 -4780|2149.5 -5255.5!2149.5 -5255.5|1673 -5255.5!2632.5 -5743|2149.5 -5743!2149.5 -5743|2149.5 -5255.5!2149.5 -5255.5|2633 -5255.5"/>
+                            <Edge fillStyle1="4" edges="
+!1540 -344|1053 -26!1053 -26|-1057 -26!-1057 -26|-1355 -344"/>
+                            <Edge fillStyle1="2" strokeStyle="1" edges="
+!-1355 -344|-2143 -344"/>
+                            <Edge fillStyle1="3" edges="
+!-2143 -344|-10221 -344"/>
+                            <Edge fillStyle1="2" strokeStyle="1" edges="
+!-10221 -344|-12006 -344!-12006 -344|-12006 -6220"/>
+                            <Edge fillStyle0="2" fillStyle1="3" strokeStyle="1" edges="
+!2163 -344|2163 -2860!2163 -2860|7502 -2860!7502 -2860|8150 -3508!8150 -3508|10221 -3508!10221 -3508|10221 -344"/>
+                            <Edge fillStyle0="2" strokeStyle="1" edges="
+!10221 -344|12005 -344!12005 -344|12005 -6220!1540 -344|2163 -344"/>
+                            <Edge fillStyle1="2" strokeStyle="2" edges="
+!10128.5 -6220[#26D8.D4 #FFE7BB.F1 9813 -6080.5!9813 -6080.5[#25C9.3B #FFE8CB.7A 9672.5 -5743"/>
+                            <Edge strokeStyle="2" edges="
+!9672.5 -5743|10149.5 -5743!10149.5 -5743|10149.5 -6220.5"/>
+                            <Edge fillStyle1="2" strokeStyle="2" edges="
+!10632.5 -5743[#2987.A5 #FFE8CB.7A 10492.5 -6080.5!10492.5 -6080.5[#2878.05 #FFE7BB.E2 10176.5 -6220!10633 -5255.5|10633 -5740!10633 -5740|10632.5 -5740!10632.5 -5740|10632.5 -5740.5!10632.5 -5740.5[10632.5 -5741.75 10632.5 -5743"/>
+                            <Edge strokeStyle="2" edges="
+!10632.5 -5743|10149.5 -5743!10149.5 -5743|10149.5 -5255.5!10149.5 -5255.5|10633 -5255.5"/>
+                            <Edge fillStyle1="2" strokeStyle="2" edges="
+!10149.5 -4780|10633 -4780!10633 -4780|10633 -5255.5"/>
+                            <Edge strokeStyle="2" edges="
+!10149.5 -5255.5|10149.5 -4780"/>
+                            <Edge fillStyle1="2" strokeStyle="2" edges="
+!8632.5 -5743[#21B7.A5 #FFE8CB.7A 8492.5 -6080.5!8492.5 -6080.5[#20A8.05 #FFE7BB.E2 8176 -6220!7672.5 -5743[7672.5 -5741.75 7672.5 -5740.5!7672.5 -5740.5|7672.5 -5740!7672.5 -5740[#1DF8.9 #FFE99E.51 7673 -5719.5!7673 -5719.5|7673 -5255.5"/>
+                            <Edge strokeStyle="2" edges="
+!7673 -5255.5|8149.5 -5255.5!8149.5 -5255.5|8149.5 -5743!8149.5 -5743|7672.5 -5743"/>
+                            <Edge fillStyle0="2" strokeStyle="2" edges="
+!8632.5 -5743[8632.5 -5741.75 8632.5 -5740.5!8632.5 -5740.5|8632.5 -5740!8632.5 -5740|8633 -5740!8633 -5740|8633 -5255.5!8633 -5255.5|8633 -4780!8633 -4780|8149.5 -4780!8149.5 -4780|7673 -4780!7673 -4780|7673 -5255.5"/>
+                            <Edge fillStyle1="2" strokeStyle="2" edges="
+!9672.5 -5743[9672.5 -5741.75 9672.5 -5740.5!9672.5 -5740.5|9672.5 -5740!9672.5 -5740[#25C8.9 #FFE99E.51 9673 -5719.5!9673 -5719.5|9673 -5255.5"/>
+                            <Edge strokeStyle="2" edges="
+!9673 -5255.5|10149.5 -5255.5!8633 -5255.5|8149.5 -5255.5!8149.5 -5255.5|8149.5 -4780!8149.5 -6220.5|8149.5 -5743!8149.5 -5743|8632.5 -5743"/>
+                            <Edge fillStyle1="2" strokeStyle="2" edges="
+!9673 -5255.5|9673 -4780!9673 -4780|10149.5 -4780!8128.5 -6220[#1F08.D4 #FFE7BB.F1 7813 -6080.5!7813 -6080.5[#1DF9.3B #FFE8CB.7A 7672.5 -5743"/>
+                            <Edge fillStyle1="3" edges="
+!10221 -344|2163 -344"/>
+                            <Edge strokeStyle="2" edges="
+!6149.5 -4455.5|6633 -4455.5!6632.5 -4943|6149.5 -4943"/>
+                            <Edge fillStyle0="2" strokeStyle="2" edges="
+!-8128.5 -6220[#FFE0F7.2C #FFE7BB.F1 -7813 -6080.5!-7813 -6080.5[#FFE206.C6 #FFE8CB.7A -7672.5 -5743!-7672.5 -5743[-7672.5 -5741.75 -7672.5 -5740.5!-7672.5 -5740.5|-7672.5 -5740!-7672.5 -5740[#FFE207.7 #FFE99E.51 -7673 -5719.5!-7673 -5719.5
+|-7673 -5255.5!-7673 -5255.5|-7673 -4780!-7673 -4780|-8149.5 -4780!-8149.5 -4780|-8633 -4780!-8633 -4780|-8633 -5255.5!-8633 -5255.5|-8633 -5740!-8633 -5740|-8632.5 -5740!-8632.5 -5740|-8632.5 -5740.5!-8632.5 -5740.5[-8632.5 -5741.75
+ -8632.5 -5743!-8632.5 -5743[#FFDE48.9B #FFE8CB.7A -8492 -6080.5!-8492 -6080.5[-8359.75 #FFE7BB.E2 -8176 -6220"/>
+                            <Edge strokeStyle="2" edges="
+!-8633 -5255.5|-8149.5 -5255.5!-8149.5 -5255.5|-8149.5 -5743!-8149.5 -5743|-8632.5 -5743"/>
+                            <Edge fillStyle0="2" strokeStyle="2" edges="
+!-10128.5 -6220[#FFD927.2C #FFE7BB.F1 -9813 -6080.5!-9813 -6080.5[#FFDA36.C6 #FFE8CB.7A -9672.5 -5743!-9672.5 -5743[-9672.5 -5741.75 -9672.5 -5740.5!-9672.5 -5740.5|-9672.5 -5740!-9672.5 -5740[#FFDA37.7 #FFE99E.51 -9673 -5719.5!-9673
+ -5719.5|-9673 -5255.5!-9673 -5255.5|-9673 -4780!-9673 -4780|-10149.5 -4780!-10149.5 -4780|-10633 -4780!-10633 -4780|-10633 -5255.5!-10633 -5255.5|-10633 -5740!-10633 -5740|-10632.5 -5740!-10632.5 -5740|-10632.5 -5740.5!-10632.5 -5740.5
+[-10632.5 -5741.75 -10632.5 -5743!-10632.5 -5743[#FFD678.9B #FFE8CB.7A -10492 -6080.5!-10492 -6080.5[-10359.75 #FFE7BB.E2 -10176 -6220"/>
+                            <Edge strokeStyle="2" edges="
+!-7673 -5255.5|-8149.5 -5255.5!-8149.5 -5255.5|-8149.5 -4780"/>
+                            <Edge fillStyle0="2" strokeStyle="2" edges="
+!-6632.5 -4943[#FFE618.9B #FFEBEB.7A -6492 -5280.5!-6492 -5280.5[#FFE730.B8 #FFEAD3.74 -6152.5 -5420.5!-6152.5 -5420.5[#FFE7F9.01 -5420.5 -6149.5 -5420.5!-6149.5 -5420.5[#FFE8BF.BA #FFEAD4.83 -5813 -5280.5!-5813 -5280.5[#FFE9D6.C6 #FFEBEB.7A
+ -5672.5 -4943!-5672.5 -4943[-5672.5 -4941.75 -5672.5 -4940.5!-5672.5 -4940.5|-5672.5 -4940!-5672.5 -4940[#FFE9D7.7 #FFECBE.51 -5673 -4919.5!-5673 -4919.5|-5673 -4455.5!-5673 -4455.5|-5673 -3980!-5673 -3980|-6149.5 -3980!-6149.5 -3980
+|-6633 -3980!-6633 -3980|-6633 -4455.5!-6633 -4455.5|-6633 -4940!-6633 -4940|-6632.5 -4940!-6632.5 -4940|-6632.5 -4940.5!-6632.5 -4940.5[-6632.5 -4941.75 -6632.5 -4943"/>
+                            <Edge strokeStyle="2" edges="
+!-8149.5 -6220.5|-8149.5 -5743!-8149.5 -5743|-7672.5 -5743!-9672.5 -5743|-10149.5 -5743!-10149.5 -5743|-10149.5 -5255.5!-10149.5 -5255.5|-9673 -5255.5!-10149.5 -5743|-10632.5 -5743!-10149.5 -5255.5|-10149.5 -4780!-10633 -5255.5|-10149.5
+ -5255.5!-10149.5 -6220.5|-10149.5 -5743"/>
+                            <Edge fillStyle0="2" fillStyle1="3" strokeStyle="1" edges="
+!-10221 -344|-10221 -3508!-10221 -3508|-8150 -3508!-8150 -3508|-7502 -2860!-7502 -2860|-2143 -2860!-2143 -2860|-2143 -344"/>
+                            <Edge fillStyle1="2" strokeStyle="2" edges="
+!-1672.5 -5743[#FFF976.C6 #FFE8CB.7A -1813 -6080.5!-1813 -6080.5[#FFF867.2C #FFE7BB.F1 -2128.5 -6220!-2176.5 -6220[-2359.75 #FFE7BB.E2 -2492 -6080.5!-2492 -6080.5[#FFF5B8.9B #FFE8CB.7A -2632.5 -5743"/>
+                            <Edge strokeStyle="2" edges="
+!-2632.5 -5743|-2149.5 -5743!-2149.5 -5743|-2149.5 -6220.5!-1673 -5255.5|-2149.5 -5255.5!-2149.5 -5255.5|-2149.5 -4780"/>
+                            <Edge fillStyle1="2" strokeStyle="2" edges="
+!-2149.5 -4780|-1673 -4780!-1673 -4780|-1673 -5255.5"/>
+                            <Edge fillStyle0="2" strokeStyle="2" edges="
+!-1672.5 -5743[-1672.5 -5741.75 -1672.5 -5740.5!-1672.5 -5740.5|-1672.5 -5740!-1672.5 -5740[#FFF977.7 #FFE99E.51 -1673 -5719.5!-1673 -5719.5|-1673 -5255.5"/>
+                            <Edge strokeStyle="2" edges="
+!-2149.5 -5743|-1672.5 -5743!-2633 -5255.5|-2149.5 -5255.5!-2149.5 -5255.5|-2149.5 -5743"/>
+                            <Edge fillStyle1="2" strokeStyle="2" edges="
+!-2632.5 -5743[-2632.5 -5741.75 -2632.5 -5740.5!-2632.5 -5740.5|-2632.5 -5740!-2632.5 -5740|-2633 -5740!-2633 -5740|-2633 -5255.5!-2633 -5255.5|-2633 -4780!-2633 -4780|-2149.5 -4780"/>
+                            <Edge strokeStyle="2" edges="
+!-5672.5 -4943|-6149.5 -4943!-6149.5 -4943|-6149.5 -4455.5!-6149.5 -4455.5|-5673 -4455.5!-6149.5 -4455.5|-6149.5 -3980!-6149.5 -5420.5|-6149.5 -4943"/>
+                            <Edge fillStyle0="2" strokeStyle="2" edges="
+!-4149.5 -5420.5[#FFF08F.BA #FFEAD4.83 -3813 -5280.5!-3813 -5280.5[#FFF1A6.C6 #FFEBEB.7A -3672.5 -4943!-3672.5 -4943[-3672.5 -4941.75 -3672.5 -4940.5!-3672.5 -4940.5|-3672.5 -4940!-3672.5 -4940[#FFF1A7.7 #FFECBE.51 -3673 -4919.5!-3673
+ -4919.5|-3673 -4455.5!-3673 -4455.5|-3673 -3980!-3673 -3980|-4149.5 -3980!-4149.5 -3980|-4633 -3980!-4633 -3980|-4633 -4455.5!-4633 -4455.5|-4633 -4940!-4633 -4940|-4632.5 -4940!-4632.5 -4940|-4632.5 -4940.5!-4632.5 -4940.5[-4632.5 -4941.75
+ -4632.5 -4943!-4632.5 -4943[#FFEDE8.9B #FFEBEB.7A -4492 -5280.5!-4492 -5280.5[#FFEF00.B8 #FFEAD3.74 -4152.5 -5420.5!-4152.5 -5420.5[#FFEFC9.01 -5420.5 -4149.5 -5420.5"/>
+                            <Edge strokeStyle="2" edges="
+!-3672.5 -4943|-4149.5 -4943!-4149.5 -4943|-4149.5 -4455.5!-4149.5 -4455.5|-3673 -4455.5!-4149.5 -4455.5|-4149.5 -3980!-4632.5 -4943|-4149.5 -4943!-4149.5 -4943|-4149.5 -5420.5!-4149.5 -4455.5|-4633 -4455.5!-6149.5 -4455.5|-6633 -4455.5
+!-6632.5 -4943|-6149.5 -4943"/>
+                            <Edge fillStyle0="2" fillStyle1="4" edges="
+!-1355 -344|1540 -344"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor alpha="0.180392156862745"/>
+                        </FillStyle>
+                        <FillStyle index="2">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Castle Constructors/Castle Classic Tile" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="-20" d="20" tx="-489.05" ty="-159"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="3">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Castle Constructors/Castle Classic Tile" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="15" d="15" tx="758.2" ty="-107"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="4">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Castle Constructors/Castle Classic Tile" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="489.1" ty="-159"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="5">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Castle Constructors/Castle Wall 2" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="-268.1" ty="-139.15"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal">
+                            <fill>
+                              <SolidColor/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                        <StrokeStyle index="2">
+                          <SolidStroke scaleMode="normal">
+                            <fill>
+                              <SolidColor/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge fillStyle1="2" strokeStyle="2" edges="
+!3032 -2860.5|3022 -2860.5!3022 -2860.5|3022 -2860"/>
+                        <Edge fillStyle1="1" strokeStyle="2" edges="
+!3022 -2860|3044 -2860"/>
+                        <Edge strokeStyle="2" edges="
+!3044 -2860|3032 -2860.5"/>
+                        <Edge fillStyle1="2" strokeStyle="2" edges="
+!3055.5 -2860|3032 -2860.5"/>
+                        <Edge fillStyle1="1" strokeStyle="2" edges="
+!3044 -2860|3055.5 -2860"/>
+                        <Edge fillStyle1="2" strokeStyle="2" edges="
+!2163 -2860|2163 -3180!2163 -3180|3342 -3180!3342 -3180|3342 -3100"/>
+                        <Edge fillStyle1="3" strokeStyle="2" edges="
+!3342 -3100|4327 -3100"/>
+                        <Edge fillStyle1="2" strokeStyle="2" edges="
+!4327 -3100|4327 -3180!4327 -3180|7522 -3180!7522 -3180|7522 -3340!7522 -3340|7671 -3340!7671 -3340|7671.5 -3511!7671.5 -3511|7819 -3511!7819 -3511|7819 -3671!7819 -3671|7975 -3671!7975 -3671|7975 -3831!7975 -3831|10221 -3831!10221 -3831
+|10221 -3508"/>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="
+!10221 -3508|10221 -228!10221 -228|2163 -280!2163 -280|2163 -2860"/>
+                        <Edge fillStyle0="1" fillStyle1="2" strokeStyle="2" edges="
+!3022 -2860|2163 -2860"/>
+                        <Edge fillStyle0="3" edges="
+!6029.5 -2860|6041 -2860.5"/>
+                        <Edge fillStyle0="3" fillStyle1="2" strokeStyle="2" edges="
+!6041 -2860.5|6019 -2860"/>
+                        <Edge fillStyle0="3" fillStyle1="1" strokeStyle="2" edges="
+!6019 -2860|6029.5 -2860"/>
+                        <Edge fillStyle0="1" strokeStyle="2" edges="
+!6040 -2860|6029.5 -2860"/>
+                        <Edge fillStyle0="2" strokeStyle="2" edges="
+!6041 -2860.5[#179E.6 #FFF4D3.9B 6052 -2860.5!6052 -2860.5|6040 -2860"/>
+                        <Edge fillStyle0="2" fillStyle1="1" strokeStyle="2" edges="
+!6040 -2860|7502 -2860!7502 -2860|8150 -3508!8150 -3508|10221 -3508"/>
+                        <Edge fillStyle0="1" fillStyle1="2" strokeStyle="2" edges="
+!6019 -2860[#1781.B1 -2860 6016.5 -2860!6016.5 -2860|5417 -2860!5417 -2860[5343.75 #FFF4D3.FC 4327 -2860"/>
+                        <Edge fillStyle0="1" fillStyle1="3" strokeStyle="2" edges="
+!4327 -2860|3342 -2860"/>
+                        <Edge fillStyle0="1" fillStyle1="2" strokeStyle="2" edges="
+!3342 -2860|3055.5 -2860"/>
+                        <Edge fillStyle0="2" fillStyle1="3" strokeStyle="2" edges="
+!3342 -2860|3342 -3100!4327 -3100|4327 -2860"/>
+                        <Edge fillStyle0="4" strokeStyle="1" edges="
+!-4291 -3100|-4291 -3180!-4291 -3180|-7521 -3180!-7521 -3180|-7521 -3340!-7521 -3340|-7670 -3340!-7670 -3340|-7670.5 -3511!-7670.5 -3511|-7818 -3511!-7818 -3511|-7818 -3671!-7818 -3671|-7974 -3671!-7974 -3671|-7974 -3831!-7974 -3831|-10220
+ -3831!-10220 -3831|-10220 -3508"/>
+                        <Edge fillStyle0="4" fillStyle1="1" strokeStyle="1" edges="
+!-10220 -3508|-8149 -3508!-8149 -3508|-7501 -2860!-7501 -2860|-4291 -2858"/>
+                        <Edge fillStyle0="4" fillStyle1="3" strokeStyle="1" edges="
+!-4291 -2858|-4291 -3100"/>
+                        <Edge fillStyle0="1" strokeStyle="2" edges="
+!-10220 -3508|-10220 -228!-10220 -228|-2162 -280!-2162 -280|-2162 -2857"/>
+                        <Edge fillStyle0="1" fillStyle1="4" strokeStyle="2" edges="
+!-2162 -2857|-3338 -2857"/>
+                        <Edge fillStyle0="1" fillStyle1="3" strokeStyle="2" edges="
+!-3338 -2857|-4012 -2857.5"/>
+                        <Edge fillStyle0="1" fillStyle1="5" edges="
+!-4012 -2857.5|-4021.5 -2847!-4021.5 -2847|-4021.5 -2857.5"/>
+                        <Edge fillStyle0="1" fillStyle1="1" strokeStyle="2" edges="
+!-4021.5 -2857.5|-4046.5 -2858"/>
+                        <Edge fillStyle0="1" fillStyle1="3" strokeStyle="2" edges="
+!-4046.5 -2858[#FFF02D.3 #FFF4D6.08 -4055 -2858!-4055 -2858[#FFEFB2.E8 #FFF4D6.1C -4291 -2858"/>
+                        <Edge fillStyle0="4" strokeStyle="2" edges="
+!-2162 -2857|-2162 -3180!-2162 -3180|-3338 -3180!-3338 -3180|-3338 -3100"/>
+                        <Edge fillStyle0="4" fillStyle1="3" strokeStyle="2" edges="
+!-3338 -3100|-3338 -2857"/>
+                        <Edge fillStyle0="1" fillStyle1="5" strokeStyle="2" edges="
+!-4021.5 -2857.5|-4021.5 -2858"/>
+                        <Edge fillStyle0="1" fillStyle1="3" strokeStyle="2" edges="
+!-4021.5 -2858|-4046.5 -2858"/>
+                        <Edge fillStyle0="3" fillStyle1="5" strokeStyle="2" edges="
+!-4021.5 -2858|-4011.5 -2858"/>
+                        <Edge fillStyle0="3" fillStyle1="5" edges="
+!-4011.5 -2858|-4012 -2857.5"/>
+                        <Edge fillStyle0="5" fillStyle1="5" strokeStyle="2" edges="
+!-4021.5 -2857.5|-4012 -2857.5"/>
+                        <Edge fillStyle1="3" strokeStyle="1" edges="
+!-4291 -3100|-3338 -3100"/>
+                        <Edge fillStyle1="1" edges="
+!-9062 1578|-7852 1578!-7852 1578|-7852 2788!-7852 2788|-9062 2788!-9062 2788|-9062 1578"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix ty="-640"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix ty="-640"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Castle Constructors/Castle Carpet" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="-558.6" ty="590.35"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="2">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Castle Constructors/Castle Wall 2" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="-537.95" ty="552"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal">
+                            <fill>
+                              <SolidColor/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                        <StrokeStyle index="2">
+                          <SolidStroke scaleMode="normal">
+                            <fill>
+                              <SolidColor/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge fillStyle0="1" strokeStyle="1" edges="
+!-9283 12458|-9039.5 12458!-9039.5 12458|-9039.5 12298!-9039.5 12298|-9187 12298!-9187 12298|-9187 12138!-9187 12138|-9343 12138!-9343 12138|-9343 11978!-9343 11978|-9492 11978!-9492 11978|-9492.5 11807!-9492.5 11807|-9640 11807!-9640
+ 11807|-9640 11647!-9640 11647|-9796 11647!-9796 11647|-9796 11487!-9796 11487|-9857.5 11487"/>
+                        <Edge fillStyle0="1" strokeStyle="2" edges="
+!-9857.5 11487|-12042 11487!-12042 11487|-12042 11660"/>
+                        <Edge fillStyle0="1" fillStyle1="2" strokeStyle="2" edges="
+!-12042 11660|-10081 11660!-10081 11660|-9283 12458"/>
+                        <Edge fillStyle0="2" strokeStyle="1" edges="
+!-9404 12458|-9283 12458"/>
+                        <Edge fillStyle0="2" strokeStyle="2" edges="
+!-12042 11660|-12042 12458!-12042 12458|-9404 12458"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix a="-1" tx="97.45" ty="-460"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix a="-1" tx="97.45" ty="-460"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Castle Constructors/Castle Carpet" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="-460.6" ty="410.35"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="2">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Castle Constructors/Castle Wall 2" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="-439.95" ty="372"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal">
+                            <fill>
+                              <SolidColor/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                        <StrokeStyle index="2">
+                          <SolidStroke scaleMode="normal">
+                            <fill>
+                              <SolidColor/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge fillStyle0="1" strokeStyle="1" edges="
+!-7323 8858|-7079.5 8858!-7079.5 8858|-7079.5 8698!-7079.5 8698|-7227 8698!-7227 8698|-7227 8538!-7227 8538|-7383 8538!-7383 8538|-7383 8378!-7383 8378|-7532 8378!-7532 8378|-7532.5 8207!-7532.5 8207|-7680 8207!-7680 8207|-7680 8047!-7680
+ 8047|-7836 8047!-7836 8047|-7836 7887!-7836 7887|-7897.5 7887"/>
+                        <Edge fillStyle0="1" strokeStyle="2" edges="
+!-7897.5 7887|-10082 7887!-10082 7887|-10082 8060"/>
+                        <Edge fillStyle0="1" fillStyle1="2" strokeStyle="2" edges="
+!-10082 8060|-8121 8060!-8121 8060|-7323 8858"/>
+                        <Edge fillStyle0="2" strokeStyle="1" edges="
+!-7444 8858|-7323 8858"/>
+                        <Edge fillStyle0="2" strokeStyle="2" edges="
+!-10082 8060|-10082 8858!-10082 8858|-7444 8858"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="315.95" ty="-1488"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix tx="315.95" ty="-1488"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#FFDF00"/>
+                        </FillStyle>
+                      </fills>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal">
+                            <fill>
+                              <SolidColor/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="
+!546 8434[773 8661 773 8981!773 8981[773 9301 546 9527!546 9527[320 9754 0 9754!0 9754[-320 9754 -547 9527!-547 9527[-773 9301 -773 8981!-773 8981[-773 8661 -547 8434!-547 8434[-320 8208 0 8208!0 8208[320 8208 546 8434"/>
+                      </edges>
+                    </DOMShape>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix tx="315.95" ty="-1481"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="-0.85" y="441.95"/>
+                      </transformationPoint>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix tx="315.95" ty="-1481"/>
+                          </matrix>
+                          <transformationPoint>
+                            <Point x="-0.85" y="441.95"/>
+                          </transformationPoint>
+                          <strokes>
+                            <StrokeStyle index="1">
+                              <SolidStroke scaleMode="normal">
+                                <fill>
+                                  <SolidColor/>
+                                </fill>
+                              </SolidStroke>
+                            </StrokeStyle>
+                          </strokes>
+                          <edges>
+                            <Edge strokeStyle="1" edges="
+!-192 8079S4|-12 7659!-12 7659|158 8063.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix a="0.8988037109375" b="0.437850952148438" c="-0.437835693359375" d="0.8988037109375" tx="509.4" ty="-1435.9"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="-0.8" y="442"/>
+                      </transformationPoint>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix a="0.8988037109375" b="0.437850952148438" c="-0.437835693359375" d="0.8988037109375" tx="509.4" ty="-1435.9"/>
+                          </matrix>
+                          <transformationPoint>
+                            <Point x="-0.8" y="442"/>
+                          </transformationPoint>
+                          <strokes>
+                            <StrokeStyle index="1">
+                              <SolidStroke scaleMode="normal">
+                                <fill>
+                                  <SolidColor/>
+                                </fill>
+                              </SolidStroke>
+                            </StrokeStyle>
+                          </strokes>
+                          <edges>
+                            <Edge strokeStyle="1" edges="
+!-192 8079S4|-12 7659!-12 7659|158 8063.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix a="0.619110107421875" b="0.784713745117188" c="-0.784698486328125" d="0.619110107421875" tx="662.55" ty="-1312"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="-0.85" y="441.95"/>
+                      </transformationPoint>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix a="0.619110107421875" b="0.784713745117188" c="-0.784698486328125" d="0.619110107421875" tx="662.55" ty="-1312"/>
+                          </matrix>
+                          <transformationPoint>
+                            <Point x="-0.85" y="441.95"/>
+                          </transformationPoint>
+                          <strokes>
+                            <StrokeStyle index="1">
+                              <SolidStroke scaleMode="normal">
+                                <fill>
+                                  <SolidColor/>
+                                </fill>
+                              </SolidStroke>
+                            </StrokeStyle>
+                          </strokes>
+                          <edges>
+                            <Edge strokeStyle="1" edges="
+!-192 8079S4|-12 7659!-12 7659|158 8063.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix a="0.225784301757813" b="0.973434448242188" c="-0.973434448242188" d="0.225784301757813" tx="745.6" ty="-1137.95"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="-0.85" y="442"/>
+                      </transformationPoint>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix a="0.225784301757813" b="0.973434448242188" c="-0.973434448242188" d="0.225784301757813" tx="745.6" ty="-1137.95"/>
+                          </matrix>
+                          <transformationPoint>
+                            <Point x="-0.85" y="442"/>
+                          </transformationPoint>
+                          <strokes>
+                            <StrokeStyle index="1">
+                              <SolidStroke scaleMode="normal">
+                                <fill>
+                                  <SolidColor/>
+                                </fill>
+                              </SolidStroke>
+                            </StrokeStyle>
+                          </strokes>
+                          <edges>
+                            <Edge strokeStyle="1" edges="
+!-192 8079S4|-12 7659!-12 7659|158 8063.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix a="0.618927001953125" b="-0.784835815429688" c="0.78485107421875" d="0.618927001953125" tx="-31.15" ty="-1313.15"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="-0.9" y="442"/>
+                      </transformationPoint>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix a="0.618927001953125" b="-0.784835815429688" c="0.78485107421875" d="0.618927001953125" tx="-31.15" ty="-1313.15"/>
+                          </matrix>
+                          <transformationPoint>
+                            <Point x="-0.9" y="442"/>
+                          </transformationPoint>
+                          <strokes>
+                            <StrokeStyle index="1">
+                              <SolidStroke scaleMode="normal">
+                                <fill>
+                                  <SolidColor/>
+                                </fill>
+                              </SolidStroke>
+                            </StrokeStyle>
+                          </strokes>
+                          <edges>
+                            <Edge strokeStyle="1" edges="
+!-192 8079S4|-12 7659!-12 7659|158 8063.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix a="0.90283203125" b="-0.42938232421875" c="0.42938232421875" d="0.90283203125" tx="126.2" ty="-1438.3"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="-0.75" y="441.9"/>
+                      </transformationPoint>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix a="0.90283203125" b="-0.42938232421875" c="0.42938232421875" d="0.90283203125" tx="126.2" ty="-1438.3"/>
+                          </matrix>
+                          <transformationPoint>
+                            <Point x="-0.75" y="441.9"/>
+                          </transformationPoint>
+                          <strokes>
+                            <StrokeStyle index="1">
+                              <SolidStroke scaleMode="normal">
+                                <fill>
+                                  <SolidColor/>
+                                </fill>
+                              </SolidStroke>
+                            </StrokeStyle>
+                          </strokes>
+                          <edges>
+                            <Edge strokeStyle="1" edges="
+!-192 8079S4|-12 7659!-12 7659|158 8063.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix a="-0.22930908203125" b="0.971237182617188" c="-0.971237182617188" d="-0.22930908203125" tx="744.5" ty="-936.9"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="-0.85" y="441.95"/>
+                      </transformationPoint>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix a="-0.22930908203125" b="0.971237182617188" c="-0.971237182617188" d="-0.22930908203125" tx="744.5" ty="-936.9"/>
+                          </matrix>
+                          <transformationPoint>
+                            <Point x="-0.85" y="441.95"/>
+                          </transformationPoint>
+                          <strokes>
+                            <StrokeStyle index="1">
+                              <SolidStroke scaleMode="normal">
+                                <fill>
+                                  <SolidColor/>
+                                </fill>
+                              </SolidStroke>
+                            </StrokeStyle>
+                          </strokes>
+                          <edges>
+                            <Edge strokeStyle="1" edges="
+!-192 8079S4|-12 7659!-12 7659|158 8063.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix a="-0.871932983398438" b="0.486404418945313" c="-0.486404418945313" d="-0.871932983398438" tx="529.6" ty="-653.25"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="-0.8" y="441.95"/>
+                      </transformationPoint>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix a="-0.871932983398438" b="0.486404418945313" c="-0.486404418945313" d="-0.871932983398438" tx="529.6" ty="-653.25"/>
+                          </matrix>
+                          <transformationPoint>
+                            <Point x="-0.8" y="441.95"/>
+                          </transformationPoint>
+                          <strokes>
+                            <StrokeStyle index="1">
+                              <SolidStroke scaleMode="normal">
+                                <fill>
+                                  <SolidColor/>
+                                </fill>
+                              </SolidStroke>
+                            </StrokeStyle>
+                          </strokes>
+                          <edges>
+                            <Edge strokeStyle="1" edges="
+!-192 8079S4|-12 7659!-12 7659|158 8063.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix a="-0.241195678710938" b="-0.968536376953125" c="0.968536376953125" d="-0.241195678710938" tx="-112.65" ty="-932.95"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="-0.8" y="441.95"/>
+                      </transformationPoint>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix a="-0.241195678710938" b="-0.968536376953125" c="0.968536376953125" d="-0.241195678710938" tx="-112.65" ty="-932.95"/>
+                          </matrix>
+                          <transformationPoint>
+                            <Point x="-0.8" y="441.95"/>
+                          </transformationPoint>
+                          <strokes>
+                            <StrokeStyle index="1">
+                              <SolidStroke scaleMode="normal">
+                                <fill>
+                                  <SolidColor/>
+                                </fill>
+                              </SolidStroke>
+                            </StrokeStyle>
+                          </strokes>
+                          <edges>
+                            <Edge strokeStyle="1" edges="
+!-192 8079S4|-12 7659!-12 7659|158 8063.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix a="0.216232299804688" b="-0.974624633789063" c="0.974624633789063" d="0.216232299804688" tx="-114.95" ty="-1135.2"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="-0.8" y="441.95"/>
+                      </transformationPoint>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix a="0.216232299804688" b="-0.974624633789063" c="0.974624633789063" d="0.216232299804688" tx="-114.95" ty="-1135.2"/>
+                          </matrix>
+                          <transformationPoint>
+                            <Point x="-0.8" y="441.95"/>
+                          </transformationPoint>
+                          <strokes>
+                            <StrokeStyle index="1">
+                              <SolidStroke scaleMode="normal">
+                                <fill>
+                                  <SolidColor/>
+                                </fill>
+                              </SolidStroke>
+                            </StrokeStyle>
+                          </strokes>
+                          <edges>
+                            <Edge strokeStyle="1" edges="
+!-192 8079S4|-12 7659!-12 7659|158 8063.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix a="-0.99884033203125" b="0.0297393798828125" c="-0.0297393798828125" d="-0.99884033203125" tx="328.1" ty="-597.65"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="-0.85" y="441.95"/>
+                      </transformationPoint>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix a="-0.99884033203125" b="0.0297393798828125" c="-0.0297393798828125" d="-0.99884033203125" tx="328.1" ty="-597.65"/>
+                          </matrix>
+                          <transformationPoint>
+                            <Point x="-0.85" y="441.95"/>
+                          </transformationPoint>
+                          <strokes>
+                            <StrokeStyle index="1">
+                              <SolidStroke scaleMode="normal">
+                                <fill>
+                                  <SolidColor/>
+                                </fill>
+                              </SolidStroke>
+                            </StrokeStyle>
+                          </strokes>
+                          <edges>
+                            <Edge strokeStyle="1" edges="
+!-192 8079S4|-12 7659!-12 7659|158 8063.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix a="-0.910797119140625" b="-0.410598754882813" c="0.410598754882813" d="-0.910797119140625" tx="133.5" ty="-637"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="-0.85" y="441.95"/>
+                      </transformationPoint>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix a="-0.910797119140625" b="-0.410598754882813" c="0.410598754882813" d="-0.910797119140625" tx="133.5" ty="-637"/>
+                          </matrix>
+                          <transformationPoint>
+                            <Point x="-0.85" y="441.95"/>
+                          </transformationPoint>
+                          <strokes>
+                            <StrokeStyle index="1">
+                              <SolidStroke scaleMode="normal">
+                                <fill>
+                                  <SolidColor/>
+                                </fill>
+                              </SolidStroke>
+                            </StrokeStyle>
+                          </strokes>
+                          <edges>
+                            <Edge strokeStyle="1" edges="
+!-192 8079S4|-12 7659!-12 7659|158 8063.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix a="-0.615676879882813" b="-0.784957885742188" c="0.784957885742188" d="-0.615676879882813" tx="-31.6" ty="-766.9"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="-0.85" y="441.9"/>
+                      </transformationPoint>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix a="-0.615676879882813" b="-0.784957885742188" c="0.784957885742188" d="-0.615676879882813" tx="-31.6" ty="-766.9"/>
+                          </matrix>
+                          <transformationPoint>
+                            <Point x="-0.85" y="441.9"/>
+                          </transformationPoint>
+                          <strokes>
+                            <StrokeStyle index="1">
+                              <SolidStroke scaleMode="normal">
+                                <fill>
+                                  <SolidColor/>
+                                </fill>
+                              </SolidStroke>
+                            </StrokeStyle>
+                          </strokes>
+                          <edges>
+                            <Edge strokeStyle="1" edges="
+!-192 8079S4|-12 7659!-12 7659|158 8063.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix a="-0.590744018554688" b="0.803634643554688" c="-0.803634643554688" d="-0.590744018554688" tx="670" ty="-777.25"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="-0.8" y="441.9"/>
+                      </transformationPoint>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix a="-0.590744018554688" b="0.803634643554688" c="-0.803634643554688" d="-0.590744018554688" tx="670" ty="-777.25"/>
+                          </matrix>
+                          <transformationPoint>
+                            <Point x="-0.8" y="441.9"/>
+                          </transformationPoint>
+                          <strokes>
+                            <StrokeStyle index="1">
+                              <SolidStroke scaleMode="normal">
+                                <fill>
+                                  <SolidColor/>
+                                </fill>
+                              </SolidStroke>
+                            </StrokeStyle>
+                          </strokes>
+                          <edges>
+                            <Edge strokeStyle="1" edges="
+!-192 8079S4|-12 7659!-12 7659|158 8063.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix a="0.976409912109375" b="0.212753295898438" c="-0.212753295898438" d="0.976409912109375" tx="409.95" ty="-1470.45"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="-0.85" y="441.9"/>
+                      </transformationPoint>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix a="0.976409912109375" b="0.212753295898438" c="-0.212753295898438" d="0.976409912109375" tx="409.95" ty="-1470.45"/>
+                          </matrix>
+                          <transformationPoint>
+                            <Point x="-0.85" y="441.9"/>
+                          </transformationPoint>
+                          <strokes>
+                            <StrokeStyle index="1">
+                              <SolidStroke scaleMode="normal">
+                                <fill>
+                                  <SolidColor/>
+                                </fill>
+                              </SolidStroke>
+                            </StrokeStyle>
+                          </strokes>
+                          <edges>
+                            <Edge strokeStyle="1" edges="
+!-192 8079S4|-12 7659!-12 7659|158 8063.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix a="0.784439086914063" b="0.618743896484375" c="-0.618728637695313" d="0.784439086914063" tx="589.25" ty="-1385.3"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="-0.8" y="442.05"/>
+                      </transformationPoint>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix a="0.784439086914063" b="0.618743896484375" c="-0.618728637695313" d="0.784439086914063" tx="589.25" ty="-1385.3"/>
+                          </matrix>
+                          <transformationPoint>
+                            <Point x="-0.8" y="442.05"/>
+                          </transformationPoint>
+                          <strokes>
+                            <StrokeStyle index="1">
+                              <SolidStroke scaleMode="normal">
+                                <fill>
+                                  <SolidColor/>
+                                </fill>
+                              </SolidStroke>
+                            </StrokeStyle>
+                          </strokes>
+                          <edges>
+                            <Edge strokeStyle="1" edges="
+!-192 8079S4|-12 7659!-12 7659|158 8063.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix a="0.43756103515625" b="0.897918701171875" c="-0.897903442382813" d="0.43756103515625" tx="712.4" ty="-1231.7"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="-0.85" y="441.95"/>
+                      </transformationPoint>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix a="0.43756103515625" b="0.897918701171875" c="-0.897903442382813" d="0.43756103515625" tx="712.4" ty="-1231.7"/>
+                          </matrix>
+                          <transformationPoint>
+                            <Point x="-0.85" y="441.95"/>
+                          </transformationPoint>
+                          <strokes>
+                            <StrokeStyle index="1">
+                              <SolidStroke scaleMode="normal">
+                                <fill>
+                                  <SolidColor/>
+                                </fill>
+                              </SolidStroke>
+                            </StrokeStyle>
+                          </strokes>
+                          <edges>
+                            <Edge strokeStyle="1" edges="
+!-192 8079S4|-12 7659!-12 7659|158 8063.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix a="0.0133514404296875" b="0.998504638671875" c="-0.998504638671875" d="0.0133514404296875" tx="756.5" ty="-1044.1"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="-0.85" y="442.05"/>
+                      </transformationPoint>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix a="0.0133514404296875" b="0.998504638671875" c="-0.998504638671875" d="0.0133514404296875" tx="756.5" ty="-1044.1"/>
+                          </matrix>
+                          <transformationPoint>
+                            <Point x="-0.85" y="442.05"/>
+                          </transformationPoint>
+                          <strokes>
+                            <StrokeStyle index="1">
+                              <SolidStroke scaleMode="normal">
+                                <fill>
+                                  <SolidColor/>
+                                </fill>
+                              </SolidStroke>
+                            </StrokeStyle>
+                          </strokes>
+                          <edges>
+                            <Edge strokeStyle="1" edges="
+!-192 8079S4|-12 7659!-12 7659|158 8063.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix a="0.77130126953125" b="-0.6346435546875" c="0.634658813476563" d="0.77130126953125" tx="35.35" ty="-1380.4"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="-0.9" y="441.95"/>
+                      </transformationPoint>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix a="0.77130126953125" b="-0.6346435546875" c="0.634658813476563" d="0.77130126953125" tx="35.35" ty="-1380.4"/>
+                          </matrix>
+                          <transformationPoint>
+                            <Point x="-0.9" y="441.95"/>
+                          </transformationPoint>
+                          <strokes>
+                            <StrokeStyle index="1">
+                              <SolidStroke scaleMode="normal">
+                                <fill>
+                                  <SolidColor/>
+                                </fill>
+                              </SolidStroke>
+                            </StrokeStyle>
+                          </strokes>
+                          <edges>
+                            <Edge strokeStyle="1" edges="
+!-192 8079S4|-12 7659!-12 7659|158 8063.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix a="0.972885131835938" b="-0.2271728515625" c="0.2271728515625" d="0.972885131835938" tx="215.65" ty="-1469.1"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="-0.85" y="441.85"/>
+                      </transformationPoint>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix a="0.972885131835938" b="-0.2271728515625" c="0.2271728515625" d="0.972885131835938" tx="215.65" ty="-1469.1"/>
+                          </matrix>
+                          <transformationPoint>
+                            <Point x="-0.85" y="441.85"/>
+                          </transformationPoint>
+                          <strokes>
+                            <StrokeStyle index="1">
+                              <SolidStroke scaleMode="normal">
+                                <fill>
+                                  <SolidColor/>
+                                </fill>
+                              </SolidStroke>
+                            </StrokeStyle>
+                          </strokes>
+                          <edges>
+                            <Edge strokeStyle="1" edges="
+!-192 8079S4|-12 7659!-12 7659|158 8063.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix a="-0.430526733398438" b="0.8995361328125" c="-0.8995361328125" d="-0.430526733398438" tx="712.65" ty="-848"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="-0.85" y="441.95"/>
+                      </transformationPoint>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix a="-0.430526733398438" b="0.8995361328125" c="-0.8995361328125" d="-0.430526733398438" tx="712.65" ty="-848"/>
+                          </matrix>
+                          <transformationPoint>
+                            <Point x="-0.85" y="441.95"/>
+                          </transformationPoint>
+                          <strokes>
+                            <StrokeStyle index="1">
+                              <SolidStroke scaleMode="normal">
+                                <fill>
+                                  <SolidColor/>
+                                </fill>
+                              </SolidStroke>
+                            </StrokeStyle>
+                          </strokes>
+                          <edges>
+                            <Edge strokeStyle="1" edges="
+!-192 8079S4|-12 7659!-12 7659|158 8063.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix a="-0.954849243164063" b="0.2894287109375" c="-0.2894287109375" d="-0.954849243164063" tx="442.45" ty="-616.8"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="-0.8" y="441.95"/>
+                      </transformationPoint>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix a="-0.954849243164063" b="0.2894287109375" c="-0.2894287109375" d="-0.954849243164063" tx="442.45" ty="-616.8"/>
+                          </matrix>
+                          <transformationPoint>
+                            <Point x="-0.8" y="441.95"/>
+                          </transformationPoint>
+                          <strokes>
+                            <StrokeStyle index="1">
+                              <SolidStroke scaleMode="normal">
+                                <fill>
+                                  <SolidColor/>
+                                </fill>
+                              </SolidStroke>
+                            </StrokeStyle>
+                          </strokes>
+                          <edges>
+                            <Edge strokeStyle="1" edges="
+!-192 8079S4|-12 7659!-12 7659|158 8063.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix a="-0.029449462890625" b="-0.99700927734375" c="0.99700927734375" d="-0.029449462890625" tx="-125.15" ty="-1026.55"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="-0.85" y="441.95"/>
+                      </transformationPoint>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix a="-0.029449462890625" b="-0.99700927734375" c="0.99700927734375" d="-0.029449462890625" tx="-125.15" ty="-1026.55"/>
+                          </matrix>
+                          <transformationPoint>
+                            <Point x="-0.85" y="441.95"/>
+                          </transformationPoint>
+                          <strokes>
+                            <StrokeStyle index="1">
+                              <SolidStroke scaleMode="normal">
+                                <fill>
+                                  <SolidColor/>
+                                </fill>
+                              </SolidStroke>
+                            </StrokeStyle>
+                          </strokes>
+                          <edges>
+                            <Edge strokeStyle="1" edges="
+!-192 8079S4|-12 7659!-12 7659|158 8063.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix a="0.418487548828125" b="-0.905624389648438" c="0.905624389648438" d="0.418487548828125" tx="-84.35" ty="-1224.5"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="-0.85" y="441.95"/>
+                      </transformationPoint>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix a="0.418487548828125" b="-0.905624389648438" c="0.905624389648438" d="0.418487548828125" tx="-84.35" ty="-1224.5"/>
+                          </matrix>
+                          <transformationPoint>
+                            <Point x="-0.85" y="441.95"/>
+                          </transformationPoint>
+                          <strokes>
+                            <StrokeStyle index="1">
+                              <SolidStroke scaleMode="normal">
+                                <fill>
+                                  <SolidColor/>
+                                </fill>
+                              </SolidStroke>
+                            </StrokeStyle>
+                          </strokes>
+                          <edges>
+                            <Edge strokeStyle="1" edges="
+!-192 8079S4|-12 7659!-12 7659|158 8063.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix a="-0.981613159179688" b="-0.1834716796875" c="0.1834716796875" d="-0.981613159179688" tx="233.9" ty="-605.35"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="-0.8" y="442"/>
+                      </transformationPoint>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix a="-0.981613159179688" b="-0.1834716796875" c="0.1834716796875" d="-0.981613159179688" tx="233.9" ty="-605.35"/>
+                          </matrix>
+                          <transformationPoint>
+                            <Point x="-0.8" y="442"/>
+                          </transformationPoint>
+                          <strokes>
+                            <StrokeStyle index="1">
+                              <SolidStroke scaleMode="normal">
+                                <fill>
+                                  <SolidColor/>
+                                </fill>
+                              </SolidStroke>
+                            </StrokeStyle>
+                          </strokes>
+                          <edges>
+                            <Edge strokeStyle="1" edges="
+!-192 8079S4|-12 7659!-12 7659|158 8063.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix a="-0.801956176757813" b="-0.594680786132813" c="0.594680786132813" d="-0.801956176757813" tx="52.25" ty="-685.2"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="-0.85" y="441.95"/>
+                      </transformationPoint>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix a="-0.801956176757813" b="-0.594680786132813" c="0.594680786132813" d="-0.801956176757813" tx="52.25" ty="-685.2"/>
+                          </matrix>
+                          <transformationPoint>
+                            <Point x="-0.85" y="441.95"/>
+                          </transformationPoint>
+                          <strokes>
+                            <StrokeStyle index="1">
+                              <SolidStroke scaleMode="normal">
+                                <fill>
+                                  <SolidColor/>
+                                </fill>
+                              </SolidStroke>
+                            </StrokeStyle>
+                          </strokes>
+                          <edges>
+                            <Edge strokeStyle="1" edges="
+!-192 8079S4|-12 7659!-12 7659|158 8063.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix a="-0.43414306640625" b="-0.897415161132813" c="0.897415161132813" d="-0.43414306640625" tx="-81.3" ty="-847.15"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="-0.8" y="441.85"/>
+                      </transformationPoint>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix a="-0.43414306640625" b="-0.897415161132813" c="0.897415161132813" d="-0.43414306640625" tx="-81.3" ty="-847.15"/>
+                          </matrix>
+                          <transformationPoint>
+                            <Point x="-0.8" y="441.85"/>
+                          </transformationPoint>
+                          <strokes>
+                            <StrokeStyle index="1">
+                              <SolidStroke scaleMode="normal">
+                                <fill>
+                                  <SolidColor/>
+                                </fill>
+                              </SolidStroke>
+                            </StrokeStyle>
+                          </strokes>
+                          <edges>
+                            <Edge strokeStyle="1" edges="
+!-192 8079S4|-12 7659!-12 7659|158 8063.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix a="-0.747787475585938" b="0.65899658203125" c="-0.65899658203125" d="-0.747787475585938" tx="605.95" ty="-707.95"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="-0.8" y="442"/>
+                      </transformationPoint>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix a="-0.747787475585938" b="0.65899658203125" c="-0.65899658203125" d="-0.747787475585938" tx="605.95" ty="-707.95"/>
+                          </matrix>
+                          <transformationPoint>
+                            <Point x="-0.8" y="442"/>
+                          </transformationPoint>
+                          <strokes>
+                            <StrokeStyle index="1">
+                              <SolidStroke scaleMode="normal">
+                                <fill>
+                                  <SolidColor/>
+                                </fill>
+                              </SolidStroke>
+                            </StrokeStyle>
+                          </strokes>
+                          <edges>
+                            <Edge strokeStyle="1" edges="
+!-192 8079S4|-12 7659!-12 7659|158 8063.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                  </members>
+                </DOMGroup>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ C - Castle/C-1 Star GFX">
+                  <matrix>
+                    <Matrix ty="-385.8"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Castle Constructors/Castle Wall 2" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="-117.6" ty="-48.6"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="2">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Castle Constructors/Castle Wall 2" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="86.6" ty="-48.6"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="3">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Castle Constructors/Castle Wall 2" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="373.95" ty="-53.6"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="4">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Castle Constructors/Castle Wall 2" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="-405.9" ty="-53.6"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="5">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Castle Constructors/Castle Wall 2" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="102.35" ty="-48.6"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal">
+                            <fill>
+                              <SolidColor/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge fillStyle0="5" strokeStyle="1" edges="
+!785 -1290|-785 -1290!-785 -1290|-785 -6!-785 -6|785 -6!785 -6|785 -1290"/>
+                        <Edge fillStyle0="2" strokeStyle="1" edges="
+!1732 -1780|1732 -332!1732 -332|2707 -332!2707 -332|2707 -1780!2707 -1780|1732 -1780"/>
+                        <Edge fillStyle0="1" strokeStyle="1" edges="
+!500 -4674|-500 -4674!-500 -4674|-500 -3626!-500 -3626|500 -3626!500 -3626|500 -4674"/>
+                        <Edge fillStyle0="3" strokeStyle="1" edges="
+!7479 -192|8119 -192!8119 -192|8119 -1240!8119 -1240|7479 -1240!7479 -1240|7479 -192"/>
+                        <Edge fillStyle0="4" strokeStyle="1" edges="
+!-8118 -192|-7478 -192!-7478 -192|-7478 -1240!-7478 -1240|-8118 -1240!-8118 -1240|-8118 -192"/>
+                        <Edge fillStyle0="1" strokeStyle="1" edges="
+!-2672 -1780|-2672 -332!-2672 -332|-1712 -332!-1712 -332|-1712 -1780!-1712 -1780|-2672 -1780"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="-7.7" ty="-545"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix tx="-7.7" ty="-545"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Castle Constructors/Castle Carpet" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="-20" d="20" tx="31.6" ty="375.7"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal">
+                            <fill>
+                              <SolidColor/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="
+!1433.5 7381.5|-1126.5 7381.5!-1126.5 7381.5|-1126.5 7061.5!-1126.5 7061.5|1433.5 7061.5!1433.5 7061.5|1433.5 7381.5"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Main Door Clip">
+                  <matrix>
+                    <Matrix a="1.25" d="1.25161743164063" tx="-390" ty="-37"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "C-2-2";
+	doortype = 2;
+	//
+	//d03
+	locked = true;
+	keytype = 3;
+	if (_root.TotalStars>=3 || _root.CheatCastleUnlock == true) {
+		removelock = true;
+	}
+	dooropenarray = 2;
+	//                                  
+	doorlockfunction = function () {
+		_root.Course.Char.attack = true;
+		_root.Course.Char.attackFrame = "Sign";
+		_root.Course.Char.xspeed = 0;
+		//
+		_root.PlayMessage("You need a total of 3 Shines Sprites to unlock this door!");
+		_root.Mariosound = new Sound(this);
+		_root.Mariosound.attachSound("Bowser - Laugh Muffled");
+		_root.Mariosound.start(0, 1);
+		_root.Mariosound.setVolume(_root.MarioVolume);
+		count = 0;
+		onEnterFrame = function () {
+			X = _x+_parent._x;
+			_root.Course.Char._x += (X-_root.Course.Char._x)/5;
+			//
+			_root.playpause = true;
+			//
+			count++;
+			if (_root.KeyZ() && count>5) {
+				_root.StopMessage();
+				//
+				count = 0;
+				onEnterFrame = function () {
+					count++;
+					if (count>5) {
+						_root.playpause = false;
+						_root.Course.Char.attack = false;
+						onEnterFrame = null;
+						gotoAndStop(1);
+					}
+				};
+			}
+		};
+	};
+}
+onClipEvent (enterFrame) {
+	if (_root.TotalStars>=3 || _root.CheatCastleUnlock == true) {
+		removelock = true;
+	}
+}
+//Locked till 3 Stars
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Main Door Clip">
+                  <matrix>
+                    <Matrix a="1.25" d="1.25161743164063" tx="390" ty="-37"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "C-3-2";
+	doortype = 2;
+	//9-02
+	dooropenarray = 5;
+	//d06
+	locked = true;
+	keytype = 3;
+	if (_root.TotalStars>=5 || _root.CheatCastleUnlock == true) {
+		removelock = true;
+	}
+	//                                 
+	doorlockfunction = function () {
+		_root.Course.Char.attack = true;
+		_root.Course.Char.attackFrame = "Sign";
+		_root.Course.Char.xspeed = 0;
+		//
+		_root.PlayMessage("You need a total of 5 Shines Sprites to unlock this door!");
+		_root.Mariosound = new Sound(this);
+		_root.Mariosound.attachSound("Bowser - Laugh Muffled");
+		_root.Mariosound.start(0, 1);
+		_root.Mariosound.setVolume(_root.MarioVolume);
+		count = 0;
+		onEnterFrame = function () {
+			X = _x+_parent._x;
+			_root.Course.Char._x += (X-_root.Course.Char._x)/5;
+			//
+			_root.playpause = true;
+			//
+			count++;
+			if (_root.KeyZ() && count>5) {
+				_root.StopMessage();
+				//
+				count = 0;
+				onEnterFrame = function () {
+					count++;
+					if (count>5) {
+						_root.playpause = false;
+						_root.Course.Char.attack = false;
+						onEnterFrame = null;
+						gotoAndStop(1);
+					}
+				};
+			}
+		};
+	};
+}
+onClipEvent (enterFrame) {
+	if (_root.TotalStars>=5 || _root.CheatCastleUnlock == true) {
+		removelock = true;
+	}
+}
+//Locked till 2 Stars
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor alpha="0.2"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!4323 -3100.5|3342 -3100!3342 -3100|3342 -2860!3342 -2860|4323 -2860.5!4323 -2860.5|4323 -3100.5!-4287 -2858|-3338 -2857!-3338 -2857|-3338 -3100!-3338 -3100|-4287 -3100!-4287 -3100|-4287 -2858"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix ty="-640"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix ty="-640"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Castle Constructors/Castle Carpet" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20.01220703125" tx="222.2" ty="569.95"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="2">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Castle Constructors/Castle Carpet" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="-20" d="20.0189208984375" tx="-222.2" ty="569.95"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal">
+                            <fill>
+                              <SolidColor/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge fillStyle0="2" strokeStyle="1" edges="
+!3248.5 9620.5|3248 9941.5!3248 9941.5|3408 9941.5!3408 9941.5|3728 10261.5!3728 10261.5|3728.5 10261!3728.5 10261|3888 10421.5!3888 10421.5|3888.5 10421!3888.5 10421|4048 10581.5!4048 10581.5|4048.5 10581!4048.5 10581|4208 10741.5!4208
+ 10741.5|4208.5 10741!4208.5 10741|4368 10901.5!4368 10901.5|4368.5 10901!4368.5 10901|4528 11061.5!4528 11061.5|4528.5 11061!4528.5 11061|4688 11222!4688 11222|4688.5 11221.5!4688.5 11221.5|4848 11382!4848 11382|4848.5 11381.5!4848.5
+ 11381.5|5008 11542!5008 11542|5008.5 11541.5!5008.5 11541.5|5168 11702!5168 11702|5168.5 11701.5!5168.5 11701.5|5328 11862!5328 11862|5328.5 11861.5!5328.5 11861.5|5488 12022!5488 12022|5488.5 12021.5!5488.5 12021.5|5648 12182!5648 12182
+|5648.5 12181.5!5648.5 12181.5|5808 12342!5808 12342|5808.5 12341.5!5808.5 12341.5|5808 12547!5808 12547|6288 12547!6288 12547|6288.5 12341.5!6288.5 12341.5|6128.5 12341.5!6128.5 12341.5|6128.5 12181.5!6128.5 12181.5|5968.5 12181.5!5968.5
+ 12181.5|5968.5 12021.5!5968.5 12021.5|5808.5 12021.5!5808.5 12021.5|5808.5 11861.5!5808.5 11861.5|5648.5 11861.5!5648.5 11861.5|5648.5 11701.5!5648.5 11701.5|5488.5 11701.5!5488.5 11701.5|5488.5 11541.5!5488.5 11541.5|5328.5 11541.5
+!5328.5 11541.5|5328.5 11381.5!5328.5 11381.5|5168.5 11381.5!5168.5 11381.5|5168.5 11221.5!5168.5 11221.5|5008.5 11221.5!5008.5 11221.5|5008.5 11061!5008.5 11061|4848.5 11061!4848.5 11061|4848.5 10901!4848.5 10901|4688.5 10901!4688.5
+ 10901|4688.5 10741!4688.5 10741|4528.5 10741!4528.5 10741|4528.5 10581!4528.5 10581|4368.5 10581!4368.5 10581|4368.5 10421!4368.5 10421|4208.5 10421!4208.5 10421|4208.5 10261!4208.5 10261|4048.5 10261!4048.5 10261|4048.5 10101!4048.5
+ 10101|3888.5 10101!3888.5 10101|3888.5 9941!3888.5 9941|3728.5 9941!3728.5 9941|3728.5 9781!3728.5 9781|3568.5 9781!3568.5 9781|3568.5 9620.5!3568.5 9620.5|3248.5 9620.5"/>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="
+!-3248.5 9621.5|-3248 9942!-3248 9942|-3408 9942!-3408 9942|-3728 10262!-3728 10262|-3728.5 10261.5!-3728.5 10261.5|-3888 10422!-3888 10422|-3888.5 10421.5!-3888.5 10421.5|-4048 10582!-4048 10582|-4048.5 10581.5!-4048.5 10581.5|-4208
+ 10742!-4208 10742|-4208.5 10741.5!-4208.5 10741.5|-4368 10902!-4368 10902|-4368.5 10901.5!-4368.5 10901.5|-4528 11062!-4528 11062|-4528.5 11061.5!-4528.5 11061.5|-4688 11222!-4688 11222|-4688.5 11221.5!-4688.5 11221.5|-4848 11382!-4848
+ 11382|-4848.5 11381.5!-4848.5 11381.5|-5008 11542!-5008 11542|-5008.5 11541.5!-5008.5 11541.5|-5168 11702!-5168 11702|-5168.5 11701.5!-5168.5 11701.5|-5328 11862!-5328 11862|-5328.5 11861.5!-5328.5 11861.5|-5488 12022!-5488 12022|-5488.5
+ 12021.5!-5488.5 12021.5|-5648 12182!-5648 12182|-5648.5 12181.5!-5648.5 12181.5|-5808 12342!-5808 12342|-5808.5 12341.5!-5808.5 12341.5|-5808 12547!-5808 12547|-6288 12547!-6288 12547|-6288.5 12341.5!-6288.5 12341.5|-6128.5 12341.5!-6128.5
+ 12341.5|-6128.5 12181.5!-6128.5 12181.5|-5968.5 12181.5!-5968.5 12181.5|-5968.5 12021.5!-5968.5 12021.5|-5808.5 12021.5!-5808.5 12021.5|-5808.5 11861.5!-5808.5 11861.5|-5648.5 11861.5!-5648.5 11861.5|-5648.5 11701.5!-5648.5 11701.5|-5488.5
+ 11701.5!-5488.5 11701.5|-5488.5 11541.5!-5488.5 11541.5|-5328.5 11541.5!-5328.5 11541.5|-5328.5 11381.5!-5328.5 11381.5|-5168.5 11381.5!-5168.5 11381.5|-5168.5 11221.5!-5168.5 11221.5|-5008.5 11221.5!-5008.5 11221.5|-5008.5 11061.5!-5008.5
+ 11061.5|-4848.5 11061.5!-4848.5 11061.5|-4848.5 10901.5!-4848.5 10901.5|-4688.5 10901.5!-4688.5 10901.5|-4688.5 10741.5!-4688.5 10741.5|-4528.5 10741.5!-4528.5 10741.5|-4528.5 10581.5!-4528.5 10581.5|-4368.5 10581.5!-4368.5 10581.5|-4368.5
+ 10421.5!-4368.5 10421.5|-4208.5 10421.5!-4208.5 10421.5|-4208.5 10261.5!-4208.5 10261.5|-4048.5 10261.5!-4048.5 10261.5|-4048.5 10101.5!-4048.5 10101.5|-3888.5 10101.5!-3888.5 10101.5|-3888.5 9941.5!-3888.5 9941.5|-3728.5 9941.5!-3728.5
+ 9941.5|-3728.5 9781.5!-3728.5 9781.5|-3568.5 9781.5!-3568.5 9781.5|-3568.5 9621.5!-3568.5 9621.5|-3248.5 9621.5"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Main Door Clip">
+                  <matrix>
+                    <Matrix a="1.25" d="1.25161743164063" tx="9" ty="-211"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "C-4H-1";
+	doortype = 2;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Main Door Clip">
+                  <matrix>
+                    <Matrix a="-1.25" d="1.25161743164063" tx="-10" ty="-211"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "C-4H-1";
+	doortype = 2;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Main Door Clip">
+                  <matrix>
+                    <Matrix a="1.25" d="1.25161743164063" tx="9" ty="-20"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "outCastle";
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Main Door Clip">
+                  <matrix>
+                    <Matrix a="-1.25" d="1.25161743164063" tx="-10" ty="-20"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "outCastle";
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 5" color="#4FFFFF" locked="true" outline="true" useOutlineView="true">
+          <frames>
+            <DOMFrame index="0" duration="4" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!11831 -6841|-11923 -6841!-11923 -6841|-11997 -1140!-11997 -1140|11831 -1140!11831 -1140|11831 -6841!17044 3882|-17045 3882!-17045 3882|-17045 -16363!-17045 -16363|17044 -16363!17044 -16363|17044 3882"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

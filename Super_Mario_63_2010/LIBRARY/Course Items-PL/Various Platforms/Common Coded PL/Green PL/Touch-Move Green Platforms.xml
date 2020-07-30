@@ -1,0 +1,215 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Touch-Move Green Platforms" itemID="47655619-00000b5a" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="TouchMovingGreenPlatform" lastModified="1237867884" lastUniqueIdentifier="1">
+  <timeline>
+    <DOMTimeline name="Touch-Move Green Platforms">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+if (disapearcount == undefined) {
+	disapearcount = 32;
+}
+if (disapearspeed == undefined) {
+	disapearspeed = 20;
+}
+if (reapearspeed == undefined) {
+	reapearspeed = disapearspeed;
+}
+if (DirectionX == undefined) {
+	DirectionX = "Right";
+}
+if (DirectionY == undefined) {
+	DirectionY = "Up";
+}
+if (distanceX == undefined) {
+	distanceX = 25;
+}
+if (distanceY == undefined) {
+	distanceY = 0;
+}
+if (accelX == undefined) {
+	accelX = 1;
+}
+if (accelY == undefined) {
+	accelY = 0;
+}
+if (speedX == undefined) {
+	speedX = 5;
+}
+if (speedY == undefined) {
+	speedY = 0;
+}
+if (Xoffstart == undefined) {
+	Xoffstart = 0;
+}
+if (Yoffstart == undefined) {
+	Yoffstart = 0;
+}
+if (scale == undefined) {
+	scale = 2;
+}
+if (DirectionY == "Up") {
+	//_y -= speedY;
+} else {
+	//_y += speedY;
+}
+if (DirectionY == "Right") {
+	//_x -= speedX;
+} else {
+	//_x += speedX;
+}
+saveX = _x;
+saveY = _y;
+moving = false;
+pl.gotoAndStop(scale);
+//
+depth = _root.Course.BPlatforms.getNextHighestDepth();
+_root.Course.BPlatforms.attachMovie("GreenPLcode", "GreenPL"+depth, depth, {_x:_x, _y:_y, scale:scale});
+tellTarget (_root.Course.BPlatforms["GreenPL"+depth]) {
+	currentspeedX = 0;
+	distancecountX = speedX+Xoffstart;
+	currentspeedY = 0;
+	distancecountY = speedY+Yoffstart;
+	landedon = false;
+	//
+	lessthan = false;
+	morethan = false;
+}
+//
+currentspeedX = 0;
+distancecountX = speedX+Xoffstart;
+currentspeedY = 0;
+distancecountY = speedY+Yoffstart;
+//
+savedx = DirectionX;
+savedy = DirectionY;
+count = 0;
+alpha = 100;
+onEnterFrame = function () {
+	if (_root.PauseGame == false && _root.playpause == false) {
+		if (moving == true) {
+			alpha = Math.min(alpha, 100);
+			if (currentspeedY<0) {
+				pl._y = -currentspeedY;
+			} else {
+				pl._y = 0;
+			}
+			distancecountX++;
+			if (distancecountX>=distanceX) {
+				distancecountX = 0;
+				if (DirectionX == "Right") {
+					DirectionX = "Left";
+				} else {
+					DirectionX = "Right";
+				}
+			}
+			if (DirectionX == "Right") {
+				currentspeedX += accelX;
+			} else {
+				currentspeedX -= accelX;
+			}
+			//
+			distancecountY++;
+			if (distancecountY>=distanceY) {
+				distancecountY = 0;
+				if (DirectionY == "Up") {
+					DirectionY = "Down";
+				} else {
+					DirectionY = "Up";
+				}
+			}
+			if (DirectionY == "Up") {
+				currentspeedY -= accelY;
+			} else {
+				currentspeedY += accelY;
+			}
+			currentspeedX = Math.max(-speedX, currentspeedX);
+			currentspeedX = Math.min(speedX, currentspeedX);
+			currentspeedY = Math.max(-speedY, currentspeedY);
+			currentspeedY = Math.min(speedY, currentspeedY);
+			_x += currentspeedX;
+			_y += currentspeedY;
+			//
+			if (count++>=disapearcount) {
+				alpha -= disapearspeed;
+				if (alpha<=0) {
+					//
+					if (_root.Course.BPlatforms["GreenPL"+depth].landedon == true) {
+						_root.Course.Char.xspeed += this.currentspeedX;
+						_root.Course.Char.yspeed += this.currentspeedY;
+					}
+					_root.Course.BPlatforms["GreenPL"+depth].landedon = false;
+					//
+					currentspeedX = 0;
+					distancecountX = speedX+Xoffstart;
+					currentspeedY = 0;
+					distancecountY = speedY+Yoffstart;
+					DirectionX = savedx;
+					DirectionY = savedy;
+					_x = saveX;
+					_y = saveY;
+					moving = false;
+					count = 0;
+				}
+			}
+		} else {
+			alpha += reapearspeed;
+		}
+		alpha = Math.max(alpha, 0);
+		alpha = Math.min(alpha, 100);
+		_alpha = alpha;
+		//  
+		tellTarget (_root.Course.BPlatforms["GreenPL"+depth]) {
+			if (this.alpha>=50) {
+				if (hitTest((_root.Course.Char._x*_root.coursescale/100)+_root.Course._x, ((_root.Course.Char._y+this.currentspeedY+4)*_root.coursescale/100)+_root.Course._y, false) && _root.Course.Char.yspeed>-3) {
+					if (this.alpha>=100) {
+						this.moving = true;
+					}
+					//             
+					_root.Course.Char._x += this.currentspeedX;
+					_root.Course.Char._y += this.currentspeedY;
+					_root.Course.Char.xspeed = _root.groundFriction(_root.Course.Char.xspeed, 0.3, 1.1);
+					if (landedon == false) {
+						_root.Course.Char.xspeed -= this.currentspeedX/2;
+					}
+					landedon = true;
+				} else {
+					if (landedon == true) {
+						_root.Course.Char.xspeed += this.currentspeedX;
+						_root.Course.Char.yspeed += this.currentspeedY;
+					}
+					landedon = false;
+				}
+			}
+			_y = this._y;
+			_x = this._x;
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728" acceleration="100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Green PL Clip" name="pl">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

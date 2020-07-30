@@ -1,0 +1,1039 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Clips/ 4 - Boo's Mansion/  Mains (4-1, 4-2, 4-8, &amp; 4-10)/4-2 Back GFX" itemID="46032518-000005b8" linkageExportForAS="true" linkageIdentifier="4-2BackGFX" lastModified="1223418620" lastUniqueIdentifier="61">
+  <timeline>
+    <DOMTimeline name="4-2 Back GFX">
+      <layers>
+        <DOMLayer name="Layer 4" color="#FF4FFF">
+          <frames>
+            <DOMFrame index="0" duration="6" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[gotoAndStop(_root.Starnum+1);
+_root.Mariosound = new Sound(this);
+_root.Mariosound.attachSound("Boo");
+_root.Mariosound.start(0, 1);
+_root.Mariosound.setVolume(_root.MarioVolume);
+if (_root.Starnum == 1 && _root.lvl4BooMessage == false) {
+	_root.lvl4BooMessage = true;
+	count = 0;
+	onEnterFrame = function () {
+		count++;
+		if (count>5 && _root.Course.Char.air == false && _root.Course.Char.attack == false) {
+			count = 0;
+			//
+			_root.PlayMessage("Big Boo: Mwahaha! Welcome to my Mansion, Mario.  Come on up to my Balcony, IF YOU CAN GET THERE!!  I've locked all the doors that you 'humans' need to get up to my balcony. MWAHHAAHA!");
+			onEnterFrame = function () {
+				//
+				_root.playpause = true;
+				//
+				count++;
+				if (_root.KeyZ() && count>5) {
+					_root.StopMessage();
+					//
+					count = 0;
+					onEnterFrame = function () {
+						count++;
+						if (count>5) {
+							_root.playpause = false;
+							_root.Course.Char.attack = false;
+							onEnterFrame = null;
+							gotoAndStop(1);
+						}
+					};
+				}
+			};
+		}
+	};
+	//       
+}
+if (_root.Starnum == 3 && _root.lvl4BooMessage == false) {
+	_root.lvl4BooMessage = true;
+	count = 0;
+	onEnterFrame = function () {
+		count++;
+		if (count>5 && _root.Course.Char.air == false && _root.Course.Char.attack == false) {
+			count = 0;
+			//
+			_root.PlayMessage("The Mansion is empty...\n The Shine Sprite you are looking for must be in the Basement!  You can get there from the Shack outside");
+			onEnterFrame = function () {
+				//
+				_root.playpause = true;
+				//
+				count++;
+				if (_root.KeyZ() && count>5) {
+					_root.StopMessage();
+					//
+					count = 0;
+					onEnterFrame = function () {
+						count++;
+						if (count>5) {
+							_root.playpause = false;
+							_root.Course.Char.attack = false;
+							onEnterFrame = null;
+							gotoAndStop(1);
+						}
+					};
+				}
+			};
+		}
+	};
+	//       
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="RC Star" color="#808080" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="6" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Starry Stuff/Shine Sprite Clip">
+                  <matrix>
+                    <Matrix tx="322.95" ty="-422.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	invis = true;
+	starnum = 19;
+	timecount = 0;
+	//
+	if (_root.Course.coincountnum == undefined) {
+		_root.Course.coincountnum = 0;
+	} else {
+		_root.Course.coincountnum++;
+	}
+	if (_root["coindata"+_root.playingcourse][0] == undefined) {
+		_root["coindata"+_root.playingcourse] = [""];
+	}
+	coinnum = _root.Course.coincountnum;
+	if (_root["coindata"+_root.playingcourse][coinnum] == 1) {
+		invis = false;
+	}
+}
+onClipEvent (enterFrame) {
+	timecount++;
+	if (_root.RedCoins>=8 && timecount>12) {
+		_root["coindata"+_root.playingcourse][coinnum] = 1;
+		invis = false;
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 7" color="#4F80FF" outline="true" useOutlineView="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="4" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip">
+                  <matrix>
+                    <Matrix a="-2.77928161621094" d="-35.4269714355469" ty="-146"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+onClipEvent (enterFrame) {
+	if (this.hitTest(_root.Course.Char.charClip.body)) {
+		if (_root.PauseGame == false && _root.playpause == false) {
+			//_root.Course.Char.yspeed = _root.groundFriction(_root.Course.Char.yspeed, 0.015, 1.001);
+			if (savezoom == undefined) {
+				savezoom = _root.CameraZoom;
+			}
+			if (_root.CameraZoom>85) {
+				_root.CameraZoom -= 1;
+			}
+		}
+	} else {
+		if (savezoom !== undefined) {
+			if (_root.CameraZoom<savezoom) {
+				_root.CameraZoom += 1;
+			} else {
+				savezoom = undefined;
+			}
+		}
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="5" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip">
+                  <matrix>
+                    <Matrix a="-12.1905670166016" d="-26.7418823242188" ty="-515.8"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+onClipEvent (enterFrame) {
+	if (this.hitTest(_root.Course.Char.charClip.body)) {
+		if (_root.PauseGame == false && _root.playpause == false) {
+			//_root.Course.Char.yspeed = _root.groundFriction(_root.Course.Char.yspeed, 0.015, 1.001);
+			if (savezoom == undefined) {
+				savezoom = _root.CameraZoom;
+			}
+			if (_root.CameraZoom>85) {
+				_root.CameraZoom -= 1;
+			}
+		}
+	} else {
+		if (savezoom !== undefined) {
+			if (_root.CameraZoom<savezoom) {
+				_root.CameraZoom += 1;
+			} else {
+				savezoom = undefined;
+			}
+		}
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 5" color="#4FFFFF">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Decoration/ Signs &amp; Fences/ Coded Sign/Coded Sign" selected="true">
+                  <matrix>
+                    <Matrix tx="-102.5" ty="10.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	picture = true;
+	signmessage = "4m";
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Decoration/ Signs &amp; Fences/ Coded Sign/Coded Sign">
+                  <matrix>
+                    <Matrix tx="-102.5" ty="10.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	picture = true;
+	signmessage = "4m";
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Decoration/ Signs &amp; Fences/ Coded Sign/Coded Sign" selected="true">
+                  <matrix>
+                    <Matrix tx="121.95" ty="10.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	signmessage = "The Mansion is empty...\n The Shine Sprite you are looking for must be in the Basement!";
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Decoration/ Signs &amp; Fences/ Coded Sign/Coded Sign">
+                  <matrix>
+                    <Matrix tx="-102.5" ty="10.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	picture = true;
+	signmessage = "4m";
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="4" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Decoration/ Signs &amp; Fences/ Coded Sign/Coded Sign">
+                  <matrix>
+                    <Matrix tx="315" ty="-347.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	picture = true;
+	signmessage = "4mrc";
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Decoration/ Signs &amp; Fences/ Coded Sign/Coded Sign">
+                  <matrix>
+                    <Matrix tx="-102.5" ty="10.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	picture = true;
+	signmessage = "4mrc";
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="5" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Decoration/ Signs &amp; Fences/ Coded Sign/Coded Sign">
+                  <matrix>
+                    <Matrix tx="-183" ty="-343.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	signmessage = "Big Boo's Library is just above you.\nBut Since ghosts can float, no material path to it was built...";
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Decoration/ Signs &amp; Fences/ Coded Sign/Coded Sign">
+                  <matrix>
+                    <Matrix tx="-102.5" ty="10.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	picture = true;
+	signmessage = "4m";
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="6" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Bricks &amp; Woods/Large Brick" bitmapIsClipped="false">
+                        <matrix>
+                          <Matrix a="20" d="20" tx="242.05" ty="-278.25"/>
+                        </matrix>
+                      </BitmapFill>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal" weight="2">
+                        <fill>
+                          <SolidColor/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="!2297 -11990|-2180 -11990!-2180 -11990|-3479 -13230!-3479 -13230|3699 -13230!3699 -13230|2297 -11990"/>
+                  </edges>
+                </DOMShape>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Moving Green Platform">
+                  <matrix>
+                    <Matrix tx="71" ty="-340.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	DirectionX = "Left";
+	DirectionY = "Up";
+	distanceX = 140;
+	distanceY = 0;
+	accelX = 0.5;
+	accelY = 0;
+	speedX = 1;
+	speedY = 0;
+	scale = 3;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-79.5" ty="-370.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-39.5" ty="-370.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="0.5" ty="-370.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="40.5" ty="-370.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="80.5" ty="-370.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Crag/Stone PL x2">
+                  <matrix>
+                    <Matrix tx="-203.5" ty="-662.45"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Crag/Stone PL x2">
+                  <matrix>
+                    <Matrix tx="180.95" ty="-661.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Squirt Nozzle Box Clip" selected="true">
+                  <matrix>
+                    <Matrix tx="-328" ty="-368.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-316.95" ty="-18.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-286.95" ty="-18.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-346.95" ty="-18.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="330.9" ty="-18.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="360.9" ty="-18.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="300.9" ty="-18.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Door Notes" color="#FFFF4F" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="6" keyMode="9728">
+              <elements>
+                <DOMStaticText fontRenderingMode="bitmap" left="68.9" width="221" height="80.95" antiAliasThickness="68" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-179.4" ty="162.3"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>10&#xD;6  7     8  9&#xD; 2  3  1  4  5</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" autoKern="false" size="23" bitmapSize="460" face="Arial-BoldMT" fillColor="#00FF00"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" duration="6" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Bricks &amp; Woods/Large Brick" bitmapIsClipped="false">
+                        <matrix>
+                          <Matrix a="20" d="20" tx="-67.75" ty="38.35"/>
+                        </matrix>
+                      </BitmapFill>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal" weight="2">
+                        <fill>
+                          <SolidColor/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                    <StrokeStyle index="2">
+                      <SolidStroke scaleMode="normal" weight="2">
+                        <fill>
+                          <SolidColor/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="!-13074 2379|-13074 -17048!-13074 -17048|12997 -17048!12997 -17048|12997 2379"/>
+                    <Edge fillStyle1="1" edges="!12997 2379|12997 2402"/>
+                    <Edge fillStyle1="1" strokeStyle="2" edges="!12997 2402|9999 2402"/>
+                    <Edge strokeStyle="2" edges="!9999 2402|-9999 2402"/>
+                    <Edge fillStyle1="1" strokeStyle="2" edges="!-9999 2402|-13000 2402"/>
+                    <Edge fillStyle1="1" edges="!-13000 2402|-13074 2379"/>
+                    <Edge fillStyle1="1" strokeStyle="2" edges="!9998 -13432.5|9998 -14061!9998 -14061|8602 -15546!8602 -15546|-8386 -15546!-8386 -15546|-9995 -14032!-9995 -14032|-9995 -7138"/>
+                    <Edge fillStyle1="1" edges="!-9995 -7138|-9995 -6978"/>
+                    <Edge fillStyle1="1" strokeStyle="2" edges="!-9995 -6978|-2397 -6978!-2397 -6978|-3759 -5578!-3759 -5578|-9995 -5538!-9995 -5538|-9995 140"/>
+                    <Edge fillStyle1="1" edges="!-9995 140|-9995 161"/>
+                    <Edge fillStyle1="1" strokeStyle="2" edges="!-9995 161|9998 161"/>
+                    <Edge fillStyle1="1" edges="!9998 161|9998 140"/>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="!9998 140|9998 -5578"/>
+                    <Edge fillStyle1="1" strokeStyle="2" edges="!9998 -5578|3743 -5578!3743 -5578|2341 -6978!2341 -6978|9998 -6978"/>
+                    <Edge fillStyle1="1" edges="!9998 -6978|9998 -7138"/>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="!9998 -7138|9998 -13432.5"/>
+                    <Edge fillStyle0="1" fillStyle1="1" strokeStyle="1" edges="!9998 -5738|10038 -5738"/>
+                    <Edge fillStyle1="1" edges="!9999 2402|9999 2401!9999 2401|-9999 2401!-9999 2401|-9999 2402"/>
+                  </edges>
+                </DOMShape>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Ancient &amp; Clock &amp; Haunted/Haunted Brick Tile" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="-32" ty="-36"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal" weight="2">
+                            <fill>
+                              <SolidColor/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge fillStyle0="1" strokeStyle="1" edges="!7360 -11040|7983 -11040!7983 -11040|8623 -11040!8623 -11040|8640 -11040!8640 -11040|8640 -10420!8640 -10420|8640 -9760!8640 -9760|8623 -9760!8623 -9760|7983 -9760!7983 -9760|7360 -9760"/>
+                        <Edge fillStyle0="1" fillStyle1="1" strokeStyle="1" edges="!7360 -9760|7343 -9760!7343 -9760|7343 -10400!7343 -10400|7343 -11040!7343 -11040|7360 -11040"/>
+                        <Edge strokeStyle="1" edges="!8640 -10420|8623 -10400!8623 -10400|8623 -9760!8623 -11040|8623 -10400"/>
+                        <Edge fillStyle0="1" fillStyle1="1" strokeStyle="1" edges="!7360 -10400|7343 -10400"/>
+                        <Edge strokeStyle="1" edges="!7983 -9760|7983 -10400!7983 -10400|7360 -10400"/>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="!7360 -10400|7360 -9760"/>
+                        <Edge strokeStyle="1" edges="!7983 -10400|7983 -11040"/>
+                        <Edge fillStyle0="1" strokeStyle="1" edges="!7360 -10400|7360 -11040"/>
+                        <Edge strokeStyle="1" edges="!8623 -10400|7983 -10400"/>
+                        <Edge fillStyle0="1" strokeStyle="1" edges="!8594 -15546|-8376 -15546!-8376 -15546|-9995 -14047!-9995 -14047|-9995 -6978!-9995 -6978|-2397 -6978!-2397 -6978|-3759 -5578!-3759 -5578|-9995 -5538!-9995 -5538|-9995 161!-9995 161|9998 161!9998 161|9998 -5578!9998 -5578|3743 -5578!3743
+ -5578|2341 -6978!2341 -6978|9998 -6978!9998 -6978|9998 -14041!9998 -14041|8594 -15546"/>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="
+!5640 -10420|5640 -11040!5640 -11040|5623 -11040"/>
+                        <Edge strokeStyle="1" edges="
+!5623 -11040|5623 -10400!5623 -10400|5640 -10420"/>
+                        <Edge fillStyle0="1" strokeStyle="1" edges="
+!4360 -11040|4983 -11040!4983 -11040|5623 -11040"/>
+                        <Edge strokeStyle="1" edges="
+!4983 -11040|4983 -10400!4983 -10400|5623 -10400"/>
+                        <Edge fillStyle0="1" fillStyle1="1" strokeStyle="1" edges="
+!4360 -9760|4343 -9760!4343 -9760|4343 -10400!4343 -10400|4343 -11040!4343 -11040|4360 -11040!4360 -10400|4343 -10400"/>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="
+!4360 -11040|4360 -10400"/>
+                        <Edge strokeStyle="1" edges="
+!4360 -10400|4983 -10400"/>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="
+!4983 -9760|5623 -9760"/>
+                        <Edge strokeStyle="1" edges="
+!5623 -9760|5623 -10400"/>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="
+!5623 -9760|5640 -9760!5640 -9760|5640 -10420!4360 -10400|4360 -9760!4360 -9760|4983 -9760"/>
+                        <Edge strokeStyle="1" edges="
+!4983 -9760|4983 -10400"/>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="
+!5640 -3000|5640 -3640!5640 -3640|5000 -3640"/>
+                        <Edge strokeStyle="1" edges="
+!5000 -3640|5000 -3000!5000 -3000|5640 -3000"/>
+                        <Edge fillStyle0="1" fillStyle1="1" strokeStyle="1" edges="
+!5640 -3000|5657 -3020"/>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="
+!5000 -2360|5640 -2360!5640 -2360|5640 -3000"/>
+                        <Edge strokeStyle="1" edges="
+!5000 -3000|5000 -2360"/>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="
+!5000 -3640|4360 -3640!4360 -3640|4360 -3000"/>
+                        <Edge strokeStyle="1" edges="
+!4360 -3000|5000 -3000"/>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="
+!4360 -3000|4360 -2360!4360 -2360|5000 -2360!8640 -3020|8640 -3640!8640 -3640|8623 -3640"/>
+                        <Edge strokeStyle="1" edges="
+!8623 -3640|8623 -3000!8623 -3000|8640 -3020"/>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="
+!8623 -2360|8640 -2360!8640 -2360|8640 -3020"/>
+                        <Edge strokeStyle="1" edges="
+!8623 -2360|8623 -3000!8623 -3000|7983 -3000!7983 -3000|7983 -2360"/>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="
+!7983 -2360|8623 -2360"/>
+                        <Edge fillStyle0="1" fillStyle1="1" strokeStyle="1" edges="
+!7360 -3640|7343 -3640!7343 -3640|7343 -3000!7343 -3000|7360 -3000"/>
+                        <Edge fillStyle0="1" strokeStyle="1" edges="
+!7360 -3000|7360 -3640"/>
+                        <Edge strokeStyle="1" edges="
+!7360 -3000|7983 -3000!7983 -3000|7983 -3640"/>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="
+!7983 -3640|7360 -3640!7360 -3000|7360 -2360!7360 -2360|7983 -2360"/>
+                        <Edge fillStyle0="1" fillStyle1="1" strokeStyle="1" edges="
+!7343 -3000|7343 -2360!7343 -2360|7360 -2360"/>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="
+!8623 -3640|7983 -3640"/>
+                        <Edge fillStyle0="1" fillStyle1="1" strokeStyle="1" edges="
+!-4343 -10420|-4360 -10400"/>
+                        <Edge fillStyle0="1" strokeStyle="1" edges="
+!-4360 -10400|-4360 -9760!-4360 -9760|-5000 -9760!-5000 -9760|-5640 -9760!-5640 -9760|-5640 -10400!-5640 -10400|-5640 -11040!-5640 -11040|-5000 -11040!-5000 -11040|-4360 -11040!-4360 -11040|-4360 -10400"/>
+                        <Edge strokeStyle="1" edges="
+!-5640 -10400|-5000 -10400!-5000 -10400|-5000 -11040!-4360 -10400|-5000 -10400!-5000 -10400|-5000 -9760"/>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="
+!-7360 -10420|-7360 -11040!-7360 -11040|-7377 -11040"/>
+                        <Edge strokeStyle="1" edges="
+!-7377 -11040|-7377 -10400!-7377 -10400|-7360 -10420"/>
+                        <Edge fillStyle0="1" strokeStyle="1" edges="
+!-8640 -11040|-8017 -11040!-8017 -11040|-7377 -11040"/>
+                        <Edge strokeStyle="1" edges="
+!-8017 -11040|-8017 -10400!-8017 -10400|-7377 -10400"/>
+                        <Edge fillStyle0="1" fillStyle1="1" strokeStyle="1" edges="
+!-8640 -9760|-8657 -9760!-8657 -9760|-8657 -10400!-8657 -10400|-8657 -11040!-8657 -11040|-8640 -11040!-8640 -10400|-8657 -10400"/>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="
+!-8640 -11040|-8640 -10400"/>
+                        <Edge strokeStyle="1" edges="
+!-8640 -10400|-8017 -10400"/>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="
+!-8017 -9760|-7377 -9760"/>
+                        <Edge strokeStyle="1" edges="
+!-7377 -9760|-7377 -10400"/>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="
+!-7377 -9760|-7360 -9760!-7360 -9760|-7360 -10420!-8640 -10400|-8640 -9760!-8640 -9760|-8017 -9760"/>
+                        <Edge strokeStyle="1" edges="
+!-8017 -9760|-8017 -10400"/>
+                        <Edge fillStyle0="1" fillStyle1="1" strokeStyle="1" edges="
+!-7360 -3000|-7343 -3020"/>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="
+!-7360 -3000|-7360 -3640!-7360 -3640|-8000 -3640"/>
+                        <Edge strokeStyle="1" edges="
+!-8000 -3640|-8000 -3000!-8000 -3000|-7360 -3000"/>
+                        <Edge fillStyle0="1" strokeStyle="1" edges="
+!-7360 -3000|-7360 -2360!-7360 -2360|-8000 -2360!-8000 -2360|-8640 -2360!-8640 -2360|-8640 -3000!-8640 -3000|-8640 -3640!-8640 -3640|-8000 -3640"/>
+                        <Edge strokeStyle="1" edges="
+!-8000 -2360|-8000 -3000!-8000 -3000|-8640 -3000"/>
+                        <Edge fillStyle0="1" strokeStyle="1" edges="
+!-4360 -3000|-4360 -2360!-4360 -2360|-5000 -2360!-5000 -2360|-5640 -2360!-5640 -2360|-5640 -3000!-5640 -3000|-5640 -3640!-5640 -3640|-5000 -3640!-5000 -3640|-4360 -3640!-4360 -3640|-4360 -3000"/>
+                        <Edge fillStyle0="1" fillStyle1="1" strokeStyle="1" edges="
+!-4360 -3000|-4343 -3020"/>
+                        <Edge strokeStyle="1" edges="
+!-5640 -3000|-5000 -3000!-5000 -3000|-5000 -3640!-4360 -3000|-5000 -3000!-5000 -3000|-5000 -2360"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#FFFFFF" alpha="0.101960784313725"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!8640 -11040|8640 -9760!8640 -9760|7360 -9760!7360 -9760|7360 -11040!7360 -11040|8640 -11040!8570 -15554|5957 -15554!5957 -15554|3618 -13257!3618 -13257|2298 -12017!2298 -12017|-2222 -12017!-2222 -12017|-3481 -13257!-3481 -13257|-5741
+ -15541!-5741 -15541|-8487.5 -15541!-8487.5 -15541|-10019 -14067!-10019 -14067|-10019 -6998!-10019 -6998|-2421 -6998!-2421 -6998|-3783 -5598!-3783 -5598|-10019 -5558!-10019 -5558|-10019 141!-10019 141|9974 141!9974 141|9974 -5598!9974
+ -5598|3719 -5598!3719 -5598|2317 -6998!2317 -6998|9974 -6998!9974 -6998|9974 -14081!9974 -14081|8570 -15554!5640 -11040|5640 -9760!5640 -9760|4360 -9760!4360 -9760|4360 -11040!4360 -11040|5640 -11040!5640 -2360|4360 -2360!4360 -2360
+|4360 -3640!4360 -3640|5640 -3640!5640 -3640|5640 -2360!8640 -2360|7360 -2360!7360 -2360|7360 -3640!7360 -3640|8640 -3640!8640 -3640|8640 -2360!-4360 -11040|-4360 -9760!-4360 -9760|-5640 -9760!-5640 -9760|-5640 -11040!-5640 -11040|-4360
+ -11040!-7360 -11040|-7360 -9760!-7360 -9760|-8640 -9760!-8640 -9760|-8640 -11040!-8640 -11040|-7360 -11040!-7360 -2360|-8640 -2360!-8640 -2360|-8640 -3640!-8640 -3640|-7360 -3640!-7360 -3640|-7360 -2360!-4360 -2360|-5640 -2360!-5640
+ -2360|-5640 -3640!-5640 -3640|-4360 -3640!-4360 -3640|-4360 -2360"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Main Door Clip">
+                  <matrix>
+                    <Matrix a="1.5" d="1.5" tx="250" ty="-15.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "4-6-1";
+	doortype = 5;
+	if (_root.Starnum == 1) {
+		locked = true;
+		keytype = 1;
+		if (_root.lvl4keyA == true) {
+			removelock = true;
+		}
+		// 
+		openwithkey = true;
+		unlockitem = "lvl4keyA";
+		//                      
+		doorlockfunction = function () {
+			_root.Course.Char.attack = true;
+			_root.Course.Char.attackFrame = "Sign";
+			_root.Course.Char.xspeed = 0;
+			//
+			_root.PlayMessage("This Door is Locked! Maybe there's a key somewhere nearby");
+			_root.Mariosound = new Sound(this);
+			_root.Mariosound.attachSound("Boo");
+			_root.Mariosound.start(0, 1);
+			_root.Mariosound.setVolume(_root.MarioVolume);
+			count = 0;
+			onEnterFrame = function () {
+				X = _x+_parent._x;
+				_root.Course.Char._x += (X-_root.Course.Char._x)/5;
+				//
+				_root.playpause = true;
+				//
+				count++;
+				if (_root.KeyZ() && count>5) {
+					_root.StopMessage();
+					//
+					count = 0;
+					onEnterFrame = function () {
+						count++;
+						if (count>5) {
+							_root.playpause = false;
+							_root.Course.Char.attack = false;
+							onEnterFrame = null;
+							gotoAndStop(1);
+						}
+					};
+				}
+			};
+		};
+		//
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Main Door Clip">
+                  <matrix>
+                    <Matrix a="-1.5" d="1.5" tx="-250" ty="-15.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "4-7-1";
+	doortype = 5;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Main Door Clip">
+                  <matrix>
+                    <Matrix a="1.5" d="1.5" tx="400" ty="-15.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "4-3-1";
+	doortype = 5;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Main Door Clip">
+                  <matrix>
+                    <Matrix a="-1.5" d="1.5" tx="-400" ty="-15.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "4-4-1";
+	doortype = 5;
+	if (_root.Starnum == 1) {
+		locked = true;
+		keytype = 7
+		//                      
+		doorlockfunction = function () {
+			_root.Course.Char.attack = true;
+			_root.Course.Char.attackFrame = "Sign";
+			_root.Course.Char.xspeed = 0;
+			//
+			_root.PlayMessage("This Door is Locked!");
+			_root.Mariosound = new Sound(this);
+			_root.Mariosound.attachSound("Boo");
+			_root.Mariosound.start(0, 1);
+			_root.Mariosound.setVolume(_root.MarioVolume);
+			count = 0;
+			onEnterFrame = function () {
+				X = _x+_parent._x;
+				_root.Course.Char._x += (X-_root.Course.Char._x)/5;
+				//
+				_root.playpause = true;
+				//
+				count++;
+				if (_root.KeyZ() && count>5) {
+					_root.StopMessage();
+					//
+					count = 0;
+					onEnterFrame = function () {
+						count++;
+						if (count>5) {
+							_root.playpause = false;
+							_root.Course.Char.attack = false;
+							onEnterFrame = null;
+							gotoAndStop(1);
+						}
+					};
+				}
+			};
+		};
+		//
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Main Door Clip">
+                  <matrix>
+                    <Matrix a="1.5" d="1.5" tx="250" ty="-371.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "4-6-2";
+	doortype = 5;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Main Door Clip">
+                  <matrix>
+                    <Matrix a="-1.5" d="1.5" tx="-250" ty="-371.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "4-7-2";
+	doortype = 5;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Main Door Clip">
+                  <matrix>
+                    <Matrix a="1.5" d="1.5" tx="400" ty="-371.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "4-3-3";
+	doortype = 5;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Main Door Clip">
+                  <matrix>
+                    <Matrix a="-1.5" d="1.5" tx="-400" ty="-371.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "4-4-3";
+	doortype = 5;
+	if (_root.Starnum == 1) {
+		locked = true;
+		keytype = 1;
+		if (_root.lvl4keyB == true) {
+			removelock = true;
+		}
+		openwithkey = true;
+		unlockitem = "lvl4keyB";
+		//           
+		doorlockfunction = function () {
+			_root.Course.Char.attack = true;
+			_root.Course.Char.attackFrame = "Sign";
+			_root.Course.Char.xspeed = 0;
+			//
+			_root.PlayMessage("This Door is also Locked! There should be another Key somewhere here.");
+			_root.Mariosound = new Sound(this);
+			_root.Mariosound.attachSound("Boo");
+			_root.Mariosound.start(0, 1);
+			_root.Mariosound.setVolume(_root.MarioVolume);
+			count = 0;
+			onEnterFrame = function () {
+				X = _x+_parent._x;
+				_root.Course.Char._x += (X-_root.Course.Char._x)/5;
+				//
+				_root.playpause = true;
+				//
+				count++;
+				if (_root.KeyZ() && count>5) {
+					_root.StopMessage();
+					//
+					count = 0;
+					onEnterFrame = function () {
+						count++;
+						if (count>5) {
+							_root.playpause = false;
+							_root.Course.Char.attack = false;
+							onEnterFrame = null;
+							gotoAndStop(1);
+						}
+					};
+				}
+			};
+		};
+		//
+	}
+}
+// Originally Locked if Starnum = 1
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Main Door Clip">
+                  <matrix>
+                    <Matrix a="1.5" d="1.5" tx="10.5" ty="-684.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "4-9-1";
+	doortype = 5;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Main Door Clip">
+                  <matrix>
+                    <Matrix a="-1.5" d="1.5" tx="-10.5" ty="-684.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "4-9-1";
+	doortype = 5;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

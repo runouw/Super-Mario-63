@@ -1,0 +1,257 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Mario Flying" itemID="48150ccd-0000102e" lastModified="1229919203" lastUniqueIdentifier="10">
+  <timeline>
+    <DOMTimeline name="Mario Flying">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" duration="4" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+if (firstrun == undefined) {
+	xspeed = _root.Course.Char.xspeed;
+	yspeed = _root.Course.Char.yspeed;
+	speed = Math.sqrt(xspeed*xspeed+yspeed*yspeed);
+	frame = 1;
+	firstrun = true;
+}
+onEnterFrame = function () {
+	if (_root.PauseGame == false && _root.playpause == false) {
+		if (_root.CameraZoom>75) {
+			_root.CameraZoom -= 5;
+		}
+		_root.Course.Char.xspeed = xspeed;
+		_root.Course.Char.yspeed = yspeed;
+		turnspeed = 1/(speed/1.5);
+		turnspeed = Math.max(turnspeed, 0.001);
+		turnspeed = Math.min(turnspeed, 1);
+		if (_root.Course.Char._xscale<0) {
+			rot = Math.atan2(yspeed, xspeed)+Math.PI/2;
+		} else {
+			rot = Math.atan2(yspeed, -xspeed)+Math.PI/2;
+		}
+		if (_root.KeyUP()) {
+			rot += Math.max(((rot)*0.92)-rot, -turnspeed);
+		}
+		if (_root.KeyDOWN()) {
+			rot += Math.min(((rot-Math.PI)*0.92+Math.PI)-rot, turnspeed);
+		}
+		//trce(rot);             
+		if (frame<=3) {
+			frame = 1;
+			if (rot<Math.PI/3) {
+				frame = 2;
+			}
+			if (rot>Math.PI/1.5) {
+				frame = 3;
+			}
+		}
+		if (_root.Course.Char._xscale<0) {
+			xspeed = Math.cos(rot-Math.PI/2)*speed;
+		} else {
+			xspeed = -Math.cos(rot-Math.PI/2)*speed;
+		}
+		yspeed = Math.sin(rot-Math.PI/2)*speed;
+		//
+		if ((rot<Math.PI/7 || rot>Math.PI*0.9) && ((_root.KeyLEFT() && _root.Course.Char._xscale<0) || (_root.KeyRIGHT() && _root.Course.Char._xscale>0))) {
+			xspeed *= -0.9;
+			_root.Course.Char._xscale *= -1;
+			frame = 4;
+		}
+		//                  
+		yspeed += 0.2;
+		xspeed *= 0.999;
+		yspeed *= 0.999;
+		speed = Math.sqrt(xspeed*xspeed+yspeed*yspeed);
+		speed = Math.max(speed, 0.3);
+		_rotation = -_root.radiansToAngle(rot);
+		gotoAndStop(frame);
+		if (_root.Course.Char.air == false || _root.WingCap == false) {
+			_root.Course.Char.attackFrame = "Dive";
+		}
+		if (_root.Course.Char.air == true && _root.KeyZ()) {
+			_root.Course.Char.attackFrame = "Ground";
+		}
+		if (_root.Course.Char.Water == true) {
+			_root.Course.Char.attack = false;
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side Front">
+                  <matrix>
+                    <Matrix tx="-1.2" ty="3.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Wing Code">
+                  <matrix>
+                    <Matrix a="-1" tx="1.85" ty="-14.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side Front">
+                  <matrix>
+                    <Matrix a="0.841583251953125" tx="-2.35" ty="3.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Wing Code">
+                  <matrix>
+                    <Matrix a="-1" tx="0.1" ty="-14.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side Front">
+                  <matrix>
+                    <Matrix tx="-1.8" ty="2.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Wing Code">
+                  <matrix>
+                    <Matrix a="-1" tx="-2.9" ty="-14.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Mario Flying Turn">
+                  <matrix>
+                    <Matrix a="-1" tx="0.8" ty="0.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (None) - Spin - 3">
+                  <matrix>
+                    <Matrix tx="-10.25" ty="-19.1"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (None) - Spin - 2">
+                  <matrix>
+                    <Matrix tx="-12.8" ty="-19"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (None) - Spin - 4">
+                  <matrix>
+                    <Matrix tx="-13.25" ty="-19.1"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#FF4FFF">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side">
+                  <matrix>
+                    <Matrix tx="1.75" ty="-11.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-0.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Wing Code">
+                  <matrix>
+                    <Matrix tx="-10.15" ty="-15.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side">
+                  <matrix>
+                    <Matrix a="0.841583251953125" tx="0.15" ty="-11.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-0.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side">
+                  <matrix>
+                    <Matrix tx="1.15" ty="-12.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-0.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Wing Code">
+                  <matrix>
+                    <Matrix a="-1" tx="4.6" ty="-17.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

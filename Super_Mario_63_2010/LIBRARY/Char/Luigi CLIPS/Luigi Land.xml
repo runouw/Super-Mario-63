@@ -1,0 +1,86 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="      Char/  Luigi CLIPS/Luigi Land" itemID="47589eba-00000c89" lastModified="1209357376" lastUniqueIdentifier="2">
+  <timeline>
+    <DOMTimeline name="Luigi Land">
+      <layers>
+        <DOMLayer name="Layer 5" color="#4FFFFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+count = -1;
+count2 = _root.Course.Char.landtime;
+//
+//var walksound:Sound = new Sound(this);
+//walksound.attachSound("Mario-Step");
+//walksound.start(0, 1);
+//walksound.setVolume(_root.MarioVolume/2);
+//
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		if (count++>count2 || _root.Course.Char.air == true) {
+			_root.Course.Char.attack = false;
+		}
+		if (_root.KeyUp() && animation._currentframe<5) {
+			animation.gotoAndPlay("land");
+		}
+	} else {
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 6" color="#808080">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side Front">
+                  <matrix>
+                    <Matrix tx="0.75" ty="3.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Luigi CLIPS/Luigi Land Animation" name="animation">
+                  <matrix>
+                    <Matrix ty="-3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 8" color="#FF4F4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Fludd Side">
+                  <matrix>
+                    <Matrix tx="2.45" ty="-6.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-0.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

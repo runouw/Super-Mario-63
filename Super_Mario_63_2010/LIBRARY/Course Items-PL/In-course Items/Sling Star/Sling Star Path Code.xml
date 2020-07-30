@@ -1,0 +1,101 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Items-PL/ In-course Items/Sling Star/Sling Star Path Code" itemID="475dd611-00000b71" lastModified="1237613982">
+  <timeline>
+    <DOMTimeline name="Sling Star Path Code">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+_visible = false;
+newx = _x;
+newy = _y;
+oldx = _x;
+oldy = _y;
+//
+newerx = _x;
+newery = _y;
+olderx = _x;
+oldery = _y;
+onEnterFrame = function () {
+	_root.Course.Char.charClip.frame.followpath = true;
+	if (_root.PauseGame == false) {
+		
+		//
+		if (isNaN(accelx)) {
+			accelx = 0;
+		}
+		if (isNaN(accely)) {
+			accely = 0;
+		}
+		if (isNaN(diffx)) {
+			diffx = 0;
+		}
+		if (isNaN(diffy)) {
+			diffy = 0;
+		}
+		_root.Course.Char._rotation = _rotation;
+		_root.Course.Char.yspeed = this.diffy;
+		_root.Course.Char.xspeed = this.diffx;
+		distx = _parent._x+_parent._parent._x+_x;
+		disty = _parent._y+_parent._parent._y+_y;
+		_root.Course.Char._x -= (_root.Course.Char._x-distx)/10;
+		_root.Course.Char._y -= (_root.Course.Char._y-disty)/10;
+		//_root.Course.Char._x += this.diffx;
+		//_root.Course.Char._y += this.diffy;
+		//
+		newx = _x;
+		newy = _y;
+		diffy = newy-oldy;
+		diffx = newx-oldx;
+		oldx = newx;
+		oldy = newy;
+		//
+		newerx = diffx;
+		newery = diffy;
+		accely = newery-oldery;
+		accelx = newerx-olderx;
+		olderx = newerx;
+		oldery = newery;
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal" weight="3">
+                        <fill>
+                          <SolidColor color="#333333"/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                    <StrokeStyle index="2">
+                      <SolidStroke scaleMode="normal" weight="3">
+                        <fill>
+                          <SolidColor color="#333333"/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge strokeStyle="2" edges="!0 500|0 -280"/>
+                    <Edge strokeStyle="1" edges="!20 -280|300 60!-20 -280|-300 60"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

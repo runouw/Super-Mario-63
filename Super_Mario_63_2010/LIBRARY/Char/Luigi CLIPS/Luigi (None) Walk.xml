@@ -1,0 +1,270 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="      Char/  Luigi CLIPS/Luigi (None) Walk" itemID="458ee290-00000202" lastModified="1239680486" lastUniqueIdentifier="4">
+  <timeline>
+    <DOMTimeline name="Luigi (None) Walk">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" duration="82" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[frame = 1;
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		oldframe = frame;
+		frame += _root.Course.Char.xspeed*1.5;
+		if (Math.abs(_root.Course.Char.xspeed)<1) {
+			count++;
+		} else {
+			count = 0;
+		}
+		if (((frame>10 && frame<=20) && !(oldframe>10 && oldframe<=20)) || ((frame>50 && frame<=60) && !(oldframe>50 && oldframe<=60))) {
+			var walksound:Sound = new Sound(this);
+			walksound.attachSound(_root.StepSound);
+			walksound.start(0, 1);
+			walksound.setVolume(_root.MarioVolume);
+			panX = _root.Course.Char._x;
+			panX *= 1;
+			panX = Math.min(100, panX);
+			panX = Math.max(-100, panX);
+			walksound.setPan(panX);
+		}
+		if (_root.Course.Char.Ice == true) {
+			frame -= _root.Course.Char.xspeed/2;
+			if (Key.isDown(Key.RIGHT)) {
+				frame += 3;
+			}
+			if (Key.isDown(Key.LEFT)) {
+				frame -= 3;
+			}
+		}
+		if (count<92) {
+			gotoAndStop(Math.round(frame)*1/1);
+		} else {
+			if (_root.CharHP<=3) {
+				gotoAndStop("Idle2");
+			} else {
+				gotoAndStop("Idle");
+			}
+		}
+		if (frame>=80) {
+			frame = 1;
+		}
+		if (frame<=0) {
+			frame = 80;
+		}
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" duration="10" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Wing Code">
+                  <matrix>
+                    <Matrix a="-1" tx="1.1" ty="-18.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="10" duration="10" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Wing Code" selected="true">
+                  <matrix>
+                    <Matrix a="-1" tx="1.1" ty="-17.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="20" duration="10" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Wing Code" selected="true">
+                  <matrix>
+                    <Matrix a="-1" tx="1.1" ty="-17.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="30" duration="10" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Wing Code" selected="true">
+                  <matrix>
+                    <Matrix a="-1" tx="1.1" ty="-17.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="40" duration="10" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Wing Code" selected="true">
+                  <matrix>
+                    <Matrix a="-1" tx="1.1" ty="-18.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="50" duration="10" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Wing Code" selected="true">
+                  <matrix>
+                    <Matrix a="-1" tx="1.1" ty="-17.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="60" duration="10" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Wing Code" selected="true">
+                  <matrix>
+                    <Matrix a="-1" tx="1.1" ty="-17.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="70" duration="10" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Wing Code" selected="true">
+                  <matrix>
+                    <Matrix a="-1" tx="1.1" ty="-17.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="80" duration="2" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="10" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  Luigi CLIPS/ Luigi BITs/Overworld - Luigi 3 - 1">
+                  <matrix>
+                    <Matrix a="-1" tx="5.5" ty="-22"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="10" duration="10" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  Luigi CLIPS/ Luigi BITs/Overworld - Luigi 3 - 2">
+                  <matrix>
+                    <Matrix a="-1" tx="5.5" ty="-21.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="20" duration="10" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  Luigi CLIPS/ Luigi BITs/Overworld - Luigi 3 - 3">
+                  <matrix>
+                    <Matrix a="-1" tx="5.5" ty="-21"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="30" duration="10" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  Luigi CLIPS/ Luigi BITs/Overworld - Luigi 3 - 4">
+                  <matrix>
+                    <Matrix a="-1" tx="5.5" ty="-21.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="40" duration="10" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  Luigi CLIPS/ Luigi BITs/Overworld - Luigi 3 - 5">
+                  <matrix>
+                    <Matrix a="-1" tx="5.5" ty="-22"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="50" duration="10" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  Luigi CLIPS/ Luigi BITs/Overworld - Luigi 3 - 6">
+                  <matrix>
+                    <Matrix a="-1" tx="5.5" ty="-21.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="60" duration="10" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  Luigi CLIPS/ Luigi BITs/Overworld - Luigi 3 - 7">
+                  <matrix>
+                    <Matrix a="-1" tx="5.5" ty="-21"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="70" duration="10" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  Luigi CLIPS/ Luigi BITs/Overworld - Luigi 3 - 8">
+                  <matrix>
+                    <Matrix a="-1" tx="5.5" ty="-21.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="80" name="Idle" labelType="name" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Luigi CLIPS/Luigi Idle Animation">
+                  <matrix>
+                    <Matrix tx="-2" ty="-3.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="81" name="Idle2" labelType="name" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Luigi CLIPS/Luigi Tired Animation">
+                  <matrix>
+                    <Matrix tx="-2" ty="-3.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

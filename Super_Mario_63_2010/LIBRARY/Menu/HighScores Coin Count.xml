@@ -1,0 +1,308 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name=" Menu/HighScores Coin Count" itemID="478576dd-00000c90" sourceFlashFilepath="Rob &amp; Steve Hewitt\My Documents\Super Mario 63\Highscore Design.fla" sourceLibraryItemHRef="HighScores Coin Count" sourceLastModified="1199932222" lastModified="1237154982" lastUniqueIdentifier="3" sourceItemID="478576dd-00000c90">
+  <timeline>
+    <DOMTimeline name="HighScores Coin Count">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" duration="67" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[hi = "Highscore:  "+_root["RecordCoin"+_root.lastPlayinglevel];
+//_root["RecordCoin"+_root.lastPlayinglevel]
+//
+stop();
+count = 0;
+maxnum = _root.TotalCoins;
+n = "x 0";
+coinsound = new Sound();
+coinsound.attachSound("Coin (Small)");
+onEnterFrame = function () {
+	if (_parent.stopnum == _parent._currentframe) {
+		if (count<maxnum) {
+			count++;
+			//
+			if (count%2 == 0) {
+				coinsound.start();
+			}
+			//     
+			n = "x "+count;
+		} else {
+			coinsound2 = new Sound();
+			coinsound2.attachSound("CoinJingle");
+			coinsound2.start();
+			//
+			count = maxnum;
+			n = "x "+count;
+			//
+			if (_root.TotalCoins>_root["RecordCoin"+_root.lastPlayinglevel] && _parent.level !== "Secret Course") {
+				//
+				this.play();
+				//_root.SaveHighScores();
+			} else {
+				_parent.play();
+			}
+			//  
+			onEnterFrame = null;
+		}
+	}
+};
+if (_parent.level == "Secret Course") {
+	gotoAndStop("nohighscore");
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="67" duration="6" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[hi = "Highscore:  "+_root.TotalCoins;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="73" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+_parent.play();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="74" name="nohighscore" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="4" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMDynamicText width="260.95" height="26.85" antiAliasThickness="68" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-134.4" ty="26.55"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>New Highscore!</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" size="24" bitmapSize="480" face="Arial-BoldMT" fillColor="#9900FF"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                  <filters>
+                    <BevelFilter shadowColor="#9900FF"/>
+                    <BevelFilter distance="2" shadowColor="#9900FF"/>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                    <BlurFilter blurX="100" blurY="100"/>
+                  </filters>
+                </DOMDynamicText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="5" duration="14" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMDynamicText width="260.95" height="26.85" antiAliasThickness="68" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-127.4" ty="11"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>New Highscore!</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" size="24" bitmapSize="480" face="Arial-BoldMT" fillColor="#9900FF"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                  <filters>
+                    <BevelFilter shadowColor="#9900FF"/>
+                    <BevelFilter distance="2" shadowColor="#9900FF"/>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                    <BlurFilter blurX="10" blurY="77.777099609375"/>
+                  </filters>
+                </DOMDynamicText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="19" duration="14" tweenType="motion" keyMode="17921" acceleration="-100">
+              <elements>
+                <DOMDynamicText width="260.95" height="26.85" antiAliasThickness="68" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-103.4" ty="-43.45"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>New Highscore!</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" size="24" bitmapSize="480" face="Arial-BoldMT" fillColor="#9900FF"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                  <filters>
+                    <BevelFilter shadowColor="#9900FF"/>
+                    <BevelFilter distance="2" shadowColor="#9900FF"/>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                    <BlurFilter blurX="0" blurY="0"/>
+                  </filters>
+                </DOMDynamicText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="33" duration="18" tweenType="motion" keyMode="17921" acceleration="50">
+              <elements>
+                <DOMDynamicText width="260.95" height="26.85" antiAliasThickness="68" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-86.4" ty="-52.45"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>New Highscore!</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" size="24" bitmapSize="480" face="Arial-BoldMT" fillColor="#9900FF"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                  <filters>
+                    <BevelFilter shadowColor="#9900FF"/>
+                    <BevelFilter distance="2" shadowColor="#9900FF"/>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                    <BlurFilter blurX="0" blurY="0"/>
+                  </filters>
+                </DOMDynamicText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="51" duration="17" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMDynamicText width="260.95" height="26.85" antiAliasThickness="68" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-65.4" ty="-36.1"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>New Highscore!</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" size="24" bitmapSize="480" face="Arial-BoldMT" fillColor="#9900FF"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                  <filters>
+                    <BevelFilter shadowColor="#9900FF"/>
+                    <BevelFilter distance="2" shadowColor="#9900FF"/>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                    <BlurFilter blurX="0" blurY="0"/>
+                  </filters>
+                </DOMDynamicText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="68" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMDynamicText width="260.95" height="26.85" antiAliasThickness="68" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-60.4" ty="-12.45"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>New Highscore!</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" size="24" bitmapSize="480" face="Arial-BoldMT" fillColor="#9900FF"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                  <filters>
+                    <BevelFilter shadowColor="#9900FF"/>
+                    <BevelFilter distance="2" shadowColor="#9900FF"/>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                    <BlurFilter blurX="100" blurY="100"/>
+                  </filters>
+                </DOMDynamicText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="69" duration="6" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" duration="74" keyMode="9728">
+              <elements>
+                <DOMDynamicText name="txt" width="49" height="20.1" antiAliasThickness="68" isSelectable="false" variableName="n">
+                  <matrix>
+                    <Matrix tx="-107" ty="-10.05"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>x ###</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" size="18" bitmapSize="360" face="Arial-BoldMT" fillColor="#FFFF00"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                  <filters>
+                    <BevelFilter highlightColor="#FBFF9F" shadowColor="#FFFF00"/>
+                    <BevelFilter distance="2" shadowColor="#FF0000"/>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                  </filters>
+                </DOMDynamicText>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Animation">
+                  <matrix>
+                    <Matrix tx="-117"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMDynamicText width="173.95" height="20.1" antiAliasThickness="68" isSelectable="false" variableName="hi">
+                  <matrix>
+                    <Matrix tx="-10" ty="-10.05"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>High Score:  ###</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" size="18" bitmapSize="360" face="Arial-BoldMT" fillColor="#FEFF30"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                  <filters>
+                    <BevelFilter highlightColor="#FBFF9F" shadowColor="#FFFF00"/>
+                    <BevelFilter distance="2" shadowColor="#FF0000"/>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                  </filters>
+                </DOMDynamicText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="74" keyMode="9728">
+              <elements>
+                <DOMDynamicText name="txt" width="49" height="20.1" antiAliasThickness="68" isSelectable="false" variableName="n">
+                  <matrix>
+                    <Matrix tx="-17" ty="-10.05"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>x ###</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" size="18" bitmapSize="360" face="Arial-BoldMT" fillColor="#FFFF00"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                  <filters>
+                    <BevelFilter highlightColor="#FBFF9F" shadowColor="#FFFF00"/>
+                    <BevelFilter distance="2" shadowColor="#FF0000"/>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                  </filters>
+                </DOMDynamicText>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Animation">
+                  <matrix>
+                    <Matrix tx="-27"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

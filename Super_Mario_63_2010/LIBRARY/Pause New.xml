@@ -1,0 +1,100 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Pause New" itemID="49c2d8ba-000011c0" lastModified="1246140569" lastUniqueIdentifier="5">
+  <timeline>
+    <DOMTimeline name="Pause New">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" duration="14" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+_root.PauseGame = false;
+rewind = false;
+presskey = false;
+onEnterFrame = function () {
+	if (presskey == false) {
+		if (_root.KeyHome() && _root.PauseGame !== true) {
+			_root.PauseGame = true;
+			rewind = false;
+			play();
+			presskey = true;
+		} else if (_root.KeyHome() && _root.PauseGame !== false) {
+			rewind = true;
+			presskey = true;
+		}
+	}
+	if (!_root.KeyHome()) {
+		presskey = false;
+	}
+	//                
+	if (_currentframe>1 && _root.PauseGame !== true) {
+		rewind = true;
+	}
+	if (rewind == true) {
+		prevFrame();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="14" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#FF4FFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMStaticText left="43.05" width="57.9" height="22.35" autoExpand="true" antiAliasThickness="68" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-57.9" ty="213.9"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>pause</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" size="20" face="Arial-BoldMT" fillColor="#FF0000"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" duration="13" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Pause New Clip">
+                  <matrix>
+                    <Matrix ty="20"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-0.05"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.0703125"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="14" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Pause New Clip" selected="true">
+                  <matrix>
+                    <Matrix a="0.999908447265625" tx="0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-0.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

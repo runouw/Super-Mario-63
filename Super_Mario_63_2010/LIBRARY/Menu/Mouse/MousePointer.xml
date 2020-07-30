@@ -1,0 +1,73 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name=" Menu/ Mouse/MousePointer" itemID="459fe6b7-0000030c" linkageExportForAS="true" linkageIdentifier="Pointer" lastModified="1182310335">
+  <timeline>
+    <DOMTimeline name="MousePointer">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_y = _root._ymouse;
+_x = _root._xmouse;
+newY = _root._ymouse;
+newX = _root._xmouse;
+oldX = newX;
+oldY = newY;
+moveY = 0;
+moveX = 0;
+mousepress = false;
+_root.MouseDown = false;
+if (_root.WiiMode == false) {
+	_alpha = 0;
+}
+onEnterFrame = function () {
+	if (_root.WiiMode == true) {
+		newY = _root._ymouse;
+		newX = _root._xmouse;
+		moveY = newY-oldY;
+		moveX = newX-oldX;
+		oldX = newX;
+		oldY = newY;
+		repeats = Math.ceil((Math.abs(moveY)+Math.abs(moveX))/50);
+		for (i=0; i<repeats; i++) {
+			_x += moveX/repeats;
+			_y += moveY/repeats;
+			_root.attachMovie("trail", "trail"+_root.getNextHighestDepth(), _root.getNextHighestDepth(), {_x:_x, _y:_y, _rotation:(Math.random()*12-Math.random()*12)+_root.radiansToAngle(Math.atan2(-moveX, moveY))});
+		}
+		_y = _root._ymouse;
+		_x = _root._xmouse;
+		_root.mousemoveY = moveY;
+		_root.mousemoveX = moveX;
+		_alpha = 100;
+	} else {
+		_x = 275;
+		_y = 200;
+		_alpha = 0;
+	}
+};
+onMouseDown = function () {
+	_root.MouseDown = true;
+};
+onMouseUp = function () {
+	_root.MouseDown = false;
+};
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#F70000"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!42.5 -26S2[#32.2 -12.375 50 0!50 0[50 #F.E 40 30.5!40 30.5[26.25 #32.2 0 50!0 50[-29.125 50 -42 26.5!-42 26.5[-49.875 #C.C -50 0!-50 0[-50 -15.5 -40 -30!-40 -30[-26.25 -50 0 -50!0 -50[#1D.6 -49.875 42.5 -26"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

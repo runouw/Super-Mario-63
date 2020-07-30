@@ -1,0 +1,90 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name=" Menu/Menu Folder/  Universal Stuff/Menu Message Clip" itemID="4778942e-00001af0" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="MenuMessage" sourceFlashFilepath="Rob &amp; Steve Hewitt\My Documents\Super Mario 63\Menu Design.fla" sourceLibraryItemHRef="Menu Folder/  Universal Stuff/Menu Message Clip" sourceLastModified="1199133753" lastModified="1215134483" sourceItemID="4778942e-00001af0">
+  <timeline>
+    <DOMTimeline name="Menu Message Clip">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[//txt
+if (color == undefined) {
+	color = "red";
+}
+if (txt !== "" && txt !== undefined) {
+	count = 0;
+	speed = -(random(3)+18);
+	onEnterFrame = function () {
+		count++;
+		if (count>60) {
+			count = -500;
+			speed = 0.3;
+			_root.m.messageonscreen--;
+		} else if (speed<0) {
+			speed *= 0.9;
+		} else {
+			speed *= 1.1;
+		}
+		_y += speed;
+		if (this._y>800) {
+			this.removeMovieClip();
+		}
+	};
+} else {
+	this.swapDepths(0);
+	this.removeMovieClip();
+}
+gotoAndStop(color);
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" name="red" labelType="name" keyMode="9728">
+              <elements>
+                <DOMDynamicText width="282" height="69" antiAliasThickness="68" isSelectable="false" variableName="txt" lineType="multiline">
+                  <matrix>
+                    <Matrix tx="-141" ty="-34.5"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters></characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" size="18" bitmapSize="360" face="ArialMT" fillColor="#FF0000"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                  <filters>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                  </filters>
+                </DOMDynamicText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" name="green" labelType="name" keyMode="9728">
+              <elements>
+                <DOMDynamicText width="282" height="69" antiAliasThickness="68" isSelectable="false" variableName="txt" lineType="multiline">
+                  <matrix>
+                    <Matrix tx="-141" ty="-34.5"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters></characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" size="18" bitmapSize="360" face="ArialMT" fillColor="#00FF00"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                  <filters>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                  </filters>
+                </DOMDynamicText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

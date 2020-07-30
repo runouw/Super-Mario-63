@@ -1,0 +1,87 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Clips/9-03SwitchGround" itemID="4879a085-00001204" lastModified="1230944348">
+  <timeline>
+    <DOMTimeline name="9-03SwitchGround">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[Y = 0;
+count = 0;
+onEnterFrame = function () {
+	if (_root.Course.BackGFX.Switched == "gone") {
+		_y += 160;
+		onEnterFrame = null;
+	}
+	if (_root.Course.BackGFX.Switched == true) {
+		count++;
+		_root.playpause = true;
+		if (Y<120) {
+			_root.Camcenter = this;
+		}
+		if (count>32) {
+			if (sounded !== true) {
+				sounded = true;
+				_root.Mariosound = new Sound(this);
+				_root.Mariosound.attachSound("WaterGurgle");
+				_root.Mariosound.start(0, 1);
+				_root.Mariosound.setVolume(_root.MarioVolume);
+			}
+			if (count%2 == 0) {
+				_x += 2;
+			} else {
+				_x -= 2;
+			}
+			_y += 3;
+			Y += 3;
+			//Include Cam Center on this... Robert!!
+			if (Y>160) {
+				_root.playpause = false;
+				onEnterFrame = null;
+				//Cam Center Stuff
+			}
+		}
+	}
+};
+//
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Bricks &amp; Woods/Grey Brick Pattern 2" bitmapIsClipped="false">
+                        <matrix>
+                          <Matrix a="20" d="20" tx="-16" ty="-16"/>
+                        </matrix>
+                      </BitmapFill>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal" weight="2">
+                        <fill>
+                          <SolidColor/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="!320 3120|-320 3120!-320 3120|-320 -320!-320 -320|320 -320!320 -320|320 3120"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

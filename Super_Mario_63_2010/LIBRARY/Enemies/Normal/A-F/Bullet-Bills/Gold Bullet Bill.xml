@@ -1,0 +1,310 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="   Enemies/Normal/ A-F/ Bullet-Bills/Gold Bullet Bill" itemID="46e73f4c-00000a85" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="GoldBill" lastModified="1237835234" lastUniqueIdentifier="6">
+  <timeline>
+    <DOMTimeline name="Gold Bullet Bill">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" duration="9" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (rotation == undefined) {
+	rotation = 0;
+	rotspeed = 0;
+	rot = 0;
+	rot2 = 0;
+} else {
+	//rotation = 0;
+	//rotspeed = 0;
+	rot = rotation;
+	rot2 = rotation;
+}
+if (speed == undefined) {
+	speed = 4;
+}
+if (rotdiv == undefined) {
+	rotdiv = 10;
+}
+if (rotmaxspeed == undefined) {
+	rotmaxspeed = 3;
+}
+destroyed = false;
+if (_xscale<0) {
+	_xscale = 100;
+	//
+	rotation += 180;
+	//rotspeed = 0;
+	rot = rotation;
+	rot2 = rotation;
+	//
+	_yscale *= -1;
+}
+if (eat == undefined) {
+	eat = true;
+}
+if (chase == undefined) {
+	chase = true;
+}
+if (enemyhurt == undefined) {
+	enemyhurt = true;
+}
+gotoAndStop(frame);
+counter = 0;
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		if (Math.abs((_root.currentCamX)-(_x+_parent._x))<600 && Math.abs((_root.currentCamY)-(_y+_parent._y))<600) {
+			// 
+			if (enemyhurt == true) {
+				_root.Course.Enemyhurt.attachMovie("EnemyHurtBox", "Box"+_root.Course.Enemyhurt.getNextHighestDepth(), _root.Course.Enemyhurt.getNextHighestDepth(), {_x:_x, _y:_y, _yscale:35, _xscale:22, time:2});
+			}
+			//           
+			if (Math.abs((_root.Course.Char._x)-(_x+_parent._x))<100 && Math.abs((_root.Course.Char._y)-(_y+_parent._y))<100) {
+				if ((this.body.hitTest(_root.Course.Char.charClip.water) || this.body.hitTest(_root.Course.Char.charClip.frame.water)) && destroyed == false) {
+					if (_root.Course.Char.attack == true && _root.Course.Char.attackFrame == "Spin") {
+						destroyed = true;
+						//
+						_root.bgsoundFX = new Sound(this);
+						_root.bgsoundFX.attachSound("flippers");
+						_root.bgsoundFX.start(0, 1);
+						_root.bgsoundFX.setVolume(_root.BgVolume);
+					}
+					if (_root.Course.Char.attack == true && _root.Course.Char.attackFrame == "Ground") {
+						_root.Course.Char.yspeed = -10;
+						destroyed = true;
+						// 
+						_root.bgsoundFX = new Sound(this);
+						_root.bgsoundFX.attachSound("flippers");
+						_root.bgsoundFX.start(0, 1);
+						_root.bgsoundFX.setVolume(_root.BgVolume);
+					}
+				}
+				if (this.body.hitTest(_root.Course.Char.charClip.feet) && _root.Course.Char.air == true && _root.Course.Char.yspeed>-3 && destroyed == false) {
+					// defeated
+					_root.Course.Char.yspeed = -11;
+					if (_root.KeyUP()) {
+						_root.Course.Char.yspeed -= 2;
+					}
+					destroyed = true;
+					_root.Power += 25;
+					_root.Power = Math.min(_root.Power, _root.TotalPower);
+					//this.removeMovieClip(this);
+					//
+					_root.bgsoundFX = new Sound(this);
+					_root.bgsoundFX.attachSound("flippers");
+					_root.bgsoundFX.start(0, 1);
+					_root.bgsoundFX.setVolume(_root.BgVolume);
+				}
+				if (this.body2.hitTest(_root.Course.Char.charClip.body) && !(this.body.hitTest(_root.Course.Char.charClip.feet) && _root.Course.Char.air == true && _root.Course.Char.yspeed>-3) && destroyed == false) {
+					if (_root.Course.Char._x>_x+_parent._x) {
+						_root.MarioHit(1, 90, -5, 7, 7, "");
+					} else {
+						_root.MarioHit(1, 90, -5, -7, 7, "");
+					}
+					destroyed = true;
+				}
+			}
+			//                                           
+			if (destroyed == false) {
+				rot2 = _root.radiansToAngle(Math.atan2((_root.Course.Char._y-(_y+_parent._y)), (_root.Course.Char._x-(_x+_parent._x))));
+			} else {
+				rot2 = rot2+15;
+				rotation += 15;
+				_y += counter;
+				counter++;
+				if (counter>32) {
+					parent.total--;
+					this.removeMovieClip(this);
+				}
+			}
+			//
+			if (chase == true) {
+				if (rot>0) {
+					rot = rot2;
+					if (rot<-90) {
+						rotation -= 360;
+					}
+					rotspeed = (rot-rotation)/rotdiv;
+				} else {
+					rot = rot2;
+					if (rot>90) {
+						rotation += 360;
+					}
+					rotspeed = (rot-rotation)/rotdiv;
+				}
+				if (rotation>520) {
+					rotation -= 360;
+				}
+				if (rotation<-520) {
+					rotation += 360;
+				}
+				rotspeed = _root.groundFriction(rotspeed, 0.1, 1.15);
+				rotspeed = Math.min(rotspeed, rotmaxspeed);
+				rotspeed = Math.max(rotspeed, -rotmaxspeed);
+				rotation += rotspeed;
+				//   
+			}
+			_rotation = rotation;
+			_root.moveObjectFromAngle(speed, rotation, this);
+			//_x += Math.cos(_root.angleToRadians(rotation))*speed;
+			//_y += Math.sin(_root.angleToRadians(rotation))*speed;
+		} else {
+			parent.total--;
+			this.removeMovieClip(this);
+		}
+		//
+		if (eat !== false) {
+			clip.play();
+		} else {
+			clip.stop();
+		}
+	} else {
+		clip.stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F" locked="true" outline="true" useOutlineView="true">
+          <frames>
+            <DOMFrame index="0" duration="9" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Lineless Movieclip" name="body">
+                  <matrix>
+                    <Matrix a="0.388900756835938" d="0.3355712890625" tx="-1" ty="9.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-27.85"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Lineless Movieclip" name="body2" selected="true">
+                  <matrix>
+                    <Matrix a="0.176773071289063" d="0.176620483398438" tx="-1" ty="4.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-28.05"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" name="Red" labelType="name" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Gold Bullet Bill Color" name="clip">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter brightness="-100" contrast="50" hue="-50"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" name="Gold" labelType="name" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Gold Bullet Bill Color" name="clip">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" name="Green" labelType="name" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Gold Bullet Bill Color" name="clip">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter brightness="-60" contrast="40" hue="70"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" name="Cyan" labelType="name" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Gold Bullet Bill Color" name="clip">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter brightness="-80" contrast="50" saturation="40" hue="160"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="4" name="Blue" labelType="name" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Gold Bullet Bill Color" name="clip">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter brightness="-100" contrast="50" hue="-180"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="5" name="Purple" labelType="name" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Gold Bullet Bill Color" name="clip">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter brightness="-60" contrast="20" saturation="10" hue="-120"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="6" name="Black" labelType="name" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Gold Bullet Bill Color" name="clip">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter brightness="-100" contrast="50" saturation="-100"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="7" name="White" labelType="name" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Gold Bullet Bill Color" name="clip">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter brightness="20" saturation="-100"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="8" name="Brown" labelType="name" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Gold Bullet Bill Color" name="clip">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter brightness="-100" contrast="50" saturation="-80"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

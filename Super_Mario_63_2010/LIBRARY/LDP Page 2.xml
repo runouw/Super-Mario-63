@@ -1,0 +1,492 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="LDP Page 2" itemID="4a57cffb-00000aaf" sourceFlashFilepath="F:\Super Mario 63\New computer\Level Designer (Website) 2.fla" sourceLibraryItemHRef="LDP Page 2" sourceLastModified="1248324451" lastModified="1253596546" lastUniqueIdentifier="10" sourceItemID="4a57cffb-00000aaf">
+  <timeline>
+    <DOMTimeline name="LDP Page 2">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+antispam = 0;
+onEnterFrame = function () {
+	antispam++;
+	if (antispam == 16) {
+		goload();
+	}
+};
+goload = function () {
+	var result_lv:LoadVars = new LoadVars();
+	result_lv.onLoad = function(success:Boolean) {
+		if (success) {
+			trace("="+result_lv);
+			VotedScore = result_lv.votedscore;
+			VotedDiff = result_lv.voteddiff;
+			Name = result_lv.name;
+			Author = result_lv.author;
+			Score = result_lv.score;
+			Difficulty = result_lv.difficulty;
+			Votes1 = result_lv.votes1;
+			Votes2 = result_lv.votes2;
+			//
+			trace(result_lv.votedscore);
+			Code = result_lv.code;
+			_root.LoadedCode = Code;
+			Comment = result_lv.comment;
+			//_root.TestLevel();
+			nextFrame();
+		} else {
+			result_ta.text = "Error connecting to server.";
+		}
+	};
+	var send_lv:LoadVars = new LoadVars();
+	send_lv.id = _root.LDSelectedLevel;
+	_root.LDSelectedLevel = _root.LDSelectedLevel;
+	//
+	send_lv.sendAndLoad("http://runouw.com/levels/leveldesigner/getstats.php", result_lv, "POST");
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+iD.text = _root.LDSelectedLevel;
+//code.text = Code;
+comment.text = Comment;
+//
+name.text = unescape(Name);
+author.text = "By: "+unescape(Author);
+score.text = "Score: "+Score+"/5";
+diff.text = "Difficulty: "+Difficulty+"/5";
+//
+_frame = Math.floor(Number(Difficulty));
+_frame = Math.max(_frame, 0);
+_frame = Math.min(_frame, 5);
+if (Difficulty>4.5) {
+	_frame = 5;
+}
+//
+if (Votes1 != "1") {
+	votes1.text = "Voted on "+Votes1+" times";
+} else {
+	votes1.text = "Voted on 1 time";
+}
+if (Votes2 != "1") {
+	votes2.text = "Voted on "+Votes2+" times";
+} else {
+	votes2.text = "Voted on 1 time";
+}
+//
+diffclip.gotoAndStop(_frame+1);
+//
+if(Votes1 == "0"){
+	votes1.text = "No votes yet";
+	score.text = "Score: ---";
+}
+if(Votes2 == "0"){
+	diffclip.gotoAndStop(7);
+	votes2.text = "No votes yet";
+	diff.text = "Difficulty: ---";
+}
+//
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#FF4FFF" locked="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <LinearGradient>
+                        <matrix>
+                          <Matrix a="-0.0634765625" b="0.070098876953125" c="-0.045318603515625" d="-0.050048828125" tx="-148.45" ty="52.75"/>
+                        </matrix>
+                        <GradientEntry color="#FFFFFF" alpha="0" ratio="0"/>
+                        <GradientEntry color="#77FFFF" alpha="0" ratio="0.32156862745098"/>
+                        <GradientEntry color="#6FC6FF" alpha="0.101960784313725" ratio="0.494117647058824"/>
+                        <GradientEntry color="#55FFFF" alpha="0" ratio="0.666666666666667"/>
+                        <GradientEntry color="#00F7F7" alpha="0.301960784313725" ratio="1"/>
+                      </LinearGradient>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!-975 2699S2|-4275 2699!-4275 2699|-4275 380!-4275 380|-975 380!-975 380|-975 2699"/>
+                    <Edge cubics="!-975 380(;-975,380 -975,2699 -975,2699p-975 380q-975 2699);"/>
+                    <Edge cubics="!-4275 2699(;-4275,2699 -4275,380 -4275,380p-4275 2699q-4275 380);"/>
+                    <Edge cubics="!-975 2699(;-975,2699 -4275,2699 -4275,2699p-975 2699q-4275 2699);"/>
+                    <Edge cubics="!-4275 380(;-4275,380 -975,380 -975,380p-4275 380q-975 380);"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="LDP Vote Anu" name="voteani">
+                  <matrix>
+                    <Matrix tx="-133" ty="-4"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="LDP Diffi Anu" name="votediffani">
+                  <matrix>
+                    <Matrix d="1.0008544921875" tx="-132" ty="65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 5" color="#4FFFFF">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="LDP Back87ug8i" name="back">
+                  <matrix>
+                    <Matrix tx="176.05" ty="-133.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMStaticText width="146.1" height="16.8" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-73.05" ty="-8.4"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Loading from server...</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" size="15" face="ArialMT"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <LinearGradient>
+                        <matrix>
+                          <Matrix a="-0.0377349853515625" b="0.0509490966796875" c="-0.0527801513671875" d="-0.01348876953125" tx="-89.75" ty="-35.4"/>
+                        </matrix>
+                        <GradientEntry color="#FFFFFF" alpha="0" ratio="0"/>
+                        <GradientEntry color="#F4E982" alpha="0.250980392156863" ratio="0.4"/>
+                        <GradientEntry color="#F2DA7B" ratio="0.494117647058824"/>
+                        <GradientEntry color="#EEC566" alpha="0.313725490196078" ratio="0.596078431372549"/>
+                        <GradientEntry color="#DCB51B" alpha="0.501960784313725" ratio="1"/>
+                      </LinearGradient>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <LinearGradient>
+                        <matrix>
+                          <Matrix a="0" b="-0.051910400390625" c="0.0381927490234375" d="0" tx="3.45" ty="-113.5"/>
+                        </matrix>
+                        <GradientEntry color="#FFFFFF" alpha="0" ratio="0"/>
+                        <GradientEntry color="#001AF7" alpha="0.501960784313725" ratio="1"/>
+                      </LinearGradient>
+                    </FillStyle>
+                    <FillStyle index="3">
+                      <LinearGradient>
+                        <matrix>
+                          <Matrix a="-0.0634765625" b="0.070098876953125" c="-0.045318603515625" d="-0.050048828125" tx="-132.2" ty="66.15"/>
+                        </matrix>
+                        <GradientEntry color="#FFFFFF" alpha="0" ratio="0"/>
+                        <GradientEntry color="#77FFFF" alpha="0.250980392156863" ratio="0.4"/>
+                        <GradientEntry color="#6FC6FF" ratio="0.494117647058824"/>
+                        <GradientEntry color="#55FFFF" alpha="0.313725490196078" ratio="0.596078431372549"/>
+                        <GradientEntry color="#00F7F7" alpha="0.501960784313725" ratio="1"/>
+                      </LinearGradient>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <LinearGradient>
+                            <matrix>
+                              <Matrix a="0.042724609375" b="0.04718017578125" c="-0.045745849609375" d="0.050506591796875" tx="-146" ty="80.85"/>
+                            </matrix>
+                            <GradientEntry alpha="0" ratio="0"/>
+                            <GradientEntry ratio="1"/>
+                          </LinearGradient>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                    <StrokeStyle index="2">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <LinearGradient>
+                            <matrix>
+                              <Matrix a="-0.02581787109375" b="0.0445098876953125" c="-0.0337066650390625" d="-0.043609619140625" tx="-177.3" ty="-25.8"/>
+                            </matrix>
+                            <GradientEntry alpha="0" ratio="0"/>
+                            <GradientEntry ratio="1"/>
+                          </LinearGradient>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle1="2" edges="!4869.5 -1371.5|-4730.5 -1371.5!-4730.5 -1371.5|-4730.5 -3166.5!-4730.5 -3166.5|4869.5 -3166.5!4869.5 -3166.5|4869.5 -1371.5"/>
+                    <Edge fillStyle1="1" strokeStyle="2" edges="!-978 -1164|-978 248!-978 248|-4278 248!-4278 248|-4278 -1164!-4278 -1164|-978 -1164"/>
+                    <Edge fillStyle1="3" strokeStyle="1" edges="!-978 2692|-4278 2692!-4278 2692|-4278 373!-4278 373|-978 373!-978 373|-978 2692"/>
+                  </edges>
+                </DOMShape>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <RadialGradient spreadMethod="reflect">
+                            <matrix>
+                              <Matrix a="0.090728759765625" b="-0.077056884765625" c="0.187942504882813" d="0.221298217773438" tx="38" ty="7"/>
+                            </matrix>
+                            <GradientEntry color="#FFFFFF" alpha="0.611764705882353" ratio="0"/>
+                            <GradientEntry color="#B7B7B7" alpha="0.101960784313725" ratio="0.956862745098039"/>
+                          </RadialGradient>
+                        </FillStyle>
+                      </fills>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal">
+                            <fill>
+                              <SolidColor/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="!4331 -1147|4331 1593!4331 1593|-789 1593!-789 1593|-789 -1147!-789 -1147|4331 -1147"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMDynamicText name="score" width="92.7" height="16.8" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-146.95" ty="-52.95"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Score: </characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" size="15" bitmapSize="300" face="Arial-BoldMT" fillColor="#FFC90D"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                  <filters>
+                    <BevelFilter distance="2" highlightColor="#FFFF00" shadowColor="#FF0000"/>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                  </filters>
+                </DOMDynamicText>
+                <DOMDynamicText name="name" width="310.9" height="71.05" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-176.9" ty="-151.7"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>N a m e- - - - - - - N a m e - - - - - - -&#xD;</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" letterSpacing="-1" size="20" bitmapSize="400" face="Arial-BoldMT"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                  <filters>
+                    <BevelFilter/>
+                    <GlowFilter blurX="2" blurY="2" color="#FFFFFF" strength="10"/>
+                  </filters>
+                </DOMDynamicText>
+                <DOMDynamicText name="author" width="218" height="28.7" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-149" ty="-100.25"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>By:  Author&#xD;</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" bitmapSize="240" face="ArialMT"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+                <DOMSymbolInstance libraryItemName="LDP Diffi" name="diffclip">
+                  <matrix>
+                    <Matrix tx="-70.55" ty="29.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BevelFilter distance="2"/>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMDynamicText name="diff" width="106.85" height="16.8" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-206.25" ty="21.75"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Difficulty:</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" size="15" bitmapSize="300" face="ArialMT" fillColor="#00FFFF"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                  <filters>
+                    <BevelFilter/>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                  </filters>
+                </DOMDynamicText>
+                <DOMDynamicText name="iD" width="37.35" height="16.8" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-220.75" ty="-147.15"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>99999:</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="right" aliasText="false" autoKern="false" letterSpacing="-1" bitmapSize="240" face="ArialMT"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+                <DOMSymbolInstance libraryItemName="LDP Score" name="scorestuff">
+                  <matrix>
+                    <Matrix tx="-119.4" ty="-2.8"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="LDP Score Diffi" name="diffstuff">
+                  <matrix>
+                    <Matrix tx="-116.35" ty="70.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-18.7" y="-1.95"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMDynamicText name="comment" width="239.35" height="108.95" lineType="multiline">
+                  <matrix>
+                    <Matrix tx="-32.4" ty="-32.95"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Description&#xD;&#xD;</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" bitmapSize="240" face="ArialMT"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                  <filters>
+                    <BevelFilter/>
+                    <GlowFilter blurX="2" blurY="2" color="#FFFFFF" strength="10"/>
+                  </filters>
+                </DOMDynamicText>
+                <DOMDynamicText name="votes2" width="150.5" height="12.2" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-206.5" ty="40.9"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>voted on 99999 times</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" size="11" bitmapSize="220" face="Arial-ItalicMT" fillColor="#CCCCCC"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                  <filters>
+                    <BevelFilter/>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                  </filters>
+                </DOMDynamicText>
+                <DOMDynamicText name="votes1" width="150.5" height="12.2" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-206.5" ty="-33.1"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>voted on 99999 times</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" size="11" bitmapSize="220" face="Arial-ItalicMT" fillColor="#CCCCCC"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                  <filters>
+                    <BevelFilter/>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                  </filters>
+                </DOMDynamicText>
+                <DOMSymbolInstance libraryItemName="LDP Play Button">
+                  <matrix>
+                    <Matrix tx="184.2" ty="108.8"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="LD view on site button">
+                  <matrix>
+                    <Matrix tx="50.05" ty="110.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMStaticText width="144" height="16.8" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-34.4" ty="-53.75"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Description:</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" size="15" face="Arial-BoldMT" fillColor="#FFFFFF"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                  <filters>
+                    <BevelFilter/>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                  </filters>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

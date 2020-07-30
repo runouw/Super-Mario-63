@@ -1,0 +1,216 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="      Char/  Mario CLIPS/Mario (Hover) Frontflip" itemID="467809a4-000006bc" lastModified="1215370745" lastUniqueIdentifier="11">
+  <timeline>
+    <DOMTimeline name="Mario (Hover) Frontflip">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		_root.DiveRot = frame._rotation+90;
+		water._rotation = frame._rotation;
+		play();
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" duration="7" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		_root.DiveRot = frame._rotation+90;
+		water._rotation = frame._rotation;
+		play();
+		tellTarget (_root.Course.Char) {
+			if (_root.KeyDOWN() && Water == false) {
+				doublejump = 0;
+				attack = true;
+				if (_root.WingCap == true) {
+					_root.Course.Char.attackFrame = "Flying";
+				} else {
+					attackFrame = "Dive";
+					yspeed += 3;
+					if (_xscale<0) {
+						xspeed -= (xspeed-_root.Divespeed)/5;
+					} else {
+						xspeed -= (xspeed+_root.Divespeed)/5;
+					}
+					//
+					_root.Mariosound = new Sound(this);
+					_root.Mariosound.attachSound("Mario-Dive");
+					_root.Mariosound.start(0, 1);
+					_root.Mariosound.setVolume(_root.MarioVolume);
+				}
+			}
+			if (air == false && _root.Course.Char.yspeed>-3) {
+				attack = false;
+			}
+			if (_root.KeyZ() && (Water == false || _root.Metal == true)) {
+				attack = true;
+				attackFrame = "Ground";
+				xspeed = 0;
+				yspeed = 0;
+			}
+		}
+		if (_root.KeyRIGHT() && _root.Controll == true) {
+			_root.Course.Char.xspeed -= Math.min((_root.Course.Char.xspeed-_root.airwalkspeed)/(_root.airmaxWalkspeed/3), 0)/1.5;
+		}
+		if (_root.KeyLEFT() && _root.Controll == true) {
+			_root.Course.Char.xspeed -= Math.max((_root.Course.Char.xspeed+_root.airwalkspeed)/(_root.airmaxWalkspeed/3), 0)/1.5;
+		}
+		//           
+		if (_root.KeyTapRIGHT()) {
+			_root.Course.Char.xspeed -= Math.min((_root.Course.Char.xspeed-_root.airtapspeed)/(_root.airmaxtapWalkspeed/3), 0);
+		}
+		if (_root.KeyTapLEFT()) {
+			_root.Course.Char.xspeed -= Math.max((_root.Course.Char.xspeed+_root.airtapspeed)/(_root.airmaxtapWalkspeed/3), 0);
+		}
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="9" duration="17" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (_root.WingCap == true) {
+	_root.Course.Char.attackFrame = "Flying";
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="26" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.Course.Char.attack = false;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#FF4FFF">
+          <frames>
+            <DOMFrame index="0" duration="15" tweenType="motion" motionTweenRotate="counter-clockwise" keyMode="17921" acceleration="-40">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Wing Code">
+                  <matrix>
+                    <Matrix a="-1" tx="-0.9" ty="-5.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="1.4" y="7.85"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="15" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Wing Code">
+                  <matrix>
+                    <Matrix a="-0.86602783203125" b="-0.5" c="-0.5" d="0.86602783203125" tx="2.85" ty="-3.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="1.35" y="7.85"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="16" duration="9" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Wing Code">
+                  <matrix>
+                    <Matrix a="-0.86602783203125" b="-0.5" c="-0.5" d="0.86602783203125" tx="3.6" ty="-6.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="1.5" y="9.8"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="25" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Wing Code">
+                  <matrix>
+                    <Matrix a="-1" tx="-1.4" ty="-8.4"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="1.45" y="9.85"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" duration="27" keyMode="9728" acceleration="-40">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Mario CLIPS/Mario wait Waterblast 2" name="water">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" duration="15" tweenType="motion" motionTweenRotate="counter-clockwise" keyMode="17921" acceleration="-40">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Mario CLIPS/Mario Fludd Frontflipping" name="frame">
+                  <transformationPoint>
+                    <Point x="-2.3" y="2.25"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="15" tweenType="motion" keyMode="17921" acceleration="-40">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Mario CLIPS/Mario Fludd Frontflipping" name="frame">
+                  <matrix>
+                    <Matrix a="0.86602783203125" b="0.5" c="-0.5" d="0.86602783203125" tx="0.85" ty="1.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-2.3" y="2.25"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="16" duration="9" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Mario CLIPS/Mario Fludd Frontflipping 2" name="frame">
+                  <matrix>
+                    <Matrix a="0.92718505859375" b="0.373382568359375" c="-0.373382568359375" d="0.92718505859375" ty="0.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-2" y="2"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="25" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Mario CLIPS/Mario Fludd Frontflipping 2" name="frame">
+                  <matrix>
+                    <Matrix tx="-0.6" ty="-0.4"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-2" y="2"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,169 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="      Char/  Mario CLIPS/Mario (hover) Spin attack" itemID="45ce1a73-000002c8" lastModified="1198425948">
+  <timeline>
+    <DOMTimeline name="Mario (hover) Spin attack">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="39" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[frame = 1;
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		frame += Math.min(Math.round(Math.max(_parent.speed, 5)), 10);
+		while (frame>=41) {
+			frame -= 40;
+		}
+		if (_parent.speed>10) {
+			gotoAndStop(frame);
+		} else {
+			gotoAndStop(frame+40);
+		}
+		if (_root.KeyDOWN() && _root.Course.Char.Water == false && _root.Course.Char.air == true) {
+			_parent.speed = Math.max(10, _parent.speed+1);
+			_root.Course.Char.yspeed += Math.sqrt((_parent.speed+1)/50)/5;
+		}
+		if (_parent.speed>7) {
+			_parent.speed = _root.groundFriction(_parent.speed, 0.5, 1.1);
+		} else {
+			_parent.speed = _root.groundFriction(_parent.speed, 0.1, 1.03);
+		}
+		if (_root.Course.Char.Water == true) {
+			_parent.speed = _root.groundFriction(_parent.speed, 0.3, 1.1);
+		}
+		_parent.speed = Math.max(_parent.speed, 1);
+		if ((_parent.speed<=5 && _root.Course.Char.air == false) || (_parent.speed<=3 && _root.Course.Char.air == true)) {
+			_root.Course.Char.attack = false;
+		}
+		if (_root.Course.Char.air == true) {
+			if (!_root.KeyDOWN()) {
+				if (_parent.speed>7) {
+					_root.Course.Char.yspeed = _root.groundFriction(_root.Course.Char.yspeed, 0.3, 1.05);
+				} else {
+					_root.Course.Char.yspeed = _root.groundFriction(_root.Course.Char.yspeed, 0.1, 1.03);
+				}
+				//_root.Course.Char.yspeed -= (_parent.speed+1)/15;
+				_root.Course.Char.yspeed -= Math.sqrt((_parent.speed+1)/30)/3;
+			}
+			if (_root.Course.Char.Water == true) {
+				_root.Course.Char.yspeed -= Math.sqrt((_parent.speed+1)/20)/2;
+			}
+		}
+		//               
+		if (_root.KeyRIGHT() && _root.Controll == true) {
+			_root.Course.Char.xspeed -= Math.min((_root.Course.Char.xspeed-_root.airwalkspeed)/(_root.airmaxWalkspeed/3), 0)/1.5;
+		}
+		if (_root.KeyLEFT() && _root.Controll == true) {
+			_root.Course.Char.xspeed -= Math.max((_root.Course.Char.xspeed+_root.airwalkspeed)/(_root.airmaxWalkspeed/3), 0)/1.5;
+		}
+		//              
+		if (_root.KeyTapRIGHT()) {
+			_root.Course.Char.xspeed -= Math.min((_root.Course.Char.xspeed-_root.airtapspeed)/(_root.airmaxtapWalkspeed/3), 0);
+		}
+		if (_root.KeyTapLEFT()) {
+			_root.Course.Char.xspeed -= Math.max((_root.Course.Char.xspeed+_root.airtapspeed)/(_root.airmaxtapWalkspeed/3), 0);
+		}
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Lineless Movieclip" name="water">
+                  <matrix>
+                    <Matrix a="1.23847961425781" d="0.637100219726563" tx="1" ty="7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-28.25"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="39" duration="41" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" duration="9" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (hover) Spin attack slow - 1">
+                  <matrix>
+                    <Matrix tx="-12" ty="-34"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="9" duration="10" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (hover) Spin attack fast - 4">
+                  <matrix>
+                    <Matrix tx="-11.15" ty="-27.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="19" duration="10" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (hover) Spin attack fast - 3">
+                  <matrix>
+                    <Matrix tx="-12.65" ty="-34"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="29" duration="10" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (hover) Spin attack fast - 2">
+                  <matrix>
+                    <Matrix tx="-13.65" ty="-28"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="39" duration="10" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (hover) Spin attack slow - 1">
+                  <matrix>
+                    <Matrix tx="-12.15" ty="-34"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="49" duration="10" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (hover) Spin attack slow - 4">
+                  <matrix>
+                    <Matrix tx="-11.15" ty="-27.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="59" duration="10" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (hover) Spin attack slow - 3">
+                  <matrix>
+                    <Matrix tx="-12.65" ty="-34"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="69" duration="11" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (hover) Spin attack slow - 2">
+                  <matrix>
+                    <Matrix tx="-13.65" ty="-28"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

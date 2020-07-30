@@ -1,0 +1,160 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Green Circle Platform" itemID="45fc547a-00000585" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="GreenCirclePlatform" lastModified="1241900363" lastUniqueIdentifier="3">
+  <timeline>
+    <DOMTimeline name="Green Circle Platform">
+      <layers>
+        <DOMLayer name="Layer 3" color="#FFFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+if (scale == undefined) {
+	scale = 2;
+}
+if (angle == undefined) {
+	angle = 0;
+}
+if (distance == undefined) {
+	distance = 50;
+}
+if (speed == undefined) {
+	speed = 5;
+}
+if (dotdistance == undefined) {
+	dotdistance = 20;
+}
+if (armscale == undefined) {
+	armscale = 0;
+}
+if (dotdistance<360) {
+	for (i=0; i<360; i += dotdistance) {
+		clip.attachMovie("Path dot", "dot"+clip.getNextHighestDepth(), clip.getNextHighestDepth(), {_y:Math.cos(_root.angleToRadians(i))*distance, _x:-Math.sin(_root.angleToRadians(i))*distance});
+	}
+}
+if (armscale>0) {
+	clip.attachMovie("PL circle arm", "PLarm", clip.getNextHighestDepth(), {_y:Math.cos(_root.angleToRadians(angle))*distance, _x:-Math.sin(_root.angleToRadians(angle))*distance, _rotation:angle-180});
+}
+depth = _root.Course.BPlatforms.getNextHighestDepth();
+_root.Course.BPlatforms.attachMovie("GreenPLcode", "GreenPL"+depth, depth, {_x:_x, _y:_y, scale:scale});
+//
+pl._y = Math.cos(_root.angleToRadians(angle))*distance;
+pl._x = -Math.sin(_root.angleToRadians(angle))*distance;
+pl.gotoAndStop(scale);
+//
+newx = pl._x;
+newy = pl._y;
+oldx = newx;
+oldy = newy;
+//
+onEnterFrame = function () {
+	if (_root.PauseGame == false && _root.playpause == false) {
+		pl._y += diffy;
+		angle += speed;
+		newx = -Math.sin(_root.angleToRadians(angle))*distance;
+		newy = Math.cos(_root.angleToRadians(angle))*distance;
+		diffy = newy-oldy;
+		diffx = newx-oldx;
+		oldx = newx;
+		oldy = newy;
+		pl._x += diffx;
+		pl._y += diffy;
+		//             
+		if (Math.abs((_root.currentCamX)-(_x+_parent._x))<(600+(distance*2)) && Math.abs((_root.currentCamY)-(_y+_parent._y))<(600+(distance*2))) {
+			tellTarget (_root.Course.BPlatforms["GreenPL"+depth]) {
+				if (hitTest((_root.Course.Char._x*_root.coursescale/100)+_root.Course._x, ((_root.Course.Char._y+this.diffy+4)*_root.coursescale/100)+_root.Course._y, false) && _root.Course.Char.yspeed>-3) {
+					_root.Course.Char._x += this.diffx;
+					_root.Course.Char._y += this.diffy;
+					_root.Course.Char.xspeed = _root.groundFriction(_root.Course.Char.xspeed, 0.3, 1.1);
+					if (landedon == false) {
+						_root.Course.Char.xspeed -= this.diffx/2;
+					}
+					landedon = true;
+				} else {
+					if (landedon == true) {
+						_root.Course.Char.xspeed += this.diffx;
+						_root.Course.Char.yspeed += this.diffy;
+					}
+					landedon = false;
+				}
+				_y = this._y+this.pl._y;
+				_x = this._x+this.pl._x;
+			}
+		}
+		pl._y -= diffy;
+		if (armscale>0) {
+			clip.PLarm._y = pl._y;
+			clip.PLarm._x = pl._x;
+			clip.PLarm._rotation = _root.radiansToAngle(Math.atan2(pl._y, pl._x))+90;
+			clip.PLarm._yscale = armscale;
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal" weight="2">
+                        <fill>
+                          <SolidColor color="#999999"/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge strokeStyle="1" edges="!1000 -0.5[#3E7.E8 #19E.06 707 707!707 707[#19E.46 #3E7.A8 0 999.5!0 999.5[#FFFE61.7A #3E7.A8 -707.5 707!-707.5 707[#FFFC17.D8 #19E.06 -1000 -0.5!-1000 -0.5[#FFFC17.D8 #FFFE61.3A -707.5 -707.5!-707.5 -707.5[#FFFE61.7A #FFFC17.97 0 -1000.5
+!0 -1000.5[#19E.46 #FFFC17.97 707 -707.5!707 -707.5[#3E7.E8 #FFFE61.3A 1000 -0.5"/>
+                    <Edge cubics="!-60 -240(;25,-325 40,-430 40,-480q-60 -240Q-4 -296q22 -373Q40 -427q40 -480);"/>
+                    <Edge cubics="!40 -480(;40,-560 -252,-980 -520,-980q40 -480Q40 -512q-10 -592Q-63 -678q-139 -760Q-343 -980q-520 -980);"/>
+                    <Edge cubics="!-520 -980(-520,-980;-1082,-980 -1300,-657 -1300,140q-520 -980Q-940 -980q-1121 -719Q-1300 -460q-1300 140);"/>
+                    <Edge cubics="!-1300 140(-1300,140;-1300,595 -1202,745 -280,780q-1300 140Q-1300 328q-1270 427Q-1234 548q-1136 618Q-941 755q-280 780)-280,780;"/>
+                  </edges>
+                </DOMShape>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Green PL Clip" name="pl">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Green PL Clip" name="pl">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Empty Movieclip" name="clip">
+                  <transformationPoint>
+                    <Point x="-0.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,119 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Menu - SoundTest Next-Back" itemID="49c1dad0-00001326" sourceFlashFilepath="F:\Super Mario 63\New computer\Super Mario 63 Credits.fla" sourceLibraryItemHRef="Menu - SoundTest Next-Back" sourceLastModified="1237441847" lastModified="1237498881" sourceItemID="49c1dad0-00001326">
+  <timeline>
+    <DOMTimeline name="Menu - SoundTest Next-Back">
+      <layers>
+        <DOMLayer name="Layer 3" color="#FFFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[num = 1;
+if (_rotation == 180) {
+	num = -1;
+}
+al = 100;
+onEnterFrame = function () {
+	if (this.hitTest(_root._xmouse, _root._ymouse, true)) {
+		sc = 105;
+		gotoAndStop(3);
+	} else {
+		sc = 100;
+		gotoAndStop(2);
+	}
+	if (_rotation == 180) {
+		if (_parent._parent.Songnum>1) {
+			al = 100;
+		} else {
+			al = 0;
+			sc = 100;
+		}
+	} else if (_rotation == 0) {
+		if (_parent._parent.Songnum<26) {
+			al = 100;
+		} else {
+			al = 0;
+			sc = 100;
+		}
+	}
+	_alpha += (al-_alpha)/2;
+	_xscale += (sc-_xscale)/2;
+	_yscale = _xscale;
+};
+onMouseDown = function () {
+	if (sc == 105) {
+		_parent._parent.Songnum += num;
+		_xscale = 130;
+		_yscale = 130;
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="2" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#4646E6"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!-11 -41|-11 -140.5!-11 -140.5|129.5 -0.5!129.5 -0.5|-11 140!-11 140|-11 40!-11 40|-111 140!-111 140|-111 -140.5!-111 -140.5|-11 -41"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#0000FF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!-11.5 -61.5|-11.5 -210.5!-11.5 -210.5|199.5 -0.5!199.5 -0.5|-11.5 210!-11.5 210|-11.5 60!-11.5 60|-161.5 210!-161.5 210|-161.5 -210.5!-161.5 -210.5|-11.5 -61.5"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" locked="true">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#999999" alpha="0.250980392156863"/>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <SolidColor color="#666666"/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="!250 249.5|-250 249.5!-250 249.5|-250 -250.5!-250 -250.5|250 -250.5!250 -250.5|250 249.5"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

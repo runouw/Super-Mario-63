@@ -1,0 +1,45 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Bowser Battle 2 Cinema Dark farBG" itemID="4972c1b6-0000245e" lastModified="1232258031" lastUniqueIdentifier="2">
+  <timeline>
+    <DOMTimeline name="Bowser Battle 2 Cinema Dark farBG">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Intro Movie 2 Cloud BG" name="farBG">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	color = Math.round(_root.TotalStars*1.5)+25;
+	color2 = Math.abs(100-color);
+	myColor = new Color(this);
+	colorTrans = new Object();
+	colorTrans = {ra:(color*0.5)+50-(color2/3), rb:0, ga:(color*0.5)+50-(color2/3), gb:0, ba:(color*0.5)+50-(color2/3), bb:0, aa:100, ab:0};
+	myColor.setTransform(colorTrans);
+}
+onClipEvent (enterFrame) {
+	color += Math.round(((_root.TotalStars*1.5)+25)-color)/7;
+	if (_root.CheatCastleRestore == true) {
+		color = 100;
+	}
+	color = Math.max(color, 0);
+	color = Math.min(color, 100);
+	color2 = Math.abs(100-color);
+	// color = percent of stars obained
+	// color 2  = percent of stars not yet obtained
+	colorTrans = {ra:(color*0.75)+25-(color2/5), rb:0, ga:(color*0.9)+10-(color2/3), gb:0, ba:(color*0.9)+10-(color2/3), bb:0, aa:100, ab:0};
+	myColor.setTransform(colorTrans);
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

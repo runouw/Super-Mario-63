@@ -1,0 +1,100 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Menu - Credit Clsidoa" itemID="49c2a27f-000010f5" sourceFlashFilepath="F:\Super Mario 63\New computer\Super Mario 63 Credits.fla" sourceLibraryItemHRef="Menu - Credit Clsidoa" sourceLastModified="1237492424" lastModified="1244677906" lastUniqueIdentifier="4" sourceItemID="49c2a27f-000010f5">
+  <timeline>
+    <DOMTimeline name="Menu - Credit Clsidoa">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[ywave = random(90);
+rwave = random(90);
+Y = this._y;
+R = _rotation;
+r = 0;
+onEnterFrame = function () {
+	if (bg.hitTest(_root._xmouse, _root._ymouse, true) && _parent.clicked !== true) {
+		sc = 120;
+	} else {
+		sc = 100;
+	}
+	_xscale += (sc-_xscale)/4;
+	_yscale = _xscale;
+	txt._xscale += (sc-txt._xscale)/4;
+	txt._yscale = txt._xscale;
+	//
+	ywave += 0.035;
+	rwave += 0.025;
+	this._y = Y+Math.sin(ywave)*6;
+	this._rotation = R+Math.sin(rwave)*_xscale/20;
+};
+onMouseDown = function () {
+	if (sc == 120 && _parent.clicked !== true) {
+		//transition coding here
+		_parent.clicked = true;
+		_parent.TransitionF("Credits");
+		sc = 120;
+		_xscale = 150;
+		_yscale = 150;
+		r = 0;
+		rspeed = 12;
+		onEnterFrame = function () {
+			r += rspeed;
+			rspeed *= 0.97;
+			if (sc>10) {
+				sc -= 10;
+			}
+			_xscale += (sc-_xscale)/4;
+			_yscale = _xscale;
+			//
+			ywave += 0.035;
+			rwave += 0.025;
+			this._y = Y+Math.sin(ywave)*6;
+			this._rotation = R+r+Math.sin(rwave)*_xscale/20;
+		};
+		onMouseDown = null;
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName='Menu - "Level Designer Button"' name="bg">
+                  <matrix>
+                    <Matrix a="1.11764526367188" d="0.637924194335938"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BevelFilter distance="2"/>
+                    <AdjustColorFilter brightness="-51" saturation="20" hue="119"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName='Menu - "Credtishfsgaafgd"'>
+                  <matrix>
+                    <Matrix ty="-0.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-0.05"/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter blurX="6" blurY="6" color="#0000FF" inner="true" strength="10"/>
+                    <BevelFilter strength="1.5"/>
+                    <GlowFilter blurX="4" blurY="4" color="#FFFFFF" inner="true" strength="5"/>
+                    <BevelFilter shadowColor="#0000FF" strength="0.88"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

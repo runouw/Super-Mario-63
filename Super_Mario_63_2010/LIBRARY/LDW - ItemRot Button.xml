@@ -1,0 +1,119 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="LDW - ItemRot Button" itemID="49c05663-000010b4" lastModified="1237343338">
+  <timeline>
+    <DOMTimeline name="LDW - ItemRot Button">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[num = -5;
+onEnterFrame = function () {
+	if (this.hitTest(_root._xmouse, _root._ymouse, true)) {
+		sc = 105;
+		gotoAndStop(3);
+	} else {
+		gotoAndStop(2);
+		sc = 100;
+	}
+	_xscale += (sc-_xscale)/2;
+	_yscale = _xscale;
+	_rotation += (0-_rotation)/2;
+	if (hold == true && sc == 105) {
+		if (count == 0 || (count>10 && count%2 == 0)) {
+			_parent.rot += num;
+			_rotation = num*2;
+			//_xscale = 130;
+		}
+		count++;
+	}
+};
+onMouseDown = function () {
+	if (sc == 105) {
+		hold = true;
+		count = 0;
+	}
+};
+onMouseUp = function () {
+	hold = false;
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="2" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements>
+                <DOMShape isFloating="true">
+                  <matrix>
+                    <Matrix tx="-13.75" ty="-4.25"/>
+                  </matrix>
+                  <fills>
+                    <FillStyle index="1">
+                      <RadialGradient>
+                        <matrix>
+                          <Matrix a="0.0267333984375" d="0.0267333984375" tx="12.9" ty="7.25"/>
+                        </matrix>
+                        <GradientEntry color="#FFFF09" ratio="0"/>
+                        <GradientEntry color="#FFFFFF" ratio="1"/>
+                      </RadialGradient>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <SolidColor/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="!106 -45S6[#2C.39 #10.C5 34.5 100!34.5 100|173 100!173 100|-72 320!-72 320|-282 100!-282 100|-166 100!-166 100[#FFFF64.32 #FFFFBD.A6 -35 -187!-35 -187[#60.BF #FFFEC1.16 283 -319!283 -319|283 -118!283 -118|282.5 -118!282.5 -118[#B3.1C
+ #FFFF89.E1 106 -45"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <RadialGradient>
+                        <matrix>
+                          <Matrix a="0.0267333984375" d="0.0267333984375" tx="-0.85" ty="3"/>
+                        </matrix>
+                        <GradientEntry color="#FDFD02" ratio="0.196078431372549"/>
+                        <GradientEntry color="#FFFF5E" ratio="1"/>
+                      </RadialGradient>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <SolidColor/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="
+!8 -203|7.5 -203!7.5 -203[-95.890625 #FFFF34.E1 -169 -130!-169 -130[#FFFF19.39 #FFFFBB.C5 -240.5 15!-240.5 15|-102 15!-102 15|-347 235!-347 235|-557 15!-557 15|-441 15!-441 15[#FFFE51.32 #FFFF68.A6 -310 -272!-310 -272[#FFFF4D.BF #FFFE6C.16
+ 8 -404!8 -404|8 -203"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

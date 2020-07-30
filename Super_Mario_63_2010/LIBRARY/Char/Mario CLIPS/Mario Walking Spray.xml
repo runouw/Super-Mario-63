@@ -1,0 +1,118 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="      Char/  Mario CLIPS/Mario Walking Spray" itemID="44c203a3-0000021f" sourceFlashFilepath="Rob &amp; Steve Hewitt\New Mario Sunshine Project.fla" sourceLibraryItemHRef="Mario Walking Spray" sourceLastModified="1153835727" lastModified="1197674162" sourceItemID="44c203a3-0000021f">
+  <timeline>
+    <DOMTimeline name="Mario Walking Spray">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="80" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[frame = 1;
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		frame += _root.Course.Char.xspeed;
+		if (_root.Course.Char.Ice == true) {
+			frame -= _root.Course.Char.xspeed/2;
+			if (Key.isDown(Key.RIGHT)) {
+				frame += 3;
+			}
+			if (Key.isDown(Key.LEFT)) {
+				frame -= 3;
+			}
+		}
+		gotoAndStop(Math.round(frame)*1/1);
+		if (frame>=80) {
+			frame = 1;
+		}
+		if (frame<=0) {
+			frame = 80;
+		}
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" duration="10" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario Walking (Spray) 2">
+                  <matrix>
+                    <Matrix tx="-10" ty="-44.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="10" duration="10" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario Walking (Spray) 3">
+                  <matrix>
+                    <Matrix tx="-9" ty="-44.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="20" duration="10" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario Walking (Spray) 4">
+                  <matrix>
+                    <Matrix tx="-9" ty="-46.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="30" duration="10" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario Walking (Spray) 5">
+                  <matrix>
+                    <Matrix tx="-13" ty="-45.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="40" duration="10" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario Walking (Spray) 6">
+                  <matrix>
+                    <Matrix tx="-8.5" ty="-44.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="50" duration="10" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario Walking (Spray) 7">
+                  <matrix>
+                    <Matrix tx="-8.5" ty="-43.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="60" duration="10" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario Walking (Spray) 8">
+                  <matrix>
+                    <Matrix tx="-8.5" ty="-44.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="70" duration="10" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario Walking (Spray) 9">
+                  <matrix>
+                    <Matrix tx="-12" ty="-45.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

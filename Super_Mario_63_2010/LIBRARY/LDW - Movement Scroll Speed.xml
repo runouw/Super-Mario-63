@@ -1,0 +1,124 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="LDW - Movement Scroll Speed" itemID="48574b29-00001236" sourceFlashFilepath="F:\Super Mario 63\New computer\Level Designer (With Mario Engine new) 3.fla" sourceLibraryItemHRef="LDW - Movement Scroll Speed" sourceLastModified="1227998310" lastModified="1245541402" lastUniqueIdentifier="4" sourceItemID="48574b29-00001236">
+  <timeline>
+    <DOMTimeline name="LDW - Movement Scroll Speed">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[th.stop();
+scrollspeed = _root.ScrollSpeed;
+ss = "Scroll Speed: "+scrollspeed;
+//
+//scrollspeed = Math.round((th._x+80)*(99/160))+1;
+th._x = ((scrollspeed-1)/(99/160))-80;
+//
+onEnterFrame = function () {
+	if (_parent.greyness._alpha<50) {
+		if (th.hitTest(_root._xmouse, _root._ymouse, false)) {
+			th._xscale += (110-th._xscale)/3;
+		} else {
+			th._xscale += (100-th._xscale)/3;
+		}
+		th._yscale = th._xscale;
+		//
+		/*if (this.hitTest(_root._xmouse, _root._ymouse, false)) {
+		_xscale += (110-_xscale)/3;
+		} else {
+		_xscale += (100-_xscale)/3;
+		}
+		_yscale = _xscale;*/
+		//
+		if (th.drag == true) {
+			if (th._currentframe<5) {
+				th.nextFrame();
+			}
+			th._x = Math.min(Math.max(this._xmouse, -80), 80);
+		} else {
+			if (th._currentframe>1) {
+				th.prevFrame();
+			}
+		}
+		//
+		scrollspeed = Math.round((th._x+80)*(99/160))+1;
+		_root.ScrollSpeed = scrollspeed;
+		ss = "Scroll Speed: "+scrollspeed;
+	}
+};
+onMouseDown = function () {
+	if (th.hitTest(_root._xmouse, _root._ymouse, false) && _parent.greyness._alpha<50) {
+		th.drag = true;
+	}
+};
+onMouseUp = function () {
+	th.drag = false;
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="TXT" color="#FFFF4F" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="LDW - Movement Scroll Text" name="txt">
+                  <matrix>
+                    <Matrix d="0.996139526367188"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#FF4FFF">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="LDW - Movement Scroll Dragger" name="th">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Bar" color="#4FFF4F" locked="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF" alpha="0.498039215686275"/>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <SolidColor/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="!1598 160|-1602 160!-1602 160|-1602 -160!-1602 -160|1598 -160!1598 -160|1598 160"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

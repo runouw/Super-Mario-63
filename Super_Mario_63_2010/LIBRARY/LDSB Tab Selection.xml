@@ -1,0 +1,359 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="LDSB Tab Selection" itemID="48a4dfdb-00000052" sourceFlashFilepath="F:\Super Mario 63\New computer\Level Designer (With Mario Engine new) 3.fla" sourceLibraryItemHRef="LDSB Tab Selection" sourceLastModified="1227995456" lastModified="1238557833" lastUniqueIdentifier="18" sourceItemID="48a4dfdb-00000052">
+  <timeline>
+    <DOMTimeline name="LDSB Tab Selection">
+      <layers>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[chang._alpha = 0;
+selecting = false;
+if (Tab == undefined) {
+	Tab = 0
+}
+tablast = Tab;
+onEnterFrame = function () {
+	if (_currentframe>2) {
+		_root.MenuAccess = true;
+	}
+	if (tablast !== Tab) {
+		_parent.moved.Tab = this.Tab;
+		_parent.moved.Reload();
+		currenttab.gotoAndStop(Tab+1);
+	}
+	//      
+	if (currenttab._xscale>105 && _currentframe<3) {
+		chang._alpha += (100-chang._alpha)/4;
+	} else {
+		chang._alpha += (0-chang._alpha)/4;
+	}
+	tablast = Tab;
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="6" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_parent.bar.tabbing = false;
+_parent.moved.tabbing = false;
+onMouseDown = function () {
+	if (this.hitTest(_root._xmouse, _root._ymouse)) {
+		play();
+		_parent.bar.tabbing = true;
+		_parent.moved.tabbing = true;
+		onMouseDown = null;
+	}
+};
+stop();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="7" duration="8" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+selecting = true;
+onMouseDown = function () {
+	play();
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" duration="5" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="5" duration="5" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="LDSB Tab Clips" name="t9">
+                  <matrix>
+                    <Matrix tx="-126.95" ty="72.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="LDSB Tab Clips" name="t5">
+                  <matrix>
+                    <Matrix tx="-126.95" ty="35.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="LDSB Tab Clips" name="t1">
+                  <matrix>
+                    <Matrix tx="-126.95" ty="-1.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="LDSB Tab Clips" name="t10">
+                  <matrix>
+                    <Matrix tx="-57.95" ty="72.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="LDSB Tab Clips" name="t6">
+                  <matrix>
+                    <Matrix tx="-57.95" ty="35.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="LDSB Tab Clips" name="t2">
+                  <matrix>
+                    <Matrix tx="-57.95" ty="-1.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="LDSB Tab Clips" name="t11">
+                  <matrix>
+                    <Matrix tx="11.05" ty="72.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="LDSB Tab Clips" name="t7">
+                  <matrix>
+                    <Matrix tx="11.05" ty="35.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="LDSB Tab Clips" name="t3">
+                  <matrix>
+                    <Matrix tx="11.05" ty="-1.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="LDSB Tab Clips" name="t0">
+                  <matrix>
+                    <Matrix tx="-195.95" ty="-1.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="LDSB Tab Clips" name="t8">
+                  <matrix>
+                    <Matrix tx="-195.95" ty="72.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="LDSB Tab Clips" name="t4">
+                  <matrix>
+                    <Matrix tx="-195.95" ty="35.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="10" duration="5" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#FF4FFF">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" duration="5" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix a="0.0458526611328125" d="-0.4310302734375" tx="66.55" ty="-32.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="70.9" y="-22.5"/>
+                  </transformationPoint>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix a="0.0458526611328125" d="-0.4310302734375" tx="66.55" ty="-32.65"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="70.9" y="-22.5"/>
+                      </transformationPoint>
+                      <fills>
+                        <FillStyle index="1">
+                          <RadialGradient focalPointRatio="-0.607843137254902">
+                            <matrix>
+                              <Matrix a="0.25762939453125" d="0.470474243164063" tx="-19.45" ty="-76.5"/>
+                            </matrix>
+                            <GradientEntry color="#CCCCCC" alpha="0.501960784313725" ratio="0"/>
+                            <GradientEntry color="#AEAEAE" alpha="0.501960784313725" ratio="1"/>
+                          </RadialGradient>
+                        </FillStyle>
+                      </fills>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal" weight="0.05" solidStyle="hairline">
+                            <fill>
+                              <SolidColor alpha="0.4"/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="!1395 -466|-5605 -466!-5605 -466|-5605 -2786.5!-5605 -2786.5|1395 -2786.5!1395 -2786.5|1395 -466"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="7" duration="6" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix d="-1" tx="46.5" ty="-45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="70.5" y="-22.5"/>
+                  </transformationPoint>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix d="-1" tx="46.5" ty="-45"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="70.5" y="-22.5"/>
+                      </transformationPoint>
+                      <fills>
+                        <FillStyle index="1">
+                          <RadialGradient focalPointRatio="-0.607843137254902">
+                            <matrix>
+                              <Matrix a="0.25762939453125" d="0.470474243164063" tx="-19.45" ty="-76.5"/>
+                            </matrix>
+                            <GradientEntry color="#CCCCCC" alpha="0.501960784313725" ratio="0"/>
+                            <GradientEntry color="#AEAEAE" alpha="0.501960784313725" ratio="1"/>
+                          </RadialGradient>
+                        </FillStyle>
+                      </fills>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal" weight="0.05" solidStyle="hairline">
+                            <fill>
+                              <SolidColor alpha="0.4"/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="!1395 -466|-5605 -466!-5605 -466|-5605 -2786.5!-5605 -2786.5|1395 -2786.5!1395 -2786.5|1395 -466"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="13" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix a="0.0458526611328125" d="-0.4310302734375" tx="66.55" ty="-32.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="70.9" y="-22.5"/>
+                  </transformationPoint>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix a="0.0458526611328125" d="-0.4310302734375" tx="66.55" ty="-32.65"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="70.9" y="-22.5"/>
+                      </transformationPoint>
+                      <fills>
+                        <FillStyle index="1">
+                          <RadialGradient focalPointRatio="-0.607843137254902">
+                            <matrix>
+                              <Matrix a="0.25762939453125" d="0.470474243164063" tx="-19.45" ty="-76.5"/>
+                            </matrix>
+                            <GradientEntry color="#CCCCCC" alpha="0.501960784313725" ratio="0"/>
+                            <GradientEntry color="#AEAEAE" alpha="0.501960784313725" ratio="1"/>
+                          </RadialGradient>
+                        </FillStyle>
+                      </fills>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal" weight="0.05" solidStyle="hairline">
+                            <fill>
+                              <SolidColor alpha="0.4"/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="!1395 -466|-5605 -466!-5605 -466|-5605 -2786.5!-5605 -2786.5|1395 -2786.5!1395 -2786.5|1395 -466"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="14" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[gotoAndStop(2);
+_root.MenuAccess = false;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 5" color="#4FFFFF">
+          <frames>
+            <DOMFrame index="0" duration="15" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="LDSB Tab Change Text" name="chang">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BevelFilter/>
+                    <GlowFilter color="#FFFFFF" strength="10"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="15" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="LDSB Tab Clips" name="currenttab">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

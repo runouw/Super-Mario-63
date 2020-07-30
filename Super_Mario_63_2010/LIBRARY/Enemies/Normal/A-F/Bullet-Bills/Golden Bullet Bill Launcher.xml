@@ -1,0 +1,175 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="   Enemies/Normal/ A-F/ Bullet-Bills/Golden Bullet Bill Launcher" itemID="46e738dd-00000a6a" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="BulletBillLauncher" lastModified="1244591555">
+  <timeline>
+    <DOMTimeline name="Golden Bullet Bill Launcher">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="21" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+if (waittime == undefined) {
+	waittime = 92*9;
+}
+if (addrandomly == undefined) {
+	addrandomly = false
+}
+if (limit == undefined) {
+	if (chase == true) {
+		limit = 3;
+	} else {
+		limit = "none";
+	}
+}
+if (onlyright == undefined) {
+	onlyright = false;
+	// Only goes to the right side
+}
+if (onlyleft == undefined) {
+	onlyleft = false;
+	// Only goes to the left side
+}
+if (lockedside == undefined) {
+	lockedside = false;
+	// Checks for onlyright or onlyleft and (if true) will go even if mario is on the wrong side.
+}
+if(enemyhurt == undefined){
+	//enemyhurt = true;	
+}
+if (firstrun == undefined) {
+	total = 0;
+	if (offset !== undefined) {
+		count = offset;
+	} else {
+		count = 0;
+	}
+	firstrun = true;
+} else {
+	count = 0;
+}
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		if (Math.abs((_root.currentCamX)-(_x+_parent._x))<1000 && Math.abs((_root.currentCamY)-(_y+_parent._y))<1000) {
+			if (addrandomly == true) {
+				count += 2;
+				count += Math.random()*1;
+			} else {
+				count++;
+			}
+			if (count>waittime) {
+				count = 0;
+				if (rot == undefined) {
+					boolean = (_root.currentCamX)-(_x+_parent._x)>=0;
+				} else if (rot == 180) {
+					boolean = (_root.currentCamX)-(_x+_parent._x)<=0;
+				} else if (rot == 90) {
+					boolean = (_root.currentCamY)-(_y+_parent._y)>=0;
+				} else {
+					boolean = (_root.currentCamY)-(_y+_parent._y)<=0;
+				}
+				if (boolean) {
+					// Launch to the right
+					LD = "right";
+				} else {
+					LD = "left";
+					// Launch to the left
+				}
+				if (((!(onlyright == true && LD == "left") && !(onlyleft == true && LD == "right")) || lockedside == true) && (total<limit || limit == "none")) {
+					play();
+					onEnterFrame = function () {
+						if (_root.PauseGame == false) {
+							play();
+						} else {
+							stop();
+						}
+					};
+				}
+			}
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="21" duration="5" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (onlyright == true) {
+	LD = "right";
+}
+if (onlyleft == true) {
+	LD = "left";
+}
+if (LD == "right") {
+	_root.Course.FrontGFX.attachMovie("GoldBill", "GoldBill"+_root.Course.FrontGFX.getNextHighestDepth(), _root.Course.FrontGFX.getNextHighestDepth(), {_x:_x+Math.cos(_root.angleToRadians(_rotation))*15, _y:_y+Math.sin(_root.angleToRadians(_rotation))*15, _xscale:100, rotation:_rotation, eat:eat, chase:chase, frame:frame, speed:speed, rotdiv:rotdiv, rotmaxspeed:rotmaxspeed, enemyhurt:enemyhurt, parent:this});
+} else {
+	_root.Course.FrontGFX.attachMovie("GoldBill", "GoldBill"+_root.Course.FrontGFX.getNextHighestDepth(), _root.Course.FrontGFX.getNextHighestDepth(), {_x:_x-Math.cos(_root.angleToRadians(_rotation))*15, _y:_y-Math.sin(_root.angleToRadians(_rotation))*15, _xscale:-100, rotation:_rotation, eat:eat, chase:chase, frame:frame, speed:speed, rotdiv:rotdiv, rotmaxspeed:rotmaxspeed, enemyhurt:enemyhurt, parent:this});
+}
+total++;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Normal/ A-F/ Bullet-Bills/Golden Bullet Bill Base - 1">
+                  <matrix>
+                    <Matrix tx="-8" ty="-12"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" duration="4" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Normal/ A-F/ Bullet-Bills/Golden Bullet Bill Base - 2">
+                  <matrix>
+                    <Matrix tx="-13" ty="-16"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="5" duration="5" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Normal/ A-F/ Bullet-Bills/Golden Bullet Bill Base - 3">
+                  <matrix>
+                    <Matrix tx="-14" ty="-18"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="10" duration="11" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Normal/ A-F/ Bullet-Bills/Golden Bullet Bill Base - 4">
+                  <matrix>
+                    <Matrix tx="-15" ty="-19"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="21" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Normal/ A-F/ Bullet-Bills/Golden Bullet Bill Base - 5">
+                  <matrix>
+                    <Matrix tx="-15" ty="-20"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="23" duration="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Normal/ A-F/ Bullet-Bills/Golden Bullet Bill Base - 6">
+                  <matrix>
+                    <Matrix tx="-13.65" ty="-18"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

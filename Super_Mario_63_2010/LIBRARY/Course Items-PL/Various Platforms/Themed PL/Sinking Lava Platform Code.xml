@@ -1,0 +1,130 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Items-PL/ Various Platforms/ Themed PL/Sinking Lava Platform Code" itemID="473d281a-000009bb" lastModified="1231103963" lastUniqueIdentifier="2">
+  <timeline>
+    <DOMTimeline name="Sinking Lava Platform Code">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (fallspeed1 == undefined) {
+	fallspeed1 = 0.2;
+}
+if (fallspeed2 == undefined) {
+	fallspeed2 = 0.8;
+}
+if (risespeed1 == undefined) {
+	risespeed1 = 0.1;
+}
+if (risespeed2 == undefined) {
+	risespeed2 = 0.85;
+}
+if (deepness == undefined) {
+	deepness = 32;
+}
+if (frame == undefined) {
+	frame = 1;
+}
+if (sinktime == undefined) {
+	sinktime = 32;
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+saveY = _y;
+depth = _root.Course.Platforms.getNextHighestDepth();
+_root.Course.Platforms.attachMovie("SinkingLavaGround", "SinkingLavaGround"+depth, depth, {_x:_x, _y:_y, landedon:false});
+startcount = 0;
+sink = false;
+currentspeedY = 0;
+offcount = sinktime;
+clip.gotoAndStop(frame);
+_root.Course.Platforms["SinkingLavaGround"+depth].gotoAndStop(frame);
+onEnterFrame = function () {
+	if (_root.PauseGame == false && _root.playpause == false) {
+		if (startcount>5) {
+			distance = (_root.Course.Char._x-(_x+_parent._x))/this.scale;
+			//
+			if (sink == true) {
+				offcount = 0;
+			} else {
+				offcount++;
+			}
+			if (sink == true || offcount<=sinktime) {
+				if (_y>(saveY+deepness)-(currentspeedY*3)+3) {
+					currentspeedY = ((saveY+deepness)-_y)/25;
+				} else {
+					currentspeedY += fallspeed1;
+					currentspeedY *= fallspeed2;
+				}
+				//
+			} else {
+				if (_y>saveY+5) {
+					currentspeedY -= risespeed1;
+					currentspeedY *= risespeed2;
+				} else {
+					currentspeedY = (saveY-_y)/15;
+				}
+			}
+		} else {
+			startcount++;
+		}
+		_y += currentspeedY;
+		//   
+		tellTarget (_root.Course.Platforms["SinkingLavaGround"+depth]) {
+			hit = false;
+			if (hitTest((_root.Course.Char._x*_root.coursescale/100)+_root.Course._x, ((_root.Course.Char._y+this.currentspeedY+3)*_root.coursescale/100)+_root.Course._y, false)) {
+				if (hitTest((_root.Course.Char._x*_root.coursescale/100)+_root.Course._x, ((_root.Course.Char._y+this.currentspeedY+3)*_root.coursescale/100)+_root.Course._y, true)) {
+					hit = true;
+				}
+			}
+			if (hit == true && _root.Course.Char.yspeed>-3) {
+				//_root.Course.Char._x += this.currentspeedX;
+				_root.Course.Char._y += this.currentspeedY;
+				//_root.Course.Char.xspeed = _root.groundFriction(_root.Course.Char.xspeed, 0.3, 1.1);
+				if (landedon == false) {
+					currentspeedY += (_root.Course.Char.yspeed/2);
+					this.sink = true;
+					//_root.Course.Char.xspeed -= this.currentspeedX;
+				}
+				landedon = true;
+			} else {
+				if (landedon == true) {
+					this.sink = false;
+					//_root.Course.Char.xspeed += this.currentspeedX;
+					currentspeedY += (-_root.Course.Char.yspeed/1.5);
+					_root.Course.Char.yspeed += this.currentspeedY/2;
+				}
+				landedon = false;
+			}
+			_y = this._y;
+			_x = this._x;
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Themed PL/Sinking Lava Pl GFX &amp; Ground" name="clip" selected="true">
+                  <transformationPoint>
+                    <Point x="-0.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

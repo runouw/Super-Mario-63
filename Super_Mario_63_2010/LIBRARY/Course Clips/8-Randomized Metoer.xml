@@ -1,0 +1,638 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Clips/8-Randomized Metoer" itemID="48efe7f1-00001203" lastModified="1239482387" lastUniqueIdentifier="15">
+  <timeline>
+    <DOMTimeline name="8-Randomized Metoer">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" locked="true" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[Explode = function () {
+	if (Math.abs(_root.Course.Char._x-(_x+_parent._x))<500 && Math.abs(_root.Course.Char._y-(_y+_parent._y))<400) {
+		_root.bgsoundFX = new Sound(this);
+		_root.bgsoundFX.attachSound("Explode9");
+		_root.bgsoundFX.start(0, 1);
+		_root.bgsoundFX.setVolume(_root.BgVolume);
+	}
+	_parent.attachMovie("MiniMiniMeteor", "MiniMiniMeteor"+_parent.getNextHighestDepth(), _parent.getNextHighestDepth(), {_x:_x, _y:_y, count:300});
+	_parent.attachMovie("MiniMiniMeteor", "MiniMiniMeteor"+_parent.getNextHighestDepth(), _parent.getNextHighestDepth(), {_x:_x, _y:_y, count:300});
+	_parent.attachMovie("MiniMiniMeteor", "MiniMiniMeteor"+_parent.getNextHighestDepth(), _parent.getNextHighestDepth(), {_x:_x, _y:_y, count:300});
+	xspeed = 0;
+	yspeed = 0;
+	this.play();
+	onEnterFrame = function () {
+		if (_root.PauseGame !== true) {
+			if (this.body.hitTest(_root.Course.Char.charClip.body)) {
+				if ((_root.Course.Char.attackFrame !== "SlingStar" && _root.Course.Char.attackFrame !== "JumpSpin") || _root.Course.Char.attack == false) {
+					if (_root.Course.Char._x>_x+_parent._x) {
+						_root.MarioHit(1, 90, -5, 7, 7, "");
+					} else {
+						_root.MarioHit(1, 90, -5, -7, 7, "");
+					}
+				}
+			}
+			play();
+		} else {
+			stop();
+		}
+	};
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" duration="49" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+//Re = function () {
+_rotation = random(360);
+rotspeed = (random(10)-5)/2;
+speed = 3+Math.random()*2;
+//dir = 7;
+_y = -_root.Course.BackGFX._y-500-random(500);
+_x = -_root.Course.BackGFX._x+Math.random()*1000-500;
+mariox = _root.Course.Char._x-_root.Course.BackGFX._x;
+marioy = _root.Course.Char._y-_root.Course.BackGFX._y;
+//
+dy = _y-marioy;
+dx = _x-mariox;
+rot = Math.atan2(dy, dx+Math.random()*1000-500);
+yspeed = -Math.sin(rot)*speed;
+xspeed = -Math.cos(rot)*speed;
+_alpha = 100;
+bcount = 100+random(1000);
+count = 0;
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		_rotation += rotspeed;
+		_x += xspeed;
+		_y += yspeed;
+		//
+		if (this.body.hitTest(_root.Course.Char.charClip.body)) {
+			if ((_root.Course.Char.attackFrame !== "SlingStar" && _root.Course.Char.attackFrame !== "JumpSpin") || _root.Course.Char.attack == false) {
+				if (_root.Course.Char._x>_x+_parent._x) {
+					_root.MarioHit(1, 90, -5, 7, 7, "");
+				} else {
+					_root.MarioHit(1, 90, -5, -7, 7, "");
+				}
+			}
+			Explode();
+		}
+		if (count++>bcount) {
+			Explode();
+		}
+		//           
+	}
+};
+//};
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Lineless Movieclip" name="body">
+                  <matrix>
+                    <Matrix a="0.619354248046875" d="0.619400024414063" ty="17.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-28.1"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="51" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[gotoAndStop(3);
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="3" duration="6" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="9" duration="31" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Explosion 5 Clip (Circle Explosion)">
+                  <matrix>
+                    <Matrix a="1.91993713378906" d="1.91993713378906" tx="0.1" ty="-7.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter blurX="2" blurY="2"/>
+                  </filters>
+                  <color>
+                    <Color alphaMultiplier="0.25"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 3 Clip (Small 2)">
+                  <matrix>
+                    <Matrix tx="18.6" ty="5.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.75"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.75"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 5 Clip (Circle Explosion)">
+                  <matrix>
+                    <Matrix a="2.25" d="2.25" tx="-49.9" ty="7.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter blurX="2" blurY="2"/>
+                  </filters>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="40" duration="11" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="51" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="52" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 7" color="#4F80FF" locked="true">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="3" duration="4" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="7" duration="32" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix a="1.67308044433594" d="1.67308044433594" tx="-0.4" ty="0.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.25"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 5 Clip (Circle Explosion)">
+                  <matrix>
+                    <Matrix a="2.39996337890625" d="2.39996337890625" tx="4.1" ty="6.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter blurX="2" blurY="2"/>
+                  </filters>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 3 Clip (Small 2)">
+                  <matrix>
+                    <Matrix tx="-8.7" ty="-12.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.75"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.75"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 5 Clip (Circle Explosion)" selected="true">
+                  <matrix>
+                    <Matrix a="3" d="3" tx="0.1" ty="-8.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter blurX="2" blurY="2"/>
+                  </filters>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="39" duration="12" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="51" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="52" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 6" color="#808080">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="3" duration="13" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="16" duration="33" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="10" ty="10"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.75"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="49" duration="2" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="51" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="52" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 5" color="#4FFFFF">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="3" duration="11" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="14" duration="32" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="10" ty="-10"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.75"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="46" duration="5" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="51" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="52" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#FF4FFF">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="3" duration="9" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="12" duration="31" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="-10" ty="10"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.75"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="43" duration="8" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="51" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="52" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Mini Meteor Clip Clip">
+                  <matrix>
+                    <Matrix a="2" d="2" tx="-0.05" ty="-0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter blurX="1.5" blurY="1.5"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" duration="2" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="5" duration="27" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="2.35" ty="1.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.75"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.75"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 5 Clip (Circle Explosion)">
+                  <matrix>
+                    <Matrix a="3" d="3" tx="0.1" ty="0.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter blurX="2" blurY="2"/>
+                  </filters>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="32" duration="19" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="51" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="52" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 8" color="#FF4F4F">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="3" duration="3" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="6" duration="26" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Explosion 3 Clip (Small 2)">
+                  <matrix>
+                    <Matrix tx="9.6" ty="-2.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 3 Clip (Small 2)">
+                  <matrix>
+                    <Matrix tx="-7.15" ty="1.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.75"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 5 Clip (Circle Explosion)">
+                  <matrix>
+                    <Matrix a="3" d="3" tx="0.1" ty="3.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter blurX="2" blurY="2"/>
+                  </filters>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="32" duration="19" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="51" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 9" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="3" duration="7" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="10" duration="31" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="-5.15" ty="-8.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.75"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <matrix>
+                    <Matrix tx="-5.15" ty="1.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.75"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 5 Clip (Circle Explosion)">
+                  <matrix>
+                    <Matrix a="3" d="3" tx="-2.9" ty="-1.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter blurX="2" blurY="2"/>
+                  </filters>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="41" duration="10" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="51" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 10" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="4" duration="28" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Explosion 5 Clip (Circle Explosion)">
+                  <matrix>
+                    <Matrix a="3" d="3" tx="0.1" ty="0.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter blurX="2" blurY="2"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Explosion 2 Clip (Small 1)">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.75"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="32" duration="19" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="51" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 11" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="3" duration="12" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Mini Meteor Clip Clip">
+                  <matrix>
+                    <Matrix a="2" d="2" tx="-0.05" ty="-0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter blurX="1.5" blurY="1.5"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="15" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Mini Meteor Clip Clip">
+                  <matrix>
+                    <Matrix a="2" d="2" tx="-0.05" ty="-0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter blurX="1.5" blurY="1.5"/>
+                  </filters>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="16" duration="35" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="51" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

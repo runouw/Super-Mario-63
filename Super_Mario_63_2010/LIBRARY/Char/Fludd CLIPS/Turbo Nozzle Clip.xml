@@ -1,0 +1,75 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="      Char/  Fludd CLIPS/Turbo Nozzle Clip" itemID="4532f62d-00000452" linkageExportForAS="true" linkageIdentifier="Tnozzle" lastModified="1171842195">
+  <timeline>
+    <DOMTimeline name="Turbo Nozzle Clip">
+      <layers>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF" alpha="0"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!320 480.5|-320 480.5!-320 480.5|-320 -379.5!-320 -379.5|320 -379.5!320 -379.5|320 480.5"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#FF4FFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[yspeed = -3;
+count = 0;
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		if (this.hitTest((_root.Course.Char._x*_root.coursescale/100)+_root.Course._x, (_root.Course.Char._y*_root.coursescale/100)+_root.Course._y, true)) {
+			_root.Fluddpow = "T";
+			_root.WaterAmount = _root.TotalWater;
+			//
+			_root.Mariosound = new Sound(this);
+			_root.Mariosound.attachSound("Fludd Nozzle");
+			_root.Mariosound.start(0, 1);
+			_root.Mariosound.setVolume(_root.MarioVolume);
+			//
+			this.removeMovieClip(this);
+		}
+		if (!_root.Course.Platforms.hitTest(((_x+_parent._x)*_root.coursescale/100)+_root.Course._x, ((_y+_parent._y+7)*_root.coursescale/100)+_root.Course._y, true) && !_root.Course.BPlatforms.hitTest(((_x+_parent._x)*_root.coursescale/100)+_root.Course._x, ((_y+_parent._y+7)*_root.coursescale/100)+_root.Course._y, true)) {
+			_y += yspeed;
+			yspeed += 0.5;
+			yspeed *= 0.95;
+		}
+		while (_root.Course.Platforms.hitTest(((_x+_parent._x)*_root.coursescale/100)+_root.Course._x, ((_y+_parent._y+5)*_root.coursescale/100)+_root.Course._y, true) || _root.Course.BPlatforms.hitTest(((_x+_parent._x)*_root.coursescale/100)+_root.Course._x, ((_y+_parent._y+5)*_root.coursescale/100)+_root.Course._y, true)) {
+			_y--;
+			yspeed = Math.min(0, yspeed);
+		}
+		count++;
+		if (count>900) {
+			_alpha = random(100);
+		}
+		if (count>1000) {
+			this.removeMovieClip(this);
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Fludd/Turbo Nozzle">
+                  <matrix>
+                    <Matrix tx="-11.5" ty="-3.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,127 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="   Effects/ Lava-Fire/Lava Bubble Clip" itemID="4765b5ce-00000bdf" lastModified="1206490512" lastUniqueIdentifier="4">
+  <timeline>
+    <DOMTimeline name="Lava Bubble Clip" currentFrame="2">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (size == undefined) {
+	size = 100;
+}
+if (rate == undefined) {
+	//rate = 10000/size;
+	rate = 50;
+}
+if (Yheight == undefined) {
+	Yheight = 100;
+}
+if (speed == undefined) {
+	speed = 1
+}
+//        
+//
+/*DrawCircle = function (mc, X, Y, Width, red, green, blue):Void {
+//clr = (red1 << 16 | green1 << 8 | blue1);
+clr = (red << 16 | green << 8 | blue);
+mc.lineStyle(0, 0, 0);
+mc.beginFill(clr);
+mc.moveTo(X+Width, Y);
+mc.curveTo(Width+X, Math.tan(Math.PI/8)*Width+Y, Math.sin(Math.PI/4)*Width+X, Math.sin(Math.PI/4)*Width+Y);
+mc.curveTo(Math.tan(Math.PI/8)*Width+X, Width+Y, X, Width+Y);
+mc.curveTo(-Math.tan(Math.PI/8)*Width+X, Width+Y, -Math.sin(Math.PI/4)*Width+X, Math.sin(Math.PI/4)*Width+Y);
+mc.curveTo(-Width+X, Math.tan(Math.PI/8)*Width+Y, -Width+X, Y);
+mc.curveTo(-Width+X, -Math.tan(Math.PI/8)*Width+Y, -Math.sin(Math.PI/4)*Width+X, -Math.sin(Math.PI/4)*Width+Y);
+mc.curveTo(-Math.tan(Math.PI/8)*Width+X, -Width+Y, X, -Width+Y);
+mc.curveTo(Math.tan(Math.PI/8)*Width+X, -Width+Y, Math.sin(Math.PI/4)*Width+X, -Math.sin(Math.PI/4)*Width+Y);
+mc.curveTo(Width+X, -Math.tan(Math.PI/8)*Width+Y, Width+X, Y);
+mc.endFill();
+};*/
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Lava-Fire/Lava Bubble">
+                  <matrix>
+                    <Matrix a="0.199996948242188" d="0.199996948242188" tx="8.3" ty="-29.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+count = 0;
+bubblecount = 0;
+onEnterFrame = function () {
+	count++;
+	if (count>rate) {
+		if (th == false) {
+			th = true;
+			X = random(size/2)+1;
+		} else {
+			X = random(size/2)+(size/2)-1;
+			th = false;
+		}
+		speedith = Math.random()*speed+1;
+		bubblecount++;
+		this.attachMovie("LavaBubble", "B"+bubblecount, this.getNextHighestDepth(), {_x:X, _y:0, _xscale:20, _yscale:20, speed:speedith, Yheight:Yheight});
+		count = 0;
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor/>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <SolidColor color="#FF0000"/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="!371.5 -21[#17B.EF #FFFFF3.C5 380 0!380 0[#17B.EF #C.3C 371.5 21!371.5 21|371 21.5!371 21.5[#16A.3C #1D.EF 350 30!350 30|-350 30!-350 30[#FFFE95.C5 #1D.EF -371 21.5!-371 21.5|-371.5 21!-371.5 21[-379.9375 #C.3C -380 0!-380 0[-379.9375
+ -12.234375 -371.5 -21!-371.5 -21|-371 -21.5!-371 -21.5[#FFFE95.C4 -29.9375 -350 -30!-350 -30|350 -30!350 -30[#16A.3C -29.9375 371 -21.5!371 -21.5|371.5 -21"/>
+                  </edges>
+                </DOMShape>
+                <DOMStaticText fontRenderingMode="standard" width="94.7" height="19" autoExpand="true" antiAliasThickness="68" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-50" ty="-22.5"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Lava Bubble</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" size="17" face="ArialMT" fillColor="#FF0000"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,120 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Cinema 2 Scene 3 Star Clip" itemID="492dae66-00000fd6" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="Cinema2Scene3StarClip" sourceFlashFilepath="Rob &amp; Steve Hewitt\My Documents\Super Mario 63\Orb Shattering.fla" sourceLibraryItemHRef="Cinema 2 Scene 3 Star Clip" sourceLastModified="1227735099" lastModified="1227737162" lastUniqueIdentifier="4" sourceItemID="492dae66-00000fd6">
+  <timeline>
+    <DOMTimeline name="Cinema 2 Scene 3 Star Clip">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[xspeed = 0;
+yspeed = 0;
+rot = Math.random()*Math.PI*2-Math.PI;
+clip._rotation = Math.random()*360;
+rotspeed = Math.random()*30-15;
+speed = 17+Math.random()*2;
+trail._rotation = (rot*180/Math.PI)+90;
+trail._yscale = 25;
+clip3._visible = false;
+clip2._visible = false;
+//
+clip._x += Math.cos(rot)*speed/2;
+clip._y += Math.sin(rot)*speed/2;
+//
+count = 0;
+onEnterFrame = function () {
+	count++;
+	if(count == 2){
+		clip2._visible = true;
+	}
+	if(count == 3){
+		clip3._visible = true;
+	}
+	clip3._rotation = clip2._rotation;
+	clip3._x = clip2._x
+	clip3._y = clip2._y;
+	//
+	clip2._rotation = clip._rotation;
+	clip2._x = clip._x
+	clip2._y = clip._y;
+	//
+	clip._rotation += rotspeed;
+	clip._x += Math.cos(rot)*speed;
+	clip._y += Math.sin(rot)*speed;
+	trail._x = clip._x;
+	trail._y = clip._y;
+	if (Math.abs(clip._x)>300) {
+		this.swapDepths(0);
+		this.removeMovieClip();
+	}
+	if (Math.abs(clip._y)>300) {
+		this.swapDepths(0);
+		this.removeMovieClip();
+	}
+	trail._xscale += (50-trail._xscale)/10;
+	trail._yscale += (150-trail._yscale)/10;
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Cinema 2 Scene 3 Star Trail" name="trail">
+                  <matrix>
+                    <Matrix tx="0.35" ty="0.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter blurX="15" blurY="15" quality="2"/>
+                    <GlowFilter blurX="4" blurY="4" color="#FFCC00" quality="2" strength="2"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Cinema 2 Scene 3 Star Clip 2" name="clip3">
+                  <matrix>
+                    <Matrix ty="30"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.30078125"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Cinema 2 Scene 3 Star Clip 2" name="clip2">
+                  <matrix>
+                    <Matrix ty="10"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.6015625"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Cinema 2 Scene 3 Star Clip 2" name="clip">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

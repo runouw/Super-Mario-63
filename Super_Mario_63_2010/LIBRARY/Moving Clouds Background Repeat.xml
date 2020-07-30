@@ -1,0 +1,48 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Moving Clouds Background Repeat" itemID="481fc098-00000d7e" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="MovingCloudsBackground" lastModified="1230067652" lastUniqueIdentifier="2">
+  <timeline>
+    <DOMTimeline name="Moving Clouds Background Repeat">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[X = 0;
+onEnterFrame = function () {
+	X--;
+	bg1._x = X;
+	bg2._x = X+450;
+	if (X<=-450) {
+		X += 450;
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Cloud Background 1 Part" name="bg1">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Cloud Background 1 Part" name="bg2">
+                  <matrix>
+                    <Matrix tx="450"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

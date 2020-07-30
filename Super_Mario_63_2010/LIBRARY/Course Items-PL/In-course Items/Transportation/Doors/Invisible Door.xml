@@ -1,0 +1,234 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Items-PL/ In-course Items/ Transportation/ Doors/Invisible Door" itemID="4647280c-00000591" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="InvisibleDoor" lastModified="1245515847" lastUniqueIdentifier="1">
+  <timeline>
+    <DOMTimeline name="Invisible Door" currentFrame="3">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (doortype == undefined) {
+	doortype = 1;
+}
+if (locked == undefined) {
+	locked = false;
+}
+if (keytype == undefined) {
+	keytype = "none";
+}
+if (removelock == undefined) {
+	removelock = false;
+}
+//   
+if (locked == true) {
+	if (removelock == true) {
+		gotoAndStop(3);
+	} else {
+		gotoAndStop(2);
+	}
+} else {
+	gotoAndStop(4);
+	onEnterFrame = null;
+}
+//
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		if (this.box.hitTest(_root.Course.Char.charClip.feet2) && _root.Course.Char.attack == false && _root.Course.Char.air == false) {
+			//
+			if ((_root.KeyUP() || _root.KeyTapUP()) && !_root.KeyRIGHT() && !_root.KeyLEFT()) {
+				doorlockfunction();
+			}
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+waittoopen = false;
+_root.unlockdooritem = "";
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		if (this.box.hitTest(_root.Course.Char.charClip.feet2) && _root.Course.Char.attack == false && _root.Course.Char.air == false) {
+			if ((_root.KeyUP() || _root.KeyTapUP()) && !_root.KeyRIGHT() && !_root.KeyLEFT() && walk !== "front") {
+				// Key unlock animation code here 
+				_root.Course.Char.attack = true;
+				_root.Course.Char.xspeed = 0;
+				if (dooropenarray !== undefined) {
+					if (_root.DoorOpenedArray[dooropenarray] == false && locked == true && removelock == true) {
+						_root.DoorOpenedArray[dooropenarray] = true;
+						_root.Course.Char.attackFrame = "UnlockDoor";
+						if (unlockitem !== undefined) {
+							// Put for opening Doors with Keys and Stuff
+							_root.heldItemObtained = unlockitem;
+							_root.unlockdooritem = "Item";
+						} else {
+							_root.unlockdooritem = "";
+						}
+						waittoopen = true;
+					}
+				}
+				if (openwithkey == true) {
+					// For the doors in Boos Mansion and Bowsers Castle...
+					waittoopen = true;
+					_root.Course.Char.attackFrame = "UnlockDoor";
+					if (unlockitem !== undefined) {
+						_root.heldItemObtained = unlockitem;
+						_root.unlockdooritem = "Item";
+					} else {
+						_root.unlockdooritem = "";
+					}
+				}
+				if (waittoopen == false) {
+					//  
+					if (walk == "far") {
+						_root.Course.Char.attackFrame = "FarDoor";
+					} else {
+						_root.Course.Char.attackFrame = "Door";
+					}
+					_root.door = doorplace;
+					gotoAndPlay("play");
+				} else {
+					onEnterFrame = function () {
+						if (_root.PauseGame == false) {
+							_root.Course.Char.attack = true;
+							_root.Course.Char.attackFrame = "UnlockDoor";
+							X = _x+_parent._x;
+							_root.Course.Char._x += (X-_root.Course.Char._x)/5;
+							if (_root.Course.Char.charClip.frame.done == true) {
+								if (walk == "far") {
+									_root.Course.Char.attackFrame = "FarDoor";
+								} else {
+									_root.Course.Char.attackFrame = "Door";
+								}
+								_root.door = doorplace;
+								gotoAndPlay("play");
+								onEnterFrame = null;
+							}
+						}
+					};
+				}
+			} else if (walk == "front" && (_root.KeyDOWN() || _root.KeyTapDOWN()) && !_root.KeyRIGHT() && !_root.KeyLEFT() && walk !== "warppipe") {
+				_root.Course.Char.attack = true;
+				_root.Course.Char.xspeed = 0;
+				_root.Course.Char.attackFrame = "FrontDoor";
+				_root.door = doorplace;
+				gotoAndPlay("play");
+			} else if (walk == "warppipe" && (_root.KeyDOWN() || _root.KeyTapDOWN()) && !_root.KeyRIGHT() && !_root.KeyLEFT()) {
+				_root.Course.Char.attack = true;
+				_root.Course.Char.xspeed = 0;
+				_root.Course.Char.attackFrame = "WarpPipe";
+				_root.door = doorplace;
+				gotoAndPlay("play");
+			}
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		if (this.box.hitTest(_root.Course.Char.charClip.feet2) && _root.Course.Char.attack == false && _root.Course.Char.air == false) {
+			if ((_root.KeyUP() || _root.KeyTapUP()) && !_root.KeyRIGHT() && !_root.KeyLEFT() && walk !== "front" && walk !== "warppipe") {
+				_root.Course.Char.attack = true;
+				_root.Course.Char.xspeed = 0;
+				if (walk == "far") {
+					_root.Course.Char.attackFrame = "FarDoor";
+				} else {
+					_root.Course.Char.attackFrame = "Door";
+				}
+				_root.door = doorplace;
+				play();
+			} else if (walk == "front" && (_root.KeyDOWN() || _root.KeyTapDOWN()) && !_root.KeyRIGHT() && !_root.KeyLEFT() && walk !== "warppipe") {
+				_root.Course.Char.attack = true;
+				_root.Course.Char.xspeed = 0;
+				_root.Course.Char.attackFrame = "FrontDoor";
+				_root.door = doorplace;
+				play();
+			} else if (walk == "warppipe" && (_root.KeyDOWN() || _root.KeyTapDOWN()) && !_root.KeyRIGHT() && !_root.KeyLEFT()) {
+				_root.Course.Char.attack = true;
+				_root.Course.Char.xspeed = 0;
+				_root.Course.Char.attackFrame = "WarpPipe";
+				_root.door = doorplace;
+				play();
+			}
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="4" duration="13" name="play" labelType="name" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	X = _x+_parent._x;
+	_root.Course.Char._x += (X-_root.Course.Char._x)/5;
+};
+_root.WarpPipeX = placeX;
+_root.WarpPipeY = placeY;]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="17" duration="20" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = null]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="37" duration="14" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="51" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+if(doorplace == "XY"){
+	_root.Camspeed = 1;
+	_root.MaxCamspeed = 99999;
+	gotoAndPlay(1);
+}]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 5" color="#4FFFFF" outline="true" useOutlineView="true">
+          <frames>
+            <DOMFrame index="0" duration="52" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="box">
+                  <matrix>
+                    <Matrix a="0.3388671875" d="0.637496948242188" ty="13.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

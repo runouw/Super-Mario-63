@@ -1,0 +1,103 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Clips/ C - Castle/Castle Inside/ Section C &amp; D/C-13 Front GFX Clip" itemID="476e1c0e-00000e47" lastModified="1238279837">
+  <timeline>
+    <DOMTimeline name="C-13 Front GFX Clip">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[played = false;
+onEnterFrame = function () {
+	AL();
+	if (_root.Course.BackGFX.inroom == true && _alpha>0) {
+		//
+		if (played == false) {
+			_root.StartNewMusicAndIntroNoVar("BowserPlan-Intro", "BowserPlan-Repeat");
+		}
+		played = true;
+		//
+		_root.Course.Platforms.gotoAndStop(2);
+		AL = function () {
+			if (_alpha<=0) {
+				_alpha = 0;
+				AL = null;
+			} else {
+				_alpha -= 2;
+			}
+		};
+	} else if (_root.Course.BackGFX.inroom !== true && _alpha<100) {
+		//
+		if (played == true) {
+			_root.StartNewMusicAndIntroNoVar("InsidetheCastleWalls");
+		}
+		played = false;
+		//
+		_root.Course.Platforms.gotoAndStop(1);
+		AL = function () {
+			if (_alpha>=100) {
+				_alpha = 100;
+				AL = null;
+			} else {
+				_alpha += 2;
+			}
+		};
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <LinearGradient>
+                            <matrix>
+                              <Matrix a="0" b="0.081787109375" c="-0.391204833984375" d="0" tx="685.65" ty="-199.5"/>
+                            </matrix>
+                            <GradientEntry alpha="0" ratio="0"/>
+                            <GradientEntry ratio="1"/>
+                          </LinearGradient>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="!9988 -6410|9988 6409!9988 6409|1280 6409!1280 6409|-9987 3849!-9987 3849|-6528 410!-6528 410|1600 -5630!1600 -5630|9988 -6410"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup selected="true">
+                  <members>
+                    <DOMShape selected="true">
+                      <fills>
+                        <FillStyle index="1">
+                          <LinearGradient>
+                            <matrix>
+                              <Matrix a="0.052459716796875" b="0.0626373291015625" c="-0.299591064453125" d="0.250885009765625" tx="1156.8" ty="-884.95"/>
+                            </matrix>
+                            <GradientEntry alpha="0" ratio="0"/>
+                            <GradientEntry alpha="0.901960784313726" ratio="1"/>
+                          </LinearGradient>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="!9988 -6630|9988 6409!9988 6409|1280 6409!1280 6409|-9987 3849!-9987 3849|-6528 410!-6528 410|1600 -5630!1600 -5630[5732.75 #FFE7AF.D4 9988 -6630"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

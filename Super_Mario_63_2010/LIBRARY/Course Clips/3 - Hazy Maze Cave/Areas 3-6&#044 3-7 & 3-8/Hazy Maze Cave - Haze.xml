@@ -1,0 +1,255 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Clips/ 3 - Hazy Maze Cave/ Areas 3-6, 3-7 &amp; 3-8/Hazy Maze Cave - Haze" itemID="45f46e15-00000448" lastModified="1241327301" lastUniqueIdentifier="14">
+  <timeline>
+    <DOMTimeline name="Hazy Maze Cave - Haze">
+      <layers>
+        <DOMLayer name="Layer 3" color="#FFFF4F" locked="true" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[count = 0;
+hit = false;
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		if (this.box.hitTest((_root.Course.Char._x*_root.coursescale/100)+_root.Course._x, ((_root.Course.Char._y-7)*_root.coursescale/100)+_root.Course._y, true) && _root.Metal !== true) {
+			//
+			if (_root.Metal == false && _root.Invincible == false && _root.Invisible == false) {
+				if (hit == false) {
+					//_root.HazymazeCaveSongChange(1);
+				}
+				hit = true;
+			}
+			//    
+			_root.Coure.Char.xspeed *= 0.97;
+			_root.Coure.Char.yspeed *= 0.95;
+			_root.Course.Char.fallcount = 0;
+			//
+			count++;
+			if (count>32*1.5) {
+				_root.Mariosound = new Sound(this);
+				_root.Mariosound.attachSound("sound - Drain");
+				_root.Mariosound.start(0, 1);
+				_root.Mariosound.setVolume(_root.MarioVolume);
+				_root.CharHP--;
+				if (_root.CharHP<=0) {
+					_root.Course.Char.attack = true;
+					_root.Course.Char.attackFrame = "Drown";
+				}
+				count = 0;
+			}
+		} else {
+			if (_root.Metal == false && _root.Invincible == false && _root.Invisible == false) {
+				if (hit == true) {
+					//_root.HazymazeCaveSongChange(0);
+				}
+				hit = false;
+			}
+			count = 0;
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ 3 - Hazy Maze Cave/3-6 Haze Box" name="box" selected="true">
+                  <matrix>
+                    <Matrix tx="1536.05" ty="797"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/Water/Water Code">
+                  <matrix>
+                    <Matrix d="1.004150390625" tx="2368" ty="830.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	WaterLength = 50;
+	polygons = 12;
+	randomwave = 0.5;
+	//redcolor = 88;
+	//greencolor = 30;
+	//bluecolor = 225;
+	redcolor = 111;
+	greencolor = 221;
+	bluecolor = 0;
+	waterstength = 0.1;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Box" color="#4FFF4F" autoNamed="false" layerType="mask">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ 3 - Hazy Maze Cave/3-6 Haze Box" name="box">
+                  <matrix>
+                    <Matrix tx="1536.05" ty="797"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#6FDD00" alpha="0.450980392156863"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!57686 15664|68591 15664!68591 15664|68591 22003!68591 22003|57686 22003!57686 22003|57686 22017!57686 22017|-7229 22017!-7229 22017|-7229 10503!-7229 10503|33245 10503!33245 10503|33245 12102!33245 12102|57686 12102!57686 12102|57686
+ 15664"/>
+                    <Edge fillStyle0="1" edges="
+!49017 15436|49017 19105!49017 19105|46366 19105!46366 19105|46366 16726!46366 16726|46846 15506!46846 15506|49017 15436"/>
+                    <Edge cubics="!57686 12102(;57686,12102 57686,15664 57686,15664q57686 12102p57686 15664);"/>
+                    <Edge cubics="!57686 22003(;57686,22003 57686,22017 57686,22017q57686 22003p57686 22017);"/>
+                    <Edge cubics="!68591 22003(;68591,22003 57686,22003 57686,22003q68591 22003p57686 22003);"/>
+                    <Edge cubics="!68591 15664(;68591,15664 68591,22003 68591,22003q68591 15664p68591 22003);"/>
+                    <Edge cubics="!57686 15664(;57686,15664 68591,15664 68591,15664q57686 15664p68591 15664);"/>
+                    <Edge cubics="!46846 15506(;46846,15506 49007,15436 49007,15436q46846 15506p49007 15436);"/>
+                    <Edge cubics="!33245 10503(;33245,10503 33245,12102 33245,12102q33245 10503p33245 12102);"/>
+                    <Edge cubics="!49007 17119(;49007,17119 49017,17119 49017,17119q49007 17119p49017 17119);"/>
+                    <Edge cubics="!49017 17119(;49017,17119 49017,19105 49017,19105q49017 17119p49017 19105);"/>
+                    <Edge cubics="!46366 19105(;46366,19105 46366,16726 46366,16726q46366 19105p46366 16726);"/>
+                    <Edge cubics="!46366 19105(;46366,19105 49017,19105 49017,19105q46366 19105p49017 19105);"/>
+                    <Edge cubics="!49007 15436(;49007,15436 49007,17119 49007,17119q49007 15436p49007 17119);"/>
+                    <Edge cubics="!46366 16726(;46366,16726 46846,15506 46846,15506q46366 16726p46846 15506);"/>
+                    <Edge cubics="!33245 12102(;33245,12102 57686,12102 57686,12102q33245 12102p57686 12102);"/>
+                    <Edge cubics="!-7229 22017(;-7229,22017 -7229,10503 -7229,10503q-7229 22017p-7229 10503);"/>
+                    <Edge cubics="!-7229 10503(;-7229,10503 33245,10503 33245,10503q-7229 10503p33245 10503);"/>
+                    <Edge cubics="!57686 22017(;57686,22017 -7229,22017 -7229,22017q57686 22017p-7229 22017);"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Haze" color="#9933CC" parentLayerIndex="1" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#6FDD00" alpha="0.450980392156863"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!57686 15664|68591 15664!68591 15664|68591 22003!68591 22003|57686 22003!57686 22003|57686 22017!57686 22017|-7229 22017!-7229 22017|-7229 10503!-7229 10503|33245 10503!33245 10503|33245 12102!33245 12102|57686 12102!57686 12102|57686
+ 15664"/>
+                    <Edge fillStyle0="1" edges="
+!49107 15426|49107 16726!49107 16726|46366 16726!46366 16726|46846 15506!46846 15506|49107 15426"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/Water/Water Code">
+                  <matrix>
+                    <Matrix d="1.00416564941406" tx="-180" ty="569.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	WaterLength = 1765;
+	polygons = 54;
+	randomwave = 0.5;
+	//redcolor = 88;
+	//greencolor = 30;
+	//bluecolor = 225;
+	redcolor = 111;
+	greencolor = 221;
+	bluecolor = 0;
+	waterstength = 0.1;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/Water/Water Code">
+                  <matrix>
+                    <Matrix d="1.00416564941406" tx="1639.45" ty="657.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	WaterLength = 1250;
+	polygons = 24;
+	randomwave = 0.5;
+	//redcolor = 88;
+	//greencolor = 30;
+	//bluecolor = 225;
+	redcolor = 111;
+	greencolor = 221;
+	bluecolor = 0;
+	waterstength = 0.1;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/Water/Water Code">
+                  <matrix>
+                    <Matrix d="1.00555419921875" tx="3030" ty="817.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	WaterLength = 542;
+	polygons = 21;
+	randomwave = 0.5;
+	//redcolor = 88;
+	//greencolor = 30;
+	//bluecolor = 225;
+	redcolor = 111;
+	greencolor = 221;
+	bluecolor = 0;
+	waterstength = 0.1;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

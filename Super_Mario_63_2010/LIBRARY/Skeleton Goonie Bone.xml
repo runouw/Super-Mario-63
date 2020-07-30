@@ -1,0 +1,56 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Skeleton Goonie Bone" itemID="48e69d39-00001038" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="SkeletonGoonieBone" lastModified="1223249771">
+  <timeline>
+    <DOMTimeline name="Skeleton Goonie Bone">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[xspeed = Math.random()*4-2;
+yspeed = Math.random()*3-3.5;
+rotspeed = (random(2)-0.5)*(Math.abs(xspeed)+Math.abs(yspeed))*10;
+count = random(9);
+_x += (random(100)-50)/10;
+_y += (random(100)-50)/10;
+_rotation = random(360);
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		_x += xspeed;
+		_y += yspeed;
+		_rotation += rotspeed;
+		yspeed += 0.15;
+		count++;
+		if (count>18) {
+			_alpha -= 20;
+			if (_alpha<10) {
+				this.swapDepths(0);
+				this.removeMovieClip();
+			}
+		}
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="Bone">
+                  <matrix>
+                    <Matrix tx="-4" ty="-3"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

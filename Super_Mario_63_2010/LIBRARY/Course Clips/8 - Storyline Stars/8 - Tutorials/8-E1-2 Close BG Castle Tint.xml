@@ -1,0 +1,76 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Clips/ 8 - Storyline Stars/ 8 - Tutorials/8-E1-2 Close BG Castle Tint" itemID="47e2b799-00000f5f" lastModified="1231691692">
+  <timeline>
+    <DOMTimeline name="8-E1-2 Close BG Castle Tint">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[color = Math.round(_root.TotalStars*1.5)+25;
+color2 = Math.abs(100-color);
+myColor = new Color(this);
+colorTrans = new Object();
+colorTrans = {ra:(color*0.5)+50-(color2/3), rb:0, ga:(color*0.5)+50-(color2/3), gb:0, ba:(color*0.5)+50-(color2/3), bb:0, aa:100, ab:0};
+myColor.setTransform(colorTrans);
+onEnterFrame = function () {
+	color += Math.round(((_root.TotalStars*1.5)+25)-color)/7;
+	if (_root.CheatCastleRestore == true) {
+		color = 100;
+	}
+	//color = Math.max(color, 0);            
+	//color = Math.min(color, 100);
+	if (color>100) {
+		oldcolor = color;
+		color += Math.abs(100-color)*2.5;
+	}
+	
+	color2 = Math.abs(100-color);
+
+	// color = percent of stars obained
+	// color 2  = percent of stars not yet obtained
+	colorTrans = {ra:(color*0.5)+50-(color2/3), rb:0, ga:(color*0.5)+50-(color2/3), gb:0, ba:(color*0.5)+50-(color2/3), bb:0, aa:100, ab:0};
+	myColor.setTransform(colorTrans);
+	if (color>100) {
+		color = oldcolor;
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="-191.5" ty="198.5"/>
+                  </matrix>
+                  <members>
+                    <DOMBitmapInstance libraryItemName="  Course Items-PL/ Backgrounds/Castle Small">
+                      <matrix>
+                        <Matrix tx="-93.5" ty="-70.5"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                    <DOMBitmapInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Door F5 Bit">
+                      <matrix>
+                        <Matrix a="0.34375" d="0.34375" tx="-1.05" ty="58.4"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                    <DOMBitmapInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Door F5 Bit">
+                      <matrix>
+                        <Matrix a="-0.34375" d="0.34375" tx="-0.5" ty="58.4"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

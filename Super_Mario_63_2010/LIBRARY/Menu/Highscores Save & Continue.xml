@@ -1,0 +1,129 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name=" Menu/Highscores Save &amp; Continue" itemID="478428ba-00000ca4" sourceFlashFilepath="Rob &amp; Steve Hewitt\My Documents\Super Mario 63\Highscore Design.fla" sourceLibraryItemHRef="Highscores Save &amp; Continue" sourceLastModified="1201150639" lastModified="1230086280" lastUniqueIdentifier="4" sourceItemID="478428ba-00000ca4">
+  <timeline>
+    <DOMTimeline name="Highscores Save &amp; Continue">
+      <layers>
+        <DOMLayer name="Layer 3" color="#FFFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_name = "1";
+stopnum = _parent.stopnum;
+onEnterFrame = function () {
+	if (_parent._currentframe == _parent.stopnum) {
+		if (this.hitTest(_root._xmouse, _root._ymouse, false) && _parent.mousemove == true) {
+			_parent.hl = _name;
+		} else if (_parent.hl == _name && _parent.mousemove == true) {
+			_parent.hl = undefined;
+		}
+		//                    
+		if (cl == true) {
+			rotspeed -= 1;
+			scaly = Math.max(-50, scaly-1.2);
+			_xscale = Math.max(20, _xscale+scaly);
+			_alpha -= 3;
+			_rotation += rotspeed;
+		}
+		//                    
+		if (_parent.hl == _name && cl !== true) {
+			_xscale += (125-_xscale)/5;
+			txt._xscale += (115-txt._xscale)/8;
+			gotoAndStop(2);
+		} else if (cl !== true) {
+			_xscale += (100-_xscale)/5;
+			txt._xscale += (100-txt._xscale)/8;
+			gotoAndStop(1);
+		}
+		//                     
+		_yscale = _xscale;
+		txt._yscale = txt._xscale;
+		//
+		//
+		if (_root.KeyZ() || _root.KeyX() || _root.KeySPACE()) {
+			if (cl !== true && _parent.hl == _name) {
+				_parent.SAVE();
+				rotspeed = 5;
+				cl = true;
+				scaly = 14;
+			}
+		}
+	}
+};
+onMouseDown = function () {
+	if (_parent._currentframe == _parent.stopnum && _parent.clicked == false) {
+		if (cl !== true && this.hitTest(_root._xmouse, _root._ymouse, false)) {
+			_parent.clicked = true;
+			_parent.SAVE();
+			rotspeed = 5;
+			cl = true;
+			scaly = 14;
+		}
+	}
+};
+stop();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Highscores Save Text" name="txt">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter blurX="6" blurY="6" color="#0000FF" inner="true" strength="10"/>
+                    <BevelFilter highlightColor="#0000FF" strength="1.5"/>
+                    <GlowFilter blurX="2" blurY="2" color="#FFFFFF" inner="true" strength="5"/>
+                    <BevelFilter shadowColor="#0000FF" strength="0.88"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#FF4FFF">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Highscore Beveld Box">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter color="#FFFF00"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" locked="true">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Highscores Button" name="bg">
+                  <matrix>
+                    <Matrix a="0.800003051757813"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BevelFilter blurX="2" blurY="2" distance="2"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

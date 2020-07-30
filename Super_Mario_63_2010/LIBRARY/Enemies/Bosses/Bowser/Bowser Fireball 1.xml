@@ -1,0 +1,395 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="   Enemies/Bosses/Bowser/Bowser Fireball 1" itemID="46758ff9-00000793" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="BowserFire1" lastModified="1237662392" lastUniqueIdentifier="12">
+  <timeline>
+    <DOMTimeline name="Bowser Fireball 1">
+      <layers>
+        <DOMLayer name="Layer 3" color="#FFFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (rotation == undefined) {
+	rotation = 0;
+}
+if (speed == undefined) {
+	speed = 5+Math.random()*5;
+}
+if (explodesize == undefined) {
+	explodesize = "small";
+}
+if (color == undefined) {
+	color = {ra:100, rb:0, ga:100, gb:0, ba:100, bb:0, aa:100, ab:0};
+}
+if (explodecolor == undefined) {
+	explodecolor = {ra:100, rb:0, ga:100, gb:0, ba:100, bb:0, aa:100, ab:0};
+}
+if (bounce == undefined) {
+	bounce = false;
+}
+if (bounceboost == undefined) {
+	bounceboost = 0;
+}
+if (follow == undefined) {
+	follow = false;
+}
+if (bouncemax == undefined) {
+	bouncemax = 3;
+}
+if (frame == undefined) {
+	frame = 1;
+}
+if (lifetime == undefined) {
+	lifetime = _root.framerate*3;
+}
+clip.gotoAndStop(frame);
+bouncecount = 0;
+count = 0;
+//                   
+myColor = new Color(this);
+colorTrans = new Object();
+colorTrans = color;
+myColor.setTransform(colorTrans);
+//
+_rotation = rotation;
+yspeed = -Math.sin(_root.angleToRadians(rotation))*speed;
+xspeed = -Math.cos(_root.angleToRadians(rotation))*speed;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+rotspeed = 0;
+rot = 0;
+rot2 = 0;
+if (rotdiv == undefined) {
+	rotdiv = 10;
+}
+if (rotmaxspeed == undefined) {
+	rotmaxspeed = 3;
+}
+hitwall = function (hitwallnum) {
+	if (bounce == false || bouncecount>=bouncemax) {
+		if (hitwallnum == 0) {
+			rotation = 0;
+			_rotation = 0;
+			while ((_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+2)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.BPlatforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+3)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true))) {
+				_y--;
+			}
+		}
+		if (hitwallnum == 1) {
+			rotation = -90;
+			_rotation = -90;
+			while ((_root.Course.Platforms.hitTest(((_x+7)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.BPlatforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+3)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true))) {
+				_x--;
+			}
+		}
+		if (hitwallnum == 2) {
+			rotation = 90;
+			_rotation = 90;
+			while ((_root.Course.Platforms.hitTest(((_x-7)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.BPlatforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+3)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true))) {
+				_x++;
+			}
+		}
+		if (hitwallnum == 3) {
+			rotation = 180;
+			_rotation = 180;
+			while ((_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y-12)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.BPlatforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+3)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true))) {
+				_y++;
+			}
+		}
+		myColor = new Color(this);
+		colorTrans = new Object();
+		colorTrans = explodecolor;
+		myColor.setTransform(colorTrans);
+		if (explodesize == "small") {
+			explodesize = "ground";
+		}
+		gotoAndStop(explodesize);
+	} else {
+		bouncecount += random(2)+1;
+		if (hitwallnum == 0) {
+			yspeed = -yspeed*0.7;
+			yspeed -= bounceboost;
+			while ((_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+2)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.BPlatforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+3)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true))) {
+				_y--;
+			}
+		}
+		if (hitwallnum == 1) {
+			xspeed = -Math.abs(xspeed*0.7);
+			xspeed -= bounceboost/4;
+			while ((_root.Course.Platforms.hitTest(((_x+7)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.BPlatforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+3)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true))) {
+				_x--;
+			}
+		}
+		if (hitwallnum == 2) {
+			xspeed = Math.abs(xspeed*0.7);
+			xspeed += bounceboost/4;
+			while ((_root.Course.Platforms.hitTest(((_x-7)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.BPlatforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+3)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true))) {
+				_x++;
+			}
+		}
+		if (hitwallnum == 3) {
+			yspeed = -yspeed*0.7;
+			yspeed += bounceboost/4;
+			while ((_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y-12)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.BPlatforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+3)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true))) {
+				_y++;
+			}
+		}
+		if (follow == true) {
+			_rotation = Math.atan2(-yspeed, -xspeed)*180/Math.PI;
+		}
+	}
+};
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		_rotation = rotation;
+		if (follow == true) {
+			rot2 = _root.radiansToAngle(Math.atan2(-(_root.Course.Char._y-(_y+_parent._y)), -(_root.Course.Char._x-(_x+_parent._x))));
+			if (rot>0) {
+				rot = rot2;
+				if (rot<-90) {
+					rotation -= 360;
+				}
+				rotspeed = (rot-rotation)/rotdiv;
+			} else {
+				rot = rot2;
+				if (rot>90) {
+					rotation += 360;
+				}
+				rotspeed = (rot-rotation)/rotdiv;
+			}
+			if (rotation>520) {
+				rotation -= 360;
+			}
+			if (rotation<-520) {
+				rotation += 360;
+			}
+			rotspeed = _root.groundFriction(rotspeed, 0.1, 1.15);
+			rotspeed = Math.min(rotspeed, rotmaxspeed);
+			rotspeed = Math.max(rotspeed, -rotmaxspeed);
+			rotation += rotspeed;
+			//   
+			_rotation = rotation;
+			//_root.moveObjectFromAngle(speed, rotation, this);
+			yspeed = -Math.sin(_root.angleToRadians(rotation))*speed;
+			xspeed = -Math.cos(_root.angleToRadians(rotation))*speed;
+		} else if (bounce == false) {
+			yspeed = -Math.sin(_root.angleToRadians(rotation))*speed;
+			xspeed = -Math.cos(_root.angleToRadians(rotation))*speed;
+		} else {
+			yspeed += _root.gravity/2;
+			yspeed = Math.min(yspeed, 10);
+			//
+			rotation = _root.radiansToAngle(Math.atan2(-yspeed, -xspeed));
+			_rotation = rotation;
+		}
+		repeats = Math.floor((Math.abs(yspeed)+Math.abs(xspeed))/8)+1;
+		for (i=0; i<repeats; i++) {
+			//
+			if ((_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.BPlatforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true))) {
+				hitwall(0);
+			}
+			if (_root.Course.Platforms.hitTest(((_x+10)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y-5)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+				hitwall(1);
+			}
+			if (_root.Course.Platforms.hitTest(((_x-10)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y-5)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+				hitwall(2);
+			}
+			if (_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y-10)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+				hitwall(3);
+			}
+			//  
+			_x += xspeed/repeats;
+			_y += yspeed/repeats;
+		}
+		if (this.body.hitTest(_root.Course.Char.charClip.body)) {
+			rotation = 0;
+			_rotation = 0;
+			myColor = new Color(this);
+			colorTrans = new Object();
+			colorTrans = explodecolor;
+			myColor.setTransform(colorTrans);
+			gotoAndStop(explodesize);
+		}
+		count++;
+		if (count>_root.framerate*30) {
+			this.removeMovieClip(this);
+		}
+		if (bounce == true) {
+			if (count>lifetime) {
+				rotation = 0;
+				_rotation = 0;
+				myColor = new Color(this);
+				colorTrans = new Object();
+				colorTrans = explodecolor;
+				myColor.setTransform(colorTrans);
+				gotoAndStop(explodesize);
+			}
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" name="small" labelType="name" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[count = 0;
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		if (this.clip.body.hitTest(_root.Course.Char.charClip.body)) {
+			if (_root.Course.Char._x>_x+_parent._x) {
+				_root.MarioHit(1, 90, -3, 5, 7, "");
+			} else {
+				_root.MarioHit(1, 90, -3, -5, 7, "");
+			}
+		}
+		count++;
+		if (count>20) {
+			this.removeMovieClip(this);
+		}
+	}
+};
+_root.bgsoundFX = new Sound(this);
+_root.bgsoundFX.attachSound("Explosion");
+_root.bgsoundFX.start(0, 1);
+_root.bgsoundFX.setVolume(_root.BgVolume);]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="3" name="large" labelType="name" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[count = 0;
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		if (this.clip.body.hitTest(_root.Course.Char.charClip.body)) {
+			if (_root.Course.Char._x>_x+_parent._x) {
+				_root.MarioHit(2, 90, -9, 9, 7, "");
+			} else {
+				_root.MarioHit(2, 90, -9, -9, 7, "");
+			}
+		}
+		count++;
+		if (count>20) {
+			this.removeMovieClip(this);
+		}
+	}
+};
+_root.bgsoundFX = new Sound(this);
+_root.bgsoundFX.attachSound("Explode9");
+_root.bgsoundFX.start(0, 1);
+_root.bgsoundFX.setVolume(_root.BgVolume);]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="4" name="ground" labelType="name" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[count = 0;
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		if (this.clip.body.hitTest(_root.Course.Char.charClip.body)) {
+			if (_root.Course.Char._x>_x+_parent._x) {
+				_root.MarioHit(1, 90, -13, 3, 7, "");
+			} else {
+				_root.MarioHit(1, 90, -13, -3, 7, "");
+			}
+		}
+		count++;
+		if (count>20) {
+			this.removeMovieClip(this);
+		}
+	}
+};
+_root.bgsoundFX = new Sound(this);
+_root.bgsoundFX.attachSound("Explosion");
+_root.bgsoundFX.start(0, 1);
+_root.bgsoundFX.setVolume(_root.BgVolume);]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC" outline="true" useOutlineView="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Lineless Movieclip" name="body">
+                  <matrix>
+                    <Matrix a="0.212310791015625" d="0.141372680664063" ty="4.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-27.95"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="4" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Bowser Fireball Clip" name="clip">
+                  <matrix>
+                    <Matrix tx="10"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Small Explosion" name="clip">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Nuke Explosion" name="clip">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="4" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Explosion/Ground Explosion" name="clip">
+                  <matrix>
+                    <Matrix ty="-10"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

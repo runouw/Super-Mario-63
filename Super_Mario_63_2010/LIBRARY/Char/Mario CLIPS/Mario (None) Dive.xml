@@ -1,0 +1,389 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="      Char/  Mario CLIPS/Mario (None) Dive" itemID="458ee0a0-000001ed" lastModified="1215448268" lastUniqueIdentifier="7">
+  <timeline>
+    <DOMTimeline name="Mario (None) Dive">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[rotation = 0;
+rotspeed = 0;
+rot2 = 0;
+count = 0;
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		if (_root.Course.Char.air == true) {
+			rot2 = -_root.radiansToAngle(Math.atan2(_root.Course.Char.yspeed, -_root.Course.Char.xspeed));
+			rot2 += 10;
+		}
+		if (_root.Course.Char._xscale<0) {
+			rot2 = -_root.radiansToAngle(Math.atan2(_root.Course.Char.yspeed, _root.Course.Char.xspeed));
+			rot2 -= 10;
+		}
+		if (!_root.Course.Platforms.hitTest(((_root.Course.Char._x)*_root.coursescale/100)+_root.Course._x, ((_root.Course.Char._y+5)*_root.coursescale/100)+_root.Course._y, true) && !_root.Course.BPlatforms.hitTest(((_root.Course.Char._x)*_root.coursescale/100)+_root.Course._x, ((_root.Course.Char._y+3)*_root.coursescale/100)+_root.Course._y, true)) {
+			if (air == false) {
+				air = true;
+				if (groundrot<0) {
+					_root.Course.Char.yspeed -= Math.sin(groundrot)*_root.Course.Char.xspeed*0.75;
+				}
+				_rotation = groundrot*(_root.Course.Char._xscale/100);
+				rotation = groundrot*(_root.Course.Char._xscale/100);
+			}
+			//                                         
+			if (rot>0) {
+				rot = rot2;
+				if (rot<-90) {
+					rotation -= 360;
+				}
+				rotspeed = (rot-rotation)/10;
+			} else {
+				rot = rot2;
+				if (rot>90) {
+					rotation += 360;
+				}
+				rotspeed = (rot-rotation)/10;
+			}
+			if (rotation>520) {
+				rotation -= 360;
+			}
+			if (rotation<-520) {
+				rotation += 360;
+			}
+			rotspeed = _root.groundFriction(rotspeed, 0.1, 1.15);
+			rotspeed = Math.min(rotspeed, 15);
+			rotspeed = Math.max(rotspeed, -15);
+			rotation += rotspeed;
+			_rotation = rotation;
+			air = true;
+			//
+		} else {
+			if (air == undefined || air == true) {
+				rotation = 0;
+				_rotation = 0;
+				air = false;
+			}
+			rotation = _rotation*(_root.Course.Char._xscale/100);
+			distance = 5;
+			frontpointX = _root.Course.Char._x-(Math.cos(_root.angleToRadians(rotation))*distance);
+			frontpointY = _root.Course.Char._y-(Math.sin(_root.angleToRadians(rotation))*distance);
+			//frontpointX = _root.Course.Char._x-10;
+			//frontpointY = _root.Course.Char._y-1;
+			coint = 0;
+			while (!_root.Course.Platforms.hitTest(((frontpointX)*_root.coursescale/100)+_root.Course._x, ((frontpointY)*_root.coursescale/100)+_root.Course._y, true) && !_root.Course.BPlatforms.hitTest(((frontpointX)*_root.coursescale/100)+_root.Course._x, ((frontpointY)*_root.coursescale/100)+_root.Course._y, true) && (_root.Course.Platforms.hitTest(((frontpointX)*_root.coursescale/100)+_root.Course._x, ((frontpointY+25)*_root.coursescale/100)+_root.Course._y, true) || _root.Course.BPlatforms.hitTest(((frontpointX)*_root.coursescale/100)+_root.Course._x, ((frontpointY+15)*_root.coursescale/100)+_root.Course._y, true))) {
+				frontpointY += 0.5;
+				count++;
+				if (count>50) {
+					break;
+				}
+			}
+			coint = 0;
+			while (_root.Course.Platforms.hitTest(((frontpointX)*_root.coursescale/100)+_root.Course._x, ((frontpointY)*_root.coursescale/100)+_root.Course._y, true) || _root.Course.BPlatforms.hitTest(((frontpointX)*_root.coursescale/100)+_root.Course._x, ((frontpointY)*_root.coursescale/100)+_root.Course._y, true)) {
+				frontpointY -= 0.5;
+				count++;
+				if (count>50) {
+					break;
+				}
+			}
+			backpointX = _root.Course.Char._x+(Math.cos(_root.angleToRadians(rotation))*distance);
+			backpointY = _root.Course.Char._y-(Math.sin(_root.angleToRadians(rotation))*distance);
+			//backpointX = _root.Course.Char._x+10;
+			//backpointY = _root.Course.Char._y-1;
+			coint = 0;
+			while (!_root.Course.Platforms.hitTest(((backpointX)*_root.coursescale/100)+_root.Course._x, ((backpointY)*_root.coursescale/100)+_root.Course._y, true) && !_root.Course.BPlatforms.hitTest(((backpointX)*_root.coursescale/100)+_root.Course._x, ((backpointY)*_root.coursescale/100)+_root.Course._y, true) && (_root.Course.Platforms.hitTest(((backpointX)*_root.coursescale/100)+_root.Course._x, ((backpointY+25)*_root.coursescale/100)+_root.Course._y, true) || _root.Course.BPlatforms.hitTest(((backpointX)*_root.coursescale/100)+_root.Course._x, ((backpointY+15)*_root.coursescale/100)+_root.Course._y, true))) {
+				backpointY += 0.5;
+				count++;
+				if (count>50) {
+					break;
+				}
+			}
+			coint = 0;
+			while (_root.Course.Platforms.hitTest(((backpointX)*_root.coursescale/100)+_root.Course._x, ((backpointY)*_root.coursescale/100)+_root.Course._y, true) || _root.Course.BPlatforms.hitTest(((backpointX)*_root.coursescale/100)+_root.Course._x, ((backpointY)*_root.coursescale/100)+_root.Course._y, true)) {
+				backpointY -= 0.5;
+				count++;
+				if (count>50) {
+					break;
+				}
+			}
+			//_root.Course.attachMovie("redX", "redX"+_root.Course.getNextHighestDepth(), _root.Course.getNextHighestDepth(), {_x:frontpointX, _y:frontpointY});
+			//_root.Course.attachMovie("redX", "redX"+_root.Course.getNextHighestDepth(), _root.Course.getNextHighestDepth(), {_x:backpointX, _y:backpointY});
+			rotation = _root.radiansToAngle(Math.atan2(backpointY-frontpointY, backpointX-frontpointX));
+			//if (rotation>groundrot && groundrot<0 && _root.Course.Char.xspeed*(-_root.Course.Char._xscale/100)>5) {
+			//_root.Course.Char.yspeed = -1;
+			//_root.Course.Char._y -= 1;
+			//}
+			groundrot = rotation;
+			_rotation = rotation*(_root.Course.Char._xscale/100)*0.9;
+			speedslide = Math.sin(_root.angleToRadians(rotation));
+			//speedslide *= 0.5;
+			speedslide = Math.max(speedslide, -1);
+			speedslide = Math.min(speedslide, 1);
+			//_root.Course.Char.xspeed *= 0.95;
+			if (_root.Course.Char.Ice == true) {
+				_root.Course.Char.xspeed += speedslide*0.75;
+			} else if (_root.Course.Char.Puddle == true) {
+				_root.Course.Char.xspeed += speedslide*0.9;
+			} else {
+				_root.Course.Char.xspeed += speedslide;
+			}
+		}
+		_root.DiveRot = _rotation;
+		if (_root.KeyRIGHT() && _root.Controll == true) {
+			_root.Course.Char.xspeed -= Math.min((_root.Course.Char.xspeed-_root.airwalkspeed)/(_root.airmaxWalkspeed/3), 0)/8;
+		}
+		if (_root.KeyLEFT() && _root.Controll == true) {
+			_root.Course.Char.xspeed -= Math.max((_root.Course.Char.xspeed+_root.airwalkspeed)/(_root.airmaxWalkspeed/3), 0)/8;
+		}
+		//                       
+		if (_root.KeyTapRIGHT()) {
+			_root.Course.Char.xspeed -= Math.min((_root.Course.Char.xspeed-_root.airtapspeed)/(_root.airmaxtapWalkspeed/3), 0)/5;
+		}
+		if (_root.KeyTapLEFT()) {
+			_root.Course.Char.xspeed -= Math.max((_root.Course.Char.xspeed+_root.airtapspeed)/(_root.airmaxtapWalkspeed/3), 0)/5;
+		}
+		if (!_root.KeyDOWN()) {
+		}
+		if (_root.KeyUP() && _root.Course.Char.air == false && Math.abs(_root.Course.Char.xspeed)<5 && ((_root.Course.Char._xscale>0 && _root.KeyRIGHT()) || (_root.Course.Char._xscale<0 && _root.KeyLEFT()))) {
+			tellTarget (_root.Course.Char) {
+				attack = true;
+				attackFrame = "backflip";
+				xspeed *= 0.75;
+				if (_xscale<0) {
+					xspeed -= (xspeed+30)/5;
+				} else {
+					xspeed -= (xspeed-30)/5;
+				}
+				yspeed = Math.min(-_root.jumpspeed-2, yspeed);
+			}
+		}
+		if (_currentframe>2 && _root.KeyUP() && _root.Course.Char.air == false && Math.abs(_root.Course.Char.xspeed)>3 && Math.abs(rotation)<25 && ((_root.Course.Char._xscale>0 && !_root.KeyRIGHT()) || (_root.Course.Char._xscale<0 && !_root.KeyLEFT())) && !(Math.abs(rotation)>15 && Ice == true)) {
+			tellTarget (_root.Course.Char) {
+				attack = true;
+				attackFrame = "diveflip";
+				if (_xscale<0) {
+					xspeed -= (xspeed-15)/5;
+				} else {
+					xspeed -= (xspeed+15)/5;
+				}
+				yspeed = Math.min(-_root.jumpspeed/1.5, yspeed);
+			}
+		}
+		if ((_root.Course.Char.Ice == true && Math.abs(rotation)<=3) || (Math.abs(rotation)<=15)) {
+			if (_root.KeyUP() && _root.Course.Char.air == false && Math.abs(_root.Course.Char.xspeed)<3) {
+				play();
+			}
+			if (_root.Course.Char.air == false && Math.abs(_root.Course.Char.xspeed)<1 && !_root.KeyDOWN()) {
+				play();
+			}
+		}
+		if (_root.Course.Char.Water == true && _root.Course.Char.air == true && _root.Metal !== true) {
+			play();
+		}
+		count++;
+		if (count == 3 && _root.Course.Char.air == true && (Math.abs(_root.Course.Char.yspeed)+Math.abs(_root.Course.Char.xspeed))>7 && _root.Course.Char.yspeed<0 && _root.Course.Char.Water == false && _root.WingCap == true) {
+			flying = true;
+		}
+		if (count>20 && _root.Course.Char.air == true && flying == true && _root.WingCap == true) {
+			_root.Course.Char.attackFrame = "Flying";
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" duration="7" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="9" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.Course.Char.attack = false;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#FF4FFF">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Wing Code">
+                  <matrix>
+                    <Matrix a="-0.86602783203125" b="0.5" c="0.5" d="0.86602783203125" tx="-1.75" ty="-16.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Wing Code" selected="true">
+                  <matrix>
+                    <Matrix a="-0.965927124023438" b="-0.258819580078125" c="-0.258819580078125" d="0.965927124023438" tx="-1" ty="-3.4"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Wing Code">
+                  <matrix>
+                    <Matrix a="-1" tx="-4.15" ty="0.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="4" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Wing Code">
+                  <matrix>
+                    <Matrix a="-0.965927124023438" b="-0.258819580078125" c="-0.258819580078125" d="0.965927124023438" tx="-1.4" ty="-3.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="5" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Wing Code">
+                  <matrix>
+                    <Matrix a="-0.86602783203125" b="-0.5" c="-0.5" d="0.86602783203125" tx="-0.65" ty="-8.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="6" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Wing Code">
+                  <matrix>
+                    <Matrix a="-0.86602783203125" b="0.5" c="0.5" d="0.86602783203125" tx="-0.1" ty="-15.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="7" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Wing Code">
+                  <matrix>
+                    <Matrix a="-0.965927124023438" b="0.258819580078125" c="0.258819580078125" d="0.965927124023438" tx="2.65" ty="-15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="8" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Wing Code">
+                  <matrix>
+                    <Matrix a="-1" tx="3.15" ty="-14.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario Air (none) - 2">
+                  <matrix>
+                    <Matrix a="0.86602783203125" b="-0.5" c="0.5" d="0.86602783203125" tx="-15.7" ty="-13.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario Slide (None)">
+                  <matrix>
+                    <Matrix a="-0.965927124023438" b="-0.258819580078125" c="-0.258819580078125" d="0.965927124023438" tx="16.75" ty="-4.25"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario Slide (None)">
+                  <matrix>
+                    <Matrix a="-1" tx="13.95" ty="-5.05"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="4" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario Slide (None)">
+                  <matrix>
+                    <Matrix a="-0.965927124023438" b="-0.258819580078125" c="-0.258819580078125" d="0.965927124023438" tx="16.75" ty="-4.25"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="5" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario Slide (None)">
+                  <matrix>
+                    <Matrix a="-0.86602783203125" b="-0.5" c="-0.5" d="0.86602783203125" tx="17.6" ty="-4.05"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="6" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario Air (none) - 2">
+                  <matrix>
+                    <Matrix a="0.86602783203125" b="-0.5" c="0.5" d="0.86602783203125" tx="-15.7" ty="-13.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="7" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario Air (none) - 2">
+                  <matrix>
+                    <Matrix a="0.965927124023438" b="-0.258804321289063" c="0.258819580078125" d="0.965927124023438" tx="-13.8" ty="-17.05"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="8" duration="2" keyMode="9728" acceleration="-100">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario Air (none) - 2">
+                  <matrix>
+                    <Matrix tx="-11" ty="-20.05"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

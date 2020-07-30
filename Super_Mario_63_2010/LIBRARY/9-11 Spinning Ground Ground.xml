@@ -1,0 +1,74 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="9-11 Spinning Ground Ground" itemID="498a6b61-000014d4" lastModified="1235952380">
+  <timeline>
+    <DOMTimeline name="9-11 Spinning Ground Ground">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+speed = -4*0.25;
+onEnterFrame = function () {
+	if (_root.PauseGame == false && _root.playpause == false) {
+		_rotation += speed;
+		//
+		ydistance = (_y+_parent._y)-_root.Course.Char._y;
+		xdistance = (_x+_parent._x)-_root.Course.Char._x;
+		distance = Math.sqrt(Math.pow(xdistance, 2)+Math.pow(ydistance, 2));
+		rot = Math.atan2(ydistance, xdistance);
+		xdiff = Math.cos(rot)*distance-Math.cos(rot+_root.angleToRadians(this.speed))*distance;
+		ydiff = Math.sin(rot)*distance-Math.sin(rot+_root.angleToRadians(this.speed))*distance;
+		//
+		if (hitTest((_root.Course.Char._x*_root.coursescale/100)+_root.Course._x, ((_root.Course.Char._y+3)*_root.coursescale/100)+_root.Course._y, true) && _root.Course.Char.air == false) {
+			_root.Course.Char._x += xdiff;
+			_root.Course.Char._y += ydiff;
+			//_root.Course.Char.xspeed = _root.groundFriction(_root.Course.Char.xspeed, 0.3, 1.1);
+			if (landedon == false) {
+				_root.Course.Char.xspeed -= xdiff;
+				//
+			}
+			landedon = true;
+		} else {
+			if (landedon == true) {
+				_root.Course.Char.xspeed += xdiff;
+				_root.Course.Char.yspeed += ydiff;
+			}
+			landedon = false;
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#00FF00"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!526 -2349|903 -1235!903 -1235|2203 -1235!2203 -1235[#8A6.FC #FFFB2D.1E 2225 -1228!2225 -1228[#8BB.36 #FFFB3A.C5 2240 -1210!2240 -1210|2469 -654.5!2469 -654.5[#9A8.02 #FFFD78.CE 2472 -639.5!2472 -639.5|2472 965!2472 965[#9A7.E3 #3D3.B7
+ 2462 991!2462 991|2013 1509!2013 1509|2013 1762.5!2013 1762.5|2015.5 1766!2015.5 1766[#7E8.7D #6F2.9A 2022.5 1794!2022.5 1794[#7E4.B7 #711.6F 2009 1819.5!2009 1819.5|1380 2355.5!1380 2355.5[#559.D1 #93C.21 1356.5 2365!1356.5 2365[#53F.33
+ #93D.D1 1332 2358.5!1332 2358.5|1052 2175!1052 2175|115 2175!115 2175|115 2445!115 2445[#72.E4 #99A.A9 106.5 2469.5!106.5 2469.5[-125.0625 #AD4.64 -577 2854.5!-577 2854.5[#FFFDB3.6C #B28.B2 -599.5 2852!-599.5 2852[#FFFD9D.49 #B1F.28
+ -617.5 2837!-617.5 2837[#FFFD8F.EE #B0A.EC -624 2815!-624 2815|-624 2175!-624 2175|-1074 2175!-1074 2175[#FFFBBD.52 #87F.1B -1102.5 2163.5!-1102.5 2163.5[#FFFBA5.E4 #867.AD -1114 2135!-1114 2135|-1114 2132.5!-1114 2132.5|-1668.5 1625
+!-1668.5 1625|-2102 1625!-2102 1625[#FFF7BC.A6 #659.0E -2126 1617!-2126 1617[#FFF7A7.3C #648.E5 -2140.5 1596!-2140.5 1596|-2270.5 1136!-2270.5 1136[#FFF71F.FF #46A.88 -2272 1125!-2272 1125|-2272 205!-2272 205[#FFF71F.E7 #C3.A1 -2268 187
+!-2268 187|-2034 -283!-2034 -283|-2455.5 -593!-2455.5 -593[#FFF65E.2F #FFFDA7.83 -2470 -612.5!-2470 -612.5[#FFF655.E7 #FFFD8F.7B -2470.5 -636.5!-2470.5 -636.5|-2336.5 -1085.5!-2336.5 -1085.5[#FFF6DA.29 #FFFBB9.26 -2341.5 -1106!-2341.5
+ -1106[#FFF6DA.E6 #FFFB9D.29 -2329 -1134.5!-2329 -1134.5|-1780 -1645.5!-1780 -1645.5|-1642 -2369.5!-1642 -2369.5[#FFF999.5B #FFF6AD.E8 -1624.5 -2395.5!-1624.5 -2395.5|-1245 -2648.5!-1245 -2648.5[#FFFB2C.27 #FFF5A1.7F -1225 -2655!-1225
+ -2655|-494 -2694.5!-494 -2694.5|-172.5 -2851!-172.5 -2851[#FFFF5D.B9 #FFF4D8.05 -151 -2855!-151 -2855[#FFFF74.13 #FFF4DA.33 -131 -2847!-131 -2847|512 -2368!512 -2368[#209.F2 #FFF6C7.4D 526 -2349"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,288 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="   Enemies/Normal/ G-Z/ Skelegoon/Skeleton Goonie Code" itemID="467b3e3b-00000bf5" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="SkeletonGoonieCode" lastModified="1237840593" lastUniqueIdentifier="3">
+  <timeline>
+    <DOMTimeline name="Skeleton Goonie Code">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (frame == undefined) {
+	frame = "flying";
+	// frame = "run"
+}
+if (frame == "run") {
+	blink = 0;
+	if (xspeed == undefined) {
+		xspeed = 0;
+	}
+	if (yspeed == undefined) {
+		yspeed = 0;
+	}
+}
+if (flyxspeed == undefined) {
+	flyxspeed = 1.5+Math.random()*0.5;
+}
+if (flyyspeed == undefined) {
+	flyyspeed = -0.1-Math.random()*0.2;
+}
+if (runspeed == undefined) {
+	runspeed = 2+Math.random()*1.5;
+}
+air = true;
+if (frame == "flying") {
+	clip.clip.gotoAndPlay(random(18)+1);
+}
+wide = 10;
+tall = 7;
+//
+saveX = _x;
+saveY = _y;
+saveframe = frame;
+restartvars = function () {
+	_x = saveX;
+	_y = saveY;
+	frame = saveframe;
+	air = true;
+	blink = 0;
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		if (Math.abs((_root.currentCamX)-(_x+_parent._x))<1000 && Math.abs((_root.currentCamY)-(_y+_parent._y))<1000 && frame !== "gone") {
+			if (frame == "flying") {
+				xspeed = flyxspeed;
+				yspeed = flyyspeed;
+				//
+				if (this.head.hitTest(_root.Course.Char.charClip.feet) && _root.Course.Char.yspeed>0) {
+					_root.Course.Char.yspeed /= 2.5;
+					_root.Course.Char.yspeed -= 12;
+					for (i=0; i<8; i++) {
+						_root.Course.BackGFX.attachMovie("SkeletonGoonieBone", "SkeletonGoonieBone"+_root.Course.BackGFX.getNextHighestDepth(), _root.Course.BackGFX.getNextHighestDepth(), {_x:_x, _y:_y});
+					}
+					frame = "run";
+					blink = 10;
+					//
+					_root.bgsoundFX = new Sound(this);
+					_root.bgsoundFX.attachSound("flippers");
+					_root.bgsoundFX.start(0, 1);
+					_root.bgsoundFX.setVolume(_root.BgVolume);
+				}
+				if (this.body.hitTest(_root.Course.Char.charClip.water) || this.body.hitTest(_root.Course.Char.charClip.frame.water)) {
+					for (i=0; i<8; i++) {
+						_root.Course.BackGFX.attachMovie("SkeletonGoonieBone", "SkeletonGoonieBone"+_root.Course.BackGFX.getNextHighestDepth(), _root.Course.BackGFX.getNextHighestDepth(), {_x:_x, _y:_y});
+					}
+					frame = "run";
+					blink = 10;
+					yspeed = -4;
+					if (_root.Course.Char._x>_x+_parent._x) {
+						xspeed = 4;
+					} else {
+						xspeed = -4;
+					}
+				}
+				if (this.body.hitTest(_root.Course.Char.charClip.body)) {
+					if (_root.Course.Char._x>_x+_parent._x) {
+						_root.MarioHit(1, 90, -3, 5, 7, "");
+					} else {
+						_root.MarioHit(1, 90, -3, -5, 7, "");
+					}
+				}
+				//                        
+				// enemy hurt  
+				if (frame == "flying" || frame == "run") {
+					if (_root.Course.Enemyhurt.hitTest(((_x-wide)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, (((_y-(tall/2)))*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) && _root.Course.Enemyhurt.hitTest(((_x+wide)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, (((_y-(tall/2)))*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+						yspeed = -4;
+						xspeed = 0;
+						for (i=0; i<8; i++) {
+							_root.Course.BackGFX.attachMovie("SkeletonGoonieBone", "SkeletonGoonieBone"+_root.Course.BackGFX.getNextHighestDepth(), _root.Course.BackGFX.getNextHighestDepth(), {_x:_x, _y:_y});
+						}
+						frame = "run";
+						blink = 10;
+					} else {
+						if (_root.Course.Enemyhurt.hitTest(((_x-wide)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, (((_y-(tall/2)))*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+							yspeed = -4;
+							xspeed = 4;
+							for (i=0; i<8; i++) {
+								_root.Course.BackGFX.attachMovie("SkeletonGoonieBone", "SkeletonGoonieBone"+_root.Course.BackGFX.getNextHighestDepth(), _root.Course.BackGFX.getNextHighestDepth(), {_x:_x, _y:_y});
+							}
+							frame = "run";
+							blink = 10;
+						}
+						if (_root.Course.Enemyhurt.hitTest(((_x+wide)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, (((_y-(tall/2)))*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+							yspeed = -4;
+							xspeed = -4;
+							for (i=0; i<8; i++) {
+								_root.Course.BackGFX.attachMovie("SkeletonGoonieBone", "SkeletonGoonieBone"+_root.Course.BackGFX.getNextHighestDepth(), _root.Course.BackGFX.getNextHighestDepth(), {_x:_x, _y:_y});
+							}
+							frame = "run";
+							blink = 10;
+						}
+					}
+				}
+				//                                                     
+			} else {
+				// frame == "run"
+				if (blink>0) {
+					blink--;
+				}
+				//                          
+				if (_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.BPlatforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+					air = false;
+					yspeed = 0;
+					if (blink>=0) {
+						xspeed = runspeed;
+					}
+				} else {
+					air = true;
+					if (blink>=0) {
+						yspeed += _root.gravity;
+					}
+				}
+				//
+				while (_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y-3)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.BPlatforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y-3)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+					air = false;
+					_y--;
+				}
+				// walls            
+				while (_root.Course.Platforms.hitTest(((_x+wide)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, (((_y-(tall/2)))*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+					_x--;
+					_xscale = 100;
+				}
+				while (_root.Course.Platforms.hitTest(((_x-wide)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, (((_y-(tall/2)))*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+					_x++;
+					_xscale = -100;
+				}
+				// ^ walls ^
+				while ((_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+3)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.BPlatforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+3)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) && !(_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y-1)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.BPlatforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y-3)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true))) {
+					_y++;
+				}
+				while (_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y-1)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.BPlatforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y-3)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+					_y--;
+				}
+				// 
+				if (blink<=0) {
+					if (this.body.hitTest(_root.Course.Char.charClip.water) || this.body.hitTest(_root.Course.Char.charClip.frame.water)) {
+						for (i=0; i<8; i++) {
+							_root.Course.BackGFX.attachMovie("SkeletonGoonieBone", "SkeletonGoonieBone"+_root.Course.BackGFX.getNextHighestDepth(), _root.Course.BackGFX.getNextHighestDepth(), {_x:_x, _y:_y});
+						}
+						frame = "run";
+					}
+					if (this.head.hitTest(_root.Course.Char.charClip.feet) && _root.Course.Char.air == true && _root.Course.Char.yspeed>0) {
+						_root.Course.Char.yspeed /= 2.5;
+						_root.Course.Char.yspeed -= 9;
+						frame = "gone";
+						//
+						_root.bgsoundFX = new Sound(this);
+						_root.bgsoundFX.attachSound("flippers");
+						_root.bgsoundFX.start(0, 1);
+						_root.bgsoundFX.setVolume(_root.BgVolume);
+					}
+					if (this.body.hitTest(_root.Course.Char.charClip.body)) {
+						blink = 7;
+						if (_root.Course.Char._x>_x+_parent._x) {
+							_root.MarioHit(1, 90, -2, 4, 7, "");
+						} else {
+							_root.MarioHit(1, 90, -2, -4, 7, "");
+						}
+					}
+					//                     
+					// enemy hurt
+					if (frame == "flying" || frame == "run") {
+						if (_root.Course.Enemyhurt.hitTest(((_x-wide)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, (((_y-(tall/2)))*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) && _root.Course.Enemyhurt.hitTest(((_x+wide)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, (((_y-(tall/2)))*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+							frame = "gone";
+						} else {
+							if (_root.Course.Enemyhurt.hitTest(((_x-wide)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, (((_y-(tall/2)))*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+								frame = "gone";
+							}
+							if (_root.Course.Enemyhurt.hitTest(((_x+wide)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, (((_y-(tall/2)))*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+								frame = "gone";
+							}
+						}
+					}
+					//                  
+				}
+			}
+			if (_root.Course.Lava.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+				frame = "gone";
+			}
+			//           
+			bounds = _root.Course.CamEdge.getBounds(_root.Course.CamEdge);
+			coursewidth = bounds.xMax-bounds.xMin;
+			courseheight = bounds.yMax-bounds.yMin;
+			//
+			if (_x>bounds.xMax+5) {
+				_x -= coursewidth;
+			}
+			if (_x<bounds.xMin-5) {
+				_x += coursewidth;
+			}
+			if (_y>bounds.yMax+5) {
+				_y -= courseheight;
+			}
+			if (_y<bounds.yMin-5) {
+				_y += courseheight;
+			}
+			//           
+			_x += xspeed*-_xscale/100;
+			_y += yspeed;
+			clip.gotoAndStop(frame);
+		} else {
+			if ((Math.abs((_root.currentCamX)-(_x+_parent._x))>1000 || Math.abs((_root.currentCamY)-(_y+_parent._y))>1000) && (Math.abs((_root.currentCamX)-(saveX+_parent._x))>1000 || Math.abs((_root.currentCamY)-(saveY+_parent._y))>1000)) {
+				restartvars();
+				//
+			}
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Lineless Movieclip" name="head">
+                  <matrix>
+                    <Matrix a="0.265380859375" d="0.1416015625" tx="-2" ty="-6.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-28.25"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Lineless Movieclip" name="body">
+                  <matrix>
+                    <Matrix a="0.265380859375" d="0.1416015625" tx="-2" ty="4.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-28.25"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/ Skelegoon/Skeleton Goonie Clip" name="clip">
+                  <transformationPoint>
+                    <Point y="-0.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

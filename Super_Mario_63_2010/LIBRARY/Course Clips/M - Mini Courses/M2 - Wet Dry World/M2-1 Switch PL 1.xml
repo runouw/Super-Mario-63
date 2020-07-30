@@ -1,0 +1,257 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Clips/ M - Mini Courses / M2 - Wet Dry World/M2-1 Switch PL 1" itemID="46e2e3d7-0000091b" lastModified="1245461336" lastUniqueIdentifier="1">
+  <timeline>
+    <DOMTimeline name="M2-1 Switch PL 1">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+_alpha = 0;
+count = 0;
+wait = 32;
+//duration = 400;
+duration = 320
+onEnterFrame = null;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[depth = _root.Course.Platforms.getNextHighestDepth();
+itemname = "M2-1-SPL1"+depth;
+_root.Course.Platforms.attachMovie("M2-1-SPL1", itemname, depth, {});
+// Activated Sound fx
+_root.Mariosound = new Sound(this);
+_root.Mariosound.attachSound("Tick");
+_root.Mariosound.start(0, 1);
+_root.Mariosound.setVolume(_root.MarioVolume);
+//
+onEnterFrame = function () {
+	if (_alpha<=100 && count<duration) {
+		_alpha += 20;
+		_alpha = Math.min(_alpha, 100);
+	}
+	count++;
+	if ((count/wait) == Math.round(count/wait)) {
+		if (count>(1/2)*duration) {
+			wait = 16;
+			if (count>(3/4)*duration) {
+				wait = 8;
+				_alpha = 60;
+			}
+			if (count>(9/10)*duration) {
+				wait = 4;
+				_alpha = 40;
+			}
+		}
+		_root.Mariosound = new Sound(this);
+		_root.Mariosound.attachSound("Tick");
+		_root.Mariosound.start(0, 1);
+		_root.Mariosound.setVolume(_root.MarioVolume);
+	}
+	if (count>duration) {
+		wait = duration;
+		_alpha -= 10;
+		if (_alpha<=0) {
+			count = 0;
+			_root.Course.Platforms[itemname].removeMovieClip();
+			prevFrame();
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Bricks &amp; Woods/Switch Brick" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="95" ty="-24.2"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="2">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Bricks &amp; Woods/Switch Brick" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="63.65" ty="-24.2"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="3">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Bricks &amp; Woods/Switch Brick" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="190.3" ty="-24.2"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="4">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Bricks &amp; Woods/Switch Brick" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="158.95" ty="-24.2"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="5">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Bricks &amp; Woods/Switch Brick" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="426.7" ty="-44.2"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="6">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Bricks &amp; Woods/Switch Brick" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="458.05" ty="-44.2"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="7">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Bricks &amp; Woods/Switch Brick" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="585" ty="-140.2"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="8">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Bricks &amp; Woods/Switch Brick" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="616.35" ty="-140.2"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="9">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Bricks &amp; Woods/Switch Brick" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="585" ty="-108.2"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="10">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Bricks &amp; Woods/Switch Brick" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="522.3" ty="-76.2"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="11">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Bricks &amp; Woods/Switch Brick" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="250" ty="-24.2"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="12">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Bricks &amp; Woods/Switch Brick" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="352.05" ty="-24.2"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="13">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Bricks &amp; Woods/Switch Brick" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="320.05" ty="-24.2"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="14">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Bricks &amp; Woods/Switch Brick" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="553.65" ty="-44.2"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="15">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Bricks &amp; Woods/Switch Brick" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="473.6" ty="-184.2"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="16">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Bricks &amp; Woods/Switch Brick" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="504.95" ty="-184.2"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="17">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Bricks &amp; Woods/Switch Brick" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="680.35" ty="-236.2"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="18">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Bricks &amp; Woods/Switch Brick" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="648.35" ty="-312.2"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal">
+                            <fill>
+                              <SolidColor/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                        <StrokeStyle index="2">
+                          <SolidStroke scaleMode="normal">
+                            <fill>
+                              <SolidColor/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge fillStyle0="18" strokeStyle="1" edges="!12967 -6244|12967 -5604!12967 -5604|13594 -5604!13594 -5604|13594 -6244!13594 -6244|12967 -6244"/>
+                        <Edge fillStyle0="17" strokeStyle="1" edges="!13607 -4084|14234 -4084!14234 -4084|14234 -4724!14234 -4724|13607 -4724!13607 -4724|13607 -4084"/>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="!1900 -484|2527 -484!2527 -484|2527 156!2527 156|1900 156"/>
+                        <Edge fillStyle1="2" strokeStyle="1" edges="!1900 156|1273 156!1273 156|1273 -484!1273 -484|1900 -484"/>
+                        <Edge fillStyle1="3" strokeStyle="1" edges="!3806 -484|4433 -484!4433 -484|4433 156!4433 156|3806 156"/>
+                        <Edge fillStyle1="4" strokeStyle="2" edges="!3806 156|3179 156!3179 156|3179 -484!3179 -484|3806 -484"/>
+                        <Edge fillStyle1="11" strokeStyle="1" edges="!5627 -484|5627 156!5627 156|5000 156!5000 156|5000 -484!5000 -484|5627 -484"/>
+                        <Edge fillStyle1="15" strokeStyle="1" edges="!10099 -3044|9472 -3044!9472 -3044|9472 -3684!9472 -3684|10099 -3684"/>
+                        <Edge fillStyle1="16" strokeStyle="1" edges="!10099 -3684|10726 -3684!10726 -3684|10726 -3044!10726 -3044|10099 -3044"/>
+                        <Edge fillStyle1="12" strokeStyle="1" edges="!7668 -484|7668 156!7668 156|7041 156!7041 156|7041 -484!7041 -484|7668 -484"/>
+                        <Edge fillStyle1="5" strokeStyle="2" edges="!9161 -244|8534 -244!8534 -244|8534 -884!8534 -884|9161 -884"/>
+                        <Edge fillStyle1="6" strokeStyle="1" edges="!9161 -884|9788 -884!9788 -884|9788 -244!9788 -244|9161 -244"/>
+                        <Edge fillStyle0="6" fillStyle1="5" strokeStyle="1" edges="!9161 -884|9161 -244"/>
+                        <Edge fillStyle1="7" strokeStyle="1" edges="!11700 -2164|11700 -2804!11700 -2804|12327 -2804"/>
+                        <Edge fillStyle1="8" strokeStyle="1" edges="!12327 -2804|12954 -2804!12954 -2804|12954 -2164!12954 -2164|12327 -2164"/>
+                        <Edge fillStyle1="9" strokeStyle="1" edges="!12327 -2164|12327 -1524!12327 -1524|11700 -1524!11700 -1524|11700 -2164"/>
+                        <Edge fillStyle0="8" fillStyle1="7" strokeStyle="1" edges="!12327 -2804|12327 -2164"/>
+                        <Edge fillStyle0="9" fillStyle1="7" strokeStyle="1" edges="!12327 -2164|11700 -2164"/>
+                        <Edge fillStyle0="16" fillStyle1="15" strokeStyle="1" edges="!10099 -3684|10099 -3044"/>
+                        <Edge fillStyle1="14" strokeStyle="1" edges="!11073 -884|11700 -884!11700 -884|11700 -244!11700 -244|11073 -244!11073 -244|11073 -884"/>
+                        <Edge fillStyle1="10" strokeStyle="1" edges="!11073 -884|10446 -884!10446 -884|10446 -1524!10446 -1524|11073 -1524!11073 -1524|11073 -884"/>
+                        <Edge fillStyle1="13" strokeStyle="1" edges="!7028 -484|7028 156!7028 156|6401 156!6401 156|6401 -484!6401 -484|7028 -484"/>
+                        <Edge fillStyle0="4" fillStyle1="3" strokeStyle="1" edges="!3806 156|3806 -484"/>
+                        <Edge fillStyle0="2" fillStyle1="1" strokeStyle="1" edges="!1900 156|1900 -484"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,3413 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Clips/ 3 - Hazy Maze Cave/ Areas 3-1 &amp; 3-2/3-2 Back GFX" itemID="45d7cf2a-00000466" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="3-2BackGFX" lastModified="1244581994" lastUniqueIdentifier="122">
+  <timeline>
+    <DOMTimeline name="3-2 Back GFX">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" locked="true">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+_root.warpframe = false;
+onEnterFrame = function () {
+	if (this.warp1.hitTest(_root.Course.Char.charClip.feet)) {
+		_root.Course.Char.attack = true;
+		_root.Course.Char.xspeed = 0;
+		_root.Course.Char.yspeed = 0;
+		_root.Course.Char.attackFrame = "none";
+		warp = true;
+		warpnum = 1;
+	}
+	if (this.warp2.hitTest(_root.Course.Char.charClip.feet)) {
+		_root.Course.Char.attack = true;
+		_root.Course.Char.xspeed = 0;
+		_root.Course.Char.yspeed = 0;
+		_root.Course.Char.attackFrame = "none";
+		warp = true;
+		warpnum = 2;
+	}
+	if (this.warp3.hitTest(_root.Course.Char.charClip.feet)) {
+		_root.Course.Char.attack = true;
+		_root.Course.Char.xspeed = 0;
+		_root.Course.Char.yspeed = 0;
+		_root.Course.Char.attackFrame = "none";
+		warp = true;
+		warpnum = 3;
+	}
+	if (this.warp4.hitTest(_root.Course.Char.charClip.feet)) {
+		_root.Course.Char.attack = true;
+		_root.Course.Char.xspeed = 0;
+		_root.Course.Char.yspeed = 0;
+		_root.Course.Char.attackFrame = "none";
+		warp = true;
+		warpnum = 4;
+	}
+	if (this.warp5.hitTest(_root.Course.Char.charClip.feet)) {
+		_root.Course.Char.attack = true;
+		_root.Course.Char.xspeed = 0;
+		_root.Course.Char.yspeed = 0;
+		_root.Course.Char.attackFrame = "none";
+		warp = true;
+		warpnum = 5;
+	}
+	if (this.warp6.hitTest(_root.Course.Char.charClip.feet)) {
+		_root.Course.Char.attack = true;
+		_root.Course.Char.xspeed = 0;
+		_root.Course.Char.yspeed = 0;
+		_root.Course.Char.attackFrame = "none";
+		warp = true;
+		warpnum = 6;
+	}
+	if (this.warp7.hitTest(_root.Course.Char.charClip.feet)) {
+		_root.Course.Char.attack = true;
+		_root.Course.Char.xspeed = 0;
+		_root.Course.Char.yspeed = 0;
+		_root.Course.Char.attackFrame = "none";
+		warp = true;
+		warpnum = 7;
+	}
+	if (warp == true && _root.warpframe == false) {
+		if (warpnum == 1) {
+			_root.attachMovie("lefttransition", "lefttransition"+_root.getNextHighestDepth(), _root.getNextHighestDepth(), {_x:_root.screensizeX/2, _y:_root.screensizeY/2});
+		} else if (warpnum == 2) {
+			_root.attachMovie("lefttransition", "righttransition"+_root.getNextHighestDepth(), _root.getNextHighestDepth(), {_x:_root.screensizeX/2, _y:_root.screensizeY/2});
+		} else if (warpnum == 3) {
+			_root.attachMovie("lefttransition", "lefttransition"+_root.getNextHighestDepth(), _root.getNextHighestDepth(), {_x:_root.screensizeX/2, _y:_root.screensizeY/2});
+		} else if (warpnum == 4) {
+			_root.attachMovie("uptransition", "righttransition"+_root.getNextHighestDepth(), _root.getNextHighestDepth(), {_x:_root.screensizeX/2, _y:_root.screensizeY/2});
+		} else if (warpnum == 5) {
+			_root.attachMovie("righttransition", "righttransition"+_root.getNextHighestDepth(), _root.getNextHighestDepth(), {_x:_root.screensizeX/2, _y:_root.screensizeY/2});
+		} else if (warpnum == 6) {
+			_root.attachMovie("righttransition", "righttransition"+_root.getNextHighestDepth(), _root.getNextHighestDepth(), {_x:_root.screensizeX/2, _y:_root.screensizeY/2});
+		} else {
+			_root.attachMovie("righttransition", "righttransition"+_root.getNextHighestDepth(), _root.getNextHighestDepth(), {_x:_root.screensizeX/2, _y:_root.screensizeY/2});
+		}
+		warp = false;
+	}
+	if (_root.warpframe == true) {
+		if (warpnum == 1) {
+			_root.changecourse("lefttransition2", "3-1", 1760, 860, 1760, 860);
+		} else if (warpnum == 2) {
+			_root.changecourse("lefttransition2", "3-1", 1800, 1400, 1800, 1400);
+		} else if (warpnum == 3) {
+			_root.changecourse("lefttransition2", "3-5", 0, 0, 0, 0);
+		} else if (warpnum == 4) {
+			_root.changecourse("uptransition2", "3-4", (_root.Course.Char._x-_root.Course.CamEdge._x), 450, (_root.Course.Char._x-_root.Course.CamEdge._x), 450);
+		} else if (warpnum == 5) {
+			_root.changecourse("righttransition2", "3-3", 0, 0, 0, 0);
+		} else if (warpnum == 6) {
+			_root.changecourse("righttransition2", "3-7", 0, 0, 0, 0);
+		} else {
+			_root.changecourse("righttransition2", "3-7", 0, 370, 0, 370);
+		}
+		//_root.warpframe = false;            
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="warp2">
+                  <matrix>
+                    <Matrix a="2.0035400390625" d="20.2765502929688" tx="-122.5" ty="509.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="warp1">
+                  <matrix>
+                    <Matrix a="2.0035400390625" d="20.2765502929688" tx="-117.5" ty="-111.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="warp4" selected="true">
+                  <matrix>
+                    <Matrix a="0" b="2.0035400390625" c="-124.998641967773" d="0" tx="1096" ty="-651.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="warp5">
+                  <matrix>
+                    <Matrix a="2.0035400390625" d="20.2765502929688" tx="2552.05" ty="-128.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="warp3">
+                  <matrix>
+                    <Matrix a="2.0035400390625" d="20.2765502929688" tx="-112.5" ty="1829.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="warp6">
+                  <matrix>
+                    <Matrix a="2.0035400390625" d="20.2765502929688" tx="725.85" ty="1373.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="warp7">
+                  <matrix>
+                    <Matrix a="2.0035400390625" d="20.2765502929688" tx="725.85" ty="1773.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="hitTest Boxes" color="#FF4FFF" outline="true" useOutlineView="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip">
+                  <matrix>
+                    <Matrix a="1.50941467285156" d="7.50193786621094" tx="2129.5" ty="43.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+onClipEvent (enterFrame) {
+	if (this.hitTest(_root.Course.Char.charClip.body)) {
+		_root.Course.BackGFX.StartClip._y = _root.Course.BackGFX.restart2._y;
+		_root.Course.BackGFX.StartClip._x = _root.Course.BackGFX.restart2._x;
+		_root.Course.Char.xspeed = 7;
+		_root.Course.Char.yspeed = -15;
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="restart2">
+                  <matrix>
+                    <Matrix a="0.188629150390625" d="0.6251220703125" tx="2292.1" ty="-121.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+onClipEvent (enterFrame) {
+	if (this.hitTest(_root.Course.Char.charClip.body)) {
+		
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip">
+                  <matrix>
+                    <Matrix a="13.2073822021484" d="7.50193786621094" tx="1251.6" ty="536.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+onClipEvent (enterFrame) {
+	if (this.hitTest(_root.Course.Char.charClip.body)) {
+		_root.Course.BackGFX.StartClip._y = _root.Course.BackGFX.restart1._y
+		_root.Course.BackGFX.StartClip._x = _root.Course.BackGFX.restart1._x
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="restart1">
+                  <matrix>
+                    <Matrix a="0.188629150390625" d="0.6251220703125" tx="919.35" ty="55.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+onClipEvent (enterFrame) {
+	if (this.hitTest(_root.Course.Char.charClip.body)) {
+		
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip">
+                  <matrix>
+                    <Matrix a="-11.0891723632813" d="-34.2517852783203" tx="1268.8" ty="-51.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+onClipEvent (enterFrame) {
+	if (this.hitTest(_root.Course.Char.charClip.body) && _root._quality !== "LOW" && _root._quality !== "MEDIUM") {
+		if (_root.PauseGame == false && _root.playpause == false) {
+			//_root.Course.Char.yspeed = _root.groundFriction(_root.Course.Char.yspeed, 0.015, 1.001);
+			if (savezoom == undefined) {
+				savezoom = _root.CameraZoom;
+			}
+			if (_root.CameraZoom>80) {
+				_root.CameraZoom -= 1;
+			}
+		}
+	} else {
+		if (savezoom !== undefined) {
+			if (_root.CameraZoom<savezoom) {
+				_root.CameraZoom += 1;
+			} else {
+				savezoom = undefined;
+			}
+		}
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip">
+                  <matrix>
+                    <Matrix a="-3.70344543457031" d="-34.2517852783203" tx="868.8" ty="-51.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+onClipEvent (enterFrame) {
+	if (this.hitTest(_root.Course.Char.charClip.body) && _root._quality !== "LOW") {
+		if (_root.PauseGame == false && _root.playpause == false) {
+			//_root.Course.Char.yspeed = _root.groundFriction(_root.Course.Char.yspeed, 0.015, 1.001);
+			if (savezoom == undefined) {
+				savezoom = _root.CameraZoom;
+			}
+			if (_root.CameraZoom>65) {
+				_root.CameraZoom -= 1;
+			}
+		}
+	} else {
+		if (savezoom !== undefined) {
+			if (_root.CameraZoom<savezoom) {
+				_root.CameraZoom += 1;
+			} else {
+				savezoom = undefined;
+			}
+		}
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Other/Camera Control Box">
+                  <matrix>
+                    <Matrix a="8.32655334472656" d="4.99412536621094" tx="1262.8" ty="-74"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	t = "Y";
+	amount = -80
+	speed = 20
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip">
+                  <matrix>
+                    <Matrix a="-1.07440185546875" d="-1.87480163574219" tx="150.4" ty="-24.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+onClipEvent (enterFrame) {
+	if (_root.PauseGame == false && _root.playpause == false) {
+		if (this.hitTest(_root.Course.Char.charClip.feet)) {
+			//_root.Course.Char.yspeed = _root.groundFriction(_root.Course.Char.yspeed, 0.015, 1.001);
+			//_root.Course.Char.yspeed -= 0.5;
+			_root.Course.Char.fallcount = 0;
+		}
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip">
+                  <matrix>
+                    <Matrix a="-1.07440185546875" d="-1.87480163574219" tx="234.2" ty="1852.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+onClipEvent (enterFrame) {
+	if (_root.PauseGame == false && _root.playpause == false) {
+		if (this.hitTest(_root.Course.Char.charClip.feet)) {
+			//_root.Course.Char.yspeed = _root.groundFriction(_root.Course.Char.yspeed, 0.015, 1.001);
+			//_root.Course.Char.yspeed -= 0.5;
+			_root.Course.Char.hurtfallcount = 0;
+		}
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="4" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="0" b="-0.5" c="0.5" d="0" tx="2242.55" ty="-30.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ 3 - Hazy Maze Cave/ Areas 3-1 &amp; 3-2/3-2 Colored Grond">
+                  <matrix>
+                    <Matrix tx="874.1" ty="212.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color tintMultiplier="0.2" tintColor="#000066"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling x1" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="10" d="-10" tx="-192.35" ty="39.25"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="!4647 415|-3847 415!-3847 415|-3847 785!-3847 785|4647 785!4647 785|4647 415"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ground x.1 (2)" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="1921" ty="568.95"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="2">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ground x.1 (2)" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="-20" tx="2098" ty="-728.55"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="3">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ground x.1 (2)" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="2149.05" ty="744.55"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="4">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ground x.1 (2)" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="1871.6" ty="441.05"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="5">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ground x.1 (2)" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="1861.6" ty="441.05"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="6">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ground x.1 (2)" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="2272.75" ty="68.05"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="7">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ground x.1 (2)" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="1570.6" ty="1374"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="4" edges="!47157 -4360|50828 -4360!50828 -4360|50828 -12959!50828 -12959|36444 -12959!36444 -12959|36444 -7659!36444 -7659|36618 -7519!36618 -7519|36618 -6939!36618 -6939|36917 -6939!36917 -6939|37018 -6650!37018 -6650|37448 -6650!37448 -6650|38628
+ -5511!38628 -5511|42688 -5511!42688 -5511|42688 -9739!42688 -9739|42637 -10759!42637 -10759|43288 -11359!43288 -11359|44711 -11359!44711 -11359|45117 -10955.5!45117 -10955.5|45117 -10968!45117 -10968|45222 -10968!45222 -10968|45292 -10598
+!45292 -10598|48037 -10598!48037 -10598|48037 -10318!48037 -10318|48540 -10318!48540 -10318|48877 -9839!48877 -9839|48984.5 -9299!48984.5 -9299|48985 -9299!48985 -9299|49024.5 -9099!49024.5 -9099|49025 -8019!49025 -8019|48525 -7218!48525
+ -7218|47157 -7218"/>
+                        <Edge fillStyle0="4" fillStyle1="5" edges="
+!47157 -7218|47157 -4360"/>
+                        <Edge fillStyle0="3" edges="
+!41065 -420|39926 -61!39926 -61|37998 659!37998 659|37526 759!37526 759|37146 1110!37146 1110|36117 1284!36117 1284|35857 1609!35857 1609|34545 1852!34545 1852|34097 2200!34097 2200|32277 3287!32277 3287|31597 4050!31597 4050|31597 4660.5
+!31597 4660.5|28988 6330!28988 6330|28988 14658!28988 14658|50897 14658!50897 14658|50897 -780!50897 -780|45057 -780!45057 -780|44617 -1420!44617 -1420|44117 -1240!44117 -1240|43837 -780!43837 -780|42777 -780!42777 -780|41797 -700!41797
+ -700|41065 -420"/>
+                        <Edge fillStyle0="5" edges="
+!47157 -7218|46308.5 -7218!46308.5 -7218|45957 -7538!45957 -7538|45425 -7538!45425 -7538|45377 -7119!45377 -7119|45377 -6859!45377 -6859|45285 -4360!45285 -4360|47157 -4360"/>
+                        <Edge fillStyle1="2" edges="
+!28178 -4191|28178 -2322!28178 -2322|27838 -2042!27838 -2042|27838 -1732!27838 -1732|27498 -1732!27498 -1732|27498 -4191!27498 -4191|27938 -4491!27938 -4491|28158 -4282!28158 -4282|28158 -4191!28158 -4191|28178 -4191"/>
+                        <Edge fillStyle1="6" edges="
+!31462 -4191|32958 -4191!32958 -4191|32958 -3640!32958 -3640|31602 -3720!31602 -3720|31462 -4191"/>
+                        <Edge fillStyle0="1" edges="
+!23958 -1460|23958 -841!23958 -841|24298 -841!24298 -841|24298 -1460!24298 -1460|23958 -1460"/>
+                        <Edge fillStyle1="7" edges="
+!1708 -3250|-4148 -3250!-4148 -3250|-4148 -12850!-4148 -12850|1708 -12770!1708 -12770|1708 -3250"/>
+                        <Edge fillStyle0="7" edges="
+!7621 700|7621 26673!7621 26673|7999 26802!7999 26802|14952 26802!14952 26802|14952 28498!14952 28498|8060 28498!8060 28498|7700 28606!7700 28606|7700 28825.5!7700 28825.5|7653 28877!7653 28877|7653 33918!7653 33918|7919 34178!7919 34178
+|7919 34341!7919 34341|17758 34341!17758 34341|17758 35974.5!17758 35974.5|8899 35975!8899 35975|8899 35855!8899 35855|7939 35855!7939 35855|7431.5 38097!7431.5 38097|-2136 38097!-2136 38097|-2136 40760!-2136 40760|20898 40760!20898 40760
+|20898 6399!20898 6399|20701 6319!20701 6319|20701 5839!20701 5839|20118 5659!20118 5659|19638 5439!19638 5439|19473 4819!19473 4819|19092 4579!19092 4579|18679 4139!18679 4139|17979 4000!17979 4000|17707 3760!17707 3760|17156 3480!17156
+ 3480|16739 3100!16739 3100|16299 2940!16299 2940|16181 2300!16181 2300|15804 1940!15804 1940|15319 1640!15319 1640|14819 1380!14819 1380|14313 1260!14313 1260|13879 980!13879 980|13419 619!13419 619|12899 619!12899 619|7621 700!2557
+ 9693|5038 9693!5038 9693|5038 700!5038 700|-3779 700!-3779 700|-3779 5948!-3779 5948|-3844.5 7767!-3844.5 7767|-3844 7767!-3844 7767|-3844 8568!-3844 8568|-323 8568!-323 8568|-323 8708!-323 8708|-183 8708!-183 8708|357 8789!357 8789
+|1055 9428!1055 9428|1577 9428!1577 9428|1997 9808!1997 9808|2557 9808!2557 9808|2557 9693!4959 12022|-3879 12022!-3879 12022|-3879 34698!-3879 34698|3560 34698!3560 34698|4799 33987!4799 33987|5038 32595!5038 32595|5038 12218!5038 12218
+|4959 12022"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="0.5" d="-0.5" tx="232.35" ty="37.75"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="0" b="-0.5" c="0.5" d="0" tx="251.7" ty="64.7"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix a="0" b="1" c="-1" d="0" tx="1066.65" ty="92"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix a="0" b="1" c="-1" d="0" tx="1066.65" ty="92"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling x1" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="10" d="-10" tx="-29.4" ty="823.95"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!-588 16479|7906 16479!7906 16479|7906 16109!7906 16109|-588 16109!-588 16109|-588 16479"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix ty="10"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix ty="10"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Crag/Stone PL x2" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="232.55" ty="65.7"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!5163 1494|6476 1494!6476 1494|6476 1314!6476 1314[#15D4.8B 1314 5163 1314!5163 1314|5163 1494"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="-30" ty="10"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix tx="-30" ty="10"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Crag/Stone PL x2" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="313.05" ty="145.45"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!8086 2909[#1C1E.8B 2909 6773 2909!6773 2909|6773 3089!6773 3089|8086 3089!8086 3089|8086 2909"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="20"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix tx="20"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Crag/Stone PL x2" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="212.55" ty="237.45"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!5916 4749[#1444.8B 4749 4763 4749!4763 4749|4763 4929!4763 4929|5916 4929!5916 4929|5916 4749"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="401.15" ty="37.75"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="0" b="-0.5" c="-0.5" d="0" tx="381.8" ty="64.7"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling x1" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="0" b="10" c="-10" d="0" tx="390.8" ty="62.6"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="
+!7816 1252|7816 26561!7816 26561|7446 26561!7446 26561|7446 1252!7446 1252|7816 1252"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling x1" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="10" d="-10" tx="399.65" ty="39.25"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!12899 415|7993 415!7993 415|7993 785!7993 785|12899 785!12899 785|12899 415"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Moving Green Platform">
+                  <matrix>
+                    <Matrix tx="346.65" ty="243.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	DirectionX = "Right";
+	DirectionY = "Down";
+	distanceX = 0;
+	distanceY = 125;
+	accelX = 0;
+	accelY = 0.5;
+	speedX = 0;
+	speedY = 3;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling x1" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="10" d="-10" tx="-446.35" ty="610.2"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!4837 11834|-4162 11834!-4162 11834|-4162 12204!-4162 12204|4837 12204!4837 12204|4837 11834"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="20"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix tx="20"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling x1" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="10" d="10" tx="-409.35" ty="481.7"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!4416 9634|2097 9634!2097 9634|2097 10004!2097 10004|4416 10004!4416 10004|4416 9634"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="238.85" ty="484.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="0.5" d="-0.5" tx="237.85" ty="607.2"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling x1" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="0" b="10" c="10" d="0" tx="240.65" ty="1233.2"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!4813 12142|4813 32218!4813 32218|5183 32218!5183 32218|5183 12142!5183 12142|4813 12142"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Crag/Stone PL x2" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="232.55" ty="605.2"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!5163 12284|6496 12284!6496 12284|6496 12104!6496 12104[#159D.5D 12104 5163 12104!5163 12104|5163 12284"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="0.5" tx="127.2" ty="489.2"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="0.5" tx="98.2" ty="476.2"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="80" ty="-1"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix tx="80" ty="-1"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling x1" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="10" d="10" tx="-728.7" ty="419.7"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!-1823 8394|-4290 8394!-4290 8394|-4290 8764!-4290 8764|-1823 8764!-1823 8764|-1823 8394"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="0.5" tx="55.2" ty="457.2"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="0.5" tx="83.2" ty="469.2"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="0.5" tx="35.2" ty="442.2"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="0.5" tx="17.2" ty="434.7"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Abstract/Cave Mushroom">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="122.9" ty="-23.3"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="0.5" d="-0.5" tx="672.05" ty="45.75"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="0.5" d="-0.5" tx="644.95" ty="32.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="0.5" d="-0.5" tx="690.65" ty="61.25"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="0.5" d="-0.5" tx="712.15" ty="68.7"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="0.5" d="-0.5" tx="741.65" ty="80.2"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="0.5" d="-0.5" tx="763.15" ty="93.7"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="0.5" d="-0.5" tx="784.65" ty="109.2"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="0" b="-0.5" c="0.5" d="0" tx="804.65" ty="137.7"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="0.5" d="-0.5" tx="811.65" ty="153.2"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="0.5" d="-0.5" tx="833.15" ty="168.7"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="0.5" d="-0.5" tx="854.65" ty="182.7"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="0.5" d="-0.5" tx="876.15" ty="198.2"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="0.5" d="-0.5" tx="897.65" ty="205.7"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="0.5" d="-0.5" tx="927.15" ty="221.2"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="0.5" d="-0.5" tx="948.65" ty="236.7"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="0" b="-0.5" c="0.5" d="0" tx="970.15" ty="264.95"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="0.5" d="-0.5" tx="979.65" ty="280.45"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="0.5" d="-0.5" tx="1001.15" ty="289.95"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="0" b="-0.5" c="0.5" d="0" tx="1030.65" ty="319.45"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="0" b="-0.5" c="0.5" d="0" tx="1040.15" ty="347.95"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling x1" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="0" b="10" c="10" d="0" tx="1032.15" ty="342.95"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!20643 6859|20643 14644!20643 14644|21013 14644!21013 14644|21013 6859!21013 6859|20643 6859"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling x1" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="0" b="10" c="10" d="0" tx="1205.1" ty="-274.7"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!24472 -1300|24472 -3820!24472 -3820|24102 -3820!24102 -3820|24102 -1300!24102 -1300|24472 -1300"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling x1" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="0" b="-10" c="-10" d="0" tx="1206.6" ty="-29.4"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!23762 -3820|23762 -588!23762 -588|24132 -588!24132 -588|24132 -3820!24132 -3820|23762 -3820"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="0.5" d="-0.5" tx="1192.1" ty="-191"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="0" b="-0.5" c="-0.5" d="0" tx="1198.6" ty="-171"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="0.5" tx="1208.6" ty="-32.8"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="0" b="0.5" c="0.5" d="0" tx="1205.6" ty="-46.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="0" b="0.5" c="0.5" d="0" tx="1214.6" ty="-68.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="976.45" ty="-96.5"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix tx="976.45" ty="-96.5"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Crag/Stone PL x2" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="212.55" ty="55.7"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!6076 1114[#1444.8B 1114 4763 1114!4763 1114|4763 1294!4763 1294|6076 1294!6076 1294|6076 1114"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Crag/Stone PL x2" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="1098.35" ty="-57.3"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!22299 -966|23792 -966!23792 -966|23792 -1146!23792 -1146[#59CB.22 -1146 22299 -1139!22299 -1139|22299 -966"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix d="-1" tx="-50" ty="-323.1"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix d="-1" tx="-50" ty="-323.1"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling x1" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="0" b="-10" c="-10" d="0" tx="1434.65" ty="-65"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!28693 -2760|28693 -3500!28693 -3500|28323 -3500!28323 -3500|28323 -2760!28323 -2760|28693 -2760"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="0" b="0.5" c="-0.5" d="0" tx="1375.1" ty="-149.1"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix d="-1" tx="-50" ty="-323.1"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix d="-1" tx="-50" ty="-323.1"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling x1" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="0" b="-10" c="-10" d="0" tx="1436.6" ty="-196.5"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!28362 -4660|28362 -3930!28362 -3930|28732 -3930!28732 -3930|28732 -4660!28732 -4660|28362 -4660"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="0.5" tx="1389.15" ty="-90.8"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="0" b="0.5" c="0.5" d="0" tx="1388.65" ty="-104.8"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix d="-1" tx="-47" ty="-323.1"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix d="-1" tx="-47" ty="-323.1"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling x1" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="0" b="-10" c="10" d="0" tx="1446.65" ty="-72.05"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="
+!28933 -3641|29303 -3641!29303 -3641|29303 -2640!29303 -2640|28933 -2640!28933 -2640|28933 -3641"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="1389.65" ty="-117.8"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="0" b="0.5" c="0.5" d="0" tx="1405.65" ty="-142.8"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="0" b="-0.5" c="0.5" d="0" tx="1407.65" ty="-189.3"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="0" b="-0.5" c="-0.5" d="0" tx="1377.1" ty="-184.3"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="1395.15" ty="-212.3"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="0.5" d="-0.5" tx="1393.65" ty="-212.3"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="-20"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix tx="-20"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Crag/Stone PL x2" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="1015.55" ty="17"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!22136 340[#5300.8B 340 20323 360!20323 360|20323 520!20323 520|22136 520!22136 520|22136 340"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="1065.3" ty="-155.75"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix tx="1065.3" ty="-155.75"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Crag/Stone PL x2" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="212.55" ty="55.7"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!6076 1114[#1444.8B 1114 4763 1114!4763 1114|4763 1294!4763 1294|6076 1294!6076 1294|6076 1114"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="1159" ty="-161.5"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix tx="1159" ty="-161.5"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Crag/Stone PL x2" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="212.55" ty="55.7"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!6076 1114[#1444.8B 1114 4763 1114!4763 1114|4763 1294!4763 1294|6076 1294!6076 1294|6076 1114"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling x1" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="0" b="10" c="10" d="0" tx="76.7" ty="-521.5"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!1534 -12742|1534 -3771!1534 -3771|1904 -3771!1904 -3771|1904 -12742!1904 -12742|1534 -12742"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="-9"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix tx="-9"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling x1" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="-10" d="10" tx="57.95" ty="-167.6"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!1537 -3352|-3813 -3352!-3813 -3352|-3813 -2982!-3813 -2982|1537 -2982!1537 -2982|1537 -3352"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="65.2" ty="-165.6"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="0" b="0.5" c="0.5" d="0" tx="84.55" ty="-192.55"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix a="-1" tx="2492.8"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix a="-1" tx="2492.8"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling x1" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="0" b="10" c="10" d="0" tx="1032.15" ty="342.95"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!20643 6859|20643 14644!20643 14644|21013 14644!21013 14644|21013 6859!21013 6859|20643 6859"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="0" b="-0.5" c="-0.5" d="0" tx="1449.65" ty="347.95"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="1468.15" ty="319.45"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="1493.15" ty="304.45"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="1501.1" ty="294.95"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="1522.65" ty="283.45"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="1533.15" ty="276.45"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="1547.15" ty="261.95"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="1569.1" ty="246.95"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="1582.15" ty="237.45"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="0" b="-0.5" c="-0.5" d="0" tx="1582.5" ty="222.85"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="1598.15" ty="195.2"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="1609.9" ty="181.45"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="1631.1" ty="168.7"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Moving Green Platform">
+                  <matrix>
+                    <Matrix tx="1485.65" ty="-104.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	DirectionX = "Right";
+	DirectionY = "Down";
+	distanceX = 0;
+	distanceY = 78;
+	accelX = 0;
+	accelY = 0.5;
+	speedX = 0;
+	speedY = 3;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="1642.85" ty="162.95"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="1661.15" ty="147.45"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="1679.15" ty="131.95"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="1706.1" ty="117.7"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="1727.6" ty="109.2"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="1753.1" ty="96.7"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="1777.1" ty="87.2"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="1800.1" ty="83.6"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="1830.1" ty="66.7"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="1809" ty="76.1"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="1851.1" ty="61.25"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="1868.3" ty="55.7"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="1893.8" ty="43.2"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="1917.8" ty="33.7"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="1940.8" ty="30.1"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="1970.8" ty="13.2"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="1949.7" ty="22.6"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="1991.8" ty="7.75"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="2017.55" ty="-0.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="2041.55" ty="-9.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="2064.55" ty="-13.25"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="2094.55" ty="-30.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="2073.45" ty="-20.75"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling x1" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="10" d="-10" tx="2091.65" ty="-21.15"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!41833 -423|42657 -423!42657 -423|42657 -793!42657 -793|41833 -793!41833 -793|41833 -423"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="2161.1" ty="-38.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling x1" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="10" d="-10" tx="2160.1" ty="-30.65"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!45080 -613|51088 -613!51088 -613|51088 -983!51088 -983|44840 -983!44840 -983|45080 -613"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="2210.05" ty="-47.3"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="2234.05" ty="-64.75"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="0" b="-0.5" c="0.5" d="0" tx="2233.55" ty="-50.3"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Crag/Stone PL x2" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="1481.75" ty="114.2"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!30147 2464|30977 2464!30977 2464|30977 2284!30977 2284[#76EF.2 2284 30147 2284!30147 2284|30147 2464"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="1586.65" ty="-203.8"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="0.5" d="-0.5" tx="1627.65" ty="-204.05"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix ty="-60"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix ty="-60"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling x1" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="10" d="-10" tx="1586.65" ty="-135.6"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!31733 -2712|32678 -2712!32678 -2712|32678 -3082!32678 -3082|31733 -3082!31733 -3082|31733 -2712"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="2231.1" ty="-60.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="0" b="0.5" c="0.5" d="0" tx="1646.65" ty="-205.55"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix ty="-60"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix ty="-60"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling x1" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="-10" d="10" tx="1647.85" ty="-134.1"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!32078 -2312|32957 -2312!32957 -2312|32957 -2682!32957 -2682|32078 -2682!32078 -2682|32078 -2312"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="0.5" tx="1578.65" ty="-204.55"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="0.5" tx="1601.1" ty="-188.8"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="0.5" tx="1622.1" ty="-184.8"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Decoration/ Signs &amp; Fences/YI Arrow">
+                  <matrix>
+                    <Matrix a="0.9788818359375" b="0.20111083984375" c="-0.20111083984375" d="0.9788818359375" tx="1582.3" ty="-269.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="347.2" ty="270.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="347.2" ty="370.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="347.2" ty="470.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="347.2" ty="570.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="1143.4" ty="-186.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="1143.4" ty="-152.8"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="1143.4" ty="-216.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="1253.4" ty="-186.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="1253.4" ty="-152.8"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="1253.4" ty="-216.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="1333.4" ty="-226.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="1333.4" ty="-192.8"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="1333.4" ty="-256.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="1453.4" ty="-226.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="1453.4" ty="-192.8"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="1453.4" ty="-256.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="1614.35" ty="-339.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="1614.35" ty="-422.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="1614.35" ty="-502.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="2276.35" ty="-68.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="2316.35" ty="-68.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="2356.35" ty="-68.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling x1" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="10" d="10" tx="2102.85" ty="-221.05"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!45277 -4051|50663 -4051!50663 -4051|50663 -4421!50663 -4421|45277 -4421!45277 -4421|45277 -4051"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="0" b="0.5" c="-0.5" d="0" tx="2264.1" ty="-233.2"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="-30"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix tx="-30"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling x1" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="0" b="10" c="-10" d="0" tx="2301.85" ty="-620"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!45667 -7320|45667 -4514!45667 -4514|46037 -4514!46037 -4514|46037 -7320!46037 -7320|45667 -7320"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="2273.85" ty="-365"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="0.5" d="-0.5" tx="2272.6" ty="-372.45"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling x1" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="10" d="-10" tx="2138.7" ty="-359.95"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!48897 -7569|45994 -7569!45994 -7569|45994 -7199!45994 -7199|48897 -7199!48897 -7199|48897 -7569"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling x1" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="0" b="10" c="-10" d="0" tx="2459.6" ty="-783.8"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!48822 -9919|48822 -7790!48822 -7790|49192 -7790!49192 -7790|49192 -9919!49192 -9919|48822 -9919"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="2447.85" ty="-376.25"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling x1" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="10" d="10" tx="2118.3" ty="-533.95"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="
+!48029 -10309|45337 -10309!45337 -10309|45337 -10679!45337 -10679|48029 -10679!48029 -10679|48029 -10309"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="0.5" tx="2429.1" ty="-518.95"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="0" b="0.5" c="-0.5" d="0" tx="2441.1" ty="-511.95"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling x1" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="0" b="-10" c="10" d="0" tx="2123.35" ty="-41.7"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!42467 -10900|42467 -5914!42467 -5914|42837 -5914!42837 -5914|42837 -10900!42837 -10900|42467 -10900"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling x1" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="-10" d="10" tx="2293.85" ty="-285.05"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!42657 -5701|39198 -5701!39198 -5701|39198 -5331!39198 -5331|42657 -5331!42657 -5331|42657 -5701"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="0" b="0.5" c="0.5" d="0" tx="2132.6" ty="-297.2"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="0.5" tx="1960.7" ty="-277.2"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="0.5" tx="1933.2" ty="-292.7"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="0.5" tx="1916.2" ty="-307.7"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="0.5" tx="1897.2" ty="-323.7"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="0.5" tx="1880.6" ty="-333.2"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="0.5" tx="1851.6" ty="-348.7"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="0" b="0.5" c="-0.5" d="0" tx="1832.8" ty="-379"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="0" b="0.5" c="-0.5" d="0" tx="1824.8" ty="-408"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling x1" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="0" b="10" c="-10" d="0" tx="1832.8" ty="-802.3"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!36286 -12906|36286 -8160!36286 -8160|36656 -8160!36656 -8160|36656 -12906!36656 -12906|36286 -12906"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling x1" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="10" d="10" tx="2000.15" ty="-577.25"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!44877 -11545|43223 -11545!43223 -11545|43223 -11175!43223 -11175|44877 -11175!44877 -11175|44877 -11545"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="2140.6" ty="-560.95"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="0.5" tx="2262.1" ty="-560.95"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="0" b="0.5" c="-0.5" d="0" tx="2268.85" ty="-546.45"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Abstract/Cave Spore (Small)">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="2283.35" ty="-79.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Moving Green Platform">
+                  <matrix>
+                    <Matrix tx="286.65" ty="1817.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	DirectionX = "Right";
+	DirectionY = "Up";
+	distanceX = 0;
+	distanceY = 125;
+	accelX = 0;
+	accelY = 0.5;
+	speedX = 0;
+	speedY = 3;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling x1" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="0" b="10" c="-10" d="0" tx="393.8" ty="1010.6"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="
+!7876 28874|7876 33638!7876 33638|7506 33638!7506 33638|7506 28874!7506 28874|7876 28874"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix ty="598"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix ty="598"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Crag/Stone PL x2" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="292.55" ty="705.2"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!6363 14284|7435 14284!7435 14284|7435 14104!7435 14104[#1A18.DE 14104 6363 14104!6363 14104|6363 14284"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Abstract/Cave Mushroom">
+                  <matrix>
+                    <Matrix a="-0.5" d="0.5" tx="262.7" ty="1855.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix ty="628"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix ty="628"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling x1" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="10" d="-10" tx="145.5" ty="1290.15"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!-2110 25803|7319 25803!7319 25803|7439 25433!7439 25433|-2110 25433!-2110 25433|-2110 25803"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="287.5" ty="1553.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="287.5" ty="1653.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="287.5" ty="1753.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="381.8" ty="1900.95"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="-60" ty="648"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix tx="-60" ty="648"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Crag/Stone PL x2" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="292.55" ty="705.2"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!6363 14284|7435 14284!7435 14284|7435 14104!7435 14104[#1A18.DE 14104 6363 14104!6363 14104|6363 14284"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="10" ty="728"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix tx="10" ty="728"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Crag/Stone PL x2" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="292.55" ty="705.2"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!6363 14284|7435 14284!7435 14284|7435 14104!7435 14104[#1A18.DE 14104 6363 14104!6363 14104|6363 14284"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix ty="628"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix ty="628"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling x1" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="10" d="-10" tx="162.15" ty="809.15"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!17007 15813|8008 15813!8008 15813|8008 16183!8008 16183|17007 16183!17007 16183|17007 15813"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="0" b="-0.5" c="-0.5" d="0" tx="384.65" ty="1460.9"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="403.15" ty="1434.9"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix ty="826"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix ty="826"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling x1" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="0" b="10" c="-10" d="0" tx="393.8" ty="382.6"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="
+!7876 19658S2|7876 21078!7876 21078|7506 21078!7506 21078|7506 19658!7506 19658|7876 19658"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="0" b="-0.5" c="-0.5" d="0" tx="380.65" ty="1890.9"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="10" ty="1098"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix tx="10" ty="1098"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Crag/Stone PL x2" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="292.55" ty="705.2"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!6363 14284|7435 14284!7435 14284|7435 14104!7435 14104[#1A18.DE 14104 6363 14104!6363 14104|6363 14284"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="395.65" ty="1810.4"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="-0.5" tx="424.2" ty="1796.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="630.2" ty="1193.95"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix tx="630.2" ty="1193.95"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling x1" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="10" d="-10" tx="-446.35" ty="610.2"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!4837 11834|-4162 11834!-4162 11834|-4162 12204!-4162 12204|4837 12204!4837 12204|4837 11834"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="0.5" tx="393.8" ty="1326.2"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="0.5" tx="420.3" ty="1336.2"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix a="-1" d="-1" tx="1268.7" ty="2136.8"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix a="-1" d="-1" tx="1268.7" ty="2136.8"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling x1" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="10" d="-10" tx="162.15" ty="809.15"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!17007 15813|8008 15813!8008 15813|8008 16183!8008 16183|17007 16183!17007 16183|17007 15813"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="287.5" ty="1453.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="0" b="0.5" c="-0.5" d="0" tx="383.65" ty="1677.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="-0.5" d="0.5" tx="402.2" ty="1702.55"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling x1" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="-10" d="10" tx="1086.55" ty="1699.65"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!16966 33993|7967 33993!7967 33993|7967 34363!7967 34363|16966 34363!16966 34363|16966 33993"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="152.7" ty="1732.4"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="181.7" ty="1719.4"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="196.7" ty="1712.4"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant Sharp x1">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="219.7" ty="1696.9"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="-44" ty="622"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix tx="-44" ty="622"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling x1" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="0" b="10" c="10" d="0" tx="274.2" ty="676.7"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!5854 21088S1|5854 20188!5854 20188|5484 20188!5484 20188|5484 21088!5484 21088|5854 21088"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="0" b="0.5" c="0.5" d="0" tx="237.7" ty="1668.9"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling Slant x1">
+                  <matrix>
+                    <Matrix a="0" b="0.5" c="0.5" d="0" tx="247.7" ty="1608.9"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix a="-1" d="-1" tx="565.1" ty="2532.55"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix a="-1" d="-1" tx="565.1" ty="2532.55"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling x1" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="10" d="-10" tx="162.15" ty="809.15"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!17007 15813|8008 15813!8008 15813|8008 16183!8008 16183|17007 16183!17007 16183|17007 15813"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Decoration/ Signs &amp; Fences/YI Arrow">
+                  <matrix>
+                    <Matrix a="0.0590972900390625" b="0.997573852539063" c="-0.997573852539063" d="0.0590972900390625" tx="2338.85" ty="-126.85"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Decoration/ Signs &amp; Fences/YI Arrow">
+                  <matrix>
+                    <Matrix a="0.0590972900390625" b="0.997573852539063" c="-0.997573852539063" d="0.0590972900390625" tx="105.15" ty="544.7"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Decoration/ Signs &amp; Fences/YI Arrow">
+                  <matrix>
+                    <Matrix a="-0.0590972900390625" b="0.997573852539063" c="0.997573852539063" d="0.0590972900390625" tx="103" ty="1825.45"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Decoration/ Signs &amp; Fences/YI Arrow">
+                  <matrix>
+                    <Matrix a="0.20111083984375" b="0.978866577148438" c="0.978866577148438" d="-0.20111083984375" tx="401.1" ty="1737.9"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Decoration/ Signs &amp; Fences/YI Arrow">
+                  <matrix>
+                    <Matrix a="-0.20111083984375" b="0.978866577148438" c="-0.978866577148438" d="-0.20111083984375" tx="415.55" ty="1367.6"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix ty="-1"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix ty="-1"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Crag/Stone PL x2" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="1490.9" ty="-191"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!31479 -3820[#77FB.3C -3820 30330 -3820!30330 -3820|30330 -3640!30330 -3640|31479 -3640!31479 -3640|31479 -3820"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="149.95" ty="-48.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="234.85" ty="1830.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Moving Green Platform">
+                  <matrix>
+                    <Matrix tx="346.65" ty="1252.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	DirectionX = "Right";
+	DirectionY = "Up";
+	distanceX = 0;
+	distanceY = 80;
+	accelX = 0;
+	accelY = 0.5;
+	speedX = 0;
+	speedY = 3;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="345.9" ty="995.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="345.9" ty="1095.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="345.9" ty="1195.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="-1.05" ty="235.95"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix tx="-1.05" ty="235.95"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Crag/Stone PL x2" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="292.55" ty="705.2"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!6363 14284|7435 14284!7435 14284|7435 14104!7435 14104[#1A18.DE 14104 6363 14104!6363 14104|6363 14284"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Moving Green Platform">
+                  <matrix>
+                    <Matrix tx="288.65" ty="954.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	DirectionX = "Right";
+	DirectionY = "Up";
+	distanceX = 0;
+	distanceY = 80;
+	accelX = 0;
+	accelY = 0.5;
+	speedX = 0;
+	speedY = 3;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="-60" ty="534"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix tx="-60" ty="534"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Crag/Stone PL x2" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="292.55" ty="705.2"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!6363 14284|7435 14284!7435 14284|7435 14104!7435 14104[#1A18.DE 14104 6363 14104!6363 14104|6363 14284"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="-59.05" ty="313.95"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix tx="-59.05" ty="313.95"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Crag/Stone PL x2" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="292.55" ty="705.2"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!6363 14284|7435 14284!7435 14284|7435 14104!7435 14104[#1A18.DE 14104 6363 14104!6363 14104|6363 14284"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="288.65" ty="691.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="288.65" ty="791.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="288.65" ty="891.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="-1.05" ty="-37.5"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix tx="-1.05" ty="-37.5"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Crag/Stone PL x2" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="292.55" ty="705.2"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!6363 14284|7435 14284!7435 14284|7435 14104!7435 14104[#1A18.DE 14104 6363 14104!6363 14104|6363 14284"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Decoration/ Signs &amp; Fences/ Coded Sign/Coded Sign">
+                  <matrix>
+                    <Matrix tx="495.45" ty="22.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	//example   = "You can jump in the cannon\nand blast off!";
+	signmessage = "DANGER!\nBottomless Pit Ahead";
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Decoration/ Signs &amp; Fences/ Coded Sign/Coded Sign">
+                  <matrix>
+                    <Matrix tx="1608.6" ty="109.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	//example   = "You can jump in the cannon\nand blast off!";
+	signmessage = "DANGER!\nFalling Rocks";
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Decoration/ Signs &amp; Fences/ Coded Sign/Coded Sign">
+                  <matrix>
+                    <Matrix tx="579.3" ty="2167.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	//example   = "You can jump in the cannon\nand blast off!";
+	if (_root.Starnum<=2) {
+		signmessage = "Cave-in Ahead";
+	} else {
+		signmessage = "Notice:\nCave-in\nhas been cleared";
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Decoration/ Signs &amp; Fences/ Coded Sign/Coded Sign">
+                  <matrix>
+                    <Matrix tx="540.25" ty="2533.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	//example   = "You can jump in the cannon\nand blast off!";
+	if (_root.Starnum<=2) {
+		signmessage = "Cave-in Ahead";
+	} else {
+		signmessage = "Notice:\nCave-in\nhas been cleared";
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Decoration/ Signs &amp; Fences/ Coded Sign/Coded Sign">
+                  <matrix>
+                    <Matrix tx="210.2" ty="22.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	//example   = "You can jump in the cannon\nand blast off!";
+	signmessage = "Currently In: Pit Room\n<- Entrance Room\n-> Bottomless Pit\nV Side Room\n^ Upper Hazy Maze Cave";
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ 3 - Hazy Maze Cave/ Areas 3-1 &amp; 3-2/3-2 Cave-in">
+                  <matrix>
+                    <Matrix tx="716.4" ty="2123.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Decoration/ Signs &amp; Fences/ Coded Sign/Coded Sign">
+                  <matrix>
+                    <Matrix tx="131.45" ty="591.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	//example   = "You can jump in the cannon\nand blast off!";
+	signmessage = "In: Vertical Hallway\n<- Goomba Pit\nV Side Room\n^ Pit Room";
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/ Cave Ground/Cave Ceiling x1" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="10" d="-10" tx="2160.1" ty="-30.65"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!43202 -613S1|43840 -613!43840 -613|44020 -983!44020 -983|43202 -983!43202 -983|43202 -613"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/ Shy-Guy/Shy Guy Code">
+                  <matrix>
+                    <Matrix tx="572.45" ty="13.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/ Shy-Guy/Shy Guy Code">
+                  <matrix>
+                    <Matrix tx="1058.65" ty="200.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	State = "Flying";
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/ Shy-Guy/Shy Guy Code">
+                  <matrix>
+                    <Matrix tx="1325.4" ty="170.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	State = "Flying";
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Crag/Stone PL x2" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="939.4" ty="150.2"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!19602 3010.5[#4B04.A5 #BC7.42 18800 3024!18800 3024|18800 3184!18800 3184|19602 3184!19602 3184|19602 3010.5"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="567.05" ty="29.15"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix tx="567.05" ty="29.15"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Various Platforms/ Non-Coded PL/ Crag/Stone PL x2" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="939.4" ty="150.2"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!19602 3010.5[#4B04.A5 #BC7.42 18800 3024!18800 3024|18800 3184!18800 3184|19602 3184!19602 3184|19602 3010.5"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Water Bottle/Small Water Bottle Clip">
+                  <matrix>
+                    <Matrix tx="346.6" ty="926.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-0.05" y="7.4"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/ Koopa/Koopa Code">
+                  <matrix>
+                    <Matrix tx="1103.95" ty="-219.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	State = "Flying";
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/ Shy-Guy/Shy Guy Code">
+                  <matrix>
+                    <Matrix tx="1357.5" ty="-289.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	State = "Flying";
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="792.15" ty="47.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="832.15" ty="47.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="872.15" ty="47.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="912.15" ty="47.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="1812.35" ty="33.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="1852.35" ty="19.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="1892.35" ty="1.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="1932.35" ty="-12.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="2195.1" ty="-150.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="2195.1" ty="-210.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="2195.1" ty="-270.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="2195.1" ty="-330.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="2195.1" ty="-390.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="1614.35" ty="-299.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="1614.35" ty="-382.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="1614.35" ty="-462.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ A-F/ Bully/Clips/ Bully Code">
+                  <matrix>
+                    <Matrix tx="1031.65" ty="-8.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/ Shy-Guy/Shy Guy Code">
+                  <matrix>
+                    <Matrix tx="1584.6" ty="-228.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ A-F/ Bob-Omb/Bomb omb Code">
+                  <matrix>
+                    <Matrix tx="1157" ty="-72.4"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Abstract/YI Tree 2">
+                  <matrix>
+                    <Matrix tx="626.1" ty="-40.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" duration="4" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Moving Green Platform">
+                  <matrix>
+                    <Matrix tx="1134.35" ty="-122.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	DirectionX = "Right";
+	DirectionY = "Down";
+	distanceX = 60;
+	distanceY = 0;
+	accelX = 0.3;
+	accelY = 0;
+	speedX = 2;
+	speedY = 0;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Moving Green Platform">
+                  <matrix>
+                    <Matrix tx="1323.45" ty="-161.8"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	DirectionX = "Right";
+	DirectionY = "Down";
+	distanceX = 70;
+	distanceY = 0;
+	accelX = 0.3;
+	accelY = 0;
+	speedX = 2;
+	speedY = 0;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ 3 - Hazy Maze Cave/ Areas 3-1 &amp; 3-2/3- Bolwing Ball Animation">
+                  <matrix>
+                    <Matrix tx="2197.35" ty="-544.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ 3 - Hazy Maze Cave/ Areas 3-1 &amp; 3-2/3- Bolwing Ball Animation">
+                  <matrix>
+                    <Matrix tx="2197.35" ty="-544.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	gotoAndPlay(135);
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Star Folder/Star Coin Code">
+                  <matrix>
+                    <Matrix tx="2354.15" ty="-441.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="0.5" y="-0.05"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	StarCoinNum = 17;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

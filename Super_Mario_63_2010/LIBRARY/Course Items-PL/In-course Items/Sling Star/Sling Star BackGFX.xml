@@ -1,0 +1,507 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Items-PL/ In-course Items/Sling Star/Sling Star BackGFX" itemID="48edaaf7-000011b1" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="SlingStarBackGFX" lastModified="1241993754" lastUniqueIdentifier="4">
+  <timeline>
+    <DOMTimeline name="Sling Star BackGFX" currentFrame="6">
+      <layers>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (rotation == undefined) {
+	rotation = _rotation;
+}
+if (otherstar == undefined) {
+	depth = _root.Course.FrontGFX.getNextHighestDepth();
+	otherstar = "Slingstar"+depth;
+	_root.Course.FrontGFX.attachMovie("SlingStarFrontGFX", "Slingstar"+depth, depth, {_x:_x, _y:_y, _rotation:_rotation, _xscale:_xscale, _yscale:_yscale});
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.Course.FrontGFX[otherstar]._rotation = this._rotation;
+_root.Course.FrontGFX[otherstar]._xscale = this._xscale;
+_root.Course.FrontGFX[otherstar]._yscale = this._yscale;
+_root.Course.FrontGFX[otherstar]._x = this._x;
+_root.Course.FrontGFX[otherstar]._y = this._y;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+count = 0;
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		star.base._rotation += 0.5;
+		star2.base._rotation = star.base._rotation;
+		//
+		_root.Course.FrontGFX[otherstar].star.base._rotation = star.base._rotation;
+		_root.Course.FrontGFX[otherstar].star2.base._rotation = star.base._rotation;
+		//
+		count++;
+		if (count>32) {
+			actualfunction();
+		}
+	}
+};
+actualfunction = function () {
+	onEnterFrame = function () {
+		if (_root.PauseGame == false) {
+			star.base._rotation++;
+			star2.base._rotation = star.base._rotation;
+			//
+			_root.Course.FrontGFX[otherstar].star.base._rotation = star.base._rotation;
+			_root.Course.FrontGFX[otherstar].star2.base._rotation = star.base._rotation;
+			if (this.box.hitTest(_root.Course.Char.charClip.body) && (_root.Course.Char.attack == false || (_root.Course.Char.attack == true && (_root.Course.Char.attackFrame == "SlingStar" || _root.Course.Char.attackFrame == "Spin" || _root.Course.Char.attackFrame == "Dive" || _root.Course.Char.attackFrame == "frontflip"))) && _root.Course.Char.air == true && _root.Course.Char.yspeed>-7) {
+				savecamzoom = _root.CameraZoom;
+				_root.CameraZoom = 50;
+				//
+				_root.Course.Char.charClip.speed = 0;
+				if (_root.Course.Char.attack == true && _root.Course.Char.attackFrame == "SlingStar") {
+					_root.Course.Char.charClip.frame.gotoAndPlay(1);
+				}
+				_root.Course.Char.attack = true;
+				_root.Course.Char.attackFrame = "SlingStar";
+				//  
+				//
+				onEnterFrame = function () {
+					if (_root.PauseGame == false) {
+						_root.Course.Char._rotation = rotation;
+						//
+						star.base._rotation += 7;
+						star2.base._rotation = star.base._rotation;
+						//
+						_root.Course.FrontGFX[otherstar].star.base._rotation = star.base._rotation;
+						_root.Course.FrontGFX[otherstar].star2.base._rotation = star.base._rotation;
+						//
+						X = _x+_parent._x;
+						_root.Course.Char._x += (X-_root.Course.Char._x)/5;
+						//
+						Y = _y+_parent._y;
+						_root.Course.Char._y += (Y-_root.Course.Char._y)/5;
+						//
+						_root.Course.Char.yspeed *= 0.6;
+						_root.Course.Char.xspeed *= 0.6;
+						if (_root.Course.Char.attack == false || _root.Course.Char.attackFrame !== "SlingStar") {
+							_root.CameraZoom = savecamzoom;
+							onEnterFrame = function () {
+								star.base._rotation += 1;
+								star2.base._rotation = star.base._rotation;
+								//
+								_root.Course.FrontGFX[otherstar].star.base._rotation = star.base._rotation;
+								_root.Course.FrontGFX[otherstar].star2.base._rotation = star.base._rotation;
+								//
+							};
+							gotoAndPlay(1);
+						} else if (Math.abs(_root.Course.Char.charClip.speed)>10 && _root.Course.Char.attack == true && _root.Course.Char.attackFrame == "SlingStar" && _root.Course.Char.charClip.frame.count<=25) {
+							_root.Course.FrontGFX[otherstar].star.base._rotation = star.base._rotation;
+							_root.Course.FrontGFX[otherstar].star2.base._rotation = star.base._rotation;
+							play();
+							onEnterFrame = function () {
+								if (_root.PauseGame == false) {
+									_root.Course.Char._rotation = rotation;
+									//
+									star.base._rotation += 15;
+									star2.base._rotation = star.base._rotation;
+									//
+									_root.Course.FrontGFX[otherstar].star.base._rotation = star.base._rotation;
+									_root.Course.FrontGFX[otherstar].star2.base._rotation = star.base._rotation;
+									//
+									X = _x+_parent._x;
+									_root.Course.Char._x += (X-_root.Course.Char._x)/5;
+									//
+									Y = _y+_parent._y;
+									_root.Course.Char._y += (Y-_root.Course.Char._y)/5;
+									//
+									play();
+								} else {
+									stop();
+								}
+							};
+						}
+					}
+				};
+			}
+		}
+	};
+};
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="box">
+                  <matrix>
+                    <Matrix a="0.564773559570313" d="1.25" tx="0.4" ty="0.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" duration="4" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.Course.Char.charClip.frame.gotoAndPlay("start");
+//
+if (_root.Course.Char.attack == false || _root.Course.Char.attackFrame !== "SlingStar") {
+	_root.CameraZoom = savecamzoom;
+	onEnterFrame = function () {
+		star.base._rotation += 1;
+		star2.base._rotation = star.base._rotation;
+		//
+		_root.Course.FrontGFX[otherstar].star.base._rotation = star.base._rotation;
+		_root.Course.FrontGFX[otherstar].star2.base._rotation = star.base._rotation;
+		//
+	};
+}
+_root.CameraZoom = 75;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="7" duration="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.Course.Char.charClip.frame.gotoAndPlay("spin");
+//
+_root.Course.FrontGFX[otherstar].play();
+//
+if (Math.abs(rotation)>3) {
+	if (rotation>0) {
+		_root.Course.Char._xscale = -100;
+	} else {
+		_root.Course.Char._xscale = 100;
+	}
+}
+if (_root.Course.Char.attack == false) {
+	gotoAndPlay(1);
+	onEnterFrame = null;
+}
+if (_root.Course.Char.attackFrame !== "SlingStar") {
+	gotoAndPlay(1);
+	onEnterFrame = null;
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="9" duration="6" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.CameraZoom = 50;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="15" duration="9" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.Course.Char.charClip.frame.gotoAndPlay("fling");
+if (trackclip !== undefined) {
+	_root.Course.BackGFX[trackclip].play();
+}
+_root.Course.Char.yspeed = yblast;
+_root.Course.Char.xspeed = xblast;
+//
+count = 20;
+//
+onEnterFrame = function () {
+	_root.CamYchange = (yblast*2)/Math.sqrt(Math.abs(21-count));
+	_root.CamXchange = (xblast*2)/Math.sqrt(Math.abs(21-count));
+	if (_root.PauseGame == false) {
+		count *= 0.8;
+		star.base._rotation += count;
+		star2.base._rotation = star.base._rotation;
+		//
+		_root.Course.FrontGFX[otherstar].star.base._rotation = star.base._rotation;
+		_root.Course.FrontGFX[otherstar].star2.base._rotation = star.base._rotation;
+		//
+		play();
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="24" duration="5" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.CameraZoom = savecamzoom;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="29" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		star.base._rotation += 1;
+		star2.base._rotation = star.base._rotation;
+		//
+		_root.Course.FrontGFX[otherstar].star.base._rotation = star.base._rotation;
+		_root.Course.FrontGFX[otherstar].star2.base._rotation = star.base._rotation;
+		//
+		play();
+	} else {
+		stop();
+	}
+	//
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 6" color="#808080" locked="true" layerType="mask">
+          <frames>
+            <DOMFrame index="0" duration="7" keyMode="9728" acceleration="100">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#666666"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!2001.5 0S2|-1998.5 0!-1998.5 0|-1998.5 -940!-1998.5 -940|2001.5 -940!2001.5 -940|2001.5 0"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="7" duration="7" tweenType="shape" keyMode="17922" acceleration="100">
+              <MorphShape>
+                <morphSegments>
+                  <MorphSegment startPointA="-7.8046875, -3.65625" startPointB="-7.8046875, -2.0859375" strokeIndex1="0" strokeIndex2="0" fillIndex1="0" fillIndex2="0">
+                    <MorphCurves controlPointA="#0.02, -3.65625" anchorPointA="#7.D2, -3.65625" controlPointB="#0.02, -2.0859375" anchorPointB="#7.D2, -2.0859375" isLine="true"/>
+                    <MorphCurves controlPointA="#7.D2, -1.8203125" anchorPointA="#7.D2, #0.04" controlPointB="#7.D2, -0.25" anchorPointB="#7.D2, #1.96" isLine="true"/>
+                    <MorphCurves controlPointA="#0.02, #0.04" anchorPointA="-7.8046875, #0.04" controlPointB="#0.02, #1.96" anchorPointB="-7.8046875, #1.96" isLine="true"/>
+                    <MorphCurves controlPointA="-7.8046875, -1.8203125" anchorPointA="-7.8046875, -3.65625" controlPointB="-7.8046875, -0.25" anchorPointB="-7.8046875, -2.0859375" isLine="true"/>
+                  </MorphSegment>
+                </morphSegments>
+                <morphHintsList/>
+              </MorphShape>
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#666666"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!-1998.5 -936|2001.5 -936!2001.5 -936|2001.5 4!2001.5 4|-1998.5 4!-1998.5 4|-1998.5 -936"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="14" duration="5" tweenType="shape" keyMode="17922" acceleration="-100">
+              <MorphShape>
+                <morphSegments>
+                  <MorphSegment startPointA="-7.8046875, -2.0859375" startPointB="-7.8046875, -5.2265625" strokeIndex1="0" strokeIndex2="0" fillIndex1="0" fillIndex2="0">
+                    <MorphCurves controlPointA="#0.02, -2.0859375" anchorPointA="#7.D2, -2.0859375" controlPointB="#0.02, -5.2265625" anchorPointB="#7.D2, -5.2265625" isLine="true"/>
+                    <MorphCurves controlPointA="#7.D2, -0.25" anchorPointA="#7.D2, #1.96" controlPointB="#7.D2, -3.390625" anchorPointB="#7.D2, -1.5546875" isLine="true"/>
+                    <MorphCurves controlPointA="#0.02, #1.96" anchorPointA="-7.8046875, #1.96" controlPointB="#0.02, -1.5546875" anchorPointB="-7.8046875, -1.5546875" isLine="true"/>
+                    <MorphCurves controlPointA="-7.8046875, -0.25" anchorPointA="-7.8046875, -2.0859375" controlPointB="-7.8046875, -3.390625" anchorPointB="-7.8046875, -5.2265625" isLine="true"/>
+                  </MorphSegment>
+                </morphSegments>
+                <morphHintsList/>
+              </MorphShape>
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#666666"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!-1998.5 -534|2001.5 -534!2001.5 -534|2001.5 406!2001.5 406|-1998.5 406!-1998.5 406|-1998.5 -534"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="19" duration="5" tweenType="shape" keyMode="17922" acceleration="100">
+              <MorphShape>
+                <morphSegments>
+                  <MorphSegment startPointA="-7.8046875, -5.2265625" startPointB="-7.8046875, -4.4453125" strokeIndex1="0" strokeIndex2="0" fillIndex1="0" fillIndex2="0">
+                    <MorphCurves controlPointA="#0.02, -5.2265625" anchorPointA="#7.D2, -5.2265625" controlPointB="#0.02, -4.4453125" anchorPointB="#7.D2, -4.4453125" isLine="true"/>
+                    <MorphCurves controlPointA="#7.D2, -3.390625" anchorPointA="#7.D2, -1.5546875" controlPointB="#7.D2, -2.609375" anchorPointB="#7.D2, -0.7734375" isLine="true"/>
+                    <MorphCurves controlPointA="#0.02, -1.5546875" anchorPointA="-7.8046875, -1.5546875" controlPointB="#0.02, -0.7734375" anchorPointB="-7.8046875, -0.7734375" isLine="true"/>
+                    <MorphCurves controlPointA="-7.8046875, -3.390625" anchorPointA="-7.8046875, -5.2265625" controlPointB="-7.8046875, -2.609375" anchorPointB="-7.8046875, -4.4453125" isLine="true"/>
+                  </MorphSegment>
+                </morphSegments>
+                <morphHintsList/>
+              </MorphShape>
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#666666"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!2001.5 -398|-1998.5 -398!-1998.5 -398|-1998.5 -1338!-1998.5 -1338|2001.5 -1338!2001.5 -1338|2001.5 -398"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="24" duration="5" tweenType="shape" keyMode="17922" acceleration="-100">
+              <MorphShape>
+                <morphSegments>
+                  <MorphSegment startPointA="-7.8046875, -4.4453125" startPointB="-7.8046875, -3.65625" strokeIndex1="0" strokeIndex2="0" fillIndex1="0" fillIndex2="0">
+                    <MorphCurves controlPointA="#0.02, -4.4453125" anchorPointA="#7.D2, -4.4453125" controlPointB="#0.02, -3.65625" anchorPointB="#7.D2, -3.65625" isLine="true"/>
+                    <MorphCurves controlPointA="#7.D2, -2.609375" anchorPointA="#7.D2, -0.7734375" controlPointB="#7.D2, -1.8203125" anchorPointB="#7.D2, #0.04" isLine="true"/>
+                    <MorphCurves controlPointA="#0.02, -0.7734375" anchorPointA="-7.8046875, -0.7734375" controlPointB="#0.02, #0.04" anchorPointB="-7.8046875, #0.04" isLine="true"/>
+                    <MorphCurves controlPointA="-7.8046875, -2.609375" anchorPointA="-7.8046875, -4.4453125" controlPointB="-7.8046875, -1.8203125" anchorPointB="-7.8046875, -3.65625" isLine="true"/>
+                  </MorphSegment>
+                </morphSegments>
+                <morphHintsList/>
+              </MorphShape>
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#666666"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!2001.5 -198|-1998.5 -198!-1998.5 -198|-1998.5 -1138!-1998.5 -1138|2001.5 -1138!2001.5 -1138|2001.5 -198"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="29" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#666666"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!2001.5 4|-1998.5 4!-1998.5 4|-1998.5 -936!-1998.5 -936|2001.5 -936!2001.5 -936|2001.5 4"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 5" color="#4FFFFF" parentLayerIndex="1" locked="true">
+          <frames>
+            <DOMFrame index="0" duration="7" keyMode="9728" acceleration="100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/Sling Star/Sling Star 2 Animation" name="star2" selected="true">
+                  <matrix>
+                    <Matrix a="0.660552978515625" d="0.30841064453125"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="7" duration="7" tweenType="motion" keyMode="17921" acceleration="100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/Sling Star/Sling Star 2 Animation" name="star2">
+                  <matrix>
+                    <Matrix a="0.660552978515625" d="0.30841064453125"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="14" duration="5" tweenType="motion" keyMode="17921" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/Sling Star/Sling Star 2 Animation" name="star2">
+                  <matrix>
+                    <Matrix a="0.660552978515625" d="0.30841064453125" ty="20.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="19" duration="5" tweenType="motion" keyMode="17921" acceleration="100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/Sling Star/Sling Star 2 Animation" name="star2">
+                  <matrix>
+                    <Matrix a="0.660552978515625" d="0.30841064453125" ty="-20.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="24" duration="5" tweenType="motion" keyMode="17921" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/Sling Star/Sling Star 2 Animation" name="star2">
+                  <matrix>
+                    <Matrix a="0.660552978515625" d="0.30841064453125" ty="-10.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="29" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/Sling Star/Sling Star 2 Animation" name="star2">
+                  <matrix>
+                    <Matrix a="0.660552978515625" d="0.30841064453125"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" locked="true" current="true" isSelected="true" layerType="mask">
+          <frames>
+            <DOMFrame index="0" duration="30" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#666666"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!-1998.5 -936S2|2001.5 -936!2001.5 -936|2001.5 4!2001.5 4|-1998.5 4!-1998.5 4|-1998.5 -936"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC" parentLayerIndex="3" locked="true">
+          <frames>
+            <DOMFrame index="0" duration="30" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/Sling Star/Sling Star Animation" name="star" selected="true">
+                  <matrix>
+                    <Matrix a="1.0003662109375" d="0.462600708007813" tx="-0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

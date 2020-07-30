@@ -1,0 +1,151 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Clips/ 9 - Secret Stars/ 9-07 Kamek (Garden Battle)/9-07 Warp Pipe Animation+Code" itemID="477e7355-00000c40" lastModified="1237752783" lastUniqueIdentifier="4">
+  <timeline>
+    <DOMTimeline name="9-07 Warp Pipe Animation+Code">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="19" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	if (_root.PauseGame == false && _root.playpause == false) {
+		play();
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="19" duration="13" name="restart" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="32" duration="4" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[// Attach Enemy
+_root.Course.BackGFX.attachMovie("GoombaCode", "Goomba"+_root.Course.BackGFX.getNextHighestDepth(), _root.Course.BackGFX.getNextHighestDepth(), {_x:_x, _y:_y, battleArena:true, attached:true});
+_root.Course.BackGFX.onscreencount++;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="36" duration="3" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[count = 0;
+waittime = random(30)+45;
+if (_root.Course.BackGFX._currentframe == 5) {
+	waittime += 90+random(20);
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="39" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[prevFrame();
+if (_root.Course.BackGFX._currentframe>=6) {
+	stop();
+	onEnterFrame = null;
+} else {
+	if (_root.playpause == false) {
+		count++;
+	}
+	if (count>waittime) {
+		gotoAndPlay("restart");
+		//
+	}
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" duration="19" tweenType="motion" keyMode="17921" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Warp Pipe/Green WarpPipe">
+                  <matrix>
+                    <Matrix a="0" b="-1" c="1" d="0" tx="60.05" ty="3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="20.95"/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter/>
+                    <AdjustColorFilter contrast="25" saturation="-100"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="19" duration="10" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Warp Pipe/Green WarpPipe">
+                  <matrix>
+                    <Matrix a="0" b="-1" c="1" d="0" tx="20.05" ty="3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="19.9"/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter blurX="0" blurY="0"/>
+                    <AdjustColorFilter/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="29" duration="3" tweenType="motion" keyMode="17921" acceleration="-70">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Warp Pipe/Green WarpPipe">
+                  <matrix>
+                    <Matrix a="0" b="-1" c="0.798995971679688" d="0" tx="23.05" ty="3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="19.9"/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter blurX="0" blurY="0"/>
+                    <AdjustColorFilter/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="32" duration="4" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Warp Pipe/Green WarpPipe">
+                  <matrix>
+                    <Matrix a="0" b="-1" c="1.10037231445313" d="0" tx="18.05" ty="3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="19.9"/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter blurX="0" blurY="0"/>
+                    <AdjustColorFilter/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="36" duration="4" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Warp Pipe/Green WarpPipe">
+                  <matrix>
+                    <Matrix a="0" b="-1" c="1" d="0" tx="20.05" ty="3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="19.9"/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter blurX="0" blurY="0"/>
+                    <AdjustColorFilter/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,59 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Pause New SMSC Clip" itemID="49cda775-0000126f" sourceFlashFilepath="F:\Super Mario 63\New computer\LD Temporary Windows.fla" sourceLibraryItemHRef="Pause New SMSC Clip" sourceLastModified="1238217393" lastModified="1246059463" sourceItemID="49cda775-0000126f">
+  <timeline>
+    <DOMTimeline name="Pause New SMSC Clip">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (_root.StarCoin[_name] == true) {
+	gotoAndStop(2);
+} else {
+	gotoAndStop(1);
+}
+if (_root.CheatStarToggle == true) {
+	onMouseDown = function () {
+		if (Math.abs(_xmouse)<10 && Math.abs(_ymouse)<10) {
+			_root.StarCoin[_name] = !_root.StarCoin[_name];
+			//
+			_root.CalculateStarCoins();
+			if (_root.StarCoin[_name] == true) {
+				gotoAndStop(2);
+			} else {
+				gotoAndStop(1);
+			}
+		}
+	};
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="Star Smap Star Scoin Small Sblue">
+                  <matrix>
+                    <Matrix tx="-9" ty="-9"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="Star Smap Star Scoin Small">
+                  <matrix>
+                    <Matrix tx="-9" ty="-9"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

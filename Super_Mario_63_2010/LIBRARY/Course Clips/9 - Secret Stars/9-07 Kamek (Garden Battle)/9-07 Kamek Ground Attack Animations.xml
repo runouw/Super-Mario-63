@@ -1,0 +1,690 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Clips/ 9 - Secret Stars/ 9-07 Kamek (Garden Battle)/9-07 Kamek Ground Attack Animations" itemID="477d5252-00000ca6" lastModified="1222723893" lastUniqueIdentifier="13">
+  <timeline>
+    <DOMTimeline name="9-07 Kamek Ground Attack Animations">
+      <layers>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" duration="237" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[RF = function () {
+	count = 0;
+	waitcount = random(5)+4+((_parent._parent.onscreencount-_parent._parent.defeatedcount)*4);
+	gotoAndPlay("Rwait");
+};
+LF = function () {
+	count = 0;
+	waitcount = random(5)+4+((_parent._parent.onscreencount-_parent._parent.defeatedcount)*4);
+	gotoAndPlay("Lwait");
+};
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		play();
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="237" duration="3" name="Rwait" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="240" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[prevFrame();
+count++;
+if (count>waitcount || this.Rbox.hitTest(_root.Course.Char.charClip.body)) {
+	// Right function
+	if (_parent.CheckNextMode() == false) {
+		num = random(6);
+		if (this.Rbox.hitTest(_root.Course.Char.charClip.body)) {
+			num = 5;
+		}
+		if (num == 0 || num == 1) {
+			gotoAndPlay("Rgoomba");
+		} else if (num == 2 || num == 3) {
+			gotoAndPlay("Rbobomb");
+		} else if (num == 4) {
+			gotoAndPlay("Rbomb");
+		} else {
+			gotoAndPlay("Rwarp");
+		}
+	} else {
+		gotoAndPlay("Rend");
+	}
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="241" duration="3" name="Lwait" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="244" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[prevFrame();
+count++;
+if (count>waitcount || this.Lbox.hitTest(_root.Course.Char.charClip.body)) {
+	// Left Function
+	if (_parent.CheckNextMode() == false) {
+		num = random(6);
+		if (this.Lbox.hitTest(_root.Course.Char.charClip.body)) {
+			num = 5;
+		}
+		if (num == 0 || num == 1) {
+			gotoAndPlay("Lgoomba");
+		} else if (num == 2 || num == 3) {
+			gotoAndPlay("Lbobomb");
+		} else if (num == 4) {
+			gotoAndPlay("Lbomb");
+		} else {
+			gotoAndPlay("Lwarp");
+		}
+	} else {
+		gotoAndPlay("Lend");
+	}
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="12" name="Rgoomba" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="13" duration="4" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_parent.GoombaSummon(_parent._x-22, _parent._y-15, -4-Math.random()*5, 3+Math.random()*7);
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="17" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[RF()
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="18" duration="12" name="Rbobomb" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="30" duration="5" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_parent.BobombSummon(_parent._x-22, _parent._y-15, -4-Math.random()*5, 3+Math.random()*7);
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="35" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[RF();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="36" duration="20" name="Rbomb" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="56" duration="5" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_parent.BombSummon(_parent._x-22, _parent._y-15, 0, 0);
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="61" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[RF()
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="62" duration="5" name="Rwarp" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="67" duration="10" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Teleporting">
+                  <matrix>
+                    <Matrix a="-1" tx="-408.45" ty="47.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter/>
+                    <AdjustColorFilter saturation="-100"/>
+                  </filters>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="77" duration="6" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Teleporting">
+                  <matrix>
+                    <Matrix a="-1" tx="-408.45" ty="47.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter blurX="0" blurY="0"/>
+                    <AdjustColorFilter/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="83" duration="10" tweenType="motion" motionTweenRotate="none" motionTweenScale="false" keyMode="16385">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Teleporting">
+                  <matrix>
+                    <Matrix a="-1" tx="-408.45" ty="47.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter blurX="0" blurY="0"/>
+                    <AdjustColorFilter/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="93" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Teleporting">
+                  <matrix>
+                    <Matrix a="-1" tx="-408.45" ty="47.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter/>
+                    <AdjustColorFilter saturation="-100"/>
+                  </filters>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="94" duration="9" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="103" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[RF();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="104" duration="13" name="Lgoomba" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="117" duration="4" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_parent.GoombaSummon(_parent._x-395, _parent._y+50, 2+Math.random()*5, 3+Math.random()*7);
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="121" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[LF()
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="122" duration="13" name="Lbobomb" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="135" duration="4" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_parent.BobombSummon(_parent._x-395, _parent._y+50, 2+Math.random()*5, 3+Math.random()*7);
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="139" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[LF()
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="140" duration="20" name="Lbomb" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="160" duration="4" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_parent.BombSummon(_parent._x-395, _parent._y+50, 0, 0);
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="164" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[LF();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="165" duration="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Stopping - 2">
+                  <matrix>
+                    <Matrix tx="-12.65" ty="-20"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="168" duration="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Stopping - 1">
+                  <matrix>
+                    <Matrix tx="-19" ty="-18.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="171" duration="26" tweenType="motion" keyMode="17921" acceleration="60">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ 9 - Secret Stars/ 9-07 Kamek (Garden Battle)/9-07 Kamek Flying Idle">
+                  <matrix>
+                    <Matrix tx="-2" ty="-2.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="197" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ 9 - Secret Stars/ 9-07 Kamek (Garden Battle)/9-07 Kamek Flying Idle">
+                  <matrix>
+                    <Matrix a="0.965927124023438" b="0.258819580078125" c="-0.258819580078125" d="0.965927124023438" tx="-630.9" ty="-189.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="198" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_parent.side = "R"
+_parent.NextMode();]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="199" duration="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Stopping - 2">
+                  <matrix>
+                    <Matrix a="-1" tx="-391.5" ty="23.45"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="202" duration="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Stopping - 1">
+                  <matrix>
+                    <Matrix a="-1" tx="-387.5" ty="25"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="205" duration="30" tweenType="motion" keyMode="17921" acceleration="50">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ 9 - Secret Stars/ 9-07 Kamek (Garden Battle)/9-07 Kamek Flying Idle">
+                  <matrix>
+                    <Matrix a="-1" tx="-402.5" ty="40.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="235" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ 9 - Secret Stars/ 9-07 Kamek (Garden Battle)/9-07 Kamek Flying Idle">
+                  <matrix>
+                    <Matrix a="-0.965927124023438" b="0.258819580078125" c="0.258819580078125" d="0.965927124023438" tx="172.5" ty="-189.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="236" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_parent.side = "L";
+_parent.NextMode();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="237" duration="8" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="Rbox">
+                  <matrix>
+                    <Matrix a="3.65153503417969" d="9.28111267089844" tx="47.5" ty="9.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="Lbox">
+                  <matrix>
+                    <Matrix a="3.34835815429688" d="9.28111267089844" tx="-442.5" ty="37"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="7" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Standing 3 - Talking - 1">
+                  <matrix>
+                    <Matrix tx="-18" ty="-14.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="7" duration="6" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Standing 3 - Talking - 2">
+                  <matrix>
+                    <Matrix tx="-18" ty="-14.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="13" duration="5" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Standing 3 - Talking - 4">
+                  <matrix>
+                    <Matrix tx="-19" ty="-12.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="18" duration="6" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Standing 3 - Talking - 1">
+                  <matrix>
+                    <Matrix tx="-18" ty="-14.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="24" duration="6" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Standing 3 - Talking - 2">
+                  <matrix>
+                    <Matrix tx="-18" ty="-14.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="30" duration="6" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Standing 3 - Talking - 4">
+                  <matrix>
+                    <Matrix tx="-19" ty="-12.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="36" duration="11" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Standing 3 - Talking - 1">
+                  <matrix>
+                    <Matrix tx="-18" ty="-14.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="47" duration="9" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Standing 3 - Talking - 2">
+                  <matrix>
+                    <Matrix tx="-18" ty="-14.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="56" duration="6" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Standing 3 - Talking - 4">
+                  <matrix>
+                    <Matrix tx="-19" ty="-12.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="62" duration="10" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Teleporting">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter blurX="0" blurY="0"/>
+                    <AdjustColorFilter/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="72" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Teleporting">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter/>
+                    <AdjustColorFilter saturation="-100"/>
+                  </filters>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="73" duration="9" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="82" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[LF()
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="83" duration="6" name="Lwarp" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="89" duration="10" tweenType="motion" motionTweenRotate="none" motionTweenScale="false" keyMode="16385">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Teleporting">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter/>
+                    <AdjustColorFilter saturation="-100"/>
+                  </filters>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="99" duration="5" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Teleporting">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter blurX="0" blurY="0"/>
+                    <AdjustColorFilter/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="104" duration="7" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Standing 3 - Talking - 1">
+                  <matrix>
+                    <Matrix a="-1" tx="-390.45" ty="33"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="111" duration="6" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Standing 3 - Talking - 2">
+                  <matrix>
+                    <Matrix a="-1" tx="-390.5" ty="33"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="117" duration="5" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Standing 3 - Talking - 4">
+                  <matrix>
+                    <Matrix a="-1" tx="-389.5" ty="35"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="122" duration="7" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Standing 3 - Talking - 1">
+                  <matrix>
+                    <Matrix a="-1" tx="-390.45" ty="33"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="129" duration="6" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Standing 3 - Talking - 2">
+                  <matrix>
+                    <Matrix a="-1" tx="-390.5" ty="33"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="135" duration="5" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Standing 3 - Talking - 4">
+                  <matrix>
+                    <Matrix a="-1" tx="-389.5" ty="35"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="140" duration="10" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Standing 3 - Talking - 1">
+                  <matrix>
+                    <Matrix a="-1" tx="-390.45" ty="33"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="150" duration="10" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Standing 3 - Talking - 2">
+                  <matrix>
+                    <Matrix a="-1" tx="-390.5" ty="33"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="160" duration="5" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Standing 3 - Talking - 4">
+                  <matrix>
+                    <Matrix a="-1" tx="-389.5" ty="35"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="165" duration="33" name="Rend" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="198" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="199" duration="38" name="Lend" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="237" duration="4" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Standing 2">
+                  <matrix>
+                    <Matrix tx="-16" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="241" duration="4" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Standing 2">
+                  <matrix>
+                    <Matrix a="-1" tx="-393.45" ty="34.45"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

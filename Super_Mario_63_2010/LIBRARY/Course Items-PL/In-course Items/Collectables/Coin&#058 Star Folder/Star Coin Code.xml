@@ -1,0 +1,269 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Items-PL/ In-course Items/ Collectables/ Coin: Star Folder/Star Coin Code" itemID="460b5bdf-0000082a" lastModified="1238218561" lastUniqueIdentifier="9">
+  <timeline>
+    <DOMTimeline name="Star Coin Code">
+      <layers>
+        <DOMLayer name="Layer 3" color="#FFFF4F" locked="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Light Effects Folder/Shine Light Effect" selected="true">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (enterFrame) {
+	_rotation += 2;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" duration="27" tweenType="motion" motionTweenRotate="clockwise" motionTweenRotateTimes="2" keyMode="17921" acceleration="100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Light Effects Folder/Shine Light Effect">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="29" duration="11" tweenType="motion" motionTweenRotate="clockwise" motionTweenRotateTimes="3" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Light Effects Folder/Shine Light Effect" selected="true">
+                  <matrix>
+                    <Matrix a="0.660507202148438" b="0.0382232666015625" c="-0.0382232666015625" d="0.660507202148438" ty="-10.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="40" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Light Effects Folder/Shine Light Effect">
+                  <matrix>
+                    <Matrix a="0.329986572265625" d="0.329986572265625" ty="-20"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="41" duration="5" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="46" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[gotoAndStop(2);
+onEnterFrame = null;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC" locked="true">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (_root.StarCoin[StarCoinNum] == false) {
+	stop();
+	count = 0;
+	onEnterFrame = function () {
+		count++;
+		if (count>3) {
+			if (this.box.hitTest((_root.Course.Char._x*_root.coursescale/100)+_root.Course._x, ((_root.Course.Char._y-20)*_root.coursescale/100)+_root.Course._y, true) && _root.CharHP>=0 && !(_root.Course.Char.attack == true && (_root.Course.Char.attackFrame == "Faint" || _root.Course.Char.attackFrame == "Respawn" || _root.Course.Char.attackFrame == "Drown"))) {
+				_root.StarCoin[StarCoinNum] = true;
+				_root.CalculateStarCoins();
+				_root.attachMovie("StarcoinMessage", "StarcoinMessage", _root.getNextHighestDepth(), {_x:225, _y:150});
+				_root.PauseGame = true;
+				gotoAndPlay(3);
+				onEnterFrame = function () {
+					if (_root.PauseGame == false) {
+						play();
+					} else {
+						stop();
+					}
+				};
+			}
+		}
+	};
+} else {
+	gotoAndStop(2);
+}
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="box" selected="true">
+                  <matrix>
+                    <Matrix a="0.603775024414063" d="2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (enterFrame) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" duration="32" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="34" duration="12" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Star Folder/Star Coin GFX" selected="true">
+                  <matrix>
+                    <Matrix tx="0.5" ty="-0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0" redMultiplier="0" greenMultiplier="0.3984375" redOffset="50" blueOffset="100" greenOffset="50"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="46" name="End" labelType="name" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Star Folder/Star Coin GFX">
+                  <matrix>
+                    <Matrix tx="0.5" ty="-0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5" redMultiplier="0" greenMultiplier="0.3984375" redOffset="50" blueOffset="100" greenOffset="50"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Star Folder/Star Coin GFX" selected="true">
+                  <matrix>
+                    <Matrix tx="0.5" ty="-0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Star Folder/Star Coin GFX">
+                  <matrix>
+                    <Matrix tx="0.5" ty="-0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5" redMultiplier="0" greenMultiplier="0.3984375" redOffset="50" blueOffset="100" greenOffset="50"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" duration="3" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Star Folder/Star Coin GFX">
+                  <matrix>
+                    <Matrix tx="0.5" ty="-0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="5" duration="5" tweenType="motion" keyMode="17921" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Star Folder/Star Coin GFX">
+                  <matrix>
+                    <Matrix a="1.5" d="1.5" tx="0.5" ty="-0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color brightness="0.8"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="10" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Star Folder/Star Coin GFX">
+                  <matrix>
+                    <Matrix tx="0.5" ty="-0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="11" duration="11" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Star Folder/Star Coin">
+                  <matrix>
+                    <Matrix tx="-15.5" ty="-16.05"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="22" duration="18" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Star Folder/Star Coin">
+                  <matrix>
+                    <Matrix a="0.75" d="0.75" tx="-11.5" ty="-12.05"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="40" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Star Folder/Star Coin">
+                  <matrix>
+                    <Matrix a="-0.0625" tx="1.5" ty="-36.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="16" y="16"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="41" duration="6" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

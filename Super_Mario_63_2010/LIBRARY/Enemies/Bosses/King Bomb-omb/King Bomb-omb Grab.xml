@@ -1,0 +1,2861 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="   Enemies/Bosses/King Bomb-omb/King Bomb-omb Grab" itemID="46869df6-00000b6c" lastModified="1238254606" lastUniqueIdentifier="29">
+  <timeline>
+    <DOMTimeline name="King Bomb-omb Grab">
+      <layers>
+        <DOMLayer name="Layer 5" color="#4FFFFF">
+          <frames>
+            <DOMFrame index="0" duration="4" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		play();
+		//
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="4" duration="5" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[// hitTest
+fail = true;
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		play();
+		//
+		if (fail == true && this.box.hitTest(_root.Course.Char.charClip.body)) {
+			_root.Course.Char.attack = true;
+			_root.Course.Char.attackFrame = "grabbed";
+			fail = false;
+		}
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Lineless Movieclip" name="box">
+                  <matrix>
+                    <Matrix a="0.311965942382813" d="0.423309326171875" tx="-16.95" ty="-4.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-28"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="9" duration="3" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		play();
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="12" duration="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (fail == true) {
+	gotoAndPlay("end");
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="14" duration="48" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.Course.Char.attack = true;
+_root.Course.Char.attackFrame = "none";
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		play();
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="62" duration="22" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[// throw
+_root.Course.Char.attack = true;
+_root.Course.Char.attackFrame = "Dive";
+_root.Course.Char.xspeed = -_parent._parent._xscale/8;
+_root.Course.Char.yspeed = -5;
+_root.Course.Char._xscale = _parent._parent._xscale
+//
+//_root.Course.Char._x = _root.BackGFX._x+_parent._parent._x;
+_root.Course.Char._y -= 25;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="84" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_parent._parent.attack = false;
+_parent.gotoAndStop(1);
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="85" duration="5" name="end" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="90" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_parent._parent.attack = false;
+_parent.gotoAndStop(1);
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 8" color="#FF4F4F">
+          <frames>
+            <DOMFrame index="0" duration="34" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="34" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Mario CLIPS/Mario Grabbed" selected="true">
+                  <matrix>
+                    <Matrix a="0.980682373046875" b="0.17974853515625" c="-0.17974853515625" d="0.980682373046875" tx="-6.6" ty="-44.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="35" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Mario CLIPS/Mario Grabbed" selected="true">
+                  <matrix>
+                    <Matrix a="0.953628540039063" b="0.289657592773438" c="-0.289657592773438" d="0.953628540039063" tx="-1.6" ty="-42.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="36" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Mario CLIPS/Mario Grabbed" selected="true">
+                  <matrix>
+                    <Matrix a="0.92095947265625" b="0.380172729492188" c="-0.380172729492188" d="0.92095947265625" tx="1.4" ty="-41.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="37" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Mario CLIPS/Mario Grabbed" selected="true">
+                  <matrix>
+                    <Matrix a="0.869033813476563" b="0.486541748046875" c="-0.486541748046875" d="0.869033813476563" tx="6.4" ty="-41.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="38" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Mario CLIPS/Mario Grabbed" selected="true">
+                  <matrix>
+                    <Matrix a="0.82977294921875" b="0.550369262695313" c="-0.550369262695313" d="0.82977294921875" tx="11.4" ty="-40.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="39" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Mario CLIPS/Mario Grabbed" selected="true">
+                  <matrix>
+                    <Matrix a="0.755523681640625" b="0.647933959960938" c="-0.647933959960938" d="0.755523681640625" tx="16.4" ty="-40.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="40" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Mario CLIPS/Mario Grabbed" selected="true">
+                  <matrix>
+                    <Matrix a="0.6766357421875" b="0.729415893554688" c="-0.729415893554688" d="0.6766357421875" tx="21.4" ty="-40.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="41" duration="19" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Mario CLIPS/Mario Grabbed" selected="true">
+                  <matrix>
+                    <Matrix a="0.6766357421875" b="0.729415893554688" c="-0.729415893554688" d="0.6766357421875" tx="24.4" ty="-38.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="60" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Mario CLIPS/Mario Grabbed">
+                  <matrix>
+                    <Matrix a="0.905303955078125" b="0.409835815429688" c="-0.409835815429688" d="0.905303955078125" tx="10.4" ty="-41.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="61" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Mario CLIPS/Mario Grabbed">
+                  <matrix>
+                    <Matrix a="0.992477416992188" b="-0.008087158203125" c="0.008087158203125" d="0.992477416992188" tx="1.4" ty="-41.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="62" duration="29" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Front Arm" color="#4FFF4F" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="4.3" ty="-13.25"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="1.8" ty="-6.75"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="-10.7" ty="-13.25"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="-15.2" ty="-6.75"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="-19.7" ty="-30.25"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-23.7" ty="-22.25"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb Body">
+                  <matrix>
+                    <Matrix tx="1.3" ty="-31.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Mustache">
+                  <matrix>
+                    <Matrix tx="-17.7" ty="-34.1"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-10.7" ty="-39.25"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-3.7" ty="-39.25"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="9.8" ty="-28.25"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="11.75" ty="-21.75"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="10.35" ty="-28.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="12.3" ty="-22.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="6.35" ty="-28.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="2.3" ty="-23.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="0.85" ty="-27.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-4.2" ty="-24.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="4" duration="10" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="-1.15" ty="-27.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-9.2" ty="-24.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="14" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="-2.15" ty="-28.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-11.2" ty="-26.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="16" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="-2.15" ty="-28.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-11.7" ty="-28.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="18" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="-2.65" ty="-29.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-12.2" ty="-31.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="20" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="-2.65" ty="-30.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-12.2" ty="-35.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="22" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="-2.65" ty="-31.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-12.2" ty="-37.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="24" duration="9" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="-2.65" ty="-31.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-11.7" ty="-38.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="33" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="-2.15" ty="-32.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-11.2" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="34" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="-1.15" ty="-34.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-8.7" ty="-43.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="35" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="-0.15" ty="-36.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-6.7" ty="-45.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="36" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="2.35" ty="-37.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-2.7" ty="-48.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="37" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="4.35" ty="-38.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="1.3" ty="-49.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="38" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="6.85" ty="-38.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="6.3" ty="-49.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="39" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="8.85" ty="-38.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="12.3" ty="-48.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="40" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="11.35" ty="-37.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="15.8" ty="-47.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="41" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="14.35" ty="-36.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="20.3" ty="-44.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="43" duration="16" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="15.35" ty="-37.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="20.3" ty="-44.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="59" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="13.85" ty="-37.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="16.8" ty="-46.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="60" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="7.35" ty="-37.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="4.8" ty="-46.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="61" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="5.85" ty="-37.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-2.2" ty="-44.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="62" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="4.35" ty="-36.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-5.2" ty="-40.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="63" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="3.85" ty="-35.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-6.7" ty="-38.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="64" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="3.35" ty="-35.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-7.2" ty="-35.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="65" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="2.35" ty="-34.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-7.2" ty="-32.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="66" duration="14" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="1.85" ty="-33.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-6.7" ty="-29.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="80" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="3.85" ty="-31.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-2.7" ty="-27.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="81" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="5.85" ty="-30.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="1.8" ty="-25.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="82" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="8.35" ty="-29.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="8.3" ty="-22.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="83" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="10.35" ty="-29.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="12.3" ty="-22.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="85" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="-1.15" ty="-27.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-9.2" ty="-24.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="86" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="0.85" ty="-27.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-4.2" ty="-24.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="87" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="6.35" ty="-28.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="2.3" ty="-23.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="88" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="10.35" ty="-28.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="12.3" ty="-22.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="89" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="4.3" ty="-13.25"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="1.8" ty="-6.75"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="-10.7" ty="-13.25"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="-15.2" ty="-6.75"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="-19.7" ty="-30.25"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-23.7" ty="-22.25"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb Body">
+                  <matrix>
+                    <Matrix tx="1.3" ty="-31.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Mustache">
+                  <matrix>
+                    <Matrix tx="-17.7" ty="-34.1"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-10.7" ty="-39.25"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-3.7" ty="-39.25"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="9.8" ty="-28.25"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="11.75" ty="-21.75"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 7" color="#4F80FF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="14" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="14" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Mario CLIPS/Mario Grabbed" selected="true">
+                  <matrix>
+                    <Matrix tx="-18.6" ty="-23.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="16" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Mario CLIPS/Mario Grabbed">
+                  <matrix>
+                    <Matrix a="0.949737548828125" b="0.3099365234375" c="-0.3099365234375" d="0.949737548828125" tx="-15.6" ty="-28.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="18" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Mario CLIPS/Mario Grabbed">
+                  <matrix>
+                    <Matrix a="0.933319091796875" b="0.355819702148438" c="-0.355819702148438" d="0.933319091796875" tx="-13.6" ty="-35.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="20" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Mario CLIPS/Mario Grabbed" selected="true">
+                  <matrix>
+                    <Matrix a="0.907562255859375" b="0.416641235351563" c="-0.416641235351563" d="0.907562255859375" tx="-11.6" ty="-40.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="22" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Mario CLIPS/Mario Grabbed" selected="true">
+                  <matrix>
+                    <Matrix a="0.840057373046875" b="0.539108276367188" c="-0.539108276367188" d="0.840057373046875" tx="-10.6" ty="-41.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="24" duration="10" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Mario CLIPS/Mario Grabbed" selected="true">
+                  <matrix>
+                    <Matrix a="0.840057373046875" b="0.539108276367188" c="-0.539108276367188" d="0.840057373046875" tx="-9.6" ty="-42.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="34" duration="57" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Body" color="#9933CC" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb Body">
+                  <matrix>
+                    <Matrix tx="1.85" ty="-32.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Mustache">
+                  <matrix>
+                    <Matrix tx="-17.15" ty="-34.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-10.15" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-3.15" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb Body">
+                  <matrix>
+                    <Matrix tx="2.85" ty="-32.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Mustache">
+                  <matrix>
+                    <Matrix a="0.8919677734375" tx="-18.65" ty="-34.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="14" y="9"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-12.65" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-6.15" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb Body">
+                  <matrix>
+                    <Matrix tx="2.85" ty="-32.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Mustache">
+                  <matrix>
+                    <Matrix a="0.783660888671875" tx="-18.65" ty="-34.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="13.95" y="9"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-13.65" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-7.15" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="4" duration="10" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb Body">
+                  <matrix>
+                    <Matrix tx="2.85" ty="-32.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Mustache">
+                  <matrix>
+                    <Matrix a="0.783660888671875" tx="-18.65" ty="-34.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="13.95" y="9"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-13.65" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-7.15" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="14" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb Body">
+                  <matrix>
+                    <Matrix tx="2.85" ty="-32.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Mustache">
+                  <matrix>
+                    <Matrix a="0.783660888671875" tx="-18.65" ty="-34.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="13.95" y="9"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-13.65" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-7.15" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="16" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb Body">
+                  <matrix>
+                    <Matrix tx="2.85" ty="-32.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Mustache">
+                  <matrix>
+                    <Matrix a="0.783660888671875" tx="-18.65" ty="-34.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="13.95" y="9"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-13.65" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-7.15" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="18" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb Body">
+                  <matrix>
+                    <Matrix tx="2.85" ty="-32.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Mustache">
+                  <matrix>
+                    <Matrix a="0.783660888671875" tx="-18.65" ty="-34.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="13.95" y="9"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-13.65" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-7.15" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="20" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb Body">
+                  <matrix>
+                    <Matrix tx="2.85" ty="-32.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Mustache">
+                  <matrix>
+                    <Matrix a="0.783660888671875" tx="-18.65" ty="-34.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="13.95" y="9"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-13.65" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-7.15" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="22" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb Body">
+                  <matrix>
+                    <Matrix tx="2.85" ty="-32.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Mustache">
+                  <matrix>
+                    <Matrix a="0.783660888671875" tx="-18.65" ty="-34.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="13.95" y="9"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-13.65" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-7.15" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="24" duration="10" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb Body">
+                  <matrix>
+                    <Matrix tx="2.85" ty="-32.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Mustache">
+                  <matrix>
+                    <Matrix a="0.783660888671875" tx="-18.65" ty="-34.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="13.95" y="9"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-13.65" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-7.15" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="34" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb Body">
+                  <matrix>
+                    <Matrix tx="2.85" ty="-32.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Mustache">
+                  <matrix>
+                    <Matrix a="0.856430053710938" tx="-17.65" ty="-34.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="14" y="9"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-12.65" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-7.15" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="36" duration="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb Body">
+                  <matrix>
+                    <Matrix tx="2.85" ty="-32.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Mustache">
+                  <matrix>
+                    <Matrix a="0.963485717773438" tx="-17.65" ty="-34.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="14" y="9"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-11.65" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-4.65" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="39" duration="9" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb Body">
+                  <matrix>
+                    <Matrix tx="1.85" ty="-32.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Mustache">
+                  <matrix>
+                    <Matrix tx="-17.15" ty="-34.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-10.15" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-3.15" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="48" duration="11" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb Body">
+                  <matrix>
+                    <Matrix tx="1.85" ty="-32.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Mustache">
+                  <matrix>
+                    <Matrix tx="-17.15" ty="-34.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-10.15" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-3.15" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="59" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb Body">
+                  <matrix>
+                    <Matrix tx="1.85" ty="-32.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Mustache">
+                  <matrix>
+                    <Matrix a="0.892852783203125" tx="-16.65" ty="-34.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="14" y="9"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-10.65" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-4.15" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="60" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb Body">
+                  <matrix>
+                    <Matrix tx="2.85" ty="-32.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Mustache">
+                  <matrix>
+                    <Matrix a="0.78125" tx="-16.1" ty="-34.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="14" y="9"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-11.15" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-4.65" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="61" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb Body">
+                  <matrix>
+                    <Matrix tx="2.85" ty="-32.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Mustache">
+                  <matrix>
+                    <Matrix a="0.744842529296875" tx="-16.6" ty="-34.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="14.05" y="9"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-11.65" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-5.65" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="63" duration="17" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb Body">
+                  <matrix>
+                    <Matrix tx="2.85" ty="-32.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Mustache">
+                  <matrix>
+                    <Matrix a="0.752044677734375" tx="-16.7" ty="-34.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="14.05" y="9"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-11.65" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-6.15" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="80" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb Body">
+                  <matrix>
+                    <Matrix tx="2.85" ty="-32.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Mustache">
+                  <matrix>
+                    <Matrix a="0.744842529296875" tx="-16.6" ty="-34.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="14.05" y="9"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-11.65" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-5.65" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="81" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb Body">
+                  <matrix>
+                    <Matrix tx="2.85" ty="-32.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Mustache">
+                  <matrix>
+                    <Matrix a="0.78125" tx="-16.1" ty="-34.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="14" y="9"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-11.15" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-4.65" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="82" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb Body">
+                  <matrix>
+                    <Matrix tx="1.85" ty="-32.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Mustache">
+                  <matrix>
+                    <Matrix a="0.892852783203125" tx="-16.65" ty="-34.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="14" y="9"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-10.65" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-4.15" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="83" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb Body">
+                  <matrix>
+                    <Matrix tx="1.85" ty="-32.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Mustache">
+                  <matrix>
+                    <Matrix tx="-17.15" ty="-34.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-10.15" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-3.15" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="85" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb Body">
+                  <matrix>
+                    <Matrix tx="2.85" ty="-32.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Mustache">
+                  <matrix>
+                    <Matrix a="0.783660888671875" tx="-18.65" ty="-34.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="13.95" y="9"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-13.65" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-7.15" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="86" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb Body">
+                  <matrix>
+                    <Matrix tx="2.85" ty="-32.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Mustache">
+                  <matrix>
+                    <Matrix a="0.783660888671875" tx="-18.65" ty="-34.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="13.95" y="9"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-13.65" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-7.15" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="87" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb Body">
+                  <matrix>
+                    <Matrix tx="2.85" ty="-32.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Mustache">
+                  <matrix>
+                    <Matrix a="0.8919677734375" tx="-18.65" ty="-34.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="14" y="9"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-12.65" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-6.15" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="88" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb Body">
+                  <matrix>
+                    <Matrix tx="1.85" ty="-32.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Mustache">
+                  <matrix>
+                    <Matrix tx="-17.15" ty="-34.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-10.15" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Eye">
+                  <matrix>
+                    <Matrix tx="-3.15" ty="-39.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="89" duration="2" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Back Arm" color="#FFFF4F" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="-19.15" ty="-28.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-22.15" ty="-22.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="-19.15" ty="-31.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-22.15" ty="-25.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="-19.65" ty="-29.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-22.65" ty="-25.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="4" duration="10" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="-19.65" ty="-29.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-22.65" ty="-25.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="14" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="-19.65" ty="-30.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-23.15" ty="-28.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="16" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="-19.65" ty="-30.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-23.65" ty="-29.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="18" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="-19.65" ty="-31.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-23.15" ty="-33.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="20" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="-19.65" ty="-31.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-23.15" ty="-35.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="22" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="-19.65" ty="-31.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-24.15" ty="-38.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="24" duration="14" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="-19.65" ty="-31.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-24.15" ty="-38.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="38" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="-19.65" ty="-31.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-24.65" ty="-37.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="39" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="-19.65" ty="-31.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-24.65" ty="-36.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="40" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="-19.65" ty="-31.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-25.15" ty="-34.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="41" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="-19.65" ty="-31.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-25.15" ty="-32.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="42" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="-19.65" ty="-30.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-25.65" ty="-29.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="43" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="-19.65" ty="-30.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-25.15" ty="-26.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="44" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance selected="true" libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="-18.15" ty="-30.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance selected="true" libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-22.15" ty="-25.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="45" duration="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="-17.15" ty="-30.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-21.15" ty="-25.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="48" duration="11" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="-18.15" ty="-30.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-21.15" ty="-24.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="59" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="-17.15" ty="-30.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-20.15" ty="-24.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="60" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="-16.15" ty="-30.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-19.15" ty="-24.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="61" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="-16.15" ty="-30.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-18.15" ty="-24.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="63" duration="17" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="-16.15" ty="-30.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-18.15" ty="-24.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="80" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="-16.15" ty="-30.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-18.15" ty="-24.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="81" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="-16.15" ty="-30.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-19.15" ty="-24.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="82" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="-17.15" ty="-30.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-20.15" ty="-24.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="83" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="-18.15" ty="-30.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-21.15" ty="-24.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="85" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="-19.65" ty="-29.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-22.65" ty="-25.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="86" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="-19.65" ty="-29.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-22.65" ty="-25.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="87" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="-19.15" ty="-31.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-22.15" ty="-25.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="88" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Arm">
+                  <matrix>
+                    <Matrix tx="-19.15" ty="-28.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Hand">
+                  <matrix>
+                    <Matrix tx="-22.15" ty="-22.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="89" duration="2" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Legs" color="#FF4FFF" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="4.85" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="2.35" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="-10.15" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="-14.65" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="3.85" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="1.35" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="-9.65" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="-14.15" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="3.85" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="1.35" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="-9.65" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="-14.15" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="4" duration="10" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="3.85" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="1.35" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="-9.65" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="-14.15" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="14" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="3.85" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="1.35" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="-9.65" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="-14.15" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="16" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="3.85" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="1.35" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="-9.65" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="-14.15" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="18" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="3.85" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="1.35" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="-9.65" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="-14.15" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="20" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="3.85" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="1.35" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="-9.65" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="-14.15" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="22" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="3.85" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="1.35" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="-9.65" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="-14.15" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="24" duration="8" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="3.85" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="1.35" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="-9.65" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="-14.15" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="32" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="3.85" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="1.35" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="-9.65" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="-14.15" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="34" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="4.35" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="1.85" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="-10.15" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="-14.65" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="36" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="4.85" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="2.35" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="-10.65" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="-15.15" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="38" duration="10" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="4.85" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="2.35" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="-10.65" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="-15.15" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="48" duration="11" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="4.85" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="2.35" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="-10.15" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="-14.65" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="59" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="3.85" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="1.35" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="-10.15" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="-14.65" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="60" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="2.85" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="0.35" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="-9.65" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="-14.15" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="61" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="2.35" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="-0.15" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="-9.15" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="-13.65" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="63" duration="17" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="1.85" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="-0.65" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="-8.65" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="-13.15" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="80" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="2.35" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="-0.15" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="-9.15" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="-13.65" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="81" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="2.85" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="0.35" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="-9.65" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="-14.15" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="82" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="3.85" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="1.35" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="-10.15" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="-14.65" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="83" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="4.85" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="2.35" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="-10.15" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="-14.65" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="85" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="3.85" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="1.35" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="-9.65" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="-14.15" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="86" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="3.85" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="1.35" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="-9.65" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="-14.15" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="87" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="3.85" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="1.35" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="-9.65" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="-14.15" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="88" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="4.85" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="2.35" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Leg">
+                  <matrix>
+                    <Matrix tx="-10.15" ty="-13.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/King Bomb-omb/King Bomb-omb - Foot">
+                  <matrix>
+                    <Matrix tx="-14.65" ty="-7.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="89" duration="2" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

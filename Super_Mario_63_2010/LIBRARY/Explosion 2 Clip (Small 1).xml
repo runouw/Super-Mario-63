@@ -1,0 +1,103 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Explosion 2 Clip (Small 1)" itemID="475c7d47-00000ce0" lastModified="1238988743">
+  <timeline>
+    <DOMTimeline name="Explosion 2 Clip (Small 1)">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="4" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[alf = _alpha
+this._alpha = 0;
+this._xscale = 50;
+this._yscale = 50;
+rspeed = ((random(2)-0.5)*2)*(Math.random()*5+2);
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		play()
+		this._rotation += rspeed*1.25;
+		this._xscale += 12.5;
+		this._yscale += 12.5;
+		this._alpha += alf/4
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="4" duration="12" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		play()
+		this._rotation += rspeed*(_alpha/80);
+		this._xscale -= 3;
+		this._yscale -= 3;
+		this._alpha -= alf/12;
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="16" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+onEnterFrame = null;
+this.removeMovieClip(this);
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" duration="4" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Effects/Effects-Bits/FX (Eruption Fire Cloud 1)">
+                  <matrix>
+                    <Matrix tx="-15.5" ty="-13"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="4" duration="4" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Effects/Effects-Bits/FX (Eruption Fire Cloud 2)">
+                  <matrix>
+                    <Matrix tx="-17.5" ty="-17.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="8" duration="4" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Effects/Effects-Bits/FX (Eruption Fire Cloud 3)">
+                  <matrix>
+                    <Matrix tx="-15.5" ty="-17"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="12" duration="4" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Effects/Effects-Bits/FX Fire Explode (4)">
+                  <matrix>
+                    <Matrix tx="-7.5" ty="-7"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="16" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

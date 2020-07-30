@@ -1,0 +1,106 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Items-PL/ Various Platforms/ Themed PL/ Rainbow Ride/ Rainbow Carpet Folder/Rainbow Carpet Code" itemID="45fc9846-00000700" lastModified="1230006139" lastUniqueIdentifier="1">
+  <timeline>
+    <DOMTimeline name="Rainbow Carpet Code">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+newx = _x;
+newy = _y;
+oldx = _x;
+oldy = _y;
+//
+newerx = _x;
+newery = _y;
+olderx = _x;
+oldery = _y;
+if (_parent.exists == undefined && isNaN(_root.Course.BPlatforms["RainbowCarpetPL"+_parent.capetdepth].exists)) {
+	_parent.capetdepth = _root.Course.BPlatforms.getNextHighestDepth();
+	_root.Course.BPlatforms.attachMovie("RainbowCarpetPL", "RainbowCarpetPL"+_parent.capetdepth, _parent.capetdepth, {_x:_x+_parent._x, _y:_y+_parent._y, scale:scale, exists:true});
+	_parent.exists = true;
+}
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		//
+		if (isNaN(accelx)) {
+			accelx = 0;
+		}
+		if (isNaN(accely)) {
+			accely = 0;
+		}
+		if (isNaN(diffx)) {
+			diffx = 0;
+		}
+		if (isNaN(diffy)) {
+			diffy = 0;
+		}
+		tellTarget (_root.Course.BPlatforms["RainbowCarpetPL"+_parent.capetdepth]) {
+			if (hitTest(((_root.Course.Char._x+this.diffx+this.accelx)*_root.coursescale/100)+_root.Course._x, ((_root.Course.Char._y+this.diffy+this.accely+3)*_root.coursescale/100)+_root.Course._y, true)) {
+				_root.Course.Char._x += this.diffx+this.accelx;
+				_root.Course.Char._y += this.diffy;
+				_root.Course.Char.xspeed = _root.groundFriction(_root.Course.Char.xspeed, 0.3, 1.1);
+				//
+				if (hitTest(((_root.Course.Char._x+this.diffx+this.accelx)*_root.coursescale/100)+_root.Course._x, ((_root.Course.Char._y+this.diffy+this.accely-3)*_root.coursescale/100)+_root.Course._y, true)) {
+					_root.Course.Char._y--;
+				}
+				//                
+				if (landedon == false) {
+					_root.Course.Char.xspeed -= this.diffx;
+				}
+				landedon = true;
+				_parent.landedon = true;
+			} else {
+				if (landedon == true) {
+					_root.Course.Char.xspeed += this.diffx;
+					_root.Course.Char.yspeed += this.diffy/2;
+				}
+				landedon = false;
+				_parent.landedon = false;
+			}
+			_y = this._y+this._parent._y;
+			_x = this._x+this._parent._x;
+		}
+		//
+		newx = _x;
+		newy = _y;
+		diffy = newy-oldy;
+		diffx = newx-oldx;
+		oldx = newx;
+		oldy = newy;
+		//
+		newerx = diffx;
+		newery = diffy;
+		accely = newery-oldery;
+		accelx = newerx-olderx;
+		olderx = newerx;
+		oldery = newery;
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Themed PL/ Rainbow Ride/ Rainbow Carpet Folder/Rainbow Carpet Clip">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,1111 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Clips/9-08 Kamek Summon Bully" itemID="48e27a05-00000e82" lastModified="1231474132" lastUniqueIdentifier="13">
+  <timeline>
+    <DOMTimeline name="9-08 Kamek Summon Bully">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+count = 0;
+onEnterFrame = function () {
+	if (_root.PauseGame == false && _root.Course.Char.air == false && count++>(32*3) && _root.playpause == false) {
+		play();
+		//
+		_root.Course.Char.yspeed = 0;
+		_root.Course.Char.xspeed = 0;
+		_root.Course.Char.attack = true;
+		_root.Course.Char.attackFrame = "bosscinema";
+		onEnterFrame = function () {
+			_root.Camcenter = _parent._parent.Target3;
+			_root.CamSpeed = 1;
+			_root.PauseGame = false;
+			_root.playpause = true;
+		};
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="37" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.Course.BackGFX.StartClip._y = _root.Course.BackGFX.restart1._y;
+_root.Course.BackGFX.StartClip._x = _root.Course.BackGFX.restart1._x;
+_root.BossCheckpoint = true;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="38" duration="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[//_root.PlayMessage("I've wasted enough time here. So I'll leave you trapped here with my Big Bully!");
+//
+_root.Course.Char.yspeed = 0;
+_root.Course.Char.xspeed = 0;
+_root.Course.Char.attack = true;
+_root.Course.Char.attackFrame = "bosscinema";
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="40" duration="3" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[//_root.PlayMessage("Gah! "+_root.CurrentPlayer+" What are you doing here?!? You might mess up my Master's plans, so I'll have to kill you now!");
+_root.CinemaMessageFrame = 2;
+_root.CinemaMessage = "<b><i>Kamek:</i></b> I've wasted enough time here. So I'll leave you trapped here with my Big Bully!";
+lastframeZ = _root.KeyZ();
+//
+stop();
+onEnterFrame = function () {
+	if (_root.KeyZ() == true && lastframeZ !== true && _root.CinemaMessageFinished == true) {
+		_root.CinemaMessage = "";
+		//_root.CinemaMessage = "Some mroe text";
+		//_root.CinemaMessageFrame = 3;
+		onEnterFrame = function () {
+			_root.Camcenter = _root.Course.BackGFX.Target3;
+			_root.CamSpeed = 1;
+			_root.PauseGame = false;
+			_root.playpause = true;
+		};
+		play();
+	}
+	lastframeZ = _root.KeyZ();
+	//
+	_root.Camcenter = _root.Course.BackGFX.Target3;
+	_root.CamSpeed = 1;
+	_root.PauseGame = false;
+	_root.playpause = true;
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="43" duration="21" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="64" duration="5" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	_root.Camcenter = _root.Course.BackGFX.Target4;
+	_root.CamSpeed = 1;
+	_root.PauseGame = false;
+	_root.playpause = true;
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="69" duration="31" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Other/Smoke Clip">
+                  <matrix>
+                    <Matrix tx="38.45" ty="216.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/ Other/Smoke Clip">
+                  <matrix>
+                    <Matrix a="0.707107543945313" b="-0.707107543945313" c="0.707107543945313" d="0.707107543945313" tx="42.45" ty="214.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/ Other/Smoke Clip">
+                  <matrix>
+                    <Matrix a="0.965927124023438" b="0.258819580078125" c="-0.258819580078125" d="0.965927124023438" tx="40.45" ty="217.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	speed = 3
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/ Other/Smoke Clip">
+                  <matrix>
+                    <Matrix a="1.12162780761719" b="1.12164306640625" c="-1.12162780761719" d="1.12162780761719" tx="40.5" ty="217.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	speed = 6
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color alphaMultiplier="0.25"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="100" duration="145" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="245" duration="49" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.StopBGsong();
+_root.StartBoss64Music();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="294" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+_root.Course.Char.attack = false;
+_root.Course.Char.attackFrame = "";
+_root.playpause = false;
+_root.Course.BackGFX.gotoAndStop(3);
+_root.Course.FrontGFX.gotoAndStop(3);
+onEnterFrame = null;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" duration="54" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="54" duration="15" tweenType="motion" motionTweenRotate="clockwise" motionTweenRotateTimes="1" keyMode="17921">
+              <elements>
+                <DOMGroup selected="true">
+                  <matrix>
+                    <Matrix tx="-87.1" ty="-9.55"/>
+                  </matrix>
+                  <members>
+                    <DOMGroup selected="true">
+                      <matrix>
+                        <Matrix tx="-262.4" ty="-19"/>
+                      </matrix>
+                      <members>
+                        <DOMShape selected="true">
+                          <matrix>
+                            <Matrix tx="-262.4" ty="-19"/>
+                          </matrix>
+                          <strokes>
+                            <StrokeStyle index="1">
+                              <SolidStroke scaleMode="normal" weight="2">
+                                <fill>
+                                  <SolidColor color="#FF0000"/>
+                                </fill>
+                              </SolidStroke>
+                            </StrokeStyle>
+                          </strokes>
+                          <edges>
+                            <Edge strokeStyle="1" edges="!118 -6|-105 -6.5!-105 -6.5|5 -188!5 -188|118 -6"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup selected="true">
+                      <matrix>
+                        <Matrix tx="-262.4" ty="-19"/>
+                      </matrix>
+                      <members>
+                        <DOMShape selected="true">
+                          <matrix>
+                            <Matrix tx="-262.4" ty="-19"/>
+                          </matrix>
+                          <strokes>
+                            <StrokeStyle index="1">
+                              <SolidStroke scaleMode="normal" weight="2">
+                                <fill>
+                                  <SolidColor color="#0000FF"/>
+                                </fill>
+                              </SolidStroke>
+                            </StrokeStyle>
+                          </strokes>
+                          <edges>
+                            <Edge strokeStyle="1" edges="!187.5 6.5|187.5 186.5!187.5 186.5|7.5 186.5!7.5 186.5|7.5 6.5!7.5 6.5|187.5 6.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup selected="true">
+                      <matrix>
+                        <Matrix tx="-262.4" ty="-19"/>
+                      </matrix>
+                      <members>
+                        <DOMShape selected="true">
+                          <matrix>
+                            <Matrix tx="-262.4" ty="-19"/>
+                          </matrix>
+                          <strokes>
+                            <StrokeStyle index="1">
+                              <SolidStroke scaleMode="normal" weight="2">
+                                <fill>
+                                  <SolidColor color="#FFFF00"/>
+                                </fill>
+                              </SolidStroke>
+                            </StrokeStyle>
+                          </strokes>
+                          <edges>
+                            <Edge strokeStyle="1" edges="!-34.5 32.5[-7.65625 #3B.39 -7.5 96.5!-7.5 96.5[-7.65625 #85.D6 -34.5 160!-34.5 160[#FFFFC3.96 #BA.98 -97.5 186.5!-97.5 186.5[#FFFF79.39 #BA.98 -161.5 160!-161.5 160[#FFFF44.77 #85.D6 -187.5 96.5!-187.5 96.5[#FFFF44.77 #3B.39 -161.5 32.5
+!-161.5 32.5[#FFFF79.39 #6.77 -97.5 6.5!-97.5 6.5[#FFFFC3.96 #6.77 -34.5 32.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="69" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="216.8" ty="226.45"/>
+                  </matrix>
+                  <members>
+                    <DOMGroup selected="true">
+                      <matrix>
+                        <Matrix tx="41.5" ty="217"/>
+                      </matrix>
+                      <members>
+                        <DOMShape selected="true">
+                          <matrix>
+                            <Matrix tx="41.5" ty="217"/>
+                          </matrix>
+                          <strokes>
+                            <StrokeStyle index="1">
+                              <SolidStroke scaleMode="normal" weight="2">
+                                <fill>
+                                  <SolidColor color="#FF0000"/>
+                                </fill>
+                              </SolidStroke>
+                            </StrokeStyle>
+                          </strokes>
+                          <edges>
+                            <Edge strokeStyle="1" edges="
+!118 -6|-105 -6.5!-105 -6.5|5 -188!5 -188|118 -6"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup selected="true">
+                      <matrix>
+                        <Matrix tx="41.5" ty="217"/>
+                      </matrix>
+                      <members>
+                        <DOMShape selected="true">
+                          <matrix>
+                            <Matrix tx="41.5" ty="217"/>
+                          </matrix>
+                          <strokes>
+                            <StrokeStyle index="1">
+                              <SolidStroke scaleMode="normal" weight="2">
+                                <fill>
+                                  <SolidColor color="#0000FF"/>
+                                </fill>
+                              </SolidStroke>
+                            </StrokeStyle>
+                          </strokes>
+                          <edges>
+                            <Edge strokeStyle="1" edges="
+!187.5 6.5|187.5 186.5!187.5 186.5|7.5 186.5!7.5 186.5|7.5 6.5!7.5 6.5|187.5 6.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup selected="true">
+                      <matrix>
+                        <Matrix tx="41.5" ty="217"/>
+                      </matrix>
+                      <members>
+                        <DOMShape selected="true">
+                          <matrix>
+                            <Matrix tx="41.5" ty="217"/>
+                          </matrix>
+                          <strokes>
+                            <StrokeStyle index="1">
+                              <SolidStroke scaleMode="normal" weight="2">
+                                <fill>
+                                  <SolidColor color="#FFFF00"/>
+                                </fill>
+                              </SolidStroke>
+                            </StrokeStyle>
+                          </strokes>
+                          <edges>
+                            <Edge strokeStyle="1" edges="
+!-34.5 32.5[-7.65625 #3B.39 -7.5 96.5!-7.5 96.5[-7.65625 #85.D6 -34.5 160!-34.5 160[#FFFFC3.96 #BA.98 -97.5 186.5!-97.5 186.5[#FFFF79.39 #BA.98 -161.5 160!-161.5 160[#FFFF44.77 #85.D6 -187.5 96.5!-187.5 96.5[#FFFF44.77 #3B.39 -161.5 32.5
+!-161.5 32.5[#FFFF79.39 #6.77 -97.5 6.5!-97.5 6.5[#FFFFC3.96 #6.77 -34.5 32.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="70" duration="59" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/9-08 Bully transform">
+                  <matrix>
+                    <Matrix a="-1" tx="41.45" ty="217.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="129" duration="10" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/9-08 Bully transform">
+                  <matrix>
+                    <Matrix a="-1" tx="41.45" ty="217.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="139" duration="10" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/9-08 Bully transform">
+                  <matrix>
+                    <Matrix a="-1" tx="41.45" ty="217.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color brightness="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="149" duration="65" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/9-08 Bully transform">
+                  <matrix>
+                    <Matrix a="-1" tx="41.45" ty="217.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="214" duration="11" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/9-08 Bully transform">
+                  <matrix>
+                    <Matrix a="-1" tx="41.45" ty="217.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter blurX="0" blurY="0" color="#FFFFFF" strength="0"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="225" duration="10" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/9-08 Bully transform">
+                  <matrix>
+                    <Matrix a="-1" tx="41.45" ty="217.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter color="#FFFFFF"/>
+                  </filters>
+                  <color>
+                    <Color brightness="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="235" duration="10" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/9-08 Bully transform">
+                  <matrix>
+                    <Matrix a="-1" tx="41.45" ty="217.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter blurX="0" blurY="0" color="#FFFFFF" strength="0"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="245" duration="20" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/9-08 Bully transform">
+                  <matrix>
+                    <Matrix a="-1" tx="41.45" ty="217.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter blurX="10" blurY="10" color="#FFFFFF" strength="2"/>
+                  </filters>
+                  <color>
+                    <Color brightness="0.75"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="265" duration="19" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/9-08 Bully transform">
+                  <matrix>
+                    <Matrix a="-4" d="4" tx="41.45" ty="181.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter blurX="10" blurY="10" color="#000000" strength="2"/>
+                  </filters>
+                  <color>
+                    <Color brightness="-0.75"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="284" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/9-08 Bully transform">
+                  <matrix>
+                    <Matrix a="-6" d="6" tx="41.45" ty="156.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter blurX="10" blurY="10" color="#000000" strength="2"/>
+                  </filters>
+                  <color>
+                    <Color alphaMultiplier="0" redMultiplier="0" blueMultiplier="0" greenMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="285" duration="10" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Folder 1" color="#4F80FF" layerType="folder"/>
+        <DOMLayer name="Layer 12" color="#4FFFFF" parentLayerIndex="2" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="113" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="113" duration="54" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="FX Kamek Sparkle effect " selected="true" symbolType="graphic" loop="play once">
+                  <matrix>
+                    <Matrix tx="107.5" ty="79.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="167" duration="30" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="197" duration="98" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="FX Kamek Sparkle effect " symbolType="graphic" loop="play once">
+                  <matrix>
+                    <Matrix tx="-14.5" ty="78.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 11" color="#FF4FFF" parentLayerIndex="2">
+          <frames>
+            <DOMFrame index="0" duration="114" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="114" duration="53" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="FX Kamek Sparkle effect " selected="true" symbolType="graphic" loop="play once">
+                  <matrix>
+                    <Matrix tx="86.5" ty="77.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="167" duration="31" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="198" duration="97" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="FX Kamek Sparkle effect " symbolType="graphic" loop="play once">
+                  <matrix>
+                    <Matrix tx="5.5" ty="78.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 10" color="#FFFF4F" parentLayerIndex="2">
+          <frames>
+            <DOMFrame index="0" duration="115" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="115" duration="52" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="FX Kamek Sparkle effect " selected="true" symbolType="graphic" loop="play once">
+                  <matrix>
+                    <Matrix tx="68.5" ty="79.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="167" duration="32" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="199" duration="96" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="FX Kamek Sparkle effect " symbolType="graphic" loop="play once">
+                  <matrix>
+                    <Matrix tx="32.4" ty="78.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 9" color="#9933CC" parentLayerIndex="2">
+          <frames>
+            <DOMFrame index="0" duration="116" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="116" duration="51" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="FX Kamek Sparkle effect " selected="true" symbolType="graphic" loop="play once">
+                  <matrix>
+                    <Matrix tx="44.5" ty="80.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="167" duration="33" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="200" duration="95" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="FX Kamek Sparkle effect " symbolType="graphic" loop="play once">
+                  <matrix>
+                    <Matrix tx="48.3" ty="83.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 8" color="#4FFF4F" parentLayerIndex="2">
+          <frames>
+            <DOMFrame index="0" duration="117" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="117" duration="50" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="FX Kamek Sparkle effect " selected="true" symbolType="graphic" loop="play once">
+                  <matrix>
+                    <Matrix tx="27.5" ty="80.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="167" duration="34" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="201" duration="94" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="FX Kamek Sparkle effect " symbolType="graphic" loop="play once">
+                  <matrix>
+                    <Matrix tx="69.45" ty="84.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 7" color="#FF4F4F" parentLayerIndex="2">
+          <frames>
+            <DOMFrame index="0" duration="118" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="118" duration="49" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="FX Kamek Sparkle effect " selected="true" symbolType="graphic" loop="play once">
+                  <matrix>
+                    <Matrix tx="2.5" ty="77.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="167" duration="35" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="202" duration="93" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="FX Kamek Sparkle effect " symbolType="graphic" loop="play once">
+                  <matrix>
+                    <Matrix tx="89.45" ty="83.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 6" color="#808080" parentLayerIndex="2">
+          <frames>
+            <DOMFrame index="0" duration="119" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="119" duration="48" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="FX Kamek Sparkle effect " selected="true" symbolType="graphic" loop="play once">
+                  <matrix>
+                    <Matrix tx="-14.5" ty="79.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="167" duration="36" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="203" duration="92" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="FX Kamek Sparkle effect " symbolType="graphic" loop="play once">
+                  <matrix>
+                    <Matrix tx="107.35" ty="83.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Guide: Layer 4" color="#4FFFFF" autoNamed="false" layerType="guide">
+          <frames>
+            <DOMFrame index="0" duration="25" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <SolidColor/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge strokeStyle="1" edges="
+!-12423 -2500[#FFD74C.5E #FFFB5F.58 -5644 -580"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="25" duration="53" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="78" duration="22" keyMode="9728">
+              <elements>
+                <DOMShape isFloating="true">
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <SolidColor/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge strokeStyle="1" edges="
+!-5363 -540S4[#FFFFEB.27 #FFFCEF.7C 4037 -2540"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="100" duration="195" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#FF4FFF" parentLayerIndex="10">
+          <frames>
+            <DOMFrame index="0" keyMode="9728" acceleration="-40">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ 9 - Secret Stars/ 9-07 Kamek (Garden Battle)/9-07 Kamek Flying Idle">
+                  <matrix>
+                    <Matrix a="-1" tx="-648.15" ty="-140.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" duration="23" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ 9 - Secret Stars/ 9-07 Kamek (Garden Battle)/9-07 Kamek Flying Idle">
+                  <matrix>
+                    <Matrix a="-0.891387939453125" b="-0.45025634765625" c="-0.45025634765625" d="0.891403198242188" tx="-621.15" ty="-125"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="24" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ 9 - Secret Stars/ 9-07 Kamek (Garden Battle)/9-07 Kamek Flying Idle">
+                  <matrix>
+                    <Matrix a="-0.99993896484375" b="-0.00531005859375" c="-0.00531005859375" d="0.99993896484375" tx="-282.2" ty="-29"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="25" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Stopping - 1">
+                  <matrix>
+                    <Matrix a="-1" tx="-261.95" ty="-47.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="26" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Stopping - 1">
+                  <matrix>
+                    <Matrix a="-1" tx="-258.95" ty="-47.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="27" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Stopping - 2">
+                  <matrix>
+                    <Matrix a="-1" tx="-258.65" ty="-49"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="28" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance selected="true" libraryItemName="   Enemies/Bosses/Kamek/Kamek Stopping - 2">
+                  <matrix>
+                    <Matrix a="-1" tx="-257.65" ty="-49"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="30" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Stopping - 2">
+                  <matrix>
+                    <Matrix a="-1" tx="-256.65" ty="-49"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="32" duration="4" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Stopping - 1">
+                  <matrix>
+                    <Matrix a="-1" tx="-253.95" ty="-47.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="36" duration="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Idle - 1">
+                  <matrix>
+                    <Matrix a="-1" tx="-253" ty="-46.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="39" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Talking - 1">
+                  <matrix>
+                    <Matrix a="-1" tx="-252.95" ty="-45"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="41" duration="6" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Talking - 2">
+                  <matrix>
+                    <Matrix a="-1" tx="-252.95" ty="-46.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="47" duration="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Talking - 1">
+                  <matrix>
+                    <Matrix a="-1" tx="-252.95" ty="-45"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="50" duration="13" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Idle - 1">
+                  <matrix>
+                    <Matrix a="-1" tx="-253" ty="-46.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="63" duration="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Stopping - 1">
+                  <matrix>
+                    <Matrix a="-1" tx="-253.95" ty="-47.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="66" duration="8" tweenType="motion" keyMode="17921" acceleration="-34">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Stopping - 2">
+                  <matrix>
+                    <Matrix a="-1" tx="-256.65" ty="-49"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="74" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Stopping - 2">
+                  <matrix>
+                    <Matrix a="-1" c="0.180557250976563" tx="-264.9" ty="-49"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="14" y="18"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="76" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Kamek/Kamek Stopping - 1">
+                  <matrix>
+                    <Matrix a="-1" tx="-253.95" ty="-47.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="78" duration="21" tweenType="motion" keyMode="17921" acceleration="30">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ 9 - Secret Stars/ 9-07 Kamek (Garden Battle)/9-07 Kamek Flying Idle">
+                  <matrix>
+                    <Matrix a="-0.99993896484375" b="-0.00531005859375" c="-0.00531005859375" d="0.99993896484375" tx="-268.15" ty="-27"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="99" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ 9 - Secret Stars/ 9-07 Kamek (Garden Battle)/9-07 Kamek Flying Idle">
+                  <matrix>
+                    <Matrix a="-0.967239379882813" b="0.253677368164063" c="0.253677368164063" d="0.967239379882813" tx="201.85" ty="-127"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="100" duration="9" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="109" duration="43" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ 9 - Secret Stars/ 9-07 Kamek (Garden Battle)/9-07 Kamek Flying Idle">
+                  <matrix>
+                    <Matrix a="0.99993896484375" b="-0.00531005859375" c="0.00531005859375" d="0.99993896484375" tx="185.75" ty="72.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="152" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ 9 - Secret Stars/ 9-07 Kamek (Garden Battle)/9-07 Kamek Flying Idle">
+                  <matrix>
+                    <Matrix a="0.99993896484375" b="-0.00531005859375" c="0.00531005859375" d="0.99993896484375" tx="-630.95" ty="31.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="153" duration="14" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="167" duration="39" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ 9 - Secret Stars/ 9-07 Kamek (Garden Battle)/9-07 Kamek Flying Idle">
+                  <matrix>
+                    <Matrix a="-0.99993896484375" b="-0.00531005859375" c="-0.00531005859375" d="0.99993896484375" tx="-630.95" ty="81.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="206" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ 9 - Secret Stars/ 9-07 Kamek (Garden Battle)/9-07 Kamek Flying Idle">
+                  <matrix>
+                    <Matrix a="-0.99993896484375" b="-0.00531005859375" c="-0.00531005859375" d="0.99993896484375" tx="169.05" ty="61.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="207" duration="58" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="265" duration="19" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/9-08 Big Bully Transform">
+                  <matrix>
+                    <Matrix a="-1" tx="38.5" ty="202.4"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter/>
+                    <GlowFilter blurX="0" blurY="0" strength="0"/>
+                    <BlurFilter/>
+                  </filters>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="284" duration="10" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/9-08 Big Bully Transform">
+                  <matrix>
+                    <Matrix a="-1" tx="38.5" ty="202.4"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter saturation="-24" hue="-40"/>
+                    <GlowFilter/>
+                    <BlurFilter blurX="0" blurY="0"/>
+                  </filters>
+                  <color>
+                    <Color blueMultiplier="0.80078125" greenMultiplier="0.80078125" redOffset="25" blueOffset="-35" greenOffset="-35"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="294" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

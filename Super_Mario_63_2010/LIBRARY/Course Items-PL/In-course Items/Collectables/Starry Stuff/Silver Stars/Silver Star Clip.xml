@@ -1,0 +1,523 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Items-PL/ In-course Items/ Collectables/ Starry Stuff/ Silver Stars/Silver Star Clip" itemID="474741f9-00000a5d" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="SilverStar" lastModified="1233031005" lastUniqueIdentifier="15">
+  <timeline>
+    <DOMTimeline name="Silver Star Clip">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (_root.Course.coincountnum == undefined) {
+	_root.Course.coincountnum = 0;
+} else {
+	_root.Course.coincountnum++;
+}
+if (_root["coindata"+_root.playingcourse][0] == undefined) {
+	_root["coindata"+_root.playingcourse] = [""];
+}
+coinnum = _root.Course.coincountnum;
+if (_root["coindata"+_root.playingcourse][coinnum] == 1 && _root["coindata"+_root.playingcourse][coinnum] !== undefined) {
+	gotoAndStop("end");
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+onEnterFrame = function () {
+	if (Math.abs((_root.currentCamX)-(_x+_parent._x))<600 && Math.abs((_root.currentCamY)-(_y+_parent._y))<600) {
+		_visible = true;
+		if (this.box.hitTest(_root.Course.Char.charClip.body)) {
+			_root["coindata"+_root.playingcourse][coinnum] = 1;
+			play();
+			_root.WaterHP += 3;
+			_root.WaterHP = Math.min(_root.WaterHP, 8);
+			_root.SilverStars++;
+			cointext = _root.SilverStars;
+			onEnterFrame = function () {
+				if (_root.PauseGame == false) {
+					play();
+				} else {
+					stop();
+				}
+			};
+		}
+		if (_root.PauseGame == false) {
+			clip.play();
+		} else {
+			clip.stop();
+		}
+	} else {
+		_visible = false;
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.Mariosound = new Sound(this);
+_root.Mariosound.attachSound("ItemAppears");
+_root.Mariosound.start(0, 1);
+_root.Mariosound.setVolume(_root.MarioVolume);
+//
+_root["coindata"+_root.playingcourse][coinnum] = 1
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="4" duration="45" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 6" color="#808080" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="box">
+                  <matrix>
+                    <Matrix a="0.509246826171875" d="2" ty="0.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" duration="39" tweenType="motion" motionTweenRotate="clockwise" motionTweenRotateTimes="2" keyMode="17921" acceleration="100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Light Effects Folder/Shine Light Effect">
+                  <matrix>
+                    <Matrix a="0.99920654296875" d="0.99920654296875" tx="-0.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter contrast="62" saturation="-15" hue="-180"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="42" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/ Light Effects Folder/Shine Light Effect">
+                  <matrix>
+                    <Matrix a="0.99920654296875" d="0.99920654296875" tx="-0.1" ty="-100"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter hue="-180"/>
+                  </filters>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="43" duration="6" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Starry Stuff/ Silver Stars/Silver Star GFX">
+                  <matrix>
+                    <Matrix a="0.99920654296875" d="0.99920654296875" tx="-0.05" ty="0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-0.05" y="-0.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" duration="39" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMDynamicText width="62" height="19.8" antiAliasThickness="68" variableName="cointext">
+                  <matrix>
+                    <Matrix tx="-31" ty="4.2"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>1</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" bold="true" size="16" bitmapSize="320" face="Matisse ITC" fillColor="#999999"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                  <filters>
+                    <GlowFilter blurX="7" blurY="7" color="#FFFFFF" strength="1.2"/>
+                    <GlowFilter blurX="50" blurY="50" color="#999999" inner="true" knockout="true" strength="0"/>
+                  </filters>
+                </DOMDynamicText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="42" duration="5" tweenType="motion" keyMode="17921" acceleration="-100">
+              <elements>
+                <DOMDynamicText width="62" height="19.8" antiAliasThickness="68" variableName="cointext">
+                  <matrix>
+                    <Matrix tx="-31" ty="-75.8"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>1</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" bold="true" size="16" bitmapSize="320" face="Matisse ITC" fillColor="#999999"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                  <filters>
+                    <GlowFilter blurX="2" blurY="2" color="#FFFFFF" strength="1.2"/>
+                    <GlowFilter blurX="50" blurY="50" color="#FFFFFF" inner="true" knockout="true" strength="2"/>
+                  </filters>
+                </DOMDynamicText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="47" keyMode="9728">
+              <elements>
+                <DOMDynamicText width="62" height="19.8" antiAliasThickness="68" variableName="cointext">
+                  <matrix>
+                    <Matrix tx="-31" ty="-85.8"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>1</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" bold="true" size="16" bitmapSize="320" face="Matisse ITC" fillColor="#999999"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                  <filters>
+                    <GlowFilter blurX="7" blurY="7" color="#FFFFFF" strength="1.2"/>
+                    <GlowFilter blurX="50" blurY="50" color="#999999" inner="true" knockout="true" strength="0"/>
+                  </filters>
+                </DOMDynamicText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="48" name="end" labelType="name" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+onEnterFrame = null;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#FF4FFF">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="3" duration="39" tweenType="motion" keyMode="17921" acceleration="100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Starry Stuff/ Silver Stars/Silver Star Animation">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter/>
+                    <GlowFilter color="#FFFFFF" strength="1.5"/>
+                    <BlurFilter blurX="1" blurY="1"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="42" duration="6" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Starry Stuff/ Silver Stars/Silver Star Animation">
+                  <matrix>
+                    <Matrix ty="-103"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter/>
+                    <GlowFilter color="#FFFFFF" strength="1.5"/>
+                    <BlurFilter blurX="15" blurY="15"/>
+                  </filters>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="48" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 5" color="#4FFFFF">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="3" duration="3" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#999999"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!-30 -23[-30 -18 -35 -15!-35 -15[-47 -7 -57 -19!-57 -19[-61 -25 -59 -32!-59 -32[-55 -42 -44 -42!-44 -42[-27 -40 -30 -23"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="6" duration="3" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#999999"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!19 -15[15 -11 10 -13!10 -13[-11 -22 4 -39!4 -39[8 -43 13 -43!13 -43[39 -33 19 -15!-38 -23[-40 -20 -43 -20!-43 -20[-56 -19 -53 -31!-53 -31[-52 -36 -47 -37!-47 -37[-46 -37 -45 -37!-45 -37[-32 -34 -38 -23"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="9" duration="3" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#999999"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!51 -17[70 -14 68 4!68 4[67 16 56 19!56 19[41 23 34 9!34 9[30 2 34 -6!34 -6[40 -16 51 -17!49 100[45 104 40 102!40 102[19 93 34 76!34 76[38 72 43 72!43 72[69 82 49 100!-4 -66[9 -62 3 -50!3 -50[2 -46 -1 -44!-1 -44[#FFFFF2.69 #FFFFDE.CA
+ -28.5 -26.5!-28.5 -26.5[#FFFFE5.E3 -24.171875 -24 -21!-24 -21[-15 -8 -7 6!-7 6[-5 9 -7 12!-7 12[-11 22 -20 17!-20 17[-24 15 -26 11!-26 11[-30 5 -34 -1!-34 -1[#FFFFD8.7D -7.4296875 -45 -14.5!-45 -14.5[#FFFFCF.7D #FFFFF2.62 -52 -11!-52
+ -11[-65 -2 -78 10!-78 10[-80 12 -83 11!-83 11[-94 7 -88 -3!-88 -3[-84 -11 -78 -16!-78 -16[#FFFFBB.AA -24.921875 -57 -30!-57 -30[#FFFFC4.BE #FFFFDF.C9 -61 -35!-61 -35[-65 -41 -69 -47!-69 -47[-78 -57 -67 -65!-67 -65[-65 -66 -64 -66!-64
+ -66[-57 -65 -54 -58!-54 -58|-53 -57!-53 -57[-48 -52 -44 -46!-44 -46[-43 -44 -43 -43!-43 -43[#FFFFD5.BA -42.609375 -41.5 -42!-41.5 -42[#FFFFDA.DA -45.359375 -31 -47!-31 -47[-29 -48 -27 -49!-27 -49[-17 -56 -7 -64!-7 -64[-6 -66 -4 -66"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="12" duration="3" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#999999"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!48.5 -11[#3F.6B #FFFFF7.6B 62 6!62 6[#3D.23 #F.E6 52.5 18.5!52.5 18.5[#28.E3 #15.CC 35.5 10.5!35.5 10.5[#20.63 #4.A7 35.5 -2!35.5 -2[#28.0D #FFFFF5.DA 48.5 -11!-73 74[-78 83 -88 78!-88 78[-109 69 -94 53!-94 53[-90 49 -85 49!-85 49[-59
+ 53 -73 74"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="15" duration="3" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#999999"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!9 -20[#17.82 #FFFFF2.C5 38 -5.5!38 -5.5[#26.2B #FFFFEE.D6 39 -28!39 -28[39 -29 40 -30!40 -30[42 -39 50 -41!50 -41[61 -37 59 -24!59 -24[58 -17 58 -11!58 -11[#3A.37 -8.859375 58 -7!58 -7[#3B.76 #FFFFFA.61 60.5 -4!60.5 -4[#41.33 #FFFFFA.0F
+ 70 -8!70 -8[77 -11 83 -12!83 -12[93 -14 100 -9!100 -9[105 -6 103 -1!103 -1[100 4 96 4!96 4[80 5 68 17!68 17[67 18 66 19!66 19[65 20 63 21!63 21[#3E.1A #15.AD 61 22!61 22[#3D.B3 #17.7F 62 25!62 25[63 27 64 29!64 29[73 40 77 53!77 53[78
+ 56 76 59!76 59[70 66 64 59!64 59[57 51 52 42!52 42[49 37 46 33!46 33|46 32.5!46 32.5[#25.E4 #2A.5B 30 52!30 52[27 57 23 58!23 58[14 59 14 51!14 51[13 45 18 40!18 40[26 32 30 21!30 21[#1E.CE #12.3 32 15.5!32 15.5[#1A.CF #E.D9 22 11!22
+ 11[18 8 15 4!15 4[13 2 11 -1!11 -1[1 -4 2 -14!2 -14[3 -18 7 -19!7 -19[8 -19 9 -20!-36 -55[-40 -51 -45 -53!-45 -53[-66 -62 -51 -79!-51 -79[-47 -83 -42 -83!-42 -83[-16 -73 -36 -55"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="18" duration="3" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#999999"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!75 -198[100 -188 82 -165!82 -165[#4F.ED #FFFF5D.5E 78 -160!78 -160[#51.17 #FFFF62.93 84 -155!84 -155[86 -154 87 -152!87 -152[111 -139 126 -117!126 -117[130 -112 126 -107!126 -107[111 -88 92 -106!92 -106[81 -117 67 -126!67 -126[#3F.FD
+ #FFFF80.1B 61 -130!61 -130[#35.1A #FFFF92.93 51 -87!51 -87[51 -83 47 -82!47 -82[25 -76 25 -98!25 -98[25 #FFFF80.D7 36 -151.5!36 -151.5[#16.DB -165.78125 14 -183!14 -183[12 -186 14 -189!14 -189[19 -198 28 -198!28 -198[#29.48 #FFFF42.15
+ 53.5 -180.5!53.5 -180.5[#3A.CC #FFFF45.0C 65 -193!65 -193[70 -197 75 -198!-63 -9[-62 1 -72 7!-72 7[-85 13 -92 3!-92 3[-95 -2 -95 -9!-95 -9[-94 -23 -81 -27!-81 -27[-65 -25 -63 -9"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="21" duration="3" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#999999"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!94 -240[90 -236 85 -238!85 -238[64 -247 79 -264!79 -264[83 -268 88 -268!88 -268[114 -258 94 -240!-75 -2[-77 1 -80 0!-80 0[-90 -1 -87 -10!-87 -10[-85 -13 -82 -14!-82 -14[-81 -14 -80 -15!-80 -15[-69 -11 -75 -2"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="24" duration="3" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#999999"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!111 -440[#6D.68 #FFFE49.5E 108 -437!108 -437[#6E.15 -433.25 112 -429!112 -429[114 -422 109 -417!109 -417[#5F.DC #FFFE6D.04 85 -416!85 -416[#4B.B8 #FFFE66.37 65 -408!65 -408[56 -407 53 -415!53 -415[#2E.C6 #FFFE50.FC 60.5 -442.5!60.5 -442.5
+[#3B.2F #FFFE44.D9 58 -444!58 -444[40 -458 59 -470!59 -470[62 -472 65 -473!65 -473[#4D.DF #FFFE2C.12 88 -460!88 -460[#5F.81 #FFFE2F.8D 103 -468!103 -468[131 -460 111 -440!17 64[7 76 -7 67!-7 67[-10 66 -10 63!-10 63[-10 57 -9 51!-9 51
+[-13 49 -13 44!-13 44[-14 36 -6 35!-6 35[8 32 17 42!17 42[26 53 17 64!-77 -31|-77 -30!-77 -30[-75 -28 -74 -26!-74 -26[-74 -24 -73 -23!-73 -23[-67 -27 -60 -30!-60 -30[-48 -36 -44 -26!-44 -26[-43 -23 -46 -20!-46 -20[-49 -17 -53 -16!-53
+ -16[-58 -12 -64 -8!-64 -8[-53 1 -52 14!-52 14[-52 23 -61 22!-61 22[-66 21 -68 16!-68 16[-69 11 -73 8!-73 8[-74 7 -76 6!-76 6[-85 13 -93 19!-93 19[-95 22 -99 20!-99 20[-108 16 -104 7!-104 7[-101 0 -94 -3!-94 -3[-93 -3 -92 -4!-92 -4[-90
+ -7 -89 -10!-89 -10[-91 -20 -92 -30!-92 -30[-93 -39 -85 -40!-85 -40[-78 -39 -77 -31"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="27" duration="3" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#999999"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!-84 -613[-88 -609 -93 -611!-93 -611[-114 -621 -99 -637!-99 -637[-95 -641 -90 -641!-90 -641[-64 -631 -84 -613!9 57[7 60 4 59!4 59[-6 58 -3 49!-3 49[-1 45 2 44!2 44[3 44 4 44!4 44[15 47 9 57"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="30" duration="3" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#999999"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!167 -513[146 -522 161 -539!161 -539[165 -543 170 -543!170 -543[196 -533 176 -515!176 -515[172 -511 167 -513!13 -662[-1 -651 -14 -664!-14 -664[#FFFFE7.17 #FFFD5C.92 -36.5 -686!-36.5 -686[#FFFFD5.61 #FFFD57.B9 -49 -675!-49 -675[-56 -669
+ -60 -661!-60 -661[-76 -633 -98 -650!-98 -650[-101 -653 -100 -656!-100 -656[-95 -671 -84 -685!-84 -685[#FFFFB5.FF #FFFD47.44 -63.5 -708!-63.5 -708[#FFFFAA.E7 #FFFD2B.87 -109 -738!-109 -738[-122 -745 -114 -758!-114 -758[-110 -766 -102
+ -766!-102 -766[#FFFFBA.71 #FFFD10.CA -41.5 -730.5!-41.5 -730.5[-38.359375 #FFFD22.3B -35 -737!-35 -737[-28 -743 -24 -752!-24 -752[-19 -760 -10 -761!-10 -761[19 -754 2 -730!2 -730[#FFFFF9.FD #FFFD31.4A -15 -708.5!-15 -708.5[#0.52 #FFFD49.C1
+ 14 -678!14 -678[22 -669 13 -662!69 -15[70 -20 71 -24!71 -24[71 -27 73 -30!73 -30[76 -33 80 -33!80 -33[90 -35 93 -26!93 -26|94 -25!94 -25[101 -13 92 -2!92 -2|91 -2!91 -2[82 1 75 -4!75 -4[69 -8 69 -15!15 36[19 37 20 40!20 40|21 40!21 40
+[34 35 48 39!48 39[60 41 54 52!54 52[52 56 48 56!48 56[38 58 27 60!27 60[37 67 47 75!47 75[48 76 49 78!49 78[51 90 39 90!39 90[36 90 34 87!34 87[33 85 33 83!33 83[31 82 29 81!29 81[28 80 27 79!27 79[21 79 18 74!18 74[18 73 17 73!17 73
+[15 85 8 96!8 96[7 99 6 101!6 101[-1 111 -8 101!-8 101[-10 98 -10 95!-10 95[-8 84 -1 75!-1 75[-13 83 -26 90!-26 90[-29 92 -32 89!-32 89[-38 81 -30 74!-30 74[-27 71 -24 67!-24 67[-16 56 -4 50!-4 50[-15 45 -16 35!-16 35[-17 32 -14 30!-14
+ 30[-12 28 -9 28!-9 28[-1 30 7 34!7 34[11 35 15 36!-100 13[-110 11 -107 0!-107 0[-104 -9 -95 -12!-95 -12[-79 -12 -83 5!-83 5[-87 17 -100 13"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="33" duration="3" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#999999"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!200 -766[179 -776 194 -792!194 -792[198 -796 203 -796!203 -796[229 -786 209 -768!209 -768[205 -764 200 -766!72 -47[#4F.7A #FFFFD7.A5 86.5 -33!86.5 -33[#5A.03 #FFFFDF.EF 92 -28.5!92 -28.5[#68.8D -34.109375 119 -37!119 -37[121 -38 122
+ -38!122 -38[135 -43 136 -31!136 -31[136 -29 135 -28!135 -28[123 -17 106 -16!106 -16[101 -16 98 -13!98 -13|97 -12.5!97 -12.5[#60.35 -7.140625 92 -2!92 -2|91 -2!91 -2[#58.2 #FFFFFE.F5 85.5 -1!85.5 -1[84 #3.72 84 8!84 8[85 18 81 25!81 25
+[79 28 76 27!76 27[66 25 67 15!67 15[68 6 68 -3!68 -3[68 -14 68 -25!68 -25[60 -34 53 -43!53 -43|53 -44!53 -44[52 -53 61 -55!61 -55[69 -56 71 -48!71 -48[72 -48 72 -47!-117 -33[-116 -35 -114 -36!-114 -36[-113 -36 -112 -36!-112 -36[-104
+ -34 -101 -26!-101 -26[-101 -25 -100 -24!-100 -24[#FFFF9E.92 -18 -95 -12!-95 -12[-92.4375 -12 -90.5 -11.5!-90.5 -11.5[#FFFFAE.CE -15.328125 -72 -17!-72 -17[-68 -18 -67 -15!-67 -15[-61 -6 -70 -2!-70 -2[#FFFFB3.A5 #1.A2 -82.5 3.5!-82.5
+ 3.5[#FFFFAD.2B #4.4B -83 5!-83 5[#FFFFB6.36 #D.A2 -70 25!-70 25[-67 30 -69 35!-69 35[-73 44 -81 38!-81 38[-86 35 -90 28!-90 28[#FFFFA2.DA #14.21 -98 13.5!-98 13.5[#FFFF9C.F2 #D.4B -100 13!-100 13[#FFFF99.7D #C.7F -104 11.5!-104 11.5
+[#FFFF96.66 #C.AB -107 15!-107 15[-112 22 -119 25!-119 25[-124 27 -126 23!-126 23[-131 15 -124 9!-124 9[-121 5 -116 1!-116 1[-113 -2 -110 -6!-110 -6[-123 -18 -117 -33!-18 104[-21 103 -24 101!-24 101[-30 95 -31 88!-31 88[-32 84 -28 81
+!-28 81[-24 79 -20 78!-20 78[0 75 2 93!2 93[2 97 -1 100!-1 100[-8 107 -18 104"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="36" duration="3" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#999999"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!295 -871[#124.D3 #FFFC9F.16 290.5 -859!290.5 -859[#136.61 -846.84375 329 -834!329 -834[334 -831 332 -825!332 -825[323 -802 300 -817!300 -817[#121.4A #FFFCC8.2F 278.5 -829.5!278.5 -829.5[#10D.8C #FFFCD6.E9 259 -789!259 -789[258 -786 254
+ -786!254 -786[229 -786 237 -809!237 -809[#F3.C3 #FFFCC4.99 251 -845.5!251 -845.5[#E4.B4 #FFFCA4.AF 208 -875!208 -875[190 -888 175 -903!175 -903[171 -906 173 -912!173 -912[178 -922 188 -923!188 -923[221 -909 250 -885!250 -885[#FF.E6 #FFFC90.29
+ 263 -875!263 -875[#10D.4A #FFFC85.57 276 -906!276 -906[278 -910 284 -911!284 -911[287 -912 290 -913!290 -913[315 -903 299 -880!299 -880[296 -876 295 -871!124 -553[120 -549 115 -551!115 -551[94 -561 109 -577!109 -577[113 -581 118 -581
+!118 -581[144 -571 124 -553!5 118[-4 130 -19 125!-19 125[-20 125 -21 125!-21 125[-36 124 -34 109!-34 109[-42 102 -41 93!-41 93[-41 87 -35 84!-35 84[-35 80 -34 76!-34 76[-32 70 -25 69!-25 69[-21 70 -18 73!-18 73|-17 73!-17 73[-6 70 0 78
+!0 78[1 81 1 84!1 84[9 94 9 106!9 106[9 113 5 118!-64 -925[-68 -921 -73 -923!-73 -923[-94 -932 -79 -949!-79 -949[-75 -953 -70 -953!-70 -953[-44 -943 -64 -925"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="39" duration="3" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#999999"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!256 -1066[252 -1062 247 -1064!247 -1064[226 -1074 241 -1090!241 -1090[245 -1094 250 -1094!250 -1094[276 -1084 256 -1066!10 -1041[24 -1016 -4 -1015!-4 -1015[-7.984375 -1015 -11.5 -1017!-11.5 -1017[#FFFFE8.F1 #FFFC1A.86 -37 -981!-37 -981
+[-40 -977 -45 -979!-45 -979[-65 -989 -52 -1010!-52 -1010[-45 -1022 -38 -1034!-38 -1034[#FFFFDA.EF #FFFBF4.6C -36 -1037!-36 -1037[-55.71875 #FFFBE1.A1 -74 -1072!-74 -1072[-78 -1076 -77 -1082!-77 -1082[-75 -1095 -62 -1096!-62 -1096[-41.53125
+ #FFFBC5.6E -21 -1068!-21 -1068[#FFFFED.9B #FFFBCD.A6 -16 -1081!-16 -1081[-12 -1093 0 -1094!0 -1094[25 -1083 9 -1055!9 -1055[#7.15 #FFFBE4.5C 5 -1048!5 -1048[#8.05 #FFFBEB.09 10 -1041!222 -894[221 -899 226 -902!226 -902[230 -906 235 -906
+!235 -906[#FA.85 #FFFC7C.FC 256.5 -882.5!256.5 -882.5[#104.8B #FFFC8A.2A 265 -889!265 -889[266 -890 268 -891!268 -891[295 -880 276 -856!276 -856[#112.D3 #FFFCA9.7E 273.5 -853!273.5 -853[#118.4F -853 287 -853!287 -853[312 -853 311 -832
+!311 -832[311 -823 302 -820!302 -820[293 -818 285 -819!285 -819[#11A.5B #FFFCCC.C6 279.5 -819.5!279.5 -819.5[292.75 -807.25 305 -795!305 -795[310 -790 306 -784!306 -784[#123.F3 #FFFD01.CC 274.5 -780!274.5 -780[#111.FB #FFFCFC.15 272 -764
+!272 -764[269 -751 257 -755!257 -755[241 -761 241 -779!241 -779[240 -791 238 -803!238 -803[#ED.D5 #FFFCDC.0F 237.5 -805!237.5 -805[#E8.C4 #FFFCE2.12 228 -791!228 -791[226 -788 223 -789!223 -789[202 -793 211 -813!211 -813[#D5.0B -817.59375
+ 215 -822!215 -822[#CC.75 #FFFCC9.C3 194 -822!194 -822[185 -822 184 -831!184 -831[179 -850 198 -854!198 -854[#C9.04 #FFFCAA.12 204 -854!204 -854[#C4.56 #FFFCA0.B7 189 -873!189 -873[187 -876 188 -879!188 -879[190 -893 203 -894!203 -894
+[#D6.8E #FFFC88.6C 225 -877.5!225 -877.5[#DF.71 #FFFC8A.4C 222 -894!-26 111[-28 109 -28 105!-28 105[-28 90 -15 84!-15 84[0 86 0 101!0 101[0 107 -4 111!-4 111[-14 120 -26 111"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="42" duration="3" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#999999"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!122 -1246[122 #FFFB29.23 123.5 -1231.5!123.5 -1231.5[#8F.9 #FFFB2C.BD 161 -1227!161 -1227[175 -1220 166 -1207!166 -1207[158 -1197 145 -1196!145 -1196[#8C.EA #FFFB54.8B 137 -1195.5!137 -1195.5[#91.F #FFFB6C.48 141 -1149!141 -1149[140
+ -1144 134 -1144!134 -1144[117 -1144 103 -1157!103 -1157[93 -1167 79 -1173!79 -1173[48 -1160 25 -1137!25 -1137[21 -1134 17 -1136!17 -1136[-6 -1148 13 -1167!13 -1167[24 -1178 33 -1191!33 -1191[8 -1211 28 -1230!28 -1230[30 -1232 33 -1232
+!33 -1232[48 -1233 63 -1234!63 -1234[75 -1259 90 -1281!90 -1281[93 -1286 98 -1286!98 -1286[122 -1276 122 -1246!40 -1091[66 -1081 46 -1063!46 -1063[42 -1059 37 -1061!37 -1061[16 -1070 31 -1087!31 -1087[35 -1091 40 -1091!8 56[11 60 15 65
+!15 65|16 66!16 66[28 62 39 55!39 55[48 50 55 56!55 56[57 59 56 62!56 62[50 72 41 79!41 79[33 85 25 91!25 91[22 93 19 94!19 94[19 99 17 103!17 103[16 104 15 106!15 106[22 117 31 128!31 128[32 129 32 132!32 132[32 144 20 141!20 141[19
+ 141 17 139!17 139[13 131 6 125!6 125[4 124 2 123!2 123[-11 126 -22 133!-22 133[-32 140 -40 132!-40 132[-42 130 -42 128!-42 128[-44 119 -37 114!-37 114[-31 106 -25 98!-25 98[-39 82 -51 64!-51 64[-52 63 -51 61!-51 61[-47 52 -38 58!-38
+ 58[-34 60 -32 64!-32 64[-29 69 -23 69!-23 69[-18 61 -9 58!-9 58[-8 58 -8 57!-8 57[-8 56 -8 54!-8 54[-8 53 -8 51!-8 51[-13 40 -4 35!-4 35[-3 34 -2 34!-2 34[8 38 8 49!8 49[8 52 8 56"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="45" duration="4" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

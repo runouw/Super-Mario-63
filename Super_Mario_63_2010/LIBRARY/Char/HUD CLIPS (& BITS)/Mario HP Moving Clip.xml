@@ -1,0 +1,471 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="      Char/   HUD CLIPS (&amp; BITS)/Mario HP Moving Clip" itemID="458df82d-0000076b" lastModified="1199152128" lastUniqueIdentifier="12">
+  <timeline>
+    <DOMTimeline name="Mario HP Moving Clip">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" duration="14" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+count = 0;
+currenthp = _root.CharHP;
+onEnterFrame = function () {
+	if (currenthp == _root.CharHP && _root.CharHP == 8) {
+		count++;
+	} else {
+		currenthp = _root.CharHP;
+		count = 0;
+	}
+	if (_root.WaterHP<=7) {
+		gotoAndPlay("hurtwater");
+		onEnterFrame = null;
+	}
+	if (count>160) {
+		play();
+		onEnterFrame = null;
+	}
+};
+if (_root.WaterHP<=7 && _root.CharHP>=8) {
+	gotoAndStop(45);
+}
+if (_root.WaterHP<=7 && _root.CharHP<=7) {
+	gotoAndStop("both");
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="14" duration="5" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+currenthp = _root.CharHP;
+onEnterFrame = function () {
+	if (currenthp !== _root.CharHP || _root.CharHP<8) {
+		if (_root.CharHP<currenthp || _root.CharHP<7) {
+			play();
+		} else {
+			gotoAndPlay("slower");
+		}
+		onEnterFrame = null;
+	}
+	if (_root.WaterHP !== 8) {
+		gotoAndPlay("water");
+		onEnterFrame = null;
+	}
+	currenthp = _root.CharHP;
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="19" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[gotoAndStop(1);
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="20" duration="14" name="slower" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="34" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[gotoAndStop(1);
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="35" duration="9" name="water" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="44" duration="10" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+currenthp = _root.CharHP;
+onEnterFrame = function () {
+	if (_root.CharHP<7) {
+		gotoAndPlay("hurtwater");
+		onEnterFrame = null;
+	}
+	if (_root.WaterHP>=8) {
+		play();
+		onEnterFrame = null;
+	}
+	currenthp = _root.CharHP;
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="54" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[gotoAndStop(15);
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="55" duration="9" name="hurtwater" labelType="name" tweenType="motion" keyMode="17921" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/   HUD CLIPS (&amp; BITS)/HP Clip">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="64" name="both" labelType="name" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+currenthp = _root.CharHP;
+onEnterFrame = function () {
+	if (_root.CharHP>=8) {
+		gotoAndPlay("hpaway");
+		onEnterFrame = null;
+	}
+	if (_root.WaterHP>=8) {
+		gotoAndPlay("wateraway");
+		onEnterFrame = null;
+	}
+	currenthp = _root.CharHP;
+};
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/   HUD CLIPS (&amp; BITS)/HP Clip">
+                  <matrix>
+                    <Matrix tx="30"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="65" duration="9" name="waterhurt" labelType="name" tweenType="motion" keyMode="17921" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/   HUD CLIPS (&amp; BITS)/HP Clip">
+                  <matrix>
+                    <Matrix ty="-50"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="74" tweenType="motion" keyMode="17921" acceleration="100">
+              <Actionscript>
+                <script><![CDATA[gotoAndStop("both");
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/   HUD CLIPS (&amp; BITS)/HP Clip">
+                  <matrix>
+                    <Matrix tx="30"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="75" duration="9" name="hpaway" labelType="name" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/   HUD CLIPS (&amp; BITS)/HP Clip">
+                  <matrix>
+                    <Matrix tx="30"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="84" tweenType="motion" keyMode="17921" acceleration="-100">
+              <Actionscript>
+                <script><![CDATA[gotoAndStop(45);
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/   HUD CLIPS (&amp; BITS)/HP Clip">
+                  <matrix>
+                    <Matrix ty="-50"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="85" duration="10" name="wateraway" labelType="name" tweenType="motion" keyMode="17921" acceleration="100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/   HUD CLIPS (&amp; BITS)/HP Clip">
+                  <matrix>
+                    <Matrix tx="30"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="95" tweenType="motion" keyMode="17921">
+              <Actionscript>
+                <script><![CDATA[gotoAndStop(1);
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/   HUD CLIPS (&amp; BITS)/HP Clip">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="14" tweenType="motion" keyMode="17921" acceleration="100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/   HUD CLIPS (&amp; BITS)/HP Clip" selected="true">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="14" duration="5" tweenType="motion" keyMode="17921" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/   HUD CLIPS (&amp; BITS)/HP Clip">
+                  <matrix>
+                    <Matrix ty="-50"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="19" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/   HUD CLIPS (&amp; BITS)/HP Clip">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="20" duration="14" tweenType="motion" keyMode="17921" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/   HUD CLIPS (&amp; BITS)/HP Clip">
+                  <matrix>
+                    <Matrix ty="-50"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="34" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/   HUD CLIPS (&amp; BITS)/HP Clip">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="35" duration="9" tweenType="motion" keyMode="17921" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/   HUD CLIPS (&amp; BITS)/WaterHP Clip">
+                  <matrix>
+                    <Matrix ty="-50"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter hue="-180"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="44" duration="10" tweenType="motion" keyMode="17921" acceleration="100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/   HUD CLIPS (&amp; BITS)/WaterHP Clip">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter hue="-180"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="54" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/   HUD CLIPS (&amp; BITS)/WaterHP Clip">
+                  <matrix>
+                    <Matrix d="0.9986572265625" ty="-50"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter hue="-180"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="55" duration="9" tweenType="motion" keyMode="17921" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/   HUD CLIPS (&amp; BITS)/WaterHP Clip">
+                  <matrix>
+                    <Matrix d="0.9986572265625" ty="-50"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter hue="-180"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="64" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/   HUD CLIPS (&amp; BITS)/WaterHP Clip">
+                  <matrix>
+                    <Matrix d="0.9986572265625" tx="-30"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter hue="-180"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="65" duration="9" tweenType="motion" keyMode="17921" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/   HUD CLIPS (&amp; BITS)/WaterHP Clip">
+                  <matrix>
+                    <Matrix d="0.9986572265625" ty="-0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter hue="-180"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="74" tweenType="motion" keyMode="17921" acceleration="100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/   HUD CLIPS (&amp; BITS)/WaterHP Clip">
+                  <matrix>
+                    <Matrix d="0.9986572265625" tx="-30" ty="-0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter hue="-180"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="75" duration="9" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/   HUD CLIPS (&amp; BITS)/WaterHP Clip">
+                  <matrix>
+                    <Matrix d="0.9986572265625" tx="-30" ty="-0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter hue="-180"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="84" tweenType="motion" keyMode="17921" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/   HUD CLIPS (&amp; BITS)/WaterHP Clip">
+                  <matrix>
+                    <Matrix d="0.9986572265625" ty="-0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter hue="-180"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="85" duration="10" tweenType="motion" keyMode="17921" acceleration="100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/   HUD CLIPS (&amp; BITS)/WaterHP Clip">
+                  <matrix>
+                    <Matrix d="0.9986572265625" tx="-30" ty="-0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter hue="-180"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="95" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/   HUD CLIPS (&amp; BITS)/WaterHP Clip">
+                  <matrix>
+                    <Matrix d="0.9986572265625" ty="-50"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter hue="-180"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

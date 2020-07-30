@@ -1,0 +1,107 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="LDW - Circle Green PL Preview" itemID="4a05d4da-00001a26" sourceFlashFilepath="F:\Super Mario 63\New computer\Level Designer (With Mario Engine new) 5.fla" sourceLibraryItemHRef="LDW - Circle Green PL Preview" sourceLastModified="1241898611" lastModified="1241898611" sourceItemID="4a05d4da-00001a26">
+  <timeline>
+    <DOMTimeline name="LDW - Circle Green PL Preview">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[Start = function () {
+	clip.removeMovieClip();
+	clip2.removeMovieClip();
+	RES();
+	onEnterFrame = function () {
+		OEF();
+	};
+};
+RES = function () {
+	if (scale == undefined) {
+		scale = 2;
+	}
+	if (angle == undefined) {
+		angle = 0;
+	}
+	if (distance == undefined) {
+		distance = 50;
+	}
+	if (speed == undefined) {
+		speed = 5;
+	}
+	if (dotdistance == undefined) {
+		dotdistance = 20;
+	}
+	if (armscale == undefined) {
+		armscale = 0;
+	}
+	if (num == undefined) {
+		num = 2;
+	}
+	this.createEmptyMovieClip("clip", this.getNextHighestDepth());
+	if (dotdistance<360) {
+		for (i=0; i<360; i += dotdistance) {
+			clip.attachMovie("Path dot", "dot"+clip.getNextHighestDepth(), clip.getNextHighestDepth(), {_y:Math.cos(_root.angleToRadians(i))*distance, _x:-Math.sin(_root.angleToRadians(i))*distance});
+		}
+	}
+	this.createEmptyMovieClip("clip2", this.getNextHighestDepth());
+	for (i=0; i<num; i++) {
+		trace(scale);
+		clip2.attachMovie("GreenPLClip", "pl"+i, clip2.getNextHighestDepth());
+		clip2["pl"+i].gotoAndStop(scale);
+	}
+};
+OEF = function () {
+	angle += speed;
+	for (i=0; i<num; i++) {
+		clip2["pl"+i]._x = -Math.sin(_root.angleToRadians(angle+(360/num)*i))*distance;
+		clip2["pl"+i]._y = Math.cos(_root.angleToRadians(angle+(360/num)*i))*distance;
+	}
+};
+this.createEmptyMovieClip("clip2", this.getNextHighestDepth());
+clip2.attachMovie("GreenPLClip", "pl"+0, clip2.getNextHighestDepth());
+clip2["pl"+0].gotoAndStop(2);
+nextFrame();]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor/>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <SolidColor/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="!250 -250|250 250!250 250|-251 250!-251 250|-251 -250!-251 -250|250 -250"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,633 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Items-PL/ In-course Items/ Transportation/ Cannon/Cannon (main) Clip" itemID="459d3f26-000008b7" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="CannonClip" sourceFlashFilepath="Rob &amp; Steve Hewitt\My Documents\Super Mario 63\New Title Screen Design.fla" sourceLibraryItemHRef="  Course Items-PL/ In-course Items/ Cannon/Cannon (main) Clip" sourceLastModified="1189137648" lastModified="1244659941" lastUniqueIdentifier="18" sourceItemID="459d3f26-000008b7">
+  <timeline>
+    <DOMTimeline name="Cannon (main) Clip">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (side == undefined) {
+	side = "Right";
+}
+if (Xpower == undefined) {
+	Xpower = 35;
+}
+if (Ypower == undefined) {
+	Ypower = 25;
+}
+if (cannonsetup == false) {
+	gotoAndStop(2);
+} else {
+	play();
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+onEnterFrame = function () {
+	if (this.box.hitTest(_root.Course.Char.charClip.feet) && Math.abs(_root.Course.Char.xspeed)<7 && cannonsetup == true) {
+		_root.Course.Char.attack = true;
+		_root.Course.Char.xspeed = 0;
+		_root.Course.Char.yspeed = 0;
+		_root.Course.Char.attackFrame = "none";
+		play();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="box">
+                  <matrix>
+                    <Matrix a="0.566421508789063" d="1.2703857421875" tx="-0.15" ty="7.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" duration="38" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	_root.PauseGame = false;
+	//
+	_root.Course.Char._x = _x+_parent._x
+	_root.Course.Char._y = _y+_parent._y
+	_root.Course.Char.attack = true;
+	_root.Course.Char.xspeed = 0;
+	_root.Course.Char.yspeed = 0;
+	_root.Course.Char.attackFrame = "none";
+};
+_root.Mariosound = new Sound(this);
+_root.Mariosound.attachSound("cannon1");
+_root.Mariosound.start(0, 1);
+_root.Mariosound.setVolume(_root.MarioVolume);
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="41" duration="11" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.Mariosound = new Sound(this);
+_root.Mariosound.attachSound("cannon2");
+_root.Mariosound.start(0, 1);
+_root.Mariosound.setVolume(_root.MarioVolume);]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="52" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.Mariosound = new Sound(this);
+_root.Mariosound.attachSound("cannon3");
+_root.Mariosound.start(0, 1);
+_root.Mariosound.setVolume(_root.MarioVolume);
+stop();
+savezoom = _root.CameraZoom;
+_root.CameraZoom = 50;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="53" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.Course.Char.attack = true;
+_root.Course.Char.xspeed = Math.sin(_root.angleToRadians(rotdirection))*Xpower;
+_root.Course.Char.yspeed = -Math.cos(_root.angleToRadians(rotdirection))*Ypower;
+if (side == "Right") {
+	_root.Course.Char._xscale = -100;
+} else if (side !== "Both") {
+	_root.Course.Char._xscale = 100;
+}
+_root.Course.Char._x = _x+_parent._x;
+_root.Course.Char._y = _y+_parent._y;
+//
+_root.Course.Char._y -= 20;
+_root.Course.Char._y -= Math.cos(_root.angleToRadians(rotdirection))*30;
+_root.Course.Char._x += Math.sin(_root.angleToRadians(rotdirection))*30;
+_root.Course.Char.air = true;
+_root.Course.Char.attackFrame = "Dive";
+//
+_root.CameraZoom = savezoom;
+onEnterFrame = function () {
+	_root.PauseGame = false;
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="54" duration="34" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.Mariosound = new Sound(this);
+_root.Mariosound.attachSound("Cannon Shot");
+_root.Mariosound.start(0, 1);
+_root.Mariosound.setVolume(_root.MarioVolume);
+//
+onEnterFrame = null;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="88" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[gotoAndStop(3);
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 7" color="#4F80FF" outline="true" useOutlineView="true" layerType="mask">
+          <frames>
+            <DOMFrame index="0" duration="89" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor/>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <SolidColor/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!-317 -356|-317 -246!-317 -246|338 -246!338 -246|338 -356"/>
+                    <Edge fillStyle0="1" strokeStyle="1" edges="!338 -356|1243 -356!1243 -356|1243 -1976!1243 -1976|-1237 -1976!-1237 -1976|-1237 -356!-1237 -356|-317 -356"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 5" color="#4FFFFF" parentLayerIndex="1">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <LinearGradient>
+                            <matrix>
+                              <Matrix a="0.0152587890625" d="0.03662109375" tx="0.55" ty="-47.45"/>
+                            </matrix>
+                            <GradientEntry color="#373737" ratio="0"/>
+                            <GradientEntry color="#1A1A1A" ratio="1"/>
+                          </LinearGradient>
+                        </FillStyle>
+                      </fills>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal">
+                            <fill>
+                              <SolidColor/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="!261 -349.5S2[#FFFFE4.9A #43.FE -239 -349.5!-239 -349.5|-239 -1549.5!-239 -1549.5|261 -1549.5!261 -1549.5|261 -349.5"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Cannon/Cannon Question Mark">
+                  <matrix>
+                    <Matrix tx="0.3" ty="-27.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Cannon/Locked Cannon Clip">
+                  <matrix>
+                    <Matrix tx="-1.05" ty="-17.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="0.05" y="-0.4"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="3" duration="25" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Cannon/Cannon Question Mark">
+                  <matrix>
+                    <Matrix tx="0.3" ty="42.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="28" duration="49" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Cannon/Cannon Question Mark">
+                  <matrix>
+                    <Matrix tx="0.3" ty="-27.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="77" duration="10" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Cannon/Cannon Question Mark">
+                  <matrix>
+                    <Matrix tx="0.3" ty="-27.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="87" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Cannon/Cannon Question Mark">
+                  <matrix>
+                    <Matrix tx="0.3" ty="12.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="88" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Cannon" color="#808080" parentLayerIndex="1" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="3" duration="25" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix ty="68.5"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix ty="68.5"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <LinearGradient>
+                            <matrix>
+                              <Matrix a="0.0152587890625" d="0.03662109375" tx="0.55" ty="-43.45"/>
+                            </matrix>
+                            <GradientEntry color="#373737" ratio="0"/>
+                            <GradientEntry color="#1A1A1A" ratio="1"/>
+                          </LinearGradient>
+                        </FillStyle>
+                      </fills>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal">
+                            <fill>
+                              <SolidColor/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="!261 -269.5S6[#FFFFE4.9A #93.FE -239 -269.5!-239 -269.5|-239 -1469.5!-239 -1469.5|261 -1469.5!261 -1469.5|261 -269.5"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="28" duration="14" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <LinearGradient>
+                            <matrix>
+                              <Matrix a="0.0152587890625" d="0.03662109375" tx="0.55" ty="-47.45"/>
+                            </matrix>
+                            <GradientEntry color="#373737" ratio="0"/>
+                            <GradientEntry color="#1A1A1A" ratio="1"/>
+                          </LinearGradient>
+                        </FillStyle>
+                      </fills>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal">
+                            <fill>
+                              <SolidColor/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="!261 -349.5S2[#FFFFE4.9A #43.FE -239 -349.5!-239 -349.5|-239 -1549.5!-239 -1549.5|261 -1549.5!261 -1549.5|261 -349.5"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="42" duration="10" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Cannon/Cannon Clip">
+                  <matrix>
+                    <Matrix tx="0.6" ty="-26"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (enterFrame) {
+	if (_parent.side == "Right") {
+		_rotation += 4.5;
+	} else if (_parent.side == "Left") {
+		_rotation -= 4.5;
+	} else {
+		_rotation += 4.5/2;
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="52" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Cannon/Cannon Clip">
+                  <matrix>
+                    <Matrix tx="0.35" ty="-27"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	if (_parent.side == "Right") {
+		rotation = 45;
+	} else if (_parent.side !== "Both") {
+		rotation = -45;
+	} else {
+		rotation = 45/2;
+	}
+	_rotation = rotation;
+	rotspeed = 0;
+}
+onClipEvent (enterFrame) {
+	if (_root.KeyTapLEFT()) {
+		rotspeed -= 0.5;
+	}
+	if (_root.KeyTapRIGHT()) {
+		rotspeed += 0.5;
+	}
+	if (_root.KeyLEFT()) {
+		rotspeed -= 1;
+	}
+	if (_root.KeyRIGHT()) {
+		rotspeed += 1;
+	}
+	if (_root.KeySPACE()) {
+		_parent.play();
+		_parent.rotdirection = _rotation;
+	}
+	rotation += rotspeed;
+	_rotation = rotation;
+	if (_parent.side == "Right") {
+		_rotation = Math.max(0, _rotation);
+		_rotation = Math.min(75, _rotation);
+	} else if (_parent.side !== "Both") {
+		_rotation = Math.min(0, _rotation);
+		_rotation = Math.max(-75, _rotation);
+	} else {
+		_rotation = Math.max(-75, _rotation);
+		_rotation = Math.min(75, _rotation);
+	}
+	rotation = _rotation;
+	rotspeed = _root.groundFriction(rotspeed, 0.5, 1.1);
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="53" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Cannon/Cannon Clip">
+                  <matrix>
+                    <Matrix tx="0.35" ty="-27.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_rotation = _parent.rotdirection;
+	_yscale = 90;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="54" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Cannon/Cannon Clip">
+                  <matrix>
+                    <Matrix tx="0.35" ty="-27.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_rotation = _parent.rotdirection;
+	_yscale = 80;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="55" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Cannon/Cannon Clip">
+                  <matrix>
+                    <Matrix tx="0.35" ty="-27.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_rotation = _parent.rotdirection;
+	_yscale = 90;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="56" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Cannon/Cannon Clip">
+                  <matrix>
+                    <Matrix tx="0.35" ty="-27.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_rotation = _parent.rotdirection;
+	_yscale = 100;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="57" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Cannon/Cannon Clip">
+                  <matrix>
+                    <Matrix tx="0.35" ty="-27.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_rotation = _parent.rotdirection;
+	_yscale = 110;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="58" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Cannon/Cannon Clip">
+                  <matrix>
+                    <Matrix tx="0.35" ty="-27.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_rotation = _parent.rotdirection;
+	_yscale = 105;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="59" duration="6" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Cannon/Cannon Clip">
+                  <matrix>
+                    <Matrix tx="0.35" ty="-27.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_rotation = _parent.rotdirection;
+	_yscale = 100;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="65" duration="12" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Cannon/Cannon Clip">
+                  <matrix>
+                    <Matrix tx="0.35" ty="-27.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_rotation = _parent.rotdirection;
+}
+onClipEvent (enterFrame) {
+	_parent.rotdirection = _root.groundFriction(_parent.rotdirection, 3, 1.2);
+	_rotation = _parent.rotdirection;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="77" duration="11" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Cannon/Cannon Clip">
+                  <matrix>
+                    <Matrix tx="0.35" ty="-27.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_rotation = _parent.rotdirection;
+}
+onClipEvent (enterFrame) {
+	_y += 3;
+	_yscale -= 10;
+	_yscale = Math.max(_yscale, 0);
+	_yscale = Math.min(_yscale, 100);
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="88" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

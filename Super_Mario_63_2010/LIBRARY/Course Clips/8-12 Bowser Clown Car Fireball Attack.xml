@@ -1,0 +1,510 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Clips/8-12 Bowser Clown Car Fireball Attack" itemID="48f151cf-00000f24" sourceFlashFilepath="Rob &amp; Steve Hewitt\My Documents\Super Mario 63\Bowser Mid-Battle Test.fla" sourceLibraryItemHRef="8-12 Bowser Clown Car Fireball Attack" sourceLastModified="1223955011" lastModified="1237604534" lastUniqueIdentifier="2" sourceItemID="48f151cf-00000f24">
+  <timeline>
+    <DOMTimeline name="8-12 Bowser Clown Car Fireball Attack">
+      <layers>
+        <DOMLayer name="Layer 6" color="#808080" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="13" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[//rotto = -20;
+rotto = Math.atan2(_parent._parent._y-(_root.Course.Char._y-_root.Course.BackGFX._y), _parent._parent._x-(_root.Course.Char._x-_root.Course.BackGFX._x))*180/Math.PI;
+if (_parent._parent._xscale>0) {
+	rotto = Math.min(rotto, 45);
+	rotto = Math.max(rotto, -45);
+} else {
+	if (rotto>0) {
+		rotto = 180-rotto;
+	} else {
+		rotto = -180-rotto;
+	}
+	rotto = Math.min(rotto, 45);
+	rotto = Math.max(rotto, -45);
+}
+speed = 10;
+if (fireball == undefined) {
+	fireball = [0, 0, 0];
+}
+if (loops == undefined) {
+	loops = fireball.length;
+}
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		_rotation -= (_rotation-rotto)/speed;
+		play();
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="13" duration="2" name="loop" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="15" duration="7" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[// attach fireball
+// red = normal (explode on contact)
+// purple = bounce (bounces off of walls)
+// green = follow (explode on contact, moves like a following bullet bill)
+num = fireball[loops-1];
+if (_parent._parent._xscale>0) {
+	rot = _rotation*Math.PI/180;
+	Xup = Math.cos(rot+Math.PI/2);
+	Xright = Math.cos(rot);
+	Yup = Math.sin(rot+Math.PI/2);
+	Yright = Math.sin(rot);
+	//
+	X = Xup*-20+Xright*-45;
+	Y = Yup*-20+Yright*-45;
+	rotation = (random(20)-15)+_rotation;
+} else {
+	rot = -_rotation*Math.PI/180;
+	Xup = Math.cos(rot+Math.PI/2);
+	Xright = Math.cos(rot);
+	Yup = Math.sin(rot+Math.PI/2);
+	Yright = Math.sin(rot);
+	//
+	X = Xup*-20+Xright*45;
+	Y = Yup*-20+Yright*45;
+	rotation = ((random(20)-15)-_rotation)-180;
+}
+if (num == 0) {
+	// red
+	_root.Course.BackGFX.attachMovie("BowserFire1", "BowserFire"+_root.Course.BackGFX.getNextHighestDepth(), _root.Course.BackGFX.getNextHighestDepth(), {_x:_parent._parent._x+X, _y:_parent._parent._y+Y, bounce:false, frame:1, rotation:rotation});
+} else if (num == 1) {
+	// purple
+	_root.Course.BackGFX.attachMovie("BowserFire1", "BowserFire"+_root.Course.BackGFX.getNextHighestDepth(), _root.Course.BackGFX.getNextHighestDepth(), {_x:_parent._parent._x+X, _y:_parent._parent._y+Y, bounce:true, frame:2, rotation:rotation});
+} else if (num == 2) {
+	// green
+	_root.Course.BackGFX.attachMovie("BowserFire1", "BowserFire"+_root.Course.BackGFX.getNextHighestDepth(), _root.Course.BackGFX.getNextHighestDepth(), {_x:_parent._parent._x+X, _y:_parent._parent._y+Y, bounce:false, follow:true, frame:3, rotation:rotation});
+} else if (num == 3) {
+	// cyan
+	_root.Course.BackGFX.attachMovie("BowserFire1", "BowserFire"+_root.Course.BackGFX.getNextHighestDepth(), _root.Course.BackGFX.getNextHighestDepth(), {_x:_parent._parent._x+X, _y:_parent._parent._y+Y, bounce:true, bouncemax:5+random(8), bounceboost:7, frame:4, speed:3+Math.random()*6, lifetime:32*30, rotation:rotation});
+} else {
+	_root.Course.BackGFX.attachMovie("BowserFire1", "BowserFire"+_root.Course.BackGFX.getNextHighestDepth(), _root.Course.BackGFX.getNextHighestDepth(), {_x:_parent._parent._x+X, _y:_parent._parent._y+Y, bounce:false, frame:5, explodesize:"large", speed:6+Math.random()*3, rotation:rotation});
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="22" duration="4" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[loops--;
+if (loops<=0) {
+	rotto = 0;
+	speed = 5;
+	onEnterFrame = function () {
+		if (_root.PauseGame == false) {
+			_rotation -= (_rotation-rotto)/speed;
+			play();
+		} else {
+			stop();
+		}
+	};
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="26" duration="7" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (loops>0) {
+	gotoAndPlay("loop");
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="33" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_parent._parent.attack = false;
+_rotation = 0;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Bowser Head - 1" color="#9933CC" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Head - 1">
+                  <matrix>
+                    <Matrix tx="-31" ty="-52.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" duration="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Head - 1">
+                  <matrix>
+                    <Matrix tx="-31" ty="-53.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="6" duration="5" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Head - 1">
+                  <matrix>
+                    <Matrix tx="-30" ty="-54.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="11" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Head - 3">
+                  <matrix>
+                    <Matrix tx="-40.5" ty="-53.9"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="13" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Head - 3">
+                  <matrix>
+                    <Matrix tx="-41.5" ty="-53.9"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="15" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Head - 4">
+                  <matrix>
+                    <Matrix tx="-48.5" ty="-52.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="17" duration="5" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Head - 4">
+                  <matrix>
+                    <Matrix tx="-49.5" ty="-52.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="22" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Head - 4">
+                  <matrix>
+                    <Matrix tx="-48.5" ty="-52.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="24" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Head - 3">
+                  <matrix>
+                    <Matrix tx="-39.5" ty="-53.9"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="26" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Head - 3">
+                  <matrix>
+                    <Matrix tx="-40.5" ty="-53.9"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="28" duration="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Head - 1">
+                  <matrix>
+                    <Matrix tx="-31" ty="-53.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="31" duration="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Head - 1">
+                  <matrix>
+                    <Matrix tx="-31" ty="-52.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Bowser Arm - 3" color="#FFFF4F" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 3">
+                  <matrix>
+                    <Matrix tx="-2" ty="-26.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" duration="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 3">
+                  <matrix>
+                    <Matrix tx="-1" ty="-27.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="6" duration="5" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 3">
+                  <matrix>
+                    <Matrix tx="-1" ty="-28.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="11" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 3">
+                  <matrix>
+                    <Matrix tx="-9.5" ty="-26.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="13" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 3">
+                  <matrix>
+                    <Matrix tx="-8.5" ty="-26.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="15" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 10">
+                  <matrix>
+                    <Matrix tx="-11.5" ty="-27.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="17" duration="5" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 10">
+                  <matrix>
+                    <Matrix tx="-10.5" ty="-27.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="22" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 10">
+                  <matrix>
+                    <Matrix tx="-11.5" ty="-27.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="24" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 3">
+                  <matrix>
+                    <Matrix tx="-8.5" ty="-26.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="26" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 3">
+                  <matrix>
+                    <Matrix tx="-9.5" ty="-26.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="28" duration="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 3">
+                  <matrix>
+                    <Matrix tx="-1" ty="-27.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="31" duration="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 3">
+                  <matrix>
+                    <Matrix tx="-2" ty="-26.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Bowser Arm - 4" color="#FF4FFF" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 4">
+                  <matrix>
+                    <Matrix tx="-30" ty="-22.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" duration="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 4">
+                  <matrix>
+                    <Matrix tx="-30" ty="-23.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="6" duration="5" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 4">
+                  <matrix>
+                    <Matrix tx="-29" ty="-24.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="11" duration="4" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 4">
+                  <matrix>
+                    <Matrix tx="-32" ty="-25.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="15" duration="9" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 4">
+                  <matrix>
+                    <Matrix tx="-33" ty="-24.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="24" duration="4" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 4">
+                  <matrix>
+                    <Matrix tx="-32" ty="-25.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="28" duration="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 4">
+                  <matrix>
+                    <Matrix tx="-31" ty="-23.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="31" duration="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 4">
+                  <matrix>
+                    <Matrix tx="-30" ty="-22.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" duration="28" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/8-12 Clown Car Base (Plus Expressions)">
+                  <matrix>
+                    <Matrix ty="20.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="28" duration="6" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/8-12 Clown Car Base (Plus Expressions)">
+                  <matrix>
+                    <Matrix ty="20.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Bowser Body - 6" color="#4FFFFF" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="11" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Body - 6">
+                  <matrix>
+                    <Matrix tx="-20.45" ty="-42.8"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="11" duration="4" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Body - 7">
+                  <matrix>
+                    <Matrix tx="-27" ty="-47.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="15" duration="9" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Body - 8">
+                  <matrix>
+                    <Matrix tx="-30" ty="-48.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="24" duration="4" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Body - 7">
+                  <matrix>
+                    <Matrix tx="-27" ty="-48.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="28" duration="6" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Body - 6">
+                  <matrix>
+                    <Matrix tx="-20.45" ty="-42.8"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

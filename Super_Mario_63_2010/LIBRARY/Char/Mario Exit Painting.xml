@@ -1,0 +1,1440 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="      Char/Mario Exit Painting" itemID="4782d488-00000d9e" lastModified="1245555143" lastUniqueIdentifier="8">
+  <timeline>
+    <DOMTimeline name="Mario Exit Painting">
+      <layers>
+        <DOMLayer name="Code" color="#FFFF4F" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+//
+changemusic = true;
+trace(_root.LastItemGot);
+count = 0;
+onEnterFrame = function () {
+	_root.Course.Char.xspeed = 0;
+	_root.Course.Char.yspeed = -_root.gravity;
+	//_root.Course.Char._x = _root.StartX
+	//_root.Course.Char._y = _root.StartY
+	_root.PauseGame = false;
+	count++;
+	if (count>32) {
+		if (changemusic !== false) {
+			_root.PaintingSound2();
+		}
+		// if(_root.newstar == true)  
+		if (_root.LastItemGot == "gotStar") {
+			gotoAndPlay("gotstar");
+		}
+		if (_root.LastItemGot == "oldStar") {
+			gotoAndPlay("oldstar");
+		}
+		if (_root.LastItemGot == "Key") {
+			gotoAndPlay("gotitem");
+		}
+		if (_root.LastItemGot == "Exit") {
+			gotoAndPlay("exit");
+		}
+		if (_root.LastItemGot == "GameOver") {
+			gotoAndPlay("GameOver");
+		}
+		if (_root.LastItemGot == "BowserKey1") {
+			gotoAndPlay("bowserkey1");
+		}
+		onEnterFrame = function () {
+			_root.PauseGame = false;
+		};
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="8" name="oldstar" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="9" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+onEnterFrame = function () {
+	_root.PauseGame = false;
+	if (_root.Course.Char.air == false) {
+		_root.StartNewMusicAndIntroNoVar("InsidetheCastleWalls");
+		play();
+		onEnterFrame = function () {
+			_root.PauseGame = false;
+		};
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="10" duration="4" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="14" duration="3" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[// Attach the HUD for High Scores and Saving
+stop();
+_root.DoneWithHighScores = false;
+_root.attachMovie("HighscoresScreen", "HighscoresScreen"+_root.getNextHighestDepth(), _root.getNextHighestDepth(), {_x:_root.screensizeX/2, _y:_root.screensizeY/2});
+onEnterFrame = function () {
+	_root.PauseGame = false;
+	if (_root.DoneWithHighScores == true) {
+		play();
+		onEnterFrame = function () {
+			_root.PauseGame = false;
+		};
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="17" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.newstar = false;
+_root.Course.Char.attack = false;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="18" duration="10" name="gotstar" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="28" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+onEnterFrame = function () {
+	_root.PauseGame = false;
+	if (_root.Course.Char.air == false) {
+		_root.StartNewMusicAndIntroNoVar("InsidetheCastleWalls");
+		play();
+		onEnterFrame = function () {
+			_root.PauseGame = false;
+		};
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="29" duration="11" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	_root.PauseGame = false;
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="40" duration="7" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.CalculateStars();]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="47" duration="10" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[// Attach the HUD for High Scores and Saving
+stop();
+_root.DoneWithHighScores = false;
+_root.attachMovie("HighscoresScreen", "HighscoresScreen"+_root.getNextHighestDepth(), _root.getNextHighestDepth(), {_x:_root.screensizeX/2, _y:_root.screensizeY/2});
+onEnterFrame = function () {
+	_root.PauseGame = false;
+	if (_root.DoneWithHighScores == true) {
+		play();
+		onEnterFrame = function () {
+			_root.PauseGame = false;
+		};
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="57" duration="5" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[
+if (_root["StarMessage"+_root.TotalStars] !== undefined) {
+	_root.StopBGsong();
+	//
+	_root.Mariosound = new Sound(this);
+	_root.Mariosound.attachSound("mario-goodnews");
+	_root.Mariosound.start(0, 1);
+	_root.Mariosound.setVolume(_root.MarioVolume);
+	//_root.PlayMessage("You have "+_root.TotalStars+" Shine Sprites"+newline+_root["StarMessage"+_root.TotalStars]);
+	_root.PlayMessage(_root["StarMessage"+_root.TotalStars]);
+	//   
+} else {
+	gotoAndPlay("end");
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="62" duration="4" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+onEnterFrame = function () {
+	_root.PauseGame = false;
+	if (_root.KeyZ()) {
+		play();
+		_root.StopMessage();
+		onEnterFrame = function () {
+			_root.PauseGame = false;
+		};
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="66" duration="3" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.PlayMusicAndIntro();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="69" duration="2" name="end" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="71" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.newstar = false;
+_root.Course.Char.attack = false;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="72" duration="20" name="gotitem" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="92" duration="8" name="exit" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="100" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+onEnterFrame = function () {
+	_root.PauseGame = false;
+	if (_root.Course.Char.air == false) {
+		if (changemusic !== false) {
+			_root.StartNewMusicAndIntroNoVar("InsidetheCastleWalls");
+		}
+		play();
+		onEnterFrame = function () {
+			_root.PauseGame = false;
+		};
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="101" duration="6" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="107" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.newstar = false;
+_root.Course.Char.attack = false;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="108" duration="3" name="GameOver" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="111" duration="14" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+onEnterFrame = function () {
+	_root.PauseGame = false;
+	if (_root.Course.Char.air == false) {
+		play();
+		onEnterFrame = function () {
+			_root.PauseGame = false;
+		};
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="125" duration="4" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (changemusic !== false) {
+	_root.StartNewMusicAndIntroNoVar("InsidetheCastleWalls");
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="129" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.newstar = false;
+_root.Course.Char.attack = false;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="130" name="bowserkey1" labelType="name" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.Course.Char._xscale = 100;
+_root.Course.Char.yspeed = -14.5;
+_root.Course.Char.xspeed = 6;]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="131" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+onEnterFrame = function () {
+	_root.PauseGame = false;
+	if (_root.Course.Char.yspeed>-2) {
+		play();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="132" duration="9" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	_root.PauseGame = false;
+	if(_root.Course.Char.air == false){
+		gotoAndPlay("bowserkey1land");
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="141" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="142" duration="11" name="bowserkey1land" labelType="name" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	play();
+	_root.PauseGame = false;
+};
+_root.StartNewMusicAndIntroNoVar("InsidetheCastleWalls");]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="153" duration="5" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.PlayMessage("CONGRATULATIONS!"+newline+"You have obtained the Bowser Key that unlocks the Basement of the Castle!");]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="158" duration="8" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+onEnterFrame = function () {
+	_root.PauseGame = false;
+	if (_root.KeyZ()) {
+		play();
+		_root.StopMessage();
+		onEnterFrame = function () {
+			_root.PauseGame = false;
+		};
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="166" duration="4" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[// Attach the HUD for High Scores and Saving
+stop();
+_root.DoneWithHighScores = false;
+//_root.attachMovie("HighscoresScreen", "HighscoresScreen"+_root.getNextHighestDepth(), _root.getNextHighestDepth(), {_x:_root.screensizeX/2, _y:_root.screensizeY/2});
+_root.attachMovie("SaveMessage", "SaveMessage"+_root.getNextHighestDepth(), _root.getNextHighestDepth(), {_x:_root.screensizeX/2, _y:_root.screensizeY/2});
+onEnterFrame = function () {
+	_root.PauseGame = false;
+	if (_root.DoneWithHighScores == true) {
+		play();
+		onEnterFrame = function () {
+			_root.PauseGame = false;
+		};
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="170" duration="7" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.StopBGsong();]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="177" duration="4" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.CinemaMessageFrame = 3;
+_root.CinemaMessage = "<b><i>Bowser:</i></b> Mwahaha! Mario, you thought I was foolish enough to give you the Key to the Basement that easily?";
+lastframeZ = _root.KeyZ();
+//
+stop();
+onEnterFrame = function () {
+	if (_root.KeyZ() == true && lastframeZ !== true && _root.CinemaMessageFinished == true) {
+		_root.CinemaMessage = "";
+		//_root.CinemaMessage = "Some mroe text";
+		//_root.CinemaMessageFrame = 3;
+		onEnterFrame = function () {
+			_root.PauseGame = false;
+		};
+		play();
+	}
+	lastframeZ = _root.KeyZ();
+	//
+	_root.PauseGame = false;
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="181" duration="6" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.CinemaMessageFrame = 3;
+_root.CinemaMessage = "<b><i>Bowser:</i></b> The key you have is cursed!   It will warp you far away from the Castle!  Mwahahahahaha!!!";
+lastframeZ = _root.KeyZ();
+//
+stop();
+onEnterFrame = function () {
+	if (_root.KeyZ() == true && lastframeZ !== true && _root.CinemaMessageFinished == true) {
+		_root.CinemaMessage = "";
+		//_root.CinemaMessage = "Some mroe text";
+		//_root.CinemaMessageFrame = 3;
+		onEnterFrame = function () {
+			_root.PauseGame = false;
+		};
+		play();
+	}
+	lastframeZ = _root.KeyZ();
+	//
+	_root.PauseGame = false;
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="187" duration="5" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[T = function () {
+	_root.Mariosound = new Sound(this);
+	_root.Mariosound.attachSound("Tick");
+	_root.Mariosound.start(0, 1);
+	_root.Mariosound.setVolume(_root.MarioVolume);
+};
+T();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="192" duration="6" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[T();]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="198" duration="6" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[T();]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="204" duration="5" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[T();]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="209" duration="5" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[T();]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="214" duration="5" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[T();]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="219" duration="5" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[T();]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="224" duration="30" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.Mariosound = new Sound(this);
+_root.Mariosound.attachSound("WarpEnterSFX");
+_root.Mariosound.start(0, 1);
+_root.Mariosound.setVolume(_root.MarioVolume);
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="254" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.newstar = false;
+_root.changecourse("StarIn", "8-E3-1", 0, 0, 0, 0, true);]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#FF4FFF">
+          <frames>
+            <DOMFrame index="0" duration="224" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="224" duration="31" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Mario Bowser Key 1 Warp Clip" blendMode="invert">
+                  <matrix>
+                    <Matrix tx="40.75" ty="-2.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Item" color="#9933CC" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="18" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="18" duration="18" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="36" duration="4" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Starry Stuff/Shine Sprite">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-0.25" ty="-24"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="40" duration="13" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Menu/Shine Sprite Clip (Glow)">
+                  <matrix>
+                    <Matrix tx="4.35" ty="-32.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter color="#FEDD00" strength="2"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/ Light Effects Folder/Shine Light Effect">
+                  <matrix>
+                    <Matrix tx="4" ty="-31.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (enterFrame) {
+	_rotation += 2;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="53" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Starry Stuff/Shine Sprite">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-0.25" ty="-24"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="55" duration="37" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="92" duration="16" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="108" duration="37" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="145" duration="5" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="8.15" ty="-17.6"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix a="0.5" d="0.5" tx="8.15" ty="-17.6"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#FFCC00"/>
+                        </FillStyle>
+                      </fills>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal">
+                            <fill>
+                              <SolidColor color="#FFFF00"/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                        <StrokeStyle index="2">
+                          <SolidStroke scaleMode="normal">
+                            <fill>
+                              <SolidColor color="#FFFF00"/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge fillStyle0="1" strokeStyle="1" edges="!84.5 -100[#31.67 -64.9375 -0.5 -65!-0.5 -65[#FFFFCD.5A -64.9375 -86 -100!-86 -100[-120.78125 #FFFF78.D2 -120.5 -185!-120.5 -185[-120.78125 #FFFF15.6F -86 -269.5!-86 -269.5[#FFFFCD.5A #FFFECF.31 -0.5 -305!-0.5 -305[#31.67 #FFFECF.31 84.5
+ -269.5!84.5 -269.5[#77.88 #FFFF15.6F 119.5 -185!119.5 -185[#77.88 #FFFF78.D2 84.5 -100"/>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="
+!-44.5 131.5|-44.5 -9.5!-44.5 -9.5[-91.84375 #FFFFEB.1F -128.5 -57.5!-128.5 -57.5[#FFFF4B.34 #FFFF91.BA -180.5 -185!-180.5 -185[#FFFF4B.34 #FFFEFC.C7 -128.5 -311.5!-128.5 -311.5[#FFFFB4.66 -364.59375 -0.5 -365!-0.5 -365[#4A.1B -364.59375
+ 126.5 -311.5!126.5 -311.5[#B3.4C #FFFEFC.C7 179.5 -185!179.5 -185[#B3.4C #FFFF91.BA 126.5 -57.5!126.5 -57.5[#55.57 #FFFFF0.0A 30.5 -7!30.5 -7|31 326.5!31 326.5|-44.5 326.5"/>
+                        <Edge fillStyle1="1" strokeStyle="2" edges="
+!-44.5 326.5|-173 326.5!-173 326.5|-173 261.5!-173 261.5|-44.5 261.5"/>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="
+!-44.5 261.5|-44.5 194"/>
+                        <Edge fillStyle1="1" strokeStyle="2" edges="
+!-44.5 194|-182 194!-182 194|-182 131.5!-182 131.5|-44.5 131.5"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="150" duration="19" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="4.2" ty="-32.15"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix tx="4.2" ty="-32.15"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#FFCC00"/>
+                        </FillStyle>
+                      </fills>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal">
+                            <fill>
+                              <SolidColor color="#FFFF00"/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                        <StrokeStyle index="2">
+                          <SolidStroke scaleMode="normal">
+                            <fill>
+                              <SolidColor color="#FFFF00"/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="
+!-44.5 131.5|-44.5 -9.5!-44.5 -9.5[-91.84375 #FFFFEB.1F -128.5 -57.5!-128.5 -57.5[#FFFF4B.34 #FFFF91.BA -180.5 -185!-180.5 -185[#FFFF4B.34 #FFFEFC.C7 -128.5 -311.5!-128.5 -311.5[#FFFFB4.66 -364.59375 -0.5 -365!-0.5 -365[#4A.1B -364.59375
+ 126.5 -311.5!126.5 -311.5[#B3.4C #FFFEFC.C7 179.5 -185!179.5 -185[#B3.4C #FFFF91.BA 126.5 -57.5!126.5 -57.5[#55.57 #FFFFF0.0A 30.5 -7!30.5 -7|31 326.5!31 326.5|-44.5 326.5"/>
+                        <Edge fillStyle1="1" strokeStyle="2" edges="
+!-44.5 326.5|-173 326.5!-173 326.5|-173 261.5!-173 261.5|-44.5 261.5"/>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="
+!-44.5 261.5|-44.5 194"/>
+                        <Edge fillStyle1="1" strokeStyle="2" edges="
+!-44.5 194|-182 194!-182 194|-182 131.5!-182 131.5|-44.5 131.5"/>
+                        <Edge fillStyle0="1" strokeStyle="1" edges="
+!84.5 -100[#31.67 -64.9375 -0.5 -65!-0.5 -65[#FFFFCD.5A -64.9375 -86 -100!-86 -100[-120.78125 #FFFF78.D2 -120.5 -185!-120.5 -185[-120.78125 #FFFF15.6F -86 -269.5!-86 -269.5[#FFFFCD.5A #FFFECF.31 -0.5 -305!-0.5 -305[#31.67 #FFFECF.31 84.5
+ -269.5!84.5 -269.5[#77.88 #FFFF15.6F 119.5 -185!119.5 -185[#77.88 #FFFF78.D2 84.5 -100"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMSymbolInstance libraryItemName="   Effects/ Light Effects Folder/Shine Light Effect">
+                  <matrix>
+                    <Matrix tx="3.75" ty="-29.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (enterFrame) {
+	_rotation += 2;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="169" duration="18" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="8.15" ty="-17.6"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix a="0.5" d="0.5" tx="8.15" ty="-17.6"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#FFCC00"/>
+                        </FillStyle>
+                      </fills>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal">
+                            <fill>
+                              <SolidColor color="#FFFF00"/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                        <StrokeStyle index="2">
+                          <SolidStroke scaleMode="normal">
+                            <fill>
+                              <SolidColor color="#FFFF00"/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="
+!-44.5 131.5|-44.5 -9.5!-44.5 -9.5[-91.84375 #FFFFEB.1F -128.5 -57.5!-128.5 -57.5[#FFFF4B.34 #FFFF91.BA -180.5 -185!-180.5 -185[#FFFF4B.34 #FFFEFC.C7 -128.5 -311.5!-128.5 -311.5[#FFFFB4.66 -364.59375 -0.5 -365!-0.5 -365[#4A.1B -364.59375
+ 126.5 -311.5!126.5 -311.5[#B3.4C #FFFEFC.C7 179.5 -185!179.5 -185[#B3.4C #FFFF91.BA 126.5 -57.5!126.5 -57.5[#55.57 #FFFFF0.0A 30.5 -7!30.5 -7|31 326.5!31 326.5|-44.5 326.5"/>
+                        <Edge fillStyle1="1" strokeStyle="2" edges="
+!-44.5 326.5|-173 326.5!-173 326.5|-173 261.5!-173 261.5|-44.5 261.5"/>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="
+!-44.5 261.5|-44.5 194"/>
+                        <Edge fillStyle1="1" strokeStyle="2" edges="
+!-44.5 194|-182 194!-182 194|-182 131.5!-182 131.5|-44.5 131.5"/>
+                        <Edge fillStyle0="1" strokeStyle="1" edges="
+!84.5 -100[#31.67 -64.9375 -0.5 -65!-0.5 -65[#FFFFCD.5A -64.9375 -86 -100!-86 -100[-120.78125 #FFFF78.D2 -120.5 -185!-120.5 -185[-120.78125 #FFFF15.6F -86 -269.5!-86 -269.5[#FFFFCD.5A #FFFECF.31 -0.5 -305!-0.5 -305[#31.67 #FFFECF.31 84.5
+ -269.5!84.5 -269.5[#77.88 #FFFF15.6F 119.5 -185!119.5 -185[#77.88 #FFFF78.D2 84.5 -100"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="187" duration="2" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="11.65" ty="-17.6"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix a="0.5" d="0.5" tx="11.65" ty="-17.6"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#FFCC00"/>
+                        </FillStyle>
+                      </fills>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal">
+                            <fill>
+                              <SolidColor color="#FFFF00"/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                        <StrokeStyle index="2">
+                          <SolidStroke scaleMode="normal">
+                            <fill>
+                              <SolidColor color="#FFFF00"/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge fillStyle0="1" strokeStyle="1" edges="
+!84.5 -100[#31.67 -64.9375 -0.5 -65!-0.5 -65[#FFFFCD.5A -64.9375 -86 -100!-86 -100[-120.78125 #FFFF78.D2 -120.5 -185!-120.5 -185[-120.78125 #FFFF15.6F -86 -269.5!-86 -269.5[#FFFFCD.5A #FFFECF.31 -0.5 -305!-0.5 -305[#31.67 #FFFECF.31 84.5
+ -269.5!84.5 -269.5[#77.88 #FFFF15.6F 119.5 -185!119.5 -185[#77.88 #FFFF78.D2 84.5 -100"/>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="
+!-44.5 131.5|-44.5 -9.5!-44.5 -9.5[-91.84375 #FFFFEB.1F -128.5 -57.5!-128.5 -57.5[#FFFF4B.34 #FFFF91.BA -180.5 -185!-180.5 -185[#FFFF4B.34 #FFFEFC.C7 -128.5 -311.5!-128.5 -311.5[#FFFFB4.66 -364.59375 -0.5 -365!-0.5 -365[#4A.1B -364.59375
+ 126.5 -311.5!126.5 -311.5[#B3.4C #FFFEFC.C7 179.5 -185!179.5 -185[#B3.4C #FFFF91.BA 126.5 -57.5!126.5 -57.5[#55.57 #FFFFF0.0A 30.5 -7!30.5 -7|31 326.5!31 326.5|-44.5 326.5"/>
+                        <Edge fillStyle1="1" strokeStyle="2" edges="
+!-44.5 326.5|-173 326.5!-173 326.5|-173 261.5!-173 261.5|-44.5 261.5"/>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="
+!-44.5 261.5|-44.5 194"/>
+                        <Edge fillStyle1="1" strokeStyle="2" edges="
+!-44.5 194|-182 194!-182 194|-182 131.5!-182 131.5|-44.5 131.5"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="189" duration="2" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix a="0.353561401367188" b="0.353561401367188" c="-0.353546142578125" d="0.353561401367188" tx="23.9" ty="-14.95"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix a="0.353561401367188" b="0.353561401367188" c="-0.353546142578125" d="0.353561401367188" tx="23.9" ty="-14.95"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#FFCC00"/>
+                        </FillStyle>
+                      </fills>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal">
+                            <fill>
+                              <SolidColor color="#FFFF00"/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                        <StrokeStyle index="2">
+                          <SolidStroke scaleMode="normal">
+                            <fill>
+                              <SolidColor color="#FFFF00"/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="
+!-44.5 131.5|-44.5 -9.5!-44.5 -9.5[-91.84375 #FFFFEB.1F -128.5 -57.5!-128.5 -57.5[#FFFF4B.34 #FFFF91.BA -180.5 -185!-180.5 -185[#FFFF4B.34 #FFFEFC.C7 -128.5 -311.5!-128.5 -311.5[#FFFFB4.66 -364.59375 -0.5 -365!-0.5 -365[#4A.1B -364.59375
+ 126.5 -311.5!126.5 -311.5[#B3.4C #FFFEFC.C7 179.5 -185!179.5 -185[#B3.4C #FFFF91.BA 126.5 -57.5!126.5 -57.5[#55.57 #FFFFF0.0A 30.5 -7!30.5 -7|31 326.5!31 326.5|-44.5 326.5"/>
+                        <Edge fillStyle1="1" strokeStyle="2" edges="
+!-44.5 326.5|-173 326.5!-173 326.5|-173 261.5!-173 261.5|-44.5 261.5"/>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="
+!-44.5 261.5|-44.5 194"/>
+                        <Edge fillStyle1="1" strokeStyle="2" edges="
+!-44.5 194|-182 194!-182 194|-182 131.5!-182 131.5|-44.5 131.5"/>
+                        <Edge fillStyle0="1" strokeStyle="1" edges="
+!84.5 -100[#31.67 -64.9375 -0.5 -65!-0.5 -65[#FFFFCD.5A -64.9375 -86 -100!-86 -100[-120.78125 #FFFF78.D2 -120.5 -185!-120.5 -185[-120.78125 #FFFF15.6F -86 -269.5!-86 -269.5[#FFFFCD.5A #FFFECF.31 -0.5 -305!-0.5 -305[#31.67 #FFFECF.31 84.5
+ -269.5!84.5 -269.5[#77.88 #FFFF15.6F 119.5 -185!119.5 -185[#77.88 #FFFF78.D2 84.5 -100"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="191" keyMode="9728">
+              <elements>
+                <DOMGroup selected="true">
+                  <matrix>
+                    <Matrix a="0" b="0.5" c="-0.5" d="0" tx="36.2" ty="-2.55"/>
+                  </matrix>
+                  <members>
+                    <DOMShape selected="true">
+                      <matrix>
+                        <Matrix a="0" b="0.5" c="-0.5" d="0" tx="36.2" ty="-2.55"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#FFCC00"/>
+                        </FillStyle>
+                      </fills>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal">
+                            <fill>
+                              <SolidColor color="#FFFF00"/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                        <StrokeStyle index="2">
+                          <SolidStroke scaleMode="normal">
+                            <fill>
+                              <SolidColor color="#FFFF00"/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="
+!-44.5 131.5|-44.5 -9.5!-44.5 -9.5[-91.84375 #FFFFEB.1F -128.5 -57.5!-128.5 -57.5[#FFFF4B.34 #FFFF91.BA -180.5 -185!-180.5 -185[#FFFF4B.34 #FFFEFC.C7 -128.5 -311.5!-128.5 -311.5[#FFFFB4.66 -364.59375 -0.5 -365!-0.5 -365[#4A.1B -364.59375
+ 126.5 -311.5!126.5 -311.5[#B3.4C #FFFEFC.C7 179.5 -185!179.5 -185[#B3.4C #FFFF91.BA 126.5 -57.5!126.5 -57.5[#55.57 #FFFFF0.0A 30.5 -7!30.5 -7|31 326.5!31 326.5|-44.5 326.5"/>
+                        <Edge fillStyle1="1" strokeStyle="2" edges="
+!-44.5 326.5|-173 326.5!-173 326.5|-173 261.5!-173 261.5|-44.5 261.5"/>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="
+!-44.5 261.5|-44.5 194"/>
+                        <Edge fillStyle1="1" strokeStyle="2" edges="
+!-44.5 194|-182 194!-182 194|-182 131.5!-182 131.5|-44.5 131.5"/>
+                        <Edge fillStyle0="1" strokeStyle="1" edges="
+!84.5 -100[#31.67 -64.9375 -0.5 -65!-0.5 -65[#FFFFCD.5A -64.9375 -86 -100!-86 -100[-120.78125 #FFFF78.D2 -120.5 -185!-120.5 -185[-120.78125 #FFFF15.6F -86 -269.5!-86 -269.5[#FFFFCD.5A #FFFECF.31 -0.5 -305!-0.5 -305[#31.67 #FFFECF.31 84.5
+ -269.5!84.5 -269.5[#77.88 #FFFF15.6F 119.5 -185!119.5 -185[#77.88 #FFFF78.D2 84.5 -100"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="192" duration="39" tweenType="shape" keyMode="17922">
+              <MorphShape>
+                <morphSegments>
+                  <MorphSegment startPointA="#2.31, #FFFFFF.77" startPointB="#2.31, #FFFFFF.77" strokeIndex1="0" strokeIndex2="1">
+                    <MorphCurves controlPointA="#2.41, #FFFFFF.77" anchorPointA="#2.52, #FFFFFF.77" controlPointB="#2.41, #FFFFFF.77" anchorPointB="#2.52, #FFFFFF.77" isLine="true"/>
+                    <MorphCurves controlPointA="#2.52, #FFFFFF.97" anchorPointA="#2.52, #FFFFFF.B7" controlPointB="#2.52, #FFFFFF.97" anchorPointB="#2.52, #FFFFFF.B7" isLine="true"/>
+                    <MorphCurves controlPointA="#2.73, #FFFFFF.95" anchorPointA="#2.73, -0.5546875" controlPointB="#2.73, #FFFFFF.95" anchorPointB="#2.73, -0.5546875" isLine="true"/>
+                    <MorphCurves controlPointA="#2.83, -0.5546875" anchorPointA="#2.93, -0.5546875" controlPointB="#2.83, -0.5546875" anchorPointB="#2.93, -0.5546875" isLine="true"/>
+                    <MorphCurves controlPointA="#2.93, #FFFFFF.95" anchorPointA="#2.93, #FFFFFF.B7" controlPointB="#2.93, #FFFFFF.95" anchorPointB="#2.93, #FFFFFF.B7" isLine="true"/>
+                    <MorphCurves controlPointA="#2.B6, #FFFFFF.B7" anchorPointA="#2.D9, #FFFFFF.B7" controlPointB="#2.B6, #FFFFFF.B7" anchorPointB="#2.D9, #FFFFFF.B7" isLine="true"/>
+                    <MorphCurves controlPointA="#2.DF, #FFFFFF.9F" anchorPointA="#2.F1, #FFFFFF.8D" controlPointB="#2.DF, #FFFFFF.9F" anchorPointB="#2.F1, #FFFFFF.8D"/>
+                    <MorphCurves controlPointA="#3.0B, #FFFFFF.73" anchorPointA="#3.31, #FFFFFF.73" controlPointB="#3.0B, #FFFFFF.73" anchorPointB="#3.31, #FFFFFF.73"/>
+                    <MorphCurves controlPointA="#3.56, #FFFFFF.73" anchorPointA="#3.7, #FFFFFF.8D" controlPointB="#3.56, #FFFFFF.73" anchorPointB="#3.7, #FFFFFF.8D"/>
+                    <MorphCurves controlPointA="#3.8A, #FFFFFF.A7" anchorPointA="#3.8B, #FFFFFF.CD" controlPointB="#3.8A, #FFFFFF.A7" anchorPointB="#3.8B, #FFFFFF.CD"/>
+                    <MorphCurves controlPointA="#3.8A, -0.0546875" anchorPointA="#3.7, #0.0D" controlPointB="#3.8A, -0.0546875" anchorPointB="#3.7, #0.0D"/>
+                    <MorphCurves controlPointA="#3.56, #0.27" anchorPointA="#3.31, #0.27" controlPointB="#3.56, #0.27" anchorPointB="#3.31, #0.27"/>
+                    <MorphCurves controlPointA="#3.0B, #0.27" anchorPointA="#2.F1, #0.0D" controlPointB="#3.0B, #0.27" anchorPointB="#2.F1, #0.0D"/>
+                    <MorphCurves controlPointA="#2.DC, -0.03125" anchorPointA="#2.D8, #FFFFFF.DD" controlPointB="#2.DC, -0.03125" anchorPointB="#2.D8, #FFFFFF.DD"/>
+                    <MorphCurves controlPointA="#2.84, #FFFFFF.DD" anchorPointA="#2.31, #FFFFFF.DD" controlPointB="#2.84, #FFFFFF.DD" anchorPointB="#2.31, #FFFFFF.DD" isLine="true"/>
+                    <MorphCurves controlPointA="#2.31, -0.2109375" anchorPointA="#2.31, #FFFFFF.B7" controlPointB="#2.31, -0.2109375" anchorPointB="#2.31, #FFFFFF.B7" isLine="true"/>
+                    <MorphCurves controlPointA="#2.31, #FFFFFF.97" anchorPointA="#2.31, #FFFFFF.77" controlPointB="#2.31, #FFFFFF.97" anchorPointB="#2.31, #FFFFFF.77" isLine="true"/>
+                  </MorphSegment>
+                  <MorphSegment startPointA="#2.31, #FFFFFF.77" startPointB="#2.31, #FFFFFF.77" strokeIndex1="0" strokeIndex2="1" fillIndex1="0" fillIndex2="1">
+                    <MorphCurves controlPointA="#2.41, #FFFFFF.77" anchorPointA="#2.52, #FFFFFF.77" controlPointB="#2.41, #FFFFFF.77" anchorPointB="#2.52, #FFFFFF.77" isLine="true"/>
+                    <MorphCurves controlPointA="#2.52, #FFFFFF.97" anchorPointA="#2.52, #FFFFFF.B7" controlPointB="#2.52, #FFFFFF.97" anchorPointB="#2.52, #FFFFFF.B7" isLine="true"/>
+                    <MorphCurves controlPointA="#2.73, #FFFFFF.95" anchorPointA="#2.73, -0.5546875" controlPointB="#2.73, #FFFFFF.95" anchorPointB="#2.73, -0.5546875" isLine="true"/>
+                    <MorphCurves controlPointA="#2.83, -0.5546875" anchorPointA="#2.93, -0.5546875" controlPointB="#2.83, -0.5546875" anchorPointB="#2.93, -0.5546875" isLine="true"/>
+                    <MorphCurves controlPointA="#2.93, #FFFFFF.95" anchorPointA="#2.93, #FFFFFF.B7" controlPointB="#2.93, #FFFFFF.95" anchorPointB="#2.93, #FFFFFF.B7" isLine="true"/>
+                    <MorphCurves controlPointA="#2.B6, #FFFFFF.B7" anchorPointA="#2.D9, #FFFFFF.B7" controlPointB="#2.B6, #FFFFFF.B7" anchorPointB="#2.D9, #FFFFFF.B7" isLine="true"/>
+                    <MorphCurves controlPointA="#2.DF, #FFFFFF.9F" anchorPointA="#2.F1, #FFFFFF.8D" controlPointB="#2.DF, #FFFFFF.9F" anchorPointB="#2.F1, #FFFFFF.8D"/>
+                    <MorphCurves controlPointA="#3.0B, #FFFFFF.73" anchorPointA="#3.31, #FFFFFF.73" controlPointB="#3.0B, #FFFFFF.73" anchorPointB="#3.31, #FFFFFF.73"/>
+                    <MorphCurves controlPointA="#3.56, #FFFFFF.73" anchorPointA="#3.7, #FFFFFF.8D" controlPointB="#3.56, #FFFFFF.73" anchorPointB="#3.7, #FFFFFF.8D"/>
+                    <MorphCurves controlPointA="#3.8A, #FFFFFF.A7" anchorPointA="#3.8B, #FFFFFF.CD" controlPointB="#3.8A, #FFFFFF.A7" anchorPointB="#3.8B, #FFFFFF.CD"/>
+                    <MorphCurves controlPointA="#3.8A, -0.0546875" anchorPointA="#3.7, #0.0D" controlPointB="#3.8A, -0.0546875" anchorPointB="#3.7, #0.0D"/>
+                    <MorphCurves controlPointA="#3.56, #0.27" anchorPointA="#3.31, #0.27" controlPointB="#3.56, #0.27" anchorPointB="#3.31, #0.27"/>
+                    <MorphCurves controlPointA="#3.0B, #0.27" anchorPointA="#2.F1, #0.0D" controlPointB="#3.0B, #0.27" anchorPointB="#2.F1, #0.0D"/>
+                    <MorphCurves controlPointA="#2.DC, -0.03125" anchorPointA="#2.D8, #FFFFFF.DD" controlPointB="#2.DC, -0.03125" anchorPointB="#2.D8, #FFFFFF.DD"/>
+                    <MorphCurves controlPointA="#2.84, #FFFFFF.DD" anchorPointA="#2.31, #FFFFFF.DD" controlPointB="#2.84, #FFFFFF.DD" anchorPointB="#2.31, #FFFFFF.DD" isLine="true"/>
+                    <MorphCurves controlPointA="#2.31, -0.2109375" anchorPointA="#2.31, #FFFFFF.B7" controlPointB="#2.31, -0.2109375" anchorPointB="#2.31, #FFFFFF.B7" isLine="true"/>
+                    <MorphCurves controlPointA="#2.31, #FFFFFF.97" anchorPointA="#2.31, #FFFFFF.77" controlPointB="#2.31, #FFFFFF.97" anchorPointB="#2.31, #FFFFFF.77" isLine="true"/>
+                  </MorphSegment>
+                  <MorphSegment startPointA="#2.F5, #FFFFFF.CD" startPointB="#2.F5, #FFFFFF.CD" strokeIndex1="0" strokeIndex2="1" fillIndex1="0" fillIndex2="1">
+                    <MorphCurves controlPointA="#2.F4, -0.296875" anchorPointA="#3.06, -0.3671875" controlPointB="#2.F4, -0.296875" anchorPointB="#3.06, -0.3671875"/>
+                    <MorphCurves controlPointA="#3.49, #FFFFFF.91" anchorPointA="#3.5B, -0.3671875" controlPointB="#3.49, #FFFFFF.91" anchorPointB="#3.5B, -0.3671875"/>
+                    <MorphCurves controlPointA="#3.6D, -0.296875" anchorPointA="#3.6D, #FFFFFF.CD" controlPointB="#3.6D, -0.296875" anchorPointB="#3.6D, #FFFFFF.CD"/>
+                    <MorphCurves controlPointA="#3.6D, -0.1015625" anchorPointA="#3.5B, -0.03125" controlPointB="#3.6D, -0.1015625" anchorPointB="#3.5B, -0.03125"/>
+                    <MorphCurves controlPointA="#3.49, #0.09" anchorPointA="#3.31, #0.09" controlPointB="#3.49, #0.09" anchorPointB="#3.31, #0.09"/>
+                    <MorphCurves controlPointA="#3.18, #0.09" anchorPointA="#3.06, -0.03125" controlPointB="#3.18, #0.09" anchorPointB="#3.06, -0.03125"/>
+                    <MorphCurves controlPointA="#2.F4, -0.1015625" anchorPointA="#2.F5, #FFFFFF.CD" controlPointB="#2.F4, -0.1015625" anchorPointB="#2.F5, #FFFFFF.CD"/>
+                  </MorphSegment>
+                  <MorphSegment startPointA="#2.F5, #FFFFFF.CD" startPointB="#2.F5, #FFFFFF.CD" strokeIndex1="0" strokeIndex2="1">
+                    <MorphCurves controlPointA="#2.F4, -0.296875" anchorPointA="#3.06, -0.3671875" controlPointB="#2.F4, -0.296875" anchorPointB="#3.06, -0.3671875"/>
+                    <MorphCurves controlPointA="#3.49, #FFFFFF.91" anchorPointA="#3.5B, -0.3671875" controlPointB="#3.49, #FFFFFF.91" anchorPointB="#3.5B, -0.3671875"/>
+                    <MorphCurves controlPointA="#3.6D, -0.296875" anchorPointA="#3.6D, #FFFFFF.CD" controlPointB="#3.6D, -0.296875" anchorPointB="#3.6D, #FFFFFF.CD"/>
+                    <MorphCurves controlPointA="#3.6D, -0.1015625" anchorPointA="#3.5B, -0.03125" controlPointB="#3.6D, -0.1015625" anchorPointB="#3.5B, -0.03125"/>
+                    <MorphCurves controlPointA="#3.49, #0.09" anchorPointA="#3.31, #0.09" controlPointB="#3.49, #0.09" anchorPointB="#3.31, #0.09"/>
+                    <MorphCurves controlPointA="#3.18, #0.09" anchorPointA="#3.06, -0.03125" controlPointB="#3.18, #0.09" anchorPointB="#3.06, -0.03125"/>
+                    <MorphCurves controlPointA="#2.F4, -0.1015625" anchorPointA="#2.F5, #FFFFFF.CD" controlPointB="#2.F4, -0.1015625" anchorPointB="#2.F5, #FFFFFF.CD"/>
+                  </MorphSegment>
+                </morphSegments>
+                <morphHintsList/>
+              </MorphShape>
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFCC00"/>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <SolidColor color="#FFFF00"/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                    <StrokeStyle index="2">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <SolidColor color="#FFFF00"/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="
+!561 -73S6|561 -137.5!561 -137.5|593.5 -137.5!593.5 -137.5|593.5 -73"/>
+                    <Edge fillStyle1="1" strokeStyle="2" edges="
+!593.5 -73S6|627 -73"/>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="
+!627 -73S6|627 -142!627 -142|658.5 -142!658.5 -142|658.5 -73"/>
+                    <Edge fillStyle1="1" strokeStyle="2" edges="
+!658.5 -73S6|729 -73!729 -73[#2DE.B1 -96.671875 753 -115!753 -115[#30B.43 #FFFF72.DA 816.5 -141!816.5 -141[#355.BD #FFFF72.DA 880 -115!880 -115[#38A.6C #FFFFA7.73 906.5 -51!906.5 -51[#38A.6C #FFFFF2.4E 880 12.5!880 12.5[#355.BD #26.E6
+ 816.5 39!816.5 39[#30B.43 #26.E6 753 12.5!753 12.5[#2DC.1B -8.078125 727.5 -35.5!727.5 -35.5|561 -35.5!561 -35.5|561 -73"/>
+                    <Edge fillStyle0="1" strokeStyle="2" edges="
+!756.5 -51S5[#2F4.78 #FFFFB3.CD 774 -94!774 -94[#317.97 #FFFF90.BC 816.5 -111!816.5 -111[#349.69 #FFFF90.BC 859 -94!859 -94[#36C.88 #FFFFB3.CD 876.5 -51!876.5 -51[#36C.88 -26.046875 859 -8.5!859 -8.5[#349.69 #9.04 816.5 9!816.5 9[#317.97
+ #9.04 774 -8.5!774 -8.5[#2F4.78 -26.046875 756.5 -51"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="231" duration="8" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor/>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <SolidColor color="#FF0000"/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="
+!561 -137.5|593.5 -137.5!593.5 -137.5|593.5 -73!593.5 -73|627 -73!627 -73|627 -142!627 -142|658.5 -142!658.5 -142|658.5 -73!658.5 -73|729 -73!729 -73[#2DE.B1 -96.671875 753 -115!753 -115[#30B.43 #FFFF72.DA 816.5 -141!816.5 -141[#355.BD
+ #FFFF72.DA 880 -115!880 -115[#38A.6C #FFFFA7.73 906.5 -51!906.5 -51[#38A.6C #FFFFF2.4E 880 12.5!880 12.5[#355.BD #26.E6 816.5 39!816.5 39[#30B.43 #26.E6 753 12.5!753 12.5[#2DC.1B -8.078125 727.5 -35.5!727.5 -35.5|561 -35.5!561 -35.5
+|561 -137.5"/>
+                    <Edge fillStyle0="1" strokeStyle="1" edges="
+!774 -94[#317.97 #FFFF90.BC 816.5 -111!816.5 -111[#349.69 #FFFF90.BC 859 -94!859 -94[#36C.88 #FFFFB3.CD 876.5 -51!876.5 -51[#36C.88 -26.046875 859 -8.5!859 -8.5[#349.69 #9.04 816.5 9!816.5 9[#317.97 #9.04 774 -8.5!774 -8.5[#2F4.78 -26.046875
+ 756.5 -51!756.5 -51[#2F4.78 #FFFFB3.CD 774 -94"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="239" duration="16" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Mario" color="#4FFF4F" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728" acceleration="-100">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="8" tweenType="motion" keyMode="17921" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/Mario Jumping Out of Painting">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-1" ty="-20"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter blurX="57" blurY="83" color="#FFFFFF" inner="true"/>
+                    <BlurFilter/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="9" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/Mario Jumping Out of Painting">
+                  <matrix>
+                    <Matrix tx="-1" ty="-15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter blurX="57" blurY="83" color="#FFFFFF" inner="true" strength="0"/>
+                    <BlurFilter blurX="0" blurY="0"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="10" duration="5" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Overworld - Mario 5 - 3">
+                  <matrix>
+                    <Matrix tx="-8" ty="-30.1"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="15" duration="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Overworld - Mario 4 - 7">
+                  <matrix>
+                    <Matrix a="-1" tx="7.5" ty="-28.4"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="18" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (None) - In Sand - 4">
+                  <matrix>
+                    <Matrix tx="-8" ty="-38.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="20" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (None) - In Sand - 5">
+                  <matrix>
+                    <Matrix tx="-10" ty="-34.95"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="22" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (None) - In Sand - 6">
+                  <matrix>
+                    <Matrix tx="-15" ty="-32.95"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="24" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (None) - In Sand - 7">
+                  <matrix>
+                    <Matrix tx="-16" ty="-32"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="26" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (None) - In Sand - 8">
+                  <matrix>
+                    <Matrix tx="-14" ty="-32"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="28" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (None) - In Sand - 9">
+                  <matrix>
+                    <Matrix tx="-15" ty="-31.95"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="29" duration="7" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (None) - In Sand - 10">
+                  <matrix>
+                    <Matrix tx="-13" ty="-26.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="36" duration="4" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (none) Item - 1">
+                  <matrix>
+                    <Matrix tx="-11" ty="-27.6"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="40" duration="13" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (none) Item - 2">
+                  <matrix>
+                    <Matrix tx="-11" ty="-34.6"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="53" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (none) Item - 1">
+                  <matrix>
+                    <Matrix tx="-11" ty="-27.6"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="55" duration="14" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Overworld - Mario 5 - 3">
+                  <matrix>
+                    <Matrix tx="-8" ty="-29.1"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="69" duration="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Overworld - Mario 4 - 7">
+                  <matrix>
+                    <Matrix a="-1" tx="7.5" ty="-28.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="72" duration="20" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="92" duration="8" tweenType="motion" keyMode="17921" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/Mario Jumping Out of Painting">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-1" ty="-20"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter blurX="57" blurY="83" color="#FFFFFF" inner="true"/>
+                    <BlurFilter/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="100" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/Mario Jumping Out of Painting">
+                  <matrix>
+                    <Matrix tx="-1" ty="-15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter blurX="57" blurY="83" color="#FFFFFF" inner="true" strength="0"/>
+                    <BlurFilter blurX="0" blurY="0"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="101" duration="4" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Overworld - Mario 5 - 3">
+                  <matrix>
+                    <Matrix tx="-8" ty="-30.1"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="105" duration="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Overworld - Mario 4 - 7">
+                  <matrix>
+                    <Matrix a="-1" tx="7.5" ty="-28.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="108" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (None) - Hurt - 1">
+                  <matrix>
+                    <Matrix tx="-12" ty="-37"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="110" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (None) - Hurt - 2">
+                  <matrix>
+                    <Matrix tx="-14.15" ty="-32.1"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="112" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (None) - Hurt - 3">
+                  <matrix>
+                    <Matrix tx="-10.15" ty="-31.6"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="114" duration="11" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (None) - Hurt - 4">
+                  <matrix>
+                    <Matrix tx="-18.15" ty="-15.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="125" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (None) - Hurt - 3">
+                  <matrix>
+                    <Matrix tx="-10.15" ty="-24.6"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="127" duration="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Overworld - Mario 4 - 7">
+                  <matrix>
+                    <Matrix a="-1" tx="7.5" ty="-28.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="130" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Overworld - Mario Jump - 3">
+                  <matrix>
+                    <Matrix a="-0.965927124023438" b="-0.258819580078125" c="-0.258819580078125" d="0.965927124023438" tx="16.2" ty="-28.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="132" duration="8" tweenType="motion" motionTweenRotate="clockwise" keyMode="17921">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (none) Spinning - 1">
+                  <matrix>
+                    <Matrix a="0.86602783203125" b="0.5" c="-0.5" d="0.86602783203125" tx="4.25" ty="-29.7"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="140" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (none) Spinning - 1">
+                  <matrix>
+                    <Matrix a="0.965927124023438" b="-0.258819580078125" c="0.258819580078125" d="0.965927124023438" tx="-7.45" ty="-24.95"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="141" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Overworld - Mario Fall - 3">
+                  <matrix>
+                    <Matrix a="-1" tx="11.35" ty="-31.1"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="142" duration="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (none) - Falling - 1">
+                  <matrix>
+                    <Matrix tx="-13.5" ty="-28.6"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="145" duration="5" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (none) Item - 1">
+                  <matrix>
+                    <Matrix tx="-11" ty="-27.6"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="150" duration="19" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (none) Item - 2">
+                  <matrix>
+                    <Matrix tx="-11" ty="-34.6"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="169" duration="18" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (none) Item - 1">
+                  <matrix>
+                    <Matrix tx="-11" ty="-27.6"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="187" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (none) Hurt Ground - 1">
+                  <matrix>
+                    <Matrix tx="-13" ty="-29"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="189" duration="42" tweenType="motion" keyMode="17921" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Mario Bowser Key 1 Cinema Scared" symbolType="graphic" loop="loop">
+                  <matrix>
+                    <Matrix tx="0.85" ty="-14.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="231" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Mario Bowser Key 1 Cinema Scared">
+                  <matrix>
+                    <Matrix tx="-9.15" ty="-14.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="232" duration="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (none) - Running Backwards - 3">
+                  <matrix>
+                    <Matrix tx="-34" ty="-26"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="235" duration="4" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario (none) - Running Backwards - 4">
+                  <matrix>
+                    <Matrix tx="-35.15" ty="-25.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="239" duration="16" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

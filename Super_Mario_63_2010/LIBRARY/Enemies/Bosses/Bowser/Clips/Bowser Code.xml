@@ -1,0 +1,678 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="   Enemies/Bosses/Bowser/Clips/Bowser Code" itemID="465e2f86-00000629" lastModified="1245909886" lastUniqueIdentifier="17">
+  <timeline>
+    <DOMTimeline name="Bowser Code">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[frame = 1;
+attackFrame = "";
+attack = false;
+air = false;
+idlecount = 0;
+HP = 3;
+tall = 60;
+wide = 60;
+yspeed = 0;
+xspeed = 0;
+blink = 0;
+gettingbackoncourse = false;
+//
+OEF = function () {
+	_root.Camcenter = _root.Course.FrontGFX.Bowser;
+	_root.PauseGame = false;
+};
+if (difficulty == 1) {
+	Message1 = function () {
+		_root.CinemaMessageFrame = 3;
+		_root.CinemaMessage = "<b><i>Bowser:</i></b> Tough Luck! Looks like the Princess isn't here... Gwa ha ha!! Go ahead! Just try to grab me by the tail!";
+	};
+	Message2 = function () {
+		_root.CinemaMessage = "<b><i>Bowser:</i></b> A wimp like you could never dive into my tail to grab it and swing me around by pressing Right and Left repeatedly!";
+	};
+} else if (difficulty == 2) {
+	Message1 = function () {
+		_root.CinemaMessageFrame = 3;
+		_root.CinemaMessage = "<b><i>Bowser:</i></b> Hahaha!! Mario, You think by appearing here that you'd be able to stop my Master Plan!!";
+	};
+	Message2 = function () {
+		clip.gotoAndStop("Orb");
+		_root.CinemaMessage = "<b><i>Bowser:</i></b> I've retrieved what I needed down here, and was just about to leave when you showed up.";
+	};
+	Message3 = function () {
+		_root.CinemaMessage = "<b><i>Bowser:</i></b> I was getting worried you caught onto my plan, and was trying to stop me;  but of course ";
+	};
+	Message4 = function () {
+		_root.CinemaMessage = "<b><i>Bowser:</i></b> your ignorance has lead you straight into another trap of mine.  Now, with you here,";
+	};
+	Message5 = function () {
+		clip.frame.gotoAndPlay("end");
+		_root.CinemaMessage = "<b><i>Bowser:</i></b> I can go straight ahead to the next step in my Master Plan... which is to ..... DESTROY YOU!";
+	};
+} else {
+	
+}
+messcount = 0;
+loopcode = function () {
+	messcount++;
+	if (this["Message"+messcount] !== undefined) {
+		this["Message"+messcount]();
+		lastframeZ = _root.KeyZ();
+		onEnterFrame = function () {
+			OEF();
+			if (_root.KeyZ() == true && lastframeZ !== true && _root.CinemaMessageFinished == true) {
+				_root.CinemaMessage = "";
+				loopcode();
+			}
+			lastframeZ = _root.KeyZ();
+		};
+	} else {
+		loopcode = null;
+		end();
+	}
+};
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		_root.Controll = false;
+		if (_root.Course.Char.air == false) {
+			gotoAndStop(3);
+			//
+			onEnterFrame = function () {
+				// Talking
+				if (_root.Course.Char.air == false) {
+					_root.Course.Char.attack = true;
+					_root.Course.Char.attackFrame = "bosscinema";
+					_root.Course.Char._xscale = -100;
+					_root.playpause = true;
+					loopcode();
+				}
+			};
+		}
+	}
+};
+end = function () {
+	if (difficulty == 2) {
+		clip.frame.gotoAndPlay("end");
+	}
+	count = 0;
+	onEnterFrame = function () {
+		count++;
+		if (count>10) {
+			//   
+			clip.gotoAndStop(1);
+			_root.Course.Char.attack = false;
+			//
+			_root.playpause = false;
+			onEnterFrame = null;
+			_root.Camcenter = "none";
+			//
+			//_root.StopBGsong();
+			//_root.StartBossMusic();
+			//
+			nextFrame();
+		}
+	};
+};
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/Bowser/Clips/Bowser Ground Box">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+_root.Course.BackGFX.StartClip._y = -100;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+// BowserGround
+depth = _root.Course.Platforms.getNextHighestDepth();
+_root.Course.Platforms.attachMovie("BowserGround", "BowserGround"+depth, depth, {_x:_x, _y:_y});
+X = 0;
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		if (!(HP<=0 && attack == true && attackFrame == "recover")) {
+			_root.Camcenter = _root.Course.BackGFX.camCenter;
+			if (attack == false || attackFrame !== "spin") {
+				if (_root.CameraZoom<100-Math.max((_root.Course.BackGFX.distance/3)-100, 0)) {
+					_root.CameraZoom++;
+				}
+				if (_root.CameraZoom>95-Math.max((_root.Course.BackGFX.distance/3)-100, 0)) {
+					_root.CameraZoom--;
+				}
+			}
+			//
+			if (attack == true && attackFrame == "spin" && (_root.Course.Char.attack !== true || !(_root.Course.Char.attackFrame == "DiveSpin" || _root.Course.Char.attackFrame == "JumpSpin"))) {
+				attack = false;
+			}
+			if ((attack == false || attackFrame !== "spin") && attackFrame !== "tossed" && attackFrame !== "hurt" && _root.Course.Char.attack == true && (_root.Course.Char.attackFrame == "DiveSpin" || _root.Course.Char.attackFrame == "JumpSpin")) {
+				//attack = true;
+				//attackFrame = "spin";
+			}
+			//                                 
+			if (attack == true) {
+				//idlecount = 0;
+			} else {
+				idlecount++;
+				if (difficulty == 2) {
+					idlecount += 0.5;
+				}
+				idlecounts = idlecount/_root.framerate;
+			}
+			while ((_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+3)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.BPlatforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+3)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) && !(_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y-1)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.BPlatforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y-3)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true))) {
+				_y++;
+			}
+			while (_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y-1)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.BPlatforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y-3)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+				_y--;
+			}
+			// Walls
+			while (_root.Course.Platforms.hitTest(((_x+wide)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, (((_y-(tall/2)))*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+				_x--;
+			}
+			while (_root.Course.Platforms.hitTest(((_x-wide)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, (((_y-(tall/2)))*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+				_x++;
+			}
+			// ^ Walls
+			//
+			if (_root.Course.Platforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+3)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true) || _root.Course.BPlatforms.hitTest(((_x)*_root.coursescale/100)+(_parent._x*_root.coursescale/100)+_root.Course._x, ((_y+3)*_root.coursescale/100)+(_parent._y*_root.coursescale/100)+_root.Course._y, true)) {
+				if (air == true) {
+					idlecount = 0;
+					idlecounts = 0;
+				}
+				if (air == true && shockwave == true) {
+					//
+					attack = true;
+					attackFrame = "Shockwave";
+					//
+					shockwave = false;
+				}
+				air = false;
+				gettingbackoncourse = true;
+			} else {
+				if (air == false) {
+					idlecount = 0;
+					idlecounts = 0;
+				}
+				air = true;
+			}
+			//
+			if (air == false) {
+				if (attack == false || (attackFrame !== "tossed" && attackFrame !== "hurt" && attackFrame !== "defeated" || attackFrame !== "spin")) {
+					frame = 1;
+					yspeed = Math.min(yspeed, 0);
+					xspeed = _root.groundFriction(xspeed, 1, 1.1);
+				} else {
+					if (yspeed>3) {
+						yspeed = Math.min(-yspeed*0.3, 0);
+						xspeed = _root.groundFriction(xspeed, 1, 1.1);
+					} else {
+						if (yspeed>-3) {
+							yspeed = 0;
+							xspeed = _root.groundFriction(xspeed, 1, 1.1);
+						} else {
+							yspeed += 0.5;
+						}
+					}
+				}
+			}
+			if (air == true) {
+				//
+				//if (_y-_root.Course.FrontGFX._y<_root.Course.Char._y) {
+				_x -= X;
+				//}
+				//   
+				if (Math.abs(yspeed)<-7 || Math.abs(yspeed)>7) {
+					yspeed += 0.1;
+				} else {
+					yspeed += 0.3;
+				}
+				if (yspeed>3) {
+					frame = 4;
+				} else {
+					frame = 3;
+				}
+				if (Math.abs(yspeed)>7) {
+					if(difficulty !== 3 || gettingbackoncourse == true){
+						yspeed = _root.groundFriction(yspeed, 0.3, 1.1);
+					}
+				}
+			}
+			// HitTests                                                                                                                                
+			if (attack == false || (attackFrame !== "tossed" && attackFrame !== "hurt" && attackFrame !== "defeated" || attackFrame !== "spin")) {
+				if (this.lbod.hitTest(_root.Course.Char.charClip.body)) {
+					if (_xscale>0) {
+						_root.MarioHit(1, 30, -5, -7, 7, "");
+					} else {
+						_root.MarioHit(1, 30, -5, 7, 7, "");
+					}
+				}
+				if (this.rbod.hitTest(_root.Course.Char.charClip.body)) {
+					if (_xscale>0) {
+						_root.MarioHit(2, 30, -5, 7, 7, "");
+					} else {
+						_root.MarioHit(2, 30, -5, -7, 7, "");
+					}
+				}
+				if (this.spikes.hitTest(_root.Course.Char.charClip.feet) && _root.Course.Char.air == true && _root.Course.Char.yspeed>0) {
+					if (_root.Course.Char._x>_x+_parent._x) {
+						_root.MarioHit(2, 30, -9, 3, 7, "");
+					} else {
+						_root.MarioHit(2, 30, -9, -3, 7, "");
+					}
+				}
+				if (this.head.hitTest(_root.Course.Char.charClip.feet) && _root.Course.Char.air == true && _root.Course.Char.yspeed>0) {
+					if (_xscale>0) {
+						_root.MarioHit(2, 30, -5, -2, 7, "");
+					} else {
+						_root.MarioHit(2, 30, -5, 2, 7, "");
+					}
+				}
+				if (this.feet.hitTest(_root.Course.Char.charClip.body)) {
+				}
+				if (blink<0) {
+					blink++;
+					if (blink%2 == 0) {
+						_alpha = 20;
+					} else {
+						_alpha = 80;
+					}
+				} else {
+					_alpha = 100;
+				}
+				if (this.tail.hitTest(_root.Course.Char.charClip.body) && _root.Course.Char.attack == true && _root.Course.Char.attackFrame == "Dive" && _root.Course.Char.air == false && blink>=0) {
+					if (attackFrame !== "turn" || attack == false) {
+						_root.Course.Char.attack = true;
+						if (difficulty !== 3) {
+							_root.Course.Char.attackFrame = "DiveSpin";
+						} else {
+							_root.Course.Char.attackFrame = "JumpSpin";
+						}
+						attack = true;
+						attackFrame = "spin";
+						//
+						_root.Course.Char._x = _root.Course.FrontGFX._x+_x+(_xscale/100*(wide/2));
+						_root.Course.Char._y = _root.Course.FrontGFX._y+_y;
+						//
+						_root.bgsoundFX = new Sound(this);
+						_root.bgsoundFX.attachSound("Bowser - Grab");
+						_root.bgsoundFX.start(0, 1);
+						_root.bgsoundFX.setVolume(_root.BgVolume);
+					}
+				}
+			}
+			// ^ hitTest ^                                                                                                                                                   
+			// Attacks   
+			if (idlecounts>3 && attack == false && air == false) {
+				if (_xscale>0 && (_x+_parent._x)-_root.Course.Char._x<-10) {
+					attack = true;
+					attackFrame = "turn";
+				} else if (_xscale<0 && (_x+_parent._x)-_root.Course.Char._x>10) {
+					attack = true;
+					attackFrame = "turn";
+				}
+			}
+			if (attack == false && air == false) {
+				randomnum = random(32*1.5)+1;
+				if (randomnum == 1) {
+					if (_xscale<0 && (_x+_parent._x)-_root.Course.Char._x<-10) {
+						attack = true;
+						attackFrame = "step";
+					} else if (_xscale>0 && (_x+_parent._x)-_root.Course.Char._x>10) {
+						attack = true;
+						attackFrame = "step";
+					}
+				}
+			}
+			if (idlecounts>3 && attack == false && air == false) {
+				randomnum = random(9)+1;
+				if (difficulty == 2) {
+					if (_root.Course.Char.yspeed<0) {
+						X = _x+_root.Course.FrontGFX._x;
+						X = (X-_root.Course.Char._x);
+						if (random(4) == 1 && Math.abs(X)<200) {
+							randomnum = 8;
+						}
+					}
+					if (randomnum>=8) {
+						if (random(2) == 1) {
+							randomnum = random(9)+1;
+						}
+					}
+				}
+				if (_root.Course.Char._y<_y-_root.Course.FrontGFX._y) {
+					randomnumber = random(8)+1;
+					if (randomnumber>=3) {
+						randomnum = 8;
+					}
+				}
+				if (randomnum == 1 || randomnum == 2 || randomnum == 3) {
+					attack = true;
+					attackFrame = "fire1";
+				} else if (randomnum == 4 || randomnum == 5) {
+					attack = true;
+					attackFrame = "fire2";
+				} else {
+					attack = true;
+					attackFrame = "Jumping";
+					/*
+					idlecount = 0;
+					idlecounts = 0;
+					shockwave = true;
+					yspeed = -12;
+					//
+					X = _x+_root.Course.FrontGFX._x;
+					X = (X-_root.Course.Char._x)/40;
+					X = Math.min(X, 1);
+					X = Math.max(X, -1);
+					*/
+				}
+			}
+			if (idlecounts>0.3 && attack == false && air == true && yspeed<0) {
+				randomnum = random(4)+1;
+				if (randomnum<=2) {
+					attack = true;
+					attackFrame = "fire1air";
+				} else if (randomnum == 3) {
+					attack = true;
+					attackFrame = "fire2air";
+				} else {
+					attack = true;
+					attackFrame = "fire3air";
+				}
+			}
+			//                                                                                                                          
+			if (attack == true && attackFrame == "tossed") {
+				if (air == false && (Math.abs(yspeed)<3 || Math.abs(xspeed)<3)) {
+					attack = false;
+				}
+				if (_root.Course.BackGFX.Bomb.hitTest(0, 0, false) && gettingbackoncourse == false) {
+					attack = true;
+					attackFrame = "hurt";
+					xspeed = -(_xscale/100)*15;
+				}
+			}
+			if (difficulty !== 3) {
+				if (this.body.hitTest(_root.Course.BackGFX.bomb1) && _root.Course.BackGFX.bombgfx1._currentframe == 1 && attackFrame == "tossed" && attack == true) {
+					attack = true;
+					xspeed *= -0.5;
+					xspeed += 5;
+					xspeed = Math.min(xspeed, 8);
+					xspeed = Math.max(xspeed, -8);
+					yspeed = -7;
+					attackFrame = "hurt";
+					HP -= 1;
+					_root.Course.BackGFX.bombgfx1.gotoAndStop(2);
+				}
+				if (this.body.hitTest(_root.Course.BackGFX.bomb2) && _root.Course.BackGFX.bombgfx2._currentframe == 1 && attackFrame == "tossed" && attack == true) {
+					attack = true;
+					xspeed *= -0.5;
+					xspeed -= 5;
+					xspeed = Math.min(xspeed, 8);
+					xspeed = Math.max(xspeed, -8);
+					yspeed = -7;
+					attackFrame = "hurt";
+					HP -= 1;
+					_root.Course.BackGFX.bombgfx2.gotoAndStop(2);
+				}
+			} else {
+				for (i=1; i<6; i++) {
+					if (this.body.hitTest(_root.Course.BackGFX["bomb"+i]) && _root.Course.BackGFX["bombgfx"+i]._currentframe == 1 && attackFrame == "tossed" && attack == true && gettingbackoncourse == false) {
+						attack = true;
+						xspeed *= -0.5;
+						if (_x>0) {
+							xspeed -= 5;
+						} else {
+							xspeed += 5;
+						}
+						xspeed = Math.min(xspeed, 8);
+						xspeed = Math.max(xspeed, -8);
+						yspeed = -4;
+						attackFrame = "hurt";
+						HP -= 1;
+						_root.Course.BackGFX["bombgfx"+i].gotoAndStop(2);
+					}
+				}
+			}
+			if (this.feet.hitTest(_root.Course.BackGFX.falloff) || Math.abs(_x) > 1000  || _y > 1000) {
+				gettingbackoncourse = true;
+				idlecount = 0;
+				idlecounts = 0;
+				shockwave = true;
+				//
+				yspeed = -35;
+				_y = 200;
+				if (_x>0) {
+					_xscale = 100;
+					if (difficulty !== 2) {
+						_x = 500;
+						xspeed = -5;
+					} else {
+						_x = 300;
+						xspeed = -3;
+					}
+				} else {
+					_xscale = -100;
+					if (difficulty !== 2) {
+						_x = -500;
+						xspeed = 5;
+					} else {
+						_x = -300;
+						xspeed = 3;
+					}
+				}
+				_root.bgsoundFX = new Sound(this);
+				_root.bgsoundFX.attachSound("Bowser - Grab");
+				_root.bgsoundFX.start(0, 1);
+				_root.bgsoundFX.setVolume(_root.BgVolume);
+			}
+			if (attackFrame == "hurt" && attack == true && air == false) {
+				xspeed *= 0.9;
+				attack = true;
+				attackFrame = "recover";
+			}
+			//                                                                                                                          
+			// ^ attacks ^                                                                            
+			_y += yspeed;
+			_x += xspeed;
+			if (attack == true && attackFrame == "spin") {
+				_root.Course.Platforms["BowserGround"+depth]._y = _y+1000;
+			} else {
+				_root.Course.Platforms["BowserGround"+depth]._y = _y;
+			}
+			_root.Course.Platforms["BowserGround"+depth]._x = _x;
+		} else {
+			if (!isNaN(_root.Course.Platforms["BowserGround"+depth]._y)) {
+				_root.Course.Platforms["BowserGround"+depth].removeMovieClip();
+			}
+		}
+		if (attack == false) {
+			clip.gotoAndStop(frame);
+		} else {
+			clip.gotoAndStop(attackFrame);
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#FF4FFF" outline="true" useOutlineView="true">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Lineless Movieclip" name="body">
+                  <matrix>
+                    <Matrix a="0.672164916992188" d="0.795166015625" ty="-2.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-28.25"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	visible = false;
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F" outline="true" useOutlineView="true">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Lineless Movieclip" name="head">
+                  <matrix>
+                    <Matrix a="0.442428588867188" d="0.265411376953125" tx="-10.5" ty="-28.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-28.25"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	visible = false;
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Lineless Movieclip" name="rbod">
+                  <matrix>
+                    <Matrix a="0.264938354492188" d="0.354049682617188" tx="7.5" ty="-21.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-28.25"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	visible = false;
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Lineless Movieclip" name="lbod">
+                  <matrix>
+                    <Matrix a="0.264938354492188" d="0.672683715820313" tx="-12.5" ty="1.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-28.25"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	visible = false;
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Lineless Movieclip" name="spikes">
+                  <matrix>
+                    <Matrix a="0.442626953125" d="0.265213012695313" tx="6" ty="-27.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-28.3"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	visible = false;
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Lineless Movieclip" name="feet">
+                  <matrix>
+                    <Matrix a="0.531158447265625" d="0.353607177734375" tx="1" ty="5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-28.3"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	visible = false;
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Lineless Movieclip" name="tail">
+                  <matrix>
+                    <Matrix a="0.371810913085938" d="0.406723022460938" tx="27" ty="3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-28.25"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	visible = false;
+}
+]]></script>
+                  </Actionscript>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" duration="4" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/Bowser/Clips/Bowser Clip" name="clip">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

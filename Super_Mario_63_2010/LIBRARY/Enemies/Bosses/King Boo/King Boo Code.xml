@@ -1,0 +1,158 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="   Enemies/Bosses/King Boo/King Boo Code" itemID="467b314e-00000b94" lastModified="1230080095" lastUniqueIdentifier="1">
+  <timeline>
+    <DOMTimeline name="King Boo Code">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[movedir = "up";
+frame = "move";
+HP = 3;
+clip.gotoAndStop(frame);
+yspeed = 0;
+xspeed = 0;
+rotmovement = 0;
+rotspeed = 2;
+attack = true;
+attackFrame = "shine";
+//
+count = 0;
+if (_root.kingBoodefeated == true) {
+	stop();
+	onEnterFrame = null;
+	frame = "none";
+	clip.gotoAndStop(frame);
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+//
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		//
+		if (attack == false) {
+			if (totalwindowsopen == 2 && HP>2) {
+				_root.TextHint = "(Now <b>Ram</b> into King Boo using Turbo Fludd!)";
+			} else if (_root.TextHint == "(Now <b>Ram</b> into King Boo using Turbo Fludd!)") {
+				_root.TextHint = "";
+			}
+		}
+		totalwindowsopen = 0;
+		if (_root.Course.BackGFX.w1._currentframe>=2 && _root.Course.BackGFX.w1._currentframe<=11) {
+			totalwindowsopen = 1;
+			if (_root.Course.BackGFX.w2._currentframe>=2 && _root.Course.BackGFX.w2._currentframe<=11) {
+				totalwindowsopen = 2;
+			}
+		}
+		if (_root.Course.BackGFX.w2._currentframe>=2 && _root.Course.BackGFX.w2._currentframe<=11) {
+			totalwindowsopen = 1;
+			if (_root.Course.BackGFX.w1._currentframe>=2 && _root.Course.BackGFX.w1._currentframe<=11) {
+				totalwindowsopen = 2;
+			}
+		}
+		if (attack == false) {
+			_alpha = (totalwindowsopen*45)+10;
+			if (this.clip.body.hitTest(_root.Course.Char.charClip.body)) {
+				if (totalwindowsopen>=2 && Math.abs(_root.Course.Char.xspeed)>7) {
+					// hurt
+					HP -= 1;
+					_alpha = 100;
+					attack = true;
+					if (HP<=0) {
+						attackFrame = "defeated";
+					} else {
+						attackFrame = "hurt";
+					}
+					if (_root.Course.Char._x>_x+_parent._x) {
+						//_root.Course.Char.xspeed = 17;
+						_root.MarioHit(0, 0, -5, 7, 15, "none");
+					} else {
+						//_root.Course.Char.xspeed = -17;
+						_root.MarioHit(0, 0, -5, -7, 15, "none");
+					}
+					//  
+				} else if (totalwindowsopen<2) {
+					if (_root.Course.Char._x>_x+_parent._x) {
+						_root.MarioHit(1, 90, -5, 7, 7, "");
+					} else {
+						_root.MarioHit(1, 90, -5, -7, 7, "");
+					}
+				}
+			}
+		}
+		//                                            
+		//         
+		//                    
+		if (attack == false || (attack == true && attackFrame == "turn")) {
+			xdistance = (_root.Course.Char._x)-(_x+_parent._x);
+			ydistance = (_root.Course.Char._y)-(_y+_parent._y);
+			distance = Math.sqrt(Math.pow(xdistance, 2)+Math.pow(ydistance, 2));
+			//
+			rotspeed = Math.abs(xspeed/2)+2;
+			rotmovement += rotspeed/30;
+			yspeed += Math.sin(rotmovement)*0.2;
+			if (frame == "move") {
+				yspeed += Math.min(Math.max(ydistance/50, -0.3), 0.3);
+				xspeed += Math.min(Math.max(xdistance/20, -1.5), 1.5);
+			}
+			if (yspeed>0.7) {
+				movedir = "down";
+			} else if (yspeed<-0.7) {
+				movedir = "up";
+			} else {
+				movedir = "none";
+			}
+		}
+		if (attack == false) {
+			if (xspeed>1 && _xscale>0) {
+				attack = true;
+				attackFrame = "turn";
+			}
+			if (xspeed<-1 && _xscale<0) {
+				attack = true;
+				attackFrame = "turn";
+			}
+		}
+		//                              
+		if (attack == false) {
+			clip.gotoAndStop(frame);
+		} else {
+			clip.gotoAndStop(attackFrame);
+		}
+		xspeed *= 0.8;
+		yspeed *= 0.8;
+		_x += xspeed;
+		_y += yspeed;
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/King Boo/King Boo Clip" name="clip" selected="true">
+                  <matrix>
+                    <Matrix tx="-1" ty="9.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

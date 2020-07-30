@@ -1,0 +1,181 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="LD Water" itemID="4a19ac53-00001698" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="LDWater" sourceFlashFilepath="F:\Super Mario 63\New computer\LD New Water.fla" sourceLibraryItemHRef="LD Water" sourceLastModified="1243196504" lastModified="1243224525" sourceItemID="4a19ac53-00001698">
+  <timeline>
+    <DOMTimeline name="LD Water">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (WaterDeepness == undefined) {
+	WaterDeepness = 400;
+}
+if (WaterLength == undefined) {
+	WaterLength = 500;
+}
+if (polygons == undefined) {
+	polygons = Math.round(WaterLength/10)+1;
+}
+if (_root.BGquality == "LOW") {
+	polygons = Math.round(polygons*0.5);
+}
+if (_root.BGquality == "MEDIUM") {
+	polygons = Math.round(polygons*0.75);
+}
+if (randomwave == undefined) {
+	randomwave = 1;
+}
+if (waterstength == undefined) {
+	waterstength = 0.3;
+}
+if (redcolor == undefined) {
+	redcolor = 40;
+}
+if (greencolor == undefined) {
+	greencolor = 128;
+}
+if (bluecolor == undefined) {
+	bluecolor = 215;
+}
+if (alpha == undefined) {
+	alpha = 50;
+}
+if (graphics == undefined) {
+	graphics = false;
+}
+//_rotation = 0;    
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[this.pts = [];
+for (var i = 0; i<polygons; ++i) {
+	this.pts[i] = {x:(i/polygons)*WaterLength, y:0, fx:0, fy:0, vx:0, vy:0, restLen:.5*(WaterLength/polygons), jy:0};
+}
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		for (var i = 0; i<polygons; ++i) {
+			this.pts[i].fx = 0;
+			if (Math.random()<0.1) {
+				this.pts[i].fy += Math.random()*2-1;
+			} else {
+				this.pts[i].fy = 0;
+			}
+		}
+		//
+		if (Math.abs(_root.Course.Char.yspeed)>5 && Math.abs(_root.Course.Char._y-(_y+_root.Course.FrontGFX._y))<20) {
+			if (rot == undefined || rot == 0 || rot == 180) {
+				X = _root.Course.Char._x-(_x+_root.Course.FrontGFX._x)+_root.Course.Char.xspeed;
+			} else {
+				X = _root.Course.Char._y-(_y+_root.Course.FrontGFX._y)+_root.Course.Char.yspeed;
+			}
+			marioI = Math.round(((X)/WaterLength*(polygons)));
+			if (_root.Course.Char.yspeed>0) {
+				this.pts[marioI].fy = _root.Course.Char.yspeed/2;
+			} else {
+				this.pts[marioI].fy = _root.Course.Char.yspeed/3;
+			}
+			this.pts[marioI].fx += _root.Course.Char.xspeed/5;
+			for (i=1; i<3; ++i) {
+				if (rot == undefined || rot == 0) {
+					this.pts[mouseI+i].fy -= (_root.Course.Char.yspeed/15)/i;
+					this.pts[mouseI-i].fy -= (_root.Course.Char.yspeed/15)/i;
+					this.pts[marioI].fx += (_root.Course.Char.xspeed/10)/i;
+				} else if (rot == 90) {
+					this.pts[mouseI+i].fy -= (_root.Course.Char.xspeed/15)/i;
+					this.pts[mouseI-i].fy -= (_root.Course.Char.xspeed/15)/i;
+					this.pts[marioI].fx += (_root.Course.Char.yspeed/10)/i;
+				} else if (rot == -90) {
+					this.pts[mouseI+i].fy += (_root.Course.Char.xspeed/15)/i;
+					this.pts[mouseI-i].fy += (_root.Course.Char.xspeed/15)/i;
+					this.pts[marioI].fx -= (_root.Course.Char.yspeed/10)/i;
+				} else {
+					this.pts[mouseI+i].fy += (_root.Course.Char.yspeed/15)/i;
+					this.pts[mouseI-i].fy += (_root.Course.Char.yspeed/15)/i;
+					this.pts[marioI].fx -= (_root.Course.Char.xspeed/10)/i;
+					// rot = 180
+				}
+			}
+		}
+		//    
+		for (i=0; i<this.pts.length-1; ++i) {
+			var pt1 = this.pts[i];
+			var pt2 = this.pts[i+1];
+			var dx = pt2.x-pt1.x;
+			var dy = pt2.y-pt1.y;
+			var dist = Math.sqrt(dx*dx+dy*dy);
+			var f1 = waterstength*(dist-pt1.restLen);
+			var spr_fx = f1*dx/dist;
+			var spr_fy = f1*dy/dist;
+			if (i != 0) {
+				pt1.fx += spr_fx;
+				pt1.fy += spr_fy;
+			}
+			if (i != this.pts.length-2) {
+				pt2.fx -= spr_fx;
+				pt2.fy -= spr_fy;
+			}
+		}
+		this.clear();
+		r = Math.floor(redcolor);
+		g = Math.floor(greencolor);
+		b = Math.floor(bluecolor);
+		this.clr = (r << 16 | g << 8 | b);
+		this.beginFill(this.clr, alpha);
+		this.moveTo(this.pts[0].x, this.pts[0].y);
+		for (i=1; i<this.pts.length-1; ++i) {
+			pt = this.pts[i];
+			pt.vx *= .85;
+			pt.vy *= .85;
+			pt.vx += pt.fx;
+			pt.vy += pt.fy;
+			pt.x += pt.vx;
+			pt.y += pt.vy;
+			this.lineTo(pt.x, pt.y);
+		}
+		i = this.pts.length-1;
+		this.lineTo(this.pts[i].x, this.pts[i].y);
+		//this.lineTo(this.pts[i].x, this.deep);
+		//this.lineTo(this.pts[0].x, this.deep);
+		this.lineTo(this.pts[i].x, WaterDeepness);
+		this.lineTo(this.pts[0].x, WaterDeepness);
+		this.lineTo(this.pts[0].x, this.pts[0].y);
+		this.endFill();
+	}
+};
+stop();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMStaticText width="100" height="27.95" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-50" ty="-13.95"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Water</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" size="25" face="Arial-BoldMT" fillColor="#0066FF"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,1716 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Clips/ 6 - Tall Tall Mountian/ 6-3 &amp; 6-4/6-4 BackGFX" itemID="4735250d-00000edd" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="6-4BackGFX" lastModified="1215471157" lastUniqueIdentifier="89">
+  <timeline>
+    <DOMTimeline name="6-4 BackGFX">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" outline="true" useOutlineView="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip">
+                  <matrix>
+                    <Matrix a="26.4146118164063" d="12.4998474121094" tx="-544.9" ty="387.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+onClipEvent (enterFrame) {
+	if (this.hitTest(_root.Course.Char.charClip.body)) {
+		_root.Course.Char.xspeed = Math.random()*4-2;
+		_root.Course.Char.yspeed = -25;
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+_root.warpframe = false;
+onEnterFrame = function () {
+	if (this.warp1.hitTest(_root.Course.Char.charClip.feet)) {
+		_root.Course.Char.attack = true;
+		_root.Course.Char.xspeed = 0;
+		_root.Course.Char.yspeed = 0;
+		_root.Course.Char.attackFrame = "none";
+		warp = true;
+		warpnum = 1;
+	}
+	if (this.warp2.hitTest(_root.Course.Char.charClip.feet) && _root.Course.Char.yspeed>0) {
+		_root.Course.Char.attack = true;
+		_root.Course.Char.xspeed = 0;
+		_root.Course.Char.yspeed = 0;
+		_root.Course.Char.attackFrame = "none";
+		warp = true;
+		warpnum = 2;
+	}
+	if (warp == true && _root.warpframe == false) {
+		if (warpnum == 1) {
+			_root.attachMovie("righttransition", "righttransition"+_root.getNextHighestDepth(), _root.getNextHighestDepth(), {_x:_root.screensizeX/2, _y:_root.screensizeY/2});
+		}
+		if (warpnum == 2) {
+			_root.attachMovie("downtransition", "downtransition"+_root.getNextHighestDepth(), _root.getNextHighestDepth(), {_x:_root.screensizeX/2, _y:_root.screensizeY/2});
+		}
+		warp = false;
+	}
+	if (_root.warpframe == true) {
+		if (warpnum == 1) {
+			_root.changecourse("righttransition2", "6-3", -1860, -670, -1860, -670);
+		}
+		if (warpnum == 2) {
+			_root.changecourse("downtransition2", "6-1-2", 1400+(_root.Course.Char._x-_root.Course.CamEdge._x), -800, 1400+(_root.Course.Char._x-_root.Course.CamEdge._x), -800);
+		}
+		//_root.warpframe = false;                                        
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="warp1">
+                  <matrix>
+                    <Matrix a="2.0035400390625" d="21.3438110351563" tx="98.55" ty="-106.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="warp2">
+                  <matrix>
+                    <Matrix a="28.3026885986328" d="-12.5002746582031" tx="-492.2" ty="495.8"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Other/Camera Control Box">
+                  <matrix>
+                    <Matrix a="1.69064331054688" d="1.76687622070313" tx="-442.4" ty="-158"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	t = "X";
+	amount = -75
+	speed = 20
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Other/Camera Control Box">
+                  <matrix>
+                    <Matrix a="1.69064331054688" d="1.76687622070313" tx="-105" ty="-469.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	t = "Y";
+	amount = 50
+	speed = 20
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Other/Camera Control Box">
+                  <matrix>
+                    <Matrix a="1.69064331054688" d="1.76687622070313" tx="-562" ty="-646.4"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	t = "Y";
+	amount = -50
+	speed = 20
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="4" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/ Goomba/Goomba">
+                  <matrix>
+                    <Matrix tx="-167" ty="-30"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/ Goomba/Goomba">
+                  <matrix>
+                    <Matrix tx="-364.95" ty="-134.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/ Goomba/Goomba">
+                  <matrix>
+                    <Matrix tx="-868.75" ty="-131.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/ Shy-Guy/Shy Guy Code">
+                  <matrix>
+                    <Matrix tx="-884.75" ty="-355.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/ Shy-Guy/Shy Guy Code">
+                  <matrix>
+                    <Matrix tx="-338.45" ty="224.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	State = "Flying";
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/ Shy-Guy/Shy Guy Code">
+                  <matrix>
+                    <Matrix tx="-575.3" ty="151.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	State = "Flying";
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix ty="-40"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix ty="-40"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Ground/YI Jungle/YI Jungle Ground 2" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="12.5" d="12.5" tx="-169.15" ty="179"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="!-2702 3800|-2565 4520!-2565 4520|-3600.5 4520!-3600.5 4520|-3442 3640!-3442 3640|-3042 3240!-3042 3240|-2702 3800"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix ty="-40"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix ty="-40"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor alpha="0.8"/>
+                        </FillStyle>
+                      </fills>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal" weight="3">
+                            <fill>
+                              <SolidColor color="#675F43"/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="!-2702 3800|-2565 4520!-2565 4520|-3600.5 4520!-3600.5 4520|-3442 3640!-3442 3640|-3042 3240!-3042 3240|-2702 3800"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Invisible Door">
+                  <matrix>
+                    <Matrix a="3.43405151367188" tx="-154.1" ty="170.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-0.05"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	doorplace = "6-5";
+	//walk = "far";
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Starry Stuff/Shine Sprite Clip">
+                  <matrix>
+                    <Matrix tx="-606.1" ty="-976.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	starnum = 26;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/Rotating Block Plat">
+                  <matrix>
+                    <Matrix a="0.500015258789063" d="0.500015258789063" tx="-501.95" ty="-80.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	rotwait = "none"
+	rotspeed = 3
+	rotdirection = "Right";
+	//
+	DirectionX = "Left";
+	DirectionY = "Up";
+	distanceX = 120/3
+	distanceY = 0
+	accelX = 1
+	accelY = 0
+	speedX = 3
+	speedY = 0
+	Xoffstart = 0;
+	Yoffstart = 0;
+	blocktype = 28
+	scale = 50
+	/*Block Types:
+	1. Color Cube    2. Glass Cube    3. Blue Tile
+	4. Tock Block    5. Tock Cube     6. Cave Cube
+	7. Green Cube    8. Yellow Cube   9. Book Cube
+	10. Metal Box    11. Wood Block
+	27. Ground (1x) 28. Ground (0.5x)
+	*/
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/Rotating Block Plat">
+                  <matrix>
+                    <Matrix a="0.500015258789063" d="0.500015258789063" tx="-701.95" ty="-130.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	rotwait = "none"
+	rotspeed = 3
+	rotdirection = "Right";
+	//
+	DirectionX = "Right";
+	DirectionY = "Up";
+	distanceX = 120/3
+	distanceY = 0
+	accelX = 1
+	accelY = 0
+	speedX = 3
+	speedY = 0
+	Xoffstart = 0;
+	Yoffstart = 0;
+	blocktype = 28
+	scale = 50
+	/*Block Types:
+	1. Color Cube    2. Glass Cube    3. Blue Tile
+	4. Tock Block    5. Tock Cube     6. Cave Cube
+	7. Green Cube    8. Yellow Cube   9. Book Cube
+	10. Metal Box    11. Wood Block
+	27. Ground (1x) 28. Ground (0.5x)
+	*/
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Green Circle Platform">
+                  <matrix>
+                    <Matrix tx="-1108.3" ty="-172"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="6"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	scale = 1;
+	distance = 50;
+	//armscale = 75
+	speed = 3;
+	angle = 120*1;
+	dotdistance = 370;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Green Circle Platform">
+                  <matrix>
+                    <Matrix tx="-1108.3" ty="-172"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="6"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	scale = 1;
+	distance = 50;
+	//armscale = 75
+	speed = 3;
+	angle = 120*2;
+	dotdistance = 370;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Green Circle Platform">
+                  <matrix>
+                    <Matrix tx="-1108.3" ty="-172"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="6"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	scale = 1;
+	distance = 50;
+	//armscale = 75
+	speed = 3;
+	angle = 120*3;
+	dotdistance = 20;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/Rotating Block Plat">
+                  <matrix>
+                    <Matrix a="0.500015258789063" d="0.500015258789063" tx="-1014.45" ty="-228"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	rotwait = 32
+	rotspeed = 3
+	rotdirection = "Right";
+	//
+	DirectionX = "Right";
+	DirectionY = "Up";
+	distanceX = 0
+	distanceY = 0
+	accelX = 0
+	accelY = 0
+	speedX = 0
+	speedY = 0
+	Xoffstart = 0;
+	Yoffstart = 0;
+	blocktype = 28
+	scale = 50
+	/*Block Types:
+	1. Color Cube    2. Glass Cube    3. Blue Tile
+	4. Tock Block    5. Tock Cube     6. Cave Cube
+	7. Green Cube    8. Yellow Cube   9. Book Cube
+	10. Metal Box    11. Wood Block
+	27. Ground (1x) 28. Ground (0.5x)
+	*/
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/Rotating Block Plat">
+                  <matrix>
+                    <Matrix a="0.500015258789063" d="0.500015258789063" tx="-964.45" ty="-278"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	rotwait = 32
+	rotspeed = 3
+	rotdirection = "Left";
+	//
+	DirectionX = "Right";
+	DirectionY = "Up";
+	distanceX = 0
+	distanceY = 0
+	accelX = 0
+	accelY = 0
+	speedX = 0
+	speedY = 0
+	Xoffstart = 0;
+	Yoffstart = 0;
+	blocktype = 28
+	scale = 50
+	/*Block Types:
+	1. Color Cube    2. Glass Cube    3. Blue Tile
+	4. Tock Block    5. Tock Cube     6. Cave Cube
+	7. Green Cube    8. Yellow Cube   9. Book Cube
+	10. Metal Box    11. Wood Block
+	27. Ground (1x) 28. Ground (0.5x)
+	*/
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/Rotating Block Plat">
+                  <matrix>
+                    <Matrix a="1.00003051757813" d="1.00003051757813" tx="-205" ty="-373"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	rotwait = 0
+	rotspeed = 2
+	rotdirection = "Left";
+	//
+	DirectionX = "Right";
+	DirectionY = "Up";
+	distanceX = 0
+	distanceY = 0
+	accelX = 0
+	accelY = 0
+	speedX = 0
+	speedY = 0
+	Xoffstart = 0;
+	Yoffstart = 0;
+	blocktype = 27
+	scale = 100
+	/*Block Types:
+	1. Color Cube    2. Glass Cube    3. Blue Tile
+	4. Tock Block    5. Tock Cube     6. Cave Cube
+	7. Green Cube    8. Yellow Cube   9. Book Cube
+	10. Metal Box    11. Wood Block
+	27. Ground (1x) 28. Ground (0.5x)
+	*/
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Moving Green Platform">
+                  <matrix>
+                    <Matrix tx="-97.95" ty="-425"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	DirectionX = "Right";
+	DirectionY = "Up";
+	distanceX = 0;
+	distanceY = 80;
+	accelX = 0;
+	accelY = 0.25;
+	speedX = 0;
+	speedY = 2;
+	scale = 1;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Moving Green Platform">
+                  <matrix>
+                    <Matrix tx="-57.95" ty="-585"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	DirectionX = "Right";
+	DirectionY = "Down";
+	distanceX = 0;
+	distanceY = 80;
+	accelX = 0;
+	accelY = 0.25;
+	speedX = 0;
+	speedY = 2;
+	scale = 1;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Green Circle Platform">
+                  <matrix>
+                    <Matrix tx="-182.5" ty="-620"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="6"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	scale = 1;
+	distance = 50;
+	//armscale = 75
+	speed = 4
+	angle = 0
+	dotdistance = 370;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Green Circle Platform">
+                  <matrix>
+                    <Matrix tx="-182.5" ty="-620"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="6"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	scale = 1;
+	distance = 50;
+	//armscale = 75
+	speed = 4
+	angle = 45
+	dotdistance = 20
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/ Shy-Guy/Shy Guy Code">
+                  <matrix>
+                    <Matrix tx="-1025.95" ty="-136.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/ Goomba/Goomba">
+                  <matrix>
+                    <Matrix tx="-386.45" ty="-418"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/ Goomba/Goomba">
+                  <matrix>
+                    <Matrix tx="-600.35" ty="-406"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	scale = 2
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/ Koopa/Koopa Code">
+                  <matrix>
+                    <Matrix tx="-529.15" ty="-403"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	//State = "Flying";
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Green Circle Platform">
+                  <matrix>
+                    <Matrix tx="-312.3" ty="-643.8"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="6"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	scale = 1
+	distance = 50;
+	//armscale = 75
+	speed = -4;
+	angle = 45
+	dotdistance = 370;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Green Circle Platform">
+                  <matrix>
+                    <Matrix tx="-312.3" ty="-643.8"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="6"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	scale = 1;
+	distance = 50;
+	//armscale = 75
+	speed = -4;
+	angle = 90;
+	dotdistance = 20;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Coded Wooden PL/Tipping Log">
+                  <matrix>
+                    <Matrix tx="-479.8" ty="-628"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-6"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	scale = 2
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Coded Wooden PL/Falling Log Code (graphics)">
+                  <matrix>
+                    <Matrix tx="-655" ty="-631.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Coded Wooden PL/Falling Log Code (graphics)">
+                  <matrix>
+                    <Matrix tx="-669" ty="-631.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Coded Wooden PL/Falling Log Code (graphics)" selected="true">
+                  <matrix>
+                    <Matrix tx="-740.95" ty="-676"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Coded Wooden PL/Falling Log Code (graphics)" selected="true">
+                  <matrix>
+                    <Matrix tx="-754.95" ty="-676"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Jungle/YI Jungle Tree 2">
+                  <matrix>
+                    <Matrix tx="-267.1" ty="-109.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Jungle/YI Jungle Tree 2">
+                  <matrix>
+                    <Matrix tx="-846.95" ty="-212.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/ Goomba/Goomba">
+                  <matrix>
+                    <Matrix tx="-817.95" ty="-370"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-1015.45" ty="-278.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-965.45" ty="-328.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-503.95" ty="-667"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-453.95" ty="-667"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-98.1" ty="-487.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-58.1" ty="-527.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-98.1" ty="-567.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-58.1" ty="-607.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-58.1" ty="-447.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-749.9" ty="-705"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-661.95" ty="-657.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Green Circle Platform">
+                  <matrix>
+                    <Matrix tx="-227" ty="-76"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="6"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	scale = 1;
+	distance = 50;
+	//armscale = 75
+	speed = 3;
+	angle = 90*1
+	dotdistance = 370
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Common Coded PL/ Green PL/Green Circle Platform">
+                  <matrix>
+                    <Matrix tx="-227" ty="-76"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="6"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	scale = 1;
+	distance = 50;
+	//armscale = 75
+	speed = 3;
+	angle = 90*0
+	dotdistance = 20;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ A-F/ Bob-Omb/Bomb omb Code">
+                  <matrix>
+                    <Matrix tx="-648.65" ty="-398.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/ Shy-Guy/Shy Guy Code">
+                  <matrix>
+                    <Matrix tx="-459" ty="-673.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	State = "Flying";
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Coded Wooden PL/Falling Log Code (graphics)">
+                  <matrix>
+                    <Matrix tx="-676.45" ty="-739.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Coded Wooden PL/Falling Log Code (graphics)">
+                  <matrix>
+                    <Matrix tx="-690.45" ty="-739.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-685.4" ty="-768.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Coded Wooden PL/Falling Log Code (graphics)">
+                  <matrix>
+                    <Matrix tx="-734.4" ty="-803.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Various Platforms/ Coded Wooden PL/Falling Log Code (graphics)">
+                  <matrix>
+                    <Matrix tx="-748.4" ty="-803.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-743.35" ty="-832.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ G-Z/ Shy-Guy/Shy Guy Code">
+                  <matrix>
+                    <Matrix tx="-452.95" ty="-410"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Enemies/Normal/ A-F/ Bob-Omb/Bomb omb Code">
+                  <matrix>
+                    <Matrix tx="-353.1" ty="-431.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#FF4FFF">
+          <frames>
+            <DOMFrame index="0" duration="4" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Star Folder/Star Coin Code">
+                  <matrix>
+                    <Matrix tx="-608.5" ty="-340.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="0.5" y="-0.05"/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	StarCoinNum = 34;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMGroup>
+                  <members>
+                    <DOMBitmapInstance selected="true" libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Jungle/YI Mossy Log Repeat">
+                      <matrix>
+                        <Matrix a="0.803085327148438" b="0.595245361328125" c="-0.595230102539063" d="0.803115844726563" tx="-646.2" ty="-395.8"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                    <DOMBitmapInstance selected="true" libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Jungle/YI Mossy Log Repeat">
+                      <matrix>
+                        <Matrix a="-0.707107543945313" b="0.707107543945313" c="0.707107543945313" d="0.707122802734375" tx="-639.6" ty="-396.55"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                    <DOMBitmapInstance selected="true" libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Jungle/YI Mossy Log Repeat">
+                      <matrix>
+                        <Matrix a="-0.707107543945313" b="0.707107543945313" c="0.707107543945313" d="0.707122802734375" tx="-619.6" ty="-396.55"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                    <DOMBitmapInstance selected="true" libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Jungle/YI Mossy Log Repeat">
+                      <matrix>
+                        <Matrix a="-0.707107543945313" b="0.707107543945313" c="0.707107543945313" d="0.707122802734375" tx="-599.6" ty="-396.55"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                    <DOMBitmapInstance selected="true" libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Jungle/YI Mossy Log Repeat">
+                      <matrix>
+                        <Matrix a="-0.707107543945313" b="0.707107543945313" c="0.707107543945313" d="0.707122802734375" tx="-579.6" ty="-396.55"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                    <DOMBitmapInstance selected="true" libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Jungle/YI Mossy Log Top">
+                      <matrix>
+                        <Matrix a="0.5" b="0.866058349609375" c="-0.86602783203125" d="0.499984741210938" tx="-510.45" ty="-379.9"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                    <DOMBitmapInstance selected="true" libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Jungle/YI Mossy Log Repeat">
+                      <matrix>
+                        <Matrix a="-0.86602783203125" b="0.500015258789063" c="0.5" d="0.866043090820313" tx="-533.65" ty="-388.45"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                    <DOMBitmapInstance selected="true" libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Jungle/YI Mossy Log Repeat">
+                      <matrix>
+                        <Matrix a="-0.86602783203125" b="0.500015258789063" c="0.5" d="0.866043090820313" tx="-553.65" ty="-393.45"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                    <DOMBitmapInstance selected="true" libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Jungle/YI Mossy Log Top">
+                      <matrix>
+                        <Matrix a="-0.5" b="0.866058349609375" c="0.86602783203125" d="0.499984741210938" tx="-703.75" ty="-380.15"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                    <DOMGroup selected="true">
+                      <matrix>
+                        <Matrix a="0.9659423828125" b="-0.258804321289063" c="0.258819580078125" d="0.9659423828125" tx="-1425.1" ty="96.45"/>
+                      </matrix>
+                      <members>
+                        <DOMShape selected="true">
+                          <matrix>
+                            <Matrix a="0.9659423828125" b="-0.258804321289063" c="0.258819580078125" d="0.9659423828125" tx="-1425.1" ty="96.45"/>
+                          </matrix>
+                          <fills>
+                            <FillStyle index="1">
+                              <BitmapFill bitmapPath="  Course Items-PL/ Decoration/ Vegetation/ Jungle/YI Mossy Log Repeat" bitmapIsClipped="false">
+                                <matrix>
+                                  <Matrix a="-17.320556640625" b="10" c="10" d="17.320556640625" tx="867.2" ty="-276.6"/>
+                                </matrix>
+                              </BitmapFill>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle0="1" edges="!17241 -5071S1|17517 -4592.5!17517 -4592.5|17794 -4752.5!17794 -4752.5|17610 -5071!17610 -5071|17241 -5071"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMBitmapInstance selected="true" libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Jungle/YI Mossy Log Repeat">
+                      <matrix>
+                        <Matrix a="0.86602783203125" b="0.500015258789063" c="-0.5" d="0.866043090820313" tx="-680.55" ty="-388.7"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                    <DOMBitmapInstance selected="true" libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Jungle/YI Mossy Log Repeat">
+                      <matrix>
+                        <Matrix a="0.86602783203125" b="0.500015258789063" c="-0.5" d="0.866043090820313" tx="-660.55" ty="-393.7"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                    <DOMGroup selected="true">
+                      <matrix>
+                        <Matrix tx="6.75" ty="1.75"/>
+                      </matrix>
+                      <members>
+                        <DOMShape selected="true">
+                          <matrix>
+                            <Matrix tx="6.75" ty="1.75"/>
+                          </matrix>
+                          <fills>
+                            <FillStyle index="1">
+                              <BitmapFill bitmapPath="  Course Items-PL/ Decoration/ Vegetation/ Jungle/YI Mossy Log Repeat" bitmapIsClipped="false">
+                                <matrix>
+                                  <Matrix a="-10.0003509521484" b="17.3204498291016" c="17.3207092285156" d="10.0005035400391" tx="-687.1" ty="-389.35"/>
+                                </matrix>
+                              </BitmapFill>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle0="1" edges="!-13395 -7321|-13575 -7321!-13575 -7321|-13123 -7059.5!-13123 -7059.5|-12963 -7336.5!-12963 -7336.5|-13180 -7462!-13180 -7462|-13180 -7366!-13180 -7366|-13395 -7366!-13395 -7366|-13395 -7321"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                  </members>
+                </DOMGroup>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Power-Ups/Rainbow Star">
+                  <matrix>
+                    <Matrix tx="-607" ty="-857.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	starfunction = function () {
+		_root.StartNewMusicAndIntroNoVar("WingCap - Intro", "WingCap - Repeat");
+		_root.PowerTimer = 32*25
+		_root.WingCap = true;
+	};
+}
+]]></script>
+                  </Actionscript>
+                  <filters>
+                    <AdjustColorFilter brightness="45" saturation="-78"/>
+                    <BevelFilter blurX="2" blurY="2" distance="2" shadowColor="#666666"/>
+                    <GlowFilter color="#FFFFFF"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" locked="true" outline="true" useOutlineView="true">
+          <frames>
+            <DOMFrame index="0" duration="4" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix ty="-400"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix ty="-400"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Rocks &amp; Blocks (Tiled)/Stone Pattern" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="-430.65" ty="-561.6"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal" weight="3">
+                            <fill>
+                              <SolidColor/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                        <StrokeStyle index="2">
+                          <SolidStroke scaleMode="normal" weight="3">
+                            <fill>
+                              <SolidColor/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="!-13630 -12335|-12670 -13835!-12670 -13835|-11810 -14155!-11810 -14155|-11390 -12995!-11390 -12995|-10830 -12055!-10830 -12055|-10688 -9755"/>
+                        <Edge fillStyle1="1" edges="!-10688 -9755|-10688 -9695"/>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="!-10688 -9695|-13877 -9695"/>
+                        <Edge fillStyle1="1" strokeStyle="2" edges="!-13877 -9695|-13630 -12335"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ 6 - Tall Tall Mountian/ 6-3 &amp; 6-4/6-4 Darkererer GFX">
+                  <matrix>
+                    <Matrix tx="-605.35" ty="-883.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-0.05"/>
+                  </transformationPoint>
+                  <color>
+                    <Color brightness="-0.4"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Regular/YI Tree 1">
+                  <matrix>
+                    <Matrix tx="-917.6" ty="-378.6"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Jungle/YI Jungle Tree 2">
+                  <matrix>
+                    <Matrix tx="-866.45" ty="-462"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ 6 - Tall Tall Mountian/ 6-1 &amp; 6-2/6- Darker GFX">
+                  <matrix>
+                    <Matrix tx="-887.5" ty="-322"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="75" ty="21.1"/>
+                  </matrix>
+                  <members>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix tx="75" ty="21.1"/>
+                      </matrix>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix tx="75" ty="21.1"/>
+                          </matrix>
+                          <fills>
+                            <FillStyle index="1">
+                              <BitmapFill bitmapPath="  Course Items-PL/ Decoration/ Vegetation/ Jungle/YI Mossy Log Repeat" bitmapIsClipped="false">
+                                <matrix>
+                                  <Matrix a="0.0001068115234375" b="20.000244140625" c="-20.0005035400391" d="0.0002593994140625" tx="-464.4" ty="-144.35"/>
+                                </matrix>
+                              </BitmapFill>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle0="1" edges="!-10157 -2585|-9646 -2585!-9646 -2585|-9820.5 -2887.5!-9820.5 -2887.5|-10157 -2887.5!-10157 -2887.5|-10157 -2585"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMBitmapInstance libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Jungle/YI Mossy Log Repeat">
+                      <matrix>
+                        <Matrix a="-0.86602783203125" b="0.5" c="0.5" d="0.86602783203125" tx="-428.7" ty="-153.95"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                    <DOMBitmapInstance libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Jungle/YI Mossy Log Top">
+                      <matrix>
+                        <Matrix a="-0.86602783203125" b="0.500015258789063" c="0.500015258789063" d="0.86602783203125" tx="-448.75" ty="-156.65"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                    <DOMBitmapInstance libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Jungle/YI Mossy Log Repeat">
+                      <matrix>
+                        <Matrix a="-1" tx="-407.2" ty="-140.6"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="-38.5" ty="10.5"/>
+                  </matrix>
+                  <members>
+                    <DOMBitmapInstance selected="true" libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Jungle/YI Mossy Log Top">
+                      <matrix>
+                        <Matrix a="0.86602783203125" b="0.500015258789063" c="-0.500015258789063" d="0.86602783203125" tx="-760.8" ty="-114.5"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                    <DOMBitmapInstance selected="true" libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Jungle/YI Mossy Log Repeat">
+                      <matrix>
+                        <Matrix a="0.965927124023438" b="0.258819580078125" c="-0.258819580078125" d="0.965927124023438" tx="-782.45" ty="-107.6"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                    <DOMGroup selected="true">
+                      <matrix>
+                        <Matrix tx="-101.5" ty="90.5"/>
+                      </matrix>
+                      <members>
+                        <DOMShape selected="true">
+                          <matrix>
+                            <Matrix tx="-101.5" ty="90.5"/>
+                          </matrix>
+                          <fills>
+                            <FillStyle index="1">
+                              <BitmapFill bitmapPath="  Course Items-PL/ Decoration/ Vegetation/ Jungle/YI Mossy Log Repeat" bitmapIsClipped="false">
+                                <matrix>
+                                  <Matrix a="-6.68923950195313" b="18.8432159423828" c="18.8430633544922" d="6.68951416015625" tx="-695.25" ty="-190.55"/>
+                                </matrix>
+                              </BitmapFill>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle0="1" edges="!-13684 -3394|-13163.5 -3209!-13163.5 -3209|-13056.5 -3510.5!-13056.5 -3510.5|-13403 -3633.5!-13403 -3633.5|-13684 -3394"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                  </members>
+                </DOMGroup>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ 6 - Tall Tall Mountian/ 6-3 &amp; 6-4/6-4 Darkerer GFX">
+                  <matrix>
+                    <Matrix a="1.00004577636719"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color brightness="-0.2"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-39.5" ty="-27.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-89.5" ty="-27.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Collectables/ Coin: Yellow Folder/Gold Coin Code">
+                  <matrix>
+                    <Matrix tx="-139.5" ty="-27.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ In-course Items/ Other/Sound FX Clip">
+                  <matrix>
+                    <Matrix tx="-607.2" ty="-141.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Clips/ 6 - Tall Tall Mountian/ 6-1 &amp; 6-2/6-1 Water Fall Animation 2">
+                  <matrix>
+                    <Matrix tx="-608.1" ty="-308.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMGroup>
+                  <members>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix tx="-12.6" ty="128.45"/>
+                      </matrix>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix tx="-12.6" ty="128.45"/>
+                          </matrix>
+                          <fills>
+                            <FillStyle index="1">
+                              <BitmapFill bitmapPath="  Course Items-PL/ Ground/YI Jungle/YI Jungle Ground 2" bitmapIsClipped="false">
+                                <matrix>
+                                  <Matrix a="20" d="20" tx="-872.95" ty="186.25"/>
+                                </matrix>
+                              </BitmapFill>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle1="1" edges="!-8224 2560|-7787 2560!-7787 2560|-7665 2917!-7665 2917|-8225 4099!-8225 4099|-9108 3756!-9108 3756|-9247 2942!-9247 2942|-8224 2560"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix tx="-890.45" ty="697.1"/>
+                      </matrix>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix tx="-890.45" ty="697.1"/>
+                          </matrix>
+                          <fills>
+                            <FillStyle index="1">
+                              <BitmapFill bitmapPath="  Course Items-PL/ Ground/YI Jungle/YI Jungle Wall" bitmapIsClipped="false">
+                                <matrix>
+                                  <Matrix a="-19.3188323974609" b="-5.17646789550781" c="-5.17637634277344" d="19.3184661865234" tx="551.6" ty="-869.85"/>
+                                </matrix>
+                              </BitmapFill>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle0="1" edges="!8508 -8012|8630 -8467!8630 -8467|8340 -8545!8340 -8545|8197.5 -8012!8197.5 -8012|8508 -8012"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix a="0.707107543945313" b="-0.707107543945313" c="0.707107543945313" d="0.707107543945313" tx="-474.55" ty="893.35"/>
+                      </matrix>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix a="0.707107543945313" b="-0.707107543945313" c="0.707107543945313" d="0.707107543945313" tx="-474.55" ty="893.35"/>
+                          </matrix>
+                          <fills>
+                            <FillStyle index="1">
+                              <BitmapFill bitmapPath="  Course Items-PL/ Ground/YI Jungle/YI Jungle Wall" bitmapIsClipped="false">
+                                <matrix>
+                                  <Matrix a="-19.3188323974609" b="-5.17646789550781" c="-5.17637634277344" d="19.3184661865234" tx="551.6" ty="-869.85"/>
+                                </matrix>
+                              </BitmapFill>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle0="1" edges="!8508 -8012|8630 -8467!8630 -8467|8340 -8545!8340 -8545|8197.5 -8012!8197.5 -8012|8508 -8012"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix a="0.5" b="-0.86602783203125" c="0.86602783203125" d="0.5" tx="-306.6" ty="893.5"/>
+                      </matrix>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix a="0.5" b="-0.86602783203125" c="0.86602783203125" d="0.5" tx="-306.6" ty="893.5"/>
+                          </matrix>
+                          <fills>
+                            <FillStyle index="1">
+                              <BitmapFill bitmapPath="  Course Items-PL/ Ground/YI Jungle/YI Jungle Wall" bitmapIsClipped="false">
+                                <matrix>
+                                  <Matrix a="-19.3188323974609" b="-5.17646789550781" c="-5.17637634277344" d="19.3184661865234" tx="551.6" ty="-869.85"/>
+                                </matrix>
+                              </BitmapFill>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle0="1" edges="!8508 -8012|8630 -8467!8630 -8467|8340 -8545!8340 -8545|8197.5 -8012!8197.5 -8012|8508 -8012"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix a="-0.258819580078125" b="-0.965927124023438" c="0.9659423828125" d="-0.258819580078125" tx="72" ty="630.45"/>
+                      </matrix>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix a="-0.258819580078125" b="-0.965927124023438" c="0.9659423828125" d="-0.258819580078125" tx="72" ty="630.45"/>
+                          </matrix>
+                          <fills>
+                            <FillStyle index="1">
+                              <BitmapFill bitmapPath="  Course Items-PL/ Ground/YI Jungle/YI Jungle Wall" bitmapIsClipped="false">
+                                <matrix>
+                                  <Matrix a="-19.3188323974609" b="-5.17646789550781" c="-5.17637634277344" d="19.3184661865234" tx="551.6" ty="-869.85"/>
+                                </matrix>
+                              </BitmapFill>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle0="1" edges="!8508 -8012|8630 -8467!8630 -8467|8340 -8545!8340 -8545|8197.5 -8012!8197.5 -8012|8508 -8012"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix a="-0.965927124023438" b="-0.258804321289063" c="0.258819580078125" d="-0.9659423828125" tx="93.8" ty="33.3"/>
+                      </matrix>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix a="-0.965927124023438" b="-0.258804321289063" c="0.258819580078125" d="-0.9659423828125" tx="93.8" ty="33.3"/>
+                          </matrix>
+                          <fills>
+                            <FillStyle index="1">
+                              <BitmapFill bitmapPath="  Course Items-PL/ Ground/YI Jungle/YI Jungle Wall" bitmapIsClipped="false">
+                                <matrix>
+                                  <Matrix a="-19.3188323974609" b="-5.17646789550781" c="-5.17637634277344" d="19.3184661865234" tx="551.6" ty="-869.85"/>
+                                </matrix>
+                              </BitmapFill>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle0="1" edges="!8508 -8012|8630 -8467!8630 -8467|8340 -8545!8340 -8545|8197.5 -8012!8197.5 -8012|8508 -8012"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix a="-1" b="1.52587890625e-005" d="-1.00001525878906" tx="11" ty="-110.7"/>
+                      </matrix>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix a="-1" b="1.52587890625e-005" d="-1.00001525878906" tx="11" ty="-110.7"/>
+                          </matrix>
+                          <fills>
+                            <FillStyle index="1">
+                              <BitmapFill bitmapPath="  Course Items-PL/ Ground/YI Jungle/YI Jungle Wall" bitmapIsClipped="false">
+                                <matrix>
+                                  <Matrix a="-19.3188323974609" b="-5.17646789550781" c="-5.17637634277344" d="19.3184661865234" tx="551.6" ty="-869.85"/>
+                                </matrix>
+                              </BitmapFill>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle0="1" edges="!8508 -8012|8630 -8467!8630 -8467|8340 -8545!8340 -8545|8197.5 -8012!8197.5 -8012|8508 -8012"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <members>
+                        <DOMShape>
+                          <fills>
+                            <FillStyle index="1">
+                              <BitmapFill bitmapPath="  Course Items-PL/ Ground/YI Jungle/YI Jungle Wall" bitmapIsClipped="false">
+                                <matrix>
+                                  <Matrix a="17.3208160400391" b="9.99996948242188" c="10" d="-17.3208465576172" tx="-645.15" ty="688.7"/>
+                                </matrix>
+                              </BitmapFill>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle0="1" edges="!-8036 5362|-8271.5 5770!-8271.5 5770|-8011.5 5920.5!-8011.5 5920.5|-7736 5442.5!-7736 5442.5|-8036 5362"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix a="0.965927124023438" b="-0.258819580078125" c="0.258819580078125" d="0.965927124023438" tx="-745.45" ty="785.4"/>
+                      </matrix>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix a="0.965927124023438" b="-0.258819580078125" c="0.258819580078125" d="0.965927124023438" tx="-745.45" ty="785.4"/>
+                          </matrix>
+                          <fills>
+                            <FillStyle index="1">
+                              <BitmapFill bitmapPath="  Course Items-PL/ Ground/YI Jungle/YI Jungle Wall" bitmapIsClipped="false">
+                                <matrix>
+                                  <Matrix a="-5.17646789550781" b="-19.3188323974609" c="-19.3186187744141" d="5.17610168457031" tx="936.75" ty="-551.45"/>
+                                </matrix>
+                              </BitmapFill>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle0="1" edges="!8560 -8312.5|8972 -8423!8972 -8423|8972 -8733.5!8972 -8733.5|8308.5 -8555.5!8308.5 -8555.5|8560 -8312.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix tx="-891.45" ty="697.1"/>
+                      </matrix>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix tx="-891.45" ty="697.1"/>
+                          </matrix>
+                          <fills>
+                            <FillStyle index="1">
+                              <BitmapFill bitmapPath="  Course Items-PL/ Ground/YI Jungle/YI Jungle Wall" bitmapIsClipped="false">
+                                <matrix>
+                                  <Matrix a="-0.0002899169921875" b="-20.0003509521484" c="-19.9999847412109" d="-0.0002899169921875" tx="997.95" ty="-434.55"/>
+                                </matrix>
+                              </BitmapFill>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle0="1" edges="!9247.5 -9000.5|9427.5 -8701!9427.5 -8701|9692 -8701!9692 -8701|9692 -9001!9692 -9001|9247.5 -9000.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix a="0.258819580078125" b="0.965927124023438" c="-0.965911865234375" d="0.258834838867188" tx="-925.95" ty="-44.05"/>
+                      </matrix>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix a="0.258819580078125" b="0.965927124023438" c="-0.965911865234375" d="0.258834838867188" tx="-925.95" ty="-44.05"/>
+                          </matrix>
+                          <fills>
+                            <FillStyle index="1">
+                              <BitmapFill bitmapPath="  Course Items-PL/ Ground/YI Jungle/YI Jungle Wall" bitmapIsClipped="false">
+                                <matrix>
+                                  <Matrix a="-5.17646789550781" b="-19.3188323974609" c="-19.3186187744141" d="5.17610168457031" tx="936.75" ty="-551.45"/>
+                                </matrix>
+                              </BitmapFill>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle0="1" edges="!8560 -8312.5|8972 -8423!8972 -8423|8972 -8733.5!8972 -8733.5|8308.5 -8555.5!8308.5 -8555.5|8560 -8312.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix tx="-890.45" ty="697.1"/>
+                      </matrix>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix tx="-890.45" ty="697.1"/>
+                          </matrix>
+                          <fills>
+                            <FillStyle index="1">
+                              <BitmapFill bitmapPath="  Course Items-PL/ Ground/YI Jungle/YI Jungle Wall" bitmapIsClipped="false">
+                                <matrix>
+                                  <Matrix a="-5.17646789550781" b="-19.3188323974609" c="-19.3186187744141" d="5.17610168457031" tx="936.75" ty="-551.45"/>
+                                </matrix>
+                              </BitmapFill>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle0="1" edges="!8560 -8312.5|8972 -8423!8972 -8423|8972 -8733.5!8972 -8733.5|8308.5 -8555.5!8308.5 -8555.5|8560 -8312.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMBitmapInstance libraryItemName="  Course Items-PL/ Ground/YI Jungle/YI Jungle Ground Blemish">
+                      <matrix>
+                        <Matrix tx="-445.45" ty="293"/>
+                      </matrix>
+                    </DOMBitmapInstance>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix ty="-40"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix ty="-40"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#00FF00"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="!-1782 3024.5S2|-1782 4780!-1782 4780|-4322 4780!-4322 4780|-4322 4080!-4322 4080|-4043 4080!-4043 4080|-4033 4071!-4033 4071[#FFF11F.D4 #110D.AE -3363 4440!-3363 4440|-2463 4440!-2463 4440|-2463 4400!-2463 4400|-2143 3300!-2143 3300
+[#FFF77C.F7 #BC7.4A -1983 3040!-1983 3040[#FFF8B3.CC #BC9.5A -1782 3024.5"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Jungle/YI Leafy Tree Top">
+                  <matrix>
+                    <Matrix tx="-438" ty="142.1"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Jungle/YI Leafy Tree Repeat">
+                  <matrix>
+                    <Matrix tx="-420.45" ty="181"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Jungle/YI Leafy Tree Repeat">
+                  <matrix>
+                    <Matrix tx="-420.45" ty="203"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Jungle/YI Leafy Tree Repeat">
+                  <matrix>
+                    <Matrix tx="-420.45" ty="225"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Decoration/ Vegetation/ Jungle/YI Leafy Tree Repeat" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="-376.5" ty="-419.95"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="
+!-7362 -9639|-7362 -7919!-7362 -7919|-7522 -7919!-7522 -7919|-7522 -9639!-7522 -9639|-7362 -9639"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ Decoration/ Vegetation/ Jungle/YI Leafy Tree Top">
+                  <matrix>
+                    <Matrix tx="-394.45" ty="-521.1"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

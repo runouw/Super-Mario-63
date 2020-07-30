@@ -1,0 +1,156 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Menu - Auto Quality" itemID="49c28eb9-000010d8" sourceFlashFilepath="F:\Super Mario 63\New computer\Super Mario 63 Credits.fla" sourceLibraryItemHRef="Menu - Auto Quality" sourceLastModified="1237490851" lastModified="1237493806" lastUniqueIdentifier="3" sourceItemID="49c28eb9-000010d8">
+  <timeline>
+    <DOMTimeline name="Menu - Auto Quality">
+      <layers>
+        <DOMLayer name="Layer 3" color="#FFFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[//Mode = "On";
+if (_root.AutoQuality == true) {
+	Mode = "On";
+} else {
+	Mode = "Off";
+}
+al = 50;
+sc = 75;
+onEnterFrame = function () {
+	if (this.hitTest(_root._xmouse, _root._ymouse, false)) {
+		al = 100;
+		sc = 100;
+	} else {
+		al = 50;
+		sc = 75;
+	}
+	_xscale += (sc-_xscale)/2;
+	_yscale = _xscale;
+	_alpha += (al-_alpha)/2;
+	//_root.var = Mode 
+	if (Mode == "On") {
+		_root.AutoQuality = true;
+	} else {
+		_root.AutoQuality = false;
+	}
+};
+onMouseDown = function () {
+	if (sc == 100) {
+		if (ON.sc == 100 && OFF.sc == 100) {
+			_xscale = 110;
+			_yscale = 110;
+			if (Mode == "On") {
+				Mode = "Off";
+			} else {
+				Mode = "On";
+			}
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName='Menu - "Auto Quality"'>
+                  <matrix>
+                    <Matrix tx="-24.4" ty="0.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BevelFilter/>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Box" color="#4FFFFF" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName='Menu -  "On"' name="ON">
+                  <matrix>
+                    <Matrix tx="74.75" ty="-10.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BevelFilter/>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Onoff" color="#9933CC" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName='Menu -  "Off"' name="OFF">
+                  <matrix>
+                    <Matrix tx="75.7" ty="8.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-0.55" y="0.85"/>
+                  </transformationPoint>
+                  <filters>
+                    <BevelFilter/>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="BG" color="#FF4FFF" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <RadialGradient>
+                        <matrix>
+                          <Matrix a="0.1336669921875" d="0.035400390625" tx="-27" ty="1"/>
+                        </matrix>
+                        <GradientEntry color="#5100CC" ratio="0"/>
+                        <GradientEntry color="#354BEB" ratio="0.580392156862745"/>
+                        <GradientEntry color="#0E2894" ratio="0.674509803921569"/>
+                        <GradientEntry color="#227BFF" ratio="1"/>
+                      </RadialGradient>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <SolidColor/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="!2131 482|-2131 482!-2131 482|-2131 -482!-2131 -482|2131 -482!2131 -482|2131 482"/>
+                    <Edge cubics="!2131 -482(;2131,-482 2131,482 2131,482q2131 -482 2131 482);"/>
+                    <Edge cubics="!-2131 482(;-2131,482 -2131,-482 -2131,-482q-2131 482 -2131 -482);"/>
+                    <Edge cubics="!-2131 -482(;-2131,-482 2131,-482 2131,-482q-2131 -482 2131 -482);"/>
+                    <Edge cubics="!2131 482(;2131,482 -2131,482 -2131,482q2131 482 -2131 482);"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

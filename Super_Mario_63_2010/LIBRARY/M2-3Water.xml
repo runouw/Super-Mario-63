@@ -1,0 +1,87 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="M2-3Water" itemID="487713ab-00000e58" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="M2-3Water" lastModified="1215996003" lastUniqueIdentifier="7">
+  <timeline>
+    <DOMTimeline name="M2-3Water">
+      <layers>
+        <DOMLayer name="Water" color="#9933CC" current="true" isSelected="true" autoNamed="false" layerType="mask">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/Water/Water Code" selected="true">
+                  <matrix>
+                    <Matrix d="1.00138854980469" tx="-2152" ty="50"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	WaterDeepness = 3000;
+	WaterLength = 2700;
+	polygons = 170-50;
+	_root["M2-3WaterLevel"] = 50
+	Y = _root["M2-3WaterLevel"];
+	Y = Math.max(Y, 50);
+	_y = Y;
+}
+onClipEvent (enterFrame) {
+	if (_root.PauseGame == false && _root.playpause == false) {
+		if (((Y)-_root["M2-3WaterLevel"])>5) {
+			Y -= 5
+		}
+		if (((Y)-_root["M2-3WaterLevel"])<-5) {
+			Y += 5
+		}
+		_y = Y
+	}
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F" parentLayerIndex="0">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Effects/Water/ Water Blocks/Giant Water Block">
+                  <matrix>
+                    <Matrix tx="-1389.2" ty="187"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/Water/ Water Blocks/Giant Water Block">
+                  <matrix>
+                    <Matrix tx="-1389.2" ty="1149"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/Water/ Water Blocks/Giant Water Block">
+                  <matrix>
+                    <Matrix tx="280.8" ty="1149"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="   Effects/Water/ Water Blocks/Giant Water Block">
+                  <matrix>
+                    <Matrix tx="279.9" ty="187"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

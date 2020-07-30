@@ -1,0 +1,149 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Heart Clip1" itemID="47f00439-00001892" lastModified="1213884547" lastUniqueIdentifier="7">
+  <timeline>
+    <DOMTimeline name="Heart Clip1">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" outline="true" useOutlineView="true" heightLiteral="15">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[sin = 90*(Math.PI/180);
+speed = 1;
+count = 0;
+stop();
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		OEF();
+		for (i=0; i<speed; i++) {
+			nextFrame();
+			//sin += 4*(Math.PI/180);
+			sin = ((_currentframe-1+22.5)*4)*(Math.PI/180);
+			//sin += 0.05;
+			this._xscale = Math.sin(sin)*100;
+		}
+		//
+		if (this.body.hitTest(_root.Course.Char.charClip.body) && lastframehit == false && _root.Course.Char.air == false && Math.abs(_root.Course.Char.xspeed)>2) {
+			MarioHit(_root.Course.Char.xspeed);
+		}
+		lastframehit = this.body.hitTest(_root.Course.Char.charClip.body);
+	}
+};
+MarioHit = function (xspeed) {
+	count = 0;
+	speed = Math.round((speed-1)*0.5);
+	speed += Math.round(Math.abs(xspeed*2));
+	OEF = function () {
+		count += speed;
+		if (count>24) {
+			count = 0;
+			_root.hpcoincount += 5;
+		}
+		speed -= 0.2;
+		if (speed<=1) {
+			_root.hpcoincount += 5;
+			speed = 1;
+			OEF = null;
+		}
+	};
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="90" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Lineless Movieclip" name="body">
+                  <matrix>
+                    <Matrix a="0.265380859375" d="0.620742797851563" ty="15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-27.85"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="91" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[gotoAndStop(2);
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true" heightLiteral="15">
+          <frames>
+            <DOMFrame index="0" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Heart Clip GFX">
+                  <matrix>
+                    <Matrix tx="-0.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="0.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" duration="21" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Heart Clip GFX">
+                  <matrix>
+                    <Matrix a="1.00486755371094" b="0.0183258056640625"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="0.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="22" duration="23" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Heart Clip GFX">
+                  <matrix>
+                    <Matrix b="0.486862182617188"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="0.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="45" duration="23" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Heart Clip GFX" selected="true">
+                  <transformationPoint>
+                    <Point x="0.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="68" duration="22" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Heart Clip GFX">
+                  <matrix>
+                    <Matrix b="-0.516067504882813" ty="0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="0.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="90" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Heart Clip GFX">
+                  <transformationPoint>
+                    <Point x="0.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

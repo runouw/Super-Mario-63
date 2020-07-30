@@ -1,0 +1,167 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="      Char/  Mario CLIPS/Mario (turbo) backflip" itemID="45c3f291-000002d5" lastModified="1198425904" lastUniqueIdentifier="1">
+  <timeline>
+    <DOMTimeline name="Mario (turbo) backflip">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		play();
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="3" duration="11" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		play();
+		if (_root.KeyRIGHT() && _root.Controll == true) {
+			_root.Course.Char.xspeed -= Math.min((_root.Course.Char.xspeed-_root.airwalkspeed)/(_root.airmaxWalkspeed/3), 0)/1.5;
+		}
+		if (_root.KeyLEFT() && _root.Controll == true) {
+			_root.Course.Char.xspeed -= Math.max((_root.Course.Char.xspeed+_root.airwalkspeed)/(_root.airmaxWalkspeed/3), 0)/1.5;
+		}
+		//         
+		if (_root.KeyTapRIGHT()) {
+			_root.Course.Char.xspeed -= Math.min((_root.Course.Char.xspeed-_root.airtapspeed)/(_root.airmaxtapWalkspeed/3), 0);
+		}
+		if (_root.KeyTapLEFT()) {
+			_root.Course.Char.xspeed -= Math.max((_root.Course.Char.xspeed+_root.airtapspeed)/(_root.airmaxtapWalkspeed/3), 0);
+		}
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="14" duration="7" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		play();
+		tellTarget (_root.Course.Char) {
+			if (_root.KeyDOWN() && Water == false) {
+				doublejump = 0;
+				attack = true;
+				attackFrame = "Dive";
+				yspeed += 3;
+				if (_xscale<0) {
+					xspeed -= (xspeed-_root.Divespeed)/5;
+				} else {
+					xspeed -= (xspeed+_root.Divespeed)/5;
+				}
+			}
+			if (_root.KeyZ() && (Water == false || _root.Metal == true)) {
+				attack = true;
+				attackFrame = "Ground";
+				xspeed = 0;
+				yspeed = 0;
+			}
+			if (air == false) {
+				attack = false;
+			}
+		}
+		if (_root.KeyRIGHT() && _root.Controll == true) {
+			_root.Course.Char.xspeed -= Math.min((_root.Course.Char.xspeed-_root.airwalkspeed)/(_root.airmaxWalkspeed/3), 0)/1.5;
+		}
+		if (_root.KeyLEFT() && _root.Controll == true) {
+			_root.Course.Char.xspeed -= Math.max((_root.Course.Char.xspeed+_root.airwalkspeed)/(_root.airmaxWalkspeed/3), 0)/1.5;
+		}
+		//         
+		if (_root.KeyTapRIGHT()) {
+			_root.Course.Char.xspeed -= Math.min((_root.Course.Char.xspeed-_root.airtapspeed)/(_root.airmaxtapWalkspeed/3), 0);
+		}
+		if (_root.KeyTapLEFT()) {
+			_root.Course.Char.xspeed -= Math.max((_root.Course.Char.xspeed+_root.airtapspeed)/(_root.airmaxtapWalkspeed/3), 0);
+		}
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="21" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.Course.Char.attack = false;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario Slide (Turbo)">
+                  <matrix>
+                    <Matrix a="-0.969573974609375" b="-0.236724853515625" c="-0.236724853515625" d="0.969573974609375" tx="20.25" ty="-18.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="14.45" y="19.5"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario Slide (Turbo)">
+                  <matrix>
+                    <Matrix a="-0.905548095703125" b="-0.4180908203125" c="-0.4180908203125" d="0.905548095703125" tx="22.9" ty="-14.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="14.5" y="19.5"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario Walking (Turbo) 2">
+                  <matrix>
+                    <Matrix a="0.886978149414063" b="-0.458526611328125" c="0.458526611328125" d="0.886978149414063" tx="-18.55" ty="-21.95"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" duration="18" tweenType="motion" motionTweenRotate="clockwise" motionTweenRotateTimes="1" keyMode="17921" acceleration="-40">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario Air (Turbo) 2">
+                  <matrix>
+                    <Matrix a="0.964874267578125" b="-0.19659423828125" c="0.196578979492188" d="0.96490478515625" tx="-13.2" ty="-29.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="11.2" y="26.05"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="21" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  BITS Mario/Mario Air (Turbo) 2">
+                  <matrix>
+                    <Matrix a="0.983901977539063" b="-0.021087646484375" c="0.0210723876953125" d="0.983932495117188" tx="-8.8" ty="-30"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="11.25" y="26.05"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

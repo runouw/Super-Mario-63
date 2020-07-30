@@ -1,0 +1,871 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="   Enemies/Bosses/Bowser/Clips/Bowser Firebreath 2 Ground" itemID="4661f27e-000006c4" lastModified="1227503492" lastUniqueIdentifier="7">
+  <timeline>
+    <DOMTimeline name="Bowser Firebreath 2 Ground">
+      <layers>
+        <DOMLayer name="Layer 3" color="#FFFF4F" outline="true" useOutlineView="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		play();
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="40" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.bgsoundFX = new Sound(this);
+_root.bgsoundFX.attachSound("Bowser - Inhale");
+_root.bgsoundFX.start(0, 1);
+_root.bgsoundFX.setVolume(_root.BgVolume);
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="41" duration="5" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.bgsoundFX = new Sound(this);
+_root.bgsoundFX.attachSound("Bowser - Fire");
+_root.bgsoundFX.start(0, 1);
+_root.bgsoundFX.setVolume(_root.BgVolume);
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="46" duration="3" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		//
+		if (this.body.hitTest(_root.Course.Char.charClip.body)) {
+			if (_root.Course.Char.blink<=0) {
+				if (_parent._parent._xscale<0) {
+					_root.MarioHit(2, 90, 0, 3, 20, "none");
+				} else {
+					_root.MarioHit(2, 90, 0, -3, 20, "none");
+				}
+				if (_root.CharHP>=0) {
+					_root.Course.Char.yspeed = Math.min(-16, _root.Course.Char.yspeed);
+					_root.Course.Char.attack = true;
+					_root.Course.Char.attackFrame = "Lava";
+				} else {
+					_root.Course.Char.attack = true;
+					_root.Course.Char.attackFrame = "Faint";
+				}
+			}
+		}
+		//   
+		play();
+	} else {
+		stop();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Lineless Movieclip" name="body">
+                  <matrix>
+                    <Matrix a="1.21392822265625" d="0.631103515625" tx="-62.5" ty="18.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-28.2"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="49" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="50" duration="8" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Lineless Movieclip" name="body">
+                  <matrix>
+                    <Matrix a="1.60556030273438" d="0.80633544921875" tx="-70.5" ty="23.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-28.2"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="58" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="59" duration="8" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Lineless Movieclip" name="body">
+                  <matrix>
+                    <Matrix a="1.923828125" d="0.80633544921875" tx="-82.5" ty="23.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-28.2"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="67" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="68" duration="4" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Lineless Movieclip" name="body">
+                  <matrix>
+                    <Matrix a="2.06344604492188" d="0.80633544921875" tx="-87.5" ty="23.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-28.2"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="72" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="73" duration="4" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Lineless Movieclip" name="body">
+                  <matrix>
+                    <Matrix a="1.35466003417969" d="0.38250732421875" tx="-101.5" ty="12.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-28.25"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="77" duration="7" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="84" duration="31" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_parent._parent.attack = false;
+gotoAndPlay(1);
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Sample Animation" color="#9933CC" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="46" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="46" duration="40" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="86" duration="2" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FF0000"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!-1892 -95[-1909 -156 -1884 -215!-1884 -215[-1867 -257 -1833 -289!-1833 -289[-1808 -304 -1782 -315!-1782 -315[-1756 -326 -1728 -331!-1728 -331[-1713 -334 -1699 -336!-1699 -336|-1699 -339!-1699 -339[-1472 -338 -1254 -279!-1254 -279[-1107
+ -239 -1004 -129!-1004 -129[-735 -123 -763 122!-763 122[-775 234 -886 260!-886 260[-1140 319 -1314 130!-1314 130[-1329 125 -1343 118!-1343 118[-1374 105 -1404 90!-1404 90[-1554 96 -1700 68!-1700 68[-1774 55 -1833 10!-1833 10[-1860 -17
+ -1876 -51!-1876 -51[-1886 -72 -1892 -95"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="88" duration="2" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FF0000"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!-2276 -135[-2233 -148 -2188 -156!-2188 -156[-2135 -166 -2084 -147!-2084 -147[-2056 -137 -2028 -124!-2028 -124[-2016 -122 -2003 -119!-2003 -119[-1998 -122 -1993 -123!-1993 -123[-1930 -136 -1873 -163!-1873 -163[-1843 -177 -1813 -188!-1813
+ -188[-1801 -192 -1788 -194!-1788 -194[-1773 -197 -1758 -199!-1758 -199[-1674 -197 -1589 -191!-1589 -191[-1532 -187 -1489 -149!-1489 -149[-1215 -212 -1005 -78!-1005 -78[-941 -38 -956 37!-956 37[-1010 312 -1341 267!-1341 267[-1439 254
+ -1539 260!-1539 260[-1636 266 -1713 209!-1713 209[-1783 227 -1851 254!-1851 254[-1908 276 -1965 298!-1965 298[-2092 346 -2203 274!-2203 274[-2206 274 -2208 274!-2208 274[-2271 287 -2332 267!-2332 267[-2363 257 -2392 242!-2392 242[-2403
+ 237 -2413 229!-2413 229[-2434 210 -2449 185!-2449 185[-2465 157 -2472 124!-2472 124[-2475 110 -2477 95!-2477 95[-2481 64 -2473 35!-2473 35[-2458 -26 -2413 -70!-2413 -70[-2350 -113 -2276 -135"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="90" duration="2" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FF0000"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!-2975 -114[-2884 -76 -2807 -15!-2807 -15[-2735 -45 -2660 -84!-2660 -84[-2559 -136 -2443 -119!-2443 -119[-2435 -124 -2430 -131!-2430 -131[-2392 -176 -2333 -187!-2333 -187[-2299 -193 -2278 -199!-2278 -199[-1718 -159 -1197 32!-1197 32[-1141
+ 52 -1137 115!-1137 115[-1116 431 -1432 343!-1432 343[-1762 252 -2108 224!-2108 224[-2150 306 -2218 368!-2218 368[-2277 421 -2358 417!-2358 417[-2433 413 -2493 369!-2493 369[-2500 361 -2507 353!-2507 353[-2513 346 -2518 339!-2518 339
+[-2528 324 -2538 309!-2538 309[-2714 423 -2927 389!-2927 389[-3038 372 -3097 274!-3097 274[-3110 266 -3123 262!-3123 262[-3169 246 -3211 223!-3211 223[-3222 217 -3232 209!-3232 209[-3258 182 -3275 149!-3275 149[-3308 84 -3292 15!-3292
+ 15[-3284 -17 -3268 -45!-3268 -45[-3253 -70 -3232 -90!-3232 -90[-3111 -172 -2975 -114"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="92" duration="2" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FF0000"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!-2303 -25[-2153 -17 -2003 -10!-2003 -10[-1829 -80 -1634 -50!-1634 -50[-1574 -94 -1502 -112!-1502 -112[-1426 -129 -1359 -139!-1359 -139[-1267 -149 -1189 -104!-1189 -104[-1144 -77 -1124 -30!-1124 -30[-875 98 -1022 333!-1022 333[-1086 435
+ -1208 410!-1208 410[-1319 387 -1389 294!-1389 294[-1599 416 -1853 369!-1853 369[-2165 476 -2463 349!-2463 349[-2955 432 -3368 217!-3368 217[-3384 209 -3397 194!-3397 194[-3462 -124 -3127 -79!-3127 -79[-2746 -28 -2363 -37!-2363 -37[-2333
+ -37 -2303 -25"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="94" duration="2" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FF0000"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!-2862 -246[-2828 -154 -2767 -75!-2767 -75[-2526 -390 -2204 -200!-2204 -200[-2159 -173 -2125 -128!-2125 -128[-2009 23 -1833 70!-1833 70[-1730 -149 -1490 -124!-1490 -124[-1402 -115 -1339 -50!-1339 -50[-1101 -118 -906 4!-906 4[-836 48 -855
+ 131!-855 131[-903 342 -1142 366!-1142 366[-1332 385 -1514 324!-1514 324[-1729 621 -2087 420!-2087 420[-2266 319 -2403 159!-2403 159[-2529 331 -2724 401!-2724 401[-2782 422 -2835 387!-2835 387[-3028 260 -3162 70!-3162 70[-3321 191 -3509
+ 218!-3509 218[-3566 226 -3612 189!-3612 189[-3780 -88 -3457 -255!-3457 -255[-3288 -342 -3125 -429!-3125 -429[-3112 -436 -3097 -438!-3097 -438[-2924 -411 -2862 -246"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="96" duration="2" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FF0000"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!-3377 -98[-3335 -89 -3292 -90!-3292 -90[-3269 -115 -3254 -145!-3254 -145[-3228 -198 -3182 -234!-3182 -234[-3138 -268 -3082 -279!-3082 -279[-2928 -516 -2637 -502!-2637 -502[-2447 -493 -2293 -388!-2293 -388[-2273 -409 -2255 -436!-2255
+ -436[-2218 -491 -2161 -524!-2161 -524[-2109 -554 -2058 -558!-2058 -558[-1879 -562 -1727 -457!-1727 -457[-1639 -395 -1544 -344!-1544 -344[-1397 -316 -1252 -282!-1252 -282[-1112 -249 -1004 -149!-1004 -149[-868 -101 -875 39!-875 39[-885
+ 242 -1099 232!-1099 232[-1150 229 -1199 219!-1199 219[-1203 323 -1295 372!-1295 372[-1495 476 -1648 308!-1648 308[-1654 301 -1659 294!-1659 294[-1661 286 -1664 279!-1664 279[-1666 271 -1669 264!-1669 264[-1712 229 -1749 190!-1749 190
+[-1791 146 -1809 86!-1809 86[-1824 35 -1819 -20!-1819 -20[-1818 -27 -1818 -35!-1818 -35[-1828 -42 -1839 -49!-1839 -49[-1878 -72 -1920 -90!-1920 -90[-1938 -97 -1958 -100!-1958 -100[-1960 -1 -1959 95!-1959 95[-1958 248 -2089 323!-2089 323
+[-2205 389 -2313 309!-2313 309[-2334 289 -2348 264!-2348 264[-2368 229 -2373 189!-2373 189[-2378 152 -2378 115!-2378 115[-2378 92 -2378 70!-2378 70[-2385 42 -2407 24!-2407 24[-2457 -19 -2516 -52!-2516 -52[-2546 -68 -2573 -90!-2573 -90
+[-2588 -92 -2603 -92!-2603 -92[-2660 -92 -2718 -90!-2718 -90[-2711 9 -2686 105!-2686 105[-2651 241 -2750 335!-2750 335[-2847 428 -2977 379!-2977 379[-2971 455 -2989 527!-2989 527[-3021 651 -3147 671!-3147 671[-3238 685 -3312 628!-3312
+ 628[-3338 601 -3355 567!-3355 567[-3373 531 -3375 493!-3375 493[-3377 456 -3377 418!-3377 418[-3377 388 -3377 359!-3377 359[-3379 351 -3383 344!-3383 344[-3387 336 -3392 329!-3392 329[-3397 321 -3403 315!-3403 315[-3409 309 -3417 304
+!-3417 304[-3454 337 -3502 349!-3502 349[-3591 372 -3671 323!-3671 323[-3682 316 -3692 309!-3692 309[-3731 271 -3748 219!-3748 219[-3766 160 -3753 99!-3753 99[-3733 15 -3672 -50!-3672 -50[-3539 -132 -3377 -98"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="98" duration="2" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FF0000"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!-3193 -165[-3145 -219 -3093 -269!-3093 -269[-3007 -350 -2887 -339!-2887 -339[-2861 -374 -2829 -404!-2829 -404[-2701 -521 -2537 -449!-2537 -449[-2471 -421 -2408 -398!-2408 -398[-2405 -406 -2403 -413!-2403 -413[-2397 -438 -2383 -458!-2383
+ -458[-2373 -473 -2362 -488!-2362 -488[-2345 -510 -2327 -532!-2327 -532[-2320 -540 -2313 -548!-2313 -548[-2303 -555 -2292 -562!-2292 -562[-2253 -586 -2208 -593!-2208 -593[-2193 -595 -2178 -598!-2178 -598[-1555 -573 -1226 -36!-1226 -36
+[-1043 262 -1364 362!-1364 362[-1403 374 -1442 356!-1442 356[-1469 344 -1494 329!-1494 329[-1501 321 -1508 313!-1508 313[-1524 291 -1536 268!-1536 268[-1544 254 -1550 240!-1550 240[-1559 218 -1559 194!-1559 194[-1559 187 -1559 179!-1559
+ 179[-1592 133 -1625 87!-1625 87[-1703 -22 -1816 -94!-1816 -94[-1902 -150 -1998 -189!-1998 -189[-2006 -192 -2013 -192!-2013 -192[-2033 -192 -2053 -189!-2053 -189[-2073 -131 -2069 -70!-2069 -70[-2058 75 -2133 189!-2133 189[-2205 299 -2333
+ 269!-2333 269[-2378 258 -2413 229!-2413 229[-2420 222 -2427 213!-2427 213[-2438 199 -2447 184!-2447 184[-2455 169 -2462 154!-2462 154[-2468 139 -2473 125!-2473 125[-2475 117 -2478 110!-2478 110[-2483 102 -2488 95!-2488 95[-2508 72 -2527
+ 50!-2527 50[-2540 35 -2553 20!-2553 20[-2565 5 -2578 -10!-2578 -10[-2605 -4 -2613 34!-2613 34[-2629 102 -2677 149!-2677 149[-2782 251 -2922 199!-2922 199[-2930 232 -2946 260!-2946 260[-2994 341 -3088 346!-3088 346[-3212 352 -3327 299
+!-3327 299[-3337 321 -3350 342!-3350 342[-3389 407 -3462 427!-3462 427[-3566 455 -3652 388!-3652 388[-3725 314 -3724 209!-3724 209[-3719 -166 -3318 -115!-3318 -115[-3275 -109 -3232 -110!-3232 -110[-3215 -139 -3193 -165"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="100" duration="2" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FF0000"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!-3656 -222[-3560 -213 -3497 -139!-3497 -139[-3305 -240 -3199 -60!-3199 -60[-3157 11 -3122 90!-3122 90[-3070 90 -3017 90!-3017 90[-3035 -50 -2919 -129!-2919 -129[-2778 -226 -2628 -134!-2628 -134[-2614 -183 -2589 -238!-2589 -238[-2536
+ -352 -2418 -359!-2418 -359[-2279 -337 -2199 -219!-2199 -219[-2154 -154 -2093 -105!-2093 -105[-1942 -331 -1697 -176!-1697 -176[-1617 -125 -1619 -30!-1619 -30[-1378 -79 -1276 116!-1276 116[-1206 250 -1340 323!-1340 323[-1550 438 -1803
+ 374!-1803 374[-1938 469 -2091 440!-2091 440[-2160 427 -2213 379!-2213 379[-2416 370 -2623 388!-2623 388[-2968 609 -3347 433!-3347 433[-3679 481 -3910 253!-3910 253[-4062 103 -3996 -95!-3996 -95[-3865 -240 -3656 -222"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="102" duration="2" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FF0000"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!-3776 -75[-3747 -120 -3700 -147!-3700 -147[-3626 -192 -3542 -169!-3542 -169[-3476 -191 -3405 -205!-3405 -205[-3339 -218 -3272 -199!-3272 -199[-3269 -253 -3230 -291!-3230 -291[-3163 -357 -3077 -359!-3077 -359[-3002 -353 -2942 -309!-2942
+ -309[-2896 -276 -2852 -244!-2852 -244[-2740 -379 -2577 -308!-2577 -308[-2487 -268 -2438 -184!-2438 -184[-2433 -184 -2430 -187!-2430 -187[-2425 -192 -2423 -199!-2423 -199[-2420 -207 -2418 -214!-2418 -214[-2347 -320 -2218 -315!-2218 -315
+[-2109 -310 -2043 -224!-2043 -224[-1597 -502 -1268 -122!-1268 -122[-1091 83 -1290 250!-1290 250[-1390 334 -1520 348!-1520 348[-1652 363 -1768 294!-1768 294[-1925 324 -2054 244!-2054 244[-2109 210 -2163 174!-2163 174[-2313 282 -2497 273
+!-2497 273[-2605 268 -2678 189!-2678 189[-2718 342 -2877 364!-2877 364[-3039 387 -3187 329!-3187 329[-3200 331 -3212 334!-3212 334[-3339 413 -3492 370!-3492 370[-3536 358 -3572 329!-3572 329[-3657 222 -3750 123!-3750 123[-3818 51 -3786
+ -45!-3786 -45[-3781 -60 -3776 -75"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="104" duration="2" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FF0000"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!-3693 -227[-3678 -262 -3652 -289!-3652 -289[-3592 -333 -3517 -337!-3517 -337[-3472 -339 -3427 -339!-3427 -339[-3200 -471 -3031 -249!-3031 -249[-2983 -185 -2907 -154!-2907 -154[-2842 -152 -2777 -149!-2777 -149[-2760 -157 -2742 -164!-2742
+ -164[-2734 -201 -2735 -239!-2735 -239[-2738 -305 -2697 -358!-2697 -358[-2685 -373 -2673 -388!-2673 -388[-2637 -418 -2592 -426!-2592 -426[-2559 -432 -2538 -438!-2538 -438[-2441 -441 -2373 -373!-2373 -373[-2337 -335 -2323 -284!-2323 -284
+[-2155 -428 -1984 -281!-1984 -281[-1927 -232 -1898 -159!-1898 -159[-1831 -134 -1758 -131!-1758 -131[-1464 -119 -1171 -93!-1171 -93[-1011 -78 -1014 80!-1014 80[-1016 256 -1199 257!-1199 257[-1753 260 -2290 205!-2290 205[-2377 196 -2453
+ 144!-2453 144[-2468 144 -2483 144!-2483 144[-2831 369 -3182 154!-3182 154[-3236 286 -3377 298!-3377 298[-3474 305 -3552 249!-3552 249[-3577 219 -3606 194!-3606 194[-3647 160 -3677 115!-3677 115[-3716 28 -3721 -64!-3721 -64[-3726 -150
+ -3693 -227"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="106" duration="2" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FF0000"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!-2633 -284[-2601 -290 -2580 -316!-2580 -316[-2562 -338 -2549 -364!-2549 -364[-2543 -378 -2538 -393!-2538 -393[-2509 -434 -2470 -464!-2470 -464[-2407 -514 -2338 -518!-2338 -518[-2147 -482 -2043 -304!-2043 -304[-1986 -206 -1903 -129!-1903
+ -129[-1683 -170 -1499 -66!-1499 -66[-1368 8 -1416 152!-1416 152[-1474 323 -1655 302!-1655 302[-1763 289 -1873 289!-1873 289[-1975 342 -2081 295!-2081 295[-2155 263 -2198 194!-2198 194[-2201 187 -2203 179!-2203 179[-2206 172 -2208 164
+!-2208 164[-2211 157 -2213 149!-2213 149[-2216 142 -2218 134!-2218 134[-2221 127 -2223 120!-2223 120[-2246 97 -2265 72!-2265 72[-2282 49 -2302 29!-2302 29[-2313 17 -2323 5!-2323 5[-2384 157 -2549 186!-2549 186[-2672 208 -2752 110!-2752
+ 110[-2802 110 -2852 110!-2852 110[-2961 158 -3040 242!-3040 242[-3086 290 -3147 319!-3147 319[-3192 402 -3282 427!-3282 427[-3386 455 -3472 388!-3472 388[-3561 298 -3522 181!-3522 181[-3475 42 -3347 -30!-3347 -30[-3077 -320 -2688 -291
+!-2688 -291[-2660 -289 -2633 -284"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="108" duration="2" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FF0000"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!-3062 -144[-2977 -189 -2878 -184!-2878 -184[-2768 -178 -2678 -119!-2678 -119[-2640 -157 -2599 -189!-2599 -189[-2504 -264 -2398 -279!-2398 -279[-2020 -243 -2032 114!-2032 114[-2040 353 -2272 324!-2272 324[-2318 318 -2353 289!-2353 289
+[-2360 281 -2367 273!-2367 273[-2378 259 -2387 244!-2387 244[-2395 229 -2403 215!-2403 215[-2408 207 -2413 199!-2413 199[-2467 284 -2544 351!-2544 351[-2687 476 -2852 369!-2852 369[-2860 361 -2866 353!-2866 353[-2877 339 -2887 324!-2887
+ 324[-2892 316 -2896 308!-2896 308[-2900 301 -2902 294!-2902 294[-2968 312 -3037 310!-3037 310[-3145 306 -3222 229!-3222 229[-3227 227 -3232 227!-3232 227[-3259 227 -3287 229!-3287 229[-3305 301 -3352 355!-3352 355[-3473 495 -3632 388
+!-3632 388[-3772 148 -3574 -79!-3574 -79[-3426 -249 -3175 -188!-3175 -188[-3116 -174 -3062 -144"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="110" duration="2" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FF0000"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!-3576 -203[-3507 -275 -3417 -279!-3417 -279[-3309 -288 -3237 -210!-3237 -210[-3189 -157 -3152 -95!-3152 -95[-3097 -92 -3042 -90!-3042 -90[-2766 -301 -2642 -2!-2642 -2[-2606 84 -2679 147!-2679 147[-3005 429 -3402 249!-3402 249[-3467 276
+ -3537 275!-3537 275[-3612 274 -3672 229!-3672 229[-3772 124 -3710 -7!-3710 -7[-3659 -116 -3576 -203"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="112" duration="2" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FF0000"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!-3308 -128[-3285 -24 -3367 50!-3367 50[-3372 146 -3438 219!-3438 219[-3558 354 -3712 249!-3712 249[-3806 119 -3791 -51!-3791 -51[-3771 -268 -3557 -299!-3557 -299[-3350 -316 -3308 -128"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="114" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="5" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 2">
+                  <matrix>
+                    <Matrix a="-1" tx="-9.75" ty="-11.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Body - 1">
+                  <matrix>
+                    <Matrix tx="-20.5" ty="-27.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 1">
+                  <matrix>
+                    <Matrix tx="3.25" ty="-8.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Head - 1">
+                  <matrix>
+                    <Matrix tx="-30.5" ty="-32.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="5" duration="5" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 2">
+                  <matrix>
+                    <Matrix a="-1" tx="-9.75" ty="-12.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Body - 1">
+                  <matrix>
+                    <Matrix tx="-20.5" ty="-27.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 1">
+                  <matrix>
+                    <Matrix tx="3.25" ty="-9.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Head - 1">
+                  <matrix>
+                    <Matrix tx="-30.5" ty="-33.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="10" duration="5" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Body - 2">
+                  <matrix>
+                    <Matrix tx="-20.5" ty="-28.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 2">
+                  <matrix>
+                    <Matrix a="-1" tx="-8.75" ty="-14.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 1">
+                  <matrix>
+                    <Matrix tx="4.25" ty="-11.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Head - 1">
+                  <matrix>
+                    <Matrix tx="-29.5" ty="-34.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="15" duration="4" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Body - 2">
+                  <matrix>
+                    <Matrix tx="-20.5" ty="-28.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 2">
+                  <matrix>
+                    <Matrix a="-1" tx="-8.75" ty="-15.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 1">
+                  <matrix>
+                    <Matrix tx="4.25" ty="-12.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Head - 1">
+                  <matrix>
+                    <Matrix tx="-28.5" ty="-35.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="19" duration="22" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Body - 2">
+                  <matrix>
+                    <Matrix tx="-20.5" ty="-28.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 2">
+                  <matrix>
+                    <Matrix a="-1" tx="-8.75" ty="-15.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 1">
+                  <matrix>
+                    <Matrix tx="4.25" ty="-12.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Head - 2">
+                  <matrix>
+                    <Matrix tx="-27.55" ty="-37.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="41" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 4">
+                  <matrix>
+                    <Matrix tx="-30.05" ty="-1.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Body - 7">
+                  <matrix>
+                    <Matrix tx="-23" ty="-29.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Head - 3">
+                  <matrix>
+                    <Matrix tx="-38.55" ty="-35.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 8">
+                  <matrix>
+                    <Matrix tx="-4.2" ty="-9"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="42" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 4">
+                  <matrix>
+                    <Matrix tx="-29.05" ty="-1.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Body - 7">
+                  <matrix>
+                    <Matrix tx="-23" ty="-29.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Head - 3">
+                  <matrix>
+                    <Matrix tx="-39.55" ty="-35.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 8">
+                  <matrix>
+                    <Matrix tx="-3.2" ty="-9"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="43" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/Bowser/Bowser Firebreath loop">
+                  <matrix>
+                    <Matrix tx="-7.25" ty="0.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-0.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="44" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 4">
+                  <matrix>
+                    <Matrix tx="-32.05" ty="-3.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Body - 8">
+                  <matrix>
+                    <Matrix tx="-28" ty="-29.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Head - 4">
+                  <matrix>
+                    <Matrix tx="-47.55" ty="-31.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 10">
+                  <matrix>
+                    <Matrix tx="-9.05" ty="-10.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="46" duration="29" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="   Enemies/Bosses/Bowser/Bowser Firebreath loop">
+                  <matrix>
+                    <Matrix tx="-6.95" ty="-0.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-0.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="75" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 4">
+                  <matrix>
+                    <Matrix tx="-32.05" ty="-3.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Body - 8">
+                  <matrix>
+                    <Matrix tx="-28" ty="-29.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Head - 4">
+                  <matrix>
+                    <Matrix tx="-47.55" ty="-31.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 10">
+                  <matrix>
+                    <Matrix tx="-9.05" ty="-10.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="76" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 4">
+                  <matrix>
+                    <Matrix tx="-33.05" ty="-3.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Body - 8">
+                  <matrix>
+                    <Matrix tx="-28" ty="-29.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Head - 4">
+                  <matrix>
+                    <Matrix tx="-46.55" ty="-31.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 10">
+                  <matrix>
+                    <Matrix tx="-10.05" ty="-10.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="77" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 4">
+                  <matrix>
+                    <Matrix tx="-29.05" ty="-0.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Body - 7">
+                  <matrix>
+                    <Matrix tx="-23" ty="-29.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Head - 3">
+                  <matrix>
+                    <Matrix tx="-39.55" ty="-34.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 8">
+                  <matrix>
+                    <Matrix tx="-3.2" ty="-8"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="78" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 4">
+                  <matrix>
+                    <Matrix tx="-30.05" ty="-0.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Body - 7">
+                  <matrix>
+                    <Matrix tx="-23" ty="-29.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Head - 3">
+                  <matrix>
+                    <Matrix tx="-38.55" ty="-34.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 8">
+                  <matrix>
+                    <Matrix tx="-4.2" ty="-8"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="80" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Body - 2">
+                  <matrix>
+                    <Matrix tx="-20.5" ty="-28.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 2">
+                  <matrix>
+                    <Matrix a="-1" tx="-8.75" ty="-14.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 1">
+                  <matrix>
+                    <Matrix tx="4.25" ty="-11.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Head - 1">
+                  <matrix>
+                    <Matrix tx="-29.5" ty="-34.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="82" duration="33" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 2">
+                  <matrix>
+                    <Matrix a="-1" tx="-9.75" ty="-12.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Body - 1">
+                  <matrix>
+                    <Matrix tx="-20.5" ty="-27.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Arm - 1">
+                  <matrix>
+                    <Matrix tx="3.25" ty="-9.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="   Enemies/Bosses/Bowser/Bits/Bowser Head - 1">
+                  <matrix>
+                    <Matrix tx="-30.5" ty="-33.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#FF4FFF">
+          <frames>
+            <DOMFrame index="0" duration="46" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="46" duration="4" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Flame Tower">
+                  <matrix>
+                    <Matrix a="0" b="-0.543746948242188" c="0.291671752929688" d="0" tx="-48.3" ty="1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.69921875"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="50" duration="18" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Flame Tower">
+                  <matrix>
+                    <Matrix a="0" b="-0.666671752929688" c="1" d="0" tx="-78.3" ty="1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.69921875"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="68" duration="12" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Flame Tower">
+                  <matrix>
+                    <Matrix a="0" b="-0.93939208984375" c="1.39118957519531" d="0" tx="-96.3" ty="1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.69921875"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="80" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Flame Tower">
+                  <matrix>
+                    <Matrix a="0" b="-0.184860229492188" c="0.49920654296875" d="0" tx="-110.3" ty="3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.69921875"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="81" duration="34" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

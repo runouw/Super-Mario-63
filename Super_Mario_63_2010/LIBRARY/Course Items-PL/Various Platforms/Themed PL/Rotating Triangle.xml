@@ -1,0 +1,276 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Items-PL/ Various Platforms/ Themed PL/Rotating Triangle" itemID="47112543-00000a34" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="RotatingTriangle" lastModified="1243723457">
+  <timeline>
+    <DOMTimeline name="Rotating Triangle">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" duration="10" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+//
+if (DirectionX == undefined) {
+	DirectionX = "Right";
+}
+if (DirectionY == undefined) {
+	DirectionY = "Up";
+}
+if (distanceX == undefined) {
+	distanceX = 0;
+}
+if (distanceY == undefined) {
+	distanceY = 0;
+}
+if (accelX == undefined) {
+	accelX = 0;
+}
+if (accelY == undefined) {
+	accelY = 0;
+}
+if (speedX == undefined) {
+	speedX = 0;
+}
+if (speedY == undefined) {
+	speedY = 0;
+}
+if (Xoffstart == undefined) {
+	Xoffstart = 0;
+}
+if (Yoffstart == undefined) {
+	Yoffstart = 0;
+}
+if (DirectionY == "Up") {
+	_y -= speedY;
+} else {
+	_y += speedY;
+}
+if (DirectionY == "Right") {
+	_x -= speedX;
+} else {
+	_x += speedX;
+}
+if (scale == undefined) {
+	scale = 100;
+}
+if (blocktype == undefined) {
+	blocktype = 1;
+}
+if (angleoffset == undefined) {
+	angleoffset = 0;
+}
+if (rotamount == undefined) {
+	rotamount = 120;
+}
+//                         
+if (rotdirection == undefined) {
+	rotdirection = "Left";
+}
+if (rotspeed == undefined) {
+	rotspeed = 3;
+}
+if (rotwait == undefined) {
+	rotwait = 92;
+}
+if (quake == undefined && rotwait>20) {
+	quake = true;
+} else {
+	quake = true;
+}
+_yscale = scale;
+_xscale = scale;
+gotoAndStop(blocktype);
+_rotation = angleoffset;
+depth2 = _root.Course.Platforms.getNextHighestDepth();
+_root.Course.Ice.attachMovie("Rotating Triangle Ice", "Rotating Triangle Ice"+depth2, depth2, {_x:_x, _y:_y, _yscale:_yscale, _xscale:_xscale, count:0, spincount:0, DirectionX:DirectionX, distanceX:distanceX, accelX:accelX, speedX:speedX, DirectionY:DirectionY, distanceY:distanceY, accelY:accelY, speedY:speedY, Xoffstart:Xoffstart, Yoffstart:Yoffstart});
+//
+depth = _root.Course.Platforms.getNextHighestDepth();
+_root.Course.Platforms.attachMovie("Rotating Triangle Code", "Rotating Triangle Code"+depth, depth, {_x:_x, _y:_y, _yscale:_yscale, _xscale:_xscale, count:0, spincount:0, DirectionX:DirectionX, distanceX:distanceX, accelX:accelX, speedX:speedX, DirectionY:DirectionY, distanceY:distanceY, accelY:accelY, speedY:speedY, Xoffstart:Xoffstart, Yoffstart:Yoffstart});
+tellTarget (_root.Course.Platforms["Rotating Triangle Code"+depth]) {
+	landedon = false;
+	//
+	lessthan = false;
+	morethan = false;
+	_rotation = this._rotation;
+}
+currentspeedX = 0;
+distancecountX = speedX+Xoffstart;
+currentspeedY = 0;
+distancecountY = speedY+Yoffstart;
+onEnterFrame = function () {
+	if (_root.PauseGame == false && _root.playpause == false) {
+		_root.Course.Ice["Rotating Triangle Ice"+depth2]._rotation = _rotation;
+		tellTarget (_root.Course.Platforms["Rotating Triangle Code"+depth]) {
+			count++;
+			if (count>this.rotwait) {
+				spincount++;
+				if ((spincount*this.rotspeed)<=this.rotamount) {
+					if (this.rotdirection == "Right") {
+						_rotation += this.rotspeed;
+					}
+					if (this.rotdirection == "Left") {
+						_rotation -= this.rotspeed;
+					}
+					if (hitTest((_root.Course.Char._x*_root.coursescale/100)+_root.Course._x, (_root.Course.Char._y*_root.coursescale/100)+_root.Course._y, true)) {
+						if (this.rotdirection == "Right") {
+							_root.Course.Char._x += this.rotspeed/2;
+						}
+						if (this.rotdirection == "Left") {
+							_root.Course.Char._x -= this.rotspeed/2;
+						}
+					}
+				} else {
+					count = 0;
+					spincount = 0;
+					_rotation -= this.angleoffset;
+					_rotation = (Math.round(_rotation/this.rotamount)*this.rotamount)+this.angleoffset;
+				}
+			}
+			//                                            
+			//if (this.quake == true) {
+			if (count+20>this.rotwait && count<this.rotwait) {
+				_rotation -= this.angleoffset;
+				_rotation = (Math.round(_rotation/this.rotamount)*this.rotamount)+this.angleoffset;
+				_rotation += Math.random()*5-2.5;
+			}
+		}
+		this._rotation = _rotation;
+	}
+	//      
+	distancecountX++;
+	if (distancecountX>=distanceX) {
+		distancecountX = 0;
+		if (DirectionX == "Right") {
+			DirectionX = "Left";
+		} else {
+			DirectionX = "Right";
+		}
+	}
+	if (DirectionX == "Right") {
+		currentspeedX += accelX;
+	} else {
+		currentspeedX -= accelX;
+	}
+	//
+	distancecountY++;
+	if (distancecountY>=distanceY) {
+		distancecountY = 0;
+		if (DirectionY == "Up") {
+			DirectionY = "Down";
+		} else {
+			DirectionY = "Up";
+		}
+	}
+	if (DirectionY == "Up") {
+		currentspeedY -= accelY;
+	} else {
+		currentspeedY += accelY;
+	}
+	currentspeedX = Math.max(-speedX, currentspeedX);
+	currentspeedX = Math.min(speedX, currentspeedX);
+	currentspeedY = Math.max(-speedY, currentspeedY);
+	currentspeedY = Math.min(speedY, currentspeedY);
+	_x += currentspeedX;
+	_y += currentspeedY;
+	//
+	tellTarget (_root.Course.Platforms["Rotating Triangle Code"+depth]) {
+		if (hitTest((_root.Course.Char._x*_root.coursescale/100)+_root.Course._x, (_root.Course.Char._y*_root.coursescale/100)+_root.Course._y, true) && _root.Course.Char.air == false) {
+			_root.Course.Char._x += this.currentspeedX;
+			_root.Course.Char._y += this.currentspeedY;
+			_root.Course.Char.xspeed = _root.groundFriction(_root.Course.Char.xspeed, 0.15, 1.05);
+			if (landedon == false) {
+				_root.Course.Char.xspeed -= this.currentspeedX;
+			}
+			landedon = true;
+		} else {
+			if (landedon == true) {
+				_root.Course.Char.xspeed += this.currentspeedX;
+				_root.Course.Char.yspeed += this.currentspeedY/2;
+			}
+			landedon = false;
+		}
+		_y = this._y;
+		_x = this._x;
+		if (this.currentspeedY<0) {
+			_y += this.currentspeedY;
+		}
+		this._rotation = _rotation;
+	}
+	//}
+	//  
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#FFFFFF" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="10" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Ancient &amp; Clock &amp; Haunted/Tick Battery 2" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="-7.5" b="12.9904174804688" c="-12.9904174804688" d="-7.5" tx="-86.75" ty="-8.5"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="2">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Ancient &amp; Clock &amp; Haunted/Tick Battery 2" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="15" d="15" tx="-107.75" ty="-16.75"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="3">
+                          <SolidColor color="#999999"/>
+                        </FillStyle>
+                        <FillStyle index="4">
+                          <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Ancient &amp; Clock &amp; Haunted/Tick Battery 2" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="-7.50006103515625" b="-12.9904174804688" c="12.9904174804688" d="-7.50006103515625" tx="-74.45" ty="1.1"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                      </fills>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal">
+                            <fill>
+                              <SolidColor/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge fillStyle0="2" fillStyle1="3" strokeStyle="1" edges="!-58 -29[#FFFFCA.8E -38.140625 -46 -46!-46 -46[-27 -64 0 -64!0 -64[27 -64 45 -46!45 -46[#36.6 -36.625 59 -25.5"/>
+                        <Edge fillStyle0="2" fillStyle1="1" edges="!59 -25.5|595.5 -354"/>
+                        <Edge fillStyle0="2" strokeStyle="1" edges="!595.5 -354|-601 -354!-601 -354|-599.5 -351.5"/>
+                        <Edge fillStyle0="2" edges="!-599.5 -351.5|-595.5 -345"/>
+                        <Edge fillStyle0="2" fillStyle1="4" edges="!-595.5 -345|-58 -29"/>
+                        <Edge strokeStyle="1" edges="!595.5 -354|599 -354!599 -354|598 -352.5"/>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="!598 -352.5|-0.5 683.5"/>
+                        <Edge strokeStyle="1" edges="!-0.5 683.5|-1.5 685.5!-1.5 685.5|-4 681.5"/>
+                        <Edge fillStyle1="4" strokeStyle="1" edges="!-4 681.5|-591 -337"/>
+                        <Edge strokeStyle="1" edges="!-591 -337|-599.5 -351.5"/>
+                        <Edge fillStyle0="1" strokeStyle="1" edges="!598 -352.5|595.5 -354"/>
+                        <Edge fillStyle1="4" edges="!-591 -337|-595.5 -345"/>
+                        <Edge fillStyle0="3" fillStyle1="4" strokeStyle="1" edges="!-58 -29[-64 #FFFFF0.2B -64 0!-64 0[-64 27 -46 45!-46 45[#FFFFE3.EF #3E.EF -3 64"/>
+                        <Edge fillStyle0="3" fillStyle1="1" strokeStyle="1" edges="!-3 64[#FFFFFE.7D 64 0 64!0 64[27 64 45 45!45 45[64 27 64 0!64 0[64 #FFFFF2.52 59 -25.5"/>
+                        <Edge fillStyle0="4" fillStyle1="1" edges="!-4 681.5|-3 64"/>
+                        <Edge fillStyle0="1" strokeStyle="1" edges="!-4 681.5|-0.5 683.5"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

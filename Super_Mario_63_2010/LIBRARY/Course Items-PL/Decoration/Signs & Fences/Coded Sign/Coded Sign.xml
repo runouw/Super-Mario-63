@@ -1,0 +1,213 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Items-PL/ Decoration/ Signs &amp; Fences/ Coded Sign/Coded Sign" itemID="45ff5b8d-000006d6" linkageExportForAS="true" linkageExportInFirstFrame="false" linkageIdentifier="CodedSign" sourceFlashFilepath="Rob &amp; Steve Hewitt\My Documents\Super Mario 63\New Title Screen Design.fla" sourceLibraryItemHRef="  Course Items-PL/ In-course Items/ Signs &amp; Fences/Coded Sign" sourceLastModified="1189137872" lastModified="1243301364" lastUniqueIdentifier="3" sourceItemID="45ff5b8d-000006d6">
+  <timeline>
+    <DOMTimeline name="Coded Sign">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" locked="true" outline="true" useOutlineView="true">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (picture == undefined) {
+	picture = false;
+}
+aa._alpha = 0]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" duration="7" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		if (_root.playpause == false) {
+			if (this.box.hitTest(_root.Course.Char.charClip.feet2) && _root.Course.Char.attack == false && _root.KeyZ() && !_root.KeyRIGHT() && !_root.KeyLEFT()) {
+				_root.Course.Char.yspeed = 0;
+				_root.Course.Char.xspeed = 0;
+				_root.Course.Char.attack = true;
+				_root.Course.Char.attackFrame = "Sign";
+				//
+				onEnterFrame = function () {
+					aa._alpha += (0-aa._alpha)/3;
+					if (_root.PauseGame == false) {
+						_root.playpause = true;
+						X = _x+_root.Course.BackGFX._x;
+						_root.Course.Char._x += (X-_root.Course.Char._x)/5;
+						_root.Camcenter = this;
+					}
+				};
+				play();
+			}
+		}
+		if (this.box.hitTest(_root.Course.Char.charClip.feet2) && _root.Course.Char.attack == false && !_root.KeyRIGHT() && !_root.KeyLEFT() && _root.playpause == false) {
+			aa.aa = 100;
+		} else {
+			aa.aa = 0;
+		}
+		aa._alpha += (aa.aa-aa._alpha)/3;
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="9" duration="6" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+if (picture == false) {
+	_root.PlayMessage(signmessage);
+} else {
+	_root.PlayPicture(signmessage);
+}
+readingfunction();
+onEnterFrame = function () {
+	_root.PauseGame = false;
+	_root.playpause = true;
+	//
+	X = _x+_parent._x;
+	_root.Course.Char._x += (X-_root.Course.Char._x)/5;
+	//
+	if (othercamcenter == undefined) {
+		//_root.Camcenter = this;
+	} else {
+		_root.Camcenter = othercamcenter;
+	}
+	// 
+	if (!_root.KeyZ()) {
+		SPACE = false;
+	}
+	if (_root.KeyZ() && SPACE == false) {
+		if (picture == false) {
+			_root.StopMessage();
+		} else {
+			_root.StopPicture();
+		}
+		play();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="15" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.Course.Char.attack = false;
+_root.Course.Char.attackFrame = "";
+completefunction()
+onEnterFrame = null;
+_root.playpause = false;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Graphics 2" color="#FF4FFF" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="16" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF" alpha="0.333333333333333"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!250 -526|-250 -526!-250 -526|-250 -1006!-250 -1006|250 -1006!250 -1006|250 -526"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Graphics" color="#4FFF4F" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="16" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Bricks &amp; Woods/Wood Block" bitmapIsClipped="false">
+                        <matrix>
+                          <Matrix a="20" d="20" tx="28.6" ty="-58.4"/>
+                        </matrix>
+                      </BitmapFill>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <BitmapFill bitmapPath="  Course Items-PL/ Blocks, Tiles &amp; Other Textures/ Bricks &amp; Woods/Wood Block" bitmapIsClipped="false">
+                        <matrix>
+                          <Matrix a="0" b="20" c="-20" d="0" tx="60.6" ty="-55.9"/>
+                        </matrix>
+                      </BitmapFill>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <SolidColor/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle1="2" strokeStyle="1" edges="!-60 -466|-320 -466!-320 -466|-320 -1066!-320 -1066|320 -1066!320 -1066|320 -466!320 -466|60 -466"/>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="!60 -466|60 -15!60 -15|-60 -15!-60 -15|-60 -466"/>
+                    <Edge fillStyle0="2" fillStyle1="1" strokeStyle="1" edges="!-60 -466|60 -466"/>
+                  </edges>
+                </DOMShape>
+                <DOMSymbolInstance libraryItemName="  Course Items-PL/ Decoration/ Signs &amp; Fences/ Coded Sign/Sign Image Clip">
+                  <matrix>
+                    <Matrix ty="-38.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 5" color="#4FFFFF" locked="true" outline="true" useOutlineView="true">
+          <frames>
+            <DOMFrame index="0" duration="16" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Coded Sign Z" name="aa">
+                  <matrix>
+                    <Matrix a="0.75" d="0.75" tx="0.25" ty="-74.25"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F" locked="true" outline="true" useOutlineView="true">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="box" selected="true">
+                  <matrix>
+                    <Matrix a="0.283218383789063" d="0.937484741210938" ty="-0.25"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" duration="13" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

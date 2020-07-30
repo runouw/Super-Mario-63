@@ -1,0 +1,165 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="      Char/  Luigi CLIPS/Luigi Slide (Rocket) Clip" itemID="453c10a1-00000216" lastModified="1168108826">
+  <timeline>
+    <DOMTimeline name="Luigi Slide (Rocket) Clip">
+      <layers>
+        <DOMLayer name="Layer 3" color="#FFFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[rotation = 0;
+rotspeed = 0;
+rot2 = 0;
+onEnterFrame = function () {
+	if (_root.Course.Char._xscale>0) {
+		rot2 = -_root.radiansToAngle(Math.atan2(_root.Course.Char.yspeed, -_root.Course.Char.xspeed));
+		rot2 += 10;
+	}
+	if (_root.Course.Char._xscale<0) {
+		rot2 = -_root.radiansToAngle(Math.atan2(_root.Course.Char.yspeed, _root.Course.Char.xspeed));
+		rot2 -= 10;
+	}
+	if (_root.Course.Char.air == true) {
+		//
+		if (rot>0) {
+			rot = rot2;
+			if (rot<-90) {
+				rotation -= 360;
+			}
+			rotspeed = (rot-rotation)/10;
+		} else {
+			rot = rot2;
+			if (rot>90) {
+				rotation += 360;
+			}
+			rotspeed = (rot-rotation)/10;
+		}
+		if (rotation>520) {
+			rotation -= 360;
+		}
+		if (rotation<-520) {
+			rotation += 360;
+		}
+		rotspeed = _root.groundFriction(rotspeed, 0.1, 1.15);
+		rotspeed = Math.min(rotspeed, 15);
+		rotspeed = Math.max(rotspeed, -15);
+		rotation += rotspeed;
+		_rotation = rotation;
+		//
+	} else {
+		_rotation = 0;
+		rotation = 0;
+	}
+	_root.DiveRot = _rotation;
+	if (!_root.KeyDOWN) {
+		if ((_root.Course.Char.yspeed == 0 && _root.Course.Char.xspeed == 0)) {
+			play();
+		}
+	}
+	if (_root.Course.Char.Water == true) {
+		play();
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" duration="3" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="5" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_root.Course.Char.attack = false;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="      Char/  Fludd CLIPS/Diving Rocket Fludd Water">
+                  <matrix>
+                    <Matrix a="0" b="1" c="1" d="0" tx="-2" ty="2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" duration="3" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  Luigi CLIPS/ Luigi BITs/ Delete Soon Frames/Luigi Air (Rocket) - 2">
+                  <matrix>
+                    <Matrix a="0.86602783203125" b="-0.5" c="0.5" d="0.86602783203125" tx="-23.55" ty="-13.95"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  Luigi CLIPS/ Luigi BITs/ Delete Soon Frames/Luigi Slide (Rocket)">
+                  <matrix>
+                    <Matrix a="-0.965927124023438" b="-0.258819580078125" c="-0.258819580078125" d="0.965927124023438" tx="20.2" ty="-0.75"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  Luigi CLIPS/ Luigi BITs/ Delete Soon Frames/Luigi Slide (Rocket)">
+                  <matrix>
+                    <Matrix a="-1" tx="18.5" ty="-3"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  Luigi CLIPS/ Luigi BITs/ Delete Soon Frames/Luigi Slide (Rocket)">
+                  <matrix>
+                    <Matrix a="-0.965927124023438" b="-0.258819580078125" c="-0.258819580078125" d="0.965927124023438" tx="20.2" ty="-0.75"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="4" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  Luigi CLIPS/ Luigi BITs/ Delete Soon Frames/Luigi Air (Rocket) - 2">
+                  <matrix>
+                    <Matrix a="0.86602783203125" b="-0.5" c="0.5" d="0.86602783203125" tx="-23.55" ty="-13.95"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="5" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="      Char/  Luigi CLIPS/ Luigi BITs/ Delete Soon Frames/Luigi Air (Rocket) - 2">
+                  <matrix>
+                    <Matrix tx="-11" ty="-23.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

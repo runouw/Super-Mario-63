@@ -1,0 +1,386 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Items-PL/ In-course Items/ Transportation/ Doors/Star Door" itemID="459bdecc-000001f5" lastModified="1238277039" lastUniqueIdentifier="3">
+  <timeline>
+    <DOMTimeline name="Star Door">
+      <layers>
+        <DOMLayer name="Layer 4" color="#FF4FFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (locked == undefined) {
+	locked = false;
+}
+if (removelock == undefined) {
+	removelock = false;
+}
+//    
+if (locked == true) {
+	if (removelock == true) {
+		gotoAndStop(3);
+	} else {
+		gotoAndStop(2);
+	}
+} else {
+	gotoAndStop(4);
+	onEnterFrame = null;
+}
+//
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+onEnterFrame = function () {
+	if (removelock == true) {
+		gotoAndStop(3);
+	}
+	if (_root.PauseGame == false) {
+		if (this.box.hitTest(_root.Course.Char.charClip.feet2) && _root.Course.Char.attack == false && _root.Course.Char.air == false) {
+			//
+			if (_root.KeyUP() && !_root.KeyRIGHT() && !_root.KeyLEFT()) {
+				doorlockfunction();
+			}
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="box">
+                  <matrix>
+                    <Matrix a="0.566421508789063" d="0.637496948242188" ty="25"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+waittoopen = false;
+_root.unlockdooritem = "";
+onEnterFrame = function () {
+	if (_root.PauseGame == false) {
+		if (this.box.hitTest(_root.Course.Char.charClip.feet2) && _root.Course.Char.attack == false && _root.Course.Char.air == false) {
+			if ((_root.KeyUP() || _root.KeyTapUP()) && !_root.KeyRIGHT() && !_root.KeyLEFT() && walk !== "front") {
+				// Key unlock animation code here 
+				_root.Course.Char.attack = true;
+				_root.Course.Char.xspeed = 0;
+				if (dooropenarray !== undefined) {
+					if (_root.DoorOpenedArray[dooropenarray] == false && locked == true && removelock == true) {
+						_root.DoorOpenedArray[dooropenarray] = true;
+						_root.Course.Char.attackFrame = "UnlockDoor";
+						if (unlockitem !== undefined) {
+							// Put for opening Doors with Keys and Stuff
+							_root.heldItemObtained = unlockitem;
+							_root.unlockdooritem = "Item";
+						} else {
+							_root.unlockdooritem = "";
+						}
+						waittoopen = true;
+					}
+				}
+				if (openwithkey == true) {
+					// For the doors in Boos Mansion and Bowsers Castle...
+					waittoopen = true;
+					_root.Course.Char.attackFrame = "UnlockDoor";
+					if (unlockitem !== undefined) {
+						_root.heldItemObtained = unlockitem;
+						_root.unlockdooritem = "Item";
+					} else {
+						_root.unlockdooritem = "";
+					}
+				}
+				if (waittoopen == false) {
+					//  
+					if (walk == "far") {
+						_root.Course.Char.attackFrame = "FarDoor";
+					} else {
+						_root.Course.Char.attackFrame = "Door";
+					}
+					_root.door = doorplace;
+					gotoAndPlay("play");
+				} else {
+					onEnterFrame = function () {
+						if (_root.PauseGame == false) {
+							_root.Course.Char.attack = true;
+							_root.Course.Char.attackFrame = "UnlockDoor";
+							X = _x+_parent._x;
+							_root.Course.Char._x += (X-_root.Course.Char._x)/5;
+							if (_root.Course.Char.charClip.frame.done == true) {
+								if (walk == "far") {
+									_root.Course.Char.attackFrame = "FarDoor";
+								} else {
+									_root.Course.Char.attackFrame = "Door";
+								}
+								_root.door = doorplace;
+								gotoAndPlay("play");
+								onEnterFrame = null;
+							}
+						}
+					};
+				}
+			} else if (walk == "front" && (_root.KeyDOWN() || _root.KeyTapDOWN()) && !_root.KeyRIGHT() && !_root.KeyLEFT()) {
+				_root.Course.Char.attack = true;
+				_root.Course.Char.xspeed = 0;
+				_root.Course.Char.attackFrame = "FrontDoor";
+				_root.door = doorplace;
+				gotoAndPlay("play");
+			}
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="box">
+                  <matrix>
+                    <Matrix a="0.566421508789063" d="0.637496948242188" ty="25"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+onEnterFrame = function () {
+	if (this.box.hitTest(_root.Course.Char.charClip.feet2) && _root.Course.Char.attack == false && _root.Course.Char.air == false) {
+		if (_root.KeyUP() && !_root.KeyRIGHT() && !_root.KeyLEFT() && walk !== "front") {
+			_root.Course.Char.attack = true;
+			_root.Course.Char.xspeed = 0;
+			if (walk == "far") {
+				_root.Course.Char.attackFrame = "FarDoor";
+			} else {
+				_root.Course.Char.attackFrame = "Door";
+			}
+			_root.door = doorplace;
+			gotoAndPlay("play");
+		} else if (walk == "front" && _root.KeyDOWN() && !_root.KeyRIGHT() && !_root.KeyLEFT()) {
+			_root.Course.Char.attack = true;
+			_root.Course.Char.xspeed = 0;
+			_root.Course.Char.attackFrame = "FrontDoor";
+			_root.door = doorplace;
+			gotoAndPlay("play");
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName=" Xtra/Blank Movieclip" name="box">
+                  <matrix>
+                    <Matrix a="0.566421508789063" d="0.637496948242188" ty="25"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[onClipEvent (load) {
+	_visible = false;
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="4" duration="13" name="play" labelType="name" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = function () {
+	X = _x+_parent._x;
+	_root.Course.Char._x += (X-_root.Course.Char._x)/5;
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="17" duration="21" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[onEnterFrame = null;
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 6" color="#808080">
+          <frames>
+            <DOMFrame index="0" duration="38" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal" weight="2">
+                            <fill>
+                              <SolidColor/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge strokeStyle="1" edges="!479.5 -480|479.5 480!479.5 480|-480.5 480!-480.5 480|-480.5 -480!-480.5 -480|479.5 -480"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC" locked="true" visible="false" layerType="mask">
+          <frames>
+            <DOMFrame index="0" duration="38" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!469.5 -470.5|469.5 469.5!469.5 469.5|-470.5 469.5!-470.5 469.5|-470.5 -470.5!-470.5 -470.5|469.5 -470.5"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F" parentLayerIndex="2" locked="true">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Arena Door">
+                  <matrix>
+                    <Matrix a="-0.75" d="0.75" tx="24" ty="-24"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" duration="14" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Arena Door">
+                  <matrix>
+                    <Matrix a="-0.75" d="0.75" tx="24" ty="-24"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="17" duration="6" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Arena Door">
+                  <matrix>
+                    <Matrix a="-0.75" d="0.75" tx="46" ty="-24"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="23" duration="14" tweenType="motion" motionTweenRotate="none" motionTweenScale="false" keyMode="16385">
+              <elements>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Arena Door">
+                  <matrix>
+                    <Matrix a="-0.75" d="0.75" tx="49" ty="-24"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="37" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Arena Door">
+                  <matrix>
+                    <Matrix a="-0.75" d="0.75" tx="24" ty="-24"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" parentLayerIndex="2" locked="true">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Arena Door">
+                  <matrix>
+                    <Matrix a="0.75" d="0.75" tx="-24" ty="-24"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" duration="14" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Arena Door">
+                  <matrix>
+                    <Matrix a="0.75" d="0.75" tx="-24" ty="-24"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="17" duration="6" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Arena Door">
+                  <matrix>
+                    <Matrix a="0.75" d="0.75" tx="-47" ty="-24"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="23" duration="14" tweenType="motion" motionTweenRotate="none" motionTweenScale="false" keyMode="16385">
+              <elements>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Arena Door">
+                  <matrix>
+                    <Matrix a="0.75" d="0.75" tx="-49" ty="-24"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="37" tweenType="motion" keyMode="17921">
+              <elements>
+                <DOMBitmapInstance libraryItemName="  Course Items-PL/ In-course Items/ Transportation/ Doors/Arena Door">
+                  <matrix>
+                    <Matrix a="0.75" d="0.75" tx="-24" ty="-24"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 5" color="#4FFFFF">
+          <frames>
+            <DOMFrame index="0" duration="38" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#373737"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!469.5 -470.5|469.5 469.5!469.5 469.5|-470.5 469.5!-470.5 469.5|-470.5 -470.5!-470.5 -470.5|469.5 -470.5"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

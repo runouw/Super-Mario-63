@@ -1,0 +1,218 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="  Course Clips/ 7 - Rainbow Ride/7-2 Rotating Triangles GFX" itemID="4713fc5a-00000933" lastModified="1237939619">
+  <timeline>
+    <DOMTimeline name="7-2 Rotating Triangles GFX">
+      <layers>
+        <DOMLayer name="Layer 8" color="#FF4F4F" locked="true" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="9" keyMode="8704">
+              <Actionscript>
+                <script><![CDATA[stop();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="9" keyMode="8704">
+              <Actionscript>
+                <script><![CDATA[count = 0;
+wait = 32;
+duration = 800;
+// Activated Sound fx
+if (sound == true) {
+	_root.Mariosound = new Sound(this);
+	_root.Mariosound.attachSound("Tick");
+	_root.Mariosound.start(0, 1);
+	_root.Mariosound.setVolume(_root.MarioVolume);
+}
+//  
+onEnterFrame = function () {
+	count++;
+	if ((count/wait) == Math.round(count/wait) && count<=duration && sound == true) {
+		if (count>(1/2)*duration) {
+			wait = 16;
+			if (count>(3/4)*duration) {
+				wait = 8;
+				play();
+			}
+			if (count>(9/10)*duration) {
+				wait = 4;
+				play();
+			}
+		}
+		_root.Mariosound = new Sound(this);
+		_root.Mariosound.attachSound("Tick");
+		_root.Mariosound.start(0, 1);
+		_root.Mariosound.setVolume(_root.MarioVolume);
+	} else if (count>duration) {
+		wait = duration;
+		if (_currentframe>=10) {
+			gotoAndStop(9);
+		}
+		prevFrame();
+		if (_currentframe<=1) {
+			count = 0;
+			stop();
+			//_root.Course.Platforms[itemname].removeMovieClip();
+			onEnterFrame = null;
+		}
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="10" duration="3" keyMode="8704">
+              <Actionscript>
+                <script><![CDATA[stop();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="13" keyMode="8704">
+              <Actionscript>
+                <script><![CDATA[gotoAndStop(11);
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#FF4FFF">
+          <frames>
+            <DOMFrame index="0" duration="14" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="  Course Clips/7-2Rotatin Triangles Graphic" symbolType="graphic" loop="play once">
+                  <matrix>
+                    <Matrix tx="278.45" ty="-82.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Clips/7-2Rotatin Triangles Graphic" symbolType="graphic" loop="play once">
+                  <matrix>
+                    <Matrix tx="398.45" ty="-82.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Clips/7-2Rotatin Triangles Graphic" symbolType="graphic" loop="play once">
+                  <matrix>
+                    <Matrix tx="518.45" ty="-82.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Clips/7-2Rotatin Triangles Graphic" symbolType="graphic" loop="play once">
+                  <matrix>
+                    <Matrix tx="97.45" ty="-135.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Clips/7-2Rotatin Triangles Graphic" symbolType="graphic" loop="play once">
+                  <matrix>
+                    <Matrix tx="157.45" ty="-85.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Clips/7-2Rotatin Triangles Graphic" symbolType="graphic" loop="play once">
+                  <matrix>
+                    <Matrix tx="37.45" ty="-85.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Clips/7-2Rotatin Triangles Graphic" symbolType="graphic" loop="play once">
+                  <matrix>
+                    <Matrix tx="-32.55" ty="4.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Clips/7-2Rotatin Triangles Graphic" symbolType="graphic" loop="play once">
+                  <matrix>
+                    <Matrix tx="643.45" ty="-118.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Clips/7-2Rotatin Triangles Graphic" symbolType="graphic" loop="play once">
+                  <matrix>
+                    <Matrix tx="713.45" ty="-198.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Clips/7-2Rotatin Triangles Graphic" symbolType="graphic" loop="play once">
+                  <matrix>
+                    <Matrix tx="653.45" ty="-278.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Clips/7-2Rotatin Triangles Graphic" symbolType="graphic" loop="play once">
+                  <matrix>
+                    <Matrix tx="783.45" ty="-278.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Clips/7-2Rotatin Triangles Graphic" symbolType="graphic" loop="play once">
+                  <matrix>
+                    <Matrix tx="713.45" ty="-358.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Clips/7-2Rotatin Triangles Graphic" symbolType="graphic" loop="play once">
+                  <matrix>
+                    <Matrix tx="621.45" ty="-403.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Clips/7-2Rotatin Triangles Graphic" symbolType="graphic" loop="play once">
+                  <matrix>
+                    <Matrix tx="531.45" ty="-423.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Clips/7-2Rotatin Triangles Graphic" symbolType="graphic" loop="play once">
+                  <matrix>
+                    <Matrix tx="401.45" ty="-443.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="  Course Clips/7-2Rotatin Triangles Graphic" symbolType="graphic" loop="play once">
+                  <matrix>
+                    <Matrix tx="251.45" ty="-473.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

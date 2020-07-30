@@ -1,0 +1,75 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Pause New STA" itemID="49c30722-000012ee" lastModified="1246061184" lastUniqueIdentifier="8">
+  <timeline>
+    <DOMTimeline name="Pause New STA">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="4" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[if (shine == true) {
+	gotoAndStop(4);
+} else if (_root.Star[_name] == true) {
+	gotoAndStop(3);
+} else {
+	gotoAndStop(2);
+}
+//(_name = number) 
+if (_root.CheatStarToggle==true) {
+	onMouseDown = function () {
+		if (Math.abs(_xmouse)<10 && Math.abs(_ymouse)<10) {
+			_root.Star[_name] = !_root.Star[_name];
+			//
+			_root.CalculateStars();
+			//
+			if (_root.Star[_name] == true) {
+				gotoAndStop(3);
+			} else {
+				gotoAndStop(2);
+			}
+		}
+	};
+}
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="Small Blue Shine">
+                  <matrix>
+                    <Matrix tx="-7" ty="-7.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="Small Yellow Shine">
+                  <matrix>
+                    <Matrix tx="-7" ty="-7.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Pause New STA STa">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter color="#FFFF00" strength="2"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,84 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Skip Button (preloader)" itemID="4bcd2c09-000021b4" sourceFlashFilepath="../../Level Designer (Website) 4.fla" sourceLibraryItemHRef="Skip Button (preloader)" sourceLastModified="1271737353" lastModified="1271737353" lastUniqueIdentifier="3" sourceItemID="4bcd2c09-000021b4">
+  <timeline>
+    <DOMTimeline name="Skip Button (preloader)">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[al = 0;
+_alpha = 0;
+timer = 32;
+onEnterFrame = function () {
+	timer--;
+	if (this.hitTest(_root._xmouse, _root._ymouse, false) && _root.percentloaded>=100) {
+		al = 100;
+		sc = 120;
+		timer = 0;
+	} else if (timer<=0) {
+		if(_root.percentloaded>=100){
+			al = 25;
+		}else{
+			al = 0;
+		}
+		sc = 100;
+	}
+	_xscale += (sc-_xscale)/2;
+	_yscale = _xscale;
+	_alpha += (al-_alpha)/5;
+};
+onMouseDown = function () {
+	if (sc == 120) {
+		_parent.Skip();
+		_alpha = 100;
+		sc = 100;
+		timer = 64;
+		_xscale = 140;
+		_yscale = 140;
+	}
+};
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#FF4FFF">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Skip Butto Buttongbnfd" symbolType="button">
+                  <matrix>
+                    <Matrix tx="-30" ty="-16"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName='Skip Button "Skiphgshgs"'>
+                  <matrix>
+                    <Matrix tx="-29.7" ty="-14.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BevelFilter/>
+                    <GlowFilter blurX="2" blurY="2" color="#000000" strength="10"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>
