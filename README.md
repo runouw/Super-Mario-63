@@ -1,7 +1,7 @@
 
 ### Disclaimer
 
-> This game uses graphics, characters, and audio that are subject to copyright by Nintendo Compopant Ltd, HAL Lab, and Sora Ltd. And this game is not published nor endorsed by them. Super Mario 63 is a not-for-profit fangame based off of the various games published by Nintendo in the Mario franchise.
+> This game uses graphics, characters, and audio that are subject to copyright by Nintendo Company Ltd, HAL Lab, and Sora Ltd. And this game is not published nor endorsed by them. Super Mario 63 is a not-for-profit fangame based off of the various games published by Nintendo in the Mario franchise.
 
 # Super-Mario-63
 
