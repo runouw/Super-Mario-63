@@ -7,6 +7,13 @@
 
 Source code as of 2010. This project has been converted from Adobe Flash Professional CS4 FLA format to CS6 Uncompressed XFL format.
 
+## Apple Silicon macOS app
+
+An arm64-native macOS target is available on the `codex/macos-apple-silicon`
+branch. It packages the original game with Ruffle's native Metal renderer, so it
+does not require the Windows EXE, Rosetta, a browser, or the discontinued Flash
+Player. See [MACOS.md](MACOS.md) for build, run, signing, and save-data details.
+
 Feel free to make changes and pull-requests. However be warned: I'm not too sure how compatible the XFL format is with git (you might have a lot of line changes even if you only changed something small). If you make changes, please try to make sure the project can still be opened in Flash Professional CS6.
 
 ## Compatible Development Applications
